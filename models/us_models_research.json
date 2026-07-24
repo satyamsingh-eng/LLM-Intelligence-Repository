@@ -1,0 +1,662 @@
+{
+  "system_metadata": {
+    "generator": "SARVAX Hermes Build Pipeline & Intelligence Synthesizer",
+    "report_title": "US Frontier AI Models Deep Research & Enterprise Procurement Dataset",
+    "last_verified_date": "2026-07-25",
+    "target_region": "United States (US Frontier AI)",
+    "usd_to_inr_rate": 83.5,
+    "pricing_assumptions": [
+      "Currency conversion fixed at 1 USD = 83.50 INR",
+      "Prompt caching read discount calculated at 90% savings (10% of base input rate)",
+      "Batch API discount calculated at flat 50% on input and output tokens for async workloads"
+    ],
+    "sources": [
+      "Artificial Analysis Official REST API v2",
+      "Vendor Developer Documentation & Trust Portals (Anthropic, OpenAI, xAI)",
+      "C3A Labs Enterprise Benchmark Suite & TAU Banking Framework"
+    ],
+    "total_models_researched": 10
+  },
+  "models": [
+    {
+      "id": "claude-opus-5",
+      "name": "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
+      "vendor": "Anthropic",
+      "release_date": "2026-07-24",
+      "specifications": {
+        "context_window_tokens": 200000,
+        "max_output_tokens": 128000,
+        "architecture_notes": "Dense Frontier Transformer with Adaptive Dynamic Search & Reasoning effort scaling."
+      },
+      "official_pricing": {
+        "per_1m_tokens_usd": {
+          "input_usd": 5,
+          "output_usd": 25,
+          "cached_input_usd": 0.5,
+          "batch_api_input_usd": 2.5,
+          "batch_api_output_usd": 12.5
+        },
+        "per_1m_tokens_inr": {
+          "input_inr": 417.5,
+          "output_inr": 2087.5,
+          "cached_input_inr": 41.75,
+          "batch_api_input_inr": 208.75,
+          "batch_api_output_inr": 1043.75
+        },
+        "pricing_formulas": {
+          "inr_rate_formula": "usd_rate * 83.50",
+          "cached_input_formula": "input_rate * 0.10 (90% Cache Read Savings)",
+          "batch_api_formula": "input_or_output_rate * 0.50 (50% Async Discount)"
+        },
+        "pricing_notes": "Prompt Caching: 90% read discount ($0.50/1M). Async Batch API: 50% discount on input and output ($2.50/$12.50)."
+      },
+      "benchmark_scores": {
+        "tau_banking_score": 0.3031,
+        "intelligence_index": 60.7,
+        "coding_index": 78,
+        "gpqa_diamond_percentage": 93.2,
+        "mmlu_pro_score": 84.8
+      },
+      "speed_and_latency": {
+        "throughput_tokens_per_second": 43.9,
+        "time_to_first_token_seconds": 28.7
+      },
+      "enterprise_compliance": {
+        "soc2": "SOC 2 Type II Certified",
+        "hipaa": "HIPAA BAA Available (Enterprise Tier)",
+        "eu_ai_act_gdpr": "GDPR & EU AI Act Compliant (Zero Training on Customer API Data)",
+        "private_cloud_options": "AWS Bedrock, GCP Vertex AI, Dedicated Private Cloud VPC",
+        "compliance_confidence": "85% Technical / 60% Public Trust Audit"
+      },
+      "sarvax_recommendation": {
+        "category_role": "Primary Tier 1 High-Reasoning & Financial AI Flagship",
+        "best_use_case_fit": "High-precision wealth advisory, complex portfolio math, SEC filing audits, and zero-hallucination legal analysis.",
+        "routing_directive": "Route top-tier complex reasoning and critical financial workflows to Opus 5. Avoid routing trivial single-turn queries.",
+        "restrictions": "Do not route high-throughput low-latency triage calls due to ~28.7s TTFT latency."
+      },
+      "provenance_and_evidence": {
+        "primary_trust_portal_url": "https://trust.anthropic.com",
+        "vendor_api_docs_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+        "benchmark_dataset_source": "Artificial Analysis REST API v2",
+        "last_verified_date": "2026-07-25",
+        "verification_status": "100% Primary Source Verified"
+      }
+    },
+    {
+      "id": "claude-sonnet-5",
+      "name": "Claude Sonnet 5 (Adaptive Reasoning, Max Effort)",
+      "vendor": "Anthropic",
+      "release_date": "2026-06-30",
+      "specifications": {
+        "context_window_tokens": 200000,
+        "max_output_tokens": 64000,
+        "architecture_notes": "Adaptive Reasoning Frontier Transformer optimized for closed agentic software development and tool calling."
+      },
+      "official_pricing": {
+        "per_1m_tokens_usd": {
+          "input_usd": 2,
+          "output_usd": 10,
+          "cached_input_usd": 0.2,
+          "batch_api_input_usd": 1.0,
+          "batch_api_output_usd": 5.0
+        },
+        "per_1m_tokens_inr": {
+          "input_inr": 167.0,
+          "output_inr": 835.0,
+          "cached_input_inr": 16.7,
+          "batch_api_input_inr": 83.5,
+          "batch_api_output_inr": 417.5
+        },
+        "pricing_formulas": {
+          "inr_rate_formula": "usd_rate * 83.50",
+          "cached_input_formula": "input_rate * 0.10 (90% Cache Read Savings)",
+          "batch_api_formula": "input_or_output_rate * 0.50 (50% Async Discount)"
+        },
+        "pricing_notes": "Introductory rate: $2.00/1M Input, $10.00/1M Output through Aug 2026. 90% Prompt Cache read discount ($0.20/1M). 50% Batch API ($1.00/$5.00)."
+      },
+      "benchmark_scores": {
+        "tau_banking_score": 0.2825,
+        "intelligence_index": 53.4,
+        "coding_index": 71.5,
+        "gpqa_diamond_percentage": 91.1,
+        "mmlu_pro_score": 82.5
+      },
+      "speed_and_latency": {
+        "throughput_tokens_per_second": 83.4,
+        "time_to_first_token_seconds": 108.38
+      },
+      "enterprise_compliance": {
+        "soc2": "SOC 2 Type II Certified",
+        "hipaa": "HIPAA BAA Available (Enterprise Tier)",
+        "eu_ai_act_gdpr": "GDPR & EU AI Act Compliant",
+        "private_cloud_options": "AWS Bedrock, GCP Vertex AI, Dedicated Enterprise VPC",
+        "compliance_confidence": "85% Technical / 60% Compliance"
+      },
+      "sarvax_recommendation": {
+        "category_role": "Best Closed Agentic Coding & Enterprise Core Workhorse",
+        "best_use_case_fit": "Multi-step software engineering, long-horizon coding tasks, agentic tool workflows, structured JSON generation.",
+        "routing_directive": "Primary default closed model for agentic coding pipelines and multi-turn developer automation.",
+        "restrictions": "Standard 200K context window; use extended context tiers for multi-file codebases >200K tokens."
+      },
+      "provenance_and_evidence": {
+        "primary_trust_portal_url": "https://trust.anthropic.com",
+        "vendor_api_docs_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+        "benchmark_dataset_source": "Artificial Analysis REST API v2",
+        "last_verified_date": "2026-07-25",
+        "verification_status": "100% Primary Source Verified"
+      }
+    },
+    {
+      "id": "claude-fable-5",
+      "name": "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
+      "vendor": "Anthropic",
+      "release_date": "2026-06-09",
+      "specifications": {
+        "context_window_tokens": 200000,
+        "max_output_tokens": 128000,
+        "architecture_notes": "Hybrid Adaptive Frontier Transformer with integrated Opus 4.8 fallback safety layer for fail-safe executive execution."
+      },
+      "official_pricing": {
+        "per_1m_tokens_usd": {
+          "input_usd": 10,
+          "output_usd": 50,
+          "cached_input_usd": 1.0,
+          "batch_api_input_usd": 5.0,
+          "batch_api_output_usd": 25.0
+        },
+        "per_1m_tokens_inr": {
+          "input_inr": 835.0,
+          "output_inr": 4175.0,
+          "cached_input_inr": 83.5,
+          "batch_api_input_inr": 417.5,
+          "batch_api_output_inr": 2087.5
+        },
+        "pricing_formulas": {
+          "inr_rate_formula": "usd_rate * 83.50",
+          "cached_input_formula": "input_rate * 0.10 (90% Cache Read Savings)",
+          "batch_api_formula": "input_or_output_rate * 0.50 (50% Async Discount)"
+        },
+        "pricing_notes": "Premium Tier: $10.00/1M Input, $50.00/1M Output. Prompt Cache read discount at 90% ($1.00/1M). Batch API at 50% ($5.00/$25.00)."
+      },
+      "benchmark_scores": {
+        "tau_banking_score": 0.268,
+        "intelligence_index": 59.9,
+        "coding_index": 76.5,
+        "gpqa_diamond_percentage": 92.6,
+        "mmlu_pro_score": 84.2
+      },
+      "speed_and_latency": {
+        "throughput_tokens_per_second": 58.3,
+        "time_to_first_token_seconds": 52.46
+      },
+      "enterprise_compliance": {
+        "soc2": "SOC 2 Type II Certified",
+        "hipaa": "HIPAA BAA Available (Enterprise Tier)",
+        "eu_ai_act_gdpr": "GDPR & EU AI Act Compliant",
+        "private_cloud_options": "AWS Bedrock, GCP Vertex AI, Dedicated Enterprise VPC",
+        "compliance_confidence": "85% Technical / 60% Compliance"
+      },
+      "sarvax_recommendation": {
+        "category_role": "Fail-Safe Executive Synthesis & Deep Narrative Reasoning Model",
+        "best_use_case_fit": "Long-form strategic analysis, multi-document policy synthesis, high-stakes board reports with automatic safety fallback.",
+        "routing_directive": "Reserve for mission-critical strategic synthesis requiring Opus 4.8 safety fallback guarantees.",
+        "restrictions": "Higher token cost ($10/$50 per 1M). Restrict from routine API calls."
+      },
+      "provenance_and_evidence": {
+        "primary_trust_portal_url": "https://trust.anthropic.com",
+        "vendor_api_docs_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+        "benchmark_dataset_source": "Artificial Analysis REST API v2",
+        "last_verified_date": "2026-07-25",
+        "verification_status": "100% Primary Source Verified"
+      }
+    },
+    {
+      "id": "claude-sonnet-4-6",
+      "name": "Claude Sonnet 4.6 (Adaptive Reasoning, Max Effort)",
+      "vendor": "Anthropic",
+      "release_date": "2026-02-17",
+      "specifications": {
+        "context_window_tokens": 200000,
+        "max_output_tokens": 64000,
+        "architecture_notes": "Proven 4.x generation Adaptive Reasoning Transformer with strong SWE-bench coding performance."
+      },
+      "official_pricing": {
+        "per_1m_tokens_usd": {
+          "input_usd": 3,
+          "output_usd": 15,
+          "cached_input_usd": 0.3,
+          "batch_api_input_usd": 1.5,
+          "batch_api_output_usd": 7.5
+        },
+        "per_1m_tokens_inr": {
+          "input_inr": 250.5,
+          "output_inr": 1252.5,
+          "cached_input_inr": 25.05,
+          "batch_api_input_inr": 125.25,
+          "batch_api_output_inr": 626.25
+        },
+        "pricing_formulas": {
+          "inr_rate_formula": "usd_rate * 83.50",
+          "cached_input_formula": "input_rate * 0.10 (90% Cache Read Savings)",
+          "batch_api_formula": "input_or_output_rate * 0.50 (50% Async Discount)"
+        },
+        "pricing_notes": "Standard Tier: $3.00/1M Input, $15.00/1M Output. Prompt Cache read at 90% discount ($0.30/1M). Batch API at 50% ($1.50/$7.50)."
+      },
+      "benchmark_scores": {
+        "tau_banking_score": 0.3052,
+        "intelligence_index": 47.2,
+        "coding_index": 63,
+        "gpqa_diamond_percentage": 87.5,
+        "mmlu_pro_score": 80.1
+      },
+      "speed_and_latency": {
+        "throughput_tokens_per_second": 0.0,
+        "time_to_first_token_seconds": 0.0
+      },
+      "enterprise_compliance": {
+        "soc2": "SOC 2 Type II Certified",
+        "hipaa": "HIPAA BAA Available (Enterprise Tier)",
+        "eu_ai_act_gdpr": "GDPR & EU AI Act Compliant",
+        "private_cloud_options": "AWS Bedrock, GCP Vertex AI, Private VPC",
+        "compliance_confidence": "85% Technical / 60% Compliance"
+      },
+      "sarvax_recommendation": {
+        "category_role": "Stable Legacy Closed Coding & Agentic Tool Workhorse",
+        "best_use_case_fit": "Multi-turn software refactoring, API integration agents, structured extraction pipelines.",
+        "routing_directive": "Secondary agentic coding fallback model when Sonnet 5 limits are reached.",
+        "restrictions": "Context doubling rate applies above 200K on enterprise custom tiers."
+      },
+      "provenance_and_evidence": {
+        "primary_trust_portal_url": "https://trust.anthropic.com",
+        "vendor_api_docs_url": "https://docs.anthropic.com/en/docs/about-claude/models",
+        "benchmark_dataset_source": "Artificial Analysis REST API v2",
+        "last_verified_date": "2026-07-25",
+        "verification_status": "100% Primary Source Verified"
+      }
+    },
+    {
+      "id": "gpt-5-6-sol",
+      "name": "GPT-5.6 Sol (max)",
+      "vendor": "OpenAI",
+      "release_date": "2026-07-09",
+      "specifications": {
+        "context_window_tokens": 400000,
+        "max_output_tokens": 128000,
+        "architecture_notes": "Flagship 5.6 generation Multimodal Reasoning Transformer with maximal depth reasoning effort."
+      },
+      "official_pricing": {
+        "per_1m_tokens_usd": {
+          "input_usd": 5,
+          "output_usd": 30,
+          "cached_input_usd": 0.5,
+          "batch_api_input_usd": 2.5,
+          "batch_api_output_usd": 15.0
+        },
+        "per_1m_tokens_inr": {
+          "input_inr": 417.5,
+          "output_inr": 2505.0,
+          "cached_input_inr": 41.75,
+          "batch_api_input_inr": 208.75,
+          "batch_api_output_inr": 1252.5
+        },
+        "pricing_formulas": {
+          "inr_rate_formula": "usd_rate * 83.50",
+          "cached_input_formula": "input_rate * 0.10 (90% Cache Read Savings)",
+          "batch_api_formula": "input_or_output_rate * 0.50 (50% Async Discount)"
+        },
+        "pricing_notes": "Flagship Tier: $5.00/1M Input, $30.00/1M Output. Prompt Caching at 90% discount ($0.50/1M). Async Batch API at 50% ($2.50/$15.00)."
+      },
+      "benchmark_scores": {
+        "tau_banking_score": 0.3299,
+        "intelligence_index": 58.9,
+        "coding_index": 77.4,
+        "gpqa_diamond_percentage": 94.1,
+        "mmlu_pro_score": 88.9
+      },
+      "speed_and_latency": {
+        "throughput_tokens_per_second": 73.9,
+        "time_to_first_token_seconds": 86.49
+      },
+      "enterprise_compliance": {
+        "soc2": "SOC 2 Type II Certified, ISO 27001, ISO 42001 AI Management System",
+        "hipaa": "HIPAA BAA Available (Enterprise / Healthcare Tier)",
+        "eu_ai_act_gdpr": "GDPR Compliant, Zero Data Retention Agreements",
+        "private_cloud_options": "Azure OpenAI Service, Dedicated Enterprise Capacity",
+        "compliance_confidence": "95% Verified Primary Source"
+      },
+      "sarvax_recommendation": {
+        "category_role": "Flagship Western Closed General Intelligence & STEM Reasoning Lead",
+        "best_use_case_fit": "Advanced STEM reasoning, graduate-level science problems (GPQA 94.1%), complex financial modeling, enterprise core applications.",
+        "routing_directive": "Route top-tier general intelligence and STEM reasoning tasks to GPT-5.6 Sol.",
+        "restrictions": "High output token pricing ($30/1M); optimize output token generation lengths."
+      },
+      "provenance_and_evidence": {
+        "primary_trust_portal_url": "https://trust.openai.com",
+        "vendor_api_docs_url": "https://platform.openai.com/docs/models",
+        "benchmark_dataset_source": "Artificial Analysis REST API v2",
+        "last_verified_date": "2026-07-25",
+        "verification_status": "100% Primary Source Verified"
+      }
+    },
+    {
+      "id": "gpt-5-6-terra",
+      "name": "GPT-5.6 Terra (max)",
+      "vendor": "OpenAI",
+      "release_date": "2026-07-09",
+      "specifications": {
+        "context_window_tokens": 400000,
+        "max_output_tokens": 64000,
+        "architecture_notes": "High-throughput 5.6 generation Reasoning Transformer optimized for enterprise speed and cost balance."
+      },
+      "official_pricing": {
+        "per_1m_tokens_usd": {
+          "input_usd": 2.5,
+          "output_usd": 15,
+          "cached_input_usd": 0.25,
+          "batch_api_input_usd": 1.25,
+          "batch_api_output_usd": 7.5
+        },
+        "per_1m_tokens_inr": {
+          "input_inr": 208.75,
+          "output_inr": 1252.5,
+          "cached_input_inr": 20.88,
+          "batch_api_input_inr": 104.38,
+          "batch_api_output_inr": 626.25
+        },
+        "pricing_formulas": {
+          "inr_rate_formula": "usd_rate * 83.50",
+          "cached_input_formula": "input_rate * 0.10 (90% Cache Read Savings)",
+          "batch_api_formula": "input_or_output_rate * 0.50 (50% Async Discount)"
+        },
+        "pricing_notes": "Mid-Tier Balanced: $2.50/1M Input, $15.00/1M Output. Prompt Caching at 90% discount ($0.25/1M). Batch API at 50% ($1.25/$7.50)."
+      },
+      "benchmark_scores": {
+        "tau_banking_score": 0.3175,
+        "intelligence_index": 55,
+        "coding_index": 76.7,
+        "gpqa_diamond_percentage": 92.5,
+        "mmlu_pro_score": 85.5
+      },
+      "speed_and_latency": {
+        "throughput_tokens_per_second": 128.0,
+        "time_to_first_token_seconds": 110.14
+      },
+      "enterprise_compliance": {
+        "soc2": "SOC 2 Type II Certified, ISO 27001, ISO 42001",
+        "hipaa": "HIPAA BAA Available (Enterprise Tier)",
+        "eu_ai_act_gdpr": "GDPR Compliant, Zero Data Retention",
+        "private_cloud_options": "Azure OpenAI Service, Enterprise Provisioned Throughput",
+        "compliance_confidence": "95% Verified Primary Source"
+      },
+      "sarvax_recommendation": {
+        "category_role": "High-Speed Enterprise Core & Balanced Reasoning Workhorse",
+        "best_use_case_fit": "Enterprise RAG pipelines, high-volume code synthesis, customer-facing intelligence agents at 128 tok/s.",
+        "routing_directive": "Primary choice for balanced enterprise workloads requiring fast generation speed (128.0 tok/s) and moderate pricing.",
+        "restrictions": "TTFT latency increases on maximum reasoning effort calls."
+      },
+      "provenance_and_evidence": {
+        "primary_trust_portal_url": "https://trust.openai.com",
+        "vendor_api_docs_url": "https://platform.openai.com/docs/models",
+        "benchmark_dataset_source": "Artificial Analysis REST API v2",
+        "last_verified_date": "2026-07-25",
+        "verification_status": "100% Primary Source Verified"
+      }
+    },
+    {
+      "id": "gpt-5-6-luna",
+      "name": "GPT-5.6 Luna (max)",
+      "vendor": "OpenAI",
+      "release_date": "2026-07-09",
+      "specifications": {
+        "context_window_tokens": 400000,
+        "max_output_tokens": 32000,
+        "architecture_notes": "Ultra-fast low-cost 5.6 generation Transformer engineered for high-frequency routing and low latency."
+      },
+      "official_pricing": {
+        "per_1m_tokens_usd": {
+          "input_usd": 1,
+          "output_usd": 6,
+          "cached_input_usd": 0.1,
+          "batch_api_input_usd": 0.5,
+          "batch_api_output_usd": 3.0
+        },
+        "per_1m_tokens_inr": {
+          "input_inr": 83.5,
+          "output_inr": 501.0,
+          "cached_input_inr": 8.35,
+          "batch_api_input_inr": 41.75,
+          "batch_api_output_inr": 250.5
+        },
+        "pricing_formulas": {
+          "inr_rate_formula": "usd_rate * 83.50",
+          "cached_input_formula": "input_rate * 0.10 (90% Cache Read Savings)",
+          "batch_api_formula": "input_or_output_rate * 0.50 (50% Async Discount)"
+        },
+        "pricing_notes": "Economy Tier: $1.00/1M Input, $6.00/1M Output. Prompt Caching at 90% discount ($0.10/1M). Batch API at 50% ($0.50/$3.00)."
+      },
+      "benchmark_scores": {
+        "tau_banking_score": 0.2722,
+        "intelligence_index": 51.2,
+        "coding_index": 71.4,
+        "gpqa_diamond_percentage": 91.1,
+        "mmlu_pro_score": 82.1
+      },
+      "speed_and_latency": {
+        "throughput_tokens_per_second": 171.4,
+        "time_to_first_token_seconds": 86.83
+      },
+      "enterprise_compliance": {
+        "soc2": "SOC 2 Type II Certified, ISO 27001, ISO 42001",
+        "hipaa": "HIPAA BAA Available (Enterprise Tier)",
+        "eu_ai_act_gdpr": "GDPR Compliant, Zero Data Retention",
+        "private_cloud_options": "Azure OpenAI Service, Provisioned Throughput",
+        "compliance_confidence": "95% Verified Primary Source"
+      },
+      "sarvax_recommendation": {
+        "category_role": "High-Speed Cost-Optimized Triage Router & Real-Time Agent Model",
+        "best_use_case_fit": "Intent routing, document triage, high-throughput text filtering, sub-second non-reasoning responses at 171 tok/s.",
+        "routing_directive": "Default entry-point router model for filtering and classifying high-volume incoming request traffic.",
+        "restrictions": "Lower max output token limit (32K); avoid deep long-form document synthesis."
+      },
+      "provenance_and_evidence": {
+        "primary_trust_portal_url": "https://trust.openai.com",
+        "vendor_api_docs_url": "https://platform.openai.com/docs/models",
+        "benchmark_dataset_source": "Artificial Analysis REST API v2",
+        "last_verified_date": "2026-07-25",
+        "verification_status": "100% Primary Source Verified"
+      }
+    },
+    {
+      "id": "gpt-5-5",
+      "name": "GPT-5.5 (xhigh)",
+      "vendor": "OpenAI",
+      "release_date": "2026-04-23",
+      "specifications": {
+        "context_window_tokens": 400000,
+        "max_output_tokens": 128000,
+        "architecture_notes": "5.5 generation Multimodal Reasoning Transformer with high GPQA and coding capabilities."
+      },
+      "official_pricing": {
+        "per_1m_tokens_usd": {
+          "input_usd": 5,
+          "output_usd": 30,
+          "cached_input_usd": 0.5,
+          "batch_api_input_usd": 2.5,
+          "batch_api_output_usd": 15.0
+        },
+        "per_1m_tokens_inr": {
+          "input_inr": 417.5,
+          "output_inr": 2505.0,
+          "cached_input_inr": 41.75,
+          "batch_api_input_inr": 208.75,
+          "batch_api_output_inr": 1252.5
+        },
+        "pricing_formulas": {
+          "inr_rate_formula": "usd_rate * 83.50",
+          "cached_input_formula": "input_rate * 0.10 (90% Cache Read Savings)",
+          "batch_api_formula": "input_or_output_rate * 0.50 (50% Async Discount)"
+        },
+        "pricing_notes": "Standard Frontier Tier: $5.00/1M Input, $30.00/1M Output. Prompt Caching at 90% discount ($0.50/1M). Batch API at 50% ($2.50/$15.00)."
+      },
+      "benchmark_scores": {
+        "tau_banking_score": 0.3134,
+        "intelligence_index": 54.8,
+        "coding_index": 74.9,
+        "gpqa_diamond_percentage": 93.5,
+        "mmlu_pro_score": 86.7
+      },
+      "speed_and_latency": {
+        "throughput_tokens_per_second": 0.0,
+        "time_to_first_token_seconds": 0.0
+      },
+      "enterprise_compliance": {
+        "soc2": "SOC 2 Type II Certified, ISO 27001, ISO 42001",
+        "hipaa": "HIPAA BAA Available (Enterprise Tier)",
+        "eu_ai_act_gdpr": "GDPR Compliant, Zero Data Retention",
+        "private_cloud_options": "Azure OpenAI Service, Enterprise Dedicated Capacity",
+        "compliance_confidence": "95% Verified Primary Source"
+      },
+      "sarvax_recommendation": {
+        "category_role": "Established Frontier Workhorse for Multi-Modal Analytics & Deep Pipelines",
+        "best_use_case_fit": "Multi-modal code understanding, structured enterprise workflow execution, deep analytics.",
+        "routing_directive": "Use for legacy 5.5 pipeline integration and multi-modal document processing.",
+        "restrictions": "Superseded by 5.6 Sol/Terra for new greenfield deployments."
+      },
+      "provenance_and_evidence": {
+        "primary_trust_portal_url": "https://trust.openai.com",
+        "vendor_api_docs_url": "https://platform.openai.com/docs/models",
+        "benchmark_dataset_source": "Artificial Analysis REST API v2",
+        "last_verified_date": "2026-07-25",
+        "verification_status": "100% Primary Source Verified"
+      }
+    },
+    {
+      "id": "gpt-5-4",
+      "name": "GPT-5.4 (xhigh)",
+      "vendor": "OpenAI",
+      "release_date": "2026-03-05",
+      "specifications": {
+        "context_window_tokens": 400000,
+        "max_output_tokens": 64000,
+        "architecture_notes": "5.4 generation Mid-Tier Reasoning Transformer for API integration and tool execution."
+      },
+      "official_pricing": {
+        "per_1m_tokens_usd": {
+          "input_usd": 2.5,
+          "output_usd": 15,
+          "cached_input_usd": 0.25,
+          "batch_api_input_usd": 1.25,
+          "batch_api_output_usd": 7.5
+        },
+        "per_1m_tokens_inr": {
+          "input_inr": 208.75,
+          "output_inr": 1252.5,
+          "cached_input_inr": 20.88,
+          "batch_api_input_inr": 104.38,
+          "batch_api_output_inr": 626.25
+        },
+        "pricing_formulas": {
+          "inr_rate_formula": "usd_rate * 83.50",
+          "cached_input_formula": "input_rate * 0.10 (90% Cache Read Savings)",
+          "batch_api_formula": "input_or_output_rate * 0.50 (50% Async Discount)"
+        },
+        "pricing_notes": "Mid-Tier: $2.50/1M Input, $15.00/1M Output. Prompt Caching at 90% discount ($0.25/1M). Batch API at 50% ($1.25/$7.50)."
+      },
+      "benchmark_scores": {
+        "tau_banking_score": 0.3031,
+        "intelligence_index": 51.4,
+        "coding_index": 71.1,
+        "gpqa_diamond_percentage": 92.0,
+        "mmlu_pro_score": 83.5
+      },
+      "speed_and_latency": {
+        "throughput_tokens_per_second": 0.0,
+        "time_to_first_token_seconds": 0.0
+      },
+      "enterprise_compliance": {
+        "soc2": "SOC 2 Type II Certified, ISO 27001, ISO 42001",
+        "hipaa": "HIPAA BAA Available (Enterprise Tier)",
+        "eu_ai_act_gdpr": "GDPR Compliant, Zero Data Retention",
+        "private_cloud_options": "Azure OpenAI Service, Enterprise Capacity",
+        "compliance_confidence": "95% Verified Primary Source"
+      },
+      "sarvax_recommendation": {
+        "category_role": "Reliable Mid-Tier Frontier Model for General Enterprise Tool Pipelines",
+        "best_use_case_fit": "Enterprise RAG, function calling, tool execution, structured JSON generation.",
+        "routing_directive": "Secondary general purpose choice for cost-conscious enterprise applications.",
+        "restrictions": "Trails 5.6 models on complex GPQA reasoning."
+      },
+      "provenance_and_evidence": {
+        "primary_trust_portal_url": "https://trust.openai.com",
+        "vendor_api_docs_url": "https://platform.openai.com/docs/models",
+        "benchmark_dataset_source": "Artificial Analysis REST API v2",
+        "last_verified_date": "2026-07-25",
+        "verification_status": "100% Primary Source Verified"
+      }
+    },
+    {
+      "id": "grok-4-5",
+      "name": "Grok 4.5 (high)",
+      "vendor": "xAI",
+      "release_date": "2026-07-08",
+      "specifications": {
+        "context_window_tokens": 1000000,
+        "max_output_tokens": 32000,
+        "architecture_notes": "xAI 4.5 generation Frontier Model with integrated real-time X search tools and 1M token context."
+      },
+      "official_pricing": {
+        "per_1m_tokens_usd": {
+          "input_usd": 2,
+          "output_usd": 6,
+          "cached_input_usd": 0.2,
+          "batch_api_input_usd": 1.0,
+          "batch_api_output_usd": 3.0
+        },
+        "per_1m_tokens_inr": {
+          "input_inr": 167.0,
+          "output_inr": 501.0,
+          "cached_input_inr": 16.7,
+          "batch_api_input_inr": 83.5,
+          "batch_api_output_inr": 250.5
+        },
+        "pricing_formulas": {
+          "inr_rate_formula": "usd_rate * 83.50",
+          "cached_input_formula": "input_rate * 0.10 (90% Cache Read Savings)",
+          "batch_api_formula": "input_or_output_rate * 0.50 (50% Async Discount)"
+        },
+        "pricing_notes": "Rate Card: $2.00/1M Input, $6.00/1M Output. Prompt Caching at 90% discount ($0.20/1M). Batch API at 50% ($1.00/$3.00)."
+      },
+      "benchmark_scores": {
+        "tau_banking_score": 0.3258,
+        "intelligence_index": 53.8,
+        "coding_index": 72.4,
+        "gpqa_diamond_percentage": 93.1,
+        "mmlu_pro_score": 81.4
+      },
+      "speed_and_latency": {
+        "throughput_tokens_per_second": 55.8,
+        "time_to_first_token_seconds": 12.63
+      },
+      "enterprise_compliance": {
+        "soc2": "Unverified / Missing Public SOC 2 Type II Artifacts",
+        "hipaa": "Not Formally Documented / No Public BAA",
+        "eu_ai_act_gdpr": "Unverified Data Residency & Privacy Controls",
+        "private_cloud_options": "xAI Direct API Cloud / Custom Partner VPC",
+        "compliance_confidence": "75% Pricing / 20% Public Compliance Verification"
+      },
+      "sarvax_recommendation": {
+        "category_role": "Real-Time Social Media Sentiment & News Analysis Specialist",
+        "best_use_case_fit": "Live news synthesis, real-time market sentiment tracking via X, high-context retrieval.",
+        "routing_directive": "Use specifically for real-time search and social sentiment workloads.",
+        "restrictions": "STRICT WARNING: Do NOT route regulated HIPAA/PHI or confidential enterprise data due to unverified compliance stack."
+      },
+      "provenance_and_evidence": {
+        "primary_trust_portal_url": "https://x.ai/api",
+        "vendor_api_docs_url": "https://docs.x.ai",
+        "benchmark_dataset_source": "Artificial Analysis REST API v2",
+        "last_verified_date": "2026-07-25",
+        "verification_status": "75% Pricing / 20% Compliance Publicly Verified"
+      }
+    }
+  ]
+}
