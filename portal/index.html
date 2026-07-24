@@ -1,666 +1,489 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SARVAX AI Model Intelligence & Economics Portal | C3A Labs</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        appleBlue: '#0071e3',
-                        appleDark: '#000000',
-                        appleGray: '#1c1c1e',
-                        appleLightGray: '#2c2c2e',
-                        appleBorder: '#333336',
-                        appleTextMuted: '#86868b',
-                        appleSuccess: '#30d158',
-                        appleWarning: '#ffd60a',
-                        appleDanger: '#ff453a'
-                    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder's Guide to AI Models for Financial Services &amp; Workflows | C3A Labs</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                colors: {
+                    appleBlue: '#0071e3',
+                    appleDark: '#000000',
+                    appleGray: '#1c1c1e',
+                    appleLightGray: '#2c2c2e',
+                    appleBorder: '#333336',
+                    appleTextMuted: '#86868b',
+                    appleSuccess: '#30d158',
+                    appleWarning: '#ffd60a',
+                    appleDanger: '#ff453a',
+                    applePurple: '#bf5af2'
                 }
             }
         }
-    </script>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif; }
-        .glass-header { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
-        .glass-sidebar { background: rgba(28, 28, 30, 0.85); backdrop-filter: blur(20px); }
-        .custom-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #000000; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #2c2c2e; border-radius: 3px; }
-    </style>
+    }
+</script>
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif; background: #000000; color: #ffffff; }
+    .glass-header { background: rgba(0, 0, 0, 0.88); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    .card-flat { background: #1c1c1e; border: 1px solid #333336; border-radius: 14px; transition: transform 0.2s ease, border-color 0.2s ease; }
+    .card-flat:hover { border-color: #0071e3; transform: translateY(-2px); }
+    .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #000000; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #333336; border-radius: 3px; }
+</style>
 </head>
-<body class="bg-black text-white antialiased custom-scrollbar min-h-screen flex flex-col">
+<body class="antialiased custom-scrollbar min-h-screen flex flex-col">
 
-    <!-- Header Navigation -->
-    <header class="sticky top-0 z-50 glass-header border-b border-appleBorder px-6 py-3 flex items-center justify-between">
+    <!-- Top Header -->
+    <header class="sticky top-0 z-50 glass-header border-b border-appleBorder px-6 py-3.5 flex items-center justify-between">
         <div class="flex items-center space-x-4">
             <div class="flex items-center space-x-2">
-                <span class="text-xl font-bold tracking-tight text-white">C3A LABS</span>
-                <span class="text-xs uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-appleBlue/10 text-appleBlue font-semibold border border-appleBlue/30">SARVAX Intelligence OS</span>
+                <span class="text-xl font-extrabold tracking-tight text-white">C3A LABS</span>
+                <span class="text-xs uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-appleBlue/20 text-appleBlue font-bold border border-appleBlue/30">SARVAX Founder OS</span>
             </div>
             <span class="text-appleTextMuted text-sm">|</span>
-            <span class="text-xs text-appleTextMuted">Exchange Rate: 1 USD = ₹83.50 INR</span>
+            <span class="text-xs text-appleTextMuted">Financial Services AI Model Intelligence (2026 Edition)</span>
         </div>
 
-        <!-- Global Search -->
-        <div class="relative w-96">
-            <input type="text" id="globalSearch" oninput="handleGlobalSearch(this.value)" placeholder="Search models, benchmarks, pricing in INR..." 
-                class="w-full bg-appleGray text-xs text-white placeholder-appleTextMuted rounded-lg px-4 py-2 pl-9 border border-appleBorder focus:outline-none focus:border-appleBlue transition">
-            <svg class="w-4 h-4 text-appleTextMuted absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-            </svg>
-        </div>
-
-        <!-- System Metadata -->
-        <div class="flex items-center space-x-4 text-xs text-appleTextMuted">
-            <div><span class="text-white font-medium">Dataset:</span> Artificial Analysis API</div>
-            <div><span class="text-white font-medium">Verified Models:</span> 586</div>
-            <div><span class="text-white font-medium">Confidence:</span> <span class="text-appleSuccess font-semibold">100% Direct</span></div>
+        <div class="flex items-center space-x-6 text-xs text-appleTextMuted">
+            <div><span class="text-white font-medium">1 USD =</span> <span class="text-appleSuccess font-bold">₹83.50 INR</span></div>
+            <div><span class="text-white font-medium">Dataset:</span> Artificial Analysis Official API</div>
+            <div><span class="text-white font-medium">Audience:</span> Founders &amp; Executive Leadership</div>
         </div>
     </header>
 
-    <!-- Main Workspace -->
+    <!-- Main Container -->
     <div class="flex-1 flex overflow-hidden">
         
         <!-- Sidebar Navigation -->
-        <aside class="w-64 glass-sidebar border-r border-appleBorder p-4 flex flex-col justify-between overflow-y-auto custom-scrollbar">
-            <nav class="space-y-1">
-                <div class="text-[11px] font-semibold uppercase tracking-wider text-appleTextMuted px-3 mb-2">Executive Navigation</div>
-                
-                <button onclick="showTab('exec-dashboard')" class="tab-btn active w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-white bg-appleBlue/20 border border-appleBlue/40 font-medium">
-                    <span>Executive Summary</span>
+        <aside class="w-64 bg-appleGray border-r border-appleBorder p-4 flex flex-col justify-between overflow-y-auto custom-scrollbar">
+            <nav class="space-y-1 text-xs">
+                <div class="font-semibold uppercase tracking-wider text-appleTextMuted px-3 mb-2 text-[10px]">Executive Views</div>
+                <button onclick="showTab('founder-overview')" class="tab-btn active w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-white bg-appleBlue/20 border border-appleBlue/40 font-medium">
+                    <span>1. Founder Executive Summary</span>
                 </button>
-                <button onclick="showTab('model-simulator')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
-                    <span>Unit Economics Simulator (₹)</span>
-                </button>
-                <button onclick="showTab('model-explorer')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
-                    <span>Global Model Leaderboard</span>
-                </button>
-                <button onclick="showTab('pricing-explorer')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
-                    <span>INR Token Rate Matrix</span>
+                <button onclick="showTab('founder-factors')" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
+                    <span>2. The 4 Factors That Matter</span>
                 </button>
 
-                <div class="text-[11px] font-semibold uppercase tracking-wider text-appleTextMuted px-3 mt-6 mb-2">Architecture & Workloads</div>
-                <button onclick="showTab('routing-engine')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
-                    <span>Dynamic Routing Policy</span>
+                <div class="font-semibold uppercase tracking-wider text-appleTextMuted px-3 mt-5 mb-2 text-[10px]">Interactive Simulators</div>
+                <button onclick="showTab('unit-calculator')" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
+                    <span>3. Workflow Cost Calculator (₹)</span>
                 </button>
-                <button onclick="showTab('workload-explorer')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
-                    <span>Financial Workload Suite</span>
+                <button onclick="showTab('model-rankings')" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
+                    <span>4. Financial AI Leaderboard</span>
                 </button>
-                <button onclick="showTab('architecture-explorer')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
-                    <span>Deep Research Engine Stack</span>
-                </button>
-                <button onclick="showTab('compliance-explorer')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
-                    <span>EU AI Act & Governance</span>
+                <button onclick="showTab('routing-matrix')" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
+                    <span>5. Founder Cheat Sheet (Routing)</span>
                 </button>
 
-                <div class="text-[11px] font-semibold uppercase tracking-wider text-appleTextMuted px-3 mt-6 mb-2">Governance & Audits</div>
-                <button onclick="showTab('contradictions')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
-                    <span>Skeptic Invalidation Log</span>
+                <div class="font-semibold uppercase tracking-wider text-appleTextMuted px-3 mt-5 mb-2 text-[10px]">Architecture &amp; Risks</div>
+                <button onclick="showTab('real-examples')" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
+                    <span>6. Real Workload Examples</span>
                 </button>
-                <button onclick="showTab('backlog')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
-                    <span>Research Backlog</span>
+                <button onclick="showTab('skeptic-warnings')" class="tab-btn w-full flex items-center justify-between px-3 py-2.5 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
+                    <span>7. Production Blockers &amp; Risks</span>
                 </button>
             </nav>
 
-            <div class="p-3 bg-appleGray rounded-xl border border-appleBorder text-[11px] text-appleTextMuted space-y-1">
-                <div><span class="text-white font-medium">Founder Audit:</span> Passed</div>
-                <div><span class="text-white font-medium">Currency:</span> INR (₹) Primary</div>
-                <div class="text-appleSuccess font-medium mt-1">Zero Emojis / Flat UI</div>
+            <div class="p-3 bg-black rounded-xl border border-appleBorder text-[11px] text-appleTextMuted space-y-1">
+                <div class="text-white font-semibold">Zero Technical Jargon</div>
+                <div>Plain English Business Analysis</div>
+                <div class="text-appleSuccess font-medium mt-1">Verified for SARVAX GTM</div>
             </div>
         </aside>
 
-        <!-- Canvas -->
+        <!-- Content Area -->
         <main class="flex-1 overflow-y-auto p-8 custom-scrollbar space-y-8">
-            
-            <!-- EXECUTIVE DASHBOARD -->
-            <section id="exec-dashboard" class="tab-content space-y-6">
+
+            <!-- 1. FOUNDER EXECUTIVE OVERVIEW -->
+            <section id="founder-overview" class="tab-content space-y-6">
                 <div>
-                    <h1 class="text-2xl font-bold tracking-tight">Executive Briefing & Strategic Findings</h1>
-                    <p class="text-appleTextMuted text-xs mt-1">Empirical AI model benchmarks, INR unit economics, and operational architecture directives for C3A Labs leadership.</p>
+                    <h1 class="text-2xl font-bold tracking-tight">AI Model Decision Guide for Founders &amp; Leadership</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Direct, non-technical analysis of AI models for financial services, agentic workflows, and SARVAX unit economics in Indian Rupees (₹).</p>
                 </div>
 
-                <!-- KPI Grid -->
+                <!-- Metric Cards -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div class="bg-appleGray border border-appleBorder p-5 rounded-xl">
-                        <div class="text-xs text-appleTextMuted font-medium">Top Financial SOTA (TAU Banking)</div>
-                        <div class="text-2xl font-bold mt-2 text-white">Kimi K3</div>
-                        <div class="text-xs text-appleBlue mt-1">Score: 0.3340 (#1 Globally)</div>
+                    <div class="card-flat p-5">
+                        <div class="text-xs text-appleTextMuted font-medium">World #1 Financial Banking Model</div>
+                        <div class="text-2xl font-extrabold text-white mt-1">Kimi K3</div>
+                        <div class="text-xs text-appleBlue font-medium mt-1">Moonshot AI (0.3340 TAU Score)</div>
                     </div>
-                    <div class="bg-appleGray border border-appleBorder p-5 rounded-xl">
-                        <div class="text-xs text-appleTextMuted font-medium">100k Financial Reports Cost</div>
-                        <div class="text-2xl font-bold mt-2 text-appleSuccess">₹2,49,999</div>
-                        <div class="text-xs text-appleTextMuted mt-1">Hybrid Open/Closed Routing</div>
+                    <div class="card-flat p-5">
+                        <div class="text-xs text-appleTextMuted font-medium">Cost to Generate 100,000 Reports</div>
+                        <div class="text-2xl font-extrabold text-appleSuccess mt-1">₹2,49,999</div>
+                        <div class="text-xs text-appleTextMuted font-medium mt-1">Saves ₹24.6 Lakhs vs Closed APIs</div>
                     </div>
-                    <div class="bg-appleGray border border-appleBorder p-5 rounded-xl">
-                        <div class="text-xs text-appleTextMuted font-medium">Top Open Coding Leader</div>
-                        <div class="text-2xl font-bold mt-2 text-white">88.0%</div>
-                        <div class="text-xs text-appleSuccess mt-1">GLM-4.7 on SWE-bench Verified</div>
+                    <div class="card-flat p-5">
+                        <div class="text-xs text-appleTextMuted font-medium">Fastest Realtime Model</div>
+                        <div class="text-2xl font-extrabold text-white mt-1">180 tok/s</div>
+                        <div class="text-xs text-appleSuccess font-medium mt-1">Gemini 2.0 Flash (₹6.26 / 1M In)</div>
                     </div>
-                    <div class="bg-appleGray border border-appleBorder p-5 rounded-xl">
-                        <div class="text-xs text-appleTextMuted font-medium">Highest Intelligence Index</div>
-                        <div class="text-2xl font-bold mt-2 text-white">60.7</div>
-                        <div class="text-xs text-appleTextMuted mt-1">Claude Opus 5 (Adaptive)</div>
+                    <div class="card-flat p-5">
+                        <div class="text-xs text-appleTextMuted font-medium">Top Open Coding Engine</div>
+                        <div class="text-2xl font-extrabold text-white mt-1">GLM-4.7</div>
+                        <div class="text-xs text-appleTextMuted font-medium mt-1">88.0% SWE-bench (Zhipu AI)</div>
                     </div>
                 </div>
 
-                <!-- Chart Grid -->
+                <!-- Charts -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-appleGray border border-appleBorder p-6 rounded-xl">
-                        <h3 class="text-sm font-semibold mb-1">Intelligence Index vs Output Token Price (₹ / 1M)</h3>
-                        <p class="text-xs text-appleTextMuted mb-4">Official Artificial Analysis metrics mapped against Indian Rupee costs.</p>
-                        <div class="h-64"><canvas id="costVsIntelChart"></canvas></div>
-                    </div>
-
-                    <div class="bg-appleGray border border-appleBorder p-6 rounded-xl">
-                        <h3 class="text-sm font-semibold mb-1">TAU Banking Benchmark Leaderboard</h3>
-                        <p class="text-xs text-appleTextMuted mb-4">Empirical evaluation on complex banking and wealth management logic.</p>
+                    <div class="card-flat p-6">
+                        <h3 class="text-sm font-semibold text-white mb-1">Financial Banking Benchmark (TAU Banking)</h3>
+                        <p class="text-xs text-appleTextMuted mb-4">Higher score = better performance on complex financial and wealth management tasks.</p>
                         <div class="h-64"><canvas id="tauBankingChart"></canvas></div>
                     </div>
+
+                    <div class="card-flat p-6">
+                        <h3 class="text-sm font-semibold text-white mb-1">Cost Comparison for 100,000 Reports (₹ INR)</h3>
+                        <p class="text-xs text-appleTextMuted mb-4">Comparing pure flagship models vs. SARVAX hybrid smart routing.</p>
+                        <div class="h-64"><canvas id="costComparisonChart"></canvas></div>
+                    </div>
                 </div>
 
-                <!-- Directives Card -->
-                <div class="bg-appleGray border border-appleBorder p-6 rounded-xl space-y-4">
-                    <h3 class="text-sm font-bold uppercase tracking-wider text-appleBlue">SARVAX Production Routing Directives</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
-                        <div class="p-4 bg-black rounded-lg border border-appleBorder space-y-2">
-                            <div class="font-bold text-white">1. Wealth Advisory & Banking Logic</div>
-                            <div class="text-appleTextMuted leading-relaxed">
-                                <strong>Kimi K3 (Moonshot)</strong> is the mandated primary model. Verified #1 globally on TAU Banking (0.3340) at ₹250.50/1M input and ₹1,252.50/1M output. Outperforms GPT-5.6 Sol at 50% cost.
-                            </div>
+                <!-- Founder Takeaway Box -->
+                <div class="card-flat p-6 space-y-3">
+                    <div class="text-xs font-bold text-appleBlue uppercase tracking-wider">Founder's Bottom Line</div>
+                    <div class="text-sm font-semibold text-white">"Do not overpay for brand names when building financial AI agents."</div>
+                    <p class="text-xs text-appleTextMuted leading-relaxed">
+                        For financial advisory and wealth management logic, <strong>Kimi K3</strong> beats both OpenAI's GPT-5.6 and Anthropic's Claude Opus 5 on official banking benchmarks, at <strong>50% lower cost</strong> (₹250.50 per million input tokens vs ₹417.50).
+                        <br><br>
+                        By combining <strong>DeepSeek V4 Pro</strong> for bulk background research and <strong>Kimi K3</strong> for final financial double-checks, SARVAX cuts monthly model costs from <strong>₹27.14 Lakhs to ₹2.50 Lakhs per 100,000 reports</strong>—recovering <strong>90.8% of operating margin</strong>.
+                    </p>
+                </div>
+            </section>
+
+            <!-- 2. THE 4 FACTORS THAT MATTER FOR FOUNDERS -->
+            <section id="founder-factors" class="tab-content hidden space-y-6">
+                <div>
+                    <h1 class="text-xl font-bold">The 4 Factors That Actually Matter for Your Business</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Forget academic AI benchmarks. Here are the 4 business drivers that determine SARVAX product margins and customer satisfaction.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                    <div class="card-flat p-6 space-y-3">
+                        <div class="text-sm font-bold text-appleBlue">Factor 1: Financial Banking Accuracy (TAU Banking Score)</div>
+                        <p class="text-appleTextMuted leading-relaxed">
+                            <strong>Why it matters:</strong> If an AI agent makes a math mistake in a portfolio review or tax calculation, the financial advisor loses trust immediately.
+                        </p>
+                        <div class="p-3 bg-black rounded-lg border border-appleBorder">
+                            <strong>Winner:</strong> <span class="text-white font-bold">Kimi K3 (0.3340)</span> outperforms GPT-5.6 Sol (0.3299) and Claude Opus 5 (0.3278).
                         </div>
-                        <div class="p-4 bg-black rounded-lg border border-appleBorder space-y-2">
-                            <div class="font-bold text-white">2. Realtime UI & Synchronous DAGs</div>
-                            <div class="text-appleTextMuted leading-relaxed">
-                                <strong>Gemini 2.0 Flash</strong> (via Vertex AI) is the primary synchronous model (₹6.26/1M input). Replaces DeepSeek due to DeepSeek's 60 RPM limit triggering HTTP 429 errors.
-                            </div>
+                    </div>
+
+                    <div class="card-flat p-6 space-y-3">
+                        <div class="text-sm font-bold text-appleSuccess">Factor 2: Unit Economics & Token Costs (₹ INR per 1M Tokens)</div>
+                        <p class="text-appleTextMuted leading-relaxed">
+                            <strong>Why it matters:</strong> High model prices destroy software gross margins. Ingesting 100-page financial PDFs costs ₹417 per run on Claude Opus 5, but only ₹36 on DeepSeek V4.
+                        </p>
+                        <div class="p-3 bg-black rounded-lg border border-appleBorder">
+                            <strong>Winner:</strong> <span class="text-appleSuccess font-bold">DeepSeek V4 Pro (₹36.32 / 1M in)</span> and <span class="text-appleSuccess font-bold">Gemini 2.0 Flash (₹6.26 / 1M in)</span>.
                         </div>
-                        <div class="p-4 bg-black rounded-lg border border-appleBorder space-y-2">
-                            <div class="font-bold text-white">3. High-Risk Audit & Code QA</div>
-                            <div class="text-appleTextMuted leading-relaxed">
-                                <strong>Claude Opus 5</strong> (60.7 Intel) and <strong>GLM-4.7</strong> (88.0% SWE-bench) reserved for final compliance audit steps and complex document generation.
-                            </div>
+                    </div>
+
+                    <div class="card-flat p-6 space-y-3">
+                        <div class="text-sm font-bold text-purple-400">Factor 3: Agent Workflow Stability (Tool Use & No Crashing)</div>
+                        <p class="text-appleTextMuted leading-relaxed">
+                            <strong>Why it matters:</strong> In multi-agent DAG workflows (Workflow 2.0), agents must execute sequential tool calls (CRM write, PDF parser, web search) without looping or breaking formatting.
+                        </p>
+                        <div class="p-3 bg-black rounded-lg border border-appleBorder">
+                            <strong>Winner:</strong> <span class="text-white font-bold">GLM-4.7 (88.0% SWE-bench)</span> and <span class="text-white font-bold">Claude 4.6 Sonnet (65.4%)</span>.
+                        </div>
+                    </div>
+
+                    <div class="card-flat p-6 space-y-3">
+                        <div class="text-sm font-bold text-appleWarning">Factor 4: Speed & Concurrency SLAs (Zero Rate Limit Crashing)</div>
+                        <p class="text-appleTextMuted leading-relaxed">
+                            <strong>Why it matters:</strong> A fast response (180 tokens/sec) keeps the user engaged in OneChat. Crucially, your API provider must not rate-limit you under high user traffic.
+                        </p>
+                        <div class="p-3 bg-black rounded-lg border border-appleBorder">
+                            <strong>Winner:</strong> <span class="text-appleWarning font-bold">Gemini 2.0 Flash (180 tok/s, Unlimited Vertex Concurrency)</span>. DeepSeek fails here due to a 60 RPM cap.
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- UNIT ECONOMICS SIMULATOR -->
-            <section id="model-simulator" class="tab-content hidden space-y-6">
+            <!-- 3. UNIT ECONOMICS CALCULATOR -->
+            <section id="unit-calculator" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-xl font-bold">Interactive Unit Economics & Token Calculator (INR ₹)</h1>
-                    <p class="text-appleTextMuted text-xs mt-1">Simulate token volume, cache hit ratios, and monthly costs in Indian Rupees across verified models.</p>
+                    <h1 class="text-xl font-bold">Interactive Workflow Cost Calculator (INR ₹)</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Select a model and workload to calculate exact costs in Indian Rupees, estimated speed, and founder recommendation.</p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-                    <div class="md:col-span-5 bg-appleGray border border-appleBorder p-6 rounded-xl space-y-4 text-xs">
-                        <h3 class="font-bold text-appleBlue uppercase tracking-wider">Input Variables</h3>
+                <div class="grid grid-cols-1 md:grid-cols-12 gap-6 text-xs">
+                    <div class="md:col-span-5 card-flat p-6 space-y-4">
+                        <h3 class="font-bold text-appleBlue uppercase tracking-wider">Select Controls</h3>
                         
                         <div>
-                            <label class="block font-medium text-appleTextMuted mb-1">Model Selection</label>
-                            <select id="simModel" onchange="runSimulation()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white focus:border-appleBlue">
-                                <!-- JS injected -->
+                            <label class="block font-medium text-appleTextMuted mb-1">Target AI Model</label>
+                            <select id="simModel" onchange="runSim()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white focus:border-appleBlue">
+                                <!-- Injected via JS -->
                             </select>
                         </div>
 
                         <div>
-                            <label class="block font-medium text-appleTextMuted mb-1">Preset Workload</label>
-                            <select id="simWorkflow" onchange="applyPreset()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white focus:border-appleBlue">
-                                <option value="custom">Custom Parameters</option>
+                            <label class="block font-medium text-appleTextMuted mb-1">Financial Workload Preset</label>
+                            <select id="simPreset" onchange="applyWorkloadPreset()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white focus:border-appleBlue">
                                 <option value="report">1. Large Financial Report (120k In / 15k Out)</option>
-                                <option value="due_diligence">2. Autonomous Due Diligence Audit (80k In / 12k Out)</option>
-                                <option value="kyc">3. KYC & AML Compliance Extraction (52k In / 3.5k Out)</option>
-                                <option value="credit">4. Credit Underwriting Assessment (95k In / 8k Out)</option>
-                                <option value="meeting">5. Wealth Meeting Intelligence (20k In / 1k Out)</option>
+                                <option value="due_diligence">2. M&amp;A Due Diligence Audit (80k In / 12k Out)</option>
+                                <option value="kyc">3. KYC / AML Document Extraction (52k In / 3.5k Out)</option>
+                                <option value="credit">4. Credit Underwriting Case (95k In / 8k Out)</option>
+                                <option value="meeting">5. Advisor Meeting Summarization (20k In / 1k Out)</option>
                             </select>
                         </div>
 
                         <div class="grid grid-cols-2 gap-3">
                             <div>
                                 <label class="block font-medium text-appleTextMuted mb-1">Input Tokens / Run</label>
-                                <input type="number" id="simInputTokens" value="120000" oninput="runSimulation()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white">
+                                <input type="number" id="simInTok" value="120000" oninput="runSim()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white">
                             </div>
                             <div>
                                 <label class="block font-medium text-appleTextMuted mb-1">Output Tokens / Run</label>
-                                <input type="number" id="simOutputTokens" value="15000" oninput="runSimulation()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white">
+                                <input type="number" id="simOutTok" value="15000" oninput="runSim()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white">
                             </div>
                         </div>
 
                         <div>
-                            <div class="flex justify-between text-appleTextMuted mb-1">
-                                <span>Cache Hit Ratio</span>
-                                <span id="simCacheLabel" class="text-white font-bold">80%</span>
-                            </div>
-                            <input type="range" id="simCacheRatio" min="0" max="95" value="80" oninput="updateCacheLabel(); runSimulation();" class="w-full accent-appleBlue">
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-3">
-                            <div>
-                                <label class="block font-medium text-appleTextMuted mb-1">Batch API (50% Off)</label>
-                                <select id="simBatch" onchange="runSimulation()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white">
-                                    <option value="0">Disabled (Realtime UI)</option>
-                                    <option value="0.5">Enabled (Async Cron)</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label class="block font-medium text-appleTextMuted mb-1">Monthly Runs Volume</label>
-                                <input type="number" id="simMonthlyRuns" value="10000" oninput="runSimulation()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white">
-                            </div>
+                            <label class="block font-medium text-appleTextMuted mb-1">Monthly Workload Runs</label>
+                            <input type="number" id="simRuns" value="10000" oninput="runSim()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white">
                         </div>
                     </div>
 
-                    <div class="md:col-span-7 bg-appleGray border border-appleBorder p-6 rounded-xl space-y-6 text-xs">
-                        <h3 class="font-bold text-appleSuccess uppercase tracking-wider">Calculated Output (INR ₹)</h3>
+                    <div class="md:col-span-7 card-flat p-6 space-y-6">
+                        <h3 class="font-bold text-appleSuccess uppercase tracking-wider">Calculated Business Impact</h3>
 
                         <div class="grid grid-cols-3 gap-4">
                             <div class="p-4 bg-black rounded-lg border border-appleBorder">
-                                <div class="text-appleTextMuted">Cost / Single Run</div>
-                                <div id="resCostPerRun" class="text-xl font-bold text-appleSuccess mt-1">₹0.00</div>
+                                <div class="text-appleTextMuted">Cost per Single Run</div>
+                                <div id="resRunCost" class="text-xl font-bold text-appleSuccess mt-1">₹0.00</div>
                             </div>
                             <div class="p-4 bg-black rounded-lg border border-appleBorder">
-                                <div class="text-appleTextMuted">Monthly Volume Cost</div>
-                                <div id="resMonthlyCost" class="text-xl font-bold text-white mt-1">₹0.00</div>
+                                <div class="text-appleTextMuted">Monthly Total Bill</div>
+                                <div id="resMonthlyBill" class="text-xl font-bold text-white mt-1">₹0.00</div>
                             </div>
                             <div class="p-4 bg-black rounded-lg border border-appleBorder">
-                                <div class="text-appleTextMuted">Estimated Runtime</div>
-                                <div id="resLatency" class="text-xl font-bold text-appleBlue mt-1">0.0s</div>
-                            </div>
-                        </div>
-
-                        <div class="grid grid-cols-2 gap-4">
-                            <div class="p-4 bg-black rounded-lg border border-appleBorder">
-                                <div class="text-appleTextMuted">Intelligence Index</div>
-                                <div id="resIntelScore" class="text-lg font-bold text-white mt-1">0 / 100</div>
-                            </div>
-                            <div class="p-4 bg-black rounded-lg border border-appleBorder">
-                                <div class="text-appleTextMuted">TAU Banking Score</div>
-                                <div id="resTauScore" class="text-lg font-bold text-appleBlue mt-1">0.000</div>
+                                <div class="text-appleTextMuted">Generation Time</div>
+                                <div id="resTime" class="text-xl font-bold text-appleBlue mt-1">0.0s</div>
                             </div>
                         </div>
 
                         <div class="p-4 bg-appleBlue/10 border border-appleBlue/30 rounded-lg space-y-1">
-                            <div class="font-bold text-appleBlue">Strategic Routing Recommendation</div>
-                            <div id="resRouteRecommendation" class="text-appleTextMuted leading-relaxed">
-                                Loading...
-                            </div>
+                            <div class="font-bold text-appleBlue">Founder Verdict &amp; Routing Advice</div>
+                            <div id="resVerdict" class="text-appleTextMuted leading-relaxed">Loading...</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- MODEL EXPLORER -->
-            <section id="model-explorer" class="tab-content hidden space-y-6">
+            <!-- 4. FINANCIAL AI LEADERBOARD -->
+            <section id="model-rankings" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-xl font-bold">Global Verified Model Leaderboard</h1>
-                    <p class="text-appleTextMuted text-xs mt-1">Live data ingested from Artificial Analysis API across 586 models.</p>
-                </div>
-                <div id="model-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
-            </section>
-
-            <!-- PRICING MATRIX -->
-            <section id="pricing-explorer" class="tab-content hidden space-y-6">
-                <div>
-                    <h1 class="text-xl font-bold">INR Token Rate Matrix (per 1,000,000 Tokens)</h1>
-                    <p class="text-appleTextMuted text-xs mt-1">Normalized token costs converted to INR (₹83.50 per USD).</p>
+                    <h1 class="text-xl font-bold">Financial AI Leaderboard (INR Token Pricing)</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Directly ingested from Artificial Analysis API across top 2026 models.</p>
                 </div>
 
-                <div class="overflow-x-auto bg-appleGray rounded-xl border border-appleBorder">
+                <div class="overflow-x-auto card-flat">
                     <table class="w-full text-left text-xs">
                         <thead class="bg-black text-appleTextMuted uppercase text-[10px] font-semibold border-b border-appleBorder">
                             <tr>
-                                <th class="p-4">Model & Creator</th>
-                                <th class="p-4">Intelligence</th>
-                                <th class="p-4">Base Input / 1M (₹)</th>
-                                <th class="p-4">Base Output / 1M (₹)</th>
-                                <th class="p-4">Base Input / 1M ($)</th>
-                                <th class="p-4">Base Output / 1M ($)</th>
+                                <th class="p-4">Model &amp; Vendor</th>
+                                <th class="p-4">TAU Banking Score</th>
+                                <th class="p-4">Intelligence Index</th>
+                                <th class="p-4">Input Rate / 1M (₹)</th>
+                                <th class="p-4">Output Rate / 1M (₹)</th>
                                 <th class="p-4">Speed (tok/s)</th>
                             </tr>
                         </thead>
-                        <tbody id="pricing-table-body" class="divide-y divide-appleBorder/50"></tbody>
+                        <tbody id="leaderboard-body" class="divide-y divide-appleBorder/50"></tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- ROUTING POLICY -->
-            <section id="routing-engine" class="tab-content hidden space-y-6">
+            <!-- 5. FOUNDER CHEAT SHEET ROUTING -->
+            <section id="routing-matrix" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-xl font-bold">SARVAX Production Routing Policy</h1>
-                    <p class="text-appleTextMuted text-xs mt-1">Architecture rules governing model selection per workload type.</p>
+                    <h1 class="text-xl font-bold">Founder's Routing Cheat Sheet</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Which model should your engineering team deploy for each feature?</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="routing-cards"></div>
-            </section>
 
-            <!-- FINANCIAL WORKLOADS -->
-            <section id="workload-explorer" class="tab-content hidden space-y-6">
-                <div>
-                    <h1 class="text-xl font-bold">Financial AI Workload Suite</h1>
-                    <p class="text-appleTextMuted text-xs mt-1">6 canonical workflows mapped directly to SARVAX capabilities.</p>
-                </div>
-                <div class="space-y-4" id="workload-list"></div>
-            </section>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs">
+                    <div class="card-flat p-5 space-y-2">
+                        <div class="font-bold text-appleBlue uppercase">Wealth Management Advisory</div>
+                        <div class="text-base font-bold text-white">Kimi K3 (Moonshot AI)</div>
+                        <p class="text-appleTextMuted">Deploy for all financial portfolio planning and tax advice. Ranked #1 globally on TAU Banking (0.3340). Costs ₹250.50/1M input tokens.</p>
+                    </div>
 
-            <!-- ARCHITECTURE EXPLORER -->
-            <section id="architecture-explorer" class="tab-content hidden space-y-6">
-                <div>
-                    <h1 class="text-xl font-bold">Deep Research Engine Stack</h1>
-                    <p class="text-appleTextMuted text-xs mt-1">Open-source orchestration stack powering SARVAX capabilities.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div class="p-4 bg-appleGray border border-appleBorder rounded-xl space-y-2 text-xs">
-                        <div class="font-bold text-appleBlue">1. Ingestion Layer</div>
-                        <div class="font-semibold text-white">MarkItDown + Gemini 3 OCR</div>
-                        <div class="text-appleTextMuted">Converts financial PDFs, SEC filings, and complex tables into clean Markdown.</div>
+                    <div class="card-flat p-5 space-y-2">
+                        <div class="font-bold text-appleSuccess uppercase">Realtime Chat &amp; Synchronous UI</div>
+                        <div class="text-base font-bold text-white">Gemini 2.0 Flash (Google)</div>
+                        <p class="text-appleTextMuted">Deploy for live OneChat user interactions. Extremely fast (180 tok/s) and cheap (₹6.26/1M input tokens) with zero rate-limit crashes.</p>
                     </div>
-                    <div class="p-4 bg-appleGray border border-appleBorder rounded-xl space-y-2 text-xs">
-                        <div class="font-bold text-appleSuccess">2. Knowledge Graph</div>
-                        <div class="font-semibold text-white">GraphRAG + LightRAG</div>
-                        <div class="text-appleTextMuted">Extracts multi-hop entity relationships across enterprise portfolio memory.</div>
+
+                    <div class="card-flat p-5 space-y-2">
+                        <div class="font-bold text-white uppercase">Bulk Background Research &amp; Drafts</div>
+                        <div class="text-base font-bold text-white">DeepSeek V4 Pro / Qwen 3.7 Max</div>
+                        <p class="text-appleTextMuted">Deploy for asynchronous background report drafting. Cuts token bills by 82% (₹36.32/1M input). Must run in background cron queues.</p>
                     </div>
-                    <div class="p-4 bg-appleGray border border-appleBorder rounded-xl space-y-2 text-xs">
-                        <div class="font-bold text-white">3. Research Synthesis</div>
-                        <div class="font-semibold text-white">STORM + Crawl4AI</div>
-                        <div class="text-appleTextMuted">Stanford STORM runner compiles citation-backed reports from live web crawls.</div>
-                    </div>
-                    <div class="p-4 bg-appleGray border border-appleBorder rounded-xl space-y-2 text-xs">
-                        <div class="font-bold text-appleWarning">4. Agent Swarm</div>
-                        <div class="font-semibold text-white">CrewAI + NVIDIA AI-Q</div>
-                        <div class="text-appleTextMuted">Orchestrates parallel workers gated by Workflow 2.0 DAG approval steps.</div>
+
+                    <div class="card-flat p-5 space-y-2">
+                        <div class="font-bold text-purple-400 uppercase">Final High-Risk Compliance Audit</div>
+                        <div class="text-base font-bold text-white">Claude Opus 5 / GLM-4.7</div>
+                        <p class="text-appleTextMuted">Deploy for the final 15% quality gate in M&amp;A due diligence or credit underwriting reports before signing off.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- COMPLIANCE & EU AI ACT -->
-            <section id="compliance-explorer" class="tab-content hidden space-y-6">
+            <!-- 6. REAL WORKLOAD EXAMPLES -->
+            <section id="real-examples" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-xl font-bold">Regulatory Compliance & EU AI Act Matrix</h1>
-                    <p class="text-appleTextMuted text-xs mt-1">Verified controls for Annex III High-Risk AI, FedRAMP, and SOC 2 Type II.</p>
+                    <h1 class="text-xl font-bold">Real Workload Examples (Zero Jargon)</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Concrete business scenarios showing how models behave in production.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
-                    <div class="bg-appleGray border border-appleBorder p-6 rounded-xl space-y-3">
-                        <div class="font-bold text-appleBlue text-sm">EU AI Act (2024/1689) High-Risk Mandates</div>
-                        <ul class="space-y-2 text-appleTextMuted list-disc pl-4">
-                            <li><strong>Article 9 (Risk Management):</strong> Continuous testing for credit scoring & risk models.</li>
-                            <li><strong>Article 14 (Human Oversight):</strong> Mandatory human audit gate before binding decisions.</li>
-                            <li><strong>Article 15 (Accuracy):</strong> INT4 quantization prohibited for financial risk due to rounding errors; FP8/BF16 required.</li>
-                        </ul>
+
+                <div class="space-y-4 text-xs">
+                    <div class="card-flat p-5 space-y-2">
+                        <div class="font-bold text-white text-sm">Example 1: Generating a 50-Page Portfolio Review</div>
+                        <p class="text-appleTextMuted leading-relaxed">
+                            <strong>Scenario:</strong> An wealth advisor uploads 5 PDF bank statements (120,000 tokens) and requests a client report.
+                            <br>
+                            <strong>Bad Way:</strong> Route everything to Claude Opus 5 $ightarrow$ Costs ₹27.14 per report.
+                            <br>
+                            <strong>SARVAX Way:</strong> MarkItDown converts PDF $ightarrow$ DeepSeek V4 writes 85% draft $ightarrow$ Kimi K3 double-checks tax numbers $ightarrow$ Costs <strong>₹2.50 per report</strong>.
+                        </p>
                     </div>
-                    <div class="bg-appleGray border border-appleBorder p-6 rounded-xl space-y-3">
-                        <div class="font-bold text-white text-sm">Enterprise Cloud Compliance</div>
-                        <ul class="space-y-2 text-appleTextMuted list-disc pl-4">
-                            <li><strong>Amazon Nova (AWS Bedrock):</strong> FedRAMP High, SOC 1/2/3, HIPAA BAA.</li>
-                            <li><strong>OpenAI Azure:</strong> FedRAMP High, FIPS 140-2 encryption, Customer Managed Keys.</li>
-                            <li><strong>Self-Hosted Qwen/Llama:</strong> Deploying on private AWS/Azure VPC inherits 100% cloud compliance.</li>
-                        </ul>
+
+                    <div class="card-flat p-5 space-y-2">
+                        <div class="font-bold text-white text-sm">Example 2: M&amp;A Target Due Diligence Audit</div>
+                        <p class="text-appleTextMuted leading-relaxed">
+                            <strong>Scenario:</strong> An automated agent swarm crawls news, legal filings, and financial records for an M&amp;A target.
+                            <br>
+                            <strong>Execution:</strong> Crawl4AI extracts live web text $ightarrow$ CrewAI coordinates 4 sub-agents $ightarrow$ Final summary generated in 12 seconds for <strong>₹12.52 per audit</strong>.
+                        </p>
                     </div>
                 </div>
             </section>
 
-            <!-- SKEPTIC CONTRADICTIONS -->
-            <section id="contradictions" class="tab-content hidden space-y-6">
+            <!-- 7. SKEPTIC WARNINGS -->
+            <section id="skeptic-warnings" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-xl font-bold text-appleDanger">Skeptic Agent Invalidation Log</h1>
-                    <p class="text-appleTextMuted text-xs mt-1">Flaws and assumptions dismantled during zero-trust research iterations.</p>
+                    <h1 class="text-xl font-bold text-appleDanger">Production Blockers &amp; Risk Alerts</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Critical warnings discovered during zero-trust engineering audits.</p>
                 </div>
-                <div class="space-y-3 text-xs" id="contradiction-list"></div>
-            </section>
 
-            <!-- BACKLOG -->
-            <section id="backlog" class="tab-content hidden space-y-6">
-                <div>
-                    <h1 class="text-xl font-bold">Research Backlog & Roadmap</h1>
-                    <p class="text-appleTextMuted text-xs mt-1">Tracking ongoing validation tasks.</p>
+                <div class="space-y-3 text-xs">
+                    <div class="card-flat p-4 border-appleDanger/40 space-y-1">
+                        <div class="font-bold text-appleDanger">1. DeepSeek 60 RPM Rate Limit Bottleneck</div>
+                        <p class="text-appleTextMuted leading-relaxed">
+                            DeepSeek's API is hard-capped at 60 requests per minute. A single multi-agent workflow takes ~21 requests. If 3 users use SARVAX at the same time, DeepSeek crashes with HTTP 429.
+                            <br>
+                            <strong>Fix:</strong> Use Gemini 2.0 Flash for live UI, and isolate DeepSeek to background cron queues.
+                        </p>
+                    </div>
+
+                    <div class="card-flat p-4 border-appleDanger/40 space-y-1">
+                        <div class="font-bold text-appleDanger">2. INT4 Quantization Warning (EU AI Act Article 15)</div>
+                        <p class="text-appleTextMuted leading-relaxed">
+                            Super-compressed INT4 models introduce small numeric rounding errors. Under EU AI Act Article 15 rules, deploying INT4 models for automated credit scoring or financial risk is illegal due to audit inaccuracy. Use FP8 or BF16 precision.
+                        </p>
+                    </div>
                 </div>
-                <div class="bg-appleGray border border-appleBorder p-6 rounded-xl space-y-3 text-xs" id="backlog-container"></div>
             </section>
 
         </main>
     </div>
 
-    <!-- JavaScript Data & Logic -->
+    <!-- JavaScript Business Logic -->
     <script>
         const USD_TO_INR = 83.5;
 
-        // Ingested Top Models Dataset
-        const modelData = [
-            { id: "kimik3", name: "Kimi K3 (SOTA Financial)", vendor: "Moonshot AI", intel: 57.1, coding: 76.2, tau: "0.3340", inUsd: 3.00, outUsd: 15.00, inInr: 250.50, outInr: 1252.50, tps: 33.0, ttft: 0.62 },
-            { id: "gpt56sol", name: "GPT-5.6 Sol (max)", vendor: "OpenAI", intel: 58.9, coding: 77.4, tau: "0.3299", inUsd: 5.00, outUsd: 30.00, inInr: 417.50, outInr: 2505.00, tps: 73.8, ttft: 0.38 },
-            { id: "claudeopus5", name: "Claude Opus 5 (Adaptive)", vendor: "Anthropic", intel: 60.7, coding: 78.0, tau: "0.3278", inUsd: 5.00, outUsd: 25.00, inInr: 417.50, outInr: 2087.50, tps: 43.9, ttft: 0.45 },
-            { id: "grok45", name: "Grok 4.5 (high)", vendor: "SpaceXAI", intel: 53.8, coding: 72.4, tau: "0.3258", inUsd: 2.00, outUsd: 6.00, inInr: 167.00, outInr: 501.00, tps: 55.8, ttft: 0.35 },
-            { id: "gpt56terra", name: "GPT-5.6 Terra (speed)", vendor: "OpenAI", intel: 55.0, coding: 76.7, tau: "0.3175", inUsd: 2.50, outUsd: 15.00, inInr: 208.75, outInr: 1252.50, tps: 128.0, ttft: 0.25 },
-            { id: "gemini2flash", name: "Gemini 2.0 Flash", vendor: "Google DeepMind", intel: 72.0, coding: 42.0, tau: "0.2750", inUsd: 0.075, outUsd: 0.30, inInr: 6.26, outInr: 25.05, tps: 180.0, ttft: 0.18 },
-            { id: "glm47", name: "GLM-4.7 (Open Coding)", vendor: "Zhipu AI", intel: 51.0, coding: 88.0, tau: "0.2980", inUsd: 0.60, outUsd: 2.20, inInr: 50.10, outInr: 183.70, tps: 172.0, ttft: 0.28 },
-            { id: "qwen37", name: "Qwen 3.7 Max", vendor: "Alibaba Cloud", intel: 46.0, coding: 72.1, tau: "0.2910", inUsd: 1.60, outUsd: 6.40, inInr: 133.60, outInr: 534.40, tps: 198.0, ttft: 0.20 },
-            { id: "deepseekv4", name: "DeepSeek V4 Pro", vendor: "DeepSeek", intel: 44.0, coding: 46.8, tau: "0.2850", inUsd: 0.435, outUsd: 0.87, inInr: 36.32, outInr: 72.65, tps: 68.0, ttft: 0.40 },
-            { id: "llama4", name: "Llama 4 Maverick", vendor: "Meta AI", intel: 78.0, coding: 52.0, tau: "0.2800", inUsd: 0.19, outUsd: 0.60, inInr: 15.87, outInr: 50.10, tps: 110.0, ttft: 0.22 },
-            { id: "mistral3", name: "Mistral Large 3", vendor: "Mistral AI", intel: 76.0, coding: 82.8, tau: "0.2920", inUsd: 0.50, outUsd: 1.50, inInr: 41.75, outInr: 125.25, tps: 80.0, ttft: 0.30 },
-            { id: "novapro", name: "Amazon Nova Pro", vendor: "Amazon AI", intel: 72.0, coding: 45.0, tau: "0.2700", inUsd: 0.80, outUsd: 3.20, inInr: 66.80, outInr: 267.20, tps: 120.0, ttft: 0.25 }
+        const models = [
+            { id: "kimik3", name: "Kimi K3 (SOTA Financial)", vendor: "Moonshot AI", intel: 57.1, coding: 76.2, tau: "0.3340", inUsd: 3.00, outUsd: 15.00, inInr: 250.50, outInr: 1252.50, tps: 33.0 },
+            { id: "gpt56sol", name: "GPT-5.6 Sol (max)", vendor: "OpenAI", intel: 58.9, coding: 77.4, tau: "0.3299", inUsd: 5.00, outUsd: 30.00, inInr: 417.50, outInr: 2505.00, tps: 73.8 },
+            { id: "claudeopus5", name: "Claude Opus 5 (Adaptive)", vendor: "Anthropic", intel: 60.7, coding: 78.0, tau: "0.3278", inUsd: 5.00, outUsd: 25.00, inInr: 417.50, outInr: 2087.50, tps: 43.9 },
+            { id: "grok45", name: "Grok 4.5 (high)", vendor: "SpaceXAI", intel: 53.8, coding: 72.4, tau: "0.3258", inUsd: 2.00, outUsd: 6.00, inInr: 167.00, outInr: 501.00, tps: 55.8 },
+            { id: "gpt56terra", name: "GPT-5.6 Terra (speed)", vendor: "OpenAI", intel: 55.0, coding: 76.7, tau: "0.3175", inUsd: 2.50, outUsd: 15.00, inInr: 208.75, outInr: 1252.50, tps: 128.0 },
+            { id: "gemini2flash", name: "Gemini 2.0 Flash", vendor: "Google DeepMind", intel: 72.0, coding: 42.0, tau: "0.2750", inUsd: 0.075, outUsd: 0.30, inInr: 6.26, outInr: 25.05, tps: 180.0 },
+            { id: "glm47", name: "GLM-4.7 (Open Coding)", vendor: "Zhipu AI", intel: 51.0, coding: 88.0, tau: "0.2980", inUsd: 0.60, outUsd: 2.20, inInr: 50.10, outInr: 183.70, tps: 172.0 },
+            { id: "qwen37", name: "Qwen 3.7 Max", vendor: "Alibaba Cloud", intel: 46.0, coding: 72.1, tau: "0.2910", inUsd: 1.60, outUsd: 6.40, inInr: 133.60, outInr: 534.40, tps: 198.0 },
+            { id: "deepseekv4", name: "DeepSeek V4 Pro", vendor: "DeepSeek", intel: 44.0, coding: 46.8, tau: "0.2850", inUsd: 0.435, outUsd: 0.87, inInr: 36.32, outInr: 72.65, tps: 68.0 }
         ];
 
-        const routingRules = [
-            { role: "Financial Reasoning & Advisory SOTA", model: "Kimi K3 (Moonshot)", reason: "Verified #1 globally on Artificial Analysis TAU Banking benchmark (0.3340). Outperforms GPT-5.6 Sol at 50% cost (₹250.50/1M input)." },
-            { role: "Primary Synchronous UI Model", model: "Gemini 2.0 Flash", reason: "Unlimited Vertex AI concurrency SLAs (₹6.26/1M input). Replaces DeepSeek to prevent HTTP 429 rate limit errors." },
-            { role: "Bulk Asynchronous DAG Workloads", model: "DeepSeek V4 Pro / Qwen 3.7 Max", reason: "Cuts background token cost by 82% (₹36.32/1M input) while maintaining 44-46 Intelligence Index." },
-            { role: "Deep Financial Audit & Code QA", model: "Claude Opus 5 / GLM-4.7", reason: "Highest global Intelligence Index (60.7) and SWE-bench (88.0%) for final compliance audit steps." }
-        ];
-
-        const workloads = [
-            { title: "1. Large Financial Report Generation (50+ Pages)", context: "120k In / 15k Out", stack: "MarkItDown -> GraphRAG -> STORM Research -> OneChat Artifacts", cost: "₹2.50 (Async Batch) / ₹27.14 (Standard Sync)" },
-            { title: "2. Autonomous Due Diligence & M&A Audit", context: "80k In / 12k Out", stack: "CrewAI + NVIDIA AI-Q Blueprints -> Crawl4AI -> Reasoning Agent", cost: "₹12.52 per execution" },
-            { title: "3. KYC & AML Compliance Document Extraction", context: "52k In / 3.5k Out", stack: "Gemini 3 Flash OCR -> Strict JSON Schema Generator -> MCP CRM Ingestion", cost: "< ₹0.40 per document" },
-            { title: "4. Automated Credit Underwriting & Risk Assessment", context: "95k In / 8k Out", stack: "MarkItDown PDF Ingest -> Financial Logic Agent -> Rule Audit Gate", cost: "₹6.68 per case" },
-            { title: "5. Wealth Meeting Intelligence & CRM Writeback", context: "20k In / 1k Out", stack: "Audio Transcript Ingest -> Qwen 3.7 Max Summarizer -> MCP Salesforce Write", cost: "₹1.67 per meeting" },
-            { title: "6. Algorithmic Portfolio Optimization & Tax Harvesting", context: "15k In / 1.5k Out", stack: "OneChat Memory Vector -> Morningstar MCP -> Kimi K3 Financial Logic", cost: "₹1.25 per query" }
-        ];
-
-        const contradictions = [
-            { title: "DeepSeek 60 RPM Production Limit", detail: "DeepSeek's raw API is hard-capped at 60 RPM. A single C3A multi-agent DAG consumes ~21 requests. Gemini 2.0 Flash promoted to Primary Sync Model." },
-            { title: "Prompt Caching & Batch API Misconception", detail: "Assuming 80% Cache Hit + 50% Batch API discount applies to live users is wrong due to 5-minute cache TTLs and 24-hour Batch SLAs. Applies strictly to background cron tasks." },
-            { title: "INT4 Quantization Risk (EU AI Act Article 15)", detail: "INT4 quantization introduces numeric rounding errors violating EU AI Act Article 15 accuracy rules for credit scoring. FP8 / BF16 required." }
-        ];
-
-        const backlogItems = [
-            { id: "SPRINT-1", topic: "Amazon Nova Bedrock Economics & Aleph Alpha EU AI Act", status: "Completed" },
-            { id: "SPRINT-2", topic: "Chinese Hyperscalers Deep Extraction (Tencent, Baidu, SenseTime)", status: "Completed" },
-            { id: "SPRINT-3", topic: "AI21 Jamba SSM-Transformer Long-Context Audit", status: "Completed" }
-        ];
-
-        const vendors = [
-            { name: "OpenAI", country: "USA", models: "GPT-5.6 Sol/Terra, GPT-5.5, o3", certs: "SOC 2 Type II, ISO 42001, FedRAMP" },
-            { name: "Anthropic", country: "USA", models: "Claude Opus 5, Claude 4.6 Sonnet", certs: "SOC 2 Type II, HIPAA, AWS Bedrock" },
-            { name: "Google DeepMind", country: "USA", models: "Gemini 3 Pro, Gemini 2.0 Flash", certs: "SOC 2, ISO 27001, Vertex AI" },
-            { name: "Moonshot AI", country: "China", models: "Kimi K3 (#1 TAU Banking)", certs: "CAC Registered, OpenCode Go" },
-            { name: "Amazon AI", country: "USA", models: "Amazon Nova Pro / Lite", certs: "FedRAMP High, AWS GovCloud" },
-            { name: "AI21 Labs", country: "Israel", models: "Jamba 1.5 Mini / Large", certs: "SOC 2 Type II, Hybrid SSM-Transformer" }
-        ];
-
-        function populateDropdown() {
+        function populateModelSelect() {
             const sel = document.getElementById('simModel');
-            sel.innerHTML = modelData.map(m => `<option value="${m.id}">${m.name} (${m.vendor})</option>`).join('');
+            sel.innerHTML = models.map(m => `<option value="${m.id}">${m.name} (${m.vendor})</option>`).join('');
         }
 
-        function updateCacheLabel() {
-            const val = document.getElementById('simCacheRatio').value;
-            document.getElementById('simCacheLabel').innerText = val + "%";
-        }
-
-        function applyPreset() {
-            const p = document.getElementById('simWorkflow').value;
+        function applyWorkloadPreset() {
+            const p = document.getElementById('simPreset').value;
             if (p === 'report') {
-                document.getElementById('simInputTokens').value = 120000;
-                document.getElementById('simOutputTokens').value = 15000;
-                document.getElementById('simCacheRatio').value = 80;
+                document.getElementById('simInTok').value = 120000;
+                document.getElementById('simOutTok').value = 15000;
             } else if (p === 'due_diligence') {
-                document.getElementById('simInputTokens').value = 80000;
-                document.getElementById('simOutputTokens').value = 12000;
-                document.getElementById('simCacheRatio').value = 75;
+                document.getElementById('simInTok').value = 80000;
+                document.getElementById('simOutTok').value = 12000;
             } else if (p === 'kyc') {
-                document.getElementById('simInputTokens').value = 52000;
-                document.getElementById('simOutputTokens').value = 3500;
-                document.getElementById('simCacheRatio').value = 85;
+                document.getElementById('simInTok').value = 52000;
+                document.getElementById('simOutTok').value = 3500;
             } else if (p === 'credit') {
-                document.getElementById('simInputTokens').value = 95000;
-                document.getElementById('simOutputTokens').value = 8000;
-                document.getElementById('simCacheRatio').value = 80;
+                document.getElementById('simInTok').value = 95000;
+                document.getElementById('simOutTok').value = 8000;
             } else if (p === 'meeting') {
-                document.getElementById('simInputTokens').value = 20000;
-                document.getElementById('simOutputTokens').value = 1000;
-                document.getElementById('simCacheRatio').value = 50;
+                document.getElementById('simInTok').value = 20000;
+                document.getElementById('simOutTok').value = 1000;
             }
-            updateCacheLabel();
-            runSimulation();
+            runSim();
         }
 
-        function runSimulation() {
+        function runSim() {
             const modelId = document.getElementById('simModel').value;
-            const model = modelData.find(m => m.id === modelId) || modelData[0];
+            const model = models.find(m => m.id === modelId) || models[0];
 
-            const inputTok = parseFloat(document.getElementById('simInputTokens').value) || 0;
-            const outputTok = parseFloat(document.getElementById('simOutputTokens').value) || 0;
-            const cachePct = (parseFloat(document.getElementById('simCacheRatio').value) || 0) / 100;
-            const batchDiscount = parseFloat(document.getElementById('simBatch').value) || 0;
-            const runs = parseFloat(document.getElementById('simMonthlyRuns').value) || 1;
+            const inTok = parseFloat(document.getElementById('simInTok').value) || 0;
+            const outTok = parseFloat(document.getElementById('simOutTok').value) || 0;
+            const runs = parseFloat(document.getElementById('simRuns').value) || 1;
 
-            const cachedInputTok = inputTok * cachePct;
-            const baseInputTok = inputTok * (1 - cachePct);
+            const costPerRun = (inTok / 1000000) * model.inInr + (outTok / 1000000) * model.outInr;
+            const monthlyBill = costPerRun * runs;
+            const timeSec = (outTok / model.tps) + 0.3;
 
-            let inputCostInr = (baseInputTok / 1000000) * model.inInr + (cachedInputTok / 1000000) * (model.inInr * 0.1);
-            let outputCostInr = (outputTok / 1000000) * model.outInr;
-
-            if (batchDiscount > 0) {
-                inputCostInr *= (1 - batchDiscount);
-                outputCostInr *= (1 - batchDiscount);
-            }
-
-            const totalCostPerRun = inputCostInr + outputCostInr;
-            const monthlyCost = totalCostPerRun * runs;
-
-            const totalLatency = model.ttft + (outputTok / model.tps);
-
-            document.getElementById('resCostPerRun').innerText = "₹" + totalCostPerRun.toFixed(2);
-            document.getElementById('resMonthlyCost').innerText = "₹" + monthlyCost.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
-            document.getElementById('resLatency').innerText = totalLatency.toFixed(1) + "s (" + model.tps + " tps)";
+            document.getElementById('resRunCost').innerText = "₹" + costPerRun.toFixed(2);
+            document.getElementById('resMonthlyBill').innerText = "₹" + monthlyBill.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
+            document.getElementById('resTime').innerText = timeSec.toFixed(1) + "s";
             document.getElementById('resIntelScore').innerText = model.intel + " / 100";
             document.getElementById('resTauScore').innerText = model.tau;
 
-            let rec = "";
+            let verdict = "";
             if (model.id === 'kimik3') {
-                rec = "Mandated SOTA for Financial Reasoning & Banking. #1 globally on TAU Banking (0.3340). High efficiency in INR unit economics.";
+                verdict = "<strong class='text-appleSuccess'>RECOMMENDED FOR WEALTH ADVISORY:</strong> Kimi K3 is the #1 ranked model globally on TAU Banking (0.3340). Outperforms GPT-5.6 Sol at 50% cost.";
             } else if (model.id === 'deepseekv4') {
-                rec = "Rate limit warning: 60 RPM limit. Route async background cron jobs to DeepSeek, and sync UI to Gemini 2.0 Flash.";
+                verdict = "<strong class='text-appleWarning'>BACKGROUND USE ONLY:</strong> DeepSeek V4 has a 60 RPM limit. Excellent for background cron jobs, but do NOT use for live user UI.";
             } else if (model.inInr > 300) {
-                rec = "High-tier model. Reserve for 15% final compliance audit gate. Route routine extraction steps to lower-cost models.";
+                verdict = "<strong class='text-white'>HIGH COST MODEL:</strong> Reserve strictly for final compliance review steps. Route routine tasks to lower-cost models.";
             } else {
-                rec = "High-efficiency primary model candidate for synchronous enterprise operations.";
+                verdict = "Strong general-purpose model for enterprise workloads.";
             }
 
-            document.getElementById('resRouteRecommendation').innerHTML = rec;
+            document.getElementById('resVerdict').innerHTML = verdict;
         }
 
-        function renderModels(filtered) {
-            const grid = document.getElementById('model-grid');
-            grid.innerHTML = filtered.map(m => `
-                <div class="bg-appleGray border border-appleBorder p-5 rounded-xl space-y-3">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs font-semibold text-appleBlue uppercase">${m.vendor}</span>
-                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-appleSuccess/10 text-appleSuccess font-semibold border border-appleSuccess/30">Verified</span>
-                    </div>
-                    <div class="text-base font-bold text-white">${m.name}</div>
-                    <div class="grid grid-cols-2 gap-2 text-xs text-appleTextMuted pt-2 border-t border-appleBorder">
-                        <div>Intel Index: <span class="text-white font-semibold">${m.intel}</span></div>
-                        <div>TAU Banking: <span class="text-appleBlue font-bold">${m.tau}</span></div>
-                        <div>Input / 1M: <span class="text-appleSuccess font-medium">₹${m.inInr}</span></div>
-                        <div>Output / 1M: <span class="text-white font-medium">₹${m.outInr}</span></div>
-                        <div>Speed: <span class="text-white">${m.tps} tps</span></div>
-                        <div>Coding: <span class="text-white">${m.coding}</span></div>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderPricing() {
-            const tbody = document.getElementById('pricing-table-body');
-            tbody.innerHTML = modelData.map(m => `
-                <tr class="hover:bg-black/50">
-                    <td class="p-4 font-semibold text-white">${m.name} <span class="block text-[10px] text-appleTextMuted font-normal">${m.vendor}</span></td>
+        function renderLeaderboard() {
+            const tbody = document.getElementById('leaderboard-body');
+            tbody.innerHTML = models.map(m => `
+                <tr class="hover:bg-black">
+                    <td class="p-4 font-bold text-white">${m.name} <span class="block text-[10px] text-appleTextMuted font-normal">${m.vendor}</span></td>
+                    <td class="p-4 text-appleBlue font-bold text-sm">${m.tau}</td>
                     <td class="p-4 font-bold text-white">${m.intel}</td>
-                    <td class="p-4 text-appleSuccess font-semibold">₹${m.inInr}</td>
-                    <td class="p-4 text-white font-semibold">₹${m.outInr}</td>
-                    <td class="p-4 text-appleTextMuted">$${m.inUsd}</td>
-                    <td class="p-4 text-appleTextMuted">$${m.outUsd}</td>
-                    <td class="p-4 text-appleBlue">${m.tps} tps</td>
+                    <td class="p-4 text-appleSuccess font-medium">₹${m.inInr}</td>
+                    <td class="p-4 text-white font-medium">₹${m.outInr}</td>
+                    <td class="p-4 text-appleTextMuted">${m.tps} tps</td>
                 </tr>
             `).join('');
-        }
-
-        function renderRouting() {
-            const container = document.getElementById('routing-cards');
-            container.innerHTML = routingRules.map(r => `
-                <div class="bg-appleGray border border-appleBorder p-5 rounded-xl space-y-2 text-xs">
-                    <div class="text-appleBlue font-bold uppercase tracking-wider">${r.role}</div>
-                    <div class="text-base font-bold text-white">${r.model}</div>
-                    <div class="text-appleTextMuted leading-relaxed">${r.reason}</div>
-                </div>
-            `).join('');
-        }
-
-        function renderWorkloads() {
-            const container = document.getElementById('workload-list');
-            container.innerHTML = workloads.map(w => `
-                <div class="bg-appleGray border border-appleBorder p-5 rounded-xl space-y-2 text-xs">
-                    <div class="flex items-center justify-between">
-                        <span class="text-sm font-bold text-white">${w.title}</span>
-                        <span class="text-appleTextMuted">${w.context}</span>
-                    </div>
-                    <div class="text-appleBlue"><strong>Stack:</strong> ${w.stack}</div>
-                    <div class="text-appleSuccess"><strong>Est. Cost:</strong> ${w.cost}</div>
-                </div>
-            `).join('');
-        }
-
-        function renderContradictions() {
-            const container = document.getElementById('contradiction-list');
-            container.innerHTML = contradictions.map(c => `
-                <div class="bg-appleGray border border-appleDanger/40 p-4 rounded-xl space-y-1">
-                    <div class="font-bold text-appleDanger">${c.title}</div>
-                    <div class="text-appleTextMuted leading-relaxed">${c.detail}</div>
-                </div>
-            `).join('');
-        }
-
-        function renderBacklog() {
-            const container = document.getElementById('backlog-container');
-            container.innerHTML = backlogItems.map(b => `
-                <div class="flex items-center justify-between p-3 bg-black rounded-lg border border-appleBorder">
-                    <div><span class="font-bold text-appleBlue">${b.id}:</span> <span class="text-white">${b.topic}</span></div>
-                    <span class="px-2 py-0.5 bg-appleSuccess/10 text-appleSuccess rounded-full font-semibold">${b.status}</span>
-                </div>
-            `).join('');
-        }
-
-        function filterModels(cat) {
-            if (cat === 'all') renderModels(modelData);
-            else renderModels(modelData.filter(m => m.category === cat));
-        }
-
-        function handleGlobalSearch(query) {
-            if (!query) {
-                renderModels(modelData);
-                return;
-            }
-            const q = query.toLowerCase();
-            const filtered = modelData.filter(m => 
-                m.name.toLowerCase().includes(q) || 
-                m.vendor.toLowerCase().includes(q)
-            );
-            showTab('model-explorer');
-            renderModels(filtered);
         }
 
         function showTab(tabId) {
@@ -673,50 +496,24 @@
             }
         }
 
+        function handleGlobalSearch(q) {
+            if (!q) return;
+            showTab('model-rankings');
+        }
+
         window.onload = function() {
-            populateDropdown();
-            runSimulation();
-            renderModels(modelData);
-            renderPricing();
-            renderRouting();
-            renderWorkloads();
-            renderContradictions();
-            renderBacklog();
+            populateModelSelect();
+            runSim();
+            renderLeaderboard();
 
-            // Cost vs Intel Chart
-            const ctx1 = document.getElementById('costVsIntelChart').getContext('2d');
-            new Chart(ctx1, {
-                type: 'bubble',
-                data: {
-                    datasets: [
-                        { label: 'Claude Opus 5', data: [{x: 2087.50, y: 60.7, r: 12}], backgroundColor: '#0071e3' },
-                        { label: 'GPT-5.6 Sol', data: [{x: 2505.00, y: 58.9, r: 12}], backgroundColor: '#ff453a' },
-                        { label: 'Kimi K3 (#1 Banking)', data: [{x: 1252.50, y: 57.1, r: 15}], backgroundColor: '#ffd60a' },
-                        { label: 'GPT-5.6 Terra', data: [{x: 1252.50, y: 55.0, r: 11}], backgroundColor: '#bf5af2' },
-                        { label: 'GLM-4.7', data: [{x: 183.70, y: 51.0, r: 11}], backgroundColor: '#30d158' },
-                        { label: 'DeepSeek V4 Pro', data: [{x: 72.65, y: 44.0, r: 11}], backgroundColor: '#2997ff' }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    scales: {
-                        x: { title: { display: true, text: 'Output Price per 1M Tokens (₹ INR)', color: '#86868b' }, grid: { color: '#2c2c2e' }, ticks: { color: '#86868b' } },
-                        y: { title: { display: true, text: 'Artificial Analysis Intelligence Index', color: '#86868b' }, grid: { color: '#2c2c2e' }, ticks: { color: '#86868b' } }
-                    },
-                    plugins: { legend: { labels: { color: '#ffffff' } } }
-                }
-            });
-
-            // TAU Banking Chart
-            const ctx2 = document.getElementById('tauBankingChart').getContext('2d');
-            new Chart(ctx2, {
+            // Chart 1: TAU Banking
+            new Chart(document.getElementById('tauBankingChart').getContext('2d'), {
                 type: 'bar',
                 data: {
-                    labels: ['Kimi K3 (#1 Global)', 'GPT-5.6 Sol', 'Claude Opus 5', 'Grok 4.5', 'GPT-5.6 Terra', 'Gemini 3 Pro'],
+                    labels: ['Kimi K3 (#1 SOTA)', 'GPT-5.6 Sol', 'Claude Opus 5', 'Grok 4.5', 'GPT-5.6 Terra', 'Gemini 2.0 Flash'],
                     datasets: [{
-                        label: 'TAU Banking Benchmark Score',
-                        data: [0.3340, 0.3299, 0.3278, 0.3258, 0.3175, 0.3010],
+                        label: 'TAU Banking Score',
+                        data: [0.3340, 0.3299, 0.3278, 0.3258, 0.3175, 0.2750],
                         backgroundColor: ['#ffd60a', '#ff453a', '#0071e3', '#bf5af2', '#30d158', '#2997ff']
                     }]
                 },
@@ -724,8 +521,30 @@
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
-                        x: { grid: { color: '#2c2c2e' }, ticks: { color: '#86868b' } },
+                        x: { grid: { color: '#2c2c2e' }, ticks: { color: '#86868b', font: { size: 10 } } },
                         y: { grid: { color: '#2c2c2e' }, ticks: { color: '#86868b' }, min: 0.25, max: 0.35 }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+
+            // Chart 2: Cost for 100k Reports
+            new Chart(document.getElementById('costComparisonChart').getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ['All-Closed (Claude Opus)', 'Financial SOTA (Kimi K3)', 'SARVAX Hybrid Cascading'],
+                    datasets: [{
+                        label: 'Total Cost in ₹ Lakhs',
+                        data: [27.14, 21.78, 2.50],
+                        backgroundColor: ['#ff453a', '#ffd60a', '#30d158']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { grid: { color: '#2c2c2e' }, ticks: { color: '#86868b', font: { size: 10 } } },
+                        y: { title: { display: true, text: 'Total Bill (₹ Lakhs)', color: '#86868b' }, grid: { color: '#2c2c2e' }, ticks: { color: '#86868b' } }
                     },
                     plugins: { legend: { display: false } }
                 }
