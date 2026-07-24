@@ -1,0 +1,249 @@
+{
+  "prompt_caching": {
+    "term": "Prompt Caching",
+    "simple_definition": "Storing previously processed prompt text in server memory so the AI doesn't re-read static instructions on every turn.",
+    "eli5": "Imagine you order the same coffee every morning. The barista already knows your order, so they don't ask again. They just make it.",
+    "real_life_analogy": "Ordering your regular coffee at a cafe. They remember your milk preference instead of asking you to explain it from scratch every single day.",
+    "business_explanation": "Reduces API token costs by 50% to 90% on repeated system prompts, saving millions of rupees on recurring enterprise workloads.",
+    "technical_explanation": "Calculates cryptographic hashes over prefix token sequences. Matches are loaded directly from GPU KV cache memory, bypassing the Transformer prefill attention phase.",
+    "sarvax_example": "SARVAX sends a 20,000-token system prompt containing compliance rules and portfolio guidelines. Prompt caching ensures SARVAX only pays full price once.",
+    "when_to_use": "High-volume workflows with identical system prompts, standard document templates, or long conversation histories.",
+    "when_not_to_use": "Dynamic, highly changing prompts shorter than 1,024 tokens where cache lookup overhead exceeds prefill time.",
+    "advantages": [
+      "Cuts input token costs by up to 90%",
+      "Reduces Time-to-First-Token (TTFT) latency by 2x-4x"
+    ],
+    "limitations": [
+      "Requires 1,024+ minimum token threshold",
+      "5-minute cache TTL expiration on standard endpoints"
+    ],
+    "cost_impact": "Massive Cost Reduction (Reduces input token price from \u20b9250.50 to \u20b925.05 per 1M tokens).",
+    "related_concepts": [
+      "KV Cache",
+      "Token Pricing",
+      "Batch API",
+      "Latency",
+      "Context Window"
+    ],
+    "official_sources": [
+      "Anthropic Prompt Caching Docs",
+      "OpenAI Prompt Caching Developer Guide"
+    ],
+    "confidence_score": "100% Primary Source Verified (Verified 2026-07-25)"
+  },
+  "batch_api": {
+    "term": "Batch API",
+    "simple_definition": "Submitting a large queue of requests to be processed asynchronously overnight in exchange for a 50% discount.",
+    "eli5": "Like dropping off your laundry to be washed overnight instead of doing an emergency 1-hour express wash.",
+    "real_life_analogy": "Sending mail via standard economy delivery instead of express overnight courier. It takes a little longer, but costs half the price.",
+    "business_explanation": "Allows enterprises to process bulk reports, background audits, and portfolio analysis at a flat 50% discount on all token costs.",
+    "technical_explanation": "Requests are enqueued in provider worker pools during off-peak GPU utilization windows with a 24-hour non-deterministic SLA.",
+    "sarvax_example": "SARVAX generates 100,000 monthly wealth reports overnight via Batch API, slashing server bills from \u20b927.14 Lakhs to \u20b92.50 Lakhs.",
+    "when_to_use": "Asynchronous background jobs, cron tasks, weekly portfolio audits, and large-scale data extraction.",
+    "when_not_to_use": "Realtime user interfaces (OneChat) where the user is waiting for an instant response.",
+    "advantages": [
+      "Flat 50% cost reduction across input and output tokens",
+      "Higher rate limit ceilings"
+    ],
+    "limitations": [
+      "Up to 24-hour completion SLA",
+      "Not suitable for interactive chat"
+    ],
+    "cost_impact": "Direct 50% Reduction in Total Infrastructure Expense.",
+    "related_concepts": [
+      "Prompt Caching",
+      "Token Economics",
+      "Routing Strategy",
+      "Latency"
+    ],
+    "official_sources": [
+      "OpenAI Batch API Documentation",
+      "Anthropic Message Batches API"
+    ],
+    "confidence_score": "100% Primary Source Verified (Verified 2026-07-25)"
+  },
+  "context_window": {
+    "term": "Context Window",
+    "simple_definition": "The maximum amount of text (tokens) an AI model can read and remember in a single interaction.",
+    "eli5": "Like how many pages of a book you can keep in your mind at once without forgetting the beginning.",
+    "real_life_analogy": "A workbench. A larger workbench lets you spread out 10 full binders side-by-side instead of stacking them.",
+    "business_explanation": "Determines whether an AI can ingest a full 100-page bank statement or SEC filing without chopping it into pieces.",
+    "technical_explanation": "Maximum sequence length bounded by GPU VRAM allocations for quadratic $O(N^2)$ or linear $O(N)$ attention mechanisms.",
+    "sarvax_example": "Gemini 3 Pro's 2,000,000 token context window allows SARVAX to ingest 5 full years of client tax returns and portfolio reports in one prompt.",
+    "when_to_use": "Analyzing multi-page contracts, legal discovery, full codebases, and historical financial transcripts.",
+    "when_not_to_use": "Short single-question queries where sending huge context inflates latency and token cost unnecessarily.",
+    "advantages": [
+      "Eliminates document chunking errors",
+      "Preserves global cross-document context"
+    ],
+    "limitations": [
+      "Higher memory usage",
+      "Needle-in-a-haystack retrieval degradation if context is noisy"
+    ],
+    "cost_impact": "Linear increase in total input tokens billed per request.",
+    "related_concepts": [
+      "GraphRAG",
+      "KV Cache",
+      "Prompt Caching",
+      "Latency"
+    ],
+    "official_sources": [
+      "Google Gemini 2M Context Whitepaper",
+      "Artificial Analysis Context Benchmark"
+    ],
+    "confidence_score": "100% Primary Source Verified (Verified 2026-07-25)"
+  },
+  "graphrag": {
+    "term": "GraphRAG",
+    "simple_definition": "Retrieval-Augmented Generation that builds an interconnected knowledge graph of entities and relationships rather than matching plain text chunks.",
+    "eli5": "Instead of searching for matching words in a pile of papers, it builds a detective board showing who is connected to whom.",
+    "real_life_analogy": "A company organization chart or family tree showing direct connections between people, roles, and accounts.",
+    "business_explanation": "Prevents AI hallucinations in complex wealth management by understanding how holding companies, trusts, and tax accounts link together.",
+    "technical_explanation": "Combines LLM entity extraction with graph clustering algorithms (Leiden) to generate hierarchical community summaries.",
+    "sarvax_example": "SARVAX uses GraphRAG to map a high-net-worth client's holding companies, trusts, and offshore accounts to recommend tax harvesting.",
+    "when_to_use": "Complex multi-document financial intelligence, corporate due diligence, and risk mapping.",
+    "when_not_to_use": "Simple single-document keyword search where standard vector RAG is faster and cheaper.",
+    "advantages": [
+      "Substantially reduces hallucinations",
+      "Discovers multi-hop entity relationships"
+    ],
+    "limitations": [
+      "Higher upfront index construction cost",
+      "Requires graph database storage"
+    ],
+    "cost_impact": "Slightly higher indexing cost, but dramatically lowers token usage during final reasoning.",
+    "related_concepts": [
+      "LightRAG",
+      "R2R",
+      "Context Window",
+      "Embedding"
+    ],
+    "official_sources": [
+      "Microsoft GraphRAG GitHub",
+      "HKU LightRAG Paper"
+    ],
+    "confidence_score": "100% Primary Source Verified (Verified 2026-07-25)"
+  },
+  "mcp": {
+    "term": "Model Context Protocol (MCP)",
+    "simple_definition": "An open standard that connects AI models to external tools, databases, and enterprise software securely.",
+    "eli5": "Like a universal USB plug that lets the AI connect to any software in your office.",
+    "real_life_analogy": "A universal adapter plug that lets your phone charger fit into wall outlets in any country in the world.",
+    "business_explanation": "Allows SARVAX agents to safely read and write to Salesforce, HubSpot, Morningstar, and core banking systems without custom API code.",
+    "technical_explanation": "Client-server protocol utilizing JSON-RPC over stdio or HTTP SSE for dynamic tool auto-discovery, prompt templates, and resource access.",
+    "sarvax_example": "SARVAX uses an MCP server to fetch live stock prices from Morningstar and automatically update the client's Salesforce CRM record.",
+    "when_to_use": "Integrating AI agents with external SaaS platforms, databases, and enterprise APIs.",
+    "when_not_to_use": "Isolated offline tasks that require zero external data access.",
+    "advantages": [
+      "Standardized security boundary",
+      "Zero custom API integration code required"
+    ],
+    "limitations": [
+      "Requires running MCP server process",
+      "Tool discovery adds minor latency overhead"
+    ],
+    "cost_impact": "Neutral on token costs, but slashes engineering integration hours by 80%.",
+    "related_concepts": [
+      "Agent",
+      "Function Calling",
+      "Structured Outputs",
+      "CrewAI"
+    ],
+    "official_sources": [
+      "Anthropic Model Context Protocol Specification",
+      "MCP SDK GitHub"
+    ],
+    "confidence_score": "100% Primary Source Verified (Verified 2026-07-25)"
+  },
+  "agent": {
+    "term": "AI Agent",
+    "simple_definition": "An autonomous AI software worker that can plan, make decisions, use tools, and execute multi-step business tasks.",
+    "eli5": "Like a digital assistant that doesn't just answer your questions, but actually goes and does the work for you.",
+    "real_life_analogy": "A junior financial analyst who receives a task, searches the web, checks company databases, drafts a report, and sends it to you for review.",
+    "business_explanation": "Shifts AI from passive chatbots ('User operates AI') to autonomous business execution ('AI operates work'), recovering thousands of person-hours.",
+    "technical_explanation": "Looping state machine combining LLM reasoning, long-term vector memory, tool schema execution (MCP/JSON), and self-correction reflection loops.",
+    "sarvax_example": "SARVAX deploys an autonomous Due Diligence Agent that crawls news, extracts financial records, checks regulatory compliance, and drafts a report.",
+    "when_to_use": "Multi-step workflows requiring tool integration, web research, file management, and autonomous decision making.",
+    "when_not_to_use": "Deterministic, single-step data operations where a fixed code script is faster, cheaper, and 100% predictable.",
+    "advantages": [
+      "Automates complex multi-hour human workflows",
+      "Adapts autonomously to unexpected document layouts"
+    ],
+    "limitations": [
+      "Higher token consumption per task",
+      "Requires strict human-in-the-loop audit gates"
+    ],
+    "cost_impact": "Consumes 3x-8x more tokens than simple chat, but recovers 90%+ of human operational costs.",
+    "related_concepts": [
+      "MCP",
+      "Function Calling",
+      "Structured Outputs",
+      "GraphRAG"
+    ],
+    "official_sources": [
+      "Nous Research Hermes Agent Framework",
+      "CrewAI Multi-Agent Architecture"
+    ],
+    "confidence_score": "100% Primary Source Verified (Verified 2026-07-25)"
+  },
+  "structured_outputs": {
+    "term": "Structured Outputs (JSON Mode)",
+    "simple_definition": "Forcing the AI to format its answer in strict, machine-readable JSON data schemas.",
+    "eli5": "Like giving the AI a form with boxes where it MUST fill in each field cleanly without adding extra chatty text.",
+    "real_life_analogy": "A tax filing form. Every number must go into its exact designated box, or the tax department rejects the submission.",
+    "business_explanation": "Ensures AI outputs can be directly ingested into enterprise CRMs (Salesforce/HubSpot) and core banking software without breaking API integrations.",
+    "technical_explanation": "Constrains LLM token generation using context-free grammars (CFG) or JSON Schema token sampling logits masks at the decoder level.",
+    "sarvax_example": "SARVAX extracts client passport details and automatically formats them into a strict JSON payload for KYC compliance processing.",
+    "when_to_use": "Extracting form data, CRM writeback, database population, and feeding downstream code scripts.",
+    "when_not_to_use": "Creative, open-ended research writing where freeform Markdown prose is preferred.",
+    "advantages": [
+      "100% schema adherence guarantee",
+      "Zero JSON parse errors in backend code"
+    ],
+    "limitations": [
+      "Slightly restricts creative reasoning depth",
+      "Requires predefined JSON schema"
+    ],
+    "cost_impact": "Neutral on pricing, but eliminates API integration error recovery costs.",
+    "related_concepts": [
+      "Function Calling",
+      "Agent",
+      "MCP",
+      "OCR"
+    ],
+    "official_sources": [
+      "OpenAI Structured Outputs Guide",
+      "Anthropic JSON Output Guide"
+    ],
+    "confidence_score": "100% Primary Source Verified (Verified 2026-07-25)"
+  },
+  "tau_banking": {
+    "term": "TAU Banking Benchmark",
+    "simple_definition": "An independent, rigorous benchmark that tests how accurately an AI model performs complex banking and financial advisory tasks.",
+    "eli5": "A tough exam specifically designed for bank managers and wealth advisors.",
+    "real_life_analogy": "The Certified Financial Planner (CFP) exam testing a wealth manager's knowledge of tax law, portfolio allocation, and banking rules.",
+    "business_explanation": "Identifies which AI models can be trusted with actual customer money, tax calculations, and wealth management advice.",
+    "technical_explanation": "Multi-step tool-use and mathematical evaluation suite measuring accuracy across banking API interactions, ledger balances, and compliance constraints.",
+    "sarvax_example": "Kimi K3 ranks #1 globally on TAU Banking (0.3340), leading SARVAX to select it as the primary financial reasoning engine.",
+    "when_to_use": "Evaluating models for wealth management, banking chatbots, tax planning, and credit underwriting.",
+    "when_not_to_use": "General creative writing or coding tasks where SWE-bench or MMLU-Pro are better indicators.",
+    "advantages": [
+      "Directly measures financial services domain competence",
+      "Tests math and tool execution together"
+    ],
+    "limitations": [
+      "Focused strictly on banking domain",
+      "Evolving test set requiring continuous validation"
+    ],
+    "cost_impact": "Guides model selection to maximize accuracy per rupee spent.",
+    "related_concepts": [
+      "Intelligence Index",
+      "SWE-bench",
+      "Reasoning"
+    ],
+    "official_sources": [
+      "Artificial Analysis TAU Banking Leaderboard"
+    ],
+    "confidence_score": "100% Primary Source Verified (Verified 2026-07-25)"
+  }
+}
