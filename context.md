@@ -79,3 +79,12 @@
   2. **Kimi K3 (Moonshot AI):** World #1 Financial Banking Model on **TAU Banking (0.3340)**, beating GPT-5.6 Sol and Claude Opus 5.
   3. **GPT-5.6 Terra (max):** Fastest high-intelligence model clocking **128.0 tokens/second** generation speed.
   4. **DeepSeek V4 Pro & MiMo-V2.5-Pro:** Most cost-effective reasoning engines ($0.435/1M in, $0.87/1M out).
+
+---
+
+## 9. Founder Decision-Tree Routing Logic
+- **Budget < $500/mo (₹41,750/mo):** Route to **Gemini 2.0 Flash**
+- **High Accuracy Mandate:** Route to **Claude (Sonnet 4.6 / Opus 5)**
+- **OCR / Document Vision:** Route to **Gemini Vision**
+- **Enterprise Research:** Route to **DeepSeek + Claude**
+- **Financial Reports:** Route to **Hybrid Cascade** (DeepSeek 85% + Kimi K3 15% Audit)

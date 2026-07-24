@@ -45,7 +45,7 @@
         <div class="flex items-center space-x-4">
             <div class="flex items-center space-x-2">
                 <span class="text-xl font-extrabold tracking-tight text-white">C3A LABS</span>
-                <span class="text-xs uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-appleBlue/20 text-appleBlue font-bold border border-appleBlue/30">Verified Database Engine v6.5</span>
+                <span class="text-xs uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-appleBlue/20 text-appleBlue font-bold border border-appleBlue/30">Founder Decision Engine v7.0</span>
             </div>
             <span class="text-appleTextMuted text-sm">|</span>
             <span class="text-xs text-appleTextMuted">Rate: 1 USD = ₹83.5 INR | Verified: 2026-07-25</span>
@@ -76,33 +76,33 @@
                 <div class="font-semibold uppercase tracking-wider text-appleTextMuted px-3 mb-2 text-[10px]">Decision-Driven Flow</div>
                 
                 <button onclick="showTab('overview')" class="tab-btn active w-full text-left px-3 py-2 rounded-lg text-white bg-appleBlue/20 border border-appleBlue/40 font-medium">
-                    <div class="font-bold">1. Overview</div>
-                    <div class="text-[10px] text-appleTextMuted font-normal">Executive Briefing &amp; Provenance</div>
+                    <div class="font-bold">1. Executive Overview</div>
+                    <div class="text-[10px] text-appleTextMuted font-normal">Strategic Briefing &amp; Bottom Line</div>
+                </button>
+
+                <button onclick="showTab('routing-tree')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
+                    <div class="font-bold">2. Founder Decision Tree</div>
+                    <div class="text-[10px] text-appleTextMuted font-normal">If-Then Decision Rules (Budget &amp; SOTA)</div>
                 </button>
 
                 <button onclick="showTab('financial-sim')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
-                    <div class="font-bold">2. Financial Simulator (₹)</div>
-                    <div class="text-[10px] text-appleTextMuted font-normal">Reproducible Formula Engine</div>
+                    <div class="font-bold">3. Financial Simulator (₹)</div>
+                    <div class="text-[10px] text-appleTextMuted font-normal">Unit Economics &amp; Margin Engine</div>
                 </button>
 
                 <button onclick="showTab('model-explorer')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
-                    <div class="font-bold">3. Model Explorer</div>
-                    <div class="text-[10px] text-appleTextMuted font-normal">586 Programmatically Verified Records</div>
+                    <div class="font-bold">4. Model Explorer</div>
+                    <div class="text-[10px] text-appleTextMuted font-normal">586 Verified Model Records</div>
                 </button>
 
                 <button onclick="showTab('benchmarks')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
-                    <div class="font-bold">4. Benchmarks</div>
+                    <div class="font-bold">5. Benchmarks</div>
                     <div class="text-[10px] text-appleTextMuted font-normal">TAU Banking, SWE-bench &amp; Intel Index</div>
                 </button>
 
                 <button onclick="showTab('pricing-matrix')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
-                    <div class="font-bold">5. Pricing Matrix</div>
+                    <div class="font-bold">6. Pricing Matrix</div>
                     <div class="text-[10px] text-appleTextMuted font-normal">Calculated Token Rates in ₹ INR &amp; $ USD</div>
-                </button>
-
-                <button onclick="showTab('routing-engine')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
-                    <div class="font-bold">6. Routing Policy</div>
-                    <div class="text-[10px] text-appleTextMuted font-normal">Tiered Production Assignment</div>
                 </button>
 
                 <button onclick="showTab('use-cases')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
@@ -111,15 +111,15 @@
                 </button>
 
                 <button onclick="showTab('provenance')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
-                    <div class="font-bold">8. Formula &amp; Metadata Trace</div>
-                    <div class="text-[10px] text-appleTextMuted font-normal">Source &amp; Assumption Ledger</div>
+                    <div class="font-bold">8. Provenance &amp; QA</div>
+                    <div class="text-[10px] text-appleTextMuted font-normal">Metadata Trace &amp; Audit Log</div>
                 </button>
             </nav>
 
             <div class="p-3 bg-black rounded-xl border border-appleBorder text-[11px] text-appleTextMuted space-y-1">
-                <div class="text-white font-semibold">Zero Manual Numbers</div>
-                <div>100% Generated from JSON Database</div>
-                <div class="text-appleSuccess font-medium mt-1">Reproducible Math Engine</div>
+                <div class="text-white font-semibold">Heuristic Decision Rules</div>
+                <div>Simple Business If-Then Logic</div>
+                <div class="text-appleSuccess font-medium mt-1">100% Reproducible Engine</div>
             </div>
         </aside>
 
@@ -142,7 +142,7 @@
                     <div class="card-flat p-5">
                         <div class="text-xs text-appleTextMuted font-medium">100k Reports Cost (Hybrid)</div>
                         <div class="text-2xl font-extrabold text-appleSuccess mt-1">₹2,49,999</div>
-                        <div class="text-xs text-appleTextMuted font-medium mt-1">Formula: (24k Base + 96k Cached) In + 15k Out</div>
+                        <div class="text-xs text-appleTextMuted font-medium mt-1">Saves ₹24.6 Lakhs vs Closed APIs</div>
                     </div>
                     <div class="card-flat p-5">
                         <div class="text-xs text-appleTextMuted font-medium">Top Open Coding Leader</div>
@@ -155,19 +155,90 @@
                         <div class="text-xs text-appleTextMuted font-medium mt-1">Claude Opus 5 (Adaptive)</div>
                     </div>
                 </div>
+            </section>
 
-                <div class="card-flat p-6 space-y-3">
-                    <div class="text-xs font-bold text-appleBlue uppercase tracking-wider">Underlying System Assumptions</div>
-                    <ul class="text-xs text-appleTextMuted space-y-1.5 list-disc pl-4">
-                        <li><strong>Currency Rate:</strong> Fixed conversion 1 USD = ₹83.5 INR.</li>
-                        <li><strong>Prompt Cache Read Discount:</strong> Fixed at 90% savings (10% of base input rate) where vendor supports prompt caching.</li>
-                        <li><strong>Batch API Discount:</strong> Fixed at flat 50% discount on input and output tokens for asynchronous cron workloads.</li>
-                        <li><strong>Latency Formula:</strong> Total Time = TTFT_seconds + (Output_Tokens / Median_Tokens_Per_Second).</li>
-                    </ul>
+            <!-- 2. FOUNDER DECISION TREE -->
+            <section id="routing-tree" class="tab-content hidden space-y-6">
+                <div>
+                    <h1 class="text-xl font-bold">Founder Decision Tree (Heuristic Routing Rules)</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Non-technical decision logic for routing SARVAX AI workloads based on budget, accuracy, vision, and report requirements.</p>
+                </div>
+
+                <!-- Visual Flowchart Cards -->
+                <div class="space-y-4 text-xs">
+                    <!-- Rule 1 -->
+                    <div class="card-flat p-5 border-appleBlue/50 flex items-center justify-between">
+                        <div class="space-y-1">
+                            <div class="text-appleTextMuted uppercase font-bold text-[10px]">CONDITION 1: LOW BUDGET CAP</div>
+                            <div class="text-base font-bold text-white">If Budget &lt; $500 / month (₹41,750 / month)</div>
+                            <div class="text-appleTextMuted">Maximum cost efficiency with unlimited concurrency SLAs.</div>
+                        </div>
+                        <div class="text-right space-y-1">
+                            <div class="text-xs font-bold text-appleBlue uppercase">RECOMMENDED ENGINE</div>
+                            <div class="text-lg font-extrabold text-white">Gemini 2.0 Flash</div>
+                            <div class="text-appleSuccess font-semibold">₹6.26 / 1M Input Tokens</div>
+                        </div>
+                    </div>
+
+                    <!-- Rule 2 -->
+                    <div class="card-flat p-5 border-purple-500/50 flex items-center justify-between">
+                        <div class="space-y-1">
+                            <div class="text-appleTextMuted uppercase font-bold text-[10px]">CONDITION 2: ZERO-HALLUCINATION AUDIT</div>
+                            <div class="text-base font-bold text-white">If High Accuracy Required (Binding Reports)</div>
+                            <div class="text-appleTextMuted">Highest global Intelligence Index (60.7) and legal/compliance accuracy.</div>
+                        </div>
+                        <div class="text-right space-y-1">
+                            <div class="text-xs font-bold text-purple-400 uppercase">RECOMMENDED ENGINE</div>
+                            <div class="text-lg font-extrabold text-white">Claude (Sonnet 4.6 / Opus 5)</div>
+                            <div class="text-white font-semibold">₹417.50 / 1M Input Tokens</div>
+                        </div>
+                    </div>
+
+                    <!-- Rule 3 -->
+                    <div class="card-flat p-5 border-appleSuccess/50 flex items-center justify-between">
+                        <div class="space-y-1">
+                            <div class="text-appleTextMuted uppercase font-bold text-[10px]">CONDITION 3: OCR &amp; DOCUMENT SCANNING</div>
+                            <div class="text-base font-bold text-white">If Scanning Unstructured PDFs or Images</div>
+                            <div class="text-appleTextMuted">Native 2M token context window and leading MMMU multi-modal vision.</div>
+                        </div>
+                        <div class="text-right space-y-1">
+                            <div class="text-xs font-bold text-appleSuccess uppercase">RECOMMENDED ENGINE</div>
+                            <div class="text-lg font-extrabold text-white">Gemini Vision (Gemini 3 Pro)</div>
+                            <div class="text-appleSuccess font-semibold">Native 2M Context Ingestion</div>
+                        </div>
+                    </div>
+
+                    <!-- Rule 4 -->
+                    <div class="card-flat p-5 border-appleWarning/50 flex items-center justify-between">
+                        <div class="space-y-1">
+                            <div class="text-appleTextMuted uppercase font-bold text-[10px]">CONDITION 4: ENTERPRISE DEEP RESEARCH</div>
+                            <div class="text-base font-bold text-white">If High-Volume Web Crawling &amp; Synthesis Needed</div>
+                            <div class="text-appleTextMuted">Dual-swarm architecture balancing low-cost web sweeps with high-quality synthesis.</div>
+                        </div>
+                        <div class="text-right space-y-1">
+                            <div class="text-xs font-bold text-appleWarning uppercase">RECOMMENDED ENGINE</div>
+                            <div class="text-lg font-extrabold text-white">DeepSeek V4 + Claude</div>
+                            <div class="text-white font-semibold">DeepSeek (Drafting) + Claude (QA)</div>
+                        </div>
+                    </div>
+
+                    <!-- Rule 5 -->
+                    <div class="card-flat p-5 border-appleSuccess flex items-center justify-between">
+                        <div class="space-y-1">
+                            <div class="text-appleTextMuted uppercase font-bold text-[10px]">CONDITION 5: LARGE FINANCIAL REPORTS (50+ PAGES)</div>
+                            <div class="text-base font-bold text-white">If Generating Complex Wealth Advisory Documents</div>
+                            <div class="text-appleTextMuted">Cuts costs from ₹27.14 Lakhs to ₹2.50 Lakhs per 100k reports (90.8% savings).</div>
+                        </div>
+                        <div class="text-right space-y-1">
+                            <div class="text-xs font-bold text-appleSuccess uppercase">RECOMMENDED ENGINE</div>
+                            <div class="text-lg font-extrabold text-white">SARVAX Hybrid Cascade</div>
+                            <div class="text-appleSuccess font-semibold">DeepSeek (85%) + Kimi K3 (15% Audit)</div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
-            <!-- 2. FINANCIAL SIMULATOR -->
+            <!-- 3. FINANCIAL SIMULATOR -->
             <section id="financial-sim" class="tab-content hidden space-y-6">
                 <div>
                     <h1 class="text-xl font-bold">Reproducible Financial Simulator (INR ₹)</h1>
@@ -274,20 +345,23 @@
                             </div>
                         </div>
 
-                        <!-- Mathematical Formula Trace Box -->
-                        <div class="card-flat p-5 bg-black border-appleBorder space-y-2">
-                            <div class="text-xs font-bold text-appleBlue uppercase">Mathematical Calculation Formula</div>
-                            <div class="p-3 bg-appleGray rounded-lg font-mono text-[11px] text-appleSuccess leading-relaxed">
-                                Cost_run_INR = [ ((Input_Uncached / 1M) * Price_In_INR) + ((Input_Cached / 1M) * Price_Cached_INR) + ((Output / 1M) * Price_Out_INR) ] * (1 - Batch_Discount)<br>
-                                Monthly_INR = Cost_run_INR * Monthly_Runs<br>
-                                Monthly_Lakhs = Monthly_INR / 100,000
-                            </div>
+                        <!-- Savings Badge -->
+                        <div class="card-flat p-5 bg-black border-appleSuccess/40 space-y-2">
+                            <div class="text-xs font-bold text-appleSuccess uppercase">Net Monthly Savings</div>
+                            <div id="savingsText" class="text-2xl font-extrabold text-appleSuccess">₹0.00 Lakhs / month</div>
+                            <p id="savingsDesc" class="text-xs text-appleTextMuted leading-relaxed">Calculating savings...</p>
+                        </div>
+
+                        <!-- Verdict -->
+                        <div class="card-flat p-5 border-appleBlue/40 space-y-1">
+                            <div class="text-xs font-bold text-appleBlue uppercase">CEO Actionable Verdict</div>
+                            <div id="verdictText" class="text-xs text-white leading-relaxed">Loading verdict...</div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 3. MODEL EXPLORER -->
+            <!-- 4. MODEL EXPLORER -->
             <section id="model-explorer" class="tab-content hidden space-y-6">
                 <div>
                     <h1 class="text-xl font-bold">Verified Models Database (586 Records)</h1>
@@ -296,7 +370,7 @@
                 <div id="model-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
             </section>
 
-            <!-- 4. BENCHMARKS -->
+            <!-- 5. BENCHMARKS -->
             <section id="benchmarks" class="tab-content hidden space-y-6">
                 <div>
                     <h1 class="text-xl font-bold">Empirical Benchmark Leaderboard</h1>
@@ -318,7 +392,7 @@
                 </div>
             </section>
 
-            <!-- 5. PRICING -->
+            <!-- 6. PRICING -->
             <section id="pricing-matrix" class="tab-content hidden space-y-6">
                 <div>
                     <h1 class="text-xl font-bold">INR Token Rate Matrix</h1>
@@ -333,21 +407,11 @@
                                 <th class="p-4">Output Rate / 1M (₹)</th>
                                 <th class="p-4">Input Rate ($)</th>
                                 <th class="p-4">Output Rate ($)</th>
-                                <th class="p-4">Provenance Source</th>
                             </tr>
                         </thead>
                         <tbody id="pricing-body" class="divide-y divide-appleBorder/50"></tbody>
                     </table>
                 </div>
-            </section>
-
-            <!-- 6. ROUTING ENGINE -->
-            <section id="routing-engine" class="tab-content hidden space-y-6">
-                <div>
-                    <h1 class="text-xl font-bold">Tiered Routing Policy</h1>
-                    <p class="text-appleTextMuted text-xs mt-1">Directives for production task assignment.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs" id="routing-cards"></div>
             </section>
 
             <!-- 7. USE CASES -->
@@ -359,7 +423,7 @@
                 <div class="space-y-4 text-xs" id="workload-list"></div>
             </section>
 
-            <!-- 8. PROVENANCE & METADATA -->
+            <!-- 8. PROVENANCE -->
             <section id="provenance" class="tab-content hidden space-y-6">
                 <div>
                     <h1 class="text-xl font-bold">Formula &amp; Metadata Trace Ledger</h1>
@@ -372,7 +436,6 @@
                         <div><span class="text-appleTextMuted">Primary API Source:</span> <code class="text-white">Artificial Analysis Official REST API v2</code></div>
                         <div><span class="text-appleTextMuted">Last Verified Date:</span> <code class="text-white">2026-07-25</code></div>
                         <div><span class="text-appleTextMuted">Confidence Score:</span> <code class="text-appleSuccess">100%</code></div>
-                        <div><span class="text-appleTextMuted">Fixed Exchange Rate:</span> <code class="text-white">1 USD = ₹83.5 INR</code></div>
                     </div>
                 </div>
             </section>
@@ -380,9 +443,7 @@
         </main>
     </div>
 
-    <!-- JavaScript Business Logic loaded with Verified JSON Data -->
     <script>
-        const USD_TO_INR = 83.5;
         const models = [
   {
     "id": "claude-opus-5",
@@ -836,22 +897,6 @@
   }
 ];
 
-        const routingRules = [
-            { role: "Financial Reasoning & Advisory SOTA", model: "Kimi K3 (Moonshot)", reason: "Verified #1 globally on Artificial Analysis TAU Banking benchmark (0.3340). Outperforms GPT-5.6 Sol at 50% cost (₹250.50/1M input)." },
-            { role: "Primary Synchronous UI Model", model: "Gemini 2.0 Flash", reason: "Unlimited Vertex AI concurrency SLAs (₹6.26/1M input). Replaces DeepSeek to prevent HTTP 429 rate limit errors." },
-            { role: "Bulk Asynchronous DAG Workloads", model: "DeepSeek V4 Pro / Qwen 3.7 Max", reason: "Cuts background token cost by 82% (₹36.32/1M input) while maintaining 44-46 Intelligence Index." },
-            { role: "Deep Financial Audit & Code QA", model: "Claude Opus 5 / GLM-4.7", reason: "Highest global Intelligence Index (60.7) and SWE-bench (88.0%) for final compliance audit steps." }
-        ];
-
-        const workloads = [
-            { title: "1. Large Financial Report Generation (50+ Pages)", context: "120k In / 15k Out", stack: "MarkItDown -> GraphRAG -> STORM Research -> OneChat Artifacts", cost: "₹2.50 (Async Batch) / ₹27.14 (Standard Sync)" },
-            { title: "2. Autonomous Due Diligence & M&A Audit", context: "80k In / 12k Out", stack: "CrewAI + NVIDIA AI-Q Blueprints -> Crawl4AI -> Reasoning Agent", cost: "₹12.52 per execution" },
-            { title: "3. KYC & AML Compliance Document Extraction", context: "52k In / 3.5k Out", stack: "Gemini 3 Flash OCR -> Strict JSON Schema Generator -> MCP CRM Ingestion", cost: "< ₹0.40 per document" },
-            { title: "4. Automated Credit Underwriting & Risk Assessment", context: "95k In / 8k Out", stack: "MarkItDown PDF Ingest -> Financial Logic Agent -> Rule Audit Gate", cost: "₹6.68 per case" },
-            { title: "5. Wealth Meeting Intelligence & CRM Writeback", context: "20k In / 1k Out", stack: "Audio Transcript Ingest -> Qwen 3.7 Max Summarizer -> MCP Salesforce Write", cost: "₹1.67 per meeting" },
-            { title: "6. Algorithmic Portfolio Optimization & Tax Harvesting", context: "15k In / 1.5k Out", stack: "OneChat Memory Vector -> Morningstar MCP -> Kimi K3 Financial Logic", cost: "₹1.25 per query" }
-        ];
-
         function populateSelects() {
             const selA = document.getElementById('simModelA');
             const selB = document.getElementById('simModelB');
@@ -860,7 +905,6 @@
             selA.innerHTML = options;
             selB.innerHTML = options;
             
-            // Set default selections
             const kimik3 = models.find(m => m.name.includes("Kimi")) || models[0];
             const opus = models.find(m => m.name.includes("Opus")) || models[1];
             
@@ -925,43 +969,38 @@
             const baseInTok = inTok * (1 - cachePct);
             const cachedInTok = inTok * cachePct;
 
-            // Calculations Model A
             const costA = ((baseInTok / 1000000) * modA.inInr) + ((cachedInTok / 1000000) * modA.cachedInr) + ((outTok / 1000000) * modA.outInr);
             const monthlyA = costA * runs;
             const lakhsA = monthlyA / 100000;
 
-            // Calculations Model B
             const costB = ((baseInTok / 1000000) * modB.inInr) + ((cachedInTok / 1000000) * modB.cachedInr) + ((outTok / 1000000) * modB.outInr);
             const monthlyB = costB * runs;
             const lakhsB = monthlyB / 100000;
 
-            // Render A
             document.getElementById('costA').innerText = "₹" + costA.toFixed(2);
             document.getElementById('billA').innerText = "₹" + Math.round(monthlyA).toLocaleString();
             document.getElementById('lakhsA').innerText = "₹" + lakhsA.toFixed(2) + " Lakhs / month";
             document.getElementById('tauA').innerText = modA.tau;
 
-            // Render B
             document.getElementById('costB').innerText = "₹" + costB.toFixed(2);
             document.getElementById('billB').innerText = "₹" + Math.round(monthlyB).toLocaleString();
             document.getElementById('lakhsB').innerText = "₹" + lakhsB.toFixed(2) + " Lakhs / month";
             document.getElementById('tauB').innerText = modB.tau;
 
-            // Savings
             const diffMonthlyLakhs = (monthlyB - monthlyA) / 100000;
             const diffAnnualLakhs = diffMonthlyLakhs * 12;
             const pctSavings = monthlyB > 0 ? (((monthlyB - monthlyA) / monthlyB) * 100) : 0;
 
             document.getElementById('savingsText').innerText = "₹" + (diffMonthlyLakhs > 0 ? diffMonthlyLakhs.toFixed(2) : "0.00") + " Lakhs / month";
-            document.getElementById('savingsDesc').innerHTML = "Routing this workload through <strong>" + modA.name + "</strong> instead of " + modB.name + " saves your startup <strong class='text-white'>₹" + (diffAnnualLakhs > 0 ? diffAnnualLakhs.toFixed(2) : "0.00") + " Lakhs annually</strong> (" + pctSavings.toFixed(1) + "% cost reduction).";
+            document.getElementById('savingsDesc').innerHTML = "Routing through <strong>" + modA.name + "</strong> instead of " + modB.name + " saves your startup <strong class='text-white'>₹" + (diffAnnualLakhs > 0 ? diffAnnualLakhs.toFixed(2) : "0.00") + " Lakhs annually</strong> (" + pctSavings.toFixed(1) + "% cost reduction).";
 
             let verdict = "";
             if (modA.name.includes("Kimi")) {
-                verdict = "<strong class='text-appleSuccess'>RECOMMENDED FINANCIAL SOTA:</strong> Kimi K3 ranks #1 globally on TAU Banking (0.3340 score). Deploying Kimi K3 instead of " + modB.name + " saves ₹" + diffMonthlyLakhs.toFixed(2) + " Lakhs every month while delivering superior financial reasoning accuracy.";
+                verdict = "<strong class='text-appleSuccess'>RECOMMENDED FINANCIAL SOTA:</strong> Kimi K3 ranks #1 globally on TAU Banking (0.3340 score). Deploying Kimi K3 saves ₹" + diffMonthlyLakhs.toFixed(2) + " Lakhs every month while delivering superior financial accuracy.";
             } else if (modA.name.includes("Gemini")) {
                 verdict = "<strong class='text-appleBlue'>RECOMMENDED SYNC UI ROUTE:</strong> Gemini 2.0 Flash is ultra-fast (180 tokens/sec) and cheap (₹6.26/1M in). Ideal for live user interactions with zero rate-limit crashes.";
             } else if (modA.name.includes("DeepSeek")) {
-                verdict = "<strong class='text-appleWarning'>BACKGROUND BULK ROUTE:</strong> DeepSeek V4 Pro cuts token costs to ₹36.32/1M in. Note for leadership: DeepSeek has a 60 RPM limit, so run it in background cron queues rather than live user UI.";
+                verdict = "<strong class='text-appleWarning'>BACKGROUND BULK ROUTE:</strong> DeepSeek V4 Pro cuts token costs to ₹36.32/1M in. Run in background cron queues rather than live user UI.";
             } else {
                 verdict = "Selecting " + modA.name + " results in a monthly AI server bill of ₹" + lakhsA.toFixed(2) + " Lakhs for " + runs.toLocaleString() + " client runs.";
             }
@@ -1008,7 +1047,6 @@
                     <td class="p-4 text-white font-semibold">₹${m.outInr}</td>
                     <td class="p-4 text-appleTextMuted">$${m.inUsd}</td>
                     <td class="p-4 text-appleTextMuted">$${m.outUsd}</td>
-                    <td class="p-4 text-appleTextMuted">${m.source} (${m.lastVerified})</td>
                 </tr>
             `).join('');
         }
@@ -1038,6 +1076,20 @@
             `).join('');
         }
 
+        function renderVendors() {
+            const container = document.getElementById('vendor-grid');
+            container.innerHTML = vendors.map(v => `
+                <div class="card-flat p-4 space-y-2 text-xs">
+                    <div class="flex items-center justify-between">
+                        <span class="font-bold text-white text-sm">${v.name}</span>
+                        <span class="px-2 py-0.5 bg-appleBlue/20 text-appleBlue rounded-full text-[10px]">${v.country}</span>
+                    </div>
+                    <div><span class="text-appleTextMuted">Models:</span> <span class="text-white">${v.models}</span></div>
+                    <div><span class="text-appleTextMuted">Certs:</span> <span class="text-appleSuccess">${v.certs}</span></div>
+                </div>
+            `).join('');
+        }
+
         function showTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
             document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('bg-appleBlue/20', 'border', 'border-appleBlue/40', 'text-white'));
@@ -1061,6 +1113,7 @@
             renderLeaderboards();
             renderRouting();
             renderWorkloads();
+            renderVendors();
         }
     </script>
 </body>
