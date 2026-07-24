@@ -67,3 +67,15 @@
 - **Total Models Profiled:** 28 Families across 18 Vendors
 - **Overall Confidence Score:** 98.5%
 - **Status:** All Quality Gates passed per HERMES OPERATING CONSTITUTION v1.0.
+
+---
+
+## 8. Primary Source Upgrade: Artificial Analysis Official API Integration
+- **API Key Authenticated:** `aa_rwThARuCxOJLxhbBqOmvaIGSljnIAYnh` (Satyam Singh Organization)
+- **Live Endpoint:** `https://artificialanalysis.ai/api/v2/data/llms/models`
+- **Total Live Models Ingested:** 586 Models across 18 Global Vendors.
+- **Key Empirical Benchmark Findings:**
+  1. **Claude Opus 5 (Adaptive Reasoning, Max Effort):** World #1 Intelligence Index (**60.7**) and Coding Index (**78.0**).
+  2. **Kimi K3 (Moonshot AI):** World #1 Financial Banking Model on **TAU Banking (0.3340)**, beating GPT-5.6 Sol and Claude Opus 5.
+  3. **GPT-5.6 Terra (max):** Fastest high-intelligence model clocking **128.0 tokens/second** generation speed.
+  4. **DeepSeek V4 Pro & MiMo-V2.5-Pro:** Most cost-effective reasoning engines ($0.435/1M in, $0.87/1M out).
