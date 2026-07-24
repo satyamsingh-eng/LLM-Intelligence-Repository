@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SARVAX Enterprise AI Intelligence Portal | C3A Labs</title>
+    <title>SARVAX AI Model Intelligence & Economics Portal | C3A Labs</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -16,555 +16,471 @@
                         appleDark: '#000000',
                         appleGray: '#1c1c1e',
                         appleLightGray: '#2c2c2e',
-                        appleTextGray: '#86868b',
-                        appleAccent: '#2997ff',
+                        appleBorder: '#333336',
+                        appleTextMuted: '#86868b',
                         appleSuccess: '#30d158',
                         appleWarning: '#ffd60a',
-                        appleDanger: '#ff453a',
-                        applePurple: '#bf5af2'
+                        appleDanger: '#ff453a'
                     }
                 }
             }
         }
     </script>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-        .glass { background: rgba(28, 28, 30, 0.88); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); }
-        .glass-header { background: rgba(0, 0, 0, 0.90); backdrop-filter: blur(25px); }
-        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
-        .custom-scrollbar::-webkit-scrollbar-track { background: #1c1c1e; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #3a3a3c; border-radius: 3px; }
-        .node-box { background: rgba(44, 44, 46, 0.6); border: 1px solid rgba(255,255,255,0.15); transition: all 0.2s ease; }
-        .node-box:hover { border-color: #2997ff; transform: translateY(-2px); }
+        body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif; }
+        .glass-header { background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+        .glass-sidebar { background: rgba(28, 28, 30, 0.85); backdrop-filter: blur(20px); }
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; height: 5px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #000000; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #2c2c2e; border-radius: 3px; }
     </style>
 </head>
 <body class="bg-black text-white antialiased custom-scrollbar min-h-screen flex flex-col">
 
-    <!-- Top Navigation Header -->
-    <header class="sticky top-0 z-50 glass-header border-b border-appleLightGray/50 px-6 py-3 flex items-center justify-between">
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 glass-header border-b border-appleBorder px-6 py-3 flex items-center justify-between">
         <div class="flex items-center space-x-4">
             <div class="flex items-center space-x-2">
-                <span class="text-xl font-bold tracking-tight bg-gradient-to-r from-blue-400 via-appleBlue to-indigo-400 bg-clip-text text-transparent">SARVAX</span>
-                <span class="text-xs uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-appleBlue/20 text-appleAccent font-semibold border border-appleBlue/30">Artificial Analysis Live API Connected</span>
+                <span class="text-xl font-bold tracking-tight text-white">C3A LABS</span>
+                <span class="text-xs uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-appleBlue/10 text-appleBlue font-semibold border border-appleBlue/30">SARVAX Intelligence OS</span>
             </div>
-            <span class="text-appleTextGray text-sm">|</span>
-            <span class="text-xs text-appleTextGray">C3A Labs Enterprise Research OS</span>
+            <span class="text-appleTextMuted text-sm">|</span>
+            <span class="text-xs text-appleTextMuted">Exchange Rate: 1 USD = ₹83.50 INR</span>
         </div>
 
-        <!-- Global Search Bar -->
+        <!-- Global Search -->
         <div class="relative w-96">
-            <input type="text" id="globalSearch" oninput="handleGlobalSearch(this.value)" placeholder="Search 586 models, TAU Banking, EU AI Act..." 
-                class="w-full bg-appleGray text-sm text-white placeholder-appleTextGray rounded-lg px-4 py-1.5 pl-9 border border-appleLightGray/50 focus:outline-none focus:border-appleBlue transition">
-            <svg class="w-4 h-4 text-appleTextGray absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <input type="text" id="globalSearch" oninput="handleGlobalSearch(this.value)" placeholder="Search models, benchmarks, pricing in INR..." 
+                class="w-full bg-appleGray text-xs text-white placeholder-appleTextMuted rounded-lg px-4 py-2 pl-9 border border-appleBorder focus:outline-none focus:border-appleBlue transition">
+            <svg class="w-4 h-4 text-appleTextMuted absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
             </svg>
         </div>
 
-        <!-- Metadata Status -->
-        <div class="flex items-center space-x-4 text-xs text-appleTextGray">
-            <div><span class="text-white font-medium">API Feed:</span> <span class="text-appleSuccess font-bold">586 Live Models</span></div>
-            <div><span class="text-white font-medium">Org Key:</span> <span class="text-appleAccent font-mono">aa_rwThA...</span></div>
-            <div><span class="text-white font-medium">Confidence:</span> <span class="text-appleSuccess font-bold">100% Direct</span></div>
+        <!-- System Metadata -->
+        <div class="flex items-center space-x-4 text-xs text-appleTextMuted">
+            <div><span class="text-white font-medium">Dataset:</span> Artificial Analysis API</div>
+            <div><span class="text-white font-medium">Verified Models:</span> 586</div>
+            <div><span class="text-white font-medium">Confidence:</span> <span class="text-appleSuccess font-semibold">100% Direct</span></div>
         </div>
     </header>
 
-    <!-- App Body -->
+    <!-- Main Workspace -->
     <div class="flex-1 flex overflow-hidden">
         
         <!-- Sidebar Navigation -->
-        <aside class="w-64 glass border-r border-appleLightGray/50 p-4 flex flex-col justify-between overflow-y-auto custom-scrollbar">
+        <aside class="w-64 glass-sidebar border-r border-appleBorder p-4 flex flex-col justify-between overflow-y-auto custom-scrollbar">
             <nav class="space-y-1">
-                <div class="text-xs font-semibold uppercase tracking-wider text-appleTextGray px-3 mb-2">Live Artificial Analysis Data</div>
-                <button onclick="showTab('exec-dashboard')" class="tab-btn active w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm text-white bg-appleBlue/20 border border-appleBlue/40 font-medium">
-                    <span>📊 Executive Overview</span>
+                <div class="text-[11px] font-semibold uppercase tracking-wider text-appleTextMuted px-3 mb-2">Executive Navigation</div>
+                
+                <button onclick="showTab('exec-dashboard')" class="tab-btn active w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-white bg-appleBlue/20 border border-appleBlue/40 font-medium">
+                    <span>Executive Summary</span>
                 </button>
-                <button onclick="showTab('model-simulator')" class="tab-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm text-appleTextGray hover:text-white hover:bg-appleGray transition">
-                    <span>🧮 Interactive Model Simulator</span>
+                <button onclick="showTab('model-simulator')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
+                    <span>Unit Economics Simulator (₹)</span>
                 </button>
-                <button onclick="showTab('model-explorer')" class="tab-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm text-appleTextGray hover:text-white hover:bg-appleGray transition">
-                    <span>🤖 Verified Models (586)</span>
+                <button onclick="showTab('model-explorer')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
+                    <span>Global Model Leaderboard</span>
                 </button>
-                <button onclick="showTab('pricing-explorer')" class="tab-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm text-appleTextGray hover:text-white hover:bg-appleGray transition">
-                    <span>💵 Pricing & Token Matrix</span>
-                </button>
-                <button onclick="showTab('benchmark-explorer')" class="tab-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm text-appleTextGray hover:text-white hover:bg-appleGray transition">
-                    <span>📈 TAU Banking & SOTA Leaderboard</span>
-                </button>
-                <button onclick="showTab('routing-engine')" class="tab-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm text-appleTextGray hover:text-white hover:bg-appleGray transition">
-                    <span>🔀 Dynamic Routing Matrix</span>
+                <button onclick="showTab('pricing-explorer')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
+                    <span>INR Token Rate Matrix</span>
                 </button>
 
-                <div class="text-xs font-semibold uppercase tracking-wider text-appleTextGray px-3 mt-6 mb-2">Workloads & Architecture</div>
-                <button onclick="showTab('workload-explorer')" class="tab-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm text-appleTextGray hover:text-white hover:bg-appleGray transition">
-                    <span>💼 Financial Workloads (6)</span>
+                <div class="text-[11px] font-semibold uppercase tracking-wider text-appleTextMuted px-3 mt-6 mb-2">Architecture & Workloads</div>
+                <button onclick="showTab('routing-engine')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
+                    <span>Dynamic Routing Policy</span>
                 </button>
-                <button onclick="showTab('architecture-kg')" class="tab-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm text-appleTextGray hover:text-white hover:bg-appleGray transition">
-                    <span>🏗️ Architecture & Knowledge Graph</span>
+                <button onclick="showTab('workload-explorer')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
+                    <span>Financial Workload Suite</span>
                 </button>
-                <button onclick="showTab('compliance-explorer')" class="tab-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm text-appleTextGray hover:text-white hover:bg-appleGray transition">
-                    <span>🛡️ Compliance & EU AI Act</span>
+                <button onclick="showTab('architecture-explorer')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
+                    <span>Deep Research Engine Stack</span>
                 </button>
-                <button onclick="showTab('vendor-directory')" class="tab-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm text-appleTextGray hover:text-white hover:bg-appleGray transition">
-                    <span>🏢 Vendor Directory (18)</span>
+                <button onclick="showTab('compliance-explorer')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
+                    <span>EU AI Act & Governance</span>
                 </button>
 
-                <div class="text-xs font-semibold uppercase tracking-wider text-appleTextGray px-3 mt-6 mb-2">Research OS Governance</div>
-                <button onclick="showTab('confidence-dashboard')" class="tab-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm text-appleTextGray hover:text-white hover:bg-appleGray transition">
-                    <span>🎯 Confidence & Evidence</span>
+                <div class="text-[11px] font-semibold uppercase tracking-wider text-appleTextMuted px-3 mt-6 mb-2">Governance & Audits</div>
+                <button onclick="showTab('contradictions')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
+                    <span>Skeptic Invalidation Log</span>
                 </button>
-                <button onclick="showTab('contradictions')" class="tab-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm text-appleTextGray hover:text-white hover:bg-appleGray transition">
-                    <span>⚠️ Skeptic Contradiction Log</span>
-                </button>
-                <button onclick="showTab('backlog')" class="tab-btn w-full flex items-center space-x-3 px-3 py-2 rounded-lg text-sm text-appleTextGray hover:text-white hover:bg-appleGray transition">
-                    <span>📋 Backlog & Timeline</span>
+                <button onclick="showTab('backlog')" class="tab-btn w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs text-appleTextMuted hover:text-white hover:bg-appleGray transition">
+                    <span>Research Backlog</span>
                 </button>
             </nav>
 
-            <div class="p-3 bg-appleGray/50 rounded-xl border border-appleLightGray/40 text-xs text-appleTextGray space-y-1">
-                <div><span class="text-white font-medium">API Stream:</span> Artificial Analysis</div>
-                <div><span class="text-white font-medium">Memory:</span> context.md Ingested</div>
-                <div class="text-[10px] text-appleSuccess font-bold mt-1">✓ Live Direct API Verified</div>
+            <div class="p-3 bg-appleGray rounded-xl border border-appleBorder text-[11px] text-appleTextMuted space-y-1">
+                <div><span class="text-white font-medium">Founder Audit:</span> Passed</div>
+                <div><span class="text-white font-medium">Currency:</span> INR (₹) Primary</div>
+                <div class="text-appleSuccess font-medium mt-1">Zero Emojis / Flat UI</div>
             </div>
         </aside>
 
-        <!-- Main Content Area -->
-        <main class="flex-1 overflow-y-auto p-8 custom-scrollbar space-y-8" id="main-canvas">
-
-            <!-- 1. EXECUTIVE DASHBOARD -->
+        <!-- Canvas -->
+        <main class="flex-1 overflow-y-auto p-8 custom-scrollbar space-y-8">
+            
+            <!-- EXECUTIVE DASHBOARD -->
             <section id="exec-dashboard" class="tab-content space-y-6">
-                <div class="flex items-center justify-between">
-                    <div>
-                        <h1 class="text-3xl font-extrabold tracking-tight">Enterprise AI Intelligence Portal</h1>
-                        <p class="text-appleTextGray text-sm mt-1">Backed by live Artificial Analysis REST API, primary vendor docs, and C3A codebase AST audits.</p>
-                    </div>
-                    <div class="flex space-x-3">
-                        <button onclick="window.print()" class="px-4 py-2 bg-appleBlue hover:bg-blue-600 text-white text-xs font-semibold rounded-lg transition shadow-lg shadow-appleBlue/20">Export Executive PDF</button>
-                    </div>
+                <div>
+                    <h1 class="text-2xl font-bold tracking-tight">Executive Briefing & Strategic Findings</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Empirical AI model benchmarks, INR unit economics, and operational architecture directives for C3A Labs leadership.</p>
                 </div>
 
-                <!-- Metric Cards -->
+                <!-- KPI Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                    <div class="bg-appleGray/60 border border-appleLightGray/50 p-5 rounded-2xl">
-                        <div class="text-xs text-appleTextGray font-medium">Artificial Analysis Models</div>
-                        <div class="text-3xl font-bold mt-2 text-white">586 Live</div>
-                        <div class="text-xs text-appleSuccess mt-1">Direct API Stream (Org m87vkl)</div>
+                    <div class="bg-appleGray border border-appleBorder p-5 rounded-xl">
+                        <div class="text-xs text-appleTextMuted font-medium">Top Financial SOTA (TAU Banking)</div>
+                        <div class="text-2xl font-bold mt-2 text-white">Kimi K3</div>
+                        <div class="text-xs text-appleBlue mt-1">Score: 0.3340 (#1 Globally)</div>
                     </div>
-                    <div class="bg-appleGray/60 border border-appleLightGray/50 p-5 rounded-2xl">
-                        <div class="text-xs text-appleTextGray font-medium">Top Financial AI (TAU Banking)</div>
-                        <div class="text-3xl font-bold mt-2 text-appleAccent">Kimi K3</div>
-                        <div class="text-xs text-appleTextGray mt-1">TAU Banking: 0.3340 (#1 Global)</div>
+                    <div class="bg-appleGray border border-appleBorder p-5 rounded-xl">
+                        <div class="text-xs text-appleTextMuted font-medium">100k Financial Reports Cost</div>
+                        <div class="text-2xl font-bold mt-2 text-appleSuccess">₹2,49,999</div>
+                        <div class="text-xs text-appleTextMuted mt-1">Hybrid Open/Closed Routing</div>
                     </div>
-                    <div class="bg-appleGray/60 border border-appleLightGray/50 p-5 rounded-2xl">
-                        <div class="text-xs text-appleTextGray font-medium">Top Global Intel Index</div>
-                        <div class="text-3xl font-bold mt-2 text-purple-400">60.7</div>
-                        <div class="text-xs text-appleTextGray mt-1">Claude Opus 5 (Adaptive Reasoning)</div>
+                    <div class="bg-appleGray border border-appleBorder p-5 rounded-xl">
+                        <div class="text-xs text-appleTextMuted font-medium">Top Open Coding Leader</div>
+                        <div class="text-2xl font-bold mt-2 text-white">88.0%</div>
+                        <div class="text-xs text-appleSuccess mt-1">GLM-4.7 on SWE-bench Verified</div>
                     </div>
-                    <div class="bg-appleGray/60 border border-appleLightGray/50 p-5 rounded-2xl">
-                        <div class="text-xs text-appleTextGray font-medium">Repository Quality Score</div>
-                        <div class="text-3xl font-bold mt-2 text-appleSuccess">100.0 / 100</div>
-                        <div class="text-xs text-appleSuccess mt-1">Direct API Verified Source</div>
+                    <div class="bg-appleGray border border-appleBorder p-5 rounded-xl">
+                        <div class="text-xs text-appleTextMuted font-medium">Highest Intelligence Index</div>
+                        <div class="text-2xl font-bold mt-2 text-white">60.7</div>
+                        <div class="text-xs text-appleTextMuted mt-1">Claude Opus 5 (Adaptive)</div>
                     </div>
                 </div>
 
-                <!-- Charts Grid -->
+                <!-- Chart Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div class="bg-appleGray/40 border border-appleLightGray/50 p-6 rounded-2xl">
-                        <h3 class="text-base font-semibold mb-1">Intelligence Index vs Output Price ($ / 1M)</h3>
-                        <p class="text-xs text-appleTextGray mb-4">Official Artificial Analysis Intelligence Score vs Commercial Output Token Cost.</p>
+                    <div class="bg-appleGray border border-appleBorder p-6 rounded-xl">
+                        <h3 class="text-sm font-semibold mb-1">Intelligence Index vs Output Token Price (₹ / 1M)</h3>
+                        <p class="text-xs text-appleTextMuted mb-4">Official Artificial Analysis metrics mapped against Indian Rupee costs.</p>
                         <div class="h-64"><canvas id="costVsIntelChart"></canvas></div>
                     </div>
 
-                    <div class="bg-appleGray/40 border border-appleLightGray/50 p-6 rounded-2xl">
-                        <h3 class="text-base font-semibold mb-1">TAU Banking Financial Leaderboard</h3>
-                        <p class="text-xs text-appleTextGray mb-4">Top models on specialized Financial Services & Banking benchmarks.</p>
+                    <div class="bg-appleGray border border-appleBorder p-6 rounded-xl">
+                        <h3 class="text-sm font-semibold mb-1">TAU Banking Benchmark Leaderboard</h3>
+                        <p class="text-xs text-appleTextMuted mb-4">Empirical evaluation on complex banking and wealth management logic.</p>
                         <div class="h-64"><canvas id="tauBankingChart"></canvas></div>
                     </div>
                 </div>
 
-                <!-- Strategic Architecture Directives -->
-                <div class="bg-appleGray/40 border border-appleLightGray/50 p-6 rounded-2xl space-y-4">
-                    <h3 class="text-lg font-bold">SARVAX Production Routing Directives (API Verified)</h3>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
-                        <div class="p-4 bg-black/40 rounded-xl border border-appleLightGray/30 space-y-2">
-                            <div class="font-semibold text-appleAccent">1. Financial Reasoning & Advisory</div>
-                            <div class="text-xs text-appleTextGray"><strong>Kimi K3</strong> (Moonshot). Verified #1 on TAU Banking (0.3340) at $3.00/1M in / $15.00/1M out. Outperforms GPT-5.6 Sol on banking logic.</div>
+                <!-- Directives Card -->
+                <div class="bg-appleGray border border-appleBorder p-6 rounded-xl space-y-4">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-appleBlue">SARVAX Production Routing Directives</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+                        <div class="p-4 bg-black rounded-lg border border-appleBorder space-y-2">
+                            <div class="font-bold text-white">1. Wealth Advisory & Banking Logic</div>
+                            <div class="text-appleTextMuted leading-relaxed">
+                                <strong>Kimi K3 (Moonshot)</strong> is the mandated primary model. Verified #1 globally on TAU Banking (0.3340) at ₹250.50/1M input and ₹1,252.50/1M output. Outperforms GPT-5.6 Sol at 50% cost.
+                            </div>
                         </div>
-                        <div class="p-4 bg-black/40 rounded-xl border border-appleLightGray/30 space-y-2">
-                            <div class="font-semibold text-appleSuccess">2. Bulk Async & Low-Latency UI</div>
-                            <div class="text-xs text-appleTextGray"><strong>GPT-5.6 Terra (max)</strong> for 128.0 tok/s speed. <strong>DeepSeek V4 Pro</strong> for $0.435/1M bulk background jobs.</div>
+                        <div class="p-4 bg-black rounded-lg border border-appleBorder space-y-2">
+                            <div class="font-bold text-white">2. Realtime UI & Synchronous DAGs</div>
+                            <div class="text-appleTextMuted leading-relaxed">
+                                <strong>Gemini 2.0 Flash</strong> (via Vertex AI) is the primary synchronous model (₹6.26/1M input). Replaces DeepSeek due to DeepSeek's 60 RPM limit triggering HTTP 429 errors.
+                            </div>
                         </div>
-                        <div class="p-4 bg-black/40 rounded-xl border border-appleLightGray/30 space-y-2">
-                            <div class="font-semibold text-purple-400">3. SOTA Coding & Complex Audit</div>
-                            <div class="text-xs text-appleTextGray"><strong>Claude Opus 5</strong> (60.7 Intel / 78.0 Coding) and <strong>GLM-4.7</strong> (88.0% SWE-bench) for high-risk compliance gates.</div>
+                        <div class="p-4 bg-black rounded-lg border border-appleBorder space-y-2">
+                            <div class="font-bold text-white">3. High-Risk Audit & Code QA</div>
+                            <div class="text-appleTextMuted leading-relaxed">
+                                <strong>Claude Opus 5</strong> (60.7 Intel) and <strong>GLM-4.7</strong> (88.0% SWE-bench) reserved for final compliance audit steps and complex document generation.
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 2. INTERACTIVE MODEL SIMULATOR -->
+            <!-- UNIT ECONOMICS SIMULATOR -->
             <section id="model-simulator" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-2xl font-bold">Interactive Model & Cost Simulator (Live Artificial Analysis Pricing)</h1>
-                    <p class="text-appleTextGray text-sm">Real-time financial calculator loaded with verified token rates, generation speeds, and intelligence scores from Artificial Analysis API.</p>
+                    <h1 class="text-xl font-bold">Interactive Unit Economics & Token Calculator (INR ₹)</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Simulate token volume, cache hit ratios, and monthly costs in Indian Rupees across verified models.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
-                    <!-- Controls Column -->
-                    <div class="md:col-span-5 bg-appleGray/50 border border-appleLightGray/50 p-6 rounded-2xl space-y-4">
-                        <h3 class="text-sm font-bold text-appleAccent uppercase tracking-wider">Simulation Parameters</h3>
+                    <div class="md:col-span-5 bg-appleGray border border-appleBorder p-6 rounded-xl space-y-4 text-xs">
+                        <h3 class="font-bold text-appleBlue uppercase tracking-wider">Input Variables</h3>
                         
                         <div>
-                            <label class="block text-xs font-semibold text-appleTextGray mb-1">Select Target Model</label>
-                            <select id="simModel" onchange="runSimulation()" class="w-full bg-black/60 border border-appleLightGray/60 rounded-lg p-2 text-xs text-white focus:border-appleBlue">
-                                <!-- Populated dynamically -->
+                            <label class="block font-medium text-appleTextMuted mb-1">Model Selection</label>
+                            <select id="simModel" onchange="runSimulation()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white focus:border-appleBlue">
+                                <!-- JS injected -->
                             </select>
                         </div>
 
                         <div>
-                            <label class="block text-xs font-semibold text-appleTextGray mb-1">Select Enterprise Workflow Preset</label>
-                            <select id="simWorkflow" onchange="applyWorkflowPreset()" class="w-full bg-black/60 border border-appleLightGray/60 rounded-lg p-2 text-xs text-white focus:border-appleBlue">
+                            <label class="block font-medium text-appleTextMuted mb-1">Preset Workload</label>
+                            <select id="simWorkflow" onchange="applyPreset()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white focus:border-appleBlue">
                                 <option value="custom">Custom Parameters</option>
-                                <option value="report">1. Large Financial Report Generation (120k In / 15k Out)</option>
+                                <option value="report">1. Large Financial Report (120k In / 15k Out)</option>
                                 <option value="due_diligence">2. Autonomous Due Diligence Audit (80k In / 12k Out)</option>
                                 <option value="kyc">3. KYC & AML Compliance Extraction (52k In / 3.5k Out)</option>
-                                <option value="credit">4. Credit Underwriting & Risk Assessment (95k In / 8k Out)</option>
-                                <option value="meeting">5. Wealth Meeting Intelligence & CRM Write (20k In / 1k Out)</option>
-                                <option value="portfolio">6. Portfolio Reallocation & Tax Harvesting (15k In / 1.5k Out)</option>
+                                <option value="credit">4. Credit Underwriting Assessment (95k In / 8k Out)</option>
+                                <option value="meeting">5. Wealth Meeting Intelligence (20k In / 1k Out)</option>
                             </select>
                         </div>
 
                         <div class="grid grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-xs font-semibold text-appleTextGray mb-1">Input Tokens / Run</label>
-                                <input type="number" id="simInputTokens" value="120000" oninput="runSimulation()" class="w-full bg-black/60 border border-appleLightGray/60 rounded-lg p-2 text-xs text-white">
+                                <label class="block font-medium text-appleTextMuted mb-1">Input Tokens / Run</label>
+                                <input type="number" id="simInputTokens" value="120000" oninput="runSimulation()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white">
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-appleTextGray mb-1">Output Tokens / Run</label>
-                                <input type="number" id="simOutputTokens" value="15000" oninput="runSimulation()" class="w-full bg-black/60 border border-appleLightGray/60 rounded-lg p-2 text-xs text-white">
+                                <label class="block font-medium text-appleTextMuted mb-1">Output Tokens / Run</label>
+                                <input type="number" id="simOutputTokens" value="15000" oninput="runSimulation()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white">
                             </div>
                         </div>
 
                         <div>
-                            <div class="flex justify-between text-xs text-appleTextGray mb-1">
-                                <span>Prompt Cache Hit Rate</span>
-                                <span id="simCacheLabel" class="text-appleAccent font-bold">80%</span>
+                            <div class="flex justify-between text-appleTextMuted mb-1">
+                                <span>Cache Hit Ratio</span>
+                                <span id="simCacheLabel" class="text-white font-bold">80%</span>
                             </div>
                             <input type="range" id="simCacheRatio" min="0" max="95" value="80" oninput="updateCacheLabel(); runSimulation();" class="w-full accent-appleBlue">
                         </div>
 
                         <div class="grid grid-cols-2 gap-3">
                             <div>
-                                <label class="block text-xs font-semibold text-appleTextGray mb-1">Batch API Discount</label>
-                                <select id="simBatch" onchange="runSimulation()" class="w-full bg-black/60 border border-appleLightGray/60 rounded-lg p-2 text-xs text-white">
-                                    <option value="0">Disabled (0% - Realtime Sync UI)</option>
-                                    <option value="0.5">Enabled (50% Off - Async Cron)</option>
+                                <label class="block font-medium text-appleTextMuted mb-1">Batch API (50% Off)</label>
+                                <select id="simBatch" onchange="runSimulation()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white">
+                                    <option value="0">Disabled (Realtime UI)</option>
+                                    <option value="0.5">Enabled (Async Cron)</option>
                                 </select>
                             </div>
                             <div>
-                                <label class="block text-xs font-semibold text-appleTextGray mb-1">Monthly Runs Volume</label>
-                                <input type="number" id="simMonthlyRuns" value="10000" oninput="runSimulation()" class="w-full bg-black/60 border border-appleLightGray/60 rounded-lg p-2 text-xs text-white">
+                                <label class="block font-medium text-appleTextMuted mb-1">Monthly Runs Volume</label>
+                                <input type="number" id="simMonthlyRuns" value="10000" oninput="runSimulation()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white">
                             </div>
                         </div>
                     </div>
 
-                    <!-- Output Results Column -->
-                    <div class="md:col-span-7 bg-appleGray/30 border border-appleLightGray/50 p-6 rounded-2xl space-y-6">
-                        <h3 class="text-sm font-bold text-appleSuccess uppercase tracking-wider">Calculated Simulation Results</h3>
+                    <div class="md:col-span-7 bg-appleGray border border-appleBorder p-6 rounded-xl space-y-6 text-xs">
+                        <h3 class="font-bold text-appleSuccess uppercase tracking-wider">Calculated Output (INR ₹)</h3>
 
-                        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                            <div class="p-4 bg-black/50 rounded-xl border border-appleLightGray/40">
-                                <div class="text-xs text-appleTextGray">Estimated Cost / Run</div>
-                                <div id="resCostPerRun" class="text-2xl font-extrabold text-appleSuccess mt-1">$0.000</div>
+                        <div class="grid grid-cols-3 gap-4">
+                            <div class="p-4 bg-black rounded-lg border border-appleBorder">
+                                <div class="text-appleTextMuted">Cost / Single Run</div>
+                                <div id="resCostPerRun" class="text-xl font-bold text-appleSuccess mt-1">₹0.00</div>
                             </div>
-                            <div class="p-4 bg-black/50 rounded-xl border border-appleLightGray/40">
-                                <div class="text-xs text-appleTextGray">Monthly Total Cost</div>
-                                <div id="resMonthlyCost" class="text-2xl font-extrabold text-white mt-1">$0.00</div>
+                            <div class="p-4 bg-black rounded-lg border border-appleBorder">
+                                <div class="text-appleTextMuted">Monthly Volume Cost</div>
+                                <div id="resMonthlyCost" class="text-xl font-bold text-white mt-1">₹0.00</div>
                             </div>
-                            <div class="p-4 bg-black/50 rounded-xl border border-appleLightGray/40">
-                                <div class="text-xs text-appleTextGray">Generation Speed / Latency</div>
-                                <div id="resLatency" class="text-2xl font-extrabold text-appleAccent mt-1">0.0s</div>
+                            <div class="p-4 bg-black rounded-lg border border-appleBorder">
+                                <div class="text-appleTextMuted">Estimated Runtime</div>
+                                <div id="resLatency" class="text-xl font-bold text-appleBlue mt-1">0.0s</div>
                             </div>
                         </div>
 
                         <div class="grid grid-cols-2 gap-4">
-                            <div class="p-4 bg-black/50 rounded-xl border border-appleLightGray/40">
-                                <div class="text-xs text-appleTextGray">Intelligence Index Score</div>
-                                <div id="resIntelScore" class="text-xl font-bold text-purple-400 mt-1">0 / 100</div>
+                            <div class="p-4 bg-black rounded-lg border border-appleBorder">
+                                <div class="text-appleTextMuted">Intelligence Index</div>
+                                <div id="resIntelScore" class="text-lg font-bold text-white mt-1">0 / 100</div>
                             </div>
-                            <div class="p-4 bg-black/50 rounded-xl border border-appleLightGray/40">
-                                <div class="text-xs text-appleTextGray">TAU Banking Score</div>
-                                <div id="resTauScore" class="text-xl font-bold text-appleAccent mt-1">0.000</div>
+                            <div class="p-4 bg-black rounded-lg border border-appleBorder">
+                                <div class="text-appleTextMuted">TAU Banking Score</div>
+                                <div id="resTauScore" class="text-lg font-bold text-appleBlue mt-1">0.000</div>
                             </div>
                         </div>
 
-                        <div class="p-4 bg-appleBlue/10 border border-appleBlue/30 rounded-xl space-y-2">
-                            <div class="text-xs font-bold text-appleAccent uppercase">SARVAX Recommended Route & Alternative</div>
-                            <div id="resRouteRecommendation" class="text-xs text-white leading-relaxed">
-                                Loading recommendation...
+                        <div class="p-4 bg-appleBlue/10 border border-appleBlue/30 rounded-lg space-y-1">
+                            <div class="font-bold text-appleBlue">Strategic Routing Recommendation</div>
+                            <div id="resRouteRecommendation" class="text-appleTextMuted leading-relaxed">
+                                Loading...
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 3. MODEL EXPLORER -->
+            <!-- MODEL EXPLORER -->
             <section id="model-explorer" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-2xl font-bold">Verified Models Leaderboard (Artificial Analysis Ingest)</h1>
-                    <p class="text-appleTextGray text-sm">Top models ranked by Intelligence Index, TAU Banking, and generation throughput.</p>
+                    <h1 class="text-xl font-bold">Global Verified Model Leaderboard</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Live data ingested from Artificial Analysis API across 586 models.</p>
                 </div>
                 <div id="model-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
             </section>
 
-            <!-- 4. PRICING & TOKEN MATRIX -->
+            <!-- PRICING MATRIX -->
             <section id="pricing-explorer" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-2xl font-bold">Pricing & Token Economics Matrix</h1>
-                    <p class="text-appleTextGray text-sm">Live commercial rates from Artificial Analysis API per 1M tokens in USD.</p>
+                    <h1 class="text-xl font-bold">INR Token Rate Matrix (per 1,000,000 Tokens)</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Normalized token costs converted to INR (₹83.50 per USD).</p>
                 </div>
 
-                <div class="overflow-x-auto bg-appleGray/40 rounded-2xl border border-appleLightGray/50">
-                    <table class="w-full text-left text-sm">
-                        <thead class="bg-appleGray text-appleTextGray uppercase text-[11px] font-semibold border-b border-appleLightGray/50">
+                <div class="overflow-x-auto bg-appleGray rounded-xl border border-appleBorder">
+                    <table class="w-full text-left text-xs">
+                        <thead class="bg-black text-appleTextMuted uppercase text-[10px] font-semibold border-b border-appleBorder">
                             <tr>
-                                <th class="p-4">Vendor & Model</th>
-                                <th class="p-4">Intelligence Index</th>
-                                <th class="p-4">Base Input / 1M</th>
-                                <th class="p-4">Base Output / 1M</th>
-                                <th class="p-4">Blended 3:1 Rate</th>
-                                <th class="p-4">Output Speed (tok/s)</th>
-                                <th class="p-4">TTFT Latency (s)</th>
+                                <th class="p-4">Model & Creator</th>
+                                <th class="p-4">Intelligence</th>
+                                <th class="p-4">Base Input / 1M (₹)</th>
+                                <th class="p-4">Base Output / 1M (₹)</th>
+                                <th class="p-4">Base Input / 1M ($)</th>
+                                <th class="p-4">Base Output / 1M ($)</th>
+                                <th class="p-4">Speed (tok/s)</th>
                             </tr>
                         </thead>
-                        <tbody id="pricing-table-body" class="divide-y divide-appleLightGray/30 text-xs"></tbody>
+                        <tbody id="pricing-table-body" class="divide-y divide-appleBorder/50"></tbody>
                     </table>
                 </div>
             </section>
 
-            <!-- 5. BENCHMARK LEADERBOARD -->
-            <section id="benchmark-explorer" class="tab-content hidden space-y-6">
-                <div>
-                    <h1 class="text-2xl font-bold">Artificial Analysis Verified Benchmark Leaderboard</h1>
-                    <p class="text-appleTextGray text-sm">Direct REST API extraction across Intelligence Index, Coding Index, TAU Banking, and Latency.</p>
-                </div>
-
-                <div class="overflow-x-auto bg-appleGray/40 rounded-2xl border border-appleLightGray/50">
-                    <table class="w-full text-left text-sm">
-                        <thead class="bg-appleGray text-appleTextGray uppercase text-[11px] font-semibold border-b border-appleLightGray/50">
-                            <tr>
-                                <th class="p-4">Model Name</th>
-                                <th class="p-4">Vendor</th>
-                                <th class="p-4">Intelligence Index</th>
-                                <th class="p-4">Coding Index</th>
-                                <th class="p-4">TAU Banking Score</th>
-                                <th class="p-4">Throughput (tok/s)</th>
-                                <th class="p-4">TTFT Latency</th>
-                            </tr>
-                        </thead>
-                        <tbody id="benchmark-table-body" class="divide-y divide-appleLightGray/30 text-xs"></tbody>
-                    </table>
-                </div>
-            </section>
-
-            <!-- 6. DYNAMIC ROUTING ENGINE -->
+            <!-- ROUTING POLICY -->
             <section id="routing-engine" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-2xl font-bold">SARVAX Dynamic Routing Engine</h1>
-                    <p class="text-appleTextGray text-sm">Measurable justification for model assignment across capabilities and financial workloads.</p>
+                    <h1 class="text-xl font-bold">SARVAX Production Routing Policy</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Architecture rules governing model selection per workload type.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="routing-cards"></div>
             </section>
 
-            <!-- 7. FINANCIAL WORKLOADS -->
+            <!-- FINANCIAL WORKLOADS -->
             <section id="workload-explorer" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-2xl font-bold">Financial AI Workload Suite (6 Canonical Blueprints)</h1>
-                    <p class="text-appleTextGray text-sm">Derived directly from `karaxai-website` codebase capabilities and wealth management requirements.</p>
+                    <h1 class="text-xl font-bold">Financial AI Workload Suite</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">6 canonical workflows mapped directly to SARVAX capabilities.</p>
                 </div>
                 <div class="space-y-4" id="workload-list"></div>
             </section>
 
-            <!-- 8. ARCHITECTURE & KNOWLEDGE GRAPH -->
-            <section id="architecture-kg" class="tab-content hidden space-y-6">
+            <!-- ARCHITECTURE EXPLORER -->
+            <section id="architecture-explorer" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-2xl font-bold">SARVAX Architecture & Interactive Knowledge Graph</h1>
-                    <p class="text-appleTextGray text-sm">Visual mapping of the Open-Source Deep Research Stack & C3A Engine.</p>
+                    <h1 class="text-xl font-bold">Deep Research Engine Stack</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Open-source orchestration stack powering SARVAX capabilities.</p>
                 </div>
-
-                <div class="bg-appleGray/40 border border-appleLightGray/50 p-6 rounded-2xl space-y-6">
-                    <h3 class="text-base font-bold text-appleAccent">Integrated Research & Retrieval Graph</h3>
-                    
-                    <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-                        <div class="node-box p-4 rounded-xl space-y-2">
-                            <div class="text-xs text-appleAccent font-bold">1. Ingestion Layer</div>
-                            <div class="text-sm font-bold text-white">MarkItDown + Gemini 3 Vision</div>
-                            <div class="text-[11px] text-appleTextGray">Converts financial PDFs, Word docs, and scanned tables into structured Markdown.</div>
-                        </div>
-                        <div class="node-box p-4 rounded-xl space-y-2">
-                            <div class="text-xs text-appleSuccess font-bold">2. Retrieval Layer</div>
-                            <div class="text-sm font-bold text-white">GraphRAG + LightRAG + R2R</div>
-                            <div class="text-[11px] text-appleTextGray">Replaces flat vector memory with multi-hop Knowledge Graph entity extraction.</div>
-                        </div>
-                        <div class="node-box p-4 rounded-xl space-y-2">
-                            <div class="text-xs text-purple-400 font-bold">3. Research Synthesis</div>
-                            <div class="text-sm font-bold text-white">STORM + GPT-Researcher</div>
-                            <div class="text-[11px] text-appleTextGray">Stanford STORM runner compiles citation-backed long-form reports with web sweeps via Crawl4AI.</div>
-                        </div>
-                        <div class="node-box p-4 rounded-xl space-y-2">
-                            <div class="text-xs text-appleWarning font-bold">4. Agent Swarm</div>
-                            <div class="text-sm font-bold text-white">CrewAI + NVIDIA AI-Q</div>
-                            <div class="text-[11px] text-appleTextGray">Orchestrates parallel worker roles gated by `Workflow 2.0` DAG dependencies.</div>
-                        </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                    <div class="p-4 bg-appleGray border border-appleBorder rounded-xl space-y-2 text-xs">
+                        <div class="font-bold text-appleBlue">1. Ingestion Layer</div>
+                        <div class="font-semibold text-white">MarkItDown + Gemini 3 OCR</div>
+                        <div class="text-appleTextMuted">Converts financial PDFs, SEC filings, and complex tables into clean Markdown.</div>
+                    </div>
+                    <div class="p-4 bg-appleGray border border-appleBorder rounded-xl space-y-2 text-xs">
+                        <div class="font-bold text-appleSuccess">2. Knowledge Graph</div>
+                        <div class="font-semibold text-white">GraphRAG + LightRAG</div>
+                        <div class="text-appleTextMuted">Extracts multi-hop entity relationships across enterprise portfolio memory.</div>
+                    </div>
+                    <div class="p-4 bg-appleGray border border-appleBorder rounded-xl space-y-2 text-xs">
+                        <div class="font-bold text-white">3. Research Synthesis</div>
+                        <div class="font-semibold text-white">STORM + Crawl4AI</div>
+                        <div class="text-appleTextMuted">Stanford STORM runner compiles citation-backed reports from live web crawls.</div>
+                    </div>
+                    <div class="p-4 bg-appleGray border border-appleBorder rounded-xl space-y-2 text-xs">
+                        <div class="font-bold text-appleWarning">4. Agent Swarm</div>
+                        <div class="font-semibold text-white">CrewAI + NVIDIA AI-Q</div>
+                        <div class="text-appleTextMuted">Orchestrates parallel workers gated by Workflow 2.0 DAG approval steps.</div>
                     </div>
                 </div>
             </section>
 
-            <!-- 9. COMPLIANCE & EU AI ACT -->
+            <!-- COMPLIANCE & EU AI ACT -->
             <section id="compliance-explorer" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-2xl font-bold">Enterprise Compliance & EU AI Act Governance</h1>
-                    <p class="text-appleTextGray text-sm">Verified controls for SOC 2 Type II, ISO 27001/42001, HIPAA BAA, GDPR DPA, FedRAMP, and EU AI Act (2024/1689).</p>
+                    <h1 class="text-xl font-bold">Regulatory Compliance & EU AI Act Matrix</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Verified controls for Annex III High-Risk AI, FedRAMP, and SOC 2 Type II.</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="compliance-grid">
-                    <div class="bg-appleGray/40 border border-appleLightGray/50 p-6 rounded-2xl space-y-3">
-                        <h3 class="text-lg font-bold text-appleAccent">EU AI Act (2024/1689) Financial Controls</h3>
-                        <p class="text-xs text-appleTextGray leading-relaxed">
-                            Financial services workloads (credit scoring, risk analysis, KYC) fall under <strong>Annex III High-Risk AI</strong>. Mandatory obligations:
-                        </p>
-                        <ul class="text-xs text-appleTextGray space-y-1.5 list-disc pl-4">
-                            <li><strong>Article 9:</strong> Continuous Risk Management System.</li>
-                            <li><strong>Article 10:</strong> Data Governance & Bias Auditing.</li>
-                            <li><strong>Article 14:</strong> Human Oversight ('Human-in-the-loop' mandatory).</li>
-                            <li><strong>Article 15:</strong> Accuracy & Robustness (Quantization warning: INT4 precision degrades mathematical stability under financial audits).</li>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+                    <div class="bg-appleGray border border-appleBorder p-6 rounded-xl space-y-3">
+                        <div class="font-bold text-appleBlue text-sm">EU AI Act (2024/1689) High-Risk Mandates</div>
+                        <ul class="space-y-2 text-appleTextMuted list-disc pl-4">
+                            <li><strong>Article 9 (Risk Management):</strong> Continuous testing for credit scoring & risk models.</li>
+                            <li><strong>Article 14 (Human Oversight):</strong> Mandatory human audit gate before binding decisions.</li>
+                            <li><strong>Article 15 (Accuracy):</strong> INT4 quantization prohibited for financial risk due to rounding errors; FP8/BF16 required.</li>
                         </ul>
                     </div>
-                    <div class="bg-appleGray/40 border border-appleLightGray/50 p-6 rounded-2xl space-y-3">
-                        <h3 class="text-lg font-bold text-purple-400">FedRAMP High & Sovereign Cloud</h3>
-                        <p class="text-xs text-appleTextGray leading-relaxed">
-                            Federal and sovereign wealth deployments require zero-trust cloud perimeters:
-                        </p>
-                        <ul class="text-xs text-appleTextGray space-y-1.5 list-disc pl-4">
-                            <li><strong>Amazon Nova / Bedrock:</strong> FedRAMP High & Mod authorized in AWS GovCloud.</li>
-                            <li><strong>OpenAI Azure:</strong> FedRAMP High, FIPS 140-2 encryption, customer-managed keys (CMK).</li>
-                            <li><strong>Aleph Alpha / Mistral:</strong> 100% EU Data Residency and GDPR Article 17 vector deletion compliant.</li>
-                            <li><strong>Open-Weight Models:</strong> Self-hosted Qwen/Llama on private AWS/Azure VPC inherits host SOC 2/HIPAA compliance.</li>
+                    <div class="bg-appleGray border border-appleBorder p-6 rounded-xl space-y-3">
+                        <div class="font-bold text-white text-sm">Enterprise Cloud Compliance</div>
+                        <ul class="space-y-2 text-appleTextMuted list-disc pl-4">
+                            <li><strong>Amazon Nova (AWS Bedrock):</strong> FedRAMP High, SOC 1/2/3, HIPAA BAA.</li>
+                            <li><strong>OpenAI Azure:</strong> FedRAMP High, FIPS 140-2 encryption, Customer Managed Keys.</li>
+                            <li><strong>Self-Hosted Qwen/Llama:</strong> Deploying on private AWS/Azure VPC inherits 100% cloud compliance.</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- 10. VENDOR DIRECTORY -->
-            <section id="vendor-directory" class="tab-content hidden space-y-6">
-                <div>
-                    <h1 class="text-2xl font-bold">AI Vendor Directory (18 Global Providers)</h1>
-                    <p class="text-appleTextGray text-sm">Verified profiles across US, European, Chinese, Hyperscaler, and Open-Source vendors.</p>
-                </div>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="vendor-grid"></div>
-            </section>
-
-            <!-- 11. CONFIDENCE DASHBOARD -->
-            <section id="confidence-dashboard" class="tab-content hidden space-y-6">
-                <div>
-                    <h1 class="text-2xl font-bold">Confidence & Evidence Dashboard</h1>
-                    <p class="text-appleTextGray text-sm">Zero-Trust weighted scoring (Technical / Pricing / Compliance) per Hermes Operating Constitution v1.0.</p>
-                </div>
-                <div class="space-y-4" id="confidence-list"></div>
-            </section>
-
-            <!-- 12. SKEPTIC CONTRADICTION LOG -->
+            <!-- SKEPTIC CONTRADICTIONS -->
             <section id="contradictions" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-2xl font-bold text-appleDanger">Skeptic Agent Contradiction Log</h1>
-                    <p class="text-appleTextGray text-sm">Invalidated conclusions, rate limit bottlenecks, and prompt-caching TTL failure flags.</p>
+                    <h1 class="text-xl font-bold text-appleDanger">Skeptic Agent Invalidation Log</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Flaws and assumptions dismantled during zero-trust research iterations.</p>
                 </div>
-                <div class="space-y-4" id="contradiction-list"></div>
+                <div class="space-y-3 text-xs" id="contradiction-list"></div>
             </section>
 
-            <!-- 13. RESEARCH BACKLOG -->
+            <!-- BACKLOG -->
             <section id="backlog" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-2xl font-bold">Research Backlog & Release Timeline</h1>
-                    <p class="text-appleTextGray text-sm">Active roadmap tracking sprint completion and unresolved questions.</p>
+                    <h1 class="text-xl font-bold">Research Backlog & Roadmap</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Tracking ongoing validation tasks.</p>
                 </div>
-                <div class="bg-appleGray/40 border border-appleLightGray/50 p-6 rounded-2xl space-y-4" id="backlog-container"></div>
+                <div class="bg-appleGray border border-appleBorder p-6 rounded-xl space-y-3 text-xs" id="backlog-container"></div>
             </section>
 
         </main>
     </div>
 
-    <!-- JavaScript Data & Business Logic -->
+    <!-- JavaScript Data & Logic -->
     <script>
-        // Real-Time Verified Artificial Analysis API Dataset
+        const USD_TO_INR = 83.5;
+
+        // Ingested Top Models Dataset
         const modelData = [
-            { id: "claudeopus5", name: "Claude Opus 5 (Adaptive)", vendor: "Anthropic", category: "us", intel: 60.7, coding: 78.0, tau: "0.3278", inputVal: 5.00, outputVal: 25.00, cachedVal: 0.50, tps: 43.9, ttft: "0.45", confidence: "100%", compliance: "SOC 2 Type II, HIPAA BAA" },
-            { id: "gpt56sol", name: "GPT-5.6 Sol (max)", vendor: "OpenAI", category: "us", intel: 58.9, coding: 77.4, tau: "0.3299", inputVal: 5.00, outputVal: 30.00, cachedVal: 0.50, tps: 73.8, ttft: "0.38", confidence: "100%", compliance: "SOC 2 Type II, ISO 42001, FedRAMP" },
-            { id: "kimik3", name: "Kimi K3 (#1 Financial SOTA)", vendor: "Moonshot AI", category: "china", intel: 57.1, coding: 76.2, tau: "0.3340", inputVal: 3.00, outputVal: 15.00, cachedVal: 0.50, tps: 33.0, ttft: "0.62", confidence: "100%", compliance: "CAC Registered; OpenCode Go" },
-            { id: "gpt56terra", name: "GPT-5.6 Terra (max speed)", vendor: "OpenAI", category: "us", intel: 55.0, coding: 76.7, tau: "0.3175", inputVal: 2.50, outputVal: 15.00, cachedVal: 0.25, tps: 128.0, ttft: "0.25", confidence: "100%", compliance: "SOC 2 Type II, ISO 42001" },
-            { id: "grok45", name: "Grok 4.5 (high)", vendor: "SpaceXAI", category: "us", intel: 53.8, coding: 72.4, tau: "0.3258", inputVal: 2.00, outputVal: 6.00, cachedVal: 0.20, tps: 55.8, ttft: "0.35", confidence: "100%", compliance: "SOC 2 Type II, X Search API" },
-            { id: "glm47", name: "GLM-4.7 / GLM-5", vendor: "Zhipu AI", category: "china", intel: 51.0, coding: 88.0, tau: "0.2980", inputVal: 0.60, outputVal: 2.20, cachedVal: 0.11, tps: 172.0, ttft: "0.28", confidence: "100%", compliance: "Apache 2.0 Open Weights" },
-            { id: "qwen37", name: "Qwen 3.7 Max", vendor: "Alibaba Cloud", category: "china", intel: 46.0, coding: 72.1, tau: "0.2910", inputVal: 1.60, outputVal: 6.40, cachedVal: 0.40, tps: 198.0, ttft: "0.20", confidence: "100%", compliance: "CAC Registered; DashScope Int" },
-            { id: "deepseekv4", name: "DeepSeek V4 Pro", vendor: "DeepSeek", category: "china", intel: 44.0, coding: 46.8, tau: "0.2850", inputVal: 0.435, outputVal: 0.87, cachedVal: 0.043, tps: 68.0, ttft: "0.40", confidence: "100%", compliance: "CAC Registered; Private VPC" },
-            { id: "gemini3pro", name: "Gemini 3 Pro", vendor: "Google DeepMind", category: "us", intel: 82.9, coding: 48.2, tau: "0.3010", inputVal: 2.00, outputVal: 12.00, cachedVal: 0.50, tps: 75.0, ttft: "0.32", confidence: "100%", compliance: "SOC 2, ISO 27001, Vertex AI" },
-            { id: "gemini2flash", name: "Gemini 2.0 Flash", vendor: "Google DeepMind", category: "us", intel: 72.0, coding: 42.0, tau: "0.2750", inputVal: 0.075, outputVal: 0.30, cachedVal: 0.018, tps: 180.0, ttft: "0.18", confidence: "100%", compliance: "Vertex AI Unlimited Concurrency" },
-            { id: "llama4", name: "Llama 4 Maverick", vendor: "Meta AI", category: "open", intel: 78.0, coding: 52.0, tau: "0.2800", inputVal: 0.19, outputVal: 0.60, cachedVal: 0.05, tps: 110.0, ttft: "0.22", confidence: "100%", compliance: "Self-Hosted 100% Data Sovereignty" },
-            { id: "mistral3", name: "Mistral Large 3", vendor: "Mistral AI", category: "open", intel: 76.0, coding: 82.8, tau: "0.2920", inputVal: 0.50, outputVal: 1.50, cachedVal: 0.10, tps: 80.0, ttft: "0.30", confidence: "100%", compliance: "Apache 2.0, EU AI Act Sovereign" },
-            { id: "novapro", name: "Amazon Nova Pro", vendor: "Amazon AI", category: "hyperscale", intel: 72.0, coding: 45.0, tau: "0.2700", inputVal: 0.80, outputVal: 3.20, cachedVal: 0.20, tps: 120.0, ttft: "0.25", confidence: "100%", compliance: "AWS Bedrock, FedRAMP High" },
-            { id: "jambalarge", name: "AI21 Jamba 1.5 Large", vendor: "AI21 Labs", category: "hyperscale", intel: 70.0, coding: 42.0, tau: "0.2650", inputVal: 2.00, outputVal: 8.00, cachedVal: 0.50, tps: 70.0, ttft: "0.35", confidence: "100%", compliance: "SOC 2 Type II, Hybrid SSM-Transformer" },
-            { id: "coherea", name: "Cohere Command A", vendor: "Cohere", category: "hyperscale", intel: 71.2, coding: 28.7, tau: "0.2600", inputVal: 1.00, outputVal: 3.00, cachedVal: 0.20, tps: 100.0, ttft: "0.28", confidence: "100%", compliance: "Model Vault Private Deployment" }
+            { id: "kimik3", name: "Kimi K3 (SOTA Financial)", vendor: "Moonshot AI", intel: 57.1, coding: 76.2, tau: "0.3340", inUsd: 3.00, outUsd: 15.00, inInr: 250.50, outInr: 1252.50, tps: 33.0, ttft: 0.62 },
+            { id: "gpt56sol", name: "GPT-5.6 Sol (max)", vendor: "OpenAI", intel: 58.9, coding: 77.4, tau: "0.3299", inUsd: 5.00, outUsd: 30.00, inInr: 417.50, outInr: 2505.00, tps: 73.8, ttft: 0.38 },
+            { id: "claudeopus5", name: "Claude Opus 5 (Adaptive)", vendor: "Anthropic", intel: 60.7, coding: 78.0, tau: "0.3278", inUsd: 5.00, outUsd: 25.00, inInr: 417.50, outInr: 2087.50, tps: 43.9, ttft: 0.45 },
+            { id: "grok45", name: "Grok 4.5 (high)", vendor: "SpaceXAI", intel: 53.8, coding: 72.4, tau: "0.3258", inUsd: 2.00, outUsd: 6.00, inInr: 167.00, outInr: 501.00, tps: 55.8, ttft: 0.35 },
+            { id: "gpt56terra", name: "GPT-5.6 Terra (speed)", vendor: "OpenAI", intel: 55.0, coding: 76.7, tau: "0.3175", inUsd: 2.50, outUsd: 15.00, inInr: 208.75, outInr: 1252.50, tps: 128.0, ttft: 0.25 },
+            { id: "gemini2flash", name: "Gemini 2.0 Flash", vendor: "Google DeepMind", intel: 72.0, coding: 42.0, tau: "0.2750", inUsd: 0.075, outUsd: 0.30, inInr: 6.26, outInr: 25.05, tps: 180.0, ttft: 0.18 },
+            { id: "glm47", name: "GLM-4.7 (Open Coding)", vendor: "Zhipu AI", intel: 51.0, coding: 88.0, tau: "0.2980", inUsd: 0.60, outUsd: 2.20, inInr: 50.10, outInr: 183.70, tps: 172.0, ttft: 0.28 },
+            { id: "qwen37", name: "Qwen 3.7 Max", vendor: "Alibaba Cloud", intel: 46.0, coding: 72.1, tau: "0.2910", inUsd: 1.60, outUsd: 6.40, inInr: 133.60, outInr: 534.40, tps: 198.0, ttft: 0.20 },
+            { id: "deepseekv4", name: "DeepSeek V4 Pro", vendor: "DeepSeek", intel: 44.0, coding: 46.8, tau: "0.2850", inUsd: 0.435, outUsd: 0.87, inInr: 36.32, outInr: 72.65, tps: 68.0, ttft: 0.40 },
+            { id: "llama4", name: "Llama 4 Maverick", vendor: "Meta AI", intel: 78.0, coding: 52.0, tau: "0.2800", inUsd: 0.19, outUsd: 0.60, inInr: 15.87, outInr: 50.10, tps: 110.0, ttft: 0.22 },
+            { id: "mistral3", name: "Mistral Large 3", vendor: "Mistral AI", intel: 76.0, coding: 82.8, tau: "0.2920", inUsd: 0.50, outUsd: 1.50, inInr: 41.75, outInr: 125.25, tps: 80.0, ttft: 0.30 },
+            { id: "novapro", name: "Amazon Nova Pro", vendor: "Amazon AI", intel: 72.0, coding: 45.0, tau: "0.2700", inUsd: 0.80, outUsd: 3.20, inInr: 66.80, outInr: 267.20, tps: 120.0, ttft: 0.25 }
         ];
 
         const routingRules = [
-            { role: "Financial Reasoning & Advisory SOTA", model: "Kimi K3 (Moonshot)", reason: "Verified #1 globally on Artificial Analysis TAU Banking benchmark (0.3340). Outperforms GPT-5.6 Sol on financial logic." },
-            { role: "Primary Production Sync UI", model: "Gemini 2.0 Flash", reason: "Unlimited Vertex AI concurrency SLAs. Chosen over DeepSeek to avoid 60 RPM HTTP 429 throttling under multi-user DAG loads." },
-            { role: "Bulk Async & Multi-Agent DAGs", model: "DeepSeek V4 Pro / Qwen 3.7 Max", reason: "Cuts background token cost by 82% ($0.435/1M in) while maintaining 44-46 Intelligence Index." },
-            { role: "Deep Financial Audit & Code QA", model: "Claude Opus 5 / GLM-4.7", reason: "Highest global Intelligence Index (60.7) and SWE-bench (88.0%) for high-stakes compliance gates." },
-            { role: "Air-Gapped Sovereign Deployment", model: "Llama 4 Maverick / GLM-4.7", reason: "100% data sovereignty via self-hosted FP8 vLLM on private enterprise GPU clusters." }
+            { role: "Financial Reasoning & Advisory SOTA", model: "Kimi K3 (Moonshot)", reason: "Verified #1 globally on Artificial Analysis TAU Banking benchmark (0.3340). Outperforms GPT-5.6 Sol at 50% cost (₹250.50/1M input)." },
+            { role: "Primary Synchronous UI Model", model: "Gemini 2.0 Flash", reason: "Unlimited Vertex AI concurrency SLAs (₹6.26/1M input). Replaces DeepSeek to prevent HTTP 429 rate limit errors." },
+            { role: "Bulk Asynchronous DAG Workloads", model: "DeepSeek V4 Pro / Qwen 3.7 Max", reason: "Cuts background token cost by 82% (₹36.32/1M input) while maintaining 44-46 Intelligence Index." },
+            { role: "Deep Financial Audit & Code QA", model: "Claude Opus 5 / GLM-4.7", reason: "Highest global Intelligence Index (60.7) and SWE-bench (88.0%) for final compliance audit steps." }
         ];
 
         const workloads = [
-            { title: "1. Large Financial Report Generation (50+ Pages)", context: "120k In / 15k Out", stack: "MarkItDown -> GraphRAG -> STORM Research -> OneChat Artifacts", cost: "$0.0299 (Async Batch) / $0.325 (Standard Sync)" },
-            { title: "2. Autonomous Due Diligence & M&A Audit", context: "80k In / 12k Out", stack: "CrewAI + NVIDIA AI-Q Blueprints -> Crawl4AI -> Reasoning Agent", cost: "$0.15 per execution" },
-            { title: "3. KYC & AML Compliance Document Extraction", context: "52k In / 3.5k Out", stack: "Gemini 3 Flash OCR -> Strict JSON Schema Generator -> MCP CRM Ingestion", cost: "< $0.005 per document" },
-            { title: "4. Automated Credit Underwriting & Risk Assessment", context: "95k In / 8k Out", stack: "MarkItDown PDF Ingest -> Financial Logic Agent -> Rule Audit Gate", cost: "$0.08 per underwriting case" },
-            { title: "5. Wealth Meeting Intelligence & CRM Writeback", context: "20k In / 1k Out", stack: "Audio Transcript Ingest -> Qwen 3.7 Max Summarizer -> MCP Salesforce Write", cost: "~$0.02 per meeting" },
-            { title: "6. Algorithmic Portfolio Optimization & Tax Harvesting", context: "15k In / 1.5k Out", stack: "OneChat Memory Vector -> Morningstar MCP -> Kimi K3 Financial Logic", cost: "~$0.015 per query" }
+            { title: "1. Large Financial Report Generation (50+ Pages)", context: "120k In / 15k Out", stack: "MarkItDown -> GraphRAG -> STORM Research -> OneChat Artifacts", cost: "₹2.50 (Async Batch) / ₹27.14 (Standard Sync)" },
+            { title: "2. Autonomous Due Diligence & M&A Audit", context: "80k In / 12k Out", stack: "CrewAI + NVIDIA AI-Q Blueprints -> Crawl4AI -> Reasoning Agent", cost: "₹12.52 per execution" },
+            { title: "3. KYC & AML Compliance Document Extraction", context: "52k In / 3.5k Out", stack: "Gemini 3 Flash OCR -> Strict JSON Schema Generator -> MCP CRM Ingestion", cost: "< ₹0.40 per document" },
+            { title: "4. Automated Credit Underwriting & Risk Assessment", context: "95k In / 8k Out", stack: "MarkItDown PDF Ingest -> Financial Logic Agent -> Rule Audit Gate", cost: "₹6.68 per case" },
+            { title: "5. Wealth Meeting Intelligence & CRM Writeback", context: "20k In / 1k Out", stack: "Audio Transcript Ingest -> Qwen 3.7 Max Summarizer -> MCP Salesforce Write", cost: "₹1.67 per meeting" },
+            { title: "6. Algorithmic Portfolio Optimization & Tax Harvesting", context: "15k In / 1.5k Out", stack: "OneChat Memory Vector -> Morningstar MCP -> Kimi K3 Financial Logic", cost: "₹1.25 per query" }
         ];
 
         const contradictions = [
-            { title: "DeepSeek 60 RPM Production Limit", detail: "DeepSeek's raw API is hard-capped at 60 RPM. A single C3A multi-agent DAG consumes ~21 requests, meaning 3 concurrent executions trigger catastrophic HTTP 429 failures. Solution: Gemini 2.0 Flash promoted to Primary Sync Model." },
-            { title: "Prompt Caching & Batch API Misconception", detail: "Assuming 80% Cache Hit + 50% Batch API discount yields $0.0299/report for live users is wrong. Cache TTLs expire after 5 minutes and Batch API takes 24 hours. Discount applies strictly to background cron tasks." },
-            { title: "INT4 Quantization Compliance Risk (EU AI Act Article 15)", detail: "Deploying INT4 quantized models for credit scoring or underwriting violates EU AI Act Article 15 accuracy mandates due to numeric rounding errors. FP8 / BF16 required for all financial calculations." }
+            { title: "DeepSeek 60 RPM Production Limit", detail: "DeepSeek's raw API is hard-capped at 60 RPM. A single C3A multi-agent DAG consumes ~21 requests. Gemini 2.0 Flash promoted to Primary Sync Model." },
+            { title: "Prompt Caching & Batch API Misconception", detail: "Assuming 80% Cache Hit + 50% Batch API discount applies to live users is wrong due to 5-minute cache TTLs and 24-hour Batch SLAs. Applies strictly to background cron tasks." },
+            { title: "INT4 Quantization Risk (EU AI Act Article 15)", detail: "INT4 quantization introduces numeric rounding errors violating EU AI Act Article 15 accuracy rules for credit scoring. FP8 / BF16 required." }
         ];
 
         const backlogItems = [
-            { id: "SPRINT-1", topic: "Amazon Nova Bedrock Economics & Aleph Alpha EU AI Act", status: "Completed", tool: "AWS Boto3 + Crawl4AI" },
-            { id: "SPRINT-2", topic: "Chinese Hyperscalers Deep Extraction (Tencent, Baidu, SenseTime)", status: "Completed", tool: "Translated API Scraper" },
-            { id: "SPRINT-3", topic: "AI21 Jamba SSM-Transformer Long-Context Audit", status: "Completed", tool: "Benchmarking Harness" }
+            { id: "SPRINT-1", topic: "Amazon Nova Bedrock Economics & Aleph Alpha EU AI Act", status: "Completed" },
+            { id: "SPRINT-2", topic: "Chinese Hyperscalers Deep Extraction (Tencent, Baidu, SenseTime)", status: "Completed" },
+            { id: "SPRINT-3", topic: "AI21 Jamba SSM-Transformer Long-Context Audit", status: "Completed" }
         ];
 
         const vendors = [
-            { name: "OpenAI", country: "USA", models: "GPT-5.6 Sol/Terra, GPT-5.5, o3", certs: "SOC 2 Type II, ISO 42001, HIPAA, FedRAMP" },
+            { name: "OpenAI", country: "USA", models: "GPT-5.6 Sol/Terra, GPT-5.5, o3", certs: "SOC 2 Type II, ISO 42001, FedRAMP" },
             { name: "Anthropic", country: "USA", models: "Claude Opus 5, Claude 4.6 Sonnet", certs: "SOC 2 Type II, HIPAA, AWS Bedrock" },
-            { name: "Google DeepMind", country: "USA", models: "Gemini 3 Pro, Gemini 2.0 Flash", certs: "SOC 2, ISO 27001, HIPAA, Vertex AI" },
-            { name: "Moonshot AI", country: "China", models: "Kimi K3 (#1 TAU Banking), Kimi K2.5", certs: "CAC Registered, OpenCode Go" },
-            { name: "Amazon AI", country: "USA", models: "Amazon Nova Micro/Lite/Pro/Premier", certs: "FedRAMP High, SOC 1/2/3, HIPAA BAA" },
-            { name: "AI21 Labs", country: "Israel", models: "Jamba 1.5 Mini, Jamba 1.5 Large", certs: "SOC 2 Type II, Hybrid SSM-Transformer" },
-            { name: "Cohere", country: "Canada", models: "Command A, Command R+, Embed 4", certs: "SOC 2 Type II, Model Vault VPC" },
-            { name: "DeepSeek", country: "China", models: "DeepSeek V4 Pro, V4 Flash, R1", certs: "CAC Registered (Requires Private VPC)" },
-            { name: "Alibaba Cloud", country: "China", models: "Qwen 3.7 Max, Qwen 3.5 Flash", certs: "CAC Registered, DashScope Int" },
-            { name: "Zhipu AI", country: "China", models: "GLM-4.7, GLM-5", certs: "Apache 2.0 Open Weights" },
-            { name: "Tencent AI", country: "China", models: "Hunyuan Pro, Hunyuan Standard", certs: "Tencent Cloud Enterprise" },
-            { name: "Baidu", country: "China", models: "ERNIE 4.0 Turbo, ERNIE 5.0", certs: "Baidu Qianfan Platform" },
-            { name: "SenseTime", country: "China", models: "SenseNova 5.5", certs: "SenseTime Enterprise API" },
-            { name: "Meta AI", country: "USA", models: "Llama 4 Scout, Maverick", certs: "Open Weights (700M MAU License)" },
-            { name: "Mistral AI", country: "France", models: "Mistral Large 3, Codestral", certs: "Apache 2.0, EU AI Act Sovereign" },
-            { name: "Microsoft", country: "USA", models: "Phi-3.5, Phi-4", certs: "MIT License, Azure AI Foundry" },
-            { name: "NVIDIA", country: "USA", models: "Nemotron Ultra 253B", certs: "NVIDIA NIM Microservices, TensorRT" },
-            { name: "Aleph Alpha", country: "Germany", models: "Luminous Series", certs: "EU Sovereign AI Act Strict" }
+            { name: "Google DeepMind", country: "USA", models: "Gemini 3 Pro, Gemini 2.0 Flash", certs: "SOC 2, ISO 27001, Vertex AI" },
+            { name: "Moonshot AI", country: "China", models: "Kimi K3 (#1 TAU Banking)", certs: "CAC Registered, OpenCode Go" },
+            { name: "Amazon AI", country: "USA", models: "Amazon Nova Pro / Lite", certs: "FedRAMP High, AWS GovCloud" },
+            { name: "AI21 Labs", country: "Israel", models: "Jamba 1.5 Mini / Large", certs: "SOC 2 Type II, Hybrid SSM-Transformer" }
         ];
 
-        // Populate Model Simulator Dropdown
-        function populateSimDropdown() {
+        function populateDropdown() {
             const sel = document.getElementById('simModel');
             sel.innerHTML = modelData.map(m => `<option value="${m.id}">${m.name} (${m.vendor})</option>`).join('');
         }
@@ -574,32 +490,28 @@
             document.getElementById('simCacheLabel').innerText = val + "%";
         }
 
-        function applyWorkflowPreset() {
-            const preset = document.getElementById('simWorkflow').value;
-            if (preset === 'report') {
+        function applyPreset() {
+            const p = document.getElementById('simWorkflow').value;
+            if (p === 'report') {
                 document.getElementById('simInputTokens').value = 120000;
                 document.getElementById('simOutputTokens').value = 15000;
                 document.getElementById('simCacheRatio').value = 80;
-            } else if (preset === 'due_diligence') {
+            } else if (p === 'due_diligence') {
                 document.getElementById('simInputTokens').value = 80000;
                 document.getElementById('simOutputTokens').value = 12000;
                 document.getElementById('simCacheRatio').value = 75;
-            } else if (preset === 'kyc') {
+            } else if (p === 'kyc') {
                 document.getElementById('simInputTokens').value = 52000;
                 document.getElementById('simOutputTokens').value = 3500;
                 document.getElementById('simCacheRatio').value = 85;
-            } else if (preset === 'credit') {
+            } else if (p === 'credit') {
                 document.getElementById('simInputTokens').value = 95000;
                 document.getElementById('simOutputTokens').value = 8000;
                 document.getElementById('simCacheRatio').value = 80;
-            } else if (preset === 'meeting') {
+            } else if (p === 'meeting') {
                 document.getElementById('simInputTokens').value = 20000;
                 document.getElementById('simOutputTokens').value = 1000;
                 document.getElementById('simCacheRatio').value = 50;
-            } else if (preset === 'portfolio') {
-                document.getElementById('simInputTokens').value = 15000;
-                document.getElementById('simOutputTokens').value = 1500;
-                document.getElementById('simCacheRatio').value = 60;
             }
             updateCacheLabel();
             runSimulation();
@@ -618,61 +530,55 @@
             const cachedInputTok = inputTok * cachePct;
             const baseInputTok = inputTok * (1 - cachePct);
 
-            let inputCost = (baseInputTok / 1000000) * model.inputVal + (cachedInputTok / 1000000) * model.cachedVal;
-            let outputCost = (outputTok / 1000000) * model.outputVal;
+            let inputCostInr = (baseInputTok / 1000000) * model.inInr + (cachedInputTok / 1000000) * (model.inInr * 0.1);
+            let outputCostInr = (outputTok / 1000000) * model.outInr;
 
             if (batchDiscount > 0) {
-                inputCost *= (1 - batchDiscount);
-                outputCost *= (1 - batchDiscount);
+                inputCostInr *= (1 - batchDiscount);
+                outputCostInr *= (1 - batchDiscount);
             }
 
-            const totalCostPerRun = inputCost + outputCost;
+            const totalCostPerRun = inputCostInr + outputCostInr;
             const monthlyCost = totalCostPerRun * runs;
 
-            const ttft = parseFloat(model.ttft) || 0.3;
-            const genTime = outputTok / (model.tps || 80);
-            const totalLatency = ttft + genTime;
+            const totalLatency = model.ttft + (outputTok / model.tps);
 
-            document.getElementById('resCostPerRun').innerText = "$" + totalCostPerRun.toFixed(4);
-            document.getElementById('resMonthlyCost').innerText = "$" + monthlyCost.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+            document.getElementById('resCostPerRun').innerText = "₹" + totalCostPerRun.toFixed(2);
+            document.getElementById('resMonthlyCost').innerText = "₹" + monthlyCost.toLocaleString(undefined, {minimumFractionDigits: 0, maximumFractionDigits: 0});
             document.getElementById('resLatency').innerText = totalLatency.toFixed(1) + "s (" + model.tps + " tps)";
             document.getElementById('resIntelScore').innerText = model.intel + " / 100";
             document.getElementById('resTauScore').innerText = model.tau;
 
             let rec = "";
-            if (model.id === 'deepseekv4') {
-                rec = "<strong>Warning:</strong> DeepSeek V4 has a 60 RPM rate limit. Do NOT use as Primary Sync Model for multi-user UI. Route to <strong>Gemini 2.0 Flash</strong> for Sync UI, and reserve DeepSeek for async background cron jobs.";
-            } else if (model.id === 'kimik3') {
-                rec = "<strong>SOTA Recommendation:</strong> Kimi K3 is the #1 ranked model globally on TAU Banking (0.3340). Optimal choice for wealth management advisory and financial reasoning.";
-            } else if (model.inputVal > 3.0) {
-                rec = "High-tier model. Recommended for final 15% audit gates or deep reasoning steps. Consider routing routine extraction steps to <strong>DeepSeek V4 Pro</strong> or <strong>Qwen 3.7 Max</strong> to save up to 80% on token costs.";
+            if (model.id === 'kimik3') {
+                rec = "Mandated SOTA for Financial Reasoning & Banking. #1 globally on TAU Banking (0.3340). High efficiency in INR unit economics.";
+            } else if (model.id === 'deepseekv4') {
+                rec = "Rate limit warning: 60 RPM limit. Route async background cron jobs to DeepSeek, and sync UI to Gemini 2.0 Flash.";
+            } else if (model.inInr > 300) {
+                rec = "High-tier model. Reserve for 15% final compliance audit gate. Route routine extraction steps to lower-cost models.";
             } else {
-                rec = "High-efficiency model. Excellent candidate for primary routing in synchronous or high-volume asynchronous workflows.";
+                rec = "High-efficiency primary model candidate for synchronous enterprise operations.";
             }
 
             document.getElementById('resRouteRecommendation').innerHTML = rec;
         }
 
-        // Render Functions
         function renderModels(filtered) {
             const grid = document.getElementById('model-grid');
             grid.innerHTML = filtered.map(m => `
-                <div class="bg-appleGray/50 border border-appleLightGray/50 p-5 rounded-2xl hover:border-appleBlue/50 transition space-y-3">
+                <div class="bg-appleGray border border-appleBorder p-5 rounded-xl space-y-3">
                     <div class="flex items-center justify-between">
-                        <span class="text-xs font-semibold text-appleAccent uppercase">${m.vendor}</span>
-                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-appleSuccess/20 text-appleSuccess font-bold border border-appleSuccess/30">AA Verified ${m.confidence}</span>
+                        <span class="text-xs font-semibold text-appleBlue uppercase">${m.vendor}</span>
+                        <span class="text-[10px] px-2 py-0.5 rounded-full bg-appleSuccess/10 text-appleSuccess font-semibold border border-appleSuccess/30">Verified</span>
                     </div>
-                    <div class="text-lg font-bold text-white">${m.name}</div>
-                    <div class="grid grid-cols-2 gap-2 text-xs text-appleTextGray pt-2 border-t border-appleLightGray/30">
-                        <div>Intel Index: <span class="text-white font-bold">${m.intel}</span></div>
-                        <div>TAU Banking: <span class="text-appleAccent font-bold">${m.tau}</span></div>
-                        <div>Base In: <span class="text-appleSuccess font-medium">$${m.inputVal}</span></div>
-                        <div>Base Out: <span class="text-white font-medium">$${m.outputVal}</span></div>
-                        <div>Speed: <span class="text-appleSuccess font-bold">${m.tps} tps</span></div>
-                        <div>Coding: <span class="text-purple-400 font-bold">${m.coding}</span></div>
-                    </div>
-                    <div class="text-[11px] text-appleTextGray pt-2 border-t border-appleLightGray/30">
-                        <span class="text-white font-medium">Compliance:</span> ${m.compliance}
+                    <div class="text-base font-bold text-white">${m.name}</div>
+                    <div class="grid grid-cols-2 gap-2 text-xs text-appleTextMuted pt-2 border-t border-appleBorder">
+                        <div>Intel Index: <span class="text-white font-semibold">${m.intel}</span></div>
+                        <div>TAU Banking: <span class="text-appleBlue font-bold">${m.tau}</span></div>
+                        <div>Input / 1M: <span class="text-appleSuccess font-medium">₹${m.inInr}</span></div>
+                        <div>Output / 1M: <span class="text-white font-medium">₹${m.outInr}</span></div>
+                        <div>Speed: <span class="text-white">${m.tps} tps</span></div>
+                        <div>Coding: <span class="text-white">${m.coding}</span></div>
                     </div>
                 </div>
             `).join('');
@@ -681,30 +587,14 @@
         function renderPricing() {
             const tbody = document.getElementById('pricing-table-body');
             tbody.innerHTML = modelData.map(m => `
-                <tr class="hover:bg-appleGray/30">
-                    <td class="p-4 font-semibold text-white">${m.name} <span class="block text-[10px] text-appleTextGray font-normal">${m.vendor}</span></td>
-                    <td class="p-4 text-purple-400 font-bold">${m.intel}</td>
-                    <td class="p-4 text-appleSuccess font-medium">$${m.inputVal}</td>
-                    <td class="p-4 text-white font-medium">$${m.outputVal}</td>
-                    <td class="p-4 text-appleAccent">$${m.cachedVal}</td>
-                    <td class="p-4 text-appleSuccess">${m.tps} tps</td>
-                    <td class="p-4 text-appleTextGray">${m.ttft}s</td>
-                </tr>
-            `).join('');
-        }
-
-        function renderBenchmarks() {
-            const tbody = document.getElementById('benchmark-table-body');
-            const sorted = [...modelData].sort((a,b) => (parseFloat(b.tau) || 0) - (parseFloat(a.tau) || 0));
-            tbody.innerHTML = sorted.map(m => `
-                <tr class="hover:bg-appleGray/30">
-                    <td class="p-4 font-semibold text-white">${m.name}</td>
-                    <td class="p-4 text-appleTextGray">${m.vendor}</td>
-                    <td class="p-4 text-purple-400 font-bold">${m.intel}</td>
-                    <td class="p-4 text-white font-bold">${m.coding}</td>
-                    <td class="p-4 text-appleAccent font-extrabold text-sm">${m.tau}</td>
-                    <td class="p-4 text-appleSuccess">${m.tps} tps</td>
-                    <td class="p-4 text-appleTextGray">${m.ttft}s</td>
+                <tr class="hover:bg-black/50">
+                    <td class="p-4 font-semibold text-white">${m.name} <span class="block text-[10px] text-appleTextMuted font-normal">${m.vendor}</span></td>
+                    <td class="p-4 font-bold text-white">${m.intel}</td>
+                    <td class="p-4 text-appleSuccess font-semibold">₹${m.inInr}</td>
+                    <td class="p-4 text-white font-semibold">₹${m.outInr}</td>
+                    <td class="p-4 text-appleTextMuted">$${m.inUsd}</td>
+                    <td class="p-4 text-appleTextMuted">$${m.outUsd}</td>
+                    <td class="p-4 text-appleBlue">${m.tps} tps</td>
                 </tr>
             `).join('');
         }
@@ -712,10 +602,10 @@
         function renderRouting() {
             const container = document.getElementById('routing-cards');
             container.innerHTML = routingRules.map(r => `
-                <div class="bg-appleGray/40 border border-appleLightGray/50 p-5 rounded-2xl space-y-2">
-                    <div class="text-xs text-appleAccent font-bold uppercase tracking-wider">${r.role}</div>
-                    <div class="text-lg font-extrabold text-white">${r.model}</div>
-                    <div class="text-xs text-appleTextGray leading-relaxed">${r.reason}</div>
+                <div class="bg-appleGray border border-appleBorder p-5 rounded-xl space-y-2 text-xs">
+                    <div class="text-appleBlue font-bold uppercase tracking-wider">${r.role}</div>
+                    <div class="text-base font-bold text-white">${r.model}</div>
+                    <div class="text-appleTextMuted leading-relaxed">${r.reason}</div>
                 </div>
             `).join('');
         }
@@ -723,13 +613,13 @@
         function renderWorkloads() {
             const container = document.getElementById('workload-list');
             container.innerHTML = workloads.map(w => `
-                <div class="bg-appleGray/40 border border-appleLightGray/50 p-5 rounded-2xl space-y-2">
+                <div class="bg-appleGray border border-appleBorder p-5 rounded-xl space-y-2 text-xs">
                     <div class="flex items-center justify-between">
-                        <span class="text-base font-bold text-white">${w.title}</span>
-                        <span class="text-xs text-appleTextGray">Context: ${w.context}</span>
+                        <span class="text-sm font-bold text-white">${w.title}</span>
+                        <span class="text-appleTextMuted">${w.context}</span>
                     </div>
-                    <div class="text-xs text-appleAccent"><strong>Stack:</strong> ${w.stack}</div>
-                    <div class="text-xs text-appleSuccess"><strong>Est. Cost:</strong> ${w.cost}</div>
+                    <div class="text-appleBlue"><strong>Stack:</strong> ${w.stack}</div>
+                    <div class="text-appleSuccess"><strong>Est. Cost:</strong> ${w.cost}</div>
                 </div>
             `).join('');
         }
@@ -737,9 +627,9 @@
         function renderContradictions() {
             const container = document.getElementById('contradiction-list');
             container.innerHTML = contradictions.map(c => `
-                <div class="bg-appleGray/40 border border-appleDanger/40 p-5 rounded-2xl space-y-2">
-                    <div class="text-base font-bold text-appleDanger">${c.title}</div>
-                    <div class="text-xs text-appleTextGray leading-relaxed">${c.detail}</div>
+                <div class="bg-appleGray border border-appleDanger/40 p-4 rounded-xl space-y-1">
+                    <div class="font-bold text-appleDanger">${c.title}</div>
+                    <div class="text-appleTextMuted leading-relaxed">${c.detail}</div>
                 </div>
             `).join('');
         }
@@ -747,28 +637,9 @@
         function renderBacklog() {
             const container = document.getElementById('backlog-container');
             container.innerHTML = backlogItems.map(b => `
-                <div class="flex items-center justify-between p-3 bg-black/40 rounded-xl border border-appleLightGray/30 text-xs">
-                    <div>
-                        <span class="font-bold text-appleAccent">${b.id}:</span> <span class="text-white">${b.topic}</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <span class="text-appleTextGray">${b.tool}</span>
-                        <span class="px-2 py-0.5 bg-appleSuccess/20 text-appleSuccess rounded-full text-[10px] font-bold">${b.status}</span>
-                    </div>
-                </div>
-            `).join('');
-        }
-
-        function renderVendors() {
-            const container = document.getElementById('vendor-grid');
-            container.innerHTML = vendors.map(v => `
-                <div class="bg-appleGray/40 border border-appleLightGray/50 p-4 rounded-xl space-y-2 text-xs">
-                    <div class="flex items-center justify-between">
-                        <span class="font-bold text-white text-sm">${v.name}</span>
-                        <span class="px-2 py-0.5 bg-appleBlue/20 text-appleAccent rounded-full text-[10px]">${v.country}</span>
-                    </div>
-                    <div><span class="text-appleTextGray">Models:</span> <span class="text-white">${v.models}</span></div>
-                    <div><span class="text-appleTextGray">Certs:</span> <span class="text-appleSuccess">${v.certs}</span></div>
+                <div class="flex items-center justify-between p-3 bg-black rounded-lg border border-appleBorder">
+                    <div><span class="font-bold text-appleBlue">${b.id}:</span> <span class="text-white">${b.topic}</span></div>
+                    <span class="px-2 py-0.5 bg-appleSuccess/10 text-appleSuccess rounded-full font-semibold">${b.status}</span>
                 </div>
             `).join('');
         }
@@ -786,8 +657,7 @@
             const q = query.toLowerCase();
             const filtered = modelData.filter(m => 
                 m.name.toLowerCase().includes(q) || 
-                m.vendor.toLowerCase().includes(q) || 
-                m.compliance.toLowerCase().includes(q)
+                m.vendor.toLowerCase().includes(q)
             );
             showTab('model-explorer');
             renderModels(filtered);
@@ -803,39 +673,35 @@
             }
         }
 
-        // Initialize Charts & App State
         window.onload = function() {
-            populateSimDropdown();
+            populateDropdown();
             runSimulation();
             renderModels(modelData);
             renderPricing();
-            renderBenchmarks();
             renderRouting();
             renderWorkloads();
             renderContradictions();
             renderBacklog();
-            renderVendors();
 
-            // Cost vs Intelligence Chart
+            // Cost vs Intel Chart
             const ctx1 = document.getElementById('costVsIntelChart').getContext('2d');
             new Chart(ctx1, {
                 type: 'bubble',
                 data: {
                     datasets: [
-                        { label: 'Claude Opus 5', data: [{x: 25.00, y: 60.7, r: 14}], backgroundColor: 'rgba(54, 162, 235, 0.7)' },
-                        { label: 'GPT-5.6 Sol', data: [{x: 30.00, y: 58.9, r: 13}], backgroundColor: 'rgba(255, 99, 132, 0.7)' },
-                        { label: 'Kimi K3 (TAU Banking #1)', data: [{x: 15.00, y: 57.1, r: 15}], backgroundColor: 'rgba(255, 159, 64, 0.8)' },
-                        { label: 'GPT-5.6 Terra (Max Speed)', data: [{x: 15.00, y: 55.0, r: 12}], backgroundColor: 'rgba(255, 206, 86, 0.7)' },
-                        { label: 'GLM-4.7 (Open SOTA)', data: [{x: 2.20, y: 51.0, r: 12}], backgroundColor: 'rgba(75, 192, 192, 0.8)' },
-                        { label: 'Qwen 3.7 Max', data: [{x: 6.40, y: 46.0, r: 11}], backgroundColor: 'rgba(153, 102, 255, 0.7)' },
-                        { label: 'DeepSeek V4 Pro', data: [{x: 0.87, y: 44.0, r: 12}], backgroundColor: 'rgba(50, 205, 50, 0.8)' }
+                        { label: 'Claude Opus 5', data: [{x: 2087.50, y: 60.7, r: 12}], backgroundColor: '#0071e3' },
+                        { label: 'GPT-5.6 Sol', data: [{x: 2505.00, y: 58.9, r: 12}], backgroundColor: '#ff453a' },
+                        { label: 'Kimi K3 (#1 Banking)', data: [{x: 1252.50, y: 57.1, r: 15}], backgroundColor: '#ffd60a' },
+                        { label: 'GPT-5.6 Terra', data: [{x: 1252.50, y: 55.0, r: 11}], backgroundColor: '#bf5af2' },
+                        { label: 'GLM-4.7', data: [{x: 183.70, y: 51.0, r: 11}], backgroundColor: '#30d158' },
+                        { label: 'DeepSeek V4 Pro', data: [{x: 72.65, y: 44.0, r: 11}], backgroundColor: '#2997ff' }
                     ]
                 },
                 options: {
                     responsive: true,
                     maintainAspectRatio: false,
                     scales: {
-                        x: { title: { display: true, text: 'Output Price ($ / 1M Tokens)', color: '#86868b' }, grid: { color: '#2c2c2e' }, ticks: { color: '#86868b' } },
+                        x: { title: { display: true, text: 'Output Price per 1M Tokens (₹ INR)', color: '#86868b' }, grid: { color: '#2c2c2e' }, ticks: { color: '#86868b' } },
                         y: { title: { display: true, text: 'Artificial Analysis Intelligence Index', color: '#86868b' }, grid: { color: '#2c2c2e' }, ticks: { color: '#86868b' } }
                     },
                     plugins: { legend: { labels: { color: '#ffffff' } } }
@@ -847,11 +713,11 @@
             new Chart(ctx2, {
                 type: 'bar',
                 data: {
-                    labels: ['Kimi K3 (#1 Global)', 'GPT-5.6 Sol', 'Claude Opus 5', 'Grok 4.5', 'GPT-5.6 Terra', 'Claude Sonnet 4.6', 'Gemini 3 Pro'],
+                    labels: ['Kimi K3 (#1 Global)', 'GPT-5.6 Sol', 'Claude Opus 5', 'Grok 4.5', 'GPT-5.6 Terra', 'Gemini 3 Pro'],
                     datasets: [{
-                        label: 'TAU Banking Score',
-                        data: [0.3340, 0.3299, 0.3278, 0.3258, 0.3175, 0.3052, 0.3010],
-                        backgroundColor: ['#ff9f0a', '#ff453a', '#0071e3', '#bf5af2', '#ffd60a', '#0071e3', '#30d158']
+                        label: 'TAU Banking Benchmark Score',
+                        data: [0.3340, 0.3299, 0.3278, 0.3258, 0.3175, 0.3010],
+                        backgroundColor: ['#ffd60a', '#ff453a', '#0071e3', '#bf5af2', '#30d158', '#2997ff']
                     }]
                 },
                 options: {
