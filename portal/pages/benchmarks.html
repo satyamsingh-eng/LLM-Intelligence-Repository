@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Empirical Benchmark Leaderboard | SARVAX Enterprise Platform</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; background: #000000; color: #ffffff; }
+    .card-flat { background: #1c1c1e; border: 1px solid #333336; border-radius: 14px; }
+</style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+    <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-[#333336] px-6 py-3.5 flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+            <a href="../index.html" class="text-xl font-extrabold tracking-tight text-white hover:text-[#0071e3] transition">C3A LABS</a>
+            <span class="text-[#86868b] text-sm">|</span>
+            <span class="text-xs font-semibold text-[#0071e3]">Empirical Benchmark Leaderboard</span>
+        </div>
+        <div class="flex items-center space-x-4 text-xs">
+            <a href="../index.html" class="px-3 py-1.5 rounded-lg bg-[#1c1c1e] border border-[#333336] text-white hover:border-[#0071e3] transition">Back to Main Platform</a>
+        </div>
+    </header>
+    <main class="flex-1 p-8 max-w-7xl mx-auto w-full space-y-8">
+
+<div>
+    <h1 class="text-2xl font-bold tracking-tight">Empirical Benchmark Leaderboard</h1>
+    <p class="text-[#86868b] text-xs mt-1">TAU Banking &amp; Artificial Analysis Intelligence Index.</p>
+</div>
+<div class="card-flat overflow-x-auto text-xs">
+    <table class="w-full text-left">
+        <thead class="bg-black text-[#86868b] uppercase text-[10px] border-b border-[#333336]">
+            <tr>
+                <th class="p-4">Model</th>
+                <th class="p-4">TAU Banking Score</th>
+                <th class="p-4">Intelligence Index</th>
+                <th class="p-4">SWE-bench (%)</th>
+                <th class="p-4">Speed (tok/s)</th>
+            </tr>
+        </thead>
+        <tbody id="benchBody" class="divide-y divide-[#333336]"></tbody>
+    </table>
+</div>
+<script>
+    const models = [
+  {
+    "name": "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
+    "vendor": "Anthropic",
+    "intel": 60.7,
+    "coding": 78,
+    "tau": "0.3031",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "tps": 43.9
+  },
+  {
+    "name": "Claude Opus 5 (Adaptive Reasoning, Xhigh Effort)",
+    "vendor": "Anthropic",
+    "intel": 60.1,
+    "coding": 77,
+    "tau": "0.3155",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "tps": 60.4
+  },
+  {
+    "name": "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
+    "vendor": "Anthropic",
+    "intel": 59.9,
+    "coding": 76.5,
+    "tau": "0.2680",
+    "inUsd": 10,
+    "outUsd": 50,
+    "inInr": 835.0,
+    "outInr": 4175.0,
+    "tps": 58.3
+  },
+  {
+    "name": "GPT-5.6 Sol (max)",
+    "vendor": "OpenAI",
+    "intel": 58.9,
+    "coding": 77.4,
+    "tau": "0.3299",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "tps": 73.9
+  },
+  {
+    "name": "Claude Opus 5 (Adaptive Reasoning, High Effort)",
+    "vendor": "Anthropic",
+    "intel": 58.9,
+    "coding": 76.5,
+    "tau": "0.3278",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "tps": 63.8
+  },
+  {
+    "name": "GPT-5.6 Sol (xhigh)",
+    "vendor": "OpenAI",
+    "intel": 57.7,
+    "coding": 78.3,
+    "tau": "0.3265",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "tps": 64.2
+  },
+  {
+    "name": "Kimi K3",
+    "vendor": "Kimi",
+    "intel": 57.1,
+    "coding": 76.2,
+    "tau": "0.3340",
+    "inUsd": 3,
+    "outUsd": 15,
+    "inInr": 250.5,
+    "outInr": 1252.5,
+    "tps": 33.1
+  },
+  {
+    "name": "Claude Opus 5 (Adaptive Reasoning, Medium Effort)",
+    "vendor": "Anthropic",
+    "intel": 56.3,
+    "coding": 74.3,
+    "tau": "0.2866",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "tps": 55.6
+  },
+  {
+    "name": "GPT-5.6 Sol (high)",
+    "vendor": "OpenAI",
+    "intel": 55.9,
+    "coding": 77.2,
+    "tau": "0.3058",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "tps": 65.8
+  },
+  {
+    "name": "Claude Opus 4.8 (Adaptive Reasoning, Max Effort)",
+    "vendor": "Anthropic",
+    "intel": 55.7,
+    "coding": 74.3,
+    "tau": "0.2763",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "tps": 62.5
+  },
+  {
+    "name": "GPT-5.6 Terra (max)",
+    "vendor": "OpenAI",
+    "intel": 55,
+    "coding": 76.7,
+    "tau": "0.3175",
+    "inUsd": 2.5,
+    "outUsd": 15,
+    "inInr": 208.75,
+    "outInr": 1252.5,
+    "tps": 128.0
+  },
+  {
+    "name": "GPT-5.5 (xhigh)",
+    "vendor": "OpenAI",
+    "intel": 54.8,
+    "coding": 74.9,
+    "tau": "0.3134",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "tps": 0.0
+  },
+  {
+    "name": "Grok 4.5 (high)",
+    "vendor": "SpaceXAI",
+    "intel": 53.8,
+    "coding": 72.4,
+    "tau": "0.3258",
+    "inUsd": 2,
+    "outUsd": 6,
+    "inInr": 167.0,
+    "outInr": 501.0,
+    "tps": 55.8
+  },
+  {
+    "name": "GPT-5.6 Sol (medium)",
+    "vendor": "OpenAI",
+    "intel": 53.6,
+    "coding": 76.3,
+    "tau": "0.2646",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "tps": 60.0
+  },
+  {
+    "name": "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)",
+    "vendor": "Anthropic",
+    "intel": 53.5,
+    "coding": 73.6,
+    "tau": "0.2887",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "tps": 0.0
+  },
+  {
+    "name": "Claude Sonnet 5 (Adaptive Reasoning, Max Effort)",
+    "vendor": "Anthropic",
+    "intel": 53.4,
+    "coding": 71.5,
+    "tau": "0.2825",
+    "inUsd": 2,
+    "outUsd": 10,
+    "inInr": 167.0,
+    "outInr": 835.0,
+    "tps": 83.4
+  },
+  {
+    "name": "GPT-5.5 (high)",
+    "vendor": "OpenAI",
+    "intel": 53.1,
+    "coding": 71.6,
+    "tau": "0.2948",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "tps": 0.0
+  },
+  {
+    "name": "GPT-5.6 Terra (xhigh)",
+    "vendor": "OpenAI",
+    "intel": 51.6,
+    "coding": 70.6,
+    "tau": "0.2433",
+    "inUsd": 2.5,
+    "outUsd": 15,
+    "inInr": 208.75,
+    "outInr": 1252.5,
+    "tps": 120.0
+  },
+  {
+    "name": "GPT-5.4 (xhigh)",
+    "vendor": "OpenAI",
+    "intel": 51.4,
+    "coding": 71.1,
+    "tau": "0.3031",
+    "inUsd": 2.5,
+    "outUsd": 15,
+    "inInr": 208.75,
+    "outInr": 1252.5,
+    "tps": 0.0
+  },
+  {
+    "name": "GPT-5.6 Luna (max)",
+    "vendor": "OpenAI",
+    "intel": 51.2,
+    "coding": 71.4,
+    "tau": "0.2722",
+    "inUsd": 1,
+    "outUsd": 6,
+    "inInr": 83.5,
+    "outInr": 501.0,
+    "tps": 171.4
+  },
+  {
+    "name": "GLM-5.2 (max)",
+    "vendor": "Z AI",
+    "intel": 51.1,
+    "coding": 68.8,
+    "tau": "0.2680",
+    "inUsd": 1.4,
+    "outUsd": 4.4,
+    "inInr": 116.9,
+    "outInr": 367.4,
+    "tps": 156.7
+  },
+  {
+    "name": "Muse Spark 1.1 (xhigh)",
+    "vendor": "Meta",
+    "intel": 50.6,
+    "coding": 71.3,
+    "tau": "0.2515",
+    "inUsd": 1.25,
+    "outUsd": 4.25,
+    "inInr": 104.38,
+    "outInr": 354.88,
+    "tps": 123.9
+  },
+  {
+    "name": "Claude Opus 5 (Adaptive Reasoning, Low Effort)",
+    "vendor": "Anthropic",
+    "intel": 50.6,
+    "coding": 66.9,
+    "tau": "0.2330",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "tps": 46.7
+  },
+  {
+    "name": "GPT-5.5 (medium)",
+    "vendor": "OpenAI",
+    "intel": 50.4,
+    "coding": 71.5,
+    "tau": "0.2577",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "tps": 0.0
+  },
+  {
+    "name": "Gemini 3.5 Flash (high)",
+    "vendor": "Google",
+    "intel": 50.2,
+    "coding": 70.1,
+    "tau": "0.2536",
+    "inUsd": 1.5,
+    "outUsd": 9,
+    "inInr": 125.25,
+    "outInr": 751.5,
+    "tps": 250.3
+  }
+];
+    document.getElementById('benchBody').innerHTML = models.map(m => `
+        <tr class="hover:bg-black">
+            <td class="p-4 font-bold text-white">${m.name} <span class="block text-[10px] text-[#86868b] font-normal">${m.vendor}</span></td>
+            <td class="p-4 text-[#0071e3] font-bold">${m.tau}</td>
+            <td class="p-4 font-bold text-white">${m.intel}</td>
+            <td class="p-4 font-semibold text-white">${m.coding}%</td>
+            <td class="p-4 text-[#30d158]">${m.tps} tps</td>
+        </tr>
+    `).join('');
+</script>
+
+    </main>
+    <footer class="border-t border-[#333336] p-6 text-center text-xs text-[#86868b]">
+        SARVAX AI Intelligence Repository | C3A Labs 2026
+    </footer>
+</body>
+</html>

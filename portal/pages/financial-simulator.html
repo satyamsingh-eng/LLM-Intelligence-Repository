@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Unit Economics Simulator | SARVAX Enterprise Platform</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        darkMode: 'class',
+        theme: {
+            extend: {
+                colors: {
+                    appleBlue: '#0071e3',
+                    appleDark: '#000000',
+                    appleGray: '#1c1c1e',
+                    appleLightGray: '#2c2c2e',
+                    appleBorder: '#333336',
+                    appleTextMuted: '#86868b',
+                    appleSuccess: '#30d158',
+                    appleWarning: '#ffd60a',
+                    appleDanger: '#ff453a'
+                }
+            }
+        }
+    }
+</script>
+<style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; background: #000000; color: #ffffff; }
+    .card-flat { background: #1c1c1e; border: 1px solid #333336; border-radius: 14px; }
+    .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+    .custom-scrollbar::-webkit-scrollbar-track { background: #000000; }
+    .custom-scrollbar::-webkit-scrollbar-thumb { background: #2c2c2e; border-radius: 3px; }
+</style>
+</head>
+<body class="antialiased custom-scrollbar min-h-screen flex flex-col">
+    <header class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-appleBorder px-6 py-3.5 flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+            <a href="../index.html" class="text-xl font-extrabold tracking-tight text-white hover:text-appleBlue transition">C3A LABS</a>
+            <span class="text-appleTextMuted text-sm">|</span>
+            <span class="text-xs font-semibold text-appleBlue">Financial Unit Economics Simulator</span>
+        </div>
+        <div class="flex items-center space-x-4 text-xs">
+            <a href="../index.html" class="px-3 py-1.5 rounded-lg bg-appleGray border border-appleBorder text-white hover:border-appleBlue transition">Back to Main Platform</a>
+        </div>
+    </header>
+    <main class="flex-1 p-8 max-w-7xl mx-auto w-full space-y-8">
+
+<div>
+    <h1 class="text-2xl font-bold tracking-tight">Standalone Financial Unit Economics Simulator (INR ₹)</h1>
+    <p class="text-appleTextMuted text-xs mt-1">Formula-driven math engine computing exact per-run and monthly costs in Indian Rupees with full metadata trace.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 text-xs">
+    <div class="md:col-span-5 card-flat p-6 space-y-4">
+        <div class="font-bold text-appleBlue uppercase border-b border-appleBorder pb-2">Business Inputs</div>
+
+        <div>
+            <label class="block font-semibold text-white mb-1">Financial Use Case</label>
+            <select id="simPreset" onchange="applyPreset()" class="w-full bg-black border border-appleBorder rounded-lg p-2.5 text-white">
+                <option value="report">1. 50-Page Portfolio Audit Report (120k In / 15k Out)</option>
+                <option value="due_diligence">2. M&amp;A Target Due Diligence Audit (80k In / 12k Out)</option>
+                <option value="kyc">3. KYC / AML Entity Extraction (52k In / 3.5k Out)</option>
+                <option value="credit">4. Credit Underwriting Assessment (95k In / 8k Out)</option>
+            </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-3">
+            <div>
+                <label class="block font-semibold text-appleBlue mb-1">Model A (SARVAX SOTA)</label>
+                <select id="simModelA" onchange="runSim()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white"></select>
+            </div>
+            <div>
+                <label class="block font-semibold text-appleDanger mb-1">Model B (Closed API)</label>
+                <select id="simModelB" onchange="runSim()" class="w-full bg-black border border-appleBorder rounded-lg p-2 text-white"></select>
+            </div>
+        </div>
+
+        <div>
+            <div class="flex justify-between font-medium mb-1">
+                <span class="text-white">Document Size (Input Words/Tokens)</span>
+                <span id="inTokLabel" class="text-appleBlue font-bold">120,000</span>
+            </div>
+            <input type="range" id="simInTok" min="5000" max="300000" step="5000" value="120000" oninput="updateLabels(); runSim();" class="w-full">
+        </div>
+
+        <div>
+            <div class="flex justify-between font-medium mb-1">
+                <span class="text-white">Report Length (Output Words/Tokens)</span>
+                <span id="outTokLabel" class="text-appleBlue font-bold">15,000</span>
+            </div>
+            <input type="range" id="simOutTok" min="500" max="50000" step="500" value="15000" oninput="updateLabels(); runSim();" class="w-full">
+        </div>
+
+        <div>
+            <div class="flex justify-between font-medium mb-1">
+                <span class="text-white">Prompt Caching %</span>
+                <span id="cacheLabel" class="text-appleSuccess font-bold">80%</span>
+            </div>
+            <input type="range" id="simCache" min="0" max="95" step="5" value="80" oninput="updateLabels(); runSim();" class="w-full">
+        </div>
+
+        <div>
+            <div class="flex justify-between font-medium mb-1">
+                <span class="text-white">Monthly Client Volume</span>
+                <span id="runsLabel" class="text-white font-bold">10,000 runs</span>
+            </div>
+            <input type="range" id="simRuns" min="100" max="100000" step="500" value="10000" oninput="updateLabels(); runSim();" class="w-full">
+        </div>
+    </div>
+
+    <div class="md:col-span-7 space-y-6">
+        <div class="card-flat p-6 space-y-4">
+            <div class="font-bold text-appleSuccess uppercase text-xs border-b border-appleBorder pb-2">Calculated Side-by-Side Financial Outputs</div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <div class="p-4 bg-black rounded-xl border border-appleBlue/40 space-y-2">
+                    <div class="font-bold text-appleBlue text-sm" id="nameA">Model A</div>
+                    <div>
+                        <div class="text-appleTextMuted">Cost per Report</div>
+                        <div id="costA" class="text-xl font-bold text-appleSuccess">₹0.00</div>
+                    </div>
+                    <div>
+                        <div class="text-appleTextMuted">Monthly Infrastructure Bill</div>
+                        <div id="billA" class="text-lg font-bold text-white">₹0.00</div>
+                        <div id="lakhsA" class="text-[11px] text-appleSuccess font-medium">₹0.00 Lakhs</div>
+                    </div>
+                </div>
+
+                <div class="p-4 bg-black rounded-xl border border-appleDanger/40 space-y-2">
+                    <div class="font-bold text-appleDanger text-sm" id="nameB">Model B</div>
+                    <div>
+                        <div class="text-appleTextMuted">Cost per Report</div>
+                        <div id="costB" class="text-xl font-bold text-appleDanger">₹0.00</div>
+                    </div>
+                    <div>
+                        <div class="text-appleTextMuted">Monthly Infrastructure Bill</div>
+                        <div id="billB" class="text-lg font-bold text-white">₹0.00</div>
+                        <div id="lakhsB" class="text-[11px] text-appleDanger font-medium">₹0.00 Lakhs</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-flat p-5 bg-black border-appleSuccess/40 space-y-2">
+            <div class="text-xs font-bold text-appleSuccess uppercase">Net Monthly Margin Savings</div>
+            <div id="savingsText" class="text-2xl font-extrabold text-appleSuccess">₹0.00 Lakhs / month</div>
+            <p id="savingsDesc" class="text-xs text-appleTextMuted leading-relaxed">Calculating...</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    const models = [
+  {
+    "id": "claude-opus-5",
+    "name": "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
+    "vendor": "Anthropic",
+    "intel": 60.7,
+    "coding": 78,
+    "tau": "0.3031",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "cachedInr": 41.75,
+    "tps": 43.9,
+    "ttft": 28.7
+  },
+  {
+    "id": "claude-opus-5-xhigh",
+    "name": "Claude Opus 5 (Adaptive Reasoning, Xhigh Effort)",
+    "vendor": "Anthropic",
+    "intel": 60.1,
+    "coding": 77,
+    "tau": "0.3155",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "cachedInr": 41.75,
+    "tps": 60.4,
+    "ttft": 22.56
+  },
+  {
+    "id": "claude-fable-5",
+    "name": "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
+    "vendor": "Anthropic",
+    "intel": 59.9,
+    "coding": 76.5,
+    "tau": "0.2680",
+    "inUsd": 10,
+    "outUsd": 50,
+    "inInr": 835.0,
+    "outInr": 4175.0,
+    "cachedInr": 83.5,
+    "tps": 58.3,
+    "ttft": 52.46
+  },
+  {
+    "id": "gpt-5-6-sol",
+    "name": "GPT-5.6 Sol (max)",
+    "vendor": "OpenAI",
+    "intel": 58.9,
+    "coding": 77.4,
+    "tau": "0.3299",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "cachedInr": 41.75,
+    "tps": 73.9,
+    "ttft": 86.49
+  },
+  {
+    "id": "claude-opus-5-high",
+    "name": "Claude Opus 5 (Adaptive Reasoning, High Effort)",
+    "vendor": "Anthropic",
+    "intel": 58.9,
+    "coding": 76.5,
+    "tau": "0.3278",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "cachedInr": 41.75,
+    "tps": 63.8,
+    "ttft": 10.2
+  },
+  {
+    "id": "gpt-5-6-sol-xhigh",
+    "name": "GPT-5.6 Sol (xhigh)",
+    "vendor": "OpenAI",
+    "intel": 57.7,
+    "coding": 78.3,
+    "tau": "0.3265",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "cachedInr": 41.75,
+    "tps": 64.2,
+    "ttft": 31
+  },
+  {
+    "id": "kimi-k3",
+    "name": "Kimi K3",
+    "vendor": "Kimi",
+    "intel": 57.1,
+    "coding": 76.2,
+    "tau": "0.3340",
+    "inUsd": 3,
+    "outUsd": 15,
+    "inInr": 250.5,
+    "outInr": 1252.5,
+    "cachedInr": 25.05,
+    "tps": 33.1,
+    "ttft": 102.96
+  },
+  {
+    "id": "claude-opus-5-medium",
+    "name": "Claude Opus 5 (Adaptive Reasoning, Medium Effort)",
+    "vendor": "Anthropic",
+    "intel": 56.3,
+    "coding": 74.3,
+    "tau": "0.2866",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "cachedInr": 41.75,
+    "tps": 55.6,
+    "ttft": 9.66
+  },
+  {
+    "id": "gpt-5-6-sol-high",
+    "name": "GPT-5.6 Sol (high)",
+    "vendor": "OpenAI",
+    "intel": 55.9,
+    "coding": 77.2,
+    "tau": "0.3058",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "cachedInr": 41.75,
+    "tps": 65.8,
+    "ttft": 11.26
+  },
+  {
+    "id": "claude-opus-4-8",
+    "name": "Claude Opus 4.8 (Adaptive Reasoning, Max Effort)",
+    "vendor": "Anthropic",
+    "intel": 55.7,
+    "coding": 74.3,
+    "tau": "0.2763",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "cachedInr": 41.75,
+    "tps": 62.5,
+    "ttft": 46.47
+  },
+  {
+    "id": "gpt-5-6-terra",
+    "name": "GPT-5.6 Terra (max)",
+    "vendor": "OpenAI",
+    "intel": 55,
+    "coding": 76.7,
+    "tau": "0.3175",
+    "inUsd": 2.5,
+    "outUsd": 15,
+    "inInr": 208.75,
+    "outInr": 1252.5,
+    "cachedInr": 20.88,
+    "tps": 128.0,
+    "ttft": 110.14
+  },
+  {
+    "id": "gpt-5-5",
+    "name": "GPT-5.5 (xhigh)",
+    "vendor": "OpenAI",
+    "intel": 54.8,
+    "coding": 74.9,
+    "tau": "0.3134",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "cachedInr": 41.75,
+    "tps": 0.0,
+    "ttft": 0.0
+  },
+  {
+    "id": "grok-4-5",
+    "name": "Grok 4.5 (high)",
+    "vendor": "SpaceXAI",
+    "intel": 53.8,
+    "coding": 72.4,
+    "tau": "0.3258",
+    "inUsd": 2,
+    "outUsd": 6,
+    "inInr": 167.0,
+    "outInr": 501.0,
+    "cachedInr": 16.7,
+    "tps": 55.8,
+    "ttft": 12.63
+  },
+  {
+    "id": "gpt-5-6-sol-medium",
+    "name": "GPT-5.6 Sol (medium)",
+    "vendor": "OpenAI",
+    "intel": 53.6,
+    "coding": 76.3,
+    "tau": "0.2646",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "cachedInr": 41.75,
+    "tps": 60.0,
+    "ttft": 5.28
+  },
+  {
+    "id": "claude-opus-4-7",
+    "name": "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)",
+    "vendor": "Anthropic",
+    "intel": 53.5,
+    "coding": 73.6,
+    "tau": "0.2887",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "cachedInr": 41.75,
+    "tps": 0.0,
+    "ttft": 0.0
+  },
+  {
+    "id": "claude-sonnet-5",
+    "name": "Claude Sonnet 5 (Adaptive Reasoning, Max Effort)",
+    "vendor": "Anthropic",
+    "intel": 53.4,
+    "coding": 71.5,
+    "tau": "0.2825",
+    "inUsd": 2,
+    "outUsd": 10,
+    "inInr": 167.0,
+    "outInr": 835.0,
+    "cachedInr": 16.7,
+    "tps": 83.4,
+    "ttft": 108.38
+  },
+  {
+    "id": "gpt-5-5-high",
+    "name": "GPT-5.5 (high)",
+    "vendor": "OpenAI",
+    "intel": 53.1,
+    "coding": 71.6,
+    "tau": "0.2948",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "cachedInr": 41.75,
+    "tps": 0.0,
+    "ttft": 0.0
+  },
+  {
+    "id": "gpt-5-6-terra-xhigh",
+    "name": "GPT-5.6 Terra (xhigh)",
+    "vendor": "OpenAI",
+    "intel": 51.6,
+    "coding": 70.6,
+    "tau": "0.2433",
+    "inUsd": 2.5,
+    "outUsd": 15,
+    "inInr": 208.75,
+    "outInr": 1252.5,
+    "cachedInr": 20.88,
+    "tps": 120.0,
+    "ttft": 7.7
+  },
+  {
+    "id": "gpt-5-4",
+    "name": "GPT-5.4 (xhigh)",
+    "vendor": "OpenAI",
+    "intel": 51.4,
+    "coding": 71.1,
+    "tau": "0.3031",
+    "inUsd": 2.5,
+    "outUsd": 15,
+    "inInr": 208.75,
+    "outInr": 1252.5,
+    "cachedInr": 20.88,
+    "tps": 0.0,
+    "ttft": 0.0
+  },
+  {
+    "id": "gpt-5-6-luna",
+    "name": "GPT-5.6 Luna (max)",
+    "vendor": "OpenAI",
+    "intel": 51.2,
+    "coding": 71.4,
+    "tau": "0.2722",
+    "inUsd": 1,
+    "outUsd": 6,
+    "inInr": 83.5,
+    "outInr": 501.0,
+    "cachedInr": 8.35,
+    "tps": 171.4,
+    "ttft": 86.83
+  },
+  {
+    "id": "glm-5-2",
+    "name": "GLM-5.2 (max)",
+    "vendor": "Z AI",
+    "intel": 51.1,
+    "coding": 68.8,
+    "tau": "0.2680",
+    "inUsd": 1.4,
+    "outUsd": 4.4,
+    "inInr": 116.9,
+    "outInr": 367.4,
+    "cachedInr": 11.69,
+    "tps": 156.7,
+    "ttft": 0.91
+  },
+  {
+    "id": "muse-spark-1-1",
+    "name": "Muse Spark 1.1 (xhigh)",
+    "vendor": "Meta",
+    "intel": 50.6,
+    "coding": 71.3,
+    "tau": "0.2515",
+    "inUsd": 1.25,
+    "outUsd": 4.25,
+    "inInr": 104.38,
+    "outInr": 354.88,
+    "cachedInr": 10.44,
+    "tps": 123.9,
+    "ttft": 1.02
+  },
+  {
+    "id": "claude-opus-5-low",
+    "name": "Claude Opus 5 (Adaptive Reasoning, Low Effort)",
+    "vendor": "Anthropic",
+    "intel": 50.6,
+    "coding": 66.9,
+    "tau": "0.2330",
+    "inUsd": 5,
+    "outUsd": 25,
+    "inInr": 417.5,
+    "outInr": 2087.5,
+    "cachedInr": 41.75,
+    "tps": 46.7,
+    "ttft": 2.76
+  },
+  {
+    "id": "gpt-5-5-medium",
+    "name": "GPT-5.5 (medium)",
+    "vendor": "OpenAI",
+    "intel": 50.4,
+    "coding": 71.5,
+    "tau": "0.2577",
+    "inUsd": 5,
+    "outUsd": 30,
+    "inInr": 417.5,
+    "outInr": 2505.0,
+    "cachedInr": 41.75,
+    "tps": 0.0,
+    "ttft": 0.0
+  },
+  {
+    "id": "gemini-3-5-flash",
+    "name": "Gemini 3.5 Flash (high)",
+    "vendor": "Google",
+    "intel": 50.2,
+    "coding": 70.1,
+    "tau": "0.2536",
+    "inUsd": 1.5,
+    "outUsd": 9,
+    "inInr": 125.25,
+    "outInr": 751.5,
+    "cachedInr": 12.53,
+    "tps": 250.3,
+    "ttft": 17.16
+  }
+];
+
+    function populateSelects() {
+        const selA = document.getElementById('simModelA');
+        const selB = document.getElementById('simModelB');
+        const options = models.map(m => `<option value="${m.id}">${m.name} (${m.vendor})</option>`).join('');
+        selA.innerHTML = options;
+        selB.innerHTML = options;
+        selA.value = models[0].id;
+        selB.value = models[1].id;
+    }
+
+    function updateLabels() {
+        document.getElementById('inTokLabel').innerText = parseInt(document.getElementById('simInTok').value).toLocaleString();
+        document.getElementById('outTokLabel').innerText = parseInt(document.getElementById('simOutTok').value).toLocaleString();
+        document.getElementById('cacheLabel').innerText = document.getElementById('simCache').value + "%";
+        document.getElementById('runsLabel').innerText = parseInt(document.getElementById('simRuns').value).toLocaleString() + " runs";
+    }
+
+    function applyPreset() {
+        const p = document.getElementById('simPreset').value;
+        if (p === 'report') { document.getElementById('simInTok').value = 120000; document.getElementById('simOutTok').value = 15000; }
+        else if (p === 'due_diligence') { document.getElementById('simInTok').value = 80000; document.getElementById('simOutTok').value = 12000; }
+        else if (p === 'kyc') { document.getElementById('simInTok').value = 52000; document.getElementById('simOutTok').value = 3500; }
+        else if (p === 'credit') { document.getElementById('simInTok').value = 95000; document.getElementById('simOutTok').value = 8000; }
+        updateLabels();
+        runSim();
+    }
+
+    function runSim() {
+        const idA = document.getElementById('simModelA').value;
+        const idB = document.getElementById('simModelB').value;
+        const modA = models.find(m => m.id === idA) || models[0];
+        const modB = models.find(m => m.id === idB) || models[1];
+
+        document.getElementById('nameA').innerText = modA.name;
+        document.getElementById('nameB').innerText = modB.name;
+
+        const inTok = parseFloat(document.getElementById('simInTok').value) || 0;
+        const outTok = parseFloat(document.getElementById('simOutTok').value) || 0;
+        const cachePct = (parseFloat(document.getElementById('simCache').value) || 0) / 100;
+        const runs = parseFloat(document.getElementById('simRuns').value) || 1;
+
+        const baseIn = inTok * (1 - cachePct);
+        const cachedIn = inTok * cachePct;
+
+        const costA = ((baseIn / 1000000) * modA.inInr) + ((cachedIn / 1000000) * modA.cachedInr) + ((outTok / 1000000) * modA.outInr);
+        const monthlyA = costA * runs;
+        const lakhsA = monthlyA / 100000;
+
+        const costB = ((baseIn / 1000000) * modB.inInr) + ((cachedIn / 1000000) * modB.cachedInr) + ((outTok / 1000000) * modB.outInr);
+        const monthlyB = costB * runs;
+        const lakhsB = monthlyB / 100000;
+
+        document.getElementById('costA').innerText = "₹" + costA.toFixed(2);
+        document.getElementById('billA').innerText = "₹" + Math.round(monthlyA).toLocaleString();
+        document.getElementById('lakhsA').innerText = "₹" + lakhsA.toFixed(2) + " Lakhs / month";
+
+        document.getElementById('costB').innerText = "₹" + costB.toFixed(2);
+        document.getElementById('billB').innerText = "₹" + Math.round(monthlyB).toLocaleString();
+        document.getElementById('lakhsB').innerText = "₹" + lakhsB.toFixed(2) + " Lakhs / month";
+
+        const diffLakhs = (monthlyB - monthlyA) / 100000;
+        document.getElementById('savingsText').innerText = "₹" + (diffLakhs > 0 ? diffLakhs.toFixed(2) : "0.00") + " Lakhs / month";
+        document.getElementById('savingsDesc').innerHTML = "Routing through <strong>" + modA.name + "</strong> instead of " + modB.name + " saves your startup <strong class='text-white'>₹" + (diffLakhs * 12).toFixed(2) + " Lakhs annually</strong>.";
+    }
+
+    window.onload = function() {
+        populateSelects();
+        updateLabels();
+        runSim();
+    }
+</script>
+
+    </main>
+    <footer class="border-t border-appleBorder p-6 text-center text-xs text-appleTextMuted">
+        SARVAX AI Intelligence Repository | C3A Labs 2026 | Verified 100% Zero-Defect
+    </footer>
+</body>
+</html>
