@@ -58,8 +58,8 @@ for m in models:
     if cached_inr != expected_cached:
         math_cache_ok = False
 
-record_check("1. Mathematical QA", "USD to INR Exchange Rate Math (₹83.50/$1 across 586 models)", math_inr_ok, "Verified 100% exact match")
-record_check("1. Mathematical QA", "Prompt Caching 90% Read Discount Math across 586 models", math_cache_ok, "Verified 100% exact match")
+record_check("1. Mathematical QA", "USD to INR Exchange Rate Math (₹83.50/$1 across 588 models)", math_inr_ok, "Verified 100% exact match")
+record_check("1. Mathematical QA", "Prompt Caching 90% Read Discount Math across 588 models", math_cache_ok, "Verified 100% exact match")
 
 in_uncached_inr = (120000 * 0.20 / 1000000) * 36.32
 in_cached_inr = (120000 * 0.80 / 1000000) * 3.632
@@ -106,9 +106,12 @@ record_check("5. Regression QA", "Database Model Record Count Preservation (588 
 record_check("5. Regression QA", "14-Point Glossary Integrity Check (All terms fully populated)", glossary_integrity_ok, "100% complete glossary schema")
 record_check("5. Regression QA", "Workflows DAG Schema Verification (Multi-step token chains valid)", workflows_integrity_ok, "100% valid workflow DAG chains")
 
-# LAYER 6: FOUNDER QA
+# LAYER 6: FOUNDER & EXECUTIVE REPORTS QA
 founder_board_ok = os.path.exists(os.path.join(repo_dir, "10-Validation-Logs", "FOUNDER_REVIEW_BOARD.md"))
+exec_report_ok = os.path.exists(os.path.join(repo_dir, "10-Validation-Logs", "EXECUTIVE_RESEARCH_REPORT_CYCLE_2.md"))
+
 record_check("6. Founder QA", "Founder Review Board (5 Executive Sign-offs)", founder_board_ok, "Approved by 5 Virtual Auditors")
+record_check("6. Founder QA", "Cycle 2 Executive Research Report Generation", exec_report_ok, "Cycle 2 Audit Report Logged")
 
 # Generate Validation Log
 log_path = os.path.join(repo_dir, "10-Validation-Logs", "COMPLETE_VALIDATION_PIPELINE_LOG.md")
