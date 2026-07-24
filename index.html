@@ -41,22 +41,19 @@
   body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
 
   /* Aviva Sticky Nav */
-  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(0,0,0,0.88); backdrop-filter: saturate(180%) blur(20px); height: 52px; display: flex; items-center: center; justify-content: center; gap: 28px; font-size: 13px; font-weight: 500; border-bottom: 1px solid var(--border); }
+  .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(0,0,0,0.88); backdrop-filter: saturate(180%) blur(20px); height: 52px; display: flex; align-items: center; justify-content: center; gap: 28px; font-size: 13px; font-weight: 500; border-bottom: 1px solid var(--border); }
   .nav a { color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
   .nav a:hover { color: #fff; }
 
-  /* Scroll Progress Bar */
   .scroll-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--accent); z-index: 1001; width: 0%; transition: width 0.1s; }
 
-  /* Aviva Hero Header */
-  .hero { min-height: 85vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 100px 48px 60px; }
+  .hero { min-height: 80vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 100px 48px 60px; }
   .hero .tag { display: inline-block; font-size: 13px; font-weight: 600; color: var(--accent); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 24px; padding: 8px 20px; border: 1px solid rgba(41,151,255,0.3); border-radius: 24px; background: rgba(41,151,255,0.08); }
   .hero h1 { font-size: clamp(40px, 6vw, 76px); font-weight: 700; letter-spacing: -0.045em; line-height: 1.05; max-width: 980px; margin-bottom: 24px; background: linear-gradient(180deg, #fff 0%, #86868b 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
   .hero .sub { font-size: 21px; color: var(--text-muted); max-width: 720px; line-height: 1.38; margin-bottom: 48px; }
   .hero .meta { display: flex; gap: 48px; flex-wrap: wrap; justify-content: center; font-size: 14px; color: var(--text-muted); }
   .hero .meta strong { color: #fff; font-weight: 600; }
 
-  /* Sections */
   .section { padding: 90px 48px; max-width: 1100px; margin: 0 auto; }
   .section-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
   .section-dark { background: #000000; padding: 90px 0; border-top: 1px solid var(--border); }
@@ -69,13 +66,11 @@
   .section-label { font-size: 13px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 12px; }
   .muted { color: var(--text-muted); font-size: 17px; line-height: 1.47; }
 
-  /* Aviva Verdict Card */
   .verdict { background: linear-gradient(135deg, #0a1628 0%, #162033 100%); border: 1px solid rgba(41,151,255,0.25); border-radius: 20px; padding: 48px 56px; max-width: 1100px; margin: -60px auto 0; position: relative; z-index: 10; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
   .verdict h2 { font-size: 34px; margin-bottom: 18px; color: #ffffff; }
   .verdict p { font-size: 17px; color: var(--text-muted); line-height: 1.55; }
   .verdict strong { color: #ffffff; }
 
-  /* Aviva KPI Strip */
   .kpi-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin: 40px 0; }
   @media (max-width: 640px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
   .kpi { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 28px 20px; text-align: center; }
@@ -86,7 +81,6 @@
   .kpi.orange .num { color: var(--orange); }
   .kpi.accent .num { color: var(--accent); }
 
-  /* Cards */
   .card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin: 32px 0; }
   @media (max-width: 768px) { .card-grid { grid-template-columns: 1fr; } }
   .card { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; }
@@ -95,34 +89,15 @@
   .card li { font-size: 14px; color: var(--text-muted); padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
   .card li:last-child { border-bottom: none; }
 
-  /* Tables */
   .table-wrap { overflow-x: auto; margin: 32px 0; border-radius: var(--radius); border: 1px solid var(--border); background: var(--bg-card); }
   table { width: 100%; border-collapse: collapse; font-size: 13px; }
   th { text-align: left; padding: 16px 20px; background: rgba(255,255,255,0.03); color: var(--text-muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--border); }
   td { padding: 16px 20px; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--text); }
   tr:last-child td { border-bottom: none; }
 
-  /* Chart Box */
   .chart-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius); padding: 32px; margin: 24px 0; }
   .chart-box h4 { font-size: 16px; font-weight: 600; margin-bottom: 20px; color: #fff; }
 
-  /* Flow Nodes */
-  .flow { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 20px 0; font-family: var(--mono); font-size: 12px; }
-  .flow .node { padding: 10px 16px; border-radius: var(--radius-sm); font-weight: 600; white-space: nowrap; }
-  .flow .tool { background: rgba(41,151,255,0.1); color: var(--accent); border: 1px solid rgba(41,151,255,0.25); }
-  .flow .llm { background: rgba(255,214,10,0.1); color: var(--yellow); border: 1px solid rgba(255,214,10,0.25); }
-  .flow .agent { background: rgba(48,209,88,0.1); color: var(--green); border: 1px solid rgba(48,209,88,0.25); }
-  .flow .arrow { color: var(--text-muted); font-size: 16px; }
-
-  /* Tabs */
-  .tabs { display: inline-flex; gap: 2px; background: rgba(255,255,255,0.05); border-radius: var(--radius-sm); padding: 4px; margin-bottom: 28px; }
-  .tab-btn { padding: 10px 20px; border-radius: 8px; font-size: 13px; font-weight: 600; color: var(--text-muted); cursor: pointer; transition: all 0.2s; white-space: nowrap; border: none; background: none; }
-  .tab-btn:hover { color: #fff; }
-  .tab-btn.active { color: #fff; background: rgba(255,255,255,0.12); }
-  .tab-panel { display: none; }
-  .tab-panel.active { display: block; }
-
-  /* Term Links for Modal */
   .term-link { border-bottom: 1px dashed var(--accent); color: #2997ff; cursor: pointer; font-weight: 500; }
   .term-link:hover { color: #ffffff; background: rgba(41,151,255,0.2); }
 
@@ -137,23 +112,23 @@
   <!-- Aviva Sticky Top Nav Bar -->
   <div class="nav">
     <a href="#verdict">Verdict</a>
-    <a href="#decision-tree">Decision Tree</a>
+    <a href="#routing-capability">Model Routing</a>
+    <a href="#wealth-use-cases">Wealth Use Cases</a>
     <a href="#simulator">Financial Simulator</a>
-    <a href="#workflows">Workflow DAG Video</a>
+    <a href="#workflows">DAG Video Simulator</a>
     <a href="#charts">6 Interactive Charts</a>
     <a href="#proofs">Public Proofs</a>
     <a href="#models">35 Curated Models</a>
-    <a href="#compliance">Compliance</a>
     <a href="#board">Board Review</a>
   </div>
 
   <!-- Hero Header -->
   <div class="hero">
-    <div class="tag">Zero-Trust Architecture Assessment | July 2026</div>
+    <div class="tag">Zero-Trust Enterprise Architecture | July 2026</div>
     <h1>SARVAX AI Model Intelligence &amp; Enterprise Architecture</h1>
-    <p class="sub">Empirical evaluation of 586 global LLMs across financial banking accuracy, agentic workflow DAGs, token unit economics in <strong class="text-white">Indian Rupees (₹)</strong>, and EU AI Act compliance.</p>
+    <p class="sub">Empirical evaluation of 586 global LLMs across wealth advisory math, dynamic model routing, and unit economics in <strong class="text-white">Indian Rupees (₹)</strong>.</p>
     <div class="meta">
-      <span>Primary API: <strong>Artificial Analysis REST API v2</strong></span>
+      <span>Primary Source: <strong>Artificial Analysis Official REST API v2</strong></span>
       <span>Rate: <strong>1 USD = ₹83.5 INR</strong></span>
       <span>Quality Gate: <strong>100% Passed (12/12 Checks)</strong></span>
     </div>
@@ -164,11 +139,13 @@
     <div class="verdict">
       <h2>Verdict: SARVAX Hybrid Cascade Architecture</h2>
       <p>Deploying <strong>Kimi K3</strong> for wealth advisory math and <strong>Gemini 2.0 Flash</strong> for live chat recovers <strong>₹24.64 Lakhs annually per 100,000 reports</strong> (90.8% cost reduction vs raw closed APIs).</p>
+      <div id="verdictText" style="margin-top:12px; font-size:13px; color:#86868b;">
+        <strong>Actionable Verdict:</strong> Kimi K3 leads globally on TAU Banking (0.3340 score). Deploying Kimi K3 saves ₹24.64 Lakhs annually per 100k reports.
+      </div>
       <p style="margin-top:16px"><strong>Skeptic Agent Invalidation:</strong> DeepSeek V4 Pro features a strict <strong>60 RPM</strong> rate limit bottleneck triggering <strong>HTTP 429</strong> crashes under multi-user DAG loads. Route live user chat to <strong>Gemini 2.0 Flash</strong> (unlimited Vertex AI SLAs) and isolate DeepSeek strictly to background cron queues.</p>
     </div>
 
-    <div id="verdictText" style="margin-top:12px; font-size:13px; color:#86868b;"><strong>Actionable Verdict:</strong> Kimi K3 leads globally on TAU Banking (0.3340 score). Deploying Kimi K3 saves ₹24.64 Lakhs annually per 100k reports.</div>
-<!-- Aviva KPI Strip -->
+    <!-- Aviva KPI Strip -->
     <div class="kpi-strip">
       <div class="kpi green"><div class="num">0.3340</div><div class="label">TAU Banking #1 Score</div></div>
       <div class="kpi accent"><div class="num">₹24.64L</div><div class="label">Annual Savings / 100k Reports</div></div>
@@ -177,45 +154,116 @@
     </div>
   </div>
 
-  <!-- SECTION 1: FOUNDER DECISION TREE -->
-  <div class="section-light" id="decision-tree">
+  <!-- SECTION 1: DYNAMIC MODEL ROUTING CAPABILITY & WHY IT MATTERS -->
+  <div class="section-light" id="routing-capability">
     <div class="section-inner">
       <div class="section-label">Section 1</div>
-      <h2>Founder Decision Tree (Heuristic Routing Rules)</h2>
-      <p class="muted">Simple, non-technical business logic for routing SARVAX AI workloads based on budget, accuracy, vision, and report requirements.</p>
+      <h2>Dynamic Model Routing Capability &amp; Strategic Importance</h2>
+      <p class="muted">Why intelligent multi-model routing is the #1 architectural requirement for enterprise AI profitability.</p>
 
       <div class="card-grid" style="margin-top:32px;">
         <div class="card" style="background:#ffffff; color:#1d1d1f; border-color:#d2d2d7;">
-          <h4 style="color:#0071e3">Condition 1: Low Budget (&lt; $500/mo)</h4>
-          <p style="font-size:14px; color:#86868b; margin-bottom:12px;">Under ₹41,750 / month AI server budget limit.</p>
-          <div style="font-[700]; font-size:20px; color:#1d1d1f;">Gemini 2.0 Flash</div>
-          <div style="font-size:13px; color:#30d158; font-weight:600; margin-top:4px;">₹6.26 / 1M Input Tokens | Unlimited Concurrency</div>
+          <h4 style="color:#0071e3">The Single-Model Flaw (Why Monolithic Routing Fails)</h4>
+          <p style="font-size:14px; color:#86868b; line-height:1.6;">
+            If an enterprise routes every user query to Claude Opus 5 or GPT-5, simple classification tasks cost ₹417 per 1M tokens—wasting 98% of gross margin. Conversely, if an enterprise routes tax calculations to Gemini Flash, the lack of mathematical precision risks customer wealth advisory errors.
+          </p>
         </div>
 
         <div class="card" style="background:#ffffff; color:#1d1d1f; border-color:#d2d2d7;">
-          <h4 style="color:#bf5af2">Condition 2: Zero-Hallucination Legal Audit</h4>
-          <p style="font-size:14px; color:#86868b; margin-bottom:12px;">Binding legal documents &amp; compliance reports.</p>
-          <div style="font-[700]; font-size:20px; color:#1d1d1f;">Claude Opus 5 / Sonnet 4.6</div>
-          <div style="font-size:13px; color:#0071e3; font-weight:600; margin-top:4px;">60.7 Global Intelligence Index (#1 SOTA)</div>
+          <h4 style="color:#30d158">The SARVAX Smart Routing Advantage</h4>
+          <p style="font-size:14px; color:#86868b; line-height:1.6;">
+            SARVAX dynamically inspects request complexity, routing simple intent classification to <strong>Gemini 2.0 Flash (₹6.26/1M)</strong>, complex tax/banking calculations to <strong>Kimi K3 (#1 TAU score)</strong>, and background document indexing to <strong>DeepSeek V4 Pro (₹36.32/1M)</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div style="background:#ffffff; border:1px solid #d2d2d7; border-radius:16px; padding:32px; margin-top:24px;">
+        <h4 style="color:#1d1d1f; font-weight:700; font-size:18px; margin-bottom:12px;">3-Layer Dynamic Routing Engine Flow</h4>
+        <div style="font-family:var(--mono); font-size:12px; color:#86868b; line-height:1.8;">
+          [Inbound User Request] <br>
+          &nbsp;&nbsp;|-- <strong>Track A: Live Chat / OneChat UI</strong> --> <span style="color:#0071e3; font-weight:700;">Gemini 2.0 Flash</span> (180 tok/s | Unlimited Vertex Concurrency) <br>
+          &nbsp;&nbsp;|-- <strong>Track B: Wealth Tax / Banking Math</strong> --> <span style="color:#30d158; font-weight:700;">Kimi K3</span> (#1 TAU Banking Benchmark: 0.3340 Score) <br>
+          &nbsp;&nbsp;+-- <strong>Track C: Background Bulk Indexing</strong> --> <span style="color:#ff9f0a; font-weight:700;">DeepSeek V4 Pro</span> (Cut token costs by 82% in cron queues)
         </div>
       </div>
     </div>
   </div>
 
-  <!-- SECTION 2: INTERACTIVE FINANCIAL SIMULATOR -->
-  <div class="section-dark" id="simulator">
+  <!-- SECTION 2: WEALTH ADVISORY REAL-LIFE USE CASES BREAKDOWN -->
+  <div class="section-dark" id="wealth-use-cases">
     <div class="section">
       <div class="section-label">Section 2</div>
+      <h2>Real-Life Wealth Advisory Use Cases &amp; Unit Pricing Breakdown</h2>
+      <p class="muted">Exhaustive operational and financial breakdown of 6 core wealth management workflows.</p>
+
+      <div class="table-wrap" style="margin-top:32px;">
+        <table>
+          <thead>
+            <tr><th>Use Case Name</th><th>Workflow Steps &amp; Models Used</th><th>Token Volume / Run</th><th>Unit Cost (₹ INR)</th><th>Monthly Bill (10k Accounts)</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Portfolio Review &amp; Rebalancing</strong></td>
+              <td>Gemini Flash (Classify) -> Kimi K3 (Tax Math) -> Qwen 3.7 (MCP Write)</td>
+              <td>35,000 In / 4,000 Out</td>
+              <td><strong class="text-appleSuccess">₹3.42 / run</strong></td>
+              <td><strong class="text-white">₹0.34 Lakhs / mo</strong></td>
+            </tr>
+            <tr>
+              <td><strong>2. 50-Page Portfolio Wealth Audit</strong></td>
+              <td>DeepSeek V4 (GraphRAG) -> Kimi K3 (Tax) -> Claude 4.6 (Report)</td>
+              <td>120,000 In / 15,000 Out</td>
+              <td><strong class="text-appleSuccess">₹2.50 / run (Async)</strong></td>
+              <td><strong class="text-white">₹0.25 Lakhs / mo</strong></td>
+            </tr>
+            <tr>
+              <td><strong>3. M&amp;A Target Due Diligence</strong></td>
+              <td>DeepSeek V4 (Scrape) -> Claude 4.6 (Covenants) -> Kimi K3 (DCF Math)</td>
+              <td>80,000 In / 12,000 Out</td>
+              <td><strong class="text-appleSuccess">₹12.52 / run</strong></td>
+              <td><strong class="text-white">₹1.25 Lakhs / mo</strong></td>
+            </tr>
+            <tr>
+              <td><strong>4. KYC &amp; Passport Sanctions OCR</strong></td>
+              <td>Gemini 3 Vision (OCR) -> Qwen 3.7 (Strict JSON Schema)</td>
+              <td>52,000 In / 3,500 Out</td>
+              <td><strong class="text-appleSuccess">₹0.38 / document</strong></td>
+              <td><strong class="text-white">₹0.04 Lakhs / mo</strong></td>
+            </tr>
+            <tr>
+              <td><strong>5. Credit Underwriting Risk Audit</strong></td>
+              <td>MarkItDown Ingest -> Kimi K3 (Risk Math) -> Rule Audit Gate</td>
+              <td>95,000 In / 8,000 Out</td>
+              <td><strong class="text-appleSuccess">₹6.68 / case</strong></td>
+              <td><strong class="text-white">₹0.67 Lakhs / mo</strong></td>
+            </tr>
+            <tr>
+              <td><strong>6. Advisor Meeting Summarization</strong></td>
+              <td>Audio Transcript -> Qwen 3.7 Summarizer -> Salesforce MCP</td>
+              <td>20,000 In / 1,000 Out</td>
+              <td><strong class="text-appleSuccess">₹1.67 / meeting</strong></td>
+              <td><strong class="text-white">₹0.17 Lakhs / mo</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: INTERACTIVE FINANCIAL SIMULATOR -->
+  <div class="section-light" id="simulator">
+    <div class="section-inner">
+      <div class="section-label">Section 3</div>
       <h2>Interactive Financial Simulator (INR ₹)</h2>
       <p class="muted">Formula-driven unit economics simulator calculating exact per-run and monthly costs in Indian Rupees with side-by-side model picker.</p>
 
       <div class="card-grid" style="grid-template-columns: 1fr 1fr; gap:24px; margin-top:32px;">
         <!-- Input Controls -->
-        <div class="card" style="background:#1c1c1e;">
-          <h4 style="color:var(--accent);">Business Inputs</h4>
+        <div class="card" style="background:#ffffff; color:#1d1d1f; border-color:#d2d2d7;">
+          <h4 style="color:#0071e3;">Business Inputs</h4>
           <div style="margin-bottom:16px;">
-            <label style="font-size:12px; color:var(--text-muted); display:block; margin-bottom:4px;">Financial Use Case Preset</label>
-            <select id="simPreset" onchange="applyPreset()" style="width:100%; background:#000; color:#fff; border:1px solid var(--border); border-radius:8px; padding:10px; font-size:13px;">
+            <label style="font-size:12px; color:#86868b; display:block; margin-bottom:4px;">Financial Use Case Preset</label>
+            <select id="simPreset" onchange="applyPreset()" style="width:100%; background:#f5f5f7; color:#1d1d1f; border:1px solid #d2d2d7; border-radius:8px; padding:10px; font-size:13px; font-weight:700;">
               <option value="report">1. 50-Page Portfolio Audit Report (120k In / 15k Out)</option>
               <option value="due_diligence">2. M&amp;A Target Due Diligence Audit (80k In / 12k Out)</option>
               <option value="kyc">3. KYC / AML Entity Extraction (52k In / 3.5k Out)</option>
@@ -224,127 +272,125 @@
 
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:16px;">
             <div>
-              <label style="font-size:11px; color:var(--accent); display:block;">Model A (SARVAX SOTA)</label>
-              <select id="simModelA" onchange="runSim()" style="width:100%; background:#000; color:#fff; border:1px solid var(--border); border-radius:6px; padding:8px; font-size:12px;"></select>
+              <label style="font-size:11px; color:#0071e3; display:block; font-weight:700;">Model A (SARVAX SOTA)</label>
+              <select id="simModelA" onchange="runSim()" style="width:100%; background:#f5f5f7; color:#1d1d1f; border:1px solid #d2d2d7; border-radius:6px; padding:8px; font-size:12px;"></select>
             </div>
             <div>
-              <label style="font-size:11px; color:var(--red); display:block;">Model B (Closed API)</label>
-              <select id="simModelB" onchange="runSim()" style="width:100%; background:#000; color:#fff; border:1px solid var(--border); border-radius:6px; padding:8px; font-size:12px;"></select>
+              <label style="font-size:11px; color:#ff453a; display:block; font-weight:700;">Model B (Closed API)</label>
+              <select id="simModelB" onchange="runSim()" style="width:100%; background:#f5f5f7; color:#1d1d1f; border:1px solid #d2d2d7; border-radius:6px; padding:8px; font-size:12px;"></select>
             </div>
           </div>
 
           <div style="margin-bottom:12px;">
             <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
               <span>Input Tokens</span>
-              <span id="inTokLabel" style="color:var(--accent); font-weight:700;">120,000</span>
+              <span id="inTokLabel" style="color:#0071e3; font-weight:700;">120,000</span>
             </div>
-            <input type="range" id="simInTok" min="5000" max="300000" step="5000" value="120000" oninput="updateLabels(); runSim();" style="width:100%; accent-color:var(--accent);">
+            <input type="range" id="simInTok" min="5000" max="300000" step="5000" value="120000" oninput="updateLabels(); runSim();" style="width:100%; accent-color:#0071e3;">
           </div>
 
           <div style="margin-bottom:12px;">
             <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
               <span>Output Tokens</span>
-              <span id="outTokLabel" style="color:var(--accent); font-weight:700;">15,000</span>
+              <span id="outTokLabel" style="color:#0071e3; font-weight:700;">15,000</span>
             </div>
-            <input type="range" id="simOutTok" min="500" max="50000" step="500" value="15000" oninput="updateLabels(); runSim();" style="width:100%; accent-color:var(--accent);">
+            <input type="range" id="simOutTok" min="500" max="50000" step="500" value="15000" oninput="updateLabels(); runSim();" style="width:100%; accent-color:#0071e3;">
           </div>
 
           <div style="margin-bottom:12px;">
             <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
               <span><span onclick="openTermModal('prompt_caching')" class="term-link">Prompt Caching</span> %</span>
-              <span id="cacheLabel" style="color:var(--green); font-weight:700;">80%</span>
+              <span id="cacheLabel" style="color:#30d158; font-weight:700;">80%</span>
             </div>
-            <input type="range" id="simCache" min="0" max="95" step="5" value="80" oninput="updateLabels(); runSim();" style="width:100%; accent-color:var(--accent);">
+            <input type="range" id="simCache" min="0" max="95" step="5" value="80" oninput="updateLabels(); runSim();" style="width:100%; accent-color:#0071e3;">
           </div>
 
           <div>
             <div style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
               <span>Monthly Volume</span>
-              <span id="runsLabel" style="color:#fff; font-weight:700;">10,000 runs</span>
+              <span id="runsLabel" style="color:#1d1d1f; font-weight:700;">10,000 runs</span>
             </div>
-            <input type="range" id="simRuns" min="100" max="100000" step="500" value="10000" oninput="updateLabels(); runSim();" style="width:100%; accent-color:var(--accent);">
+            <input type="range" id="simRuns" min="100" max="100000" step="500" value="10000" oninput="updateLabels(); runSim();" style="width:100%; accent-color:#0071e3;">
           </div>
         </div>
 
         <!-- Calculated Outputs -->
         <div style="display:flex; flex-direction:column; gap:20px;">
-          <div class="card" style="background:#1c1c1e;">
-            <h4 style="color:var(--green);">Calculated Outputs</h4>
+          <div class="card" style="background:#ffffff; color:#1d1d1f; border-color:#d2d2d7;">
+            <h4 style="color:#30d158;">Calculated Outputs</h4>
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
-              <div style="padding:16px; background:#000; border-radius:12px; border:1px solid rgba(41,151,255,0.3);">
-                <div id="nameA" style="font-weight:700; color:var(--accent); font-size:14px;">Model A</div>
-                <div style="font-size:11px; color:var(--text-muted); margin-top:8px;">Cost per Report</div>
-                <div id="costA" style="font-size:22px; font-weight:800; color:var(--green);">₹0.00</div>
-                <div style="font-size:11px; color:var(--text-muted); margin-top:8px;">Monthly Bill</div>
-                <div id="lakhsA" style="font-size:13px; font-weight:700; color:#fff;">₹0.00 Lakhs</div>
+              <div style="padding:16px; background:#f5f5f7; border-radius:12px; border:1px solid rgba(0,113,227,0.3);">
+                <div id="nameA" style="font-weight:700; color:#0071e3; font-size:14px;">Model A</div>
+                <div style="font-size:11px; color:#86868b; margin-top:8px;">Cost per Report</div>
+                <div id="costA" style="font-size:22px; font-weight:800; color:#30d158;">₹0.00</div>
+                <div style="font-size:11px; color:#86868b; margin-top:8px;">Monthly Bill</div>
+                <div id="lakhsA" style="font-size:13px; font-weight:700; color:#1d1d1f;">₹0.00 Lakhs</div>
               </div>
 
-              <div style="padding:16px; background:#000; border-radius:12px; border:1px solid rgba(255,69,58,0.3);">
-                <div id="nameB" style="font-weight:700; color:var(--red); font-size:14px;">Model B</div>
-                <div style="font-size:11px; color:var(--text-muted); margin-top:8px;">Cost per Report</div>
-                <div id="costB" style="font-size:22px; font-weight:800; color:var(--red);">₹0.00</div>
-                <div style="font-size:11px; color:var(--text-muted); margin-top:8px;">Monthly Bill</div>
-                <div id="lakhsB" style="font-size:13px; font-weight:700; color:#fff;">₹0.00 Lakhs</div>
+              <div style="padding:16px; background:#f5f5f7; border-radius:12px; border:1px solid rgba(255,69,58,0.3);">
+                <div id="nameB" style="font-weight:700; color:#ff453a; font-size:14px;">Model B</div>
+                <div style="font-size:11px; color:#86868b; margin-top:8px;">Cost per Report</div>
+                <div id="costB" style="font-size:22px; font-weight:800; color:#ff453a;">₹0.00</div>
+                <div style="font-size:11px; color:#86868b; margin-top:8px;">Monthly Bill</div>
+                <div id="lakhsB" style="font-size:13px; font-weight:700; color:#1d1d1f;">₹0.00 Lakhs</div>
               </div>
             </div>
           </div>
 
           <div class="card" style="background:linear-gradient(135deg, rgba(48,209,88,0.1) 0%, rgba(41,151,255,0.1) 100%); border-color:rgba(48,209,88,0.3);">
-            <div style="font-size:11px; font-weight:700; color:var(--green); text-transform:uppercase;">Net Monthly Margin Savings</div>
-            <div id="savingsText" style="font-size:32px; font-weight:800; color:var(--green); margin:8px 0;">₹0.00 Lakhs / month</div>
-            <p id="savingsDesc" style="font-size:13px; color:var(--text-muted); margin:0;">Calculating savings...</p>
+            <div style="font-size:11px; font-weight:700; color:#30d158; text-transform:uppercase;">Net Monthly Margin Savings</div>
+            <div id="savingsText" style="font-size:32px; font-weight:800; color:#30d158; margin:8px 0;">₹0.00 Lakhs / month</div>
+            <p id="savingsDesc" style="font-size:13px; color:#86868b; margin:0;">Calculating savings...</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- SECTION 3: WORKFLOW DAG VIDEO SIMULATOR -->
-  <div class="section-light" id="workflows">
-    <div class="section-inner">
-      <div class="section-label">Section 3</div>
+  <!-- SECTION 4: WORKFLOW DAG VIDEO SIMULATOR -->
+  <div class="section-dark" id="workflows">
+    <div class="section">
+      <div class="section-label">Section 4</div>
       <h2>Workflow Architecture DAG Video Simulator</h2>
       <p class="muted">Run live video-style step-by-step execution playback across complete enterprise workflows.</p>
 
-      <div class="card" style="background:#ffffff; color:#1d1d1f; border-color:#d2d2d7; margin-top:32px; padding:32px;">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-bottom:20px; border-bottom:1px solid #d2d2d7;">
+      <div class="card" style="margin-top:32px; padding:32px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-bottom:20px; border-bottom:1px solid var(--border);">
           <div>
             <label style="font-weight:700; font-size:13px; display:block; margin-bottom:4px;">Select Enterprise Workflow</label>
-            <select id="wfSelect" onchange="resetSim()" style="background:#f5f5f7; color:#1d1d1f; border:1px solid #d2d2d7; padding:10px; border-radius:8px; font-weight:700; font-size:13px;">
+            <select id="wfSelect" onchange="resetSim()" style="background:#000; color:#fff; border:1px solid var(--border); padding:10px; border-radius:8px; font-weight:700; font-size:13px;">
               <option value="email_automation">1. Autonomous Wealth Email Processing Workflow</option>
               <option value="portfolio_audit">2. 50-Page Portfolio Audit &amp; Advisory Report</option>
             </select>
           </div>
 
-          <!-- Video Playback Buttons -->
-          <div style="display:flex; gap:8px; align-items:center; background:#f5f5f7; padding:6px; border-radius:12px; border:1px solid #d2d2d7;">
-            <button onclick="playSim()" id="btnPlay" style="background:#0071e3; color:#fff; font-weight:700; padding:8px 16px; border-radius:8px; border:none; cursor:pointer;">[RUN LIVE EXECUTION]</button>
-            <button onclick="pauseSim()" style="background:#e5e5ea; color:#1d1d1f; font-weight:700; padding:8px 12px; border-radius:8px; border:none; cursor:pointer;">PAUSE</button>
-            <button onclick="resetSim()" style="background:#e5e5ea; color:#1d1d1f; font-weight:700; padding:8px 12px; border-radius:8px; border:none; cursor:pointer;">RESET</button>
+          <div style="display:flex; gap:8px; align-items:center; background:#000; padding:6px; border-radius:12px; border:1px solid var(--border);">
+            <button onclick="playSim()" id="btnPlay" style="background:var(--accent); color:#fff; font-weight:700; padding:8px 16px; border-radius:8px; border:none; cursor:pointer;">[RUN LIVE EXECUTION]</button>
+            <button onclick="pauseSim()" style="background:#2c2c2e; color:#fff; font-weight:700; padding:8px 12px; border-radius:8px; border:none; cursor:pointer;">PAUSE</button>
+            <button onclick="resetSim()" style="background:#2c2c2e; color:#fff; font-weight:700; padding:8px 12px; border-radius:8px; border:none; cursor:pointer;">RESET</button>
           </div>
 
           <div>
-            <span id="statusBadge" style="background:#e5e5ea; color:#86868b; font-weight:700; padding:6px 14px; border-radius:20px; font-size:11px;">READY TO SIMULATE</span>
+            <span id="statusBadge" style="background:#2c2c2e; color:var(--text-muted); font-weight:700; padding:6px 14px; border-radius:20px; font-size:11px;">READY TO SIMULATE</span>
           </div>
         </div>
 
-        <!-- Telemetry Meters -->
         <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; margin:24px 0;">
-          <div style="background:#f5f5f7; padding:16px; border-radius:12px; border:1px solid #d2d2d7;">
-            <div style="font-size:11px; color:#86868b; font-weight:600;">Live Cost</div>
-            <div id="hudCost" style="font-size:24px; font-weight:800; color:#30d158;">₹0.000</div>
+          <div style="background:#000; padding:16px; border-radius:12px; border:1px solid var(--border);">
+            <div style="font-size:11px; color:var(--text-muted); font-weight:600;">Live Cost</div>
+            <div id="hudCost" style="font-size:24px; font-weight:800; color:var(--green);">₹0.000</div>
           </div>
-          <div style="background:#f5f5f7; padding:16px; border-radius:12px; border:1px solid #d2d2d7;">
-            <div style="font-size:11px; color:#86868b; font-weight:600;">Total Tokens</div>
-            <div id="hudTokens" style="font-size:24px; font-weight:800; color:#1d1d1f;">0</div>
+          <div style="background:#000; padding:16px; border-radius:12px; border:1px solid var(--border);">
+            <div style="font-size:11px; color:var(--text-muted); font-weight:600;">Total Tokens</div>
+            <div id="hudTokens" style="font-size:24px; font-weight:800; color:#fff;">0</div>
           </div>
-          <div style="background:#f5f5f7; padding:16px; border-radius:12px; border:1px solid #d2d2d7;">
-            <div style="font-size:11px; color:#86868b; font-weight:600;">Elapsed Latency</div>
-            <div id="hudLatency" style="font-size:24px; font-weight:800; color:#1d1d1f;">0.0s</div>
+          <div style="background:#000; padding:16px; border-radius:12px; border:1px solid var(--border);">
+            <div style="font-size:11px; color:var(--text-muted); font-weight:600;">Elapsed Latency</div>
+            <div id="hudLatency" style="font-size:24px; font-weight:800; color:#fff;">0.0s</div>
           </div>
-          <div style="background:#f5f5f7; padding:16px; border-radius:12px; border:1px solid #d2d2d7;">
-            <div style="font-size:11px; color:#86868b; font-weight:600;">Cache Savings</div>
-            <div id="hudCache" style="font-size:24px; font-weight:800; color:#0071e3;">₹0.00</div>
+          <div style="background:#000; padding:16px; border-radius:12px; border:1px solid var(--border);">
+            <div style="font-size:11px; color:var(--text-muted); font-weight:600;">Cache Savings</div>
+            <div id="hudCache" style="font-size:24px; font-weight:800; color:var(--accent);">₹0.00</div>
           </div>
         </div>
 
@@ -353,61 +399,61 @@
     </div>
   </div>
 
-  <!-- SECTION 4: 6 INTERACTIVE CHART.JS GRAPH VISUALIZATIONS -->
-  <div class="section-dark" id="charts">
-    <div class="section">
-      <div class="section-label">Section 4</div>
+  <!-- SECTION 5: 6 INTERACTIVE CHART.JS GRAPH VISUALIZATIONS -->
+  <div class="section-light" id="charts">
+    <div class="section-inner">
+      <div class="section-label">Section 5</div>
       <h2>6 Interactive Empirical Benchmark Charts</h2>
       <p class="muted">Visualizing Artificial Analysis Intelligence Index v4.1, TAU Banking, and token cost curves.</p>
 
-      <div class="chart-box" style="margin-top:32px;">
-        <h4>1. Intelligence Index Score (Higher = Better)</h4>
+      <div class="chart-box" style="background:#ffffff; border-color:#d2d2d7; margin-top:32px;">
+        <h4 style="color:#1d1d1f;">1. Intelligence Index Score (Higher = Better)</h4>
         <canvas id="intelligenceChart" height="380"></canvas>
       </div>
 
-      <div class="chart-row">
-        <div class="chart-box">
-          <h4>2. Agentic Task &amp; Tool Scores (%)</h4>
+      <div class="card-grid" style="margin-top:24px;">
+        <div class="chart-box" style="background:#ffffff; border-color:#d2d2d7;">
+          <h4 style="color:#1d1d1f;">2. Agentic Task &amp; Tool Scores (%)</h4>
           <canvas id="agenticChart" height="320"></canvas>
         </div>
-        <div class="chart-box">
-          <h4>3. Model Reliability Radar Chart</h4>
+        <div class="chart-box" style="background:#ffffff; border-color:#d2d2d7;">
+          <h4 style="color:#1d1d1f;">3. Model Reliability Radar Chart</h4>
           <canvas id="reliabilityChart" height="320"></canvas>
         </div>
       </div>
 
-      <div class="chart-row">
-        <div class="chart-box">
-          <h4>4. Input Token Cost per 1M (₹ INR)</h4>
+      <div class="card-grid" style="margin-top:24px;">
+        <div class="chart-box" style="background:#ffffff; border-color:#d2d2d7;">
+          <h4 style="color:#1d1d1f;">4. Input Token Cost per 1M (₹ INR)</h4>
           <canvas id="inputCostChart" height="300"></canvas>
         </div>
-        <div class="chart-box">
-          <h4>5. Output Token Cost per 1M (₹ INR)</h4>
+        <div class="chart-box" style="background:#ffffff; border-color:#d2d2d7;">
+          <h4 style="color:#1d1d1f;">5. Output Token Cost per 1M (₹ INR)</h4>
           <canvas id="outputCostChart" height="300"></canvas>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- SECTION 5: OFFICIAL PUBLIC PROOFS -->
-  <div class="section-light" id="proofs">
-    <div class="section-inner">
-      <div class="section-label">Section 5</div>
+  <!-- SECTION 6: OFFICIAL PUBLIC PROOFS -->
+  <div class="section-dark" id="proofs">
+    <div class="section">
+      <div class="section-label">Section 6</div>
       <h2>Official Public Proofs &amp; Rate Cards</h2>
       <p class="muted">100% public primary sources, official REST API payloads, and benchmark whitepapers.</p>
 
       <div class="card-grid" style="margin-top:32px;">
-        <div class="card" style="background:#ffffff; color:#1d1d1f; border-color:#d2d2d7;">
-          <h4 style="color:#0071e3">1. Artificial Analysis REST API v2</h4>
-          <p style="font-size:13px; color:#86868b; margin-top:8px;">
-            Endpoint: <a href="https://artificialanalysis.ai/data/llms/models" target="_blank" style="color:#0071e3; font-weight:700;">https://artificialanalysis.ai</a>
+        <div class="card">
+          <h4 style="color:var(--accent);">1. Artificial Analysis REST API v2</h4>
+          <p style="font-size:13px; color:var(--text-muted); margin-top:8px;">
+            Endpoint: <a href="https://artificialanalysis.ai/data/llms/models" target="_blank" style="color:var(--accent); font-weight:700;">https://artificialanalysis.ai</a>
             <br>Ingested 586 live model records containing exact pricing, median output tok/s, and latency.
           </p>
         </div>
 
-        <div class="card" style="background:#ffffff; color:#1d1d1f; border-color:#d2d2d7;">
-          <h4 style="color:#30d158">2. Vendor Rate Cards</h4>
-          <p style="font-size:13px; color:#86868b; margin-top:8px;">
+        <div class="card">
+          <h4 style="color:var(--green);">2. Vendor Rate Cards</h4>
+          <p style="font-size:13px; color:var(--text-muted); margin-top:8px;">
             Google Cloud Vertex AI &amp; Anthropic Official Pricing Rate Cards verified for Gemini Flash ($0.075/1M) and Claude Opus ($5.00/1M).
           </p>
         </div>
@@ -415,17 +461,17 @@
     </div>
   </div>
 
-  <!-- SECTION 6: CURATED 35 ENTERPRISE MODELS & TABBED PRICING MATRIX -->
-  <div class="section-dark" id="models">
-    <div class="section">
-      <div class="section-label">Section 6</div>
+  <!-- SECTION 7: CURATED 35 ENTERPRISE MODELS & TABBED PRICING MATRIX -->
+  <div class="section-light" id="models">
+    <div class="section-inner">
+      <div class="section-label">Section 7</div>
       <h2>Curated Enterprise Frontier Models (Top 35)</h2>
       <p class="muted">Calculated token rates converted natively at ₹83.5 per USD.</p>
 
-      <div class="table-wrap" style="margin-top:32px;">
+      <div class="table-wrap" style="margin-top:32px; background:#ffffff; border-color:#d2d2d7;">
         <table>
-          <thead>
-            <tr><th>Model Name</th><th>Vendor</th><th>TAU Banking</th><th>Intel Index</th><th>Input Rate / 1M (₹)</th><th>Output Rate / 1M (₹)</th><th>Speed (tok/s)</th></tr>
+          <thead style="background:#f5f5f7;">
+            <tr><th style="color:#1d1d1f;">Model Name</th><th style="color:#86868b;">Vendor</th><th style="color:#0071e3;">TAU Banking</th><th style="color:#1d1d1f;">Intel Index</th><th style="color:#30d158;">Input Rate / 1M (₹)</th><th style="color:#1d1d1f;">Output Rate / 1M (₹)</th><th style="color:#30d158;">Speed (tok/s)</th></tr>
           </thead>
           <tbody id="modelsTableBody"></tbody>
         </table>
@@ -433,23 +479,23 @@
     </div>
   </div>
 
-  <!-- SECTION 7: ENTERPRISE COMPLIANCE & EU AI ACT -->
-  <div class="section-light" id="compliance">
-    <div class="section-inner">
-      <div class="section-label">Section 7</div>
+  <!-- SECTION 8: ENTERPRISE COMPLIANCE & EU AI ACT -->
+  <div class="section-dark" id="compliance">
+    <div class="section">
+      <div class="section-label">Section 8</div>
       <h2>Enterprise Compliance &amp; EU AI Act Governance</h2>
       <p class="muted">EU AI Act Annex III, SOC 2 Type II, HIPAA BAA &amp; FedRAMP High controls.</p>
 
       <div class="card-grid" style="margin-top:32px;">
-        <div class="card" style="background:#ffffff; color:#1d1d1f; border-color:#d2d2d7;">
-          <h4 style="color:#0071e3">EU AI Act Article 15 (Accuracy Mandate)</h4>
-          <p style="font-size:14px; color:#86868b; line-height:1.5;">
+        <div class="card">
+          <h4 style="color:var(--accent);">EU AI Act Article 15 (Accuracy Mandate)</h4>
+          <p style="font-size:14px; color:var(--text-muted); line-height:1.5;">
             INT4 quantization is strictly prohibited for financial risk scoring due to numeric rounding errors. FP8 and BF16 precision required.
           </p>
         </div>
-        <div class="card" style="background:#ffffff; color:#1d1d1f; border-color:#d2d2d7;">
-          <h4 style="color:#1d1d1f">Private Cloud Air-Gapping</h4>
-          <p style="font-size:14px; color:#86868b; line-height:1.5;">
+        <div class="card">
+          <h4>Private Cloud Air-Gapping</h4>
+          <p style="font-size:14px; color:var(--text-muted); line-height:1.5;">
             AWS Bedrock GovCloud provides FedRAMP High compliance. Self-hosting Qwen 3.7 or Llama 4 on private VPC inherits 100% cloud data sovereignty.
           </p>
         </div>
@@ -457,21 +503,21 @@
     </div>
   </div>
 
-  <!-- SECTION 8: FOUNDER REVIEW BOARD SIGN-OFFS -->
-  <div class="section-dark" id="board">
-    <div class="section">
-      <div class="section-label">Section 8</div>
+  <!-- SECTION 9: FOUNDER REVIEW BOARD SIGN-OFFS -->
+  <div class="section-light" id="board">
+    <div class="section-inner">
+      <div class="section-label">Section 9</div>
       <h2>Founder Review Board Audit Sign-offs</h2>
       <p class="muted">Unanimous executive approval across 5 virtual auditors (98.5 / 100 Average Score).</p>
 
       <div class="card-grid" style="margin-top:32px;">
-        <div class="card">
-          <h4 style="color:var(--accent);">1. Founder (CEO): 99 / 100</h4>
-          <p style="font-size:14px; color:var(--text-muted);">"Recovers ₹24.64 Lakhs annually in AI server bills. Approved for GTM."</p>
+        <div class="card" style="background:#ffffff; color:#1d1d1f; border-color:#d2d2d7;">
+          <h4 style="color:#0071e3;">1. Founder (CEO): 99 / 100</h4>
+          <p style="font-size:14px; color:#86868b;">"Recovers ₹24.64 Lakhs annually in AI server bills. Approved for GTM."</p>
         </div>
-        <div class="card">
-          <h4 style="color:var(--accent);">2. CTO: 98 / 100</h4>
-          <p style="font-size:14px; color:var(--text-muted);">"DeepSeek 60 RPM rate limit invalidation saved production launch. Approved."</p>
+        <div class="card" style="background:#ffffff; color:#1d1d1f; border-color:#d2d2d7;">
+          <h4 style="color:#0071e3;">2. CTO: 98 / 100</h4>
+          <p style="font-size:14px; color:#86868b;">"DeepSeek 60 RPM limit invalidation saved production launch. Approved."</p>
         </div>
       </div>
     </div>
@@ -1625,7 +1671,7 @@
 
       const diffLakhs = (monthlyB - monthlyA) / 100000;
       document.getElementById('savingsText').innerText = "₹" + (diffLakhs > 0 ? diffLakhs.toFixed(2) : "0.00") + " Lakhs / month";
-      document.getElementById('savingsDesc').innerHTML = "Routing through <strong>" + modA.name + "</strong> instead of " + modB.name + " saves <strong class='text-white'>₹" + (diffLakhs * 12).toFixed(2) + " Lakhs annually</strong>.";
+      document.getElementById('savingsDesc').innerHTML = "Routing through <strong>" + modA.name + "</strong> instead of " + modB.name + " saves <strong style='color:#0071e3;'>₹" + (diffLakhs * 12).toFixed(2) + " Lakhs annually</strong>.";
     }
 
     function renderWorkflowCanvas() {
@@ -1644,9 +1690,9 @@
         const cachedIn = s.input_tokens * cachePct;
         const stepCost = ((baseIn / 1000000) * priceIn) + ((cachedIn / 1000000) * (priceIn * 0.10)) + ((s.output_tokens / 1000000) * priceOut);
 
-        let borderStyle = "border:1px solid #d2d2d7; background:#ffffff;";
+        let borderStyle = "border:1px solid #333336; background:#1c1c1e;";
         if (simState.running && simState.currentStep === idx) {
-          borderStyle = "border:2px solid #0071e3; background:rgba(0, 113, 227, 0.08); box-shadow:0 0 15px rgba(0, 113, 227, 0.3);";
+          borderStyle = "border:2px solid #2997ff; background:rgba(41, 151, 255, 0.12); box-shadow:0 0 15px rgba(41, 151, 255, 0.3);";
         } else if (simState.currentStep > idx) {
           borderStyle = "border:1px solid #30d158; background:rgba(48, 209, 88, 0.05);";
         }
@@ -1654,11 +1700,11 @@
         html += `
           <div style="padding:16px; border-radius:12px; ${borderStyle} display:flex; justify-content:space-between; align-items:center;">
             <div>
-              <div style="font-weight:700; font-size:14px; color:#1d1d1f;">Step ${s.step_num}: ${s.name}</div>
+              <div style="font-weight:700; font-size:14px; color:#ffffff;">Step ${s.step_num}: ${s.name}</div>
               <div style="font-size:12px; color:#86868b; margin-top:2px;">${s.task}</div>
             </div>
             <div style="text-align:right;">
-              <span style="padding:2px 8px; border-radius:4px; background:#e5e5ea; color:#0071e3; font-weight:700; font-size:11px;">${s.model_name}</span>
+              <span style="padding:2px 8px; border-radius:4px; background:#000; color:#2997ff; font-weight:700; font-size:11px; border:1px solid #333336;">${s.model_name}</span>
               <div style="font-weight:800; color:#30d158; font-size:14px; margin-top:4px;">₹${stepCost.toFixed(3)}</div>
             </div>
           </div>
@@ -1736,19 +1782,19 @@
     function renderModelsTable() {
       document.getElementById('modelsTableBody').innerHTML = models.map(m => `
         <tr class="hover:bg-black">
-          <td class="font-bold text-white p-4">${m.name}</td>
-          <td class="text-appleTextMuted p-4">${m.vendor}</td>
-          <td class="text-appleBlue font-bold p-4">${m.tau}</td>
-          <td class="text-white font-bold p-4">${m.intel}</td>
-          <td class="text-appleSuccess font-bold p-4">₹${m.inInr}</td>
-          <td class="text-white p-4">₹${m.outInr}</td>
-          <td class="text-appleSuccess p-4">${m.tps} tps</td>
+          <td style="font-weight:700; color:#1d1d1f; padding:16px;">${m.name}</td>
+          <td style="color:#86868b; padding:16px;">${m.vendor}</td>
+          <td style="color:#0071e3; font-weight:700; padding:16px;">${m.tau}</td>
+          <td style="color:#1d1d1f; font-weight:700; padding:16px;">${m.intel}</td>
+          <td style="color:#30d158; font-weight:700; padding:16px;">₹${m.inInr}</td>
+          <td style="color:#1d1d1f; padding:16px;">₹${m.outInr}</td>
+          <td style="color:#30d158; padding:16px;">${m.tps} tps</td>
         </tr>
       `).join('');
     }
 
     function renderCharts() {
-      const darkGrid = { color: 'rgba(255,255,255,0.06)' };
+      const darkGrid = { color: 'rgba(0,0,0,0.06)' };
       const mutedTicks = { color: '#86868b' };
 
       // 1. Intelligence Index Chart
