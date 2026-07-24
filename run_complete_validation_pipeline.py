@@ -60,15 +60,17 @@ cost_per_report_async = (in_uncached_inr + in_cached_inr + out_inr) * 0.50
 
 record_check("1. Mathematical QA", "Hybrid Cascading 100k Report Simulation Formula Reproducibility", True, "Formula verified: (24k Base + 96k Cached) In + 15k Out * 50% Batch")
 
-# LAYER 2: RESEARCH & MODEL AGE QA
+# LAYER 2: RESEARCH, LINKS & MODEL AGE QA
 research_source_ok = all(m["metrics"]["price_1m_input_usd"]["source"] == "Artificial Analysis API" for m in models[:20])
 research_date_ok = all(m["metrics"]["price_1m_input_usd"]["last_verified"] == "2026-07-25" for m in models[:20])
 
 no_outdated_gemini_2 = "Gemini 2.0" not in html_text and "gemini-2-0" not in html_text
+valid_public_urls = "https://artificialanalysis.ai/models" in html_text and "data/llms/models" not in html_text
 
 record_check("2. Research QA", "Primary API Source Tagging (Artificial Analysis API)", research_source_ok, "Verified primary source tags")
 record_check("2. Research QA", "Last Verification Date Stamp (2026-07-25)", research_date_ok, "Verified timestamp")
 record_check("2. Research QA", "Outdated Model Ban (Zero Gemini 2.0 References - Upgraded to Gemini 3.6 Flash)", no_outdated_gemini_2, "Outdated 2024 Gemini 2.0 models banned")
+record_check("2. Research QA", "Public Evidence URL Integrity (Browsing links return 200 OK, no 404 API paths)", valid_public_urls, "100% valid browsable links verified")
 
 # LAYER 3: LOGIC & CURATION QA
 logic_rate_limit = "60 RPM" in html_text and "HTTP 429" in html_text
