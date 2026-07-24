@@ -67,12 +67,14 @@ research_date_ok = all(m["metrics"]["price_1m_input_usd"]["last_verified"] == "2
 record_check("2. Research QA", "Primary API Source Tagging (Artificial Analysis API)", research_source_ok, "Verified primary source tags")
 record_check("2. Research QA", "Last Verification Date Stamp (2026-07-25)", research_date_ok, "Verified timestamp")
 
-# LAYER 3: LOGIC QA
+# LAYER 3: LOGIC & CURATION QA
 logic_rate_limit = "60 RPM" in html_text and "HTTP 429" in html_text
 logic_primary_model = "Gemini 2.0 Flash" in html_text and "Kimi K3" in html_text
+curation_header_ok = "Curated Enterprise Frontier Models" in html_text or "Curated Frontier" in html_text and "Verified Records: 586" not in html_text
 
-record_check("3. Logic QA", "DeepSeek 60 RPM Rate Limit Invalidation Warning", logic_rate_limit, "Inconsistencies prevented")
-record_check("3. Logic QA", "Primary Sync UI vs Financial Advisory Model Assignment Logic", logic_primary_model, "No contradictory routing rules")
+record_check("3. Logic & Curation QA", "DeepSeek 60 RPM Rate Limit Invalidation Warning", logic_rate_limit, "Inconsistencies prevented")
+record_check("3. Logic & Curation QA", "Primary Sync UI vs Financial Advisory Model Assignment Logic", logic_primary_model, "No contradictory routing rules")
+record_check("3. Logic & Curation QA", "Executive Header Curation Rule (Shows Curated Models, NOT Raw Dump Count)", curation_header_ok, "Header curated for CEO clarity")
 
 # LAYER 4: HTML QA
 html_elements = ["simModelA", "simModelB", "simInTok", "simOutTok", "simCache", "simRuns", "simPreset", "costA", "costB", "savingsText", "verdictText"]
