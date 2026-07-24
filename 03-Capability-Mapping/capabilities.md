@@ -11,3 +11,13 @@
 | **Agentic Collaboration** | `getOrganizationAgents`, `addAgentToOrganization` |
 | **Report Generation** | OneChat **Artifacts** rendering engine |
 | **Skills Execution** | Skills Marketplace (Public/Private gating, execution environment) |
+
+## Advanced Deep Research Extensions
+| Capability | Engine / Implementation |
+|---|---|
+| **Autonomous Deep Research** | `GPT-Researcher` & `STORM` (Stanford) |
+| **Knowledge Graph RAG** | `GraphRAG` (Microsoft), `LightRAG`, & `R2R` (SciPhi) |
+| **Universal Document Conversion** | `MarkItDown` (Microsoft) |
+| **LLM Web Crawling** | `Crawl4AI` & `Firecrawl` |
+| **Enterprise Blueprints** | `NVIDIA AI-Q` & `NVIDIA Skills Catalog` |
+| **Multi-Agent Swarms** | `CrewAI` |
