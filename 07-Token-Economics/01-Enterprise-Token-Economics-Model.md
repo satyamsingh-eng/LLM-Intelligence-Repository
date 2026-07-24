@@ -1,3 +1,7 @@
+
+
+> **⚠️ SKEPTIC AGENT INVALIDATION (JULY 2026):** The Batch API + 80% Cache hit rate projections below are mathematically valid but practically impossible for *synchronous* OneChat sessions due to 5-minute cache TTL expirations and 24-hour Batch SLA delays. The '$0.0299 per report' figure ONLY applies to background asynchronous cron jobs, not live user interaction.
+
 # 2026 Token Economics Model & Enterprise Routing Matrix
 ## Financial Workload Evaluation: Processing 100,000 Large Financial Reports
 

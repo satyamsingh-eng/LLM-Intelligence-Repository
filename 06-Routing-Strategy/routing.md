@@ -4,7 +4,7 @@ Based on the 5 Canonical Workloads and July 2026 Model Intelligence.
 
 | Routing Category | Recommended Model | Secondary / Fallback | Rationale (Derived from Codebase Needs) |
 | :--- | :--- | :--- | :--- |
-| **Primary Production Model** | **DeepSeek V4 Pro** (via OpenCode) | Gemini 2.0 Flash | Delivers frontier reasoning (44 Index) at $0.04/task. Handles JSON, Workflow DAG dependencies, and complex artifact generation. |
+| **Primary Production Model** | **Gemini 2.0 Flash** | Qwen 3.7 Max | Replaced DeepSeek V4 due to 60 RPM concurrency limits breaking the DAG. Gemini 2.0 provides infinite scaling via Vertex AI. Qwen 3.7 acts as high-throughput fallback. |
 | **Highest Quality / Deep Reasoning** | **Kimi K3** or **o3-mini** | Claude 3.7 Sonnet | Kimi K3 (57 Index) dominates for deep multi-agent planning. o3-mini provides excellent mathematical reasoning. |
 | **Fastest Edge / UI Feedback** | **Qwen 3.7 Max** | GLM-5.2 | Clocking at 198 TPS; critical for OneChat WebSocket streaming where UX requires instant TTFT. |
 | **Best Long Context** | **Gemini 1.5/2.0 Pro** | Claude 3.5 Sonnet | Unmatched 2M context window. Essential for the "Large Report Generation" workload ingesting 100+ page financial PDFs. |
