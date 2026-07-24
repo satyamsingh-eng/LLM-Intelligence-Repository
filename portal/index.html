@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SARVAX CEO AI Intelligence Platform | C3A Labs</title>
+<title>SARVAX Enterprise AI Intelligence Platform | C3A Labs</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
@@ -46,7 +46,7 @@
         <div class="flex items-center space-x-4">
             <div class="flex items-center space-x-2">
                 <span class="text-xl font-extrabold tracking-tight text-white">C3A LABS</span>
-                <span class="text-xs uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-appleBlue/20 text-appleBlue font-bold border border-appleBlue/30">Enterprise Platform v10.0</span>
+                <span class="text-xs uppercase tracking-widest px-2.5 py-0.5 rounded-full bg-appleBlue/20 text-appleBlue font-bold border border-appleBlue/30">Enterprise Platform v11.0</span>
             </div>
             <span class="text-appleTextMuted text-sm">|</span>
             <span class="text-xs text-appleTextMuted">Rate: 1 USD = ₹83.5 INR</span>
@@ -90,38 +90,43 @@
                     <div class="text-[10px] text-appleTextMuted font-normal">Unit Economics &amp; Margins</div>
                 </button>
 
+                <button onclick="showTab('workflow-sim')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition border border-appleBlue/30">
+                    <div class="font-bold text-appleBlue">4. Workflow Simulator</div>
+                    <div class="text-[10px] text-appleTextMuted font-normal">Interactive DAG Architecture Engine</div>
+                </button>
+
                 <button onclick="showTab('model-explorer')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
-                    <div class="font-bold">4. Model Explorer</div>
+                    <div class="font-bold">5. Model Explorer</div>
                     <div class="text-[10px] text-appleTextMuted font-normal">586 Verified Model Records</div>
                 </button>
 
                 <button onclick="showTab('benchmarks')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
-                    <div class="font-bold">5. Benchmarks</div>
+                    <div class="font-bold">6. Benchmarks</div>
                     <div class="text-[10px] text-appleTextMuted font-normal">TAU Banking &amp; Intel Index</div>
                 </button>
 
                 <button onclick="showTab('pricing-matrix')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
-                    <div class="font-bold">6. Pricing Matrix</div>
+                    <div class="font-bold">7. Pricing Matrix</div>
                     <div class="text-[10px] text-appleTextMuted font-normal">Token Rates in ₹ INR &amp; $ USD</div>
                 </button>
 
                 <button onclick="showTab('compliance')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
-                    <div class="font-bold">7. Enterprise Compliance</div>
+                    <div class="font-bold">8. Enterprise Compliance</div>
                     <div class="text-[10px] text-appleTextMuted font-normal">EU AI Act, SOC 2 &amp; HIPAA</div>
                 </button>
 
                 <button onclick="showTab('use-cases')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
-                    <div class="font-bold">8. Use Cases</div>
+                    <div class="font-bold">9. Use Cases</div>
                     <div class="text-[10px] text-appleTextMuted font-normal">6 Financial AI Workloads</div>
                 </button>
 
                 <button onclick="showTab('review-board')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition border border-appleSuccess/30">
-                    <div class="font-bold text-appleSuccess">9. Founder Review Board</div>
-                    <div class="text-[10px] text-appleTextMuted font-normal">5 Executive Sign-offs (98.5% Avg)</div>
+                    <div class="font-bold text-appleSuccess">10. Founder Review Board</div>
+                    <div class="text-[10px] text-appleTextMuted font-normal">5 Virtual Executive Sign-offs (98.5% Avg)</div>
                 </button>
 
                 <button onclick="showTab('provenance')" class="tab-btn w-full text-left px-3 py-2 rounded-lg text-appleTextMuted hover:text-white hover:bg-black transition">
-                    <div class="font-bold">10. Provenance &amp; QA Log</div>
+                    <div class="font-bold">11. Provenance &amp; QA Log</div>
                     <div class="text-[10px] text-appleTextMuted font-normal">100-Pass QA Execution Record</div>
                 </button>
             </nav>
@@ -355,7 +360,80 @@
                 </div>
             </section>
 
-            <!-- 4. MODEL EXPLORER -->
+            <!-- 4. WORKFLOW INTELLIGENCE SIMULATOR (STAGE 4) -->
+            <section id="workflow-sim" class="tab-content hidden space-y-6">
+                <div>
+                    <h1 class="text-xl font-bold text-white">Interactive Workflow Intelligence Simulator</h1>
+                    <p class="text-appleTextMuted text-xs mt-1">Multi-step enterprise DAG simulator displaying dynamic model routing, per-step token consumption, step cost in ₹ INR, and architecture trade-offs.</p>
+                </div>
+
+                <!-- Workflow Selector -->
+                <div class="card-flat p-5 space-y-4 text-xs">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <label class="block font-bold text-white mb-1">Select Enterprise Workflow Template</label>
+                            <select id="wfSelect" onchange="renderWorkflowDAG()" class="bg-black border border-appleBorder rounded-lg p-2.5 text-white font-semibold">
+                                <option value="email_automation">1. Autonomous Wealth Email Processing &amp; CRM Workflow</option>
+                                <option value="portfolio_audit">2. 50-Page Portfolio Audit &amp; Wealth Advisory Report</option>
+                                <option value="m_and_a_due_diligence">3. Autonomous M&amp;A Legal &amp; Financial Due Diligence Audit</option>
+                                <option value="kyc_aml_processing">4. KYC &amp; AML Bank Statement Entity Extraction</option>
+                            </select>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-appleTextMuted">Monthly Execution Scaler</div>
+                            <select id="wfScale" onchange="renderWorkflowDAG()" class="bg-black border border-appleBorder rounded-lg p-2 text-appleSuccess font-bold">
+                                <option value="100">100 runs / day (3,000 / month)</option>
+                                <option value="500">500 runs / day (15,000 / month)</option>
+                                <option value="5000" selected>5,000 runs / day (150,000 / month)</option>
+                                <option value="50000">50,000 runs / day (1.5M / month)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Flowchart Node Canvas Container -->
+                    <div id="wfCanvas" class="space-y-4 pt-4 border-t border-appleBorder"></div>
+
+                    <!-- Step Inspector Panel -->
+                    <div id="stepInspector" class="p-5 bg-black rounded-xl border border-appleBlue/50 space-y-3 hidden">
+                        <div class="flex items-center justify-between">
+                            <span id="inspStepNum" class="text-xs font-bold text-appleBlue uppercase">Step 1 Details</span>
+                            <span id="inspModelBadge" class="px-2.5 py-0.5 rounded-full bg-appleSuccess/20 text-appleSuccess font-bold border border-appleSuccess/30">Assigned Model</span>
+                        </div>
+                        <h3 id="inspTaskTitle" class="text-base font-extrabold text-white">Task Title</h3>
+                        <p id="inspTaskDesc" class="text-appleTextMuted leading-relaxed">Task description...</p>
+                        <div class="p-3 bg-appleGray rounded-lg border border-appleBorder space-y-1">
+                            <div class="font-bold text-appleWarning">Why This Model Was Selected</div>
+                            <p id="inspReason" class="text-white leading-relaxed">Selection rationale...</p>
+                        </div>
+                    </div>
+
+                    <!-- Total Workflow Summary Card -->
+                    <div id="wfSummary" class="p-5 bg-appleGray rounded-xl border border-appleSuccess/40 space-y-3">
+                        <div class="font-bold text-appleSuccess uppercase text-xs">Total Architecture Workflow Summary</div>
+                        <div class="grid grid-cols-4 gap-4">
+                            <div>
+                                <div class="text-appleTextMuted">Cost Per Run</div>
+                                <div id="wfCostPerRun" class="text-xl font-bold text-appleSuccess">₹0.00</div>
+                            </div>
+                            <div>
+                                <div class="text-appleTextMuted">Total Latency</div>
+                                <div id="wfTotalLatency" class="text-xl font-bold text-white">0.0s</div>
+                            </div>
+                            <div>
+                                <div class="text-appleTextMuted">Monthly AI Server Bill</div>
+                                <div id="wfMonthlyBill" class="text-xl font-bold text-white">₹0.00</div>
+                                <div id="wfMonthlyLakhs" class="text-xs text-appleSuccess font-semibold">₹0.00 Lakhs</div>
+                            </div>
+                            <div>
+                                <div class="text-appleTextMuted">Cache Savings</div>
+                                <div id="wfCacheSavings" class="text-xl font-bold text-appleBlue">₹0.00 Lakhs</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. MODEL EXPLORER -->
             <section id="model-explorer" class="tab-content hidden space-y-6">
                 <div>
                     <h1 class="text-xl font-bold">Verified Models Database (586 Records)</h1>
@@ -364,7 +442,7 @@
                 <div id="model-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4"></div>
             </section>
 
-            <!-- 5. BENCHMARKS -->
+            <!-- 6. BENCHMARKS -->
             <section id="benchmarks" class="tab-content hidden space-y-6">
                 <div>
                     <h1 class="text-xl font-bold">Empirical Benchmark Leaderboard</h1>
@@ -386,7 +464,7 @@
                 </div>
             </section>
 
-            <!-- 6. PRICING -->
+            <!-- 7. PRICING -->
             <section id="pricing-matrix" class="tab-content hidden space-y-6">
                 <div>
                     <h1 class="text-xl font-bold">INR Token Rate Matrix</h1>
@@ -408,7 +486,7 @@
                 </div>
             </section>
 
-            <!-- 7. COMPLIANCE -->
+            <!-- 8. COMPLIANCE -->
             <section id="compliance" class="tab-content hidden space-y-6">
                 <div>
                     <h1 class="text-xl font-bold">Enterprise Compliance &amp; EU AI Act Governance</h1>
@@ -416,11 +494,11 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
                     <div class="card-flat p-6 space-y-3">
-                        <div class="font-bold text-appleBlue text-sm">EU AI Act (2024/1689) High-Risk Mandates (Annex III)</div>
+                        <div class="font-bold text-appleBlue text-sm">EU AI Act (2024/1689) High-Risk Mandates</div>
                         <ul class="space-y-2 text-appleTextMuted list-disc pl-4">
                             <li><strong>Article 9 (Risk Management):</strong> Continuous risk testing for financial AI.</li>
                             <li><strong>Article 14 (Human Oversight):</strong> Mandatory human audit gate for credit decisions.</li>
-                            <li><strong>Article 15 (Accuracy):</strong> INT4 quantization prohibited for financial risk calculations due to rounding errors; FP8 and BF16 precision required.</li>
+                            <li><strong>Article 15 (Accuracy):</strong> INT4 quantization prohibited for financial calculations due to rounding errors; FP8 and BF16 precision required.</li>
                         </ul>
                     </div>
                     <div class="card-flat p-6 space-y-3">
@@ -434,7 +512,7 @@
                 </div>
             </section>
 
-            <!-- 8. USE CASES -->
+            <!-- 9. USE CASES -->
             <section id="use-cases" class="tab-content hidden space-y-6">
                 <div>
                     <h1 class="text-xl font-bold">6 Canonical Financial AI Workloads</h1>
@@ -443,7 +521,7 @@
                 <div class="space-y-4 text-xs" id="workload-list"></div>
             </section>
 
-            <!-- 9. FOUNDER REVIEW BOARD -->
+            <!-- 10. FOUNDER REVIEW BOARD -->
             <section id="review-board" class="tab-content hidden space-y-6">
                 <div>
                     <h1 class="text-xl font-bold tracking-tight">Founder Review Board (5 Executive Sign-offs)</h1>
@@ -469,20 +547,19 @@
                 </div>
             </section>
 
-            <!-- 10. PROVENANCE & QA LOG -->
+            <!-- 11. PROVENANCE & QA -->
             <section id="provenance" class="tab-content hidden space-y-6">
                 <div>
-                    <h1 class="text-xl font-bold">Formula &amp; Metadata Trace Ledger (100-Pass QA Certified)</h1>
+                    <h1 class="text-xl font-bold">Formula &amp; Metadata Trace Ledger</h1>
                     <p class="text-appleTextMuted text-xs mt-1">Complete auditability trail for every number displayed in this portal.</p>
                 </div>
                 <div class="card-flat p-6 space-y-4 text-xs">
-                    <div class="font-bold text-appleBlue">System Provenance Ledger &amp; Invalidation Warning</div>
+                    <div class="font-bold text-appleBlue">System Provenance Ledger</div>
                     <div class="p-4 bg-black rounded-lg border border-appleBorder space-y-2">
                         <div><span class="text-appleTextMuted">Master Generator:</span> <code class="text-white">build_verified_repository.py</code></div>
                         <div><span class="text-appleTextMuted">Primary API Source:</span> <code class="text-white">Artificial Analysis Official REST API v2</code></div>
                         <div><span class="text-appleTextMuted">Last Verified Date:</span> <code class="text-white">2026-07-25</code></div>
                         <div><span class="text-appleTextMuted">Validation Pipeline:</span> <code class="text-appleSuccess">run_complete_validation_pipeline.py (11/11 Checks Passed)</code></div>
-                        <div><span class="text-appleTextMuted">Skeptic Warning:</span> <code class="text-appleDanger">DeepSeek raw API capped at 60 RPM. Promoted Gemini 2.0 Flash for Sync UI.</code></div>
                     </div>
                 </div>
             </section>
@@ -1244,6 +1321,235 @@
     "confidence_score": "100% Primary Source Verified (Verified 2026-07-25)"
   }
 };
+        const workflows = {
+  "email_automation": {
+    "id": "email_automation",
+    "title": "Autonomous Wealth Email Processing & CRM Workflow",
+    "domain": "Wealth Management & Inbound Operations",
+    "description": "Processes incoming advisor emails, extracts attached PDF bank statements via OCR, classifies client intent, updates Salesforce via MCP, and routes urgent tax queries to wealth advisors.",
+    "steps": [
+      {
+        "step_num": 1,
+        "name": "Email Ingestion & Classification",
+        "task": "Classify incoming email intent (Tax Query, Portfolio Withdrawal, Meeting Request, General Inquiry)",
+        "why_exists": "Filters spam and immediately routes high-priority client requests to correct advisor queues.",
+        "input_tokens": 2000,
+        "output_tokens": 300,
+        "model": "gemini-2-0-flash",
+        "model_name": "Gemini 2.0 Flash",
+        "reason": "Fastest TTFT (<200ms) and lowest cost (\u20b96.26/1M input) for simple classification.",
+        "alt_models": [
+          "Claude 4.6 Sonnet (\u20b9250/1M - Overkill)",
+          "GPT-5 (\u20b9200/1M - Too slow)"
+        ],
+        "cache_hit_pct": 50,
+        "latency_sec": 0.4
+      },
+      {
+        "step_num": 2,
+        "name": "Attachment OCR & Table Extraction",
+        "task": "Extract unstructured financial tables from attached 15-page bank statement PDF",
+        "why_exists": "Converts scanned images and multi-page PDFs into structured text for downstream analysis.",
+        "input_tokens": 12000,
+        "output_tokens": 2500,
+        "model": "gemini-3-pro-vision",
+        "model_name": "Gemini Vision (Gemini 3 Pro)",
+        "reason": "Native 2M token context window and leading MMMU vision score for complex table OCR.",
+        "alt_models": [
+          "Tesseract OCR (Fails on rotated scans)",
+          "AWS Textract (More expensive)"
+        ],
+        "cache_hit_pct": 80,
+        "latency_sec": 2.1
+      },
+      {
+        "step_num": 3,
+        "name": "Portfolio Risk & Tax Analysis",
+        "task": "Analyze portfolio allocation changes, capital gains tax impact, and rebalancing options",
+        "why_exists": "Requires high-precision mathematical reasoning and regulatory tax rule adherence.",
+        "input_tokens": 18000,
+        "output_tokens": 3500,
+        "model": "kimi-k3",
+        "model_name": "Kimi K3 (Moonshot AI)",
+        "reason": "Ranked #1 globally on Artificial Analysis TAU Banking benchmark (0.3340 score) for financial math.",
+        "alt_models": [
+          "Claude Opus 5 (\u20b9417/1M - 2x costlier)",
+          "GPT-5.6 Sol (0.3299 TAU score - lower precision)"
+        ],
+        "cache_hit_pct": 75,
+        "latency_sec": 4.5
+      },
+      {
+        "step_num": 4,
+        "name": "Structured CRM Writeback via MCP",
+        "task": "Format client updates into strict JSON schema and execute Salesforce writeback via MCP",
+        "why_exists": "Automates administrative recordkeeping so wealth advisors don't type manually.",
+        "input_tokens": 3000,
+        "output_tokens": 800,
+        "model": "qwen-3-7-max",
+        "model_name": "Qwen 3.7 Max",
+        "reason": "100% JSON schema adherence and low input cost (\u20b925/1M in) for structured outputs.",
+        "alt_models": [
+          "DeepSeek V4 (Risk of 60 RPM rate limit blocking sync API)"
+        ],
+        "cache_hit_pct": 90,
+        "latency_sec": 0.8
+      }
+    ]
+  },
+  "portfolio_audit": {
+    "id": "portfolio_audit",
+    "title": "50-Page Comprehensive Portfolio Audit & Wealth Advisory Report",
+    "domain": "Wealth Management & Family Office",
+    "description": "Deep research and generation of a 50-page client wealth audit analyzing tax harvesting, asset allocation, compliance, and risk exposures.",
+    "steps": [
+      {
+        "step_num": 1,
+        "name": "Document Ingestion & GraphRAG Indexing",
+        "task": "Convert 50-page PDF portfolio statements into GraphRAG entity knowledge graph",
+        "why_exists": "Maps complex holding companies, offshore trusts, and family accounts without losing context.",
+        "input_tokens": 60000,
+        "output_tokens": 5000,
+        "model": "deepseek-v4-pro",
+        "model_name": "DeepSeek V4 Pro",
+        "reason": "Lowest cost (\u20b936.32/1M input) for high-volume background indexing.",
+        "alt_models": [
+          "Claude Opus 5 (\u20b9417/1M - \u20b925 vs \u20b92.18)"
+        ],
+        "cache_hit_pct": 85,
+        "latency_sec": 6.2
+      },
+      {
+        "step_num": 2,
+        "name": "Tax Harvesting & Mathematical Verification",
+        "task": "Calculate short-term vs long-term capital gains tax harvesting opportunities",
+        "why_exists": "Prevents calculation errors that could lead to tax penalties for high-net-worth clients.",
+        "input_tokens": 35000,
+        "output_tokens": 4000,
+        "model": "kimi-k3",
+        "model_name": "Kimi K3 (Moonshot AI)",
+        "reason": "#1 SOTA on TAU Banking benchmark (0.3340 score) for financial tax calculations.",
+        "alt_models": [
+          "GPT-5.6 Sol (Score: 0.3299 - 40% costlier)"
+        ],
+        "cache_hit_pct": 80,
+        "latency_sec": 5.0
+      },
+      {
+        "step_num": 3,
+        "name": "Compliance Audit & Final Report Drafting",
+        "task": "Draft 15,000-word advisory report and verify against EU AI Act & SEBI guidelines",
+        "why_exists": "Ensures report is legally binding, zero-hallucination, and audit-ready.",
+        "input_tokens": 25000,
+        "output_tokens": 6000,
+        "model": "claude-4-6-sonnet",
+        "model_name": "Claude 4.6 Sonnet",
+        "reason": "Top global compliance reasoning (60.7 Intelligence Index) for final client artifacts.",
+        "alt_models": [
+          "Llama 4 (Lower compliance precision)"
+        ],
+        "cache_hit_pct": 90,
+        "latency_sec": 8.0
+      }
+    ]
+  },
+  "m_and_a_due_diligence": {
+    "id": "m_and_a_due_diligence",
+    "title": "Autonomous M&A Target Legal & Financial Due Diligence Audit",
+    "domain": "Investment Banking & Corporate Finance",
+    "description": "Multi-agent swarm performing web crawling, SEC filing audits, debt covenant extraction, and valuation modeling.",
+    "steps": [
+      {
+        "step_num": 1,
+        "name": "Target Web Crawling & SEC Filing Scraping",
+        "task": "Crawl 10K/10Q filings and news using Crawl4AI and extract raw text",
+        "why_exists": "Aggregates multi-year financial history across public & private disclosures.",
+        "input_tokens": 50000,
+        "output_tokens": 4000,
+        "model": "deepseek-v4-pro",
+        "model_name": "DeepSeek V4 Pro",
+        "reason": "Unbeatable token cost (\u20b936.32/1M in) for bulk background extraction.",
+        "alt_models": [
+          "Claude Sonnet 4.6 (\u20b9250/1M)"
+        ],
+        "cache_hit_pct": 70,
+        "latency_sec": 5.5
+      },
+      {
+        "step_num": 2,
+        "name": "Debt Covenant & Contract Legal Audit",
+        "task": "Analyze change-of-control clauses, debt covenants, and material liabilities",
+        "why_exists": "Identifies deal-breaker financial risks before acquisition sign-off.",
+        "input_tokens": 20000,
+        "output_tokens": 3000,
+        "model": "claude-4-6-sonnet",
+        "model_name": "Claude 4.6 Sonnet",
+        "reason": "Top global contract analysis & zero-hallucination accuracy.",
+        "alt_models": [
+          "GPT-5.6 Sol"
+        ],
+        "cache_hit_pct": 80,
+        "latency_sec": 4.2
+      },
+      {
+        "step_num": 3,
+        "name": "Valuation DCF Model Verification",
+        "task": "Perform Discounted Cash Flow (DCF) sensitivity modeling and EBITDA adjustments",
+        "why_exists": "Validates target company purchase price against market benchmarks.",
+        "input_tokens": 10000,
+        "output_tokens": 2000,
+        "model": "kimi-k3",
+        "model_name": "Kimi K3 (Moonshot AI)",
+        "reason": "#1 globally on TAU Banking (0.3340 score) for complex valuation math.",
+        "alt_models": [
+          "GPT-5.6 Terra"
+        ],
+        "cache_hit_pct": 90,
+        "latency_sec": 3.0
+      }
+    ]
+  },
+  "kyc_aml_processing": {
+    "id": "kyc_aml_processing",
+    "title": "KYC & AML Bank Statement Entity Extraction",
+    "domain": "Compliance & Risk Management",
+    "description": "Parses passports, utility bills, and 12-month bank statements to screen against OFAC/SEBI watchlists.",
+    "steps": [
+      {
+        "step_num": 1,
+        "name": "Identity Document OCR & Sanctions Check",
+        "task": "Extract passport details and cross-check against OFAC SDN watchlist",
+        "why_exists": "Mandatory regulatory gate under anti-money laundering laws.",
+        "input_tokens": 15000,
+        "output_tokens": 1000,
+        "model": "gemini-3-pro-vision",
+        "model_name": "Gemini Vision (Gemini 3 Pro)",
+        "reason": "Top multi-modal document extraction and fast processing.",
+        "alt_models": [
+          "GPT-4o Vision"
+        ],
+        "cache_hit_pct": 85,
+        "latency_sec": 1.5
+      },
+      {
+        "step_num": 2,
+        "name": "Strict JSON Schema Generation",
+        "task": "Format verified KYC fields into strict JSON schema for CRM ingestion",
+        "why_exists": "Ensures zero database insertion errors in core banking backend.",
+        "input_tokens": 2000,
+        "output_tokens": 500,
+        "model": "qwen-3-7-max",
+        "model_name": "Qwen 3.7 Max",
+        "reason": "100% structured output schema guarantee at sub-\u20b925/1M pricing.",
+        "alt_models": [
+          "Mistral Large 3"
+        ],
+        "cache_hit_pct": 95,
+        "latency_sec": 0.5
+      }
+    ]
+  }
+};
 
         function setPersonaMode(mode) {
             document.querySelectorAll('#btn-mode-founder, #btn-mode-engineering, #btn-mode-research, #btn-mode-learning').forEach(b => {
@@ -1258,10 +1564,6 @@
             }
 
             document.getElementById('modeDisplayLabel').innerText = mode.toUpperCase() + " Mode";
-            
-            if (mode === 'learning') {
-                alert("Learning Mode Active: Click any underlined blue term across the platform for a 14-point non-technical explainer!");
-            }
         }
 
         function openTermModal(termKey) {
@@ -1282,6 +1584,87 @@
 
         function closeTermModal() {
             document.getElementById('termModal').classList.add('hidden');
+        }
+
+        function renderWorkflowDAG() {
+            const wfKey = document.getElementById('wfSelect').value;
+            const dailyRuns = parseFloat(document.getElementById('wfScale').value) || 5000;
+            const monthlyRuns = dailyRuns * 30;
+
+            const wf = workflows[wfKey] || workflows['email_automation'];
+            const canvas = document.getElementById('wfCanvas');
+
+            let totalCostRun = 0;
+            let totalLatency = 0;
+            let totalCacheSavings = 0;
+
+            let nodesHtml = '';
+            wf.steps.forEach((s, idx) => {
+                // Price lookup or estimation
+                let priceIn = 36.32;
+                let priceOut = 72.65;
+                if (s.model.includes('gemini-2-0-flash')) { priceIn = 6.26; priceOut = 25.05; }
+                else if (s.model.includes('kimi')) { priceIn = 250.50; priceOut = 1252.50; }
+                else if (s.model.includes('claude')) { priceIn = 250.50; priceOut = 1252.50; }
+
+                const cachePct = (s.cache_hit_pct || 80) / 100;
+                const baseIn = s.input_tokens * (1 - cachePct);
+                const cachedIn = s.input_tokens * cachePct;
+
+                const stepCost = ((baseIn / 1000000) * priceIn) + ((cachedIn / 1000000) * (priceIn * 0.10)) + ((s.output_tokens / 1000000) * priceOut);
+                const un-cachedStepCost = ((s.input_tokens / 1000000) * priceIn) + ((s.output_tokens / 1000000) * priceOut);
+                
+                totalCostRun += stepCost;
+                totalLatency += s.latency_sec;
+                totalCacheSavings += (un-cachedStepCost - stepCost);
+
+                nodesHtml += `
+                    <div onclick="inspectStep('${wfKey}', ${idx})" class="card-flat p-4 cursor-pointer hover:border-appleBlue transition flex items-center justify-between">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-8 h-8 rounded-full bg-appleBlue/20 text-appleBlue font-bold flex items-center justify-center text-sm border border-appleBlue/40">
+                                ${s.step_num}
+                            </div>
+                            <div>
+                                <div class="font-bold text-white text-sm">${s.name}</div>
+                                <div class="text-appleTextMuted text-[11px]">${s.task}</div>
+                            </div>
+                        </div>
+                        <div class="text-right space-y-1">
+                            <span class="px-2 py-0.5 rounded bg-appleGray text-appleBlue font-semibold text-[10px] border border-appleBorder">${s.model_name}</span>
+                            <div class="text-appleSuccess font-bold text-xs">₹${stepCost.toFixed(3)}</div>
+                            <div class="text-appleTextMuted text-[10px]">${s.input_tokens.toLocaleString()} in / ${s.output_tokens.toLocaleString()} out</div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            canvas.innerHTML = nodesHtml;
+
+            const monthlyBill = totalCostRun * monthlyRuns;
+            const monthlyLakhs = monthlyBill / 100000;
+            const monthlySavingsLakhs = (totalCacheSavings * monthlyRuns) / 100000;
+
+            document.getElementById('wfCostPerRun').innerText = "₹" + totalCostRun.toFixed(2);
+            document.getElementById('wfTotalLatency').innerText = totalLatency.toFixed(1) + "s";
+            document.getElementById('wfMonthlyBill').innerText = "₹" + Math.round(monthlyBill).toLocaleString();
+            document.getElementById('wfMonthlyLakhs').innerText = "₹" + monthlyLakhs.toFixed(2) + " Lakhs / month";
+            document.getElementById('wfCacheSavings').innerText = "₹" + monthlySavingsLakhs.toFixed(2) + " Lakhs saved";
+
+            // Inspect first step by default
+            inspectStep(wfKey, 0);
+        }
+
+        function inspectStep(wfKey, stepIdx) {
+            const wf = workflows[wfKey] || workflows['email_automation'];
+            const s = wf.steps[stepIdx];
+
+            document.getElementById('inspStepNum').innerText = "Step " + s.step_num + ": " + s.name;
+            document.getElementById('inspModelBadge').innerText = s.model_name;
+            document.getElementById('inspTaskTitle').innerText = s.task;
+            document.getElementById('inspTaskDesc').innerText = s.why_exists;
+            document.getElementById('inspReason').innerText = s.reason + " (Alternatives evaluated: " + s.alt_models.join(", ") + ")";
+
+            document.getElementById('stepInspector').classList.remove('hidden');
         }
 
         function populateSelects() {
@@ -1462,6 +1845,7 @@
             runSim();
             renderModels(models);
             renderLeaderboards();
+            renderWorkflowDAG();
         }
     </script>
 </body>

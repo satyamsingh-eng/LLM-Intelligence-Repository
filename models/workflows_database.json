@@ -1,0 +1,229 @@
+{
+  "email_automation": {
+    "id": "email_automation",
+    "title": "Autonomous Wealth Email Processing & CRM Workflow",
+    "domain": "Wealth Management & Inbound Operations",
+    "description": "Processes incoming advisor emails, extracts attached PDF bank statements via OCR, classifies client intent, updates Salesforce via MCP, and routes urgent tax queries to wealth advisors.",
+    "steps": [
+      {
+        "step_num": 1,
+        "name": "Email Ingestion & Classification",
+        "task": "Classify incoming email intent (Tax Query, Portfolio Withdrawal, Meeting Request, General Inquiry)",
+        "why_exists": "Filters spam and immediately routes high-priority client requests to correct advisor queues.",
+        "input_tokens": 2000,
+        "output_tokens": 300,
+        "model": "gemini-2-0-flash",
+        "model_name": "Gemini 2.0 Flash",
+        "reason": "Fastest TTFT (<200ms) and lowest cost (\u20b96.26/1M input) for simple classification.",
+        "alt_models": [
+          "Claude 4.6 Sonnet (\u20b9250/1M - Overkill)",
+          "GPT-5 (\u20b9200/1M - Too slow)"
+        ],
+        "cache_hit_pct": 50,
+        "latency_sec": 0.4
+      },
+      {
+        "step_num": 2,
+        "name": "Attachment OCR & Table Extraction",
+        "task": "Extract unstructured financial tables from attached 15-page bank statement PDF",
+        "why_exists": "Converts scanned images and multi-page PDFs into structured text for downstream analysis.",
+        "input_tokens": 12000,
+        "output_tokens": 2500,
+        "model": "gemini-3-pro-vision",
+        "model_name": "Gemini Vision (Gemini 3 Pro)",
+        "reason": "Native 2M token context window and leading MMMU vision score for complex table OCR.",
+        "alt_models": [
+          "Tesseract OCR (Fails on rotated scans)",
+          "AWS Textract (More expensive)"
+        ],
+        "cache_hit_pct": 80,
+        "latency_sec": 2.1
+      },
+      {
+        "step_num": 3,
+        "name": "Portfolio Risk & Tax Analysis",
+        "task": "Analyze portfolio allocation changes, capital gains tax impact, and rebalancing options",
+        "why_exists": "Requires high-precision mathematical reasoning and regulatory tax rule adherence.",
+        "input_tokens": 18000,
+        "output_tokens": 3500,
+        "model": "kimi-k3",
+        "model_name": "Kimi K3 (Moonshot AI)",
+        "reason": "Ranked #1 globally on Artificial Analysis TAU Banking benchmark (0.3340 score) for financial math.",
+        "alt_models": [
+          "Claude Opus 5 (\u20b9417/1M - 2x costlier)",
+          "GPT-5.6 Sol (0.3299 TAU score - lower precision)"
+        ],
+        "cache_hit_pct": 75,
+        "latency_sec": 4.5
+      },
+      {
+        "step_num": 4,
+        "name": "Structured CRM Writeback via MCP",
+        "task": "Format client updates into strict JSON schema and execute Salesforce writeback via MCP",
+        "why_exists": "Automates administrative recordkeeping so wealth advisors don't type manually.",
+        "input_tokens": 3000,
+        "output_tokens": 800,
+        "model": "qwen-3-7-max",
+        "model_name": "Qwen 3.7 Max",
+        "reason": "100% JSON schema adherence and low input cost (\u20b925/1M in) for structured outputs.",
+        "alt_models": [
+          "DeepSeek V4 (Risk of 60 RPM rate limit blocking sync API)"
+        ],
+        "cache_hit_pct": 90,
+        "latency_sec": 0.8
+      }
+    ]
+  },
+  "portfolio_audit": {
+    "id": "portfolio_audit",
+    "title": "50-Page Comprehensive Portfolio Audit & Wealth Advisory Report",
+    "domain": "Wealth Management & Family Office",
+    "description": "Deep research and generation of a 50-page client wealth audit analyzing tax harvesting, asset allocation, compliance, and risk exposures.",
+    "steps": [
+      {
+        "step_num": 1,
+        "name": "Document Ingestion & GraphRAG Indexing",
+        "task": "Convert 50-page PDF portfolio statements into GraphRAG entity knowledge graph",
+        "why_exists": "Maps complex holding companies, offshore trusts, and family accounts without losing context.",
+        "input_tokens": 60000,
+        "output_tokens": 5000,
+        "model": "deepseek-v4-pro",
+        "model_name": "DeepSeek V4 Pro",
+        "reason": "Lowest cost (\u20b936.32/1M input) for high-volume background indexing.",
+        "alt_models": [
+          "Claude Opus 5 (\u20b9417/1M - \u20b925 vs \u20b92.18)"
+        ],
+        "cache_hit_pct": 85,
+        "latency_sec": 6.2
+      },
+      {
+        "step_num": 2,
+        "name": "Tax Harvesting & Mathematical Verification",
+        "task": "Calculate short-term vs long-term capital gains tax harvesting opportunities",
+        "why_exists": "Prevents calculation errors that could lead to tax penalties for high-net-worth clients.",
+        "input_tokens": 35000,
+        "output_tokens": 4000,
+        "model": "kimi-k3",
+        "model_name": "Kimi K3 (Moonshot AI)",
+        "reason": "#1 SOTA on TAU Banking benchmark (0.3340 score) for financial tax calculations.",
+        "alt_models": [
+          "GPT-5.6 Sol (Score: 0.3299 - 40% costlier)"
+        ],
+        "cache_hit_pct": 80,
+        "latency_sec": 5.0
+      },
+      {
+        "step_num": 3,
+        "name": "Compliance Audit & Final Report Drafting",
+        "task": "Draft 15,000-word advisory report and verify against EU AI Act & SEBI guidelines",
+        "why_exists": "Ensures report is legally binding, zero-hallucination, and audit-ready.",
+        "input_tokens": 25000,
+        "output_tokens": 6000,
+        "model": "claude-4-6-sonnet",
+        "model_name": "Claude 4.6 Sonnet",
+        "reason": "Top global compliance reasoning (60.7 Intelligence Index) for final client artifacts.",
+        "alt_models": [
+          "Llama 4 (Lower compliance precision)"
+        ],
+        "cache_hit_pct": 90,
+        "latency_sec": 8.0
+      }
+    ]
+  },
+  "m_and_a_due_diligence": {
+    "id": "m_and_a_due_diligence",
+    "title": "Autonomous M&A Target Legal & Financial Due Diligence Audit",
+    "domain": "Investment Banking & Corporate Finance",
+    "description": "Multi-agent swarm performing web crawling, SEC filing audits, debt covenant extraction, and valuation modeling.",
+    "steps": [
+      {
+        "step_num": 1,
+        "name": "Target Web Crawling & SEC Filing Scraping",
+        "task": "Crawl 10K/10Q filings and news using Crawl4AI and extract raw text",
+        "why_exists": "Aggregates multi-year financial history across public & private disclosures.",
+        "input_tokens": 50000,
+        "output_tokens": 4000,
+        "model": "deepseek-v4-pro",
+        "model_name": "DeepSeek V4 Pro",
+        "reason": "Unbeatable token cost (\u20b936.32/1M in) for bulk background extraction.",
+        "alt_models": [
+          "Claude Sonnet 4.6 (\u20b9250/1M)"
+        ],
+        "cache_hit_pct": 70,
+        "latency_sec": 5.5
+      },
+      {
+        "step_num": 2,
+        "name": "Debt Covenant & Contract Legal Audit",
+        "task": "Analyze change-of-control clauses, debt covenants, and material liabilities",
+        "why_exists": "Identifies deal-breaker financial risks before acquisition sign-off.",
+        "input_tokens": 20000,
+        "output_tokens": 3000,
+        "model": "claude-4-6-sonnet",
+        "model_name": "Claude 4.6 Sonnet",
+        "reason": "Top global contract analysis & zero-hallucination accuracy.",
+        "alt_models": [
+          "GPT-5.6 Sol"
+        ],
+        "cache_hit_pct": 80,
+        "latency_sec": 4.2
+      },
+      {
+        "step_num": 3,
+        "name": "Valuation DCF Model Verification",
+        "task": "Perform Discounted Cash Flow (DCF) sensitivity modeling and EBITDA adjustments",
+        "why_exists": "Validates target company purchase price against market benchmarks.",
+        "input_tokens": 10000,
+        "output_tokens": 2000,
+        "model": "kimi-k3",
+        "model_name": "Kimi K3 (Moonshot AI)",
+        "reason": "#1 globally on TAU Banking (0.3340 score) for complex valuation math.",
+        "alt_models": [
+          "GPT-5.6 Terra"
+        ],
+        "cache_hit_pct": 90,
+        "latency_sec": 3.0
+      }
+    ]
+  },
+  "kyc_aml_processing": {
+    "id": "kyc_aml_processing",
+    "title": "KYC & AML Bank Statement Entity Extraction",
+    "domain": "Compliance & Risk Management",
+    "description": "Parses passports, utility bills, and 12-month bank statements to screen against OFAC/SEBI watchlists.",
+    "steps": [
+      {
+        "step_num": 1,
+        "name": "Identity Document OCR & Sanctions Check",
+        "task": "Extract passport details and cross-check against OFAC SDN watchlist",
+        "why_exists": "Mandatory regulatory gate under anti-money laundering laws.",
+        "input_tokens": 15000,
+        "output_tokens": 1000,
+        "model": "gemini-3-pro-vision",
+        "model_name": "Gemini Vision (Gemini 3 Pro)",
+        "reason": "Top multi-modal document extraction and fast processing.",
+        "alt_models": [
+          "GPT-4o Vision"
+        ],
+        "cache_hit_pct": 85,
+        "latency_sec": 1.5
+      },
+      {
+        "step_num": 2,
+        "name": "Strict JSON Schema Generation",
+        "task": "Format verified KYC fields into strict JSON schema for CRM ingestion",
+        "why_exists": "Ensures zero database insertion errors in core banking backend.",
+        "input_tokens": 2000,
+        "output_tokens": 500,
+        "model": "qwen-3-7-max",
+        "model_name": "Qwen 3.7 Max",
+        "reason": "100% structured output schema guarantee at sub-\u20b925/1M pricing.",
+        "alt_models": [
+          "Mistral Large 3"
+        ],
+        "cache_hit_pct": 95,
+        "latency_sec": 0.5
+      }
+    ]
+  }
+}
