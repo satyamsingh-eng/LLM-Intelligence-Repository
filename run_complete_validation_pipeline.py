@@ -4,7 +4,7 @@ import re
 
 repo_dir = "/Users/satyyy/Documents/R&D - C3ALABS/LLM-Intelligence-Repository"
 master_db_path = os.path.join(repo_dir, "models", "verified_models_database.json")
-portal_html_path = os.path.join(repo_dir, "portal", "index.html")
+portal_html_path = os.path.join(repo_dir, "index.html")
 
 # Load Master Verified JSON Database & HTML
 with open(master_db_path, "r", encoding="utf-8") as f:
