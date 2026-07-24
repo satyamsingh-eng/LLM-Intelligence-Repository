@@ -406,28 +406,28 @@
       <h2>6 Interactive Empirical Benchmark Charts</h2>
       <p class="muted">Visualizing Artificial Analysis Intelligence Index v4.1, TAU Banking, and token cost curves.</p>
 
-      <div class="chart-box" style="background:#ffffff; border-color:#d2d2d7; margin-top:32px;">
+      <div class="chart-box" style="background:#1c1c1e; border-color:rgba(255,255,255,0.1); margin-top:32px;">
         <h4 style="color:#1d1d1f;">1. Intelligence Index Score (Higher = Better)</h4>
         <canvas id="intelligenceChart" height="380"></canvas>
       </div>
 
       <div class="card-grid" style="margin-top:24px;">
-        <div class="chart-box" style="background:#ffffff; border-color:#d2d2d7;">
+        <div class="chart-box" style="background:#1c1c1e; border-color:rgba(255,255,255,0.1);">
           <h4 style="color:#1d1d1f;">2. Agentic Task &amp; Tool Scores (%)</h4>
           <canvas id="agenticChart" height="320"></canvas>
         </div>
-        <div class="chart-box" style="background:#ffffff; border-color:#d2d2d7;">
+        <div class="chart-box" style="background:#1c1c1e; border-color:rgba(255,255,255,0.1);">
           <h4 style="color:#1d1d1f;">3. Model Reliability Radar Chart</h4>
           <canvas id="reliabilityChart" height="320"></canvas>
         </div>
       </div>
 
       <div class="card-grid" style="margin-top:24px;">
-        <div class="chart-box" style="background:#ffffff; border-color:#d2d2d7;">
+        <div class="chart-box" style="background:#1c1c1e; border-color:rgba(255,255,255,0.1);">
           <h4 style="color:#1d1d1f;">4. Input Token Cost per 1M (₹ INR)</h4>
           <canvas id="inputCostChart" height="300"></canvas>
         </div>
-        <div class="chart-box" style="background:#ffffff; border-color:#d2d2d7;">
+        <div class="chart-box" style="background:#1c1c1e; border-color:rgba(255,255,255,0.1);">
           <h4 style="color:#1d1d1f;">5. Output Token Cost per 1M (₹ INR)</h4>
           <canvas id="outputCostChart" height="300"></canvas>
         </div>
@@ -462,16 +462,16 @@
   </div>
 
   <!-- SECTION 7: CURATED 35 ENTERPRISE MODELS & TABBED PRICING MATRIX -->
-  <div class="section-light" id="models">
+  <div class="section-dark" id="models">
     <div class="section-inner">
       <div class="section-label">Section 7</div>
       <h2>Curated Enterprise Frontier Models (Top 35)</h2>
       <p class="muted">Calculated token rates converted natively at ₹83.5 per USD.</p>
 
-      <div class="table-wrap" style="margin-top:32px; background:#ffffff; border-color:#d2d2d7;">
+      <div class="table-wrap" style="margin-top:32px; background:#1c1c1e; border-color:rgba(255,255,255,0.1);">
         <table>
-          <thead style="background:#f5f5f7;">
-            <tr><th style="color:#1d1d1f;">Model Name</th><th style="color:#86868b;">Vendor</th><th style="color:#0071e3;">TAU Banking</th><th style="color:#1d1d1f;">Intel Index</th><th style="color:#30d158;">Input Rate / 1M (₹)</th><th style="color:#1d1d1f;">Output Rate / 1M (₹)</th><th style="color:#30d158;">Speed (tok/s)</th></tr>
+          <thead style="background:rgba(255,255,255,0.03);">
+            <tr><th style="color:#86868b;">Model Name</th><th style="color:#86868b;">Vendor</th><th style="color:#0071e3;">TAU Banking</th><th style="color:#86868b;">Intel Index</th><th style="color:#30d158;">Input Rate / 1M (₹)</th><th style="color:#86868b;">Output Rate / 1M (₹)</th><th style="color:#30d158;">Speed (tok/s)</th></tr>
           </thead>
           <tbody id="modelsTableBody"></tbody>
         </table>
@@ -1850,21 +1850,31 @@
     }
 
     
+    
     function renderModelsTable() {
-      document.getElementById('modelsTableBody').innerHTML = models.map(m => `
-        <tr class="hover:bg-black cursor-pointer" onclick="window.open('${m.link}', '_blank')">
-          <td style="font-weight:700; color:#1d1d1f; padding:16px;">
-            <a href="${m.link}" target="_blank" style="color:#0071e3; font-weight:700; text-decoration:underline;">${m.name}</a>
-          </td>
-          <td style="color:#86868b; padding:16px;">${m.vendor}</td>
-          <td style="color:#0071e3; font-weight:700; padding:16px;">${m.tau}</td>
-          <td style="color:#1d1d1f; font-weight:700; padding:16px;">${m.intel}</td>
-          <td style="color:#30d158; font-weight:700; padding:16px;">₹${m.inInr}</td>
-          <td style="color:#1d1d1f; padding:16px;">₹${m.outInr}</td>
-          <td style="color:#30d158; padding:16px;">${m.tps} tps</td>
-        </tr>
-      `).join('');
+      document.getElementById('modelsTableBody').innerHTML = models.map(m => {
+        let rowStyle = "transition: background 0.2s;";
+        let rowClass = "hover:bg-appleBlue/10 cursor-pointer border-b border-appleBorder/50";
+        if (m.name.includes("Kimi K3")) {
+          rowClass += " bg-appleSuccess/10 border-l-4 border-l-appleSuccess";
+        }
+
+        return `
+          <tr class="${rowClass}" style="${rowStyle}" onclick="window.open('${m.link}', '_blank')">
+            <td style="padding:16px; font-weight:700;">
+              <a href="${m.link}" target="_blank" class="text-white hover:text-appleBlue underline decoration-appleBlue/40 transition">${m.name}</a>
+            </td>
+            <td style="color:#86868b; padding:16px;">${m.vendor}</td>
+            <td style="color:#30d158; font-weight:800; padding:16px;">${m.tau}</td>
+            <td style="color:#ffffff; font-weight:700; padding:16px;">${m.intel}</td>
+            <td style="color:#30d158; font-weight:700; padding:16px;">₹${m.inInr}</td>
+            <td style="color:#ffffff; padding:16px;">₹${m.outInr}</td>
+            <td style="color:#2997ff; font-weight:600; padding:16px;">${m.tps} tps</td>
+          </tr>
+        `;
+      }).join('');
     }
+
 
 
     function renderCharts() {
