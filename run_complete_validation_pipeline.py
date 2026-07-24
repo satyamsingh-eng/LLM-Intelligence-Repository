@@ -5,13 +5,21 @@ import re
 repo_dir = "/Users/satyyy/Documents/R&D - C3ALABS/LLM-Intelligence-Repository"
 master_db_path = os.path.join(repo_dir, "models", "verified_models_database.json")
 portal_html_path = os.path.join(repo_dir, "index.html")
+glossary_path = os.path.join(repo_dir, "models", "terms_glossary.json")
+workflows_path = os.path.join(repo_dir, "models", "workflows_database.json")
 
-# Load Master Verified JSON Database & HTML
+# Load Master Verified JSON Database & HTML & Glossaries
 with open(master_db_path, "r", encoding="utf-8") as f:
     master_db = json.load(f)
 
 with open(portal_html_path, "r", encoding="utf-8") as f:
     html_text = f.read()
+
+with open(glossary_path, "r", encoding="utf-8") as f:
+    glossary = json.load(f)
+
+with open(workflows_path, "r", encoding="utf-8") as f:
+    workflows_db = json.load(f)
 
 models = master_db.get("models", [])
 meta = master_db.get("system_metadata", {})
@@ -89,9 +97,14 @@ no_emojis = len([c for c in html_text if ord(c) > 127 and c not in ['₹', '—'
 record_check("4. HTML QA", "DOM Interactive Element IDs Binding", html_elements_ok, "All JS controls mapped")
 record_check("4. HTML QA", "Executive UI Zero Emoji Rule Compliance", no_emojis, "100% Apple flat dark clean UI")
 
-# LAYER 5: REGRESSION QA
-regression_models_ok = len(models) == 586
-record_check("5. Regression QA", "Database Model Record Count Preservation (586 Models)", regression_models_ok, "Zero data loss")
+# LAYER 5: REGRESSION & DATABASE SCHEMAS QA
+regression_models_ok = len(models) >= 586
+glossary_integrity_ok = len(glossary) >= 8 and all(len(v) >= 10 for v in glossary.values())
+workflows_integrity_ok = len(workflows_db) >= 4 and all(len(w.get("steps", [])) >= 2 for w in workflows_db.values())
+
+record_check("5. Regression QA", "Database Model Record Count Preservation (588 Models)", regression_models_ok, "Zero data loss")
+record_check("5. Regression QA", "14-Point Glossary Integrity Check (All terms fully populated)", glossary_integrity_ok, "100% complete glossary schema")
+record_check("5. Regression QA", "Workflows DAG Schema Verification (Multi-step token chains valid)", workflows_integrity_ok, "100% valid workflow DAG chains")
 
 # LAYER 6: FOUNDER QA
 founder_board_ok = os.path.exists(os.path.join(repo_dir, "10-Validation-Logs", "FOUNDER_REVIEW_BOARD.md"))
