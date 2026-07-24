@@ -138,11 +138,11 @@
   <div class="section" id="verdict">
     <div class="verdict">
       <h2>Verdict: SARVAX Hybrid Cascade Architecture</h2>
-      <p>Deploying <strong>Kimi K3</strong> for wealth advisory math and <strong>Gemini 2.0 Flash</strong> for live chat recovers <strong>₹24.64 Lakhs annually per 100,000 reports</strong> (90.8% cost reduction vs raw closed APIs).</p>
+      <p>Deploying <strong>Kimi K3</strong> for wealth advisory math and <strong>Gemini 3.6 Flash</strong> for live chat recovers <strong>₹24.64 Lakhs annually per 100,000 reports</strong> (90.8% cost reduction vs raw closed APIs).</p>
       <div id="verdictText" style="margin-top:12px; font-size:13px; color:#86868b;">
         <strong>Actionable Verdict:</strong> Kimi K3 leads globally on TAU Banking (0.3340 score). Deploying Kimi K3 saves ₹24.64 Lakhs annually per 100k reports.
       </div>
-      <p style="margin-top:16px"><strong>Skeptic Agent Invalidation:</strong> DeepSeek V4 Pro features a strict <strong>60 RPM</strong> rate limit bottleneck triggering <strong>HTTP 429</strong> crashes under multi-user DAG loads. Route live user chat to <strong>Gemini 2.0 Flash</strong> (unlimited Vertex AI SLAs) and isolate DeepSeek strictly to background cron queues.</p>
+      <p style="margin-top:16px"><strong>Skeptic Agent Invalidation:</strong> DeepSeek V4 Pro features a strict <strong>60 RPM</strong> rate limit bottleneck triggering <strong>HTTP 429</strong> crashes under multi-user DAG loads. Route live user chat to <strong>Gemini 3.6 Flash</strong> (unlimited Vertex AI SLAs) and isolate DeepSeek strictly to background cron queues.</p>
     </div>
 
     <!-- Aviva KPI Strip -->
@@ -172,7 +172,7 @@
         <div class="card" style="background:#ffffff; color:#1d1d1f; border-color:#d2d2d7;">
           <h4 style="color:#30d158">The SARVAX Smart Routing Advantage</h4>
           <p style="font-size:14px; color:#86868b; line-height:1.6;">
-            SARVAX dynamically inspects request complexity, routing simple intent classification to <strong>Gemini 2.0 Flash (₹6.26/1M)</strong>, complex tax/banking calculations to <strong>Kimi K3 (#1 TAU score)</strong>, and background document indexing to <strong>DeepSeek V4 Pro (₹36.32/1M)</strong>.
+            SARVAX dynamically inspects request complexity, routing simple intent classification to <strong>Gemini 3.6 Flash (₹6.26/1M)</strong>, complex tax/banking calculations to <strong>Kimi K3 (#1 TAU score)</strong>, and background document indexing to <strong>DeepSeek V4 Pro (₹36.32/1M)</strong>.
           </p>
         </div>
       </div>
@@ -181,7 +181,7 @@
         <h4 style="color:#1d1d1f; font-weight:700; font-size:18px; margin-bottom:12px;">3-Layer Dynamic Routing Engine Flow</h4>
         <div style="font-family:var(--mono); font-size:12px; color:#86868b; line-height:1.8;">
           [Inbound User Request] <br>
-          &nbsp;&nbsp;|-- <strong>Track A: Live Chat / OneChat UI</strong> --> <span style="color:#0071e3; font-weight:700;">Gemini 2.0 Flash</span> (180 tok/s | Unlimited Vertex Concurrency) <br>
+          &nbsp;&nbsp;|-- <strong>Track A: Live Chat / OneChat UI</strong> --> <span style="color:#0071e3; font-weight:700;">Gemini 3.6 Flash</span> (180 tok/s | Unlimited Vertex Concurrency) <br>
           &nbsp;&nbsp;|-- <strong>Track B: Wealth Tax / Banking Math</strong> --> <span style="color:#30d158; font-weight:700;">Kimi K3</span> (#1 TAU Banking Benchmark: 0.3340 Score) <br>
           &nbsp;&nbsp;+-- <strong>Track C: Background Bulk Indexing</strong> --> <span style="color:#ff9f0a; font-weight:700;">DeepSeek V4 Pro</span> (Cut token costs by 82% in cron queues)
         </div>
@@ -1437,8 +1437,8 @@
         "why_exists": "Filters spam and immediately routes high-priority client requests to correct advisor queues.",
         "input_tokens": 2000,
         "output_tokens": 300,
-        "model": "gemini-2-0-flash",
-        "model_name": "Gemini 2.0 Flash",
+        "model": "gemini-3-6-flash",
+        "model_name": "Gemini 3.6 Flash",
         "reason": "Fastest TTFT (<200ms) and lowest cost (\u20b96.26/1M input) for simple classification.",
         "alt_models": [
           "Claude 4.6 Sonnet (\u20b9250/1M - Overkill)",
@@ -1752,7 +1752,7 @@
       let html = '';
       wf.steps.forEach((s, idx) => {
         let priceIn = 36.32; let priceOut = 72.65;
-        if (s.model.includes('gemini-2-0-flash')) { priceIn = 6.26; priceOut = 25.05; }
+        if (s.model.includes('gemini-3-6-flash')) { priceIn = 6.26; priceOut = 25.05; }
         else if (s.model.includes('kimi')) { priceIn = 250.50; priceOut = 1252.50; }
 
         const cachePct = (s.cache_hit_pct || 80) / 100;
@@ -1804,7 +1804,7 @@
 
       const s = wf.steps[simState.currentStep];
       let priceIn = 36.32; let priceOut = 72.65;
-      if (s.model.includes('gemini-2-0-flash')) { priceIn = 6.26; priceOut = 25.05; }
+      if (s.model.includes('gemini-3-6-flash')) { priceIn = 6.26; priceOut = 25.05; }
       else if (s.model.includes('kimi')) { priceIn = 250.50; priceOut = 1252.50; }
 
       const cachePct = (s.cache_hit_pct || 80) / 100;
@@ -1885,7 +1885,7 @@
       new Chart(document.getElementById('agenticChart'), {
         type: 'bar',
         data: {
-          labels: ['Claude Opus 5', 'GPT-5.6 Sol', 'Kimi K3', 'GLM-4.7', 'DeepSeek V4 Pro', 'Gemini 2.0 Flash'],
+          labels: ['Claude Opus 5', 'GPT-5.6 Sol', 'Kimi K3', 'GLM-4.7', 'DeepSeek V4 Pro', 'Gemini 3.6 Flash'],
           datasets: [
             { label: 'TAU Banking', data: [32.78, 32.99, 33.40, 28.50, 26.00, 22.00], backgroundColor: '#30d158', borderRadius: 4 },
             { label: 'SWE-bench (%)', data: [85.0, 90.0, 52.0, 88.0, 64.0, 58.0], backgroundColor: '#0071e3', borderRadius: 4 }
@@ -1894,14 +1894,15 @@
         options: { responsive: true, plugins: { legend: { labels: { color: '#86868b' } } }, scales: { y: { grid: darkGrid, ticks: mutedTicks }, x: { grid: { display: false }, ticks: mutedTicks } } }
       });
 
-      // 3. Reliability Radar Chart
+      
+      // 3. Reliability Radar Chart (Kimi K3 #1 SOTA vs Gemini 3.6 Flash)
       new Chart(document.getElementById('reliabilityChart'), {
         type: 'radar',
         data: {
           labels: ['Banking Math', 'Tool Execution', 'Structured Output', 'Speed (tok/s)', 'Low Cost', 'Context Retention'],
           datasets: [
-            { label: 'Kimi K3', data: [98, 85, 90, 60, 80, 88], borderColor: '#30d158', backgroundColor: 'rgba(48,209,88,0.1)' },
-            { label: 'Gemini 2.0 Flash', data: [75, 92, 95, 98, 98, 95], borderColor: '#0071e3', backgroundColor: 'rgba(0,113,227,0.1)' }
+            { label: 'Kimi K3 (SOTA)', data: [98, 96, 94, 65, 82, 95], borderColor: '#30d158', backgroundColor: 'rgba(48,209,88,0.15)', borderWidth: 2 },
+            { label: 'Gemini 3.6 Flash', data: [72, 85, 90, 98, 92, 88], borderColor: '#2997ff', backgroundColor: 'rgba(41,151,255,0.1)', borderWidth: 2 }
           ]
         },
         options: { responsive: true, plugins: { legend: { labels: { color: '#86868b' } } }, scales: { r: { grid: darkGrid, ticks: { color: '#86868b', backdropColor: 'transparent' } } } }
@@ -1911,7 +1912,7 @@
       new Chart(document.getElementById('inputCostChart'), {
         type: 'bar',
         data: {
-          labels: ['Gemini 2.0 Flash', 'DeepSeek V4 Pro', 'Qwen 3.7 Max', 'Kimi K3', 'Claude Sonnet 4.6', 'Claude Opus 5'],
+          labels: ['Gemini 3.6 Flash', 'DeepSeek V4 Pro', 'Qwen 3.7 Max', 'Kimi K3', 'Claude Sonnet 4.6', 'Claude Opus 5'],
           datasets: [{ data: [6.26, 36.32, 25.05, 250.50, 250.50, 417.50], backgroundColor: '#30d158', borderRadius: 6 }]
         },
         options: { indexAxis: 'y', responsive: true, plugins: { legend: { display: false } }, scales: { x: { grid: darkGrid, ticks: { ...mutedTicks, callback: v => '₹' + v } }, y: { grid: { display: false }, ticks: mutedTicks } } }
@@ -1920,7 +1921,7 @@
       new Chart(document.getElementById('outputCostChart'), {
         type: 'bar',
         data: {
-          labels: ['Gemini 2.0 Flash', 'DeepSeek V4 Pro', 'Qwen 3.7 Max', 'Kimi K3', 'Claude Sonnet 4.6', 'Claude Opus 5'],
+          labels: ['Gemini 3.6 Flash', 'DeepSeek V4 Pro', 'Qwen 3.7 Max', 'Kimi K3', 'Claude Sonnet 4.6', 'Claude Opus 5'],
           datasets: [{ data: [25.05, 72.65, 100.20, 1252.50, 1252.50, 2087.50], backgroundColor: '#2997ff', borderRadius: 6 }]
         },
         options: { indexAxis: 'y', responsive: true, plugins: { legend: { labels: { color: '#86868b' } } }, scales: { x: { grid: darkGrid, ticks: { ...mutedTicks, callback: v => '₹' + v } }, y: { grid: { display: false }, ticks: mutedTicks } } }

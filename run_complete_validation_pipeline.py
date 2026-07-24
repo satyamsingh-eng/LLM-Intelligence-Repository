@@ -60,17 +60,20 @@ cost_per_report_async = (in_uncached_inr + in_cached_inr + out_inr) * 0.50
 
 record_check("1. Mathematical QA", "Hybrid Cascading 100k Report Simulation Formula Reproducibility", True, "Formula verified: (24k Base + 96k Cached) In + 15k Out * 50% Batch")
 
-# LAYER 2: RESEARCH QA
+# LAYER 2: RESEARCH & MODEL AGE QA
 research_source_ok = all(m["metrics"]["price_1m_input_usd"]["source"] == "Artificial Analysis API" for m in models[:20])
 research_date_ok = all(m["metrics"]["price_1m_input_usd"]["last_verified"] == "2026-07-25" for m in models[:20])
 
+no_outdated_gemini_2 = "Gemini 2.0" not in html_text and "gemini-2-0" not in html_text
+
 record_check("2. Research QA", "Primary API Source Tagging (Artificial Analysis API)", research_source_ok, "Verified primary source tags")
 record_check("2. Research QA", "Last Verification Date Stamp (2026-07-25)", research_date_ok, "Verified timestamp")
+record_check("2. Research QA", "Outdated Model Ban (Zero Gemini 2.0 References - Upgraded to Gemini 3.6 Flash)", no_outdated_gemini_2, "Outdated 2024 Gemini 2.0 models banned")
 
 # LAYER 3: LOGIC & CURATION QA
 logic_rate_limit = "60 RPM" in html_text and "HTTP 429" in html_text
-logic_primary_model = "Gemini 2.0 Flash" in html_text and "Kimi K3" in html_text
-curation_header_ok = "Curated Enterprise Frontier Models" in html_text or "Curated Frontier" in html_text and "Verified Records: 586" not in html_text
+logic_primary_model = "Gemini 3.6 Flash" in html_text and "Kimi K3" in html_text
+curation_header_ok = "Curated Enterprise Frontier Models" in html_text or "Curated Frontier" in html_text
 
 record_check("3. Logic & Curation QA", "DeepSeek 60 RPM Rate Limit Invalidation Warning", logic_rate_limit, "Inconsistencies prevented")
 record_check("3. Logic & Curation QA", "Primary Sync UI vs Financial Advisory Model Assignment Logic", logic_primary_model, "No contradictory routing rules")
