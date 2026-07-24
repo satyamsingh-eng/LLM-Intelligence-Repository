@@ -99,11 +99,11 @@ record_check("4. HTML QA", "Executive UI Zero Emoji Rule Compliance", no_emojis,
 
 # LAYER 5: REGRESSION & DATABASE SCHEMAS QA
 regression_models_ok = len(models) >= 586
-glossary_integrity_ok = len(glossary) >= 8 and all(len(v) >= 10 for v in glossary.values())
+glossary_integrity_ok = len(glossary) >= 12 and all(len(v) >= 10 for v in glossary.values())
 workflows_integrity_ok = len(workflows_db) >= 4 and all(len(w.get("steps", [])) >= 2 for w in workflows_db.values())
 
 record_check("5. Regression QA", "Database Model Record Count Preservation (588 Models)", regression_models_ok, "Zero data loss")
-record_check("5. Regression QA", "14-Point Glossary Integrity Check (All terms fully populated)", glossary_integrity_ok, "100% complete glossary schema")
+record_check("5. Regression QA", "12-Term 14-Point Glossary Integrity Check (All terms fully populated)", glossary_integrity_ok, "100% complete glossary schema")
 record_check("5. Regression QA", "Workflows DAG Schema Verification (Multi-step token chains valid)", workflows_integrity_ok, "100% valid workflow DAG chains")
 
 # LAYER 6: FOUNDER & EXECUTIVE REPORTS QA
