@@ -14,7 +14,9 @@
         "name": "Fetch Emails (M365)",
         "desc": "Retrieves unread lab emails via Microsoft Graph API.",
         "input_tokens": 1000,
-        "output_tokens": 100
+        "output_tokens": 100,
+        "model_id": "deepseek-v4-pro",
+        "routing_rationale": "Massive context extraction. \u20b942/1M token rate preserves margin on heavy document reads. Asynchronous batching prevents 60 RPM limit crashes."
       },
       {
         "id": "fetch_tracker",
@@ -22,7 +24,9 @@
         "name": "Fetch Excel Tracker",
         "desc": "Reads current lot status from master Excel.",
         "input_tokens": 5000,
-        "output_tokens": 200
+        "output_tokens": 200,
+        "model_id": "deepseek-v4-pro",
+        "routing_rationale": "Massive context extraction. \u20b942/1M token rate preserves margin on heavy document reads. Asynchronous batching prevents 60 RPM limit crashes."
       },
       {
         "id": "extract_data",
@@ -30,7 +34,9 @@
         "name": "Extract Analytical Data",
         "desc": "Extracts exact lab metrics from attached PDF.",
         "input_tokens": 15000,
-        "output_tokens": 500
+        "output_tokens": 500,
+        "model_id": "deepseek-v4-pro",
+        "routing_rationale": "Massive context extraction. \u20b942/1M token rate preserves margin on heavy document reads. Asynchronous batching prevents 60 RPM limit crashes."
       },
       {
         "id": "evaluate_match",
@@ -38,7 +44,9 @@
         "name": "Evaluate Guardrails",
         "desc": "Checks for NA, human-locks, and Micro vs Analytical logic.",
         "input_tokens": 3000,
-        "output_tokens": 200
+        "output_tokens": 200,
+        "model_id": "kimi-k3",
+        "routing_rationale": "Financial/Compliance logic requires absolute SOTA accuracy (TAU Banking #1). Trading margin for precision is mandatory here to prevent regulatory liabilities."
       },
       {
         "id": "update_excel",
@@ -46,7 +54,9 @@
         "name": "Update Excel Cells",
         "desc": "Writes color-coded status back to Excel via API.",
         "input_tokens": 500,
-        "output_tokens": 100
+        "output_tokens": 100,
+        "model_id": "gemini-3-6-flash",
+        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
       },
       {
         "id": "save_files",
@@ -54,7 +64,9 @@
         "name": "Save to OneDrive",
         "desc": "Archives source PDF into organized SharePoint folders.",
         "input_tokens": 200,
-        "output_tokens": 50
+        "output_tokens": 50,
+        "model_id": "gemini-3-6-flash",
+        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
       },
       {
         "id": "send_summary",
@@ -62,7 +74,9 @@
         "name": "Send Run Summary",
         "desc": "Dispatches execution confirmation email to stakeholders.",
         "input_tokens": 300,
-        "output_tokens": 50
+        "output_tokens": 50,
+        "model_id": "gemini-3-6-flash",
+        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
       }
     ],
     "verdict": "Keep as Workflow. Strict orchestration and deterministic cell-level writes require predictability, not agentic hallucination risks."
@@ -82,7 +96,9 @@
         "name": "Fetch Tracker State",
         "desc": "Ingests total 10k rows of current lab statuses.",
         "input_tokens": 70000,
-        "output_tokens": 500
+        "output_tokens": 500,
+        "model_id": "deepseek-v4-pro",
+        "routing_rationale": "Massive context extraction. \u20b942/1M token rate preserves margin on heavy document reads. Asynchronous batching prevents 60 RPM limit crashes."
       },
       {
         "id": "categorize",
@@ -90,7 +106,9 @@
         "name": "5x Categorization (Parallel)",
         "desc": "Groups lots into Overdue, Failed, Awaiting Lab B, etc.",
         "input_tokens": 10000,
-        "output_tokens": 1000
+        "output_tokens": 1000,
+        "model_id": "gemini-3-6-flash",
+        "routing_rationale": "Default fast router for standard classification and routing."
       },
       {
         "id": "compile_insights",
@@ -98,7 +116,9 @@
         "name": "Compile Executive Insights",
         "desc": "Agent reasons over trends to highlight vendor delays.",
         "input_tokens": 4000,
-        "output_tokens": 2000
+        "output_tokens": 2000,
+        "model_id": "kimi-k3",
+        "routing_rationale": "Financial/Compliance logic requires absolute SOTA accuracy (TAU Banking #1). Trading margin for precision is mandatory here to prevent regulatory liabilities."
       },
       {
         "id": "render_html",
@@ -106,7 +126,9 @@
         "name": "Render Outlook HTML",
         "desc": "Generates strict inline-styled HTML. LLM output here breaks Outlook.",
         "input_tokens": 500,
-        "output_tokens": 800
+        "output_tokens": 800,
+        "model_id": "gemini-3-6-flash",
+        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
       },
       {
         "id": "send_dashboard",
@@ -114,7 +136,9 @@
         "name": "Send Dashboard Email",
         "desc": "Dispatches daily HTML report to leadership.",
         "input_tokens": 500,
-        "output_tokens": 200
+        "output_tokens": 200,
+        "model_id": "gemini-3-6-flash",
+        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
       }
     ],
     "verdict": "Hybrid. Categorization and HTML rendering remain deterministic workflows. Insight Generation requires deep context reasoning and is upgraded to an Agent."
@@ -134,7 +158,9 @@
         "name": "Ingest New Lot",
         "desc": "Receives new lot parameters.",
         "input_tokens": 2000,
-        "output_tokens": 100
+        "output_tokens": 100,
+        "model_id": "deepseek-v4-pro",
+        "routing_rationale": "Massive context extraction. \u20b942/1M token rate preserves margin on heavy document reads. Asynchronous batching prevents 60 RPM limit crashes."
       },
       {
         "id": "historical_search",
@@ -142,7 +168,9 @@
         "name": "Historical Memory Search",
         "desc": "Queries vector DB for prior instances of this vendor lot.",
         "input_tokens": 35000,
-        "output_tokens": 800
+        "output_tokens": 800,
+        "model_id": "claude-fable-5",
+        "routing_rationale": "Multi-step agentic state tracking requires superior context retention (63% Agentic Task Score). Prevents infinite loop hallucinations during complex cross-run memory tasks."
       },
       {
         "id": "temporal_reasoning",
@@ -150,7 +178,9 @@
         "name": "Temporal Math",
         "desc": "Calculates if prior test was within 180-day waiver window.",
         "input_tokens": 5000,
-        "output_tokens": 400
+        "output_tokens": 400,
+        "model_id": "kimi-k3",
+        "routing_rationale": "Financial/Compliance logic requires absolute SOTA accuracy (TAU Banking #1). Trading margin for precision is mandatory here to prevent regulatory liabilities."
       },
       {
         "id": "waiver_decision",
@@ -158,7 +188,9 @@
         "name": "Waiver Execution",
         "desc": "Applies material category rules and waives/mandates tests.",
         "input_tokens": 3000,
-        "output_tokens": 500
+        "output_tokens": 500,
+        "model_id": "claude-fable-5",
+        "routing_rationale": "Multi-step agentic state tracking requires superior context retention (63% Agentic Task Score). Prevents infinite loop hallucinations during complex cross-run memory tasks."
       }
     ],
     "verdict": "Agent Required. Workflows are point-in-time. This requires tracking historical 6-month state and complex temporal logic across isolated runs."
@@ -178,7 +210,9 @@
         "name": "Lab A Failure Trigger",
         "desc": "Initial failure detected.",
         "input_tokens": 5000,
-        "output_tokens": 200
+        "output_tokens": 200,
+        "model_id": "gemini-3-6-flash",
+        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
       },
       {
         "id": "suspend_lot",
@@ -186,7 +220,9 @@
         "name": "Suspend Lot State",
         "desc": "Agent marks lot 'Awaiting Lab B' and sets async sleeper.",
         "input_tokens": 20000,
-        "output_tokens": 500
+        "output_tokens": 500,
+        "model_id": "claude-fable-5",
+        "routing_rationale": "Multi-step agentic state tracking requires superior context retention (63% Agentic Task Score). Prevents infinite loop hallucinations during complex cross-run memory tasks."
       },
       {
         "id": "match_lab_b",
@@ -194,7 +230,9 @@
         "name": "Cross-Email Match",
         "desc": "Days later, agent matches new email to suspended lot.",
         "input_tokens": 30000,
-        "output_tokens": 1000
+        "output_tokens": 1000,
+        "model_id": "claude-fable-5",
+        "routing_rationale": "Multi-step agentic state tracking requires superior context retention (63% Agentic Task Score). Prevents infinite loop hallucinations during complex cross-run memory tasks."
       },
       {
         "id": "conflict_reasoning",
@@ -202,7 +240,9 @@
         "name": "Conflict Resolution",
         "desc": "Reasons over parameter discrepancies between Lab A and Lab B.",
         "input_tokens": 10000,
-        "output_tokens": 500
+        "output_tokens": 500,
+        "model_id": "kimi-k3",
+        "routing_rationale": "Financial/Compliance logic requires absolute SOTA accuracy (TAU Banking #1). Trading margin for precision is mandatory here to prevent regulatory liabilities."
       }
     ],
     "verdict": "Agent Required. Workflows cannot 'wait' for weeks. Agents persist state, correlate separate emails across time, and reason over discrepancies."
@@ -222,7 +262,9 @@
         "name": "Dynamic SLA Math",
         "desc": "Calculates exact ETA date based on lab-specific SLAs.",
         "input_tokens": 4000,
-        "output_tokens": 200
+        "output_tokens": 200,
+        "model_id": "kimi-k3",
+        "routing_rationale": "Financial/Compliance logic requires absolute SOTA accuracy (TAU Banking #1). Trading margin for precision is mandatory here to prevent regulatory liabilities."
       },
       {
         "id": "schedule_outreach",
@@ -230,7 +272,9 @@
         "name": "Schedule Cron",
         "desc": "Sets a reminder 2 days prior to ETA.",
         "input_tokens": 1000,
-        "output_tokens": 100
+        "output_tokens": 100,
+        "model_id": "gemini-3-6-flash",
+        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
       },
       {
         "id": "draft_email",
@@ -238,7 +282,9 @@
         "name": "Consolidate Lots",
         "desc": "Agent bundles multiple delayed lots for the same lab into one email.",
         "input_tokens": 5000,
-        "output_tokens": 400
+        "output_tokens": 400,
+        "model_id": "gemini-3-6-flash",
+        "routing_rationale": "Default fast router for standard classification and routing."
       },
       {
         "id": "parse_reply",
@@ -246,7 +292,9 @@
         "name": "Parse Reply & Update",
         "desc": "Reads lab reply, extracts new dates, updates DB, or escalates.",
         "input_tokens": 2000,
-        "output_tokens": 100
+        "output_tokens": 100,
+        "model_id": "gemini-3-6-flash",
+        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
       }
     ],
     "verdict": "Agent Required. Parsing unstructured human replies to extract dynamic revised ETAs and updating database state autonomously is beyond deterministic DAG capability."
