@@ -366,85 +366,103 @@
 
   <!-- SECTION 4: WORKFLOW DAG VIDEO SIMULATOR -->
   <div class="section-dark" id="workflows">
-    <div class="section">
+    <div class="section" style="max-width:1200px;">
       <div class="section-label">Section 4</div>
       <h2>Workflow Architecture DAG Video Simulator</h2>
-      <p class="muted">Run live video-style step-by-step execution playback across complete enterprise workflows.</p>
+      <p class="muted">Run live video-style step-by-step execution playback across complete enterprise workflows in a unified single-screen player.</p>
 
-      
-      <div class="card" style="margin-top:32px; padding:32px; background:#1c1c1e; border-color:#333336;">
-        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; padding-bottom:24px; border-bottom:1px solid #333336;">
-          <div style="flex:1; min-width:300px;">
-            <label style="font-weight:700; font-size:13px; display:block; margin-bottom:8px; color:#86868b; text-transform:uppercase; letter-spacing:1px;">Select Enterprise Architecture</label>
-            <select id="wfSelect" onchange="resetSim()" style="background:#000; color:#fff; border:1px solid #333336; padding:12px; border-radius:8px; font-weight:700; font-size:15px; width:100%; outline:none;"></select>
+      <div class="card" style="margin-top:24px; padding:24px; background:#1c1c1e; border:1px solid #333336; border-radius:16px;">
+        
+        <!-- VIDEO PLAYER HEADER & CONTROLS -->
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-bottom:16px; border-bottom:1px solid #333336;">
+          <div style="flex:1; min-width:280px;">
+            <label style="font-weight:700; font-size:11px; display:block; margin-bottom:6px; color:#86868b; text-transform:uppercase; letter-spacing:1px;">Select Enterprise Architecture</label>
+            <select id="wfSelect" onchange="resetSim()" style="background:#000; color:#fff; border:1px solid #333336; padding:10px 14px; border-radius:8px; font-weight:700; font-size:14px; width:100%; outline:none; cursor:pointer;"></select>
           </div>
 
-          <div style="display:flex; gap:8px; align-items:center; background:#000; padding:8px; border-radius:12px; border:1px solid #333336;">
-            <button onclick="playSim()" id="btnPlay" style="background:#0071e3; color:#fff; font-weight:700; padding:10px 20px; border-radius:8px; border:none; cursor:pointer; font-size:13px; transition:background 0.2s hover:bg-[#2997ff]">[RUN WORKFLOW SIMULATION]</button>
+          <div style="display:flex; gap:8px; align-items:center; background:#000; padding:6px 12px; border-radius:12px; border:1px solid #333336;">
+            <button onclick="playSim()" id="btnPlay" style="background:#0071e3; color:#fff; font-weight:700; padding:10px 20px; border-radius:8px; border:none; cursor:pointer; font-size:13px; transition:all 0.2s;" onhover="this.style.background='#2997ff'">RUN SIMULATION</button>
             <button onclick="pauseSim()" id="btnPause" style="background:#333336; color:#fff; font-weight:700; padding:10px 20px; border-radius:8px; border:none; cursor:pointer; font-size:13px; display:none;">PAUSE</button>
-            <button onclick="resetSim()" style="background:transparent; color:#86868b; font-weight:700; padding:10px 16px; border-radius:8px; border:1px solid #333336; cursor:pointer; font-size:13px; transition:color 0.2s hover:text-white">RESET</button>
+            <button onclick="resetSim()" style="background:transparent; color:#86868b; font-weight:700; padding:10px 16px; border-radius:8px; border:1px solid #333336; cursor:pointer; font-size:13px; transition:color 0.2s;" onhover="this.style.color='#fff'">RESET</button>
             
-            <select id="simSpeed" style="background:#1c1c1e; color:#86868b; border:1px solid #333336; padding:10px; border-radius:8px; font-weight:700; font-size:13px; outline:none; margin-left:8px;">
-              <option value="1500">Speed: 0.5x</option>
-              <option value="800" selected>Speed: 1.0x</option>
-              <option value="400">Speed: 2.0x</option>
-              <option value="150">Speed: 5.0x</option>
+            <select id="simSpeed" style="background:#1c1c1e; color:#86868b; border:1px solid #333336; padding:8px 10px; border-radius:8px; font-weight:700; font-size:12px; outline:none;">
+              <option value="1500">0.5x</option>
+              <option value="800" selected>1.0x</option>
+              <option value="400">2.0x</option>
+              <option value="150">5.0x</option>
             </select>
           </div>
         </div>
 
-        <div style="display:grid; grid-template-columns: 1fr; md:grid-template-columns: 2fr 1fr; gap:32px; margin-top:24px;">
-          <!-- Left: Educational Breakdown & Live DAG -->
-          <div>
-            <div id="wfDescription" style="font-size:15px; color:#86868b; line-height:1.6; margin-bottom:24px;"></div>
+        <!-- VIDEO PROGRESS BAR -->
+        <div style="margin-top:12px; margin-bottom:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; font-size:11px; color:#86868b; margin-bottom:4px; font-weight:600;">
+            <span>EXECUTION PROGRESS</span>
+            <span id="wfStatus" style="color:#0071e3; font-weight:700; text-transform:uppercase;">READY</span>
+          </div>
+          <div style="width:100%; height:6px; background:#000; border-radius:4px; overflow:hidden; border:1px solid #333336;">
+            <div id="wfProgressBar" style="width:0%; height:100%; background:linear-gradient(90deg, #0071e3, #30d158); transition:width 0.3s ease;"></div>
+          </div>
+        </div>
+
+        <!-- UNIFIED SIDE-BY-SIDE DASHBOARD (FIT IN ONE SCREEN) -->
+        <div style="display:grid; grid-template-columns: 360px 1fr; gap:20px; align-items:start;">
+          
+          <!-- LEFT: TELEMETRY & VERDICT PANEL -->
+          <div style="display:flex; flex-direction:column; gap:16px;">
+            <div style="background:#000; border:1px solid #333336; border-radius:12px; padding:16px;">
+              <div style="font-size:10px; font-weight:700; color:#30d158; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">Executive Verdict</div>
+              <div id="wfVerdict" style="font-size:12px; color:#fff; line-height:1.5; font-weight:500;"></div>
+            </div>
+
+            <div style="background:#000; border:1px solid #333336; border-radius:12px; padding:16px;">
+              <div style="font-size:10px; font-weight:700; color:#86868b; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; border-bottom:1px solid #222; padding-bottom:6px;">Calculated Telemetry (Simulated)</div>
+              
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:12px;">
+                <div>
+                  <div style="font-size:10px; color:#86868b; margin-bottom:2px;">Calculated Cost</div>
+                  <div id="liveCost" style="font-family:'SF Mono', monospace; font-size:20px; font-weight:800; color:#30d158;">₹0.000</div>
+                </div>
+                <div>
+                  <div style="font-size:10px; color:#86868b; margin-bottom:2px;">Token Volume</div>
+                  <div id="liveTokens" style="font-family:'SF Mono', monospace; font-size:18px; font-weight:700; color:#2997ff;">0 <span style="font-size:11px; color:#86868b;">tok</span></div>
+                </div>
+              </div>
+
+              <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px;">
+                <div>
+                  <div style="font-size:10px; color:#86868b; margin-bottom:2px;">Est. Latency</div>
+                  <div id="liveTime" style="font-family:'SF Mono', monospace; font-size:18px; font-weight:700; color:#fff;">0.0 <span style="font-size:11px; color:#86868b;">sec</span></div>
+                </div>
+                <div>
+                  <div style="font-size:10px; color:#ffd60a; margin-bottom:2px;">KV Cache Savings</div>
+                  <div id="liveSavings" style="font-family:'SF Mono', monospace; font-size:16px; font-weight:700; color:#ffd60a;">₹0.000</div>
+                </div>
+              </div>
+
+              <div style="margin-top:12px; padding-top:10px; border-top:1px solid #222; font-size:10px; color:#86868b; display:flex; justify-content:space-between;">
+                <span>Model: <strong id="wfModelName" style="color:#fff;"></strong></span>
+                <span>Volume: <strong id="wfVolume" style="color:#fff;"></strong>/mo</span>
+              </div>
+            </div>
             
-            <div style="background:#000; border:1px solid #333336; border-radius:12px; padding:20px; margin-bottom:24px;">
-              <div style="font-size:11px; font-weight:700; color:#30d158; text-transform:uppercase; margin-bottom:8px;">Executive Verdict</div>
-              <div id="wfVerdict" style="font-size:14px; color:#fff; line-height:1.5; font-weight:500;"></div>
-            </div>
+            <div id="wfDescription" style="font-size:12px; color:#86868b; line-height:1.5; background:#000; border:1px solid #333336; border-radius:12px; padding:14px; max-height:120px; overflow-y:auto;"></div>
+          </div>
 
-            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
-              <h4 style="color:#fff; font-size:16px; margin:0;">DAG Execution Chain</h4>
-              <div id="wfStatus" style="font-size:11px; font-weight:700; color:#86868b; background:#000; padding:6px 12px; border-radius:20px; border:1px solid #333336;">READY</div>
+          <!-- RIGHT: COMPACT SCROLLABLE DAG EXECUTION CHAIN -->
+          <div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <span style="font-size:12px; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:0.5px;">DAG Execution Chain</span>
+              <span style="font-size:10px; color:#86868b;">Live Node Highlighting Active</span>
             </div>
-
-            <div id="dagContainer" style="display:flex; flex-direction:column; gap:8px;">
+            
+            <div id="dagContainer" style="display:flex; flex-direction:column; gap:10px; max-height:480px; overflow-y:auto; padding-right:6px; scroll-behavior:smooth;">
               <!-- DAG steps injected here via JS -->
             </div>
           </div>
 
-          <!-- Right: Telemetry HUD -->
-          <div style="background:#000; border:1px solid #333336; border-radius:16px; padding:24px;">
-            <div style="font-size:11px; font-weight:700; color:#86868b; text-transform:uppercase; letter-spacing:1px; margin-bottom:24px; border-bottom:1px solid #333336; padding-bottom:12px;">Calculated Workflow Telemetry (Simulated)</div>
-            
-            <div style="margin-bottom:24px;">
-              <div style="font-size:12px; color:#86868b; margin-bottom:4px;">Calculated Workflow Cost (INR ₹)</div>
-              <div id="liveCost" style="font-family:'SF Mono', monospace; font-size:36px; font-weight:800; color:#30d158; text-shadow:0 0 20px rgba(48,209,88,0.2);">₹0.000</div>
-            </div>
-
-            <div style="margin-bottom:24px;">
-              <div style="font-size:12px; color:#86868b; margin-bottom:4px;">Cumulative Token Volume</div>
-              <div id="liveTokens" style="font-family:'SF Mono', monospace; font-size:24px; font-weight:700; color:#2997ff;">0 <span style="font-size:14px; color:#86868b; font-weight:500;">tok</span></div>
-            </div>
-
-            <div style="margin-bottom:24px;">
-              <div style="font-size:12px; color:#86868b; margin-bottom:4px;">Estimated Processing Latency</div>
-              <div id="liveTime" style="font-family:'SF Mono', monospace; font-size:24px; font-weight:700; color:#fff;">0.0 <span style="font-size:14px; color:#86868b; font-weight:500;">sec</span></div>
-            </div>
-
-            <div style="background:rgba(255,214,10,0.1); border:1px solid rgba(255,214,10,0.2); border-radius:12px; padding:16px;">
-              <div style="font-size:11px; color:#ffd60a; font-weight:700; text-transform:uppercase; margin-bottom:4px;">KV Cache Retention Savings</div>
-              <div id="liveSavings" style="font-family:'SF Mono', monospace; font-size:18px; font-weight:700; color:#ffd60a;">₹0.000</div>
-            </div>
-            
-            <div style="margin-top:24px; padding-top:16px; border-top:1px solid #333336;">
-              <div style="font-size:10px; color:#86868b;">Model Used: <span id="wfModelName" style="color:#fff; font-weight:600;"></span></div>
-              <div style="font-size:10px; color:#86868b; margin-top:4px;">Volume: <span id="wfVolume" style="color:#fff; font-weight:600;"></span> runs/month</div>
-            </div>
-          </div>
         </div>
       </div>
-</div>
     </div>
   </div>
 
@@ -5351,13 +5369,21 @@ const knowledgeGraph = {
       if (liveCost) liveCost.innerText = "₹" + currentCost.toFixed(3);
       
       const liveTokens = document.getElementById('liveTokens');
-      if (liveTokens) liveTokens.innerHTML = currentTokens.toLocaleString() + ' <span style="font-size:14px; color:#86868b; font-weight:500;">tok</span>';
+      if (liveTokens) liveTokens.innerHTML = currentTokens.toLocaleString() + ' <span style="font-size:11px; color:#86868b; font-weight:500;">tok</span>';
       
       const liveTime = document.getElementById('liveTime');
-      if (liveTime) liveTime.innerHTML = currentTime.toFixed(1) + ' <span style="font-size:14px; color:#86868b; font-weight:500;">sec</span>';
+      if (liveTime) liveTime.innerHTML = currentTime.toFixed(1) + ' <span style="font-size:11px; color:#86868b; font-weight:500;">sec</span>';
       
       const liveSavings = document.getElementById('liveSavings');
       if (liveSavings) liveSavings.innerText = "₹" + currentSavings.toFixed(3);
+      
+      const wfSelect = document.getElementById('wfSelect');
+      if (wfSelect && workflows[wfSelect.value]) {
+        const totalSteps = workflows[wfSelect.value].steps.length;
+        const progressPct = totalSteps > 0 ? (currentStep / totalSteps) * 100 : 0;
+        const pBar = document.getElementById('wfProgressBar');
+        if (pBar) pBar.style.width = progressPct + '%';
+      }
     }
 
     function resetSim() {
@@ -5381,7 +5407,7 @@ const knowledgeGraph = {
       if (wfVerdict) wfVerdict.innerText = wf.verdict || '';
       
       const wfModelName = document.getElementById('wfModelName');
-      if (wfModelName) wfModelName.innerText = "Hybrid Cascade (Multi-Model)";
+      if (wfModelName) wfModelName.innerText = "Hybrid Cascade";
       
       const wfVolume = document.getElementById('wfVolume');
       if (wfVolume) wfVolume.innerText = (wf.monthly_volume || 0).toLocaleString();
@@ -5394,25 +5420,25 @@ const knowledgeGraph = {
         let stepModel = models.find(m => m.id === step.model_id) || models[0];
 
         htmlStr += `
-          <div id="step-${idx}" style="display:flex; align-items:flex-start; gap:16px; background:#000; border:1px solid #333336; border-radius:12px; padding:16px; transition:all 0.3s ease;">
-            <div style="width:24px; height:24px; border-radius:50%; background:#1c1c1e; border:1px solid #333336; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#86868b; flex-shrink:0; margin-top:2px;">${idx+1}</div>
+          <div id="step-${idx}" style="display:flex; align-items:flex-start; gap:12px; background:#000; border:1px solid #333336; border-radius:10px; padding:12px; transition:all 0.3s ease;">
+            <div style="width:20px; height:20px; border-radius:50%; background:#1c1c1e; border:1px solid #333336; display:flex; align-items:center; justify-content:center; font-size:10px; font-weight:700; color:#86868b; flex-shrink:0; margin-top:2px;">${idx+1}</div>
             <div style="flex:1;">
-              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
-                <div style="display:flex; align-items:center; gap:8px;">
-                  <span class="badge" style="background:${bgType}; color:${typeColor}; border:1px solid ${typeColor}40;">${step.type}</span>
-                  <span style="font-size:14px; font-weight:700; color:#fff;">${step.name}</span>
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:4px;">
+                <div style="display:flex; align-items:center; gap:6px;">
+                  <span class="badge" style="background:${bgType}; color:${typeColor}; border:1px solid ${typeColor}40; font-size:9px; padding:2px 6px;">${step.type}</span>
+                  <span style="font-size:13px; font-weight:700; color:#fff;">${step.name}</span>
                 </div>
-                <div id="step-badge-${idx}" style="display:none; font-size:10px; font-weight:700; color:#30d158; background:rgba(48,209,88,0.15); padding:4px 8px; border-radius:12px;">COMPLETED</div>
+                <div id="step-badge-${idx}" style="display:none; font-size:9px; font-weight:700; color:#30d158; background:rgba(48,209,88,0.15); padding:2px 6px; border-radius:10px;">DONE</div>
               </div>
-              <div style="font-size:13px; color:#86868b; line-height:1.5; margin-bottom:8px;">${step.desc}</div>
+              <div style="font-size:11px; color:#86868b; line-height:1.4; margin-bottom:6px;">${step.desc}</div>
               
               <!-- DYNAMIC ROUTING RATIONALE -->
-              <div style="background:#1c1c1e; border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:10px; margin-top:8px;">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-                  <span style="font-size:10px; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:0.5px;">Routed To: <span style="color:#0071e3;">${stepModel.name}</span></span>
-                  <span style="font-size:10px; color:#86868b; font-family:'SF Mono', monospace;">IN: ${(step.input_tokens || 0).toLocaleString()} | OUT: ${(step.output_tokens || 0).toLocaleString()}</span>
+              <div style="background:#1c1c1e; border:1px solid rgba(255,255,255,0.05); border-radius:6px; padding:8px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
+                  <span style="font-size:9px; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:0.5px;">Routed: <span style="color:#0071e3;">${stepModel.name}</span></span>
+                  <span style="font-size:9px; color:#86868b; font-family:'SF Mono', monospace;">IN: ${(step.input_tokens || 0).toLocaleString()} | OUT: ${(step.output_tokens || 0).toLocaleString()}</span>
                 </div>
-                <div style="font-size:11px; color:#a1a1a6; line-height:1.4;"><strong>Rationale:</strong> ${step.routing_rationale || ''}</div>
+                <div style="font-size:10px; color:#a1a1a6; line-height:1.3;"><strong>Rationale:</strong> ${step.routing_rationale || ''}</div>
               </div>
             </div>
           </div>
@@ -5425,8 +5451,11 @@ const knowledgeGraph = {
       const wfStatus = document.getElementById('wfStatus');
       if (wfStatus) {
           wfStatus.innerText = "READY";
-          wfStatus.style.color = "#86868b";
+          wfStatus.style.color = "#0071e3";
       }
+      
+      const pBar = document.getElementById('wfProgressBar');
+      if (pBar) pBar.style.width = '0%';
       
       currentStep = 0; currentCost = 0; currentTokens = 0; currentTime = 0; currentSavings = 0;
       updateHud();
@@ -5465,12 +5494,13 @@ const knowledgeGraph = {
           const el = document.getElementById(`step-${currentStep}`);
           if (el) {
             el.style.border = "1px solid #0071e3";
-            el.style.boxShadow = "0 0 20px rgba(0,113,227,0.2)";
+            el.style.boxShadow = "0 0 15px rgba(0,113,227,0.3)";
+            el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
           }
           
           const wfStatus = document.getElementById('wfStatus');
           if (wfStatus) {
-            wfStatus.innerText = `EXECUTING STEP ${currentStep+1}: ${step.name.toUpperCase()}`;
+            wfStatus.innerText = `STEP ${currentStep+1}/${wf.steps.length}: ${step.name.toUpperCase()}`;
             wfStatus.style.color = "#0071e3";
           }
           
@@ -5489,8 +5519,8 @@ const knowledgeGraph = {
           currentTokens += (inVal + outVal);
           currentTime += (step.type === 'llm' || step.type === 'agent' ? 1.5 : 0.3) * (speed/800);
           
-          updateHud();
           currentStep++;
+          updateHud();
         } else {
           clearInterval(simInterval);
           const wfStatus = document.getElementById('wfStatus');
