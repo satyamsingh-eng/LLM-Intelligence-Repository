@@ -104,6 +104,7 @@
   .footer { padding: 48px; text-align: center; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); }
 </style>
   <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/decimal.js/10.4.3/decimal.min.js"></script>
 </head>
 <body>
 
@@ -5337,6 +5338,7 @@ const knowledgeGraph = {
     
 
     
+    
     function playSim() {
       const wfKey = document.getElementById('wfSelect').value;
       const wf = workflows[wfKey];
@@ -5367,17 +5369,22 @@ const knowledgeGraph = {
           
           const stepModel = models.find(m => m.id === step.model_id) || models[0];
 
-          const inTok = step.input_tokens;
-          const outTok = step.output_tokens;
-          const cachedIn = inTok * 0.90;
-          const baseIn = inTok * 0.10;
+          // Use decimal.js for DAG step token math
+          const inTok = new Decimal(step.input_tokens || 0);
+          const outTok = new Decimal(step.output_tokens || 0);
+          const cachedIn = inTok.mul(0.90);
+          const baseIn = inTok.mul(0.10);
           
-          const stepCost = ((baseIn/1000000) * stepModel.inInr) + ((cachedIn/1000000) * stepModel.cachedInr) + ((outTok/1000000) * stepModel.outInr);
-          const stepSavings = ((cachedIn/1000000) * stepModel.inInr) - ((cachedIn/1000000) * stepModel.cachedInr);
+          const costBase = baseIn.div(1000000).mul(stepModel.inInr);
+          const costCached = cachedIn.div(1000000).mul(stepModel.cachedInr);
+          const costOut = outTok.div(1000000).mul(stepModel.outInr);
+          
+          const stepCost = costBase.add(costCached).add(costOut).toNumber();
+          const stepSavings = cachedIn.div(1000000).mul(stepModel.inInr).sub(costCached).toNumber();
           
           currentCost += stepCost;
           currentSavings += stepSavings;
-          currentTokens += (inTok + outTok);
+          currentTokens += (inTok.toNumber() + outTok.toNumber());
           currentTime += (step.type === 'llm' || step.type === 'agent' ? 1.5 : 0.3) * (speed/800);
           
           updateHud();

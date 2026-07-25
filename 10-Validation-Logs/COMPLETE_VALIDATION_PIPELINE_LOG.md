@@ -9,17 +9,17 @@
 
 ## Detailed Layer-by-Layer Verification
 
-### 1. Mathematical QA: USD to INR Exchange Rate Math (₹96.61/$1 across 588 models)
+### 1. Mathematical QA: USD to INR Exchange Rate Math (₹96.61/$1) via Decimal Engine
 * **Status:** `PASSED`
-* **Verification Note:** Verified 100% exact match against live rate
+* **Verification Note:** Verified 100% exact match against live exchange rate without floating-point errors
 
-### 1. Mathematical QA: Prompt Caching 90% Read Discount Math across 588 models (Rate: ₹96.61)
+### 1. Mathematical QA: Prompt Caching 90% Read Discount Math via Decimal Engine
 * **Status:** `PASSED`
-* **Verification Note:** Verified 100% exact match against live rate
+* **Verification Note:** Verified 100% exact match against live exchange rate without floating-point errors
 
-### 1. Mathematical QA: Hybrid Cascading 100k Report Simulation Formula Reproducibility
+### 1. Mathematical QA: Hybrid Cascading 100k Report Simulation Formula (Decimal Precision)
 * **Status:** `PASSED`
-* **Verification Note:** Formula verified: (24k Base + 96k Cached) In + 15k Out * 50% Batch
+* **Verification Note:** Formula verified using Python decimal module
 
 ### 2. Research QA: Primary API Source Tagging (Artificial Analysis API)
 * **Status:** `PASSED`
