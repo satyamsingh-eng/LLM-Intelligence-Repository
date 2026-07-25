@@ -140,7 +140,7 @@
       ],
       "official_docs": "https://platform.deepseek.com/api-docs/",
       "pricing_url": "https://platform.deepseek.com/api-docs/pricing",
-      "cto_recommendation": "Unprecedented intelligence-to-cost ratio for background tasks. Due to 60 RPM rate limit caps on their API, best utilized for massive async batch jobs or self-hosted air-gapped clusters via vLLM.",
+      "cto_recommendation": "Unprecedented intelligence-to-cost ratio for background text tasks. NOTE: DeepSeek V4 Pro DOES NOT support native OCR or Vision processing. All OCR pipelines must use a separate vision-language model upstream (like Gemini 3.6 Flash) before feeding text into DeepSeek.",
       "evidence_chain": {
         "source": "Official DeepSeek Platform Docs",
         "retrieval_date": "2026-07-25",

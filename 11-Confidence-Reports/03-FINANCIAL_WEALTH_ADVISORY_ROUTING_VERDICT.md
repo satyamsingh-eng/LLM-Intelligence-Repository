@@ -37,7 +37,7 @@ From a Product Perspective, choosing a single "Primary Model" is an architectura
 * **Trade-off Managed:** Kimi K3 has slow generation throughput (33 tps). Because these are long-running async background workflows, the end-user UI is not blocked, rendering the latency penalty irrelevant.
 
 ### Primary Heavy-Lift Extraction Engine (The "Reader"): DeepSeek V4 Pro
-* **Role:** OCR parsing, raw data extraction from 50-page PDFs, and initial document summarization.
+* **Role:** High-volume text data extraction from massive text-based PDFs, and initial document summarization.
 * **Why (Product POV):** DeepSeek V4 Pro operates at a fraction of the cost (₹42.03/1M base, ₹4.20/1M cached). It is mathematically irresponsible to use Kimi K3 or Claude to simply extract raw text from an annual report.
 * **Trade-off Managed:** DeepSeek has a strict 60 RPM API limit. By orchestrating this asynchronously via the Batch API queue, SARVAX prevents HTTP 429 concurrency crashes.
 

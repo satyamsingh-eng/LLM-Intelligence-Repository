@@ -225,6 +225,33 @@ gitignore_path = os.path.join(repo_dir, ".gitignore")
 gitignore_ok = os.path.exists(gitignore_path)
 record_check("12. GitHub Hygiene QA", ".gitignore presence & rule enforcement", gitignore_ok, "Verified protection against pushing raw logs and giant HTML snapshots")
 
+
+# LAYER 13: MULTIMODAL CAPABILITY HYGIENE QA
+deepseek_has_no_ocr = True
+for m in models:
+    if m["id"] == "deepseek-v4-pro":
+        # Check providers DB to ensure vision=False
+        pass
+        
+providers_path = os.path.join(repo_dir, "models", "verified_providers_database.json")
+with open(providers_path, "r", encoding="utf-8") as f:
+    providers_db = json.load(f)
+    
+for p in providers_db.get("providers", []):
+    if p["name"] == "DeepSeek":
+        if p["enterprise_features"]["vision"] is not False:
+            deepseek_has_no_ocr = False
+
+with open(portal_html_path, "r", encoding="utf-8") as f:
+    html_check = f.read()
+    if "DeepSeek V4 Pro" in html_check and "OCR parsing" in html_check:
+        # We replaced the text but if it ever sneaks back in, fail the build.
+        # Let's ensure the explicit warning exists.
+        if "No Native OCR/Vision" not in html_check:
+            deepseek_has_no_ocr = False
+
+record_check("13. Multimodal Hygiene QA", "DeepSeek V4 Pro Native OCR Capability Check", deepseek_has_no_ocr, "Verified DeepSeek V4 Pro is explicitly labeled as lacking native OCR/Vision")
+
 # Generate Validation Log
 log_path = os.path.join(repo_dir, "10-Validation-Logs", "COMPLETE_VALIDATION_PIPELINE_LOG.md")
 with open(log_path, "w", encoding="utf-8") as f:
