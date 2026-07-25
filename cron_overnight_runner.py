@@ -8,6 +8,7 @@ import json
 import datetime
 import subprocess
 import sys
+import requests
 
 # Add project root to path for imports
 repo_dir = "/Users/satyyy/Documents/R&D - C3ALABS/LLM-Intelligence-Repository"
@@ -27,6 +28,7 @@ res = subprocess.run(["python3", pipeline_script], cwd=repo_dir, capture_output=
 # Step 2: Parse validation log for changes/improvements
 changes = []
 improvements = []
+model_count = 0
 
 if os.path.exists(validation_log_path):
     with open(validation_log_path, "r", encoding="utf-8") as f:
@@ -88,7 +90,7 @@ if os.path.exists(ledger_path):
 
 # Step 5: Send WhatsApp summary
 def send_whatsapp_summary():
-    """Send WhatsApp notification via Hermes gateway"""
+    """Send WhatsApp notification via Hermes bridge"""
     try:
         # Build message
         status_emoji = "🟢" if "PASSED" in res.stdout else "🔴"
@@ -117,35 +119,21 @@ def send_whatsapp_summary():
         
         message = "\n".join(msg_lines)
         
-        # Use local WhatsApp bridge (port 3000) - per memory: POST localhost:3000/send-media
-        import requests
-        import json as json_lib
-        
-        try:
-            payload = {
-                "chatId": "31400673689742@lid",
-                "message": message
-            }
-            resp = requests.post("http://localhost:3000/send-message", 
-                               json=payload, timeout=10)
-            if resp.status_code == 200:
-                print("📱 WhatsApp sent via local bridge")
-                return
-        except Exception as e:
-            print(f"📱 Local bridge failed: {e}")
-        
-        # Fallback: log to file for manual review
-        whatsapp_log = os.path.join(repo_dir, "10-Validation-Logs", "WHATSAPP_NOTIFICATIONS.log")
-        with open(whatsapp_log, "a", encoding="utf-8") as f:
-            f.write(f"\n---\n{now_str}\n{message}\n")
-        print("📱 WhatsApp: Logged to WHATSAPP_NOTIFICATIONS.log (local bridge not reachable)")
-        
+        # Send via Hermes WhatsApp bridge
+        payload = {
+            "chatId": "31400673689742@lid",
+            "message": message
+        }
+        resp = requests.post("http://localhost:3000/send", 
+                           json=payload, timeout=10)
+        if resp.status_code == 200:
+            print("📱 WhatsApp sent via Hermes bridge")
+        else:
+            print(f"📱 WhatsApp failed: {resp.status_code} - {resp.text}")
+            
     except Exception as e:
-        print(f"📱 WhatsApp send error: {e}")
+        print(f"📱 WhatsApp error: {e}")
 
-# Send notification
 send_whatsapp_summary()
 
-print(f"✅ Scheduled 20m runner executed at {now_str}")
-print(f"   Commit: {commit_hash or 'No changes'}")
-print(f"   Changes: {len(changes)}, Improvements: {len(improvements)}")
+print(f"Scheduled 20m runner executed at {now_str}")
