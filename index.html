@@ -103,6 +103,7 @@
 
   .footer { padding: 48px; text-align: center; font-size: 12px; color: var(--text-muted); border-top: 1px solid var(--border); }
 </style>
+  <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 </head>
 <body>
 
@@ -1521,6 +1522,2509 @@
     "resSrc": 2
   }
 ];
+
+const knowledgeGraph = {
+  "system_metadata": {
+    "generator": "Hermes Knowledge Graph Builder v1.0",
+    "description": "Relational intelligence graph bridging Models, Pricing, Benchmarks, and Infrastructure.",
+    "nodes_count": 205,
+    "edges_count": 293
+  },
+  "nodes": [
+    {
+      "id": "provider_anthropic",
+      "label": "Anthropic",
+      "group": "Provider"
+    },
+    {
+      "id": "platform_global",
+      "label": "Global (AWS Bedrock, GCP Vertex AI, Direct)",
+      "group": "Platform"
+    },
+    {
+      "id": "sdk_anthropic",
+      "label": "Anthropic Official SDK",
+      "group": "SDK"
+    },
+    {
+      "id": "provider_openai",
+      "label": "OpenAI",
+      "group": "Provider"
+    },
+    {
+      "id": "sdk_openai",
+      "label": "OpenAI Official SDK",
+      "group": "SDK"
+    },
+    {
+      "id": "provider_google",
+      "label": "Google",
+      "group": "Provider"
+    },
+    {
+      "id": "sdk_google",
+      "label": "Google Official SDK",
+      "group": "SDK"
+    },
+    {
+      "id": "provider_deepseek",
+      "label": "DeepSeek",
+      "group": "Provider"
+    },
+    {
+      "id": "platform_direct,",
+      "label": "Direct, Open-Weight (Self-Hosted)",
+      "group": "Platform"
+    },
+    {
+      "id": "sdk_deepseek",
+      "label": "DeepSeek Official SDK",
+      "group": "SDK"
+    },
+    {
+      "id": "provider_moonshot_ai_(kimi)",
+      "label": "Moonshot AI (Kimi)",
+      "group": "Provider"
+    },
+    {
+      "id": "platform_direct",
+      "label": "Direct (China), OpenCode Go Platform",
+      "group": "Platform"
+    },
+    {
+      "id": "sdk_moonshot ai (kimi)",
+      "label": "Moonshot AI (Kimi) Official SDK",
+      "group": "SDK"
+    },
+    {
+      "id": "model_claude-opus-5",
+      "label": "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
+      "group": "Model"
+    },
+    {
+      "id": "price_claude-opus-5",
+      "label": "In: $5/1M | Out: $25/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "context_1m",
+      "label": "1M+ Tokens",
+      "group": "ContextWindow"
+    },
+    {
+      "id": "cache_90pct",
+      "label": "90% Prompt Cache Discount",
+      "group": "Caching"
+    },
+    {
+      "id": "tau_0.3031",
+      "label": "TAU Banking: 0.3031",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_60.7",
+      "label": "Intelligence Index: 60.7",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-07-24",
+      "label": "Release: 2026-07-24",
+      "group": "Release"
+    },
+    {
+      "id": "rec_claude-opus-5",
+      "label": "Strong Financial Reasoning",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_claude-opus-5-xhigh",
+      "label": "Claude Opus 5 (Adaptive Reasoning, Xhigh Effort)",
+      "group": "Model"
+    },
+    {
+      "id": "price_claude-opus-5-xhigh",
+      "label": "In: $5/1M | Out: $25/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.3155",
+      "label": "TAU Banking: 0.3155",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_60.1",
+      "label": "Intelligence Index: 60.1",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_claude-opus-5-xhigh",
+      "label": "Strong Financial Reasoning",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_claude-fable-5",
+      "label": "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
+      "group": "Model"
+    },
+    {
+      "id": "price_claude-fable-5",
+      "label": "In: $10/1M | Out: $50/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.268",
+      "label": "TAU Banking: 0.268",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_59.9",
+      "label": "Intelligence Index: 59.9",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-06-09",
+      "label": "Release: 2026-06-09",
+      "group": "Release"
+    },
+    {
+      "id": "rec_claude-fable-5",
+      "label": "High Intelligence Generalist",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-6-sol",
+      "label": "GPT-5.6 Sol (max)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-6-sol",
+      "label": "In: $5/1M | Out: $30/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.3299",
+      "label": "TAU Banking: 0.3299",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_58.9",
+      "label": "Intelligence Index: 58.9",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-07-09",
+      "label": "Release: 2026-07-09",
+      "group": "Release"
+    },
+    {
+      "id": "rec_gpt-5-6-sol",
+      "label": "Strong Financial Reasoning",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_claude-opus-5-high",
+      "label": "Claude Opus 5 (Adaptive Reasoning, High Effort)",
+      "group": "Model"
+    },
+    {
+      "id": "price_claude-opus-5-high",
+      "label": "In: $5/1M | Out: $25/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.3278",
+      "label": "TAU Banking: 0.3278",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_claude-opus-5-high",
+      "label": "Strong Financial Reasoning",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-6-sol-xhigh",
+      "label": "GPT-5.6 Sol (xhigh)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-6-sol-xhigh",
+      "label": "In: $5/1M | Out: $30/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.3265",
+      "label": "TAU Banking: 0.3265",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_57.7",
+      "label": "Intelligence Index: 57.7",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gpt-5-6-sol-xhigh",
+      "label": "Strong Financial Reasoning",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_kimi-k3",
+      "label": "Kimi K3",
+      "group": "Model"
+    },
+    {
+      "id": "provider_kimi",
+      "label": "Kimi",
+      "group": "Provider"
+    },
+    {
+      "id": "price_kimi-k3",
+      "label": "In: $3/1M | Out: $15/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.334",
+      "label": "TAU Banking: 0.334",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_57.1",
+      "label": "Intelligence Index: 57.1",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-07-16",
+      "label": "Release: 2026-07-16",
+      "group": "Release"
+    },
+    {
+      "id": "rec_kimi-k3",
+      "label": "Strong Financial Reasoning",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_claude-opus-5-medium",
+      "label": "Claude Opus 5 (Adaptive Reasoning, Medium Effort)",
+      "group": "Model"
+    },
+    {
+      "id": "price_claude-opus-5-medium",
+      "label": "In: $5/1M | Out: $25/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.2866",
+      "label": "TAU Banking: 0.2866",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_56.3",
+      "label": "Intelligence Index: 56.3",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_claude-opus-5-medium",
+      "label": "High Intelligence Generalist",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-6-sol-high",
+      "label": "GPT-5.6 Sol (high)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-6-sol-high",
+      "label": "In: $5/1M | Out: $30/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.3058",
+      "label": "TAU Banking: 0.3058",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_55.9",
+      "label": "Intelligence Index: 55.9",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gpt-5-6-sol-high",
+      "label": "Strong Financial Reasoning",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_claude-opus-4-8",
+      "label": "Claude Opus 4.8 (Adaptive Reasoning, Max Effort)",
+      "group": "Model"
+    },
+    {
+      "id": "price_claude-opus-4-8",
+      "label": "In: $5/1M | Out: $25/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.2763",
+      "label": "TAU Banking: 0.2763",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_55.7",
+      "label": "Intelligence Index: 55.7",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-05-28",
+      "label": "Release: 2026-05-28",
+      "group": "Release"
+    },
+    {
+      "id": "rec_claude-opus-4-8",
+      "label": "High Intelligence Generalist",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-6-terra",
+      "label": "GPT-5.6 Terra (max)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-6-terra",
+      "label": "In: $2.5/1M | Out: $15/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.3175",
+      "label": "TAU Banking: 0.3175",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_55",
+      "label": "Intelligence Index: 55",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gpt-5-6-terra",
+      "label": "Strong Financial Reasoning",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-5",
+      "label": "GPT-5.5 (xhigh)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-5",
+      "label": "In: $5/1M | Out: $30/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.3134",
+      "label": "TAU Banking: 0.3134",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_54.8",
+      "label": "Intelligence Index: 54.8",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-04-23",
+      "label": "Release: 2026-04-23",
+      "group": "Release"
+    },
+    {
+      "id": "rec_gpt-5-5",
+      "label": "Strong Financial Reasoning",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_grok-4-5",
+      "label": "Grok 4.5 (high)",
+      "group": "Model"
+    },
+    {
+      "id": "provider_spacexai",
+      "label": "SpaceXAI",
+      "group": "Provider"
+    },
+    {
+      "id": "price_grok-4-5",
+      "label": "In: $2/1M | Out: $6/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.3258",
+      "label": "TAU Banking: 0.3258",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_53.8",
+      "label": "Intelligence Index: 53.8",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-07-08",
+      "label": "Release: 2026-07-08",
+      "group": "Release"
+    },
+    {
+      "id": "rec_grok-4-5",
+      "label": "Strong Financial Reasoning",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-6-sol-medium",
+      "label": "GPT-5.6 Sol (medium)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-6-sol-medium",
+      "label": "In: $5/1M | Out: $30/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.2646",
+      "label": "TAU Banking: 0.2646",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_53.6",
+      "label": "Intelligence Index: 53.6",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gpt-5-6-sol-medium",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_claude-opus-4-7",
+      "label": "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)",
+      "group": "Model"
+    },
+    {
+      "id": "price_claude-opus-4-7",
+      "label": "In: $5/1M | Out: $25/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.2887",
+      "label": "TAU Banking: 0.2887",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_53.5",
+      "label": "Intelligence Index: 53.5",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-04-16",
+      "label": "Release: 2026-04-16",
+      "group": "Release"
+    },
+    {
+      "id": "rec_claude-opus-4-7",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_claude-sonnet-5",
+      "label": "Claude Sonnet 5 (Adaptive Reasoning, Max Effort)",
+      "group": "Model"
+    },
+    {
+      "id": "price_claude-sonnet-5",
+      "label": "In: $2/1M | Out: $10/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.2825",
+      "label": "TAU Banking: 0.2825",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_53.4",
+      "label": "Intelligence Index: 53.4",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-06-30",
+      "label": "Release: 2026-06-30",
+      "group": "Release"
+    },
+    {
+      "id": "rec_claude-sonnet-5",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-5-high",
+      "label": "GPT-5.5 (high)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-5-high",
+      "label": "In: $5/1M | Out: $30/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.2948",
+      "label": "TAU Banking: 0.2948",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_53.1",
+      "label": "Intelligence Index: 53.1",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gpt-5-5-high",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-6-terra-xhigh",
+      "label": "GPT-5.6 Terra (xhigh)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-6-terra-xhigh",
+      "label": "In: $2.5/1M | Out: $15/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.2433",
+      "label": "TAU Banking: 0.2433",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_51.6",
+      "label": "Intelligence Index: 51.6",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gpt-5-6-terra-xhigh",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-4",
+      "label": "GPT-5.4 (xhigh)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-4",
+      "label": "In: $2.5/1M | Out: $15/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "intel_51.4",
+      "label": "Intelligence Index: 51.4",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-03-05",
+      "label": "Release: 2026-03-05",
+      "group": "Release"
+    },
+    {
+      "id": "rec_gpt-5-4",
+      "label": "Strong Financial Reasoning",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-6-luna",
+      "label": "GPT-5.6 Luna (max)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-6-luna",
+      "label": "In: $1/1M | Out: $6/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.2722",
+      "label": "TAU Banking: 0.2722",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_51.2",
+      "label": "Intelligence Index: 51.2",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gpt-5-6-luna",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_glm-5-2",
+      "label": "GLM-5.2 (max)",
+      "group": "Model"
+    },
+    {
+      "id": "provider_z_ai",
+      "label": "Z AI",
+      "group": "Provider"
+    },
+    {
+      "id": "price_glm-5-2",
+      "label": "In: $1.4/1M | Out: $4.4/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "intel_51.1",
+      "label": "Intelligence Index: 51.1",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-06-16",
+      "label": "Release: 2026-06-16",
+      "group": "Release"
+    },
+    {
+      "id": "rec_glm-5-2",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_muse-spark-1-1",
+      "label": "Muse Spark 1.1 (xhigh)",
+      "group": "Model"
+    },
+    {
+      "id": "provider_meta",
+      "label": "Meta",
+      "group": "Provider"
+    },
+    {
+      "id": "price_muse-spark-1-1",
+      "label": "In: $1.25/1M | Out: $4.25/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.2515",
+      "label": "TAU Banking: 0.2515",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_50.6",
+      "label": "Intelligence Index: 50.6",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_muse-spark-1-1",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_claude-opus-5-low",
+      "label": "Claude Opus 5 (Adaptive Reasoning, Low Effort)",
+      "group": "Model"
+    },
+    {
+      "id": "price_claude-opus-5-low",
+      "label": "In: $5/1M | Out: $25/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.233",
+      "label": "TAU Banking: 0.233",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_claude-opus-5-low",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-5-medium",
+      "label": "GPT-5.5 (medium)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-5-medium",
+      "label": "In: $5/1M | Out: $30/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.2577",
+      "label": "TAU Banking: 0.2577",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_50.4",
+      "label": "Intelligence Index: 50.4",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gpt-5-5-medium",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gemini-3-5-flash",
+      "label": "Gemini 3.5 Flash (high)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gemini-3-5-flash",
+      "label": "In: $1.5/1M | Out: $9/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.2536",
+      "label": "TAU Banking: 0.2536",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_50.2",
+      "label": "Intelligence Index: 50.2",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-05-19",
+      "label": "Release: 2026-05-19",
+      "group": "Release"
+    },
+    {
+      "id": "rec_gemini-3-5-flash",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gemini-3-6-flash",
+      "label": "Gemini 3.6 Flash (high)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gemini-3-6-flash",
+      "label": "In: $1.5/1M | Out: $7.5/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.2454",
+      "label": "TAU Banking: 0.2454",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_50.1",
+      "label": "Intelligence Index: 50.1",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-07-21",
+      "label": "Release: 2026-07-21",
+      "group": "Release"
+    },
+    {
+      "id": "rec_gemini-3-6-flash",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-6-sol-low",
+      "label": "GPT-5.6 Sol (low)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-6-sol-low",
+      "label": "In: $5/1M | Out: $30/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.244",
+      "label": "TAU Banking: 0.244",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_49.4",
+      "label": "Intelligence Index: 49.4",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gpt-5-6-sol-low",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-6-luna-xhigh",
+      "label": "GPT-5.6 Luna (xhigh)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-6-luna-xhigh",
+      "label": "In: $1/1M | Out: $6/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "intel_49.1",
+      "label": "Intelligence Index: 49.1",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gpt-5-6-luna-xhigh",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-6-terra-high",
+      "label": "GPT-5.6 Terra (high)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-6-terra-high",
+      "label": "In: $2.5/1M | Out: $15/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.2227",
+      "label": "TAU Banking: 0.2227",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_49",
+      "label": "Intelligence Index: 49",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gpt-5-6-terra-high",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_claude-sonnet-4-6-adaptive",
+      "label": "Claude Sonnet 4.6 (Adaptive Reasoning, Max Effort)",
+      "group": "Model"
+    },
+    {
+      "id": "price_claude-sonnet-4-6-adaptive",
+      "label": "In: $3/1M | Out: $15/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.3052",
+      "label": "TAU Banking: 0.3052",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_47.2",
+      "label": "Intelligence Index: 47.2",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-02-17",
+      "label": "Release: 2026-02-17",
+      "group": "Release"
+    },
+    {
+      "id": "rec_claude-sonnet-4-6-adaptive",
+      "label": "Strong Financial Reasoning",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gemini-3-1-pro-preview",
+      "label": "Gemini 3.1 Pro Preview",
+      "group": "Model"
+    },
+    {
+      "id": "price_gemini-3-1-pro-preview",
+      "label": "In: $2/1M | Out: $12/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.1649",
+      "label": "TAU Banking: 0.1649",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_46.5",
+      "label": "Intelligence Index: 46.5",
+      "group": "Benchmark"
+    },
+    {
+      "id": "release_2026-02-19",
+      "label": "Release: 2026-02-19",
+      "group": "Release"
+    },
+    {
+      "id": "rec_gemini-3-1-pro-preview",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-6-luna-high",
+      "label": "GPT-5.6 Luna (high)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-6-luna-high",
+      "label": "In: $1/1M | Out: $6/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "intel_46.1",
+      "label": "Intelligence Index: 46.1",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gpt-5-6-luna-high",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_qwen3-7-max",
+      "label": "Qwen3.7 Max",
+      "group": "Model"
+    },
+    {
+      "id": "provider_alibaba",
+      "label": "Alibaba",
+      "group": "Provider"
+    },
+    {
+      "id": "price_qwen3-7-max",
+      "label": "In: $2.5/1M | Out: $7.5/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.1093",
+      "label": "TAU Banking: 0.1093",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_46",
+      "label": "Intelligence Index: 46",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_qwen3-7-max",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gpt-5-6-terra-medium",
+      "label": "GPT-5.6 Terra (medium)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gpt-5-6-terra-medium",
+      "label": "In: $2.5/1M | Out: $15/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.1938",
+      "label": "TAU Banking: 0.1938",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_45.6",
+      "label": "Intelligence Index: 45.6",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gpt-5-6-terra-medium",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "model_gemini-3-5-flash-medium",
+      "label": "Gemini 3.5 Flash (medium)",
+      "group": "Model"
+    },
+    {
+      "id": "price_gemini-3-5-flash-medium",
+      "label": "In: $1.5/1M | Out: $9/1M",
+      "group": "Pricing"
+    },
+    {
+      "id": "tau_0.0",
+      "label": "TAU Banking: 0.0",
+      "group": "Benchmark"
+    },
+    {
+      "id": "intel_45.4",
+      "label": "Intelligence Index: 45.4",
+      "group": "Benchmark"
+    },
+    {
+      "id": "rec_gemini-3-5-flash-medium",
+      "label": "Cost-Effective Routing",
+      "group": "Recommendation"
+    },
+    {
+      "id": "issue_gemini_auth",
+      "label": "GCP Vertex Auth Complexity",
+      "group": "Issue"
+    }
+  ],
+  "edges": [
+    {
+      "from": "provider_anthropic",
+      "to": "platform_global",
+      "label": "HOSTED_ON"
+    },
+    {
+      "from": "provider_anthropic",
+      "to": "sdk_anthropic",
+      "label": "PROVIDES_SDK"
+    },
+    {
+      "from": "provider_openai",
+      "to": "platform_global",
+      "label": "HOSTED_ON"
+    },
+    {
+      "from": "provider_openai",
+      "to": "sdk_openai",
+      "label": "PROVIDES_SDK"
+    },
+    {
+      "from": "provider_google",
+      "to": "platform_global",
+      "label": "HOSTED_ON"
+    },
+    {
+      "from": "provider_google",
+      "to": "sdk_google",
+      "label": "PROVIDES_SDK"
+    },
+    {
+      "from": "provider_deepseek",
+      "to": "platform_direct,",
+      "label": "HOSTED_ON"
+    },
+    {
+      "from": "provider_deepseek",
+      "to": "sdk_deepseek",
+      "label": "PROVIDES_SDK"
+    },
+    {
+      "from": "provider_moonshot_ai_(kimi)",
+      "to": "platform_direct",
+      "label": "HOSTED_ON"
+    },
+    {
+      "from": "provider_moonshot_ai_(kimi)",
+      "to": "sdk_moonshot ai (kimi)",
+      "label": "PROVIDES_SDK"
+    },
+    {
+      "from": "model_claude-opus-5",
+      "to": "provider_anthropic",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_claude-opus-5",
+      "to": "price_claude-opus-5",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_claude-opus-5",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_claude-opus-5",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_claude-opus-5",
+      "to": "tau_0.3031",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-5",
+      "to": "intel_60.7",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-5",
+      "to": "release_2026-07-24",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_claude-opus-5",
+      "to": "rec_claude-opus-5",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_claude-opus-5-xhigh",
+      "to": "provider_anthropic",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_claude-opus-5-xhigh",
+      "to": "price_claude-opus-5-xhigh",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_claude-opus-5-xhigh",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_claude-opus-5-xhigh",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_claude-opus-5-xhigh",
+      "to": "tau_0.3155",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-5-xhigh",
+      "to": "intel_60.1",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-5-xhigh",
+      "to": "release_2026-07-24",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_claude-opus-5-xhigh",
+      "to": "rec_claude-opus-5-xhigh",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_claude-fable-5",
+      "to": "provider_anthropic",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_claude-fable-5",
+      "to": "price_claude-fable-5",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_claude-fable-5",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_claude-fable-5",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_claude-fable-5",
+      "to": "tau_0.268",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-fable-5",
+      "to": "intel_59.9",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-fable-5",
+      "to": "release_2026-06-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_claude-fable-5",
+      "to": "rec_claude-fable-5",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-6-sol",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-6-sol",
+      "to": "price_gpt-5-6-sol",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-6-sol",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-6-sol",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-6-sol",
+      "to": "tau_0.3299",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-sol",
+      "to": "intel_58.9",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-sol",
+      "to": "release_2026-07-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-6-sol",
+      "to": "rec_gpt-5-6-sol",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_claude-opus-5-high",
+      "to": "provider_anthropic",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_claude-opus-5-high",
+      "to": "price_claude-opus-5-high",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_claude-opus-5-high",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_claude-opus-5-high",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_claude-opus-5-high",
+      "to": "tau_0.3278",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-5-high",
+      "to": "intel_58.9",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-5-high",
+      "to": "release_2026-07-24",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_claude-opus-5-high",
+      "to": "rec_claude-opus-5-high",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-6-sol-xhigh",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-6-sol-xhigh",
+      "to": "price_gpt-5-6-sol-xhigh",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-6-sol-xhigh",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-6-sol-xhigh",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-6-sol-xhigh",
+      "to": "tau_0.3265",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-sol-xhigh",
+      "to": "intel_57.7",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-sol-xhigh",
+      "to": "release_2026-07-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-6-sol-xhigh",
+      "to": "rec_gpt-5-6-sol-xhigh",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_kimi-k3",
+      "to": "provider_kimi",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_kimi-k3",
+      "to": "price_kimi-k3",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_kimi-k3",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_kimi-k3",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_kimi-k3",
+      "to": "tau_0.334",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_kimi-k3",
+      "to": "intel_57.1",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_kimi-k3",
+      "to": "release_2026-07-16",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_kimi-k3",
+      "to": "rec_kimi-k3",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_claude-opus-5-medium",
+      "to": "provider_anthropic",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_claude-opus-5-medium",
+      "to": "price_claude-opus-5-medium",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_claude-opus-5-medium",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_claude-opus-5-medium",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_claude-opus-5-medium",
+      "to": "tau_0.2866",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-5-medium",
+      "to": "intel_56.3",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-5-medium",
+      "to": "release_2026-07-24",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_claude-opus-5-medium",
+      "to": "rec_claude-opus-5-medium",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-6-sol-high",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-6-sol-high",
+      "to": "price_gpt-5-6-sol-high",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-6-sol-high",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-6-sol-high",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-6-sol-high",
+      "to": "tau_0.3058",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-sol-high",
+      "to": "intel_55.9",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-sol-high",
+      "to": "release_2026-07-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-6-sol-high",
+      "to": "rec_gpt-5-6-sol-high",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_claude-opus-4-8",
+      "to": "provider_anthropic",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_claude-opus-4-8",
+      "to": "price_claude-opus-4-8",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_claude-opus-4-8",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_claude-opus-4-8",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_claude-opus-4-8",
+      "to": "tau_0.2763",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-4-8",
+      "to": "intel_55.7",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-4-8",
+      "to": "release_2026-05-28",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_claude-opus-4-8",
+      "to": "rec_claude-opus-4-8",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-6-terra",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-6-terra",
+      "to": "price_gpt-5-6-terra",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-6-terra",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-6-terra",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-6-terra",
+      "to": "tau_0.3175",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-terra",
+      "to": "intel_55",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-terra",
+      "to": "release_2026-07-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-6-terra",
+      "to": "rec_gpt-5-6-terra",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-5",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-5",
+      "to": "price_gpt-5-5",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-5",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-5",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-5",
+      "to": "tau_0.3134",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-5",
+      "to": "intel_54.8",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-5",
+      "to": "release_2026-04-23",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-5",
+      "to": "rec_gpt-5-5",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_grok-4-5",
+      "to": "provider_spacexai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_grok-4-5",
+      "to": "price_grok-4-5",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_grok-4-5",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_grok-4-5",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_grok-4-5",
+      "to": "tau_0.3258",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_grok-4-5",
+      "to": "intel_53.8",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_grok-4-5",
+      "to": "release_2026-07-08",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_grok-4-5",
+      "to": "rec_grok-4-5",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-6-sol-medium",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-6-sol-medium",
+      "to": "price_gpt-5-6-sol-medium",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-6-sol-medium",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-6-sol-medium",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-6-sol-medium",
+      "to": "tau_0.2646",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-sol-medium",
+      "to": "intel_53.6",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-sol-medium",
+      "to": "release_2026-07-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-6-sol-medium",
+      "to": "rec_gpt-5-6-sol-medium",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_claude-opus-4-7",
+      "to": "provider_anthropic",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_claude-opus-4-7",
+      "to": "price_claude-opus-4-7",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_claude-opus-4-7",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_claude-opus-4-7",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_claude-opus-4-7",
+      "to": "tau_0.2887",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-4-7",
+      "to": "intel_53.5",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-4-7",
+      "to": "release_2026-04-16",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_claude-opus-4-7",
+      "to": "rec_claude-opus-4-7",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_claude-sonnet-5",
+      "to": "provider_anthropic",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_claude-sonnet-5",
+      "to": "price_claude-sonnet-5",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_claude-sonnet-5",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_claude-sonnet-5",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_claude-sonnet-5",
+      "to": "tau_0.2825",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-sonnet-5",
+      "to": "intel_53.4",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-sonnet-5",
+      "to": "release_2026-06-30",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_claude-sonnet-5",
+      "to": "rec_claude-sonnet-5",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-5-high",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-5-high",
+      "to": "price_gpt-5-5-high",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-5-high",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-5-high",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-5-high",
+      "to": "tau_0.2948",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-5-high",
+      "to": "intel_53.1",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-5-high",
+      "to": "release_2026-04-23",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-5-high",
+      "to": "rec_gpt-5-5-high",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-6-terra-xhigh",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-6-terra-xhigh",
+      "to": "price_gpt-5-6-terra-xhigh",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-6-terra-xhigh",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-6-terra-xhigh",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-6-terra-xhigh",
+      "to": "tau_0.2433",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-terra-xhigh",
+      "to": "intel_51.6",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-terra-xhigh",
+      "to": "release_2026-07-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-6-terra-xhigh",
+      "to": "rec_gpt-5-6-terra-xhigh",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-4",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-4",
+      "to": "price_gpt-5-4",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-4",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-4",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-4",
+      "to": "tau_0.3031",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-4",
+      "to": "intel_51.4",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-4",
+      "to": "release_2026-03-05",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-4",
+      "to": "rec_gpt-5-4",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-6-luna",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-6-luna",
+      "to": "price_gpt-5-6-luna",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-6-luna",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-6-luna",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-6-luna",
+      "to": "tau_0.2722",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-luna",
+      "to": "intel_51.2",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-luna",
+      "to": "release_2026-07-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-6-luna",
+      "to": "rec_gpt-5-6-luna",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_glm-5-2",
+      "to": "provider_z_ai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_glm-5-2",
+      "to": "price_glm-5-2",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_glm-5-2",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_glm-5-2",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_glm-5-2",
+      "to": "tau_0.268",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_glm-5-2",
+      "to": "intel_51.1",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_glm-5-2",
+      "to": "release_2026-06-16",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_glm-5-2",
+      "to": "rec_glm-5-2",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_muse-spark-1-1",
+      "to": "provider_meta",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_muse-spark-1-1",
+      "to": "price_muse-spark-1-1",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_muse-spark-1-1",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_muse-spark-1-1",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_muse-spark-1-1",
+      "to": "tau_0.2515",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_muse-spark-1-1",
+      "to": "intel_50.6",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_muse-spark-1-1",
+      "to": "release_2026-07-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_muse-spark-1-1",
+      "to": "rec_muse-spark-1-1",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_claude-opus-5-low",
+      "to": "provider_anthropic",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_claude-opus-5-low",
+      "to": "price_claude-opus-5-low",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_claude-opus-5-low",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_claude-opus-5-low",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_claude-opus-5-low",
+      "to": "tau_0.233",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-5-low",
+      "to": "intel_50.6",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-opus-5-low",
+      "to": "release_2026-07-24",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_claude-opus-5-low",
+      "to": "rec_claude-opus-5-low",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-5-medium",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-5-medium",
+      "to": "price_gpt-5-5-medium",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-5-medium",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-5-medium",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-5-medium",
+      "to": "tau_0.2577",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-5-medium",
+      "to": "intel_50.4",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-5-medium",
+      "to": "release_2026-04-23",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-5-medium",
+      "to": "rec_gpt-5-5-medium",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gemini-3-5-flash",
+      "to": "provider_google",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gemini-3-5-flash",
+      "to": "price_gemini-3-5-flash",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gemini-3-5-flash",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gemini-3-5-flash",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gemini-3-5-flash",
+      "to": "tau_0.2536",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gemini-3-5-flash",
+      "to": "intel_50.2",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gemini-3-5-flash",
+      "to": "release_2026-05-19",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gemini-3-5-flash",
+      "to": "rec_gemini-3-5-flash",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gemini-3-6-flash",
+      "to": "provider_google",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gemini-3-6-flash",
+      "to": "price_gemini-3-6-flash",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gemini-3-6-flash",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gemini-3-6-flash",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gemini-3-6-flash",
+      "to": "tau_0.2454",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gemini-3-6-flash",
+      "to": "intel_50.1",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gemini-3-6-flash",
+      "to": "release_2026-07-21",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gemini-3-6-flash",
+      "to": "rec_gemini-3-6-flash",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-6-sol-low",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-6-sol-low",
+      "to": "price_gpt-5-6-sol-low",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-6-sol-low",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-6-sol-low",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-6-sol-low",
+      "to": "tau_0.244",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-sol-low",
+      "to": "intel_49.4",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-sol-low",
+      "to": "release_2026-07-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-6-sol-low",
+      "to": "rec_gpt-5-6-sol-low",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-6-luna-xhigh",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-6-luna-xhigh",
+      "to": "price_gpt-5-6-luna-xhigh",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-6-luna-xhigh",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-6-luna-xhigh",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-6-luna-xhigh",
+      "to": "tau_0.2433",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-luna-xhigh",
+      "to": "intel_49.1",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-luna-xhigh",
+      "to": "release_2026-07-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-6-luna-xhigh",
+      "to": "rec_gpt-5-6-luna-xhigh",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-6-terra-high",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-6-terra-high",
+      "to": "price_gpt-5-6-terra-high",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-6-terra-high",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-6-terra-high",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-6-terra-high",
+      "to": "tau_0.2227",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-terra-high",
+      "to": "intel_49",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-terra-high",
+      "to": "release_2026-07-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-6-terra-high",
+      "to": "rec_gpt-5-6-terra-high",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_claude-sonnet-4-6-adaptive",
+      "to": "provider_anthropic",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_claude-sonnet-4-6-adaptive",
+      "to": "price_claude-sonnet-4-6-adaptive",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_claude-sonnet-4-6-adaptive",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_claude-sonnet-4-6-adaptive",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_claude-sonnet-4-6-adaptive",
+      "to": "tau_0.3052",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-sonnet-4-6-adaptive",
+      "to": "intel_47.2",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_claude-sonnet-4-6-adaptive",
+      "to": "release_2026-02-17",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_claude-sonnet-4-6-adaptive",
+      "to": "rec_claude-sonnet-4-6-adaptive",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gemini-3-1-pro-preview",
+      "to": "provider_google",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gemini-3-1-pro-preview",
+      "to": "price_gemini-3-1-pro-preview",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gemini-3-1-pro-preview",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gemini-3-1-pro-preview",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gemini-3-1-pro-preview",
+      "to": "tau_0.1649",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gemini-3-1-pro-preview",
+      "to": "intel_46.5",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gemini-3-1-pro-preview",
+      "to": "release_2026-02-19",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gemini-3-1-pro-preview",
+      "to": "rec_gemini-3-1-pro-preview",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-6-luna-high",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-6-luna-high",
+      "to": "price_gpt-5-6-luna-high",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-6-luna-high",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-6-luna-high",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-6-luna-high",
+      "to": "tau_0.2227",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-luna-high",
+      "to": "intel_46.1",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-luna-high",
+      "to": "release_2026-07-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-6-luna-high",
+      "to": "rec_gpt-5-6-luna-high",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_qwen3-7-max",
+      "to": "provider_alibaba",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_qwen3-7-max",
+      "to": "price_qwen3-7-max",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_qwen3-7-max",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_qwen3-7-max",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_qwen3-7-max",
+      "to": "tau_0.1093",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_qwen3-7-max",
+      "to": "intel_46",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_qwen3-7-max",
+      "to": "release_2026-05-19",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_qwen3-7-max",
+      "to": "rec_qwen3-7-max",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gpt-5-6-terra-medium",
+      "to": "provider_openai",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gpt-5-6-terra-medium",
+      "to": "price_gpt-5-6-terra-medium",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gpt-5-6-terra-medium",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gpt-5-6-terra-medium",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gpt-5-6-terra-medium",
+      "to": "tau_0.1938",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-terra-medium",
+      "to": "intel_45.6",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gpt-5-6-terra-medium",
+      "to": "release_2026-07-09",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gpt-5-6-terra-medium",
+      "to": "rec_gpt-5-6-terra-medium",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gemini-3-5-flash-medium",
+      "to": "provider_google",
+      "label": "DEVELOPED_BY"
+    },
+    {
+      "from": "model_gemini-3-5-flash-medium",
+      "to": "price_gemini-3-5-flash-medium",
+      "label": "HAS_PRICING"
+    },
+    {
+      "from": "model_gemini-3-5-flash-medium",
+      "to": "context_1m",
+      "label": "HAS_CONTEXT"
+    },
+    {
+      "from": "model_gemini-3-5-flash-medium",
+      "to": "cache_90pct",
+      "label": "SUPPORTS_CACHING"
+    },
+    {
+      "from": "model_gemini-3-5-flash-medium",
+      "to": "tau_0.0",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gemini-3-5-flash-medium",
+      "to": "intel_45.4",
+      "label": "SCORES_ON"
+    },
+    {
+      "from": "model_gemini-3-5-flash-medium",
+      "to": "release_2026-05-19",
+      "label": "INTRODUCED_IN"
+    },
+    {
+      "from": "model_gemini-3-5-flash-medium",
+      "to": "rec_gemini-3-5-flash-medium",
+      "label": "RECOMMENDED_FOR"
+    },
+    {
+      "from": "model_gemini-3-1-pro-preview",
+      "to": "issue_gemini_auth",
+      "label": "HAS_KNOWN_ISSUE"
+    },
+    {
+      "from": "model_gemini-3-1-pro-preview",
+      "to": "model_claude-opus-5",
+      "label": "ALTERNATIVE_TO"
+    },
+    {
+      "from": "model_claude-opus-5",
+      "to": "model_gpt-5-6-sol-max",
+      "label": "ALTERNATIVE_TO"
+    }
+  ]
+};
     const glossary = {
   "prompt_caching": {
     "term": "Prompt Caching",
@@ -2813,6 +5317,42 @@
     
     
     
+    
+    function initKnowledgeGraph() {
+      const container = document.getElementById('mynetwork');
+      if(!container || typeof vis === 'undefined') return;
+
+      const nodes = new vis.DataSet(knowledgeGraph.nodes.map(n => {
+        let color = '#333336';
+        let fontColor = '#86868b';
+        let shape = 'dot';
+        
+        if(n.group === 'Model') { color = '#2997ff'; fontColor = '#ffffff'; shape = 'box'; }
+        else if(n.group === 'Pricing') { color = '#30d158'; fontColor = '#ffffff'; }
+        else if(n.group === 'Benchmark') { color = '#ffd60a'; fontColor = '#000000'; }
+        else if(n.group === 'Provider' || n.group === 'Platform') { color = '#ff453a'; fontColor = '#ffffff'; shape = 'diamond'; }
+        else if(n.group === 'Recommendation') { color = '#bf5af2'; fontColor = '#ffffff'; }
+
+        return { id: n.id, label: n.label, group: n.group, color: { background: color, border: color }, font: { color: fontColor }, shape: shape };
+      }));
+
+      const edges = new vis.DataSet(knowledgeGraph.edges.map(e => {
+        return { from: e.from, to: e.to, label: e.label, font: { align: 'middle', size: 10, color: '#86868b' }, color: { color: '#333336', highlight: '#0071e3' }, arrows: 'to' };
+      }));
+
+      const data = { nodes: nodes, edges: edges };
+      const options = {
+        physics: {
+          stabilization: false,
+          barnesHut: { gravitationalConstant: -3000, centralGravity: 0.1, springLength: 150, springConstant: 0.05 }
+        },
+        interaction: { hover: true, tooltipDelay: 100 },
+        nodes: { borderWidth: 0, shadow: true }
+      };
+      
+      new vis.Network(container, data, options);
+    }
+
     function renderKnowledgeGraph() {
       const grid = document.getElementById('knowledgeGraphGrid');
       const tagsContainer = document.getElementById('knowledgeGraphTags');
@@ -2960,6 +5500,7 @@
       runSim();
       resetSim();
       renderModelsTable();
+      if(typeof initKnowledgeGraph === "function") initKnowledgeGraph();
       if(typeof renderKnowledgeGraph === "function") renderKnowledgeGraph();
       renderCharts();
     }
