@@ -4909,303 +4909,283 @@ const knowledgeGraph = {
     const workflows = {
   "workflow_lab_results_inbox": {
     "name": "1. Aviva Lab Results Inbox Workflow",
-    "description": "Reads incoming lab-report emails, extracts analytical data, categorizes test parameters, and orchestrates Excel updates with Microsoft 365. High volume, deterministic precision.",
-    "architecture_type": "Deterministic Workflow (DAG)",
-    "monthly_volume": 35000,
-    "input_tokens_avg": 25000,
-    "output_tokens_avg": 1200,
-    "primary_model": "gemini-3-6-flash",
+    "description": "Deterministic DAG that processes incoming lab report emails, extracts data from attached PDFs using Gemini 3.6 Flash Vision, evaluates guardrails using Kimi K3, updates the master Excel tracker via Microsoft Graph API, archives files to OneDrive, and dispatches run summaries.",
+    "verdict": "Keep as Deterministic Workflow. Fixed code paths, zero-error guard checks, and exact string matching guarantee 100% precision. Agentic reasoning adds failure mode without value.",
+    "monthly_volume": 500,
     "steps": [
       {
-        "id": "fetch_emails",
+        "step_num": 1,
+        "name": "Fetch Lab Emails (M365 API)",
         "type": "tool",
-        "name": "Fetch Emails (M365)",
-        "desc": "Retrieves unread lab emails via Microsoft Graph API.",
+        "model_id": "gemini-3-6-flash",
+        "input_tokens": 500,
+        "output_tokens": 50,
+        "desc": "Connects to Outlook API, retrieves unread lab result emails.",
+        "routing_rationale": "Tool execution & API polling requires sub-second latency (243 tok/s). Gemini Flash eliminates latency overhead."
+      },
+      {
+        "step_num": 2,
+        "name": "Fetch Excel Tracker State",
+        "type": "tool",
+        "model_id": "gemini-3-6-flash",
         "input_tokens": 1000,
         "output_tokens": 100,
-        "model_id": "deepseek-v4-pro",
-        "routing_rationale": "Massive context extraction. \u20b942/1M token rate preserves margin on heavy document reads. Asynchronous batching prevents 60 RPM limit crashes."
+        "desc": "Reads current lot status and history from master SharePoint Excel file.",
+        "routing_rationale": "Structured tabular data reading requires fast JSON parsing without premium reasoning costs."
       },
       {
-        "id": "fetch_tracker",
-        "type": "tool",
-        "name": "Fetch Excel Tracker",
-        "desc": "Reads current lot status from master Excel.",
-        "input_tokens": 5000,
-        "output_tokens": 200,
-        "model_id": "deepseek-v4-pro",
-        "routing_rationale": "Massive context extraction. \u20b942/1M token rate preserves margin on heavy document reads. Asynchronous batching prevents 60 RPM limit crashes."
-      },
-      {
-        "id": "extract_data",
+        "step_num": 3,
+        "name": "OCR & Analytical Data Extraction",
         "type": "llm",
-        "name": "Extract Analytical Data",
-        "desc": "Extracts exact lab metrics from attached PDF.",
-        "input_tokens": 15000,
-        "output_tokens": 500,
-        "model_id": "deepseek-v4-pro",
-        "routing_rationale": "Massive context extraction. \u20b942/1M token rate preserves margin on heavy document reads. Asynchronous batching prevents 60 RPM limit crashes."
+        "model_id": "gemini-3-6-flash",
+        "input_tokens": 8000,
+        "output_tokens": 400,
+        "desc": "Parses attached PDF lab report using native vision to extract exact metric values.",
+        "routing_rationale": "Requires native Multimodal Vision capabilities to process unstructured PDF lab scans."
       },
       {
-        "id": "evaluate_match",
-        "type": "llm",
-        "name": "Evaluate Guardrails",
-        "desc": "Checks for NA, human-locks, and Micro vs Analytical logic.",
-        "input_tokens": 3000,
-        "output_tokens": 200,
+        "step_num": 4,
+        "name": "Evaluate Compliance & Guardrails",
+        "type": "agent",
         "model_id": "kimi-k3",
-        "routing_rationale": "Financial/Compliance logic requires absolute SOTA accuracy (TAU Banking #1). Trading margin for precision is mandatory here to prevent regulatory liabilities."
+        "input_tokens": 2500,
+        "output_tokens": 150,
+        "desc": "Applies Micro vs Analytical classification, human-lock checks, and NA validation.",
+        "routing_rationale": "Strict compliance & threshold math requires SOTA accuracy (#1 TAU Banking score: 0.3340)."
       },
       {
-        "id": "update_excel",
-        "type": "tool",
+        "step_num": 5,
         "name": "Update Excel Cells",
-        "desc": "Writes color-coded status back to Excel via API.",
-        "input_tokens": 500,
-        "output_tokens": 100,
-        "model_id": "gemini-3-6-flash",
-        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
-      },
-      {
-        "id": "save_files",
         "type": "tool",
-        "name": "Save to OneDrive",
-        "desc": "Archives source PDF into organized SharePoint folders.",
-        "input_tokens": 200,
+        "model_id": "gemini-3-6-flash",
+        "input_tokens": 400,
         "output_tokens": 50,
-        "model_id": "gemini-3-6-flash",
-        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
+        "desc": "Writes color-coded status back to Excel cells via Microsoft Graph API.",
+        "routing_rationale": "Deterministic API payload construction."
       },
       {
-        "id": "send_summary",
+        "step_num": 6,
+        "name": "Save Attachments to OneDrive",
         "type": "tool",
-        "name": "Send Run Summary",
-        "desc": "Dispatches execution confirmation email to stakeholders.",
+        "model_id": "gemini-3-6-flash",
+        "input_tokens": 200,
+        "output_tokens": 30,
+        "desc": "Archives source PDF into organized SharePoint audit folders.",
+        "routing_rationale": "Deterministic tool execution."
+      },
+      {
+        "step_num": 7,
+        "name": "Send Run Summary Email",
+        "type": "tool",
+        "model_id": "gemini-3-6-flash",
         "input_tokens": 300,
         "output_tokens": 50,
-        "model_id": "gemini-3-6-flash",
-        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
+        "desc": "Sends execution summary email to lab operations lead.",
+        "routing_rationale": "Template email rendering and sending."
       }
-    ],
-    "verdict": "Keep as Workflow. Strict orchestration and deterministic cell-level writes require predictability, not agentic hallucination risks."
+    ]
   },
   "workflow_daily_dashboard": {
     "name": "2. Aviva Daily Summary Dashboard",
-    "description": "Scans the entire tracker state, categorizes 5 specific testing buckets, compiles actionable insights, and renders an Outlook-safe HTML report.",
-    "architecture_type": "Hybrid Cascade (Workflow + Agent)",
+    "description": "Hybrid Workflow + Agent pipeline running once daily. Reads master Excel tracker state, categorizes items into 5 operational buckets, compiles contextual recommendations via Claude, and renders Outlook-safe HTML emails.",
+    "verdict": "Hybrid Workflow + Agent. Data fetching and 5x categorization remain rule-based code paths. Insight generation routes to Claude Sonnet for deep contextual reasoning.",
     "monthly_volume": 30,
-    "input_tokens_avg": 85000,
-    "output_tokens_avg": 4500,
-    "primary_model": "claude-fable-5",
     "steps": [
       {
-        "id": "read_tracker",
+        "step_num": 1,
+        "name": "Fetch Full Tracker Snapshot",
         "type": "tool",
-        "name": "Fetch Tracker State",
-        "desc": "Ingests total 10k rows of current lab statuses.",
-        "input_tokens": 70000,
-        "output_tokens": 500,
-        "model_id": "deepseek-v4-pro",
-        "routing_rationale": "Massive context extraction. \u20b942/1M token rate preserves margin on heavy document reads. Asynchronous batching prevents 60 RPM limit crashes."
-      },
-      {
-        "id": "categorize",
-        "type": "llm",
-        "name": "5x Categorization (Parallel)",
-        "desc": "Groups lots into Overdue, Failed, Awaiting Lab B, etc.",
-        "input_tokens": 10000,
-        "output_tokens": 1000,
         "model_id": "gemini-3-6-flash",
-        "routing_rationale": "Default fast router for standard classification and routing."
-      },
-      {
-        "id": "compile_insights",
-        "type": "agent",
-        "name": "Compile Executive Insights",
-        "desc": "Agent reasons over trends to highlight vendor delays.",
-        "input_tokens": 4000,
-        "output_tokens": 2000,
-        "model_id": "kimi-k3",
-        "routing_rationale": "Financial/Compliance logic requires absolute SOTA accuracy (TAU Banking #1). Trading margin for precision is mandatory here to prevent regulatory liabilities."
-      },
-      {
-        "id": "render_html",
-        "type": "tool",
-        "name": "Render Outlook HTML",
-        "desc": "Generates strict inline-styled HTML. LLM output here breaks Outlook.",
-        "input_tokens": 500,
-        "output_tokens": 800,
-        "model_id": "gemini-3-6-flash",
-        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
-      },
-      {
-        "id": "send_dashboard",
-        "type": "tool",
-        "name": "Send Dashboard Email",
-        "desc": "Dispatches daily HTML report to leadership.",
-        "input_tokens": 500,
+        "input_tokens": 15000,
         "output_tokens": 200,
+        "desc": "Reads all rows from master lab tracker Excel sheet.",
+        "routing_rationale": "High context window (1M+) at low cost for reading daily tabular state."
+      },
+      {
+        "step_num": 2,
+        "name": "5x Categorization Branching",
+        "type": "llm",
         "model_id": "gemini-3-6-flash",
-        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
+        "input_tokens": 10000,
+        "output_tokens": 500,
+        "desc": "Groups items into: Overdue, Pending Review, Failed, Passed, Human Locked.",
+        "routing_rationale": "Fast parallel classification across structured rules."
+      },
+      {
+        "step_num": 3,
+        "name": "Compile Operational Insights",
+        "type": "agent",
+        "model_id": "claude-sonnet-4-6",
+        "input_tokens": 20000,
+        "output_tokens": 1500,
+        "desc": "Synthesizes vendor delay patterns, failure spikes, and actionable next steps.",
+        "routing_rationale": "High-level executive reasoning and clear prose synthesis."
+      },
+      {
+        "step_num": 4,
+        "name": "Render Outlook-Safe HTML",
+        "type": "tool",
+        "model_id": "gemini-3-6-flash",
+        "input_tokens": 5000,
+        "output_tokens": 2000,
+        "desc": "Packs findings into locked inline-styled HTML templates compatible with Word desktop engine.",
+        "routing_rationale": "Strict HTML template generation without hallucinated formatting."
+      },
+      {
+        "step_num": 5,
+        "name": "Dispatch Daily Briefing Email",
+        "type": "tool",
+        "model_id": "gemini-3-6-flash",
+        "input_tokens": 500,
+        "output_tokens": 50,
+        "desc": "Sends email to executive distribution list.",
+        "routing_rationale": "Deterministic M365 email dispatch."
       }
-    ],
-    "verdict": "Hybrid. Categorization and HTML rendering remain deterministic workflows. Insight Generation requires deep context reasoning and is upgraded to an Agent."
+    ]
   },
   "workflow_repeat_lot_detection": {
     "name": "3. Aviva UC3: Repeat Lot Detection (Agentic)",
-    "description": "Agent must maintain state spanning multiple runs. If a vendor lot was tested within 6 months, skip waivable tests. If it failed prior, mandate full retest.",
-    "architecture_type": "Persistent Agent",
-    "monthly_volume": 4500,
-    "input_tokens_avg": 45000,
-    "output_tokens_avg": 1800,
-    "primary_model": "claude-opus-5",
+    "description": "Persistent Agentic Loop. Tracks lot testing history over 6-month windows. Automatically waives redundant tests for trusted vendor lots or mandates full re-tests if a prior lot failed.",
+    "verdict": "Requires Persistent Agent. Workflows are point-in-time and cannot reason across months of past runs. Claude Haiku maintains state & temporal window awareness.",
+    "monthly_volume": 150,
     "steps": [
       {
-        "id": "ingest_lot",
-        "type": "tool",
-        "name": "Ingest New Lot",
-        "desc": "Receives new lot parameters.",
-        "input_tokens": 2000,
-        "output_tokens": 100,
-        "model_id": "deepseek-v4-pro",
-        "routing_rationale": "Massive context extraction. \u20b942/1M token rate preserves margin on heavy document reads. Asynchronous batching prevents 60 RPM limit crashes."
-      },
-      {
-        "id": "historical_search",
+        "step_num": 1,
+        "name": "Historical Lot Memory Search",
         "type": "agent",
-        "name": "Historical Memory Search",
-        "desc": "Queries vector DB for prior instances of this vendor lot.",
-        "input_tokens": 35000,
-        "output_tokens": 800,
-        "model_id": "claude-fable-5",
-        "routing_rationale": "Multi-step agentic state tracking requires superior context retention (63% Agentic Task Score). Prevents infinite loop hallucinations during complex cross-run memory tasks."
+        "model_id": "claude-haiku-4-5",
+        "input_tokens": 12000,
+        "output_tokens": 300,
+        "desc": "Searches vector store for same vendor lot numbers within last 180 days.",
+        "routing_rationale": "Temporal reasoning ('160 days = within 6 months window') and semantic search."
       },
       {
-        "id": "temporal_reasoning",
-        "type": "llm",
-        "name": "Temporal Math",
-        "desc": "Calculates if prior test was within 180-day waiver window.",
-        "input_tokens": 5000,
+        "step_num": 2,
+        "name": "Waiver Eligibility Reasoning",
+        "type": "agent",
+        "model_id": "claude-haiku-4-5",
+        "input_tokens": 8000,
         "output_tokens": 400,
-        "model_id": "kimi-k3",
-        "routing_rationale": "Financial/Compliance logic requires absolute SOTA accuracy (TAU Banking #1). Trading margin for precision is mandatory here to prevent regulatory liabilities."
+        "desc": "Evaluates material category, vendor rating, and prior test results.",
+        "routing_rationale": "Contextual decision branching on waiver rules vs risk score."
       },
       {
-        "id": "waiver_decision",
-        "type": "agent",
-        "name": "Waiver Execution",
-        "desc": "Applies material category rules and waives/mandates tests.",
-        "input_tokens": 3000,
-        "output_tokens": 500,
-        "model_id": "claude-fable-5",
-        "routing_rationale": "Multi-step agentic state tracking requires superior context retention (63% Agentic Task Score). Prevents infinite loop hallucinations during complex cross-run memory tasks."
+        "step_num": 3,
+        "name": "Execute Waiver / Retest Order",
+        "type": "tool",
+        "model_id": "gemini-3-6-flash",
+        "input_tokens": 1000,
+        "output_tokens": 100,
+        "desc": "Updates lab instruction queue and registers waiver reason in audit log.",
+        "routing_rationale": "Deterministic write to database."
+      },
+      {
+        "step_num": 4,
+        "name": "Notify QA Lead",
+        "type": "tool",
+        "model_id": "gemini-3-6-flash",
+        "input_tokens": 500,
+        "output_tokens": 50,
+        "desc": "Dispatches instant alert if a repeat lot fail is detected.",
+        "routing_rationale": "Notification dispatch."
       }
-    ],
-    "verdict": "Agent Required. Workflows are point-in-time. This requires tracking historical 6-month state and complex temporal logic across isolated runs."
+    ]
   },
   "workflow_two_lab_confirmation": {
     "name": "4. Aviva UC4: Two-Lab Confirmation (Agentic)",
-    "description": "Lab A fails -> send to Lab B -> wait days/weeks -> if both fail, Hard Rejection. Blocks the lot dynamically across time.",
-    "architecture_type": "Persistent Agent",
-    "monthly_volume": 1200,
-    "input_tokens_avg": 65000,
-    "output_tokens_avg": 2200,
-    "primary_model": "gpt-5-6-sol-max",
+    "description": "Multi-Step Asynchronous Agent. When Lab A fails a sample, agent holds lot in 'Awaiting Confirmation' state, matches incoming Lab B report days later, and executes hard rejection if both fail.",
+    "verdict": "Requires Persistent Agent. Workflows cannot 'wait' days or correlate separate incoming emails across time. Agent state spans across runs.",
+    "monthly_volume": 50,
     "steps": [
       {
-        "id": "lab_a_fail",
-        "type": "tool",
-        "name": "Lab A Failure Trigger",
-        "desc": "Initial failure detected.",
-        "input_tokens": 5000,
-        "output_tokens": 200,
-        "model_id": "gemini-3-6-flash",
-        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
-      },
-      {
-        "id": "suspend_lot",
+        "step_num": 1,
+        "name": "Initial Failure State Hold",
         "type": "agent",
-        "name": "Suspend Lot State",
-        "desc": "Agent marks lot 'Awaiting Lab B' and sets async sleeper.",
-        "input_tokens": 20000,
-        "output_tokens": 500,
-        "model_id": "claude-fable-5",
-        "routing_rationale": "Multi-step agentic state tracking requires superior context retention (63% Agentic Task Score). Prevents infinite loop hallucinations during complex cross-run memory tasks."
-      },
-      {
-        "id": "match_lab_b",
-        "type": "agent",
-        "name": "Cross-Email Match",
-        "desc": "Days later, agent matches new email to suspended lot.",
-        "input_tokens": 30000,
-        "output_tokens": 1000,
-        "model_id": "claude-fable-5",
-        "routing_rationale": "Multi-step agentic state tracking requires superior context retention (63% Agentic Task Score). Prevents infinite loop hallucinations during complex cross-run memory tasks."
-      },
-      {
-        "id": "conflict_reasoning",
-        "type": "llm",
-        "name": "Conflict Resolution",
-        "desc": "Reasons over parameter discrepancies between Lab A and Lab B.",
+        "model_id": "claude-haiku-4-5",
         "input_tokens": 10000,
+        "output_tokens": 300,
+        "desc": "Flags Lab A failure and initiates 2nd lab verification order.",
+        "routing_rationale": "Asynchronous state machine registration."
+      },
+      {
+        "step_num": 2,
+        "name": "Cross-Email Correlation Engine",
+        "type": "agent",
+        "model_id": "claude-haiku-4-5",
+        "input_tokens": 15000,
         "output_tokens": 500,
+        "desc": "Matches incoming Lab B email (arriving 4 days later) with original Lab A ticket.",
+        "routing_rationale": "Cross-run entity resolution across separate email threads."
+      },
+      {
+        "step_num": 3,
+        "name": "Dual-Failure Parameter Comparison",
+        "type": "agent",
         "model_id": "kimi-k3",
-        "routing_rationale": "Financial/Compliance logic requires absolute SOTA accuracy (TAU Banking #1). Trading margin for precision is mandatory here to prevent regulatory liabilities."
+        "input_tokens": 8000,
+        "output_tokens": 300,
+        "desc": "Compares chemical parameter variances between Lab A and Lab B reports.",
+        "routing_rationale": "Absolute precision required for hard rejection decisions (#1 TAU Banking score)."
+      },
+      {
+        "step_num": 4,
+        "name": "Execute Hard Rejection & Block Lot",
+        "type": "tool",
+        "model_id": "gemini-3-6-flash",
+        "input_tokens": 1000,
+        "output_tokens": 100,
+        "desc": "Locks lot in ERP system, prevents warehouse release, and notifies compliance.",
+        "routing_rationale": "Deterministic ERP lock API execution."
       }
-    ],
-    "verdict": "Agent Required. Workflows cannot 'wait' for weeks. Agents persist state, correlate separate emails across time, and reason over discrepancies."
+    ]
   },
   "workflow_proactive_lab_comms": {
     "name": "5. Aviva UC5: Proactive Lab Comms (Agentic)",
-    "description": "Calculates per-lot ETAs based on lab SLA (e.g., Brighton=5d). Schedules proactive follow-ups. Parses lab replies for revised ETAs.",
-    "architecture_type": "Autonomous Agent",
-    "monthly_volume": 8500,
-    "input_tokens_avg": 12000,
-    "output_tokens_avg": 800,
-    "primary_model": "kimi-k3",
+    "description": "Autonomous Communication Agent. Tracks per-lab SLAs (Brighton = 5d, Eurofins = 7d), schedules dynamic follow-up emails 2 days prior to ETA, parses unstructured lab replies, and updates revised ETAs.",
+    "verdict": "Requires Autonomous Agent. Dynamic schedule calculation, unstructured email reply parsing, and natural conversation loops require agentic intelligence.",
+    "monthly_volume": 200,
     "steps": [
       {
-        "id": "calc_eta",
-        "type": "llm",
-        "name": "Dynamic SLA Math",
-        "desc": "Calculates exact ETA date based on lab-specific SLAs.",
+        "step_num": 1,
+        "name": "SLA & ETA Calculation",
+        "type": "agent",
+        "model_id": "claude-haiku-4-5",
         "input_tokens": 4000,
         "output_tokens": 200,
-        "model_id": "kimi-k3",
-        "routing_rationale": "Financial/Compliance logic requires absolute SOTA accuracy (TAU Banking #1). Trading margin for precision is mandatory here to prevent regulatory liabilities."
+        "desc": "Computes expected turnaround times per lab vendor and schedules outreach.",
+        "routing_rationale": "Dynamic schedule planning based on historical lab turnaround times."
       },
       {
-        "id": "schedule_outreach",
+        "step_num": 2,
+        "name": "Consolidated Outreach Dispatch",
         "type": "tool",
-        "name": "Schedule Cron",
-        "desc": "Sets a reminder 2 days prior to ETA.",
-        "input_tokens": 1000,
-        "output_tokens": 100,
         "model_id": "gemini-3-6-flash",
-        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
-      },
-      {
-        "id": "draft_email",
-        "type": "llm",
-        "name": "Consolidate Lots",
-        "desc": "Agent bundles multiple delayed lots for the same lab into one email.",
-        "input_tokens": 5000,
-        "output_tokens": 400,
-        "model_id": "gemini-3-6-flash",
-        "routing_rationale": "Default fast router for standard classification and routing."
-      },
-      {
-        "id": "parse_reply",
-        "type": "agent",
-        "name": "Parse Reply & Update",
-        "desc": "Reads lab reply, extracts new dates, updates DB, or escalates.",
         "input_tokens": 2000,
-        "output_tokens": 100,
+        "output_tokens": 300,
+        "desc": "Gathers all pending samples for a single lab into one professional status query email.",
+        "routing_rationale": "Fast email generation and batching."
+      },
+      {
+        "step_num": 3,
+        "name": "Parse Unstructured Lab Reply",
+        "type": "agent",
+        "model_id": "claude-haiku-4-5",
+        "input_tokens": 5000,
+        "output_tokens": 250,
+        "desc": "Extracts revised completion dates and bottleneck reasons from human lab manager emails.",
+        "routing_rationale": "Unstructured conversational understanding and date/entity extraction."
+      },
+      {
+        "step_num": 4,
+        "name": "Update ETA Tracker & Escalate",
+        "type": "tool",
         "model_id": "gemini-3-6-flash",
-        "routing_rationale": "Tool execution and JSON generation requires sub-second TTFT latency (243 tok/s). Premium reasoning models waste margin on deterministic tool calls."
+        "input_tokens": 1000,
+        "output_tokens": 50,
+        "desc": "Updates revised ETAs in master dashboard; triggers alert if lab is unresponsive.",
+        "routing_rationale": "Database state update & alert dispatch."
       }
-    ],
-    "verdict": "Agent Required. Parsing unstructured human replies to extract dynamic revised ETAs and updating database state autonomously is beyond deterministic DAG capability."
+    ]
   }
 };
 
