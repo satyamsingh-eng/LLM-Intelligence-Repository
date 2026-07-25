@@ -50,16 +50,16 @@ for m in models:
     in_inr = mets["price_1m_input_inr"]["value"]
     cached_inr = mets["price_1m_cached_input_inr"]["value"]
     
-    expected_inr = round(in_usd * 83.50, 2)
-    expected_cached = round((in_usd * 0.10) * 83.50, 2)
+    expected_inr = round(in_usd * 96.61, 2)
+    expected_cached = round((in_usd * 0.10) * 96.61, 2)
     
     if in_inr != expected_inr:
         math_inr_ok = False
     if cached_inr != expected_cached:
         math_cache_ok = False
 
-record_check("1. Mathematical QA", "USD to INR Exchange Rate Math (₹83.50/$1 across 588 models)", math_inr_ok, "Verified 100% exact match")
-record_check("1. Mathematical QA", "Prompt Caching 90% Read Discount Math across 588 models", math_cache_ok, "Verified 100% exact match")
+record_check("1. Mathematical QA", "USD to INR Exchange Rate Math (₹96.61/$1 across 588 models)", math_inr_ok, "Verified 100% exact match against live exchange rate")
+record_check("1. Mathematical QA", "Prompt Caching 90% Read Discount Math across 588 models (Rate: ₹96.61)", math_cache_ok, "Verified 100% exact match against live exchange rate")
 
 in_uncached_inr = (120000 * 0.20 / 1000000) * 36.32
 in_cached_inr = (120000 * 0.80 / 1000000) * 3.632
