@@ -1,0 +1,63 @@
+{
+  "system_metadata": {
+    "versioning_engine": "Hermes LSKR v1.0"
+  },
+  "sources": {
+    "anthropic_pricing": {
+      "url": "https://www.anthropic.com/pricing",
+      "latest_hash": "7b5884bbc36f6c6e413179bee5cb9dddc0e4dce78e660f3ab905b6be26029344",
+      "last_checked": "2026-07-25T09:31:13.042021+00:00",
+      "last_updated": "2026-07-25T09:31:13.042021+00:00",
+      "history": [
+        {
+          "timestamp": "2026-07-25T09:31:13.042021+00:00",
+          "hash": "7b5884bbc36f6c6e413179bee5cb9dddc0e4dce78e660f3ab905b6be26029344",
+          "snapshot_file": "anthropic_pricing_7b5884bbc36f.html",
+          "status": 200
+        }
+      ]
+    },
+    "openai_pricing": {
+      "url": "https://openai.com/api/pricing/",
+      "latest_hash": "dfa19e2aa079fd7640545662e3a18327f737f3792980b0d514a310e2375f211e",
+      "last_checked": "2026-07-25T09:31:13.471761+00:00",
+      "last_updated": "2026-07-25T09:31:13.471761+00:00",
+      "history": [
+        {
+          "timestamp": "2026-07-25T09:31:13.471761+00:00",
+          "hash": "dfa19e2aa079fd7640545662e3a18327f737f3792980b0d514a310e2375f211e",
+          "snapshot_file": "openai_pricing_dfa19e2aa079.html",
+          "status": 200
+        }
+      ]
+    },
+    "google_vertex_pricing": {
+      "url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+      "latest_hash": "4036e86afcd324afd0bd01ce315ed973f8e35aba3c949faf6f702fc25db0c214",
+      "last_checked": "2026-07-25T09:31:15.947963+00:00",
+      "last_updated": "2026-07-25T09:31:15.947963+00:00",
+      "history": [
+        {
+          "timestamp": "2026-07-25T09:31:15.947963+00:00",
+          "hash": "4036e86afcd324afd0bd01ce315ed973f8e35aba3c949faf6f702fc25db0c214",
+          "snapshot_file": "google_vertex_pricing_4036e86afcd3.html",
+          "status": 200
+        }
+      ]
+    },
+    "artificial_analysis_leaderboard": {
+      "url": "https://artificialanalysis.ai/leaderboards/models",
+      "latest_hash": "82907865233f78fbdb3bc87c40c724f5ea862b3eb9f93149d891e5e02f9b3c91",
+      "last_checked": "2026-07-25T09:31:17.301770+00:00",
+      "last_updated": "2026-07-25T09:31:17.301770+00:00",
+      "history": [
+        {
+          "timestamp": "2026-07-25T09:31:17.301770+00:00",
+          "hash": "82907865233f78fbdb3bc87c40c724f5ea862b3eb9f93149d891e5e02f9b3c91",
+          "snapshot_file": "artificial_analysis_leaderboard_82907865233f.html",
+          "status": 200
+        }
+      ]
+    }
+  }
+}

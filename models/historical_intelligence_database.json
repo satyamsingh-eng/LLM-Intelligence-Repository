@@ -1,0 +1,14 @@
+{
+  "system_metadata": {
+    "engine": "Hermes Historical Intelligence Tracker v1.0",
+    "mission": "Never overwrite data. Track changes over time across Pricing, Benchmarks, Features, Context Windows, and API updates."
+  },
+  "historical_records": {
+    "pricing": [],
+    "benchmarks": [],
+    "context_windows": [],
+    "rate_limits": [],
+    "features": [],
+    "deprecations": []
+  }
+}

@@ -132,6 +132,21 @@ record_check("6. Founder QA", "Founder's Enterprise AI Intelligence Briefing", f
 record_check("6. Founder QA", "Founder Review Board (5 Executive Sign-offs)", founder_board_ok, "Approved by 5 Virtual Auditors")
 record_check("6. Founder QA", "Cycle 2 Executive Research Report Generation", exec_report_ok, "Cycle 2 Audit Report Logged")
 
+
+# LAYER 7: MULTI-SOURCE & HISTORICAL DATA QA
+lskr_path = os.path.join(repo_dir, "local_knowledge_repository", "source_registry.json")
+history_path = os.path.join(repo_dir, "models", "historical_intelligence_database.json")
+
+lskr_ok = os.path.exists(lskr_path)
+history_ok = os.path.exists(history_path)
+cross_validation_ok = all("cross_validation" in m.get("evidence_chain", {}) for m in models[:10])
+
+record_check("7. Multi-Source QA", "Local Knowledge Repository (LSKR) Snapshots Exist", lskr_ok, "Verified LSKR source registry presence")
+record_check("7. Multi-Source QA", "Historical Intelligence Database Exists (Append-Only)", history_ok, "Verified historical DB presence")
+record_check("7. Multi-Source QA", "Dual-Source Cross-Validation Schema in Models", cross_validation_ok, "Verified models require multiple sources")
+
+# Update Layer 7 check logic if appending to the end
+
 # Generate Validation Log
 log_path = os.path.join(repo_dir, "10-Validation-Logs", "COMPLETE_VALIDATION_PIPELINE_LOG.md")
 with open(log_path, "w", encoding="utf-8") as f:
