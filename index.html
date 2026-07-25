@@ -1918,41 +1918,85 @@
       runSim();
     }
 
+    
+    
     function runSim() {
-      const idA = document.getElementById('simModelA').value;
-      const idB = document.getElementById('simModelB').value;
-      const modA = models.find(m => m.id === idA) || models[0];
-      const modB = models.find(m => m.id === idB) || models[1];
-
-      document.getElementById('nameA').innerText = modA.name;
-      document.getElementById('nameB').innerText = modB.name;
-
       const inTok = parseFloat(document.getElementById('simInTok').value) || 0;
       const outTok = parseFloat(document.getElementById('simOutTok').value) || 0;
       const cachePct = (parseFloat(document.getElementById('simCache').value) || 0) / 100;
-      const runs = parseFloat(document.getElementById('simRuns').value) || 1;
+      const runs = parseFloat(document.getElementById('simRuns').value) || 0;
 
-      const baseIn = inTok * (1 - cachePct);
+      const modA_id = document.getElementById('simModelA').value;
+      const modB_id = document.getElementById('simModelB').value;
+
+      const modA = models.find(m => m.id === modA_id) || models[0];
+      const modB = models.find(m => m.id === modB_id) || models[1];
+
+      // Update Name Labels
+      if (document.getElementById('nameA')) document.getElementById('nameA').innerText = modA.name;
+      if (document.getElementById('nameB')) document.getElementById('nameB').innerText = modB.name;
+
       const cachedIn = inTok * cachePct;
+      const baseIn = inTok - cachedIn;
 
+      // Model A Token Math
       const costA = ((baseIn / 1000000) * modA.inInr) + ((cachedIn / 1000000) * modA.cachedInr) + ((outTok / 1000000) * modA.outInr);
       const monthlyA = costA * runs;
       const lakhsA = monthlyA / 100000;
 
+      // Model B Token Math
       const costB = ((baseIn / 1000000) * modB.inInr) + ((cachedIn / 1000000) * modB.cachedInr) + ((outTok / 1000000) * modB.outInr);
       const monthlyB = costB * runs;
       const lakhsB = monthlyB / 100000;
 
-      document.getElementById('costA').innerText = "₹" + costA.toFixed(2);
-      document.getElementById('lakhsA').innerText = "₹" + lakhsA.toFixed(2) + " Lakhs / month";
+      // Update Individual Cost Displays
+      if (document.getElementById('costA')) document.getElementById('costA').innerText = "₹" + costA.toFixed(2);
+      if (document.getElementById('lakhsA')) document.getElementById('lakhsA').innerText = "₹" + lakhsA.toFixed(2) + " Lakhs / month";
 
-      document.getElementById('costB').innerText = "₹" + costB.toFixed(2);
-      document.getElementById('lakhsB').innerText = "₹" + lakhsB.toFixed(2) + " Lakhs / month";
+      if (document.getElementById('costB')) document.getElementById('costB').innerText = "₹" + costB.toFixed(2);
+      if (document.getElementById('lakhsB')) document.getElementById('lakhsB').innerText = "₹" + lakhsB.toFixed(2) + " Lakhs / month";
 
-      const diffLakhs = (monthlyB - monthlyA) / 100000;
-      document.getElementById('savingsText').innerText = "₹" + (diffLakhs > 0 ? diffLakhs.toFixed(2) : "0.00") + " Lakhs / month";
-      document.getElementById('savingsDesc').innerHTML = "Routing through <strong>" + modA.name + "</strong> instead of " + modB.name + " saves <strong style='color:#0071e3;'>₹" + (diffLakhs * 12).toFixed(2) + " Lakhs annually</strong>.";
+      // Difference Math: Model B (Baseline) - Model A (Target Route)
+      const diffMonthlyLakhs = lakhsB - lakhsA;
+      const diffAnnualLakhs = diffMonthlyLakhs * 12;
+
+      const savingsElem = document.getElementById('savingsText');
+      const descElem = document.getElementById('savingsDesc') || document.getElementById('verdictText');
+
+      if (diffMonthlyLakhs > 0) {
+        // Model A is CHEAPER than Model B -> POSITIVE SAVINGS
+        const pctSaved = costB > 0 ? ((costB - costA) / costB * 100).toFixed(1) : "0.0";
+        if (savingsElem) {
+          savingsElem.style.color = "#30d158";
+          savingsElem.innerText = "₹" + diffMonthlyLakhs.toFixed(2) + " Lakhs / month";
+        }
+        if (descElem) {
+          descElem.innerHTML = `Routing through <strong>${modA.name}</strong> instead of <strong>${modB.name}</strong> saves <span style="color:#30d158; font-weight:700;">₹${diffAnnualLakhs.toFixed(2)} Lakhs annually</span> (${pctSaved}% cost reduction).`;
+        }
+      } else if (diffMonthlyLakhs < 0) {
+        // Model A is MORE EXPENSIVE than Model B -> EXTRA COST INCURRED
+        const extraMonthly = Math.abs(diffMonthlyLakhs);
+        const extraAnnual = Math.abs(diffAnnualLakhs);
+        if (savingsElem) {
+          savingsElem.style.color = "#ff453a";
+          savingsElem.innerText = "-₹" + extraMonthly.toFixed(2) + " Lakhs / month";
+        }
+        if (descElem) {
+          descElem.innerHTML = `<span style="color:#ff453a; font-weight:700;">Cost Warning:</span> <strong>${modA.name}</strong> is more expensive than <strong>${modB.name}</strong>, increasing cost by <span style="color:#ff453a; font-weight:700;">₹${extraAnnual.toFixed(2)} Lakhs annually</span> (+₹${extraMonthly.toFixed(2)} Lakhs/mo). Select a lower-cost SOTA model like Kimi K3 or Gemini 3.6 Flash for Model A.`;
+        }
+      } else {
+        // Equal Cost
+        if (savingsElem) {
+          savingsElem.style.color = "#86868b";
+          savingsElem.innerText = "₹0.00 Lakhs / month";
+        }
+        if (descElem) {
+          descElem.innerHTML = `<strong>${modA.name}</strong> and <strong>${modB.name}</strong> have identical calculated token costs for this workload.`;
+        }
+      }
     }
+
+
 
     function renderWorkflowCanvas() {
       const wfKey = document.getElementById('wfSelect').value;
