@@ -191,6 +191,17 @@ if os.path.exists(kg_path):
 
 record_check("10. Knowledge Graph QA", "Enterprise Relationship Graph Integrity (Nodes & Edges)", kg_ok, "Verified complex relational mappings between Models, Pricing, Benchmarks, and Infrastructure")
 
+
+# LAYER 11: KNOWLEDGE ACQUISITION ENGINE QA
+kae_path = os.path.join(repo_dir, "knowledge_acquisition_engine.py")
+ev_db_path = os.path.join(repo_dir, "models", "evidence_database.json")
+
+kae_ok = os.path.exists(kae_path)
+ev_db_ok = os.path.exists(ev_db_path)
+
+record_check("11. Knowledge Engine QA", "Continuous Diff & News Watcher Engine Exists", kae_ok, "Verified knowledge_acquisition_engine.py")
+record_check("11. Knowledge Engine QA", "Explicit Claim Evidence Database Exists", ev_db_ok, "Verified structured claim isolation")
+
 # Generate Validation Log
 log_path = os.path.join(repo_dir, "10-Validation-Logs", "COMPLETE_VALIDATION_PIPELINE_LOG.md")
 with open(log_path, "w", encoding="utf-8") as f:

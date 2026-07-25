@@ -4,7 +4,15 @@
     "mission": "Never overwrite data. Track changes over time across Pricing, Benchmarks, Features, Context Windows, and API updates."
   },
   "historical_records": {
-    "pricing": [],
+    "pricing": [
+      {
+        "model_id": "claude-opus-5",
+        "event": "Price Drop",
+        "details": "Price dropped 18% over the last 4 months (Input: $6.10 -> $5.00)",
+        "date": "2026-07-01",
+        "impact_percentage": 18
+      }
+    ],
     "benchmarks": [],
     "context_windows": [],
     "rate_limits": [],

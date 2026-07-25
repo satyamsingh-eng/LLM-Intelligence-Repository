@@ -41,3 +41,22 @@ Every section in this repository must contain:
 
 ## QUALITY GATES
 Before accepting any improvement ask: Is it newer? Is it official? Is it verified? Is it independently confirmed? Does it improve SARVAX? Does it improve enterprise decision making? If NO, reject it.
+
+---
+
+## Phase 16: The Knowledge Acquisition Engine Directive (The Most Important Rule)
+
+Every iteration must produce one of the following outcomes:
+1. **New Knowledge** (e.g., discovered a new framework or model)
+2. **Improved Knowledge** (e.g., deepened an explanation from 1 sentence to 14 points)
+3. **Corrected Knowledge** (e.g., fixed a math error or broken link)
+4. **Historical Knowledge** (e.g., tracked a price drop or feature deprecation)
+5. **Rejected Knowledge** (e.g., successfully invalidated a false community claim)
+
+If an iteration produces none of these outcomes, it was not a productive research cycle.
+**Never optimize for crawling websites.** Optimize for increasing verified knowledge.
+Stop researching only when additional authoritative sources produce no meaningful new evidence.
+Every important claim must be supported by multiple independent sources, with official documentation taking precedence whenever available.
+Maintain a versioned local intelligence database so future research builds on verified knowledge instead of starting from scratch.
+
+*Hermes is a Knowledge Acquisition Engine, not a crawler.*

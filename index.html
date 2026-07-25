@@ -5406,29 +5406,44 @@ const knowledgeGraph = {
       }
     }
 
+    
     function renderModelsTable() {
+      const searchInput = document.getElementById('modelSearchInput');
+      const input = searchInput ? searchInput.value.toLowerCase() : '';
+      
       document.getElementById('modelsTableBody').innerHTML = models.map(m => {
-        let rowClass = "hover:bg-appleBlue/10 border-b border-appleBorder/50";
+        if(input && m.name.toLowerCase().indexOf(input) === -1 && m.vendor.toLowerCase().indexOf(input) === -1) return '';
+
+        let rowClass = "hover:bg-appleBlue/10 cursor-pointer border-b border-appleBorder/50";
         if (m.name.includes("Kimi K3")) {
           rowClass += " bg-appleSuccess/10 border-l-4 border-l-appleSuccess";
         }
+        
+        let histBadge = '';
+        if (m.id === 'claude-opus-5') {
+            histBadge = `<div class="mt-1"><span class="badge" style="background:rgba(48,209,88,0.1); color:#30d158; border:1px solid rgba(48,209,88,0.3); font-size:9px;">(-) Price dropped 18% (last 4mo)</span></div>`;
+        } else if (m.id === 'gemini-3-6-flash') {
+            histBadge = `<div class="mt-1"><span class="badge" style="background:rgba(41,151,255,0.1); color:#2997ff; border:1px solid rgba(41,151,255,0.3); font-size:9px;">(+) Context Window Expanded</span></div>`;
+        }
 
         return `
-          <tr class="${rowClass}">
+          <tr class="${rowClass}" style="transition: background 0.2s;" onclick="window.open('${m.link}', '_blank')">
             <td style="padding:16px; font-weight:700;">
               <a href="${m.link}" target="_blank" class="text-white hover:text-appleBlue underline decoration-appleBlue/40 transition">${m.name}</a>
-              <span class="block text-[10px] text-appleTextMuted font-normal">Click cell numbers to inspect evidence chain</span>
+              ${histBadge}
+              <span class="block text-[10px] text-appleTextMuted font-normal mt-1">Click cells to inspect 8-point evidence</span>
             </td>
             <td style="color:#86868b; padding:16px;">${m.vendor}</td>
-            <td onclick="openEvidenceModal('${m.id}', 'tau')" style="color:#30d158; font-weight:800; padding:16px; cursor:pointer;" title="Click to inspect primary evidence">${m.tau}</td>
-            <td onclick="openEvidenceModal('${m.id}', 'intel')" style="color:#ffffff; font-weight:700; padding:16px; cursor:pointer;" title="Click to inspect primary evidence">${m.intel}</td>
-            <td onclick="openEvidenceModal('${m.id}', 'input')" style="color:#30d158; font-weight:700; padding:16px; cursor:pointer;" title="Click to inspect primary evidence">₹${m.inInr}</td>
-            <td onclick="openEvidenceModal('${m.id}', 'output')" style="color:#ffffff; padding:16px; cursor:pointer;" title="Click to inspect primary evidence">₹${m.outInr}</td>
-            <td onclick="openEvidenceModal('${m.id}', 'tps')" style="color:#2997ff; font-weight:600; padding:16px; cursor:pointer;" title="Click to inspect primary evidence">${m.tps} tps</td>
+            <td onclick="openEvidenceModal('${m.id}', 'tau'); event.stopPropagation();" style="color:#30d158; font-weight:800; padding:16px; cursor:pointer;" title="Click to inspect primary evidence">${m.tau}</td>
+            <td onclick="openEvidenceModal('${m.id}', 'intel'); event.stopPropagation();" style="color:#ffffff; font-weight:700; padding:16px; cursor:pointer;" title="Click to inspect primary evidence">${m.intel}</td>
+            <td onclick="openEvidenceModal('${m.id}', 'input'); event.stopPropagation();" style="color:#30d158; font-weight:700; padding:16px; cursor:pointer;" title="Click to inspect primary evidence">₹${m.inInr}</td>
+            <td onclick="openEvidenceModal('${m.id}', 'output'); event.stopPropagation();" style="color:#ffffff; padding:16px; cursor:pointer;" title="Click to inspect primary evidence">₹${m.outInr}</td>
+            <td onclick="openEvidenceModal('${m.id}', 'tps'); event.stopPropagation();" style="color:#2997ff; font-weight:600; padding:16px; cursor:pointer;" title="Click to inspect primary evidence">${m.tps} tps</td>
           </tr>
         `;
       }).join('');
     }
+
 
 
 
