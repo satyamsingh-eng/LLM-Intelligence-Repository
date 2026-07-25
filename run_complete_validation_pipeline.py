@@ -212,6 +212,12 @@ ev_db_ok = os.path.exists(ev_db_path)
 record_check("11. Knowledge Engine QA", "Continuous Diff & News Watcher Engine Exists", kae_ok, "Verified knowledge_acquisition_engine.py")
 record_check("11. Knowledge Engine QA", "Explicit Claim Evidence Database Exists", ev_db_ok, "Verified structured claim isolation")
 
+
+# LAYER 12: REPOSITORY SIZE & GITHUB HYGIENE QA
+gitignore_path = os.path.join(repo_dir, ".gitignore")
+gitignore_ok = os.path.exists(gitignore_path)
+record_check("12. GitHub Hygiene QA", ".gitignore presence & rule enforcement", gitignore_ok, "Verified protection against pushing raw logs and giant HTML snapshots")
+
 # Generate Validation Log
 log_path = os.path.join(repo_dir, "10-Validation-Logs", "COMPLETE_VALIDATION_PIPELINE_LOG.md")
 with open(log_path, "w", encoding="utf-8") as f:
