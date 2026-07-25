@@ -117,12 +117,10 @@ def send_whatsapp_summary():
         
         message = "\n".join(msg_lines)
         
-        # Use Hermes WhatsApp bridge (if available)
-        # Try multiple delivery methods
+        # Use local WhatsApp bridge (port 3000) - per memory: POST localhost:3000/send-media
         import requests
         import json as json_lib
         
-        # Method 1: Local WhatsApp bridge (if running on localhost:3000)
         try:
             payload = {
                 "chatId": "31400673689742@lid",
@@ -133,20 +131,14 @@ def send_whatsapp_summary():
             if resp.status_code == 200:
                 print("📱 WhatsApp sent via local bridge")
                 return
-        except:
-            pass
+        except Exception as e:
+            print(f"📱 Local bridge failed: {e}")
         
-        # Method 2: Use hermes CLI if available
-        try:
-            subprocess.run([
-                "hermes", "send", "whatsapp", "31400673689742@lid", message
-            ], timeout=15, check=False)
-            print("📱 WhatsApp sent via hermes CLI")
-            return
-        except:
-            pass
-        
-        print("📱 WhatsApp: No delivery method available (logged locally)")
+        # Fallback: log to file for manual review
+        whatsapp_log = os.path.join(repo_dir, "10-Validation-Logs", "WHATSAPP_NOTIFICATIONS.log")
+        with open(whatsapp_log, "a", encoding="utf-8") as f:
+            f.write(f"\n---\n{now_str}\n{message}\n")
+        print("📱 WhatsApp: Logged to WHATSAPP_NOTIFICATIONS.log (local bridge not reachable)")
         
     except Exception as e:
         print(f"📱 WhatsApp send error: {e}")
