@@ -456,28 +456,28 @@
 
       <div class="chart-box" style="background:#1c1c1e; border-color:rgba(255,255,255,0.1); margin-top:32px;">
         <h4 style="color:#1d1d1f;">1. Intelligence Index Score (Higher = Better)</h4>
-        <canvas id="intelligenceChart" height="380"></canvas>
+        <div style="position: relative; height: 500px; width: 100%;"><canvas id="intelligenceChart"></canvas></div>
       </div>
 
       <div class="card-grid" style="margin-top:24px;">
         <div class="chart-box" style="background:#1c1c1e; border-color:rgba(255,255,255,0.1);">
           <h4 style="color:#1d1d1f;">2. Agentic Task &amp; Tool Scores (%)</h4>
-          <canvas id="agenticChart" height="320"></canvas>
+          <div style="position: relative; height: 500px; width: 100%;"><canvas id="agenticChart"></canvas></div>
         </div>
         <div class="chart-box" style="background:#1c1c1e; border-color:rgba(255,255,255,0.1);">
           <h4 style="color:#1d1d1f;">3. Model Reliability Radar Chart</h4>
-          <canvas id="reliabilityChart" height="320"></canvas>
+          <div style="position: relative; height: 500px; width: 100%;"><canvas id="reliabilityChart"></canvas></div>
         </div>
       </div>
 
       <div class="card-grid" style="margin-top:24px;">
         <div class="chart-box" style="background:#1c1c1e; border-color:rgba(255,255,255,0.1);">
           <h4 style="color:#1d1d1f;">4. Input Token Cost per 1M (₹ INR)</h4>
-          <canvas id="inputCostChart" height="300"></canvas>
+          <div style="position: relative; height: 500px; width: 100%;"><canvas id="inputCostChart"></canvas></div>
         </div>
         <div class="chart-box" style="background:#1c1c1e; border-color:rgba(255,255,255,0.1);">
           <h4 style="color:#1d1d1f;">5. Output Token Cost per 1M (₹ INR)</h4>
-          <canvas id="outputCostChart" height="300"></canvas>
+          <div style="position: relative; height: 500px; width: 100%;"><canvas id="outputCostChart"></canvas></div>
         </div>
       </div>
     </div>
@@ -5220,6 +5220,7 @@ const knowledgeGraph = {
     }
 
     
+    
     function populateSelects() {
       const selA = document.getElementById('simModelA');
       const selB = document.getElementById('simModelB');
@@ -5231,8 +5232,10 @@ const knowledgeGraph = {
       if (wfSelect) {
         const wfOptions = Object.keys(workflows).map((k, i) => `<option value="${k}">${i+1}. ${workflows[k].name}</option>`).join('');
         wfSelect.innerHTML = wfOptions;
+        wfSelect.value = Object.keys(workflows)[0];
       }
     }
+
 
 
     function updateLabels() {
@@ -5331,45 +5334,7 @@ const knowledgeGraph = {
 
 
 
-    function renderWorkflowCanvas() {
-      const wfKey = document.getElementById('wfSelect').value;
-      const wf = workflows[wfKey] || workflows['email_automation'];
-      const canvas = document.getElementById('wfCanvas');
-
-      let html = '';
-      wf.steps.forEach((s, idx) => {
-        let priceIn = 36.32; let priceOut = 72.65;
-        if (s.model.includes('gemini-3-6-flash')) { priceIn = 6.26; priceOut = 25.05; }
-        else if (s.model.includes('kimi')) { priceIn = 250.50; priceOut = 1252.50; }
-
-        const cachePct = (s.cache_hit_pct || 80) / 100;
-        const baseIn = s.input_tokens * (1 - cachePct);
-        const cachedIn = s.input_tokens * cachePct;
-        const stepCost = ((baseIn / 1000000) * priceIn) + ((cachedIn / 1000000) * (priceIn * 0.10)) + ((s.output_tokens / 1000000) * priceOut);
-
-        let borderStyle = "border:1px solid #333336; background:#1c1c1e;";
-        if (simState.running && simState.currentStep === idx) {
-          borderStyle = "border:2px solid #2997ff; background:rgba(41, 151, 255, 0.12); box-shadow:0 0 15px rgba(41, 151, 255, 0.3);";
-        } else if (simState.currentStep > idx) {
-          borderStyle = "border:1px solid #30d158; background:rgba(48, 209, 88, 0.05);";
-        }
-
-        html += `
-          <div style="padding:16px; border-radius:12px; ${borderStyle} display:flex; justify-content:space-between; align-items:center;">
-            <div>
-              <div style="font-weight:700; font-size:14px; color:#ffffff;">Step ${s.step_num}: ${s.name}</div>
-              <div style="font-size:12px; color:#86868b; margin-top:2px;">${s.task}</div>
-            </div>
-            <div style="text-align:right;">
-              <span style="padding:2px 8px; border-radius:4px; background:#000; color:#2997ff; font-weight:700; font-size:11px; border:1px solid #333336;">${s.model_name}</span>
-              <div style="font-weight:800; color:#30d158; font-size:14px; margin-top:4px;">₹${stepCost.toFixed(3)}</div>
-            </div>
-          </div>
-        `;
-      });
-
-      canvas.innerHTML = html;
-    }
+    
 
     
     function playSim() {
@@ -5444,7 +5409,7 @@ const knowledgeGraph = {
       document.getElementById('hudCache').innerText = "₹0.000";
       document.getElementById('statusBadge').innerText = "READY TO SIMULATE";
 
-      renderWorkflowCanvas();
+      
     }
 
     
@@ -5582,66 +5547,91 @@ const knowledgeGraph = {
 
 
 
+    
     function renderCharts() {
-      const darkGrid = { color: 'rgba(0,0,0,0.06)' };
+      const darkGrid = { color: 'rgba(255,255,255,0.06)' };
       const mutedTicks = { color: '#86868b' };
-
-      // 1. Intelligence Index Chart
-      new Chart(document.getElementById('intelligenceChart'), {
-        type: 'bar',
-        data: {
-          labels: ['Claude Opus 5', 'GPT-5.6 Sol', 'Grok 4.5', 'Claude Sonnet 4.6', 'Gemini 3.5 Flash', 'GLM-4.7', 'Qwen 3.7 Max', 'Kimi K3', 'DeepSeek V4 Pro'],
-          datasets: [{ data: [60.7, 59.0, 54.0, 53.0, 50.0, 51.0, 46.0, 44.0, 44.0], backgroundColor: '#0071e3', borderRadius: 6 }]
-        },
-        options: { indexAxis: 'y', responsive: true, plugins: { legend: { display: false } }, scales: { x: { grid: darkGrid, ticks: mutedTicks }, y: { grid: { display: false }, ticks: mutedTicks } } }
-      });
-
-      // 2. Agentic & Tool Use Chart
-      new Chart(document.getElementById('agenticChart'), {
-        type: 'bar',
-        data: {
-          labels: ['Claude Opus 5', 'GPT-5.6 Sol', 'Kimi K3', 'GLM-4.7', 'DeepSeek V4 Pro', 'Gemini 3.6 Flash'],
-          datasets: [
-            { label: 'TAU Banking', data: [32.78, 32.99, 33.40, 28.50, 26.00, 22.00], backgroundColor: '#30d158', borderRadius: 4 },
-            { label: 'SWE-bench (%)', data: [85.0, 90.0, 52.0, 88.0, 64.0, 58.0], backgroundColor: '#0071e3', borderRadius: 4 }
-          ]
-        },
-        options: { responsive: true, plugins: { legend: { labels: { color: '#86868b' } } }, scales: { y: { grid: darkGrid, ticks: mutedTicks }, x: { grid: { display: false }, ticks: mutedTicks } } }
-      });
-
       
+      // We will map models dynamically, sorted by different metrics.
+      // 1. Intelligence Index
+      let intelModels = [...models].filter(m => m.intel > 0).sort((a,b) => b.intel - a.intel).slice(0, 15);
+      const intelCanvas = document.getElementById('intelligenceChart');
+      if (intelCanvas) {
+          new Chart(intelCanvas, {
+            type: 'bar',
+            data: {
+              labels: intelModels.map(m => m.name.split(' (')[0]),
+              datasets: [{ 
+                  data: intelModels.map(m => m.intel), 
+                  backgroundColor: intelModels.map(m => m.vendor === 'Anthropic' ? '#30d158' : (m.vendor === 'OpenAI' ? '#0071e3' : (m.vendor === 'Google' ? '#ff9f0a' : '#bf5af2'))), 
+                  borderWidth: 0, borderRadius: 6 
+              }]
+            },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: darkGrid, ticks: mutedTicks }, y: { grid: { display: false }, ticks: { ...mutedTicks, font: { size: 10 } } } } }
+          });
+      }
+
+      // 2. TAU Banking
+      let tauModels = [...models].filter(m => parseFloat(m.tau) > 0).sort((a,b) => parseFloat(b.tau) - parseFloat(a.tau)).slice(0, 10);
+      const agenticCanvas = document.getElementById('agenticChart');
+      if (agenticCanvas) {
+          new Chart(agenticCanvas, {
+            type: 'bar',
+            data: {
+              labels: tauModels.map(m => m.name.split(' (')[0]),
+              datasets: [
+                { label: 'TAU Banking', data: tauModels.map(m => parseFloat(m.tau) * 100), backgroundColor: '#0071e3', borderWidth: 0, borderRadius: 4 },
+                { label: 'Coding Index', data: tauModels.map(m => m.coding), backgroundColor: '#30d158', borderWidth: 0, borderRadius: 4 }
+              ]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: '#86868b' } } }, scales: { y: { grid: darkGrid, ticks: mutedTicks }, x: { grid: { display: false }, ticks: { ...mutedTicks, font: { size: 10 }, maxRotation: 45 } } } }
+          });
+      }
+
       // 3. Reliability Radar Chart (Kimi K3 #1 SOTA vs Gemini 3.6 Flash)
-      new Chart(document.getElementById('reliabilityChart'), {
-        type: 'radar',
-        data: {
-          labels: ['Banking Math', 'Tool Execution', 'Structured Output', 'Speed (tok/s)', 'Low Cost', 'Context Retention'],
-          datasets: [
-            { label: 'Kimi K3 (SOTA)', data: [98, 96, 94, 65, 82, 95], borderColor: '#30d158', backgroundColor: 'rgba(48,209,88,0.15)', borderWidth: 2 },
-            { label: 'Gemini 3.6 Flash', data: [72, 85, 90, 98, 92, 88], borderColor: '#2997ff', backgroundColor: 'rgba(41,151,255,0.1)', borderWidth: 2 }
-          ]
-        },
-        options: { responsive: true, plugins: { legend: { labels: { color: '#86868b' } } }, scales: { r: { grid: darkGrid, ticks: { color: '#86868b', backdropColor: 'transparent' } } } }
-      });
+      const reliabilityCanvas = document.getElementById('reliabilityChart');
+      if (reliabilityCanvas) {
+          new Chart(reliabilityCanvas, {
+            type: 'radar',
+            data: {
+              labels: ['Banking Math', 'Tool Execution', 'Structured Output', 'Speed (tok/s)', 'Low Cost', 'Context Retention'],
+              datasets: [
+                { label: 'Kimi K3 (SOTA)', data: [98, 96, 94, 65, 82, 95], borderColor: '#30d158', backgroundColor: 'rgba(48,209,88,0.15)', borderWidth: 2 },
+                { label: 'Gemini 3.6 Flash', data: [72, 85, 90, 98, 92, 88], borderColor: '#0071e3', backgroundColor: 'rgba(0,113,227,0.1)', borderWidth: 2 }
+              ]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { labels: { color: '#86868b' } } }, scales: { r: { grid: darkGrid, ticks: { color: '#86868b', backdropColor: 'transparent' }, pointLabels: { color: '#86868b' } } } }
+          });
+      }
 
-      // 4 & 5. Cost Charts
-      new Chart(document.getElementById('inputCostChart'), {
-        type: 'bar',
-        data: {
-          labels: ['Gemini 3.6 Flash', 'DeepSeek V4 Pro', 'Qwen 3.7 Max', 'Kimi K3', 'Claude Sonnet 4.6', 'Claude Opus 5'],
-          datasets: [{ data: [6.26, 36.32, 25.05, 250.50, 250.50, 417.50], backgroundColor: '#30d158', borderRadius: 6 }]
-        },
-        options: { indexAxis: 'y', responsive: true, plugins: { legend: { display: false } }, scales: { x: { grid: darkGrid, ticks: { ...mutedTicks, callback: v => '₹' + v } }, y: { grid: { display: false }, ticks: mutedTicks } } }
-      });
+      // 4. Input Cost
+      let costModels = [...models].filter(m => m.inInr > 0).sort((a,b) => a.inInr - b.inInr).slice(0, 12);
+      const inputCostCanvas = document.getElementById('inputCostChart');
+      if (inputCostCanvas) {
+          new Chart(inputCostCanvas, {
+            type: 'bar',
+            data: {
+              labels: costModels.map(m => m.name.split(' (')[0]),
+              datasets: [{ data: costModels.map(m => m.inInr), backgroundColor: '#0071e3', borderRadius: 6 }]
+            },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: darkGrid, ticks: { ...mutedTicks, callback: v => '₹' + v } }, y: { grid: { display: false }, ticks: { ...mutedTicks, font: { size: 10 } } } } }
+          });
+      }
 
-      new Chart(document.getElementById('outputCostChart'), {
-        type: 'bar',
-        data: {
-          labels: ['Gemini 3.6 Flash', 'DeepSeek V4 Pro', 'Qwen 3.7 Max', 'Kimi K3', 'Claude Sonnet 4.6', 'Claude Opus 5'],
-          datasets: [{ data: [25.05, 72.65, 100.20, 1252.50, 1252.50, 2087.50], backgroundColor: '#2997ff', borderRadius: 6 }]
-        },
-        options: { indexAxis: 'y', responsive: true, plugins: { legend: { labels: { color: '#86868b' } } }, scales: { x: { grid: darkGrid, ticks: { ...mutedTicks, callback: v => '₹' + v } }, y: { grid: { display: false }, ticks: mutedTicks } } }
-      });
+      // 5. Output Cost
+      const outputCostCanvas = document.getElementById('outputCostChart');
+      if (outputCostCanvas) {
+          new Chart(outputCostCanvas, {
+            type: 'bar',
+            data: {
+              labels: costModels.map(m => m.name.split(' (')[0]),
+              datasets: [{ data: costModels.map(m => m.outInr), backgroundColor: '#30d158', borderRadius: 6 }]
+            },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: darkGrid, ticks: { ...mutedTicks, callback: v => '₹' + v } }, y: { grid: { display: false }, ticks: { ...mutedTicks, font: { size: 10 } } } } }
+          });
+      }
     }
+
 
     window.onload = function() {
       populateSelects();
