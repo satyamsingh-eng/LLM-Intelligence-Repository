@@ -1,0 +1,17 @@
+# Local Knowledge Repository & Caching
+local_knowledge_repository/snapshots/
+.hermes/
+.cache/
+__pycache__/
+
+# Do not push the raw extraction dumps or sensitive logs
+10-Validation-Logs/FULL_REPOSITORY_EXTRACTION_AND_DEEP_RESEARCH.md
+10-Validation-Logs/cron.log
+10-Validation-Logs/WHATSAPP_NOTIFICATIONS.log
+
+# Node & Environment
+node_modules/
+.env
+.venv
+env/
+venv/
