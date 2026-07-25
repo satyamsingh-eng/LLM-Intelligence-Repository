@@ -129,6 +129,11 @@ record_check("5. Regression QA", "Provider Database Schema Integrity", providers
 founder_briefing_ok = os.path.exists(os.path.join(repo_dir, "11-Confidence-Reports", "02-FOUNDER_MASTER_INTELLIGENCE_BRIEFING.md"))
 record_check("6. Founder QA", "Founder's Enterprise AI Intelligence Briefing", founder_briefing_ok, "Comprehensive Founder Report Verified")
 
+
+verdict_path = os.path.join(repo_dir, "11-Confidence-Reports", "03-FINANCIAL_WEALTH_ADVISORY_ROUTING_VERDICT.md")
+verdict_ok = os.path.exists(verdict_path)
+record_check("6. Founder QA", "Financial Wealth Advisory Routing Verdict", verdict_ok, "Verified generation of Product POV Routing Recommendation")
+
 record_check("6. Founder QA", "Founder Review Board (5 Executive Sign-offs)", founder_board_ok, "Approved by 5 Virtual Auditors")
 record_check("6. Founder QA", "Cycle 2 Executive Research Report Generation", exec_report_ok, "Cycle 2 Audit Report Logged")
 
