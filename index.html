@@ -370,45 +370,80 @@
       <h2>Workflow Architecture DAG Video Simulator</h2>
       <p class="muted">Run live video-style step-by-step execution playback across complete enterprise workflows.</p>
 
-      <div class="card" style="margin-top:32px; padding:32px;">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; padding-bottom:20px; border-bottom:1px solid var(--border);">
-          <div>
-            <label style="font-weight:700; font-size:13px; display:block; margin-bottom:4px;">Select Enterprise Workflow</label>
-            <select id="wfSelect" onchange="resetSim()" style="background:#000; color:#fff; border:1px solid var(--border); padding:10px; border-radius:8px; font-weight:700; font-size:13px;"></select>
+      
+      <div class="card" style="margin-top:32px; padding:32px; background:#1c1c1e; border-color:#333336;">
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px; padding-bottom:24px; border-bottom:1px solid #333336;">
+          <div style="flex:1; min-width:300px;">
+            <label style="font-weight:700; font-size:13px; display:block; margin-bottom:8px; color:#86868b; text-transform:uppercase; letter-spacing:1px;">Select Enterprise Architecture</label>
+            <select id="wfSelect" onchange="resetSim()" style="background:#000; color:#fff; border:1px solid #333336; padding:12px; border-radius:8px; font-weight:700; font-size:15px; width:100%; outline:none;"></select>
           </div>
 
-          <div style="display:flex; gap:8px; align-items:center; background:#000; padding:6px; border-radius:12px; border:1px solid var(--border);">
-            <button onclick="playSim()" id="btnPlay" style="background:var(--accent); color:#fff; font-weight:700; padding:8px 16px; border-radius:8px; border:none; cursor:pointer;">[RUN WORKFLOW SIMULATION]</button>
-            <button onclick="pauseSim()" style="background:#2c2c2e; color:#fff; font-weight:700; padding:8px 12px; border-radius:8px; border:none; cursor:pointer;">PAUSE</button>
-            <button onclick="resetSim()" style="background:#2c2c2e; color:#fff; font-weight:700; padding:8px 12px; border-radius:8px; border:none; cursor:pointer;">RESET</button>
-          </div>
-
-          <div>
-            <span id="statusBadge" style="background:#2c2c2e; color:var(--text-muted); font-weight:700; padding:6px 14px; border-radius:20px; font-size:11px;">READY TO SIMULATE</span>
+          <div style="display:flex; gap:8px; align-items:center; background:#000; padding:8px; border-radius:12px; border:1px solid #333336;">
+            <button onclick="playSim()" id="btnPlay" style="background:#0071e3; color:#fff; font-weight:700; padding:10px 20px; border-radius:8px; border:none; cursor:pointer; font-size:13px; transition:background 0.2s hover:bg-[#2997ff]">[RUN WORKFLOW SIMULATION]</button>
+            <button onclick="pauseSim()" id="btnPause" style="background:#333336; color:#fff; font-weight:700; padding:10px 20px; border-radius:8px; border:none; cursor:pointer; font-size:13px; display:none;">PAUSE</button>
+            <button onclick="resetSim()" style="background:transparent; color:#86868b; font-weight:700; padding:10px 16px; border-radius:8px; border:1px solid #333336; cursor:pointer; font-size:13px; transition:color 0.2s hover:text-white">RESET</button>
+            
+            <select id="simSpeed" style="background:#1c1c1e; color:#86868b; border:1px solid #333336; padding:10px; border-radius:8px; font-weight:700; font-size:13px; outline:none; margin-left:8px;">
+              <option value="1500">Speed: 0.5x</option>
+              <option value="800" selected>Speed: 1.0x</option>
+              <option value="400">Speed: 2.0x</option>
+              <option value="150">Speed: 5.0x</option>
+            </select>
           </div>
         </div>
 
-        <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; margin:24px 0;">
-          <div style="background:#000; padding:16px; border-radius:12px; border:1px solid var(--border);">
-            <div style="font-size:11px; color:var(--text-muted); font-weight:600;">Live Cost</div>
-            <div id="hudCost" style="font-size:24px; font-weight:800; color:var(--green);">₹0.000</div>
+        <div style="display:grid; grid-template-columns: 1fr; md:grid-template-columns: 2fr 1fr; gap:32px; margin-top:24px;">
+          <!-- Left: Educational Breakdown & Live DAG -->
+          <div>
+            <div id="wfDescription" style="font-size:15px; color:#86868b; line-height:1.6; margin-bottom:24px;"></div>
+            
+            <div style="background:#000; border:1px solid #333336; border-radius:12px; padding:20px; margin-bottom:24px;">
+              <div style="font-size:11px; font-weight:700; color:#30d158; text-transform:uppercase; margin-bottom:8px;">Executive Verdict</div>
+              <div id="wfVerdict" style="font-size:14px; color:#fff; line-height:1.5; font-weight:500;"></div>
+            </div>
+
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px;">
+              <h4 style="color:#fff; font-size:16px; margin:0;">DAG Execution Chain</h4>
+              <div id="wfStatus" style="font-size:11px; font-weight:700; color:#86868b; background:#000; padding:6px 12px; border-radius:20px; border:1px solid #333336;">READY</div>
+            </div>
+
+            <div id="dagContainer" style="display:flex; flex-direction:column; gap:8px;">
+              <!-- DAG steps injected here via JS -->
+            </div>
           </div>
-          <div style="background:#000; padding:16px; border-radius:12px; border:1px solid var(--border);">
-            <div style="font-size:11px; color:var(--text-muted); font-weight:600;">Total Tokens</div>
-            <div id="hudTokens" style="font-size:24px; font-weight:800; color:#fff;">0</div>
-          </div>
-          <div style="background:#000; padding:16px; border-radius:12px; border:1px solid var(--border);">
-            <div style="font-size:11px; color:var(--text-muted); font-weight:600;">Elapsed Latency</div>
-            <div id="hudLatency" style="font-size:24px; font-weight:800; color:#fff;">0.0s</div>
-          </div>
-          <div style="background:#000; padding:16px; border-radius:12px; border:1px solid var(--border);">
-            <div style="font-size:11px; color:var(--text-muted); font-weight:600;">Cache Savings</div>
-            <div id="hudCache" style="font-size:24px; font-weight:800; color:var(--accent);">₹0.00</div>
+
+          <!-- Right: Telemetry HUD -->
+          <div style="background:#000; border:1px solid #333336; border-radius:16px; padding:24px;">
+            <div style="font-size:11px; font-weight:700; color:#86868b; text-transform:uppercase; letter-spacing:1px; margin-bottom:24px; border-bottom:1px solid #333336; padding-bottom:12px;">Calculated Workflow Telemetry (Simulated)</div>
+            
+            <div style="margin-bottom:24px;">
+              <div style="font-size:12px; color:#86868b; margin-bottom:4px;">Calculated Workflow Cost (INR ₹)</div>
+              <div id="liveCost" style="font-family:'SF Mono', monospace; font-size:36px; font-weight:800; color:#30d158; text-shadow:0 0 20px rgba(48,209,88,0.2);">₹0.000</div>
+            </div>
+
+            <div style="margin-bottom:24px;">
+              <div style="font-size:12px; color:#86868b; margin-bottom:4px;">Cumulative Token Volume</div>
+              <div id="liveTokens" style="font-family:'SF Mono', monospace; font-size:24px; font-weight:700; color:#2997ff;">0 <span style="font-size:14px; color:#86868b; font-weight:500;">tok</span></div>
+            </div>
+
+            <div style="margin-bottom:24px;">
+              <div style="font-size:12px; color:#86868b; margin-bottom:4px;">Estimated Processing Latency</div>
+              <div id="liveTime" style="font-family:'SF Mono', monospace; font-size:24px; font-weight:700; color:#fff;">0.0 <span style="font-size:14px; color:#86868b; font-weight:500;">sec</span></div>
+            </div>
+
+            <div style="background:rgba(255,214,10,0.1); border:1px solid rgba(255,214,10,0.2); border-radius:12px; padding:16px;">
+              <div style="font-size:11px; color:#ffd60a; font-weight:700; text-transform:uppercase; margin-bottom:4px;">KV Cache Retention Savings</div>
+              <div id="liveSavings" style="font-family:'SF Mono', monospace; font-size:18px; font-weight:700; color:#ffd60a;">₹0.000</div>
+            </div>
+            
+            <div style="margin-top:24px; padding-top:16px; border-top:1px solid #333336;">
+              <div style="font-size:10px; color:#86868b;">Model Used: <span id="wfModelName" style="color:#fff; font-weight:600;"></span></div>
+              <div style="font-size:10px; color:#86868b; margin-top:4px;">Volume: <span id="wfVolume" style="color:#fff; font-weight:600;"></span> runs/month</div>
+            </div>
           </div>
         </div>
-
-        <div id="wfCanvas" style="display:flex; flex-direction:column; gap:12px; margin-top:20px;"></div>
       </div>
+</div>
     </div>
   </div>
 
@@ -4853,232 +4888,257 @@ const knowledgeGraph = {
   }
 };
     const workflows = {
-  "email_automation": {
-    "id": "email_automation",
-    "title": "Autonomous Wealth Email Processing & CRM Workflow",
-    "domain": "Wealth Management & Inbound Operations",
-    "description": "Processes incoming advisor emails, extracts attached PDF bank statements via OCR, classifies client intent, updates Salesforce via MCP, and routes urgent tax queries to wealth advisors.",
+  "workflow_lab_results_inbox": {
+    "name": "1. Aviva Lab Results Inbox Workflow",
+    "description": "Reads incoming lab-report emails, extracts analytical data, categorizes test parameters, and orchestrates Excel updates with Microsoft 365. High volume, deterministic precision.",
+    "architecture_type": "Deterministic Workflow (DAG)",
+    "monthly_volume": 35000,
+    "input_tokens_avg": 25000,
+    "output_tokens_avg": 1200,
+    "primary_model": "gemini-3-6-flash",
     "steps": [
       {
-        "step_num": 1,
-        "name": "Email Ingestion & Classification",
-        "task": "Classify incoming email intent (Tax Query, Portfolio Withdrawal, Meeting Request, General Inquiry)",
-        "why_exists": "Filters spam and immediately routes high-priority client requests to correct advisor queues.",
-        "input_tokens": 2000,
-        "output_tokens": 300,
-        "model": "gemini-3-6-flash",
-        "model_name": "Gemini 3.6 Flash",
-        "reason": "Fastest TTFT (<200ms) and lowest cost (\u20b96.26/1M input) for simple classification.",
-        "alt_models": [
-          "Claude 4.6 Sonnet (\u20b9250/1M - Overkill)",
-          "GPT-5 (\u20b9200/1M - Too slow)"
-        ],
-        "cache_hit_pct": 50,
-        "latency_sec": 0.4
+        "id": "fetch_emails",
+        "type": "tool",
+        "name": "Fetch Emails (M365)",
+        "desc": "Retrieves unread lab emails via Microsoft Graph API.",
+        "input_tokens": 1000,
+        "output_tokens": 100
       },
       {
-        "step_num": 2,
-        "name": "Attachment OCR & Table Extraction",
-        "task": "Extract unstructured financial tables from attached 15-page bank statement PDF",
-        "why_exists": "Converts scanned images and multi-page PDFs into structured text for downstream analysis.",
-        "input_tokens": 12000,
-        "output_tokens": 2500,
-        "model": "gemini-3-pro-vision",
-        "model_name": "Gemini Vision (Gemini 3 Pro)",
-        "reason": "Native 2M token context window and leading MMMU vision score for complex table OCR.",
-        "alt_models": [
-          "Tesseract OCR (Fails on rotated scans)",
-          "AWS Textract (More expensive)"
-        ],
-        "cache_hit_pct": 80,
-        "latency_sec": 2.1
+        "id": "fetch_tracker",
+        "type": "tool",
+        "name": "Fetch Excel Tracker",
+        "desc": "Reads current lot status from master Excel.",
+        "input_tokens": 5000,
+        "output_tokens": 200
       },
       {
-        "step_num": 3,
-        "name": "Portfolio Risk & Tax Analysis",
-        "task": "Analyze portfolio allocation changes, capital gains tax impact, and rebalancing options",
-        "why_exists": "Requires high-precision mathematical reasoning and regulatory tax rule adherence.",
-        "input_tokens": 18000,
-        "output_tokens": 3500,
-        "model": "kimi-k3",
-        "model_name": "Kimi K3 (Moonshot AI)",
-        "reason": "Ranked #1 globally on Artificial Analysis TAU Banking benchmark (0.3340 score) for financial math.",
-        "alt_models": [
-          "Claude Opus 5 (\u20b9417/1M - 2x costlier)",
-          "GPT-5.6 Sol (0.3299 TAU score - lower precision)"
-        ],
-        "cache_hit_pct": 75,
-        "latency_sec": 4.5
-      },
-      {
-        "step_num": 4,
-        "name": "Structured CRM Writeback via MCP",
-        "task": "Format client updates into strict JSON schema and execute Salesforce writeback via MCP",
-        "why_exists": "Automates administrative recordkeeping so wealth advisors don't type manually.",
-        "input_tokens": 3000,
-        "output_tokens": 800,
-        "model": "qwen-3-7-max",
-        "model_name": "Qwen 3.7 Max",
-        "reason": "100% JSON schema adherence and low input cost (\u20b925/1M in) for structured outputs.",
-        "alt_models": [
-          "DeepSeek V4 (Risk of 60 RPM rate limit blocking sync API)"
-        ],
-        "cache_hit_pct": 90,
-        "latency_sec": 0.8
-      }
-    ]
-  },
-  "portfolio_audit": {
-    "id": "portfolio_audit",
-    "title": "50-Page Comprehensive Portfolio Audit & Wealth Advisory Report",
-    "domain": "Wealth Management & Family Office",
-    "description": "Deep research and generation of a 50-page client wealth audit analyzing tax harvesting, asset allocation, compliance, and risk exposures.",
-    "steps": [
-      {
-        "step_num": 1,
-        "name": "Document Ingestion & GraphRAG Indexing",
-        "task": "Convert 50-page PDF portfolio statements into GraphRAG entity knowledge graph",
-        "why_exists": "Maps complex holding companies, offshore trusts, and family accounts without losing context.",
-        "input_tokens": 60000,
-        "output_tokens": 5000,
-        "model": "deepseek-v4-pro",
-        "model_name": "DeepSeek V4 Pro",
-        "reason": "Lowest cost (\u20b936.32/1M input) for high-volume background indexing.",
-        "alt_models": [
-          "Claude Opus 5 (\u20b9417/1M - \u20b925 vs \u20b92.18)"
-        ],
-        "cache_hit_pct": 85,
-        "latency_sec": 6.2
-      },
-      {
-        "step_num": 2,
-        "name": "Tax Harvesting & Mathematical Verification",
-        "task": "Calculate short-term vs long-term capital gains tax harvesting opportunities",
-        "why_exists": "Prevents calculation errors that could lead to tax penalties for high-net-worth clients.",
-        "input_tokens": 35000,
-        "output_tokens": 4000,
-        "model": "kimi-k3",
-        "model_name": "Kimi K3 (Moonshot AI)",
-        "reason": "#1 SOTA on TAU Banking benchmark (0.3340 score) for financial tax calculations.",
-        "alt_models": [
-          "GPT-5.6 Sol (Score: 0.3299 - 40% costlier)"
-        ],
-        "cache_hit_pct": 80,
-        "latency_sec": 5.0
-      },
-      {
-        "step_num": 3,
-        "name": "Compliance Audit & Final Report Drafting",
-        "task": "Draft 15,000-word advisory report and verify against EU AI Act & SEBI guidelines",
-        "why_exists": "Ensures report is legally binding, zero-hallucination, and audit-ready.",
-        "input_tokens": 25000,
-        "output_tokens": 6000,
-        "model": "claude-4-6-sonnet",
-        "model_name": "Claude 4.6 Sonnet",
-        "reason": "Top global compliance reasoning (60.7 Intelligence Index) for final client artifacts.",
-        "alt_models": [
-          "Llama 4 (Lower compliance precision)"
-        ],
-        "cache_hit_pct": 90,
-        "latency_sec": 8.0
-      }
-    ]
-  },
-  "m_and_a_due_diligence": {
-    "id": "m_and_a_due_diligence",
-    "title": "Autonomous M&A Target Legal & Financial Due Diligence Audit",
-    "domain": "Investment Banking & Corporate Finance",
-    "description": "Multi-agent swarm performing web crawling, SEC filing audits, debt covenant extraction, and valuation modeling.",
-    "steps": [
-      {
-        "step_num": 1,
-        "name": "Target Web Crawling & SEC Filing Scraping",
-        "task": "Crawl 10K/10Q filings and news using Crawl4AI and extract raw text",
-        "why_exists": "Aggregates multi-year financial history across public & private disclosures.",
-        "input_tokens": 50000,
-        "output_tokens": 4000,
-        "model": "deepseek-v4-pro",
-        "model_name": "DeepSeek V4 Pro",
-        "reason": "Unbeatable token cost (\u20b936.32/1M in) for bulk background extraction.",
-        "alt_models": [
-          "Claude Sonnet 4.6 (\u20b9250/1M)"
-        ],
-        "cache_hit_pct": 70,
-        "latency_sec": 5.5
-      },
-      {
-        "step_num": 2,
-        "name": "Debt Covenant & Contract Legal Audit",
-        "task": "Analyze change-of-control clauses, debt covenants, and material liabilities",
-        "why_exists": "Identifies deal-breaker financial risks before acquisition sign-off.",
-        "input_tokens": 20000,
-        "output_tokens": 3000,
-        "model": "claude-4-6-sonnet",
-        "model_name": "Claude 4.6 Sonnet",
-        "reason": "Top global contract analysis & zero-hallucination accuracy.",
-        "alt_models": [
-          "GPT-5.6 Sol"
-        ],
-        "cache_hit_pct": 80,
-        "latency_sec": 4.2
-      },
-      {
-        "step_num": 3,
-        "name": "Valuation DCF Model Verification",
-        "task": "Perform Discounted Cash Flow (DCF) sensitivity modeling and EBITDA adjustments",
-        "why_exists": "Validates target company purchase price against market benchmarks.",
-        "input_tokens": 10000,
-        "output_tokens": 2000,
-        "model": "kimi-k3",
-        "model_name": "Kimi K3 (Moonshot AI)",
-        "reason": "#1 globally on TAU Banking (0.3340 score) for complex valuation math.",
-        "alt_models": [
-          "GPT-5.6 Terra"
-        ],
-        "cache_hit_pct": 90,
-        "latency_sec": 3.0
-      }
-    ]
-  },
-  "kyc_aml_processing": {
-    "id": "kyc_aml_processing",
-    "title": "KYC & AML Bank Statement Entity Extraction",
-    "domain": "Compliance & Risk Management",
-    "description": "Parses passports, utility bills, and 12-month bank statements to screen against OFAC/SEBI watchlists.",
-    "steps": [
-      {
-        "step_num": 1,
-        "name": "Identity Document OCR & Sanctions Check",
-        "task": "Extract passport details and cross-check against OFAC SDN watchlist",
-        "why_exists": "Mandatory regulatory gate under anti-money laundering laws.",
+        "id": "extract_data",
+        "type": "llm",
+        "name": "Extract Analytical Data",
+        "desc": "Extracts exact lab metrics from attached PDF.",
         "input_tokens": 15000,
-        "output_tokens": 1000,
-        "model": "gemini-3-pro-vision",
-        "model_name": "Gemini Vision (Gemini 3 Pro)",
-        "reason": "Top multi-modal document extraction and fast processing.",
-        "alt_models": [
-          "GPT-4o Vision"
-        ],
-        "cache_hit_pct": 85,
-        "latency_sec": 1.5
+        "output_tokens": 500
       },
       {
-        "step_num": 2,
-        "name": "Strict JSON Schema Generation",
-        "task": "Format verified KYC fields into strict JSON schema for CRM ingestion",
-        "why_exists": "Ensures zero database insertion errors in core banking backend.",
-        "input_tokens": 2000,
-        "output_tokens": 500,
-        "model": "qwen-3-7-max",
-        "model_name": "Qwen 3.7 Max",
-        "reason": "100% structured output schema guarantee at sub-\u20b925/1M pricing.",
-        "alt_models": [
-          "Mistral Large 3"
-        ],
-        "cache_hit_pct": 95,
-        "latency_sec": 0.5
+        "id": "evaluate_match",
+        "type": "llm",
+        "name": "Evaluate Guardrails",
+        "desc": "Checks for NA, human-locks, and Micro vs Analytical logic.",
+        "input_tokens": 3000,
+        "output_tokens": 200
+      },
+      {
+        "id": "update_excel",
+        "type": "tool",
+        "name": "Update Excel Cells",
+        "desc": "Writes color-coded status back to Excel via API.",
+        "input_tokens": 500,
+        "output_tokens": 100
+      },
+      {
+        "id": "save_files",
+        "type": "tool",
+        "name": "Save to OneDrive",
+        "desc": "Archives source PDF into organized SharePoint folders.",
+        "input_tokens": 200,
+        "output_tokens": 50
+      },
+      {
+        "id": "send_summary",
+        "type": "tool",
+        "name": "Send Run Summary",
+        "desc": "Dispatches execution confirmation email to stakeholders.",
+        "input_tokens": 300,
+        "output_tokens": 50
       }
-    ]
+    ],
+    "verdict": "Keep as Workflow. Strict orchestration and deterministic cell-level writes require predictability, not agentic hallucination risks."
+  },
+  "workflow_daily_dashboard": {
+    "name": "2. Aviva Daily Summary Dashboard",
+    "description": "Scans the entire tracker state, categorizes 5 specific testing buckets, compiles actionable insights, and renders an Outlook-safe HTML report.",
+    "architecture_type": "Hybrid Cascade (Workflow + Agent)",
+    "monthly_volume": 30,
+    "input_tokens_avg": 85000,
+    "output_tokens_avg": 4500,
+    "primary_model": "claude-fable-5",
+    "steps": [
+      {
+        "id": "read_tracker",
+        "type": "tool",
+        "name": "Fetch Tracker State",
+        "desc": "Ingests total 10k rows of current lab statuses.",
+        "input_tokens": 70000,
+        "output_tokens": 500
+      },
+      {
+        "id": "categorize",
+        "type": "llm",
+        "name": "5x Categorization (Parallel)",
+        "desc": "Groups lots into Overdue, Failed, Awaiting Lab B, etc.",
+        "input_tokens": 10000,
+        "output_tokens": 1000
+      },
+      {
+        "id": "compile_insights",
+        "type": "agent",
+        "name": "Compile Executive Insights",
+        "desc": "Agent reasons over trends to highlight vendor delays.",
+        "input_tokens": 4000,
+        "output_tokens": 2000
+      },
+      {
+        "id": "render_html",
+        "type": "tool",
+        "name": "Render Outlook HTML",
+        "desc": "Generates strict inline-styled HTML. LLM output here breaks Outlook.",
+        "input_tokens": 500,
+        "output_tokens": 800
+      },
+      {
+        "id": "send_dashboard",
+        "type": "tool",
+        "name": "Send Dashboard Email",
+        "desc": "Dispatches daily HTML report to leadership.",
+        "input_tokens": 500,
+        "output_tokens": 200
+      }
+    ],
+    "verdict": "Hybrid. Categorization and HTML rendering remain deterministic workflows. Insight Generation requires deep context reasoning and is upgraded to an Agent."
+  },
+  "workflow_repeat_lot_detection": {
+    "name": "3. Aviva UC3: Repeat Lot Detection (Agentic)",
+    "description": "Agent must maintain state spanning multiple runs. If a vendor lot was tested within 6 months, skip waivable tests. If it failed prior, mandate full retest.",
+    "architecture_type": "Persistent Agent",
+    "monthly_volume": 4500,
+    "input_tokens_avg": 45000,
+    "output_tokens_avg": 1800,
+    "primary_model": "claude-opus-5",
+    "steps": [
+      {
+        "id": "ingest_lot",
+        "type": "tool",
+        "name": "Ingest New Lot",
+        "desc": "Receives new lot parameters.",
+        "input_tokens": 2000,
+        "output_tokens": 100
+      },
+      {
+        "id": "historical_search",
+        "type": "agent",
+        "name": "Historical Memory Search",
+        "desc": "Queries vector DB for prior instances of this vendor lot.",
+        "input_tokens": 35000,
+        "output_tokens": 800
+      },
+      {
+        "id": "temporal_reasoning",
+        "type": "llm",
+        "name": "Temporal Math",
+        "desc": "Calculates if prior test was within 180-day waiver window.",
+        "input_tokens": 5000,
+        "output_tokens": 400
+      },
+      {
+        "id": "waiver_decision",
+        "type": "agent",
+        "name": "Waiver Execution",
+        "desc": "Applies material category rules and waives/mandates tests.",
+        "input_tokens": 3000,
+        "output_tokens": 500
+      }
+    ],
+    "verdict": "Agent Required. Workflows are point-in-time. This requires tracking historical 6-month state and complex temporal logic across isolated runs."
+  },
+  "workflow_two_lab_confirmation": {
+    "name": "4. Aviva UC4: Two-Lab Confirmation (Agentic)",
+    "description": "Lab A fails -> send to Lab B -> wait days/weeks -> if both fail, Hard Rejection. Blocks the lot dynamically across time.",
+    "architecture_type": "Persistent Agent",
+    "monthly_volume": 1200,
+    "input_tokens_avg": 65000,
+    "output_tokens_avg": 2200,
+    "primary_model": "gpt-5-6-sol-max",
+    "steps": [
+      {
+        "id": "lab_a_fail",
+        "type": "tool",
+        "name": "Lab A Failure Trigger",
+        "desc": "Initial failure detected.",
+        "input_tokens": 5000,
+        "output_tokens": 200
+      },
+      {
+        "id": "suspend_lot",
+        "type": "agent",
+        "name": "Suspend Lot State",
+        "desc": "Agent marks lot 'Awaiting Lab B' and sets async sleeper.",
+        "input_tokens": 20000,
+        "output_tokens": 500
+      },
+      {
+        "id": "match_lab_b",
+        "type": "agent",
+        "name": "Cross-Email Match",
+        "desc": "Days later, agent matches new email to suspended lot.",
+        "input_tokens": 30000,
+        "output_tokens": 1000
+      },
+      {
+        "id": "conflict_reasoning",
+        "type": "llm",
+        "name": "Conflict Resolution",
+        "desc": "Reasons over parameter discrepancies between Lab A and Lab B.",
+        "input_tokens": 10000,
+        "output_tokens": 500
+      }
+    ],
+    "verdict": "Agent Required. Workflows cannot 'wait' for weeks. Agents persist state, correlate separate emails across time, and reason over discrepancies."
+  },
+  "workflow_proactive_lab_comms": {
+    "name": "5. Aviva UC5: Proactive Lab Comms (Agentic)",
+    "description": "Calculates per-lot ETAs based on lab SLA (e.g., Brighton=5d). Schedules proactive follow-ups. Parses lab replies for revised ETAs.",
+    "architecture_type": "Autonomous Agent",
+    "monthly_volume": 8500,
+    "input_tokens_avg": 12000,
+    "output_tokens_avg": 800,
+    "primary_model": "kimi-k3",
+    "steps": [
+      {
+        "id": "calc_eta",
+        "type": "llm",
+        "name": "Dynamic SLA Math",
+        "desc": "Calculates exact ETA date based on lab-specific SLAs.",
+        "input_tokens": 4000,
+        "output_tokens": 200
+      },
+      {
+        "id": "schedule_outreach",
+        "type": "tool",
+        "name": "Schedule Cron",
+        "desc": "Sets a reminder 2 days prior to ETA.",
+        "input_tokens": 1000,
+        "output_tokens": 100
+      },
+      {
+        "id": "draft_email",
+        "type": "llm",
+        "name": "Consolidate Lots",
+        "desc": "Agent bundles multiple delayed lots for the same lab into one email.",
+        "input_tokens": 5000,
+        "output_tokens": 400
+      },
+      {
+        "id": "parse_reply",
+        "type": "agent",
+        "name": "Parse Reply & Update",
+        "desc": "Reads lab reply, extracts new dates, updates DB, or escalates.",
+        "input_tokens": 2000,
+        "output_tokens": 100
+      }
+    ],
+    "verdict": "Agent Required. Parsing unstructured human replies to extract dynamic revised ETAs and updating database state autonomously is beyond deterministic DAG capability."
   }
 };
 
