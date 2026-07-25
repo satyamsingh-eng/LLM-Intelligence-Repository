@@ -134,6 +134,11 @@ verdict_path = os.path.join(repo_dir, "11-Confidence-Reports", "03-FINANCIAL_WEA
 verdict_ok = os.path.exists(verdict_path)
 record_check("6. Founder QA", "Financial Wealth Advisory Routing Verdict", verdict_ok, "Verified generation of Product POV Routing Recommendation")
 
+
+matrix_path = os.path.join(repo_dir, "11-Confidence-Reports", "04-GLOBAL_AI_DOMINATION_MATRIX.md")
+matrix_ok = os.path.exists(matrix_path)
+record_check("6. Founder QA", "Global AI Domination Matrix (US vs China)", matrix_ok, "Verified macro-ecosystem domination report")
+
 record_check("6. Founder QA", "Founder Review Board (5 Executive Sign-offs)", founder_board_ok, "Approved by 5 Virtual Auditors")
 record_check("6. Founder QA", "Cycle 2 Executive Research Report Generation", exec_report_ok, "Cycle 2 Audit Report Logged")
 
