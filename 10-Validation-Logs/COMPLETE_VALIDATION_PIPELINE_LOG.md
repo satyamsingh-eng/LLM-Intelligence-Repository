@@ -69,7 +69,7 @@
 * **Status:** `PASSED`
 * **Verification Note:** 100% data layer synchronization
 
-### 5. Regression QA: 12-Term 14-Point Glossary Integrity Check (All terms fully populated)
+### 5. Regression QA: 24+ Term 14-Point Glossary Integrity Check (All terms fully populated)
 * **Status:** `PASSED`
 * **Verification Note:** 100% complete glossary schema
 

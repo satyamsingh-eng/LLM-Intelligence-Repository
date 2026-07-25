@@ -96,7 +96,7 @@ record_check("3. Logic & Curation QA", "Executive Header Curation Rule (Shows Cu
 # LAYER 4: HTML QA & TRUTHFUL SIMULATION LABELS
 html_elements = ["simModelA", "simModelB", "simInTok", "simOutTok", "simCache", "simRuns", "simPreset", "costA", "costB", "savingsText", "verdictText"]
 html_elements_ok = all(f'id="{el}"' in html_text for el in html_elements)
-no_emojis = len([c for c in html_text if ord(c) > 127 and c not in ['₹', '—', '’', '“', '”', '…', '°', '–']]) == 0
+no_emojis = len([c for c in html_text if ord(c) > 127 and c not in ['₹', '—', '’', '“', '”', '…', '°', '–', '→', '×']]) == 0
 no_false_live_labels = "RUN LIVE EXECUTION" not in html_text and "LIVE REAL-TIME TELEMETRY" not in html_text
 
 record_check("4. HTML QA", "DOM Interactive Element IDs Binding", html_elements_ok, "All JS controls mapped")
@@ -106,12 +106,12 @@ record_check("4. HTML QA", "Truthful Simulation Labeling (No false 'Live' tags o
 # LAYER 5: REGRESSION & CENTRAL DATA LAYER QA
 regression_models_ok = len(models) >= 586
 central_db_synced = len(central_db.get("models", [])) == len(models)
-glossary_integrity_ok = len(glossary) >= 12 and all(len(v) >= 10 for v in glossary.values())
+glossary_integrity_ok = len(glossary) >= 24 and all(len(v) >= 10 for v in glossary.values())
 workflows_integrity_ok = len(workflows_db) >= 4 and all(len(w.get("steps", [])) >= 2 for w in workflows_db.values())
 
 record_check("5. Regression QA", "Database Model Record Count Preservation (588 Models)", regression_models_ok, "Zero data loss")
 record_check("5. Regression QA", "Central Data Layer Sync (central_calculated_dataset.json synced with master DB)", central_db_synced, "100% data layer synchronization")
-record_check("5. Regression QA", "12-Term 14-Point Glossary Integrity Check (All terms fully populated)", glossary_integrity_ok, "100% complete glossary schema")
+record_check("5. Regression QA", "24+ Term 14-Point Glossary Integrity Check (All terms fully populated)", glossary_integrity_ok, "100% complete glossary schema")
 record_check("5. Regression QA", "Workflows DAG Schema Verification (Multi-step token chains valid)", workflows_integrity_ok, "100% valid workflow DAG chains")
 
 # LAYER 6: FOUNDER & EXECUTIVE REPORTS QA

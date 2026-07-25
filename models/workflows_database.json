@@ -12,8 +12,8 @@
         "why_exists": "Filters spam and immediately routes high-priority client requests to correct advisor queues.",
         "input_tokens": 2000,
         "output_tokens": 300,
-        "model": "gemini-2-0-flash",
-        "model_name": "Gemini 2.0 Flash",
+        "model": "gemini-3-6-flash",
+        "model_name": "Gemini 3.6 Flash",
         "reason": "Fastest TTFT (<200ms) and lowest cost (\u20b96.26/1M input) for simple classification.",
         "alt_models": [
           "Claude 4.6 Sonnet (\u20b9250/1M - Overkill)",
