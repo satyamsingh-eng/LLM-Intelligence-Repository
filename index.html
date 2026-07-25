@@ -5339,91 +5339,184 @@ const knowledgeGraph = {
 
     
     
-    function playSim() {
-      const wfKey = document.getElementById('wfSelect').value;
-      const wf = workflows[wfKey];
-      const speed = parseInt(document.getElementById('simSpeed').value);
+    let simInterval = null;
+    let currentStep = 0;
+    let currentCost = 0;
+    let currentTokens = 0;
+    let currentTime = 0;
+    let currentSavings = 0;
+
+    function updateHud() {
+      const liveCost = document.getElementById('liveCost');
+      if (liveCost) liveCost.innerText = "₹" + currentCost.toFixed(3);
       
-      document.getElementById('btnPlay').style.display = 'none';
-      if(document.getElementById('btnPause')) document.getElementById('btnPause').style.display = 'block';
+      const liveTokens = document.getElementById('liveTokens');
+      if (liveTokens) liveTokens.innerHTML = currentTokens.toLocaleString() + ' <span style="font-size:14px; color:#86868b; font-weight:500;">tok</span>';
+      
+      const liveTime = document.getElementById('liveTime');
+      if (liveTime) liveTime.innerHTML = currentTime.toFixed(1) + ' <span style="font-size:14px; color:#86868b; font-weight:500;">sec</span>';
+      
+      const liveSavings = document.getElementById('liveSavings');
+      if (liveSavings) liveSavings.innerText = "₹" + currentSavings.toFixed(3);
+    }
+
+    function resetSim() {
+      clearInterval(simInterval);
+      const btnPlay = document.getElementById('btnPlay');
+      if (btnPlay) btnPlay.style.display = 'block';
+      const btnPause = document.getElementById('btnPause');
+      if (btnPause) btnPause.style.display = 'none';
+      
+      const wfSelect = document.getElementById('wfSelect');
+      if (!wfSelect) return;
+      
+      const wfKey = wfSelect.value || Object.keys(workflows)[0];
+      const wf = workflows[wfKey];
+      if (!wf) return;
+      
+      const wfDesc = document.getElementById('wfDescription');
+      if (wfDesc) wfDesc.innerText = wf.description || '';
+      
+      const wfVerdict = document.getElementById('wfVerdict');
+      if (wfVerdict) wfVerdict.innerText = wf.verdict || '';
+      
+      const wfModelName = document.getElementById('wfModelName');
+      if (wfModelName) wfModelName.innerText = "Hybrid Cascade (Multi-Model)";
+      
+      const wfVolume = document.getElementById('wfVolume');
+      if (wfVolume) wfVolume.innerText = (wf.monthly_volume || 0).toLocaleString();
+      
+      let htmlStr = '';
+      (wf.steps || []).forEach((step, idx) => {
+        let typeColor = step.type === 'tool' ? '#0071e3' : (step.type === 'agent' ? '#30d158' : '#ffd60a');
+        let bgType = step.type === 'tool' ? 'rgba(0,113,227,0.1)' : (step.type === 'agent' ? 'rgba(48,209,88,0.1)' : 'rgba(255,214,10,0.1)');
+        
+        let stepModel = models.find(m => m.id === step.model_id) || models[0];
+
+        htmlStr += `
+          <div id="step-${idx}" style="display:flex; align-items:flex-start; gap:16px; background:#000; border:1px solid #333336; border-radius:12px; padding:16px; transition:all 0.3s ease;">
+            <div style="width:24px; height:24px; border-radius:50%; background:#1c1c1e; border:1px solid #333336; display:flex; align-items:center; justify-content:center; font-size:11px; font-weight:700; color:#86868b; flex-shrink:0; margin-top:2px;">${idx+1}</div>
+            <div style="flex:1;">
+              <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:6px;">
+                <div style="display:flex; align-items:center; gap:8px;">
+                  <span class="badge" style="background:${bgType}; color:${typeColor}; border:1px solid ${typeColor}40;">${step.type}</span>
+                  <span style="font-size:14px; font-weight:700; color:#fff;">${step.name}</span>
+                </div>
+                <div id="step-badge-${idx}" style="display:none; font-size:10px; font-weight:700; color:#30d158; background:rgba(48,209,88,0.15); padding:4px 8px; border-radius:12px;">COMPLETED</div>
+              </div>
+              <div style="font-size:13px; color:#86868b; line-height:1.5; margin-bottom:8px;">${step.desc}</div>
+              
+              <!-- DYNAMIC ROUTING RATIONALE -->
+              <div style="background:#1c1c1e; border:1px solid rgba(255,255,255,0.05); border-radius:8px; padding:10px; margin-top:8px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                  <span style="font-size:10px; font-weight:700; color:#fff; text-transform:uppercase; letter-spacing:0.5px;">Routed To: <span style="color:#0071e3;">${stepModel.name}</span></span>
+                  <span style="font-size:10px; color:#86868b; font-family:'SF Mono', monospace;">IN: ${(step.input_tokens || 0).toLocaleString()} | OUT: ${(step.output_tokens || 0).toLocaleString()}</span>
+                </div>
+                <div style="font-size:11px; color:#a1a1a6; line-height:1.4;"><strong>Rationale:</strong> ${step.routing_rationale || ''}</div>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+      
+      const dagContainer = document.getElementById('dagContainer');
+      if (dagContainer) dagContainer.innerHTML = htmlStr;
+      
+      const wfStatus = document.getElementById('wfStatus');
+      if (wfStatus) {
+          wfStatus.innerText = "READY";
+          wfStatus.style.color = "#86868b";
+      }
+      
+      currentStep = 0; currentCost = 0; currentTokens = 0; currentTime = 0; currentSavings = 0;
+      updateHud();
+    }
+
+    function playSim() {
+      const wfSelect = document.getElementById('wfSelect');
+      if (!wfSelect) return;
+      const wfKey = wfSelect.value;
+      const wf = workflows[wfKey];
+      if (!wf) return;
+
+      const simSpeedEl = document.getElementById('simSpeed');
+      const speed = simSpeedEl ? parseInt(simSpeedEl.value) : 800;
+      
+      const btnPlay = document.getElementById('btnPlay');
+      if (btnPlay) btnPlay.style.display = 'none';
+      const btnPause = document.getElementById('btnPause');
+      if (btnPause) btnPause.style.display = 'block';
       
       if(currentStep === wf.steps.length) resetSim();
       
       simInterval = setInterval(() => {
         if (currentStep > 0) {
           const prevEl = document.getElementById(`step-${currentStep-1}`);
-          prevEl.style.border = "1px solid #333336";
-          prevEl.style.boxShadow = "none";
-          document.getElementById(`step-badge-${currentStep-1}`).style.display = "block";
+          if (prevEl) {
+            prevEl.style.border = "1px solid #333336";
+            prevEl.style.boxShadow = "none";
+          }
+          const prevBadge = document.getElementById(`step-badge-${currentStep-1}`);
+          if (prevBadge) prevBadge.style.display = "block";
         }
         
         if (currentStep < wf.steps.length) {
           const step = wf.steps[currentStep];
           const el = document.getElementById(`step-${currentStep}`);
+          if (el) {
+            el.style.border = "1px solid #0071e3";
+            el.style.boxShadow = "0 0 20px rgba(0,113,227,0.2)";
+          }
           
-          el.style.border = "1px solid #0071e3";
-          el.style.boxShadow = "0 0 20px rgba(0,113,227,0.2)";
-          
-          document.getElementById('wfStatus').innerText = `EXECUTING STEP ${currentStep+1}: ${step.name.toUpperCase()}`;
-          document.getElementById('wfStatus').style.color = "#0071e3";
+          const wfStatus = document.getElementById('wfStatus');
+          if (wfStatus) {
+            wfStatus.innerText = `EXECUTING STEP ${currentStep+1}: ${step.name.toUpperCase()}`;
+            wfStatus.style.color = "#0071e3";
+          }
           
           const stepModel = models.find(m => m.id === step.model_id) || models[0];
 
-          // Use decimal.js for DAG step token math
-          const inTok = new Decimal(step.input_tokens || 0);
-          const outTok = new Decimal(step.output_tokens || 0);
-          const cachedIn = inTok.mul(0.90);
-          const baseIn = inTok.mul(0.10);
+          const inVal = step.input_tokens || 0;
+          const outVal = step.output_tokens || 0;
+          const cachedInVal = inVal * 0.90;
+          const baseInVal = inVal * 0.10;
           
-          const costBase = baseIn.div(1000000).mul(stepModel.inInr);
-          const costCached = cachedIn.div(1000000).mul(stepModel.cachedInr);
-          const costOut = outTok.div(1000000).mul(stepModel.outInr);
-          
-          const stepCost = costBase.add(costCached).add(costOut).toNumber();
-          const stepSavings = cachedIn.div(1000000).mul(stepModel.inInr).sub(costCached).toNumber();
+          const stepCost = ((baseInVal/1000000) * stepModel.inInr) + ((cachedInVal/1000000) * stepModel.cachedInr) + ((outVal/1000000) * stepModel.outInr);
+          const stepSavings = ((cachedInVal/1000000) * stepModel.inInr) - ((cachedInVal/1000000) * stepModel.cachedInr);
           
           currentCost += stepCost;
           currentSavings += stepSavings;
-          currentTokens += (inTok.toNumber() + outTok.toNumber());
+          currentTokens += (inVal + outVal);
           currentTime += (step.type === 'llm' || step.type === 'agent' ? 1.5 : 0.3) * (speed/800);
           
           updateHud();
           currentStep++;
         } else {
           clearInterval(simInterval);
-          document.getElementById('wfStatus').innerText = "WORKFLOW COMPLETE";
-          document.getElementById('wfStatus').style.color = "#30d158";
-          document.getElementById('btnPlay').style.display = 'block';
-          if(document.getElementById('btnPause')) document.getElementById('btnPause').style.display = 'none';
+          const wfStatus = document.getElementById('wfStatus');
+          if (wfStatus) {
+            wfStatus.innerText = "WORKFLOW COMPLETE";
+            wfStatus.style.color = "#30d158";
+          }
+          if (btnPlay) btnPlay.style.display = 'block';
+          if (btnPause) btnPause.style.display = 'none';
         }
       }, speed);
     }
 
     function pauseSim() {
-      simState.running = false;
-      if (simState.timer) clearTimeout(simState.timer);
-      document.getElementById('statusBadge').innerText = "PAUSED";
+      clearInterval(simInterval);
+      const btnPlay = document.getElementById('btnPlay');
+      if (btnPlay) btnPlay.style.display = 'block';
+      const btnPause = document.getElementById('btnPause');
+      if (btnPause) btnPause.style.display = 'none';
+      const wfStatus = document.getElementById('wfStatus');
+      if (wfStatus) {
+        wfStatus.innerText = "PAUSED";
+        wfStatus.style.color = "#ffd60a";
+      }
     }
 
-    function resetSim() {
-      pauseSim();
-      simState.currentStep = 0;
-      simState.cumCost = 0; simState.cumInTok = 0; simState.cumOutTok = 0; simState.cumLatency = 0; simState.cumCacheSaved = 0;
-
-      document.getElementById('hudCost').innerText = "₹0.000";
-      document.getElementById('hudTokens').innerText = "0";
-      document.getElementById('hudLatency').innerText = "0.0s";
-      document.getElementById('hudCache').innerText = "₹0.000";
-      document.getElementById('statusBadge').innerText = "READY TO SIMULATE";
-
-      
-    }
-
-    
-    
-    
-    
-    
     function initKnowledgeGraph() {
       const container = document.getElementById('mynetwork');
       if(!container || typeof vis === 'undefined') return;
