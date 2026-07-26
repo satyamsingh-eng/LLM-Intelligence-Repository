@@ -107,8 +107,8 @@
       "http_status": 200,
       "final_url": "https://aws.amazon.com/govcloud-us/",
       "content_type": "text/html;charset=utf-8",
-      "bytes": 548541,
-      "sha256": "ab54a705277dae7244683fbafe230adadd77ce4711bf6ff55e9cb301ed3568bc",
+      "bytes": 545228,
+      "sha256": "56c48296b1dd213eea6e9d4175c4adb23699cc3047fb1bb1e8951f51bbe7d463",
       "snapshot": "local_knowledge_repository/official_sources/aws_govcloud.html",
       "usable": true
     },
