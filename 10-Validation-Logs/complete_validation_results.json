@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-07-25T21:59:17+00:00",
+  "status": "FAIL",
+  "branch": "working-research",
+  "counts": {
+    "data_math_source_integrity": {
+      "pass": 118,
+      "total": 118
+    },
+    "browser_release_regression": {
+      "pass": 34,
+      "total": 34
+    },
+    "product_map_regression": {
+      "pass": 68,
+      "total": 68
+    },
+    "model_card_regression": {
+      "pass": 36,
+      "total": 36
+    },
+    "public_link_integrity": {
+      "pass": 27,
+      "total": 27
+    }
+  },
+  "pass": 283,
+  "total": 283,
+  "steps": [
+    {
+      "name": "official-source-refresh",
+      "command": [
+        "python",
+        "/Users/satyyy/Documents/R&D - C3ALABS/LLM-Intelligence-Repository/research/verify_official_sources.py"
+      ],
+      "exit_code": 0,
+      "stdout": "{\n  \"generated_at\": \"2026-07-25T21:58:43+00:00\",\n  \"sources_total\": 33,\n  \"sources_usable\": 33,\n  \"models_total\": 40,\n  \"provider_plus_benchmark\": 37,\n  \"provider_only\": 2,\n  \"benchmark_only\": 1,\n  \"unverified\": 0,\n  \"quarantined\": 3,\n  \"fx\": {\n    \"usd_to_inr\": \"96.56763645952360024611057397\",\n    \"ecb_reference_date\": \"2026-07-24\",\n    \"formula\": \"INR per EUR / USD per EUR\",\n    \"source_id\": \"ecb_fx\"\n  },\n  \"claim_audit\": [\n    {\n      \"claim\": \"EU AI Act Article 15 addresses accuracy, robustness and cybersecurity\",\n      \"status\": \"verified\",\n      \"source_ids\": [\n        \"eu_ai_act_article_15\"\n      ]\n    },\n    {\n      \"claim\": \"Article 15 explicitly prohibits INT4 or requires FP8/BF16\",\n      \"status\": \"contradicted-no-textual-support\",\n      \"source_ids\": [\n        \"eu_ai_act_article_15\"\n      ]\n    },\n    {\n      \"claim\": \"Annex III lists high-risk use categories\",\n      \"status\": \"verified\",\n      \"source_ids\": [\n        \"eu_ai_act_annex_3\"\n      ]\n    },\n    {\n      \"claim\": \"HHS describes BAAs/business-associate contracts for PHI relationships\",\n      \"status\": \"verified\",\n      \"source_ids\": [\n        \"hipaa_baa_hhs\"\n      ]\n    },\n    {\n      \"claim\": \"AWS Bedrock as a model generically confers FedRAMP High\",\n      \"status\": \"unsupported-boundary-specific\",\n      \"source_ids\": [\n        \"aws_bedrock_compliance\",\n        \"fedramp_marketplace\"\n      ]\n    },\n    {\n      \"claim\": \"Self-hosting in a VPC guarantees 100% data sovereignty\",\n      \"status\": \"unsupported\",\n      \"source_ids\": [\n        \"aws_govcloud\",\n        \"aws_bedrock_compliance\"\n      ]\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "runtime-data-refresh",
+      "command": [
+        "python",
+        "/Users/satyyy/Documents/R&D - C3ALABS/LLM-Intelligence-Repository/research/harden_main_report_vnext.py"
+      ],
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "  File \"/Users/satyyy/Documents/R&D - C3ALABS/LLM-Intelligence-Repository/research/harden_main_report_vnext.py\", line 101\n    }\n    ^\nSyntaxError: unmatched '}'\n"
+    }
+  ]
+}

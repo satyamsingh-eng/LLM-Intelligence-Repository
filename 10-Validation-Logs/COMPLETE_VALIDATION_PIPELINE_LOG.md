@@ -3,7 +3,7 @@
 **Execution Pipeline:** `run_complete_validation_pipeline.py`
 **Audit Standard:** Centralized Data Layer & Zero-Defect Continuous Integration
 **Execution Timestamp:** 2026-07-25
-**Overall Build Status:** **ACCEPTED FOR PRODUCTION (34/34 Checks Passed)**
+**Overall Build Status:** **ACCEPTED FOR PRODUCTION (28/34 Checks Passed)**
 
 ---
 
@@ -34,27 +34,27 @@
 * **Verification Note:** Outdated 2024 Gemini 2.0 models banned
 
 ### 2. Research QA: Public Evidence URL Integrity (Browsing links return 200 OK, no 404 API paths)
-* **Status:** `PASSED`
+* **Status:** `FAILED`
 * **Verification Note:** 100% valid browsable links verified
 
 ### 3. Logic & Curation QA: DeepSeek 60 RPM Rate Limit Invalidation Warning
-* **Status:** `PASSED`
+* **Status:** `FAILED`
 * **Verification Note:** Inconsistencies prevented
 
 ### 3. Logic & Curation QA: Primary Sync UI vs Financial Advisory Model Assignment Logic
-* **Status:** `PASSED`
+* **Status:** `FAILED`
 * **Verification Note:** No contradictory routing rules
 
 ### 3. Logic & Curation QA: Executive Header Curation Rule (Shows Curated Models, NOT Raw Dump Count)
-* **Status:** `PASSED`
+* **Status:** `FAILED`
 * **Verification Note:** Header curated for CEO clarity
 
 ### 4. HTML QA: DOM Interactive Element IDs Binding
-* **Status:** `PASSED`
+* **Status:** `FAILED`
 * **Verification Note:** All JS controls mapped
 
 ### 4. HTML QA: Executive UI Zero Emoji Rule Compliance
-* **Status:** `PASSED`
+* **Status:** `FAILED`
 * **Verification Note:** 100% Apple flat dark clean UI
 
 ### 4. HTML QA: Truthful Simulation Labeling (No false 'Live' tags on simulated calculations)

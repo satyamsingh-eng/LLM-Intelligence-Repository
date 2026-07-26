@@ -1,0 +1,205 @@
+{
+  "pass": 36,
+  "total": 36,
+  "errors": [],
+  "results": [
+    [
+      "desktop: 24 unique model cards",
+      true,
+      24
+    ],
+    [
+      "desktop: 40 benchmark configurations preserved",
+      true,
+      40
+    ],
+    [
+      "desktop: card names are unique",
+      true,
+      24
+    ],
+    [
+      "desktop: Claude Opus 5 appears once",
+      true,
+      1
+    ],
+    [
+      "desktop: Kimi K2.6 present",
+      true,
+      null
+    ],
+    [
+      "desktop: Qwen3.7 Plus present",
+      true,
+      null
+    ],
+    [
+      "desktop: Gemini 3.5 Flash-Lite present",
+      true,
+      null
+    ],
+    [
+      "desktop: needs-more-proof filter returns 3",
+      true,
+      3
+    ],
+    [
+      "desktop: speed sort puts Flash-Lite first",
+      true,
+      "Gemini 3.5 Flash-Lite"
+    ],
+    [
+      "desktop: variant search maps to one card",
+      true,
+      1
+    ],
+    [
+      "desktop: variant search maps to Claude Opus 5",
+      true,
+      "Claude Opus 5"
+    ],
+    [
+      "desktop: Claude evidence guide opens",
+      true,
+      null
+    ],
+    [
+      "desktop: Claude guide maps 5 configurations",
+      true,
+      5
+    ],
+    [
+      "desktop: Xhigh setting retained",
+      true,
+      [
+        "Adaptive Reasoning, Max Effort",
+        "Adaptive Reasoning, Xhigh Effort",
+        "Adaptive Reasoning, High Effort",
+        "Adaptive Reasoning, Medium Effort",
+        "Adaptive Reasoning, Low Effort"
+      ]
+    ],
+    [
+      "desktop: provider proof link",
+      true,
+      "https://platform.kimi.ai/docs/guide/kimi-k2-6-quickstart"
+    ],
+    [
+      "desktop: pricing proof link",
+      true,
+      "https://platform.kimi.ai/docs/pricing/chat-k26"
+    ],
+    [
+      "desktop: Escape closes guide",
+      true,
+      null
+    ],
+    [
+      "desktop: Section 7 has no horizontal overflow",
+      true,
+      {
+        "sectionWidth": 1440,
+        "viewport": 1440
+      }
+    ],
+    [
+      "mobile: 24 unique model cards",
+      true,
+      24
+    ],
+    [
+      "mobile: 40 benchmark configurations preserved",
+      true,
+      40
+    ],
+    [
+      "mobile: card names are unique",
+      true,
+      24
+    ],
+    [
+      "mobile: Claude Opus 5 appears once",
+      true,
+      1
+    ],
+    [
+      "mobile: Kimi K2.6 present",
+      true,
+      null
+    ],
+    [
+      "mobile: Qwen3.7 Plus present",
+      true,
+      null
+    ],
+    [
+      "mobile: Gemini 3.5 Flash-Lite present",
+      true,
+      null
+    ],
+    [
+      "mobile: needs-more-proof filter returns 3",
+      true,
+      3
+    ],
+    [
+      "mobile: speed sort puts Flash-Lite first",
+      true,
+      "Gemini 3.5 Flash-Lite"
+    ],
+    [
+      "mobile: variant search maps to one card",
+      true,
+      1
+    ],
+    [
+      "mobile: variant search maps to Claude Opus 5",
+      true,
+      "Claude Opus 5"
+    ],
+    [
+      "mobile: Claude evidence guide opens",
+      true,
+      null
+    ],
+    [
+      "mobile: Claude guide maps 5 configurations",
+      true,
+      5
+    ],
+    [
+      "mobile: Xhigh setting retained",
+      true,
+      [
+        "Adaptive Reasoning, Max Effort",
+        "Adaptive Reasoning, Xhigh Effort",
+        "Adaptive Reasoning, High Effort",
+        "Adaptive Reasoning, Medium Effort",
+        "Adaptive Reasoning, Low Effort"
+      ]
+    ],
+    [
+      "mobile: provider proof link",
+      true,
+      "https://platform.kimi.ai/docs/guide/kimi-k2-6-quickstart"
+    ],
+    [
+      "mobile: pricing proof link",
+      true,
+      "https://platform.kimi.ai/docs/pricing/chat-k26"
+    ],
+    [
+      "mobile: Escape closes guide",
+      true,
+      null
+    ],
+    [
+      "mobile: Section 7 has no horizontal overflow",
+      true,
+      {
+        "sectionWidth": 390,
+        "viewport": 390
+      }
+    ]
+  ]
+}

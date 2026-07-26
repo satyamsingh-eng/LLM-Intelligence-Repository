@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-07-25T20:17:54.075055+00:00",
+  "classification": "restricted internal implementation evidence; do not expose paths in public report",
+  "repository": "/Users/satyyy/Downloads/karaxai-website-staging",
+  "repository_state": "local snapshot without .git metadata; active branch and freshness not verifiable",
+  "findings": [
+    {
+      "capability": "Meeting Assistant",
+      "status": "frontend/API contract found",
+      "evidence": [
+        "src/api/api.ts:1036-1040 createMeetingWithBot endpoint",
+        "src/constant/onboardaSteps.ts:215-217 bot joins, transcribes, generates notes/actions",
+        "src/config/routes.ts:11,17-18 meeting/transcription routes"
+      ]
+    },
+    {
+      "capability": "Agent Builder + Memory",
+      "status": "frontend/API contracts found",
+      "evidence": [
+        "src/api/api.ts:456+ createAgent",
+        "src/api/api.ts:494-496 deleteAgent",
+        "src/api/api.ts:549-632 memory CRUD"
+      ]
+    },
+    {
+      "capability": "Workflow 2.0 controls",
+      "status": "frontend/runtime contracts found",
+      "evidence": [
+        "src/lib/workflowV2.ts:37,93,564 requires_approval",
+        "src/lib/workflowV2.ts:631-633 parallel groups",
+        "src/app/dashboard/agents/aura/hooks/useCOSChat.ts:894+ await_approval events"
+      ]
+    },
+    {
+      "capability": "MCP Server Management",
+      "status": "frontend contracts found",
+      "evidence": [
+        "src/components/dashboardv2/onechat/ConnectMcpDialog.tsx:21-25 verify/list MCP",
+        "src/components/dashboardv2/onechat/OneChatInput.tsx:648-655 MCP query/list"
+      ]
+    },
+    {
+      "capability": "Skills Marketplace",
+      "status": "frontend surface found",
+      "evidence": [
+        "src/constant/onboardaSteps.ts:349-352 marketplace discovery/install",
+        "src/__tests__/useNextStepSuggestion.test.ts:10-14 routes across meetings, skills, workflows, agents"
+      ]
+    }
+  ],
+  "boundaries": [
+    "Frontend/API contracts do not prove backend reliability, connector coverage, data correctness or production deployment.",
+    "The 12 wealth-advisory agent names come from the SARVAX product catalog supplied for this report; this local snapshot does not independently prove each vertical agent implementation."
+  ]
+}

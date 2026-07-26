@@ -1,0 +1,341 @@
+{
+  "schema_version": "1.0",
+  "status": "catalog-wide-rates-with-scenario-workloads",
+  "fx_source": "official_source_manifest.fx",
+  "formula": "((input_tokens × input_usd_per_million) + (output_tokens × output_usd_per_million)) ÷ 1000000 × usd_to_inr",
+  "rounding": "Decimal ROUND_HALF_UP; per-run INR 2 decimals; monthly and annual lakh outputs 4 decimals",
+  "pricing_catalog": [
+    {
+      "id": "qwen3-7-max",
+      "name": "Qwen3.7 Max",
+      "vendor": "Alibaba Cloud",
+      "input_usd": "2.50",
+      "output_usd": "7.50",
+      "rate_scope": "International deployment; official Alibaba Model Studio rate card",
+      "source_id": "alibaba_pricing",
+      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+      "status": "verified-exact-rate-card"
+    },
+    {
+      "id": "qwen3-7-plus",
+      "name": "Qwen3.7 Plus",
+      "chart_label": "Qwen3.7 Plus (≤256K input)",
+      "vendor": "Alibaba Cloud",
+      "input_usd": "0.40",
+      "output_usd": "1.60",
+      "rate_scope": "International deployment; input request up to 256K tokens",
+      "source_id": "alibaba_pricing",
+      "source_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+      "status": "verified-exact-rate-card",
+      "pricing_tiers": [
+        {
+          "max_input_tokens": 256000,
+          "input_usd": "0.40",
+          "output_usd": "1.60",
+          "scope": "0 < input tokens ≤ 256K"
+        },
+        {
+          "max_input_tokens": 1000000,
+          "input_usd": "1.20",
+          "output_usd": "4.80",
+          "scope": "256K < input tokens ≤ 1M"
+        }
+      ]
+    },
+    {
+      "id": "amazon-nova-pro",
+      "name": "Amazon Nova Pro",
+      "vendor": "Amazon",
+      "input_usd": "0.8",
+      "output_usd": "3.2",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://aws.amazon.com/bedrock/pricing/",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "claude-fable-5",
+      "name": "Claude Fable 5",
+      "vendor": "Anthropic",
+      "input_usd": "10",
+      "output_usd": "50",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "claude-opus-4-7",
+      "name": "Claude Opus 4.7",
+      "vendor": "Anthropic",
+      "input_usd": "5",
+      "output_usd": "25",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "claude-opus-4-8",
+      "name": "Claude Opus 4.8",
+      "vendor": "Anthropic",
+      "input_usd": "5",
+      "output_usd": "25",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "claude-opus-5",
+      "name": "Claude Opus 5",
+      "vendor": "Anthropic",
+      "input_usd": "5",
+      "output_usd": "25",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "claude-sonnet-4-6",
+      "name": "Claude Sonnet 4.6",
+      "vendor": "Anthropic",
+      "input_usd": "3.00",
+      "output_usd": "15.00",
+      "rate_scope": "Standard API inference; official Anthropic rate card",
+      "source_id": "anthropic_pricing",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "status": "verified-exact-rate-card"
+    },
+    {
+      "id": "claude-sonnet-5",
+      "name": "Claude Sonnet 5",
+      "vendor": "Anthropic",
+      "input_usd": "2.00",
+      "output_usd": "10.00",
+      "rate_scope": "Introductory rate card through Aug 2026; official Anthropic rate card",
+      "source_id": "anthropic_pricing",
+      "source_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "status": "verified-exact-rate-card"
+    },
+    {
+      "id": "cohere-command-a",
+      "name": "Cohere Command A",
+      "vendor": "Cohere",
+      "input_usd": "0.5",
+      "output_usd": "1.5",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://docs.cohere.com/docs/models",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "name": "DeepSeek V4 Pro",
+      "vendor": "DeepSeek",
+      "input_usd": "0.435",
+      "output_usd": "0.87",
+      "cache_read_usd": "0.003625",
+      "rate_scope": "Standard cache-miss input and output; official DeepSeek rate card",
+      "context_limit_tokens": 1000000,
+      "context_limit_basis": "input_plus_output",
+      "source_id": "deepseek_models_pricing",
+      "source_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "status": "verified-exact-rate-card"
+    },
+    {
+      "id": "gemini-3-1-pro-preview",
+      "name": "Gemini 3.1 Pro Preview",
+      "vendor": "Google",
+      "input_usd": "2.00",
+      "output_usd": "12.00",
+      "rate_scope": "Standard inference (≤200K context); official Google rate card",
+      "source_id": "google_pricing",
+      "source_url": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing",
+      "status": "verified-exact-rate-card"
+    },
+    {
+      "id": "gemini-3-5-flash",
+      "name": "Gemini 3.5 Flash",
+      "vendor": "Google",
+      "input_usd": "1.50",
+      "output_usd": "9.00",
+      "rate_scope": "Global standard inference (≤200K context); official Google rate card",
+      "source_id": "google_pricing",
+      "source_url": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing",
+      "status": "verified-exact-rate-card"
+    },
+    {
+      "id": "gemini-3-5-flash-lite",
+      "name": "Gemini 3.5 Flash-Lite",
+      "vendor": "Google",
+      "input_usd": "0.30",
+      "output_usd": "2.50",
+      "rate_scope": "Global standard inference; official Google rate card",
+      "source_id": "google_pricing",
+      "source_url": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing",
+      "status": "verified-exact-rate-card"
+    },
+    {
+      "id": "gemini-3-6-flash",
+      "name": "Gemini 3.6 Flash",
+      "vendor": "Google",
+      "input_usd": "1.50",
+      "output_usd": "7.50",
+      "rate_scope": "Global standard inference; official Google rate card",
+      "source_id": "google_pricing",
+      "source_url": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing",
+      "status": "verified-exact-rate-card"
+    },
+    {
+      "id": "kimi-k3",
+      "name": "Kimi K3",
+      "vendor": "Kimi",
+      "input_usd": "3",
+      "output_usd": "15",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "muse-spark-1-1",
+      "name": "Muse Spark 1.1",
+      "vendor": "Meta",
+      "input_usd": "1.25",
+      "output_usd": "4.25",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://artificialanalysis.ai/models",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "kimi-k2-6",
+      "name": "Kimi K2.6",
+      "vendor": "Moonshot AI",
+      "input_usd": "0.95",
+      "output_usd": "4.00",
+      "cache_read_usd": "0.16",
+      "rate_scope": "Cache-miss input and output; official Moonshot AI rate card",
+      "context_limit_tokens": 262144,
+      "context_limit_basis": "input_plus_output",
+      "source_id": "moonshot_k26_pricing",
+      "source_url": "https://platform.kimi.ai/docs/pricing/chat-k26",
+      "status": "verified-exact-rate-card"
+    },
+    {
+      "id": "gpt-5-4",
+      "name": "GPT-5.4",
+      "vendor": "OpenAI",
+      "input_usd": "2.5",
+      "output_usd": "15",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://openai.com/business/pricing/",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "gpt-5-5",
+      "name": "GPT-5.5",
+      "vendor": "OpenAI",
+      "input_usd": "5",
+      "output_usd": "30",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://openai.com/business/pricing/",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "gpt-5-6-luna",
+      "name": "GPT-5.6 Luna",
+      "vendor": "OpenAI",
+      "input_usd": "1",
+      "output_usd": "6",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://openai.com/business/pricing/",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "gpt-5-6-sol",
+      "name": "GPT-5.6 Sol",
+      "vendor": "OpenAI",
+      "input_usd": "5",
+      "output_usd": "30",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://openai.com/business/pricing/",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "gpt-5-6-terra",
+      "name": "GPT-5.6 Terra",
+      "vendor": "OpenAI",
+      "input_usd": "2.5",
+      "output_usd": "15",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://openai.com/business/pricing/",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "grok-4-5",
+      "name": "Grok 4.5",
+      "vendor": "SpaceXAI",
+      "input_usd": "2",
+      "output_usd": "6",
+      "rate_scope": "Standard token rate (retained benchmark snapshot)",
+      "source_id": "artificial_analysis_models",
+      "source_url": "https://docs.x.ai/developers/models#models-and-pricing",
+      "status": "retained-benchmark-rate"
+    },
+    {
+      "id": "glm-5-2",
+      "name": "GLM-5.2",
+      "vendor": "Z.AI",
+      "input_usd": "1.40",
+      "output_usd": "4.40",
+      "rate_scope": "Standard inference; official Z.AI rate card",
+      "source_id": "zai_pricing",
+      "source_url": "https://docs.z.ai/guides/overview/pricing",
+      "status": "verified-exact-rate-card"
+    }
+  ],
+  "presets": [
+    {
+      "id": "relationship",
+      "label": "Client Relationship",
+      "input_tokens": 20000,
+      "output_tokens": 2000,
+      "monthly_runs": 10000,
+      "status": "planning-assumption"
+    },
+    {
+      "id": "portfolio",
+      "label": "Portfolio Review",
+      "input_tokens": 75000,
+      "output_tokens": 8000,
+      "monthly_runs": 10000,
+      "status": "planning-assumption"
+    },
+    {
+      "id": "operations",
+      "label": "Compliance Case",
+      "input_tokens": 50000,
+      "output_tokens": 4000,
+      "monthly_runs": 10000,
+      "status": "planning-assumption"
+    }
+  ],
+  "excluded_costs": [
+    "cache discounts",
+    "batch discounts",
+    "retries and failed requests",
+    "tool calls and web search",
+    "storage and vector databases",
+    "orchestration and platform fees",
+    "taxes and regional adjustments"
+  ],
+  "decision_boundary": "Outputs are calculated standard-token price scenarios, not measured production COGS, savings, margin or ROI."
+}

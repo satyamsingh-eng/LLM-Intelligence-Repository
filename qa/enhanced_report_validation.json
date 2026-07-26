@@ -1,0 +1,389 @@
+{
+  "pass": 68,
+  "total": 68,
+  "errors": [],
+  "results": [
+    [
+      "desktop: three advisory journey controls",
+      true,
+      [
+        "Client Relationship Intelligence",
+        "Portfolio & Market Intelligence",
+        "Compliance & Advisor Operations"
+      ]
+    ],
+    [
+      "desktop: file-type controls removed",
+      true,
+      [
+        "Client Relationship Intelligence",
+        "Portfolio & Market Intelligence",
+        "Compliance & Advisor Operations"
+      ]
+    ],
+    [
+      "desktop: four bounded model roles",
+      true,
+      4
+    ],
+    [
+      "desktop: relationship selected",
+      true,
+      "true"
+    ],
+    [
+      "desktop: relationship stage count",
+      true,
+      6
+    ],
+    [
+      "desktop: relationship journey label",
+      true,
+      "Client Relationship Intelligence"
+    ],
+    [
+      "desktop: relationship agent count",
+      true,
+      3
+    ],
+    [
+      "desktop: relationship product mapping visible",
+      true,
+      "Meeting Assistant"
+    ],
+    [
+      "desktop: relationship has control boundary",
+      true,
+      "Control boundaryMeeting intelligence drafts context and actions. The advisor approves material client communication and every financial recommendation."
+    ],
+    [
+      "desktop: portfolio selected",
+      true,
+      "true"
+    ],
+    [
+      "desktop: portfolio stage count",
+      true,
+      8
+    ],
+    [
+      "desktop: portfolio journey label",
+      true,
+      "Portfolio & Market Intelligence"
+    ],
+    [
+      "desktop: portfolio agent count",
+      true,
+      2
+    ],
+    [
+      "desktop: portfolio product mapping visible",
+      true,
+      "Portfolio Analyst"
+    ],
+    [
+      "desktop: portfolio has control boundary",
+      true,
+      "Control boundaryModels can draft analysis. Deterministic portfolio/tax engines validate the math; the advisor owns suitability and final action."
+    ],
+    [
+      "desktop: operations selected",
+      true,
+      "true"
+    ],
+    [
+      "desktop: operations stage count",
+      true,
+      8
+    ],
+    [
+      "desktop: operations journey label",
+      true,
+      "Compliance & Advisor Operations"
+    ],
+    [
+      "desktop: operations agent count",
+      true,
+      7
+    ],
+    [
+      "desktop: operations product mapping visible",
+      true,
+      "KYC/CDD QA Auditor"
+    ],
+    [
+      "desktop: operations has control boundary",
+      true,
+      "Control boundaryPolicy rules and deterministic validation remain outside the model chain. Compliance exceptions and material account changes require named human approval."
+    ],
+    [
+      "desktop: all 12 SARVAX agents mapped",
+      true,
+      12
+    ],
+    [
+      "desktop: codebase evidence boundary explicit",
+      true,
+      "Codebase-backed frontend contracts; backend production behavior and connector coverage require separate verification."
+    ],
+    [
+      "desktop: product-not-model message visible",
+      true,
+      "\n        SARVAX WEALTH-ADVISORY ARCHITECTUREModels underneath the product—not the product itself12 agents · 3 advisory j"
+    ],
+    [
+      "desktop: broad channels visible",
+      true,
+      "channels"
+    ],
+    [
+      "desktop: deterministic and human controls visible",
+      true,
+      "controls"
+    ],
+    [
+      "desktop: old PDF-first route copy absent",
+      true,
+      "old labels scan"
+    ],
+    [
+      "desktop: no undefined architecture fields",
+      true,
+      null
+    ],
+    [
+      "desktop: architecture shell fits viewport",
+      true,
+      {
+        "x": 218,
+        "y": 194.875,
+        "width": 1004,
+        "height": 2554.359375
+      }
+    ],
+    [
+      "desktop: selected route has no horizontal clipping",
+      true,
+      {
+        "scrollWidth": 932,
+        "clientWidth": 932,
+        "direction": "row"
+      }
+    ],
+    [
+      "desktop: Section 7 retains 24 unique cards",
+      true,
+      24
+    ],
+    [
+      "desktop: 40 benchmark configurations retained",
+      true,
+      40
+    ],
+    [
+      "desktop: Claude Opus 5 remains one card",
+      true,
+      1
+    ],
+    [
+      "mobile: three advisory journey controls",
+      true,
+      [
+        "Client Relationship Intelligence",
+        "Portfolio & Market Intelligence",
+        "Compliance & Advisor Operations"
+      ]
+    ],
+    [
+      "mobile: file-type controls removed",
+      true,
+      [
+        "Client Relationship Intelligence",
+        "Portfolio & Market Intelligence",
+        "Compliance & Advisor Operations"
+      ]
+    ],
+    [
+      "mobile: four bounded model roles",
+      true,
+      4
+    ],
+    [
+      "mobile: relationship selected",
+      true,
+      "true"
+    ],
+    [
+      "mobile: relationship stage count",
+      true,
+      6
+    ],
+    [
+      "mobile: relationship journey label",
+      true,
+      "Client Relationship Intelligence"
+    ],
+    [
+      "mobile: relationship agent count",
+      true,
+      3
+    ],
+    [
+      "mobile: relationship product mapping visible",
+      true,
+      "Meeting Assistant"
+    ],
+    [
+      "mobile: relationship has control boundary",
+      true,
+      "Control boundaryMeeting intelligence drafts context and actions. The advisor approves material client communication and every financial recommendation."
+    ],
+    [
+      "mobile: portfolio selected",
+      true,
+      "true"
+    ],
+    [
+      "mobile: portfolio stage count",
+      true,
+      8
+    ],
+    [
+      "mobile: portfolio journey label",
+      true,
+      "Portfolio & Market Intelligence"
+    ],
+    [
+      "mobile: portfolio agent count",
+      true,
+      2
+    ],
+    [
+      "mobile: portfolio product mapping visible",
+      true,
+      "Portfolio Analyst"
+    ],
+    [
+      "mobile: portfolio has control boundary",
+      true,
+      "Control boundaryModels can draft analysis. Deterministic portfolio/tax engines validate the math; the advisor owns suitability and final action."
+    ],
+    [
+      "mobile: operations selected",
+      true,
+      "true"
+    ],
+    [
+      "mobile: operations stage count",
+      true,
+      8
+    ],
+    [
+      "mobile: operations journey label",
+      true,
+      "Compliance & Advisor Operations"
+    ],
+    [
+      "mobile: operations agent count",
+      true,
+      7
+    ],
+    [
+      "mobile: operations product mapping visible",
+      true,
+      "KYC/CDD QA Auditor"
+    ],
+    [
+      "mobile: operations has control boundary",
+      true,
+      "Control boundaryPolicy rules and deterministic validation remain outside the model chain. Compliance exceptions and material account changes require named human approval."
+    ],
+    [
+      "mobile: all 12 SARVAX agents mapped",
+      true,
+      12
+    ],
+    [
+      "mobile: codebase evidence boundary explicit",
+      true,
+      "Codebase-backed frontend contracts; backend production behavior and connector coverage require separate verification."
+    ],
+    [
+      "mobile: product-not-model message visible",
+      true,
+      "\n        SARVAX WEALTH-ADVISORY ARCHITECTUREModels underneath the product—not the product itself12 agents · 3 advisory j"
+    ],
+    [
+      "mobile: broad channels visible",
+      true,
+      "channels"
+    ],
+    [
+      "mobile: deterministic and human controls visible",
+      true,
+      "controls"
+    ],
+    [
+      "mobile: old PDF-first route copy absent",
+      true,
+      "old labels scan"
+    ],
+    [
+      "mobile: no undefined architecture fields",
+      true,
+      null
+    ],
+    [
+      "mobile: architecture shell fits viewport",
+      true,
+      {
+        "x": 20,
+        "y": -198.8125,
+        "width": 350,
+        "height": 6426.75
+      }
+    ],
+    [
+      "mobile: selected route has no horizontal clipping",
+      true,
+      {
+        "scrollWidth": 306,
+        "clientWidth": 306,
+        "direction": "column"
+      }
+    ],
+    [
+      "mobile: route is vertical",
+      true,
+      {
+        "scrollWidth": 306,
+        "clientWidth": 306,
+        "direction": "column"
+      }
+    ],
+    [
+      "mobile: route has no horizontal clipping",
+      true,
+      {
+        "scrollWidth": 306,
+        "clientWidth": 306,
+        "direction": "column"
+      }
+    ],
+    [
+      "mobile: Section 7 retains 24 unique cards",
+      true,
+      24
+    ],
+    [
+      "mobile: 40 benchmark configurations retained",
+      true,
+      40
+    ],
+    [
+      "mobile: Claude Opus 5 remains one card",
+      true,
+      1
+    ]
+  ]
+}

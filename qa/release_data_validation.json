@@ -1,0 +1,1197 @@
+{
+  "generated_at": "2026-07-25T22:30:40+00:00",
+  "pass": 182,
+  "total": 182,
+  "errors": [],
+  "checks": [
+    {
+      "name": "HTML is canonical and nontrivial",
+      "pass": true,
+      "detail": 98886
+    },
+    {
+      "name": "Section 1 marker exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Section 2 marker exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Section 3 marker exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Section 4 marker exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Section 5 marker exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Section 6 marker exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Section 7 marker exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Section 8 marker exists",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Section 9 absent",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Model corpora not embedded",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Runtime JSON loaded by HTML",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Chart.js is bundled locally",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Decimal.js is bundled locally",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No obsolete knowledge graph runtime",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No obsolete glossary runtime",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No gradients",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No glow-effect labels or classes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Banned claim absent: 100% Zero-Defect",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Banned claim absent: Margin Recovery",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Banned claim absent: Expected Annual Capital Saved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Banned claim absent: Unquestioned #1",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Banned claim absent: ₹4.20",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Banned claim absent: Text PDF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Banned claim absent: Scanned / Image PDF",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Banned claim absent: Structured Tax Data",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No local absolute paths in public HTML",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No secret pattern AIza[0-9A-Za",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No secret pattern sk-[0-9A-Za-",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No secret pattern gh[pousr]_[0",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No secret pattern api[_-]?key\\",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "24 unique model cards",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "name": "Direct-open runtime JS matches central JSON",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Canonical HTML loads direct-open runtime payload",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Runtime/model-card equality",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "40 benchmark configurations",
+      "pass": true,
+      "detail": 24
+    },
+    {
+      "name": "Configuration file has 40 rows",
+      "pass": true,
+      "detail": 40
+    },
+    {
+      "name": "Every configuration maps to one grouped card",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No duplicate configuration IDs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Model configuration counts reconcile",
+      "pass": true,
+      "detail": 40
+    },
+    {
+      "name": "Evidence chart counts reconcile",
+      "pass": true,
+      "detail": {
+        "provider_plus_benchmark": 21,
+        "provider_only": 2,
+        "benchmark_only": 1
+      }
+    },
+    {
+      "name": "Intelligence chart recomputes exactly",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TAU chart recomputes exactly",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TAU chart higher-is-better ordering",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Kimi retained TAU claim scoped",
+      "pass": true,
+      "detail": {
+        "name": "Kimi K3",
+        "value": 0.334
+      }
+    },
+    {
+      "name": "Active benchmark snapshot has 586 rows",
+      "pass": true,
+      "detail": 586
+    },
+    {
+      "name": "Historical raw snapshot distinctly has 551 rows",
+      "pass": true,
+      "detail": 551
+    },
+    {
+      "name": "Runtime names active snapshot explicitly",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Runtime usable source count matches manifest",
+      "pass": true,
+      "detail": [
+        33,
+        33
+      ]
+    },
+    {
+      "name": "Source snapshot integrity: eu_ai_act",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 1533653,
+        "actual_bytes": 1533653
+      }
+    },
+    {
+      "name": "Source snapshot integrity: eu_ai_act_article_15",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 85555,
+        "actual_bytes": 85555
+      }
+    },
+    {
+      "name": "Source snapshot integrity: eu_ai_act_annex_3",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 91026,
+        "actual_bytes": 91026
+      }
+    },
+    {
+      "name": "Source snapshot integrity: eu_ai_act_commission",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 88729,
+        "actual_bytes": 88729
+      }
+    },
+    {
+      "name": "Source snapshot integrity: soc2_aicpa",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 404236,
+        "actual_bytes": 404236
+      }
+    },
+    {
+      "name": "Source snapshot integrity: hipaa_baa_hhs",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 211413,
+        "actual_bytes": 211413
+      }
+    },
+    {
+      "name": "Source snapshot integrity: fedramp_marketplace",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 1664,
+        "actual_bytes": 1664
+      }
+    },
+    {
+      "name": "Source snapshot integrity: aws_govcloud",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 548541,
+        "actual_bytes": 548541
+      }
+    },
+    {
+      "name": "Source snapshot integrity: aws_bedrock_compliance",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 217307,
+        "actual_bytes": 217307
+      }
+    },
+    {
+      "name": "Source snapshot integrity: aws_bedrock_pricing",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 930411,
+        "actual_bytes": 930411
+      }
+    },
+    {
+      "name": "Source snapshot integrity: aws_bedrock_models",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 11669,
+        "actual_bytes": 11669
+      }
+    },
+    {
+      "name": "Source snapshot integrity: anthropic_models",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 840592,
+        "actual_bytes": 840592
+      }
+    },
+    {
+      "name": "Source snapshot integrity: anthropic_pricing",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 1035729,
+        "actual_bytes": 1035729
+      }
+    },
+    {
+      "name": "Source snapshot integrity: openai_models",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 330960,
+        "actual_bytes": 330960
+      }
+    },
+    {
+      "name": "Source snapshot integrity: openai_pricing",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 733692,
+        "actual_bytes": 733692
+      }
+    },
+    {
+      "name": "Source snapshot integrity: google_models",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 139161,
+        "actual_bytes": 139161
+      }
+    },
+    {
+      "name": "Source snapshot integrity: google_pricing",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 828252,
+        "actual_bytes": 828252
+      }
+    },
+    {
+      "name": "Source snapshot integrity: deepseek_models_pricing",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 21596,
+        "actual_bytes": 21596
+      }
+    },
+    {
+      "name": "Source snapshot integrity: moonshot_models",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 409266,
+        "actual_bytes": 409266
+      }
+    },
+    {
+      "name": "Source snapshot integrity: moonshot_pricing",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 242937,
+        "actual_bytes": 242937
+      }
+    },
+    {
+      "name": "Source snapshot integrity: moonshot_k26_model",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 518970,
+        "actual_bytes": 518970
+      }
+    },
+    {
+      "name": "Source snapshot integrity: moonshot_k26_pricing",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 235638,
+        "actual_bytes": 235638
+      }
+    },
+    {
+      "name": "Source snapshot integrity: xai_models",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 374373,
+        "actual_bytes": 374373
+      }
+    },
+    {
+      "name": "Source snapshot integrity: xai_pricing",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 374480,
+        "actual_bytes": 374480
+      }
+    },
+    {
+      "name": "Source snapshot integrity: zai_models",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 561208,
+        "actual_bytes": 561208
+      }
+    },
+    {
+      "name": "Source snapshot integrity: zai_pricing",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 287476,
+        "actual_bytes": 287476
+      }
+    },
+    {
+      "name": "Source snapshot integrity: alibaba_models",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 529869,
+        "actual_bytes": 529869
+      }
+    },
+    {
+      "name": "Source snapshot integrity: alibaba_pricing",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 1208414,
+        "actual_bytes": 1208414
+      }
+    },
+    {
+      "name": "Source snapshot integrity: meta_llama",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 384684,
+        "actual_bytes": 384684
+      }
+    },
+    {
+      "name": "Source snapshot integrity: cohere_models",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 769520,
+        "actual_bytes": 769520
+      }
+    },
+    {
+      "name": "Source snapshot integrity: cohere_pricing",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 560505,
+        "actual_bytes": 560505
+      }
+    },
+    {
+      "name": "Source snapshot integrity: ecb_fx",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 1547,
+        "actual_bytes": 1547
+      }
+    },
+    {
+      "name": "Source snapshot integrity: artificial_analysis_models",
+      "pass": true,
+      "detail": {
+        "expected_bytes": 706528,
+        "actual_bytes": 706528
+      }
+    },
+    {
+      "name": "EU Article 15 source usable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "EU Annex III source usable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Article 15 claim verified",
+      "pass": true,
+      "detail": {
+        "EU AI Act Article 15 addresses accuracy, robustness and cybersecurity": "verified",
+        "Article 15 explicitly prohibits INT4 or requires FP8/BF16": "contradicted-no-textual-support",
+        "Annex III lists high-risk use categories": "verified",
+        "HHS describes BAAs/business-associate contracts for PHI relationships": "verified",
+        "AWS Bedrock as a model generically confers FedRAMP High": "unsupported-boundary-specific",
+        "Self-hosting in a VPC guarantees 100% data sovereignty": "unsupported"
+      }
+    },
+    {
+      "name": "INT4 claim rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Annex III claim verified",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "FedRAMP boundary retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Sovereignty overclaim rejected",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ECB FX exact match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ECB reference date exact match",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: qwen3-7-max",
+      "pass": true,
+      "detail": {
+        "expected": "241.42",
+        "actual": "241.42"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: qwen3-7-max",
+      "pass": true,
+      "detail": {
+        "expected": "724.26",
+        "actual": "724.26"
+      }
+    },
+    {
+      "name": "Official rate URL: qwen3-7-max",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: qwen3-7-plus",
+      "pass": true,
+      "detail": {
+        "expected": "38.63",
+        "actual": "38.63"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: qwen3-7-plus",
+      "pass": true,
+      "detail": {
+        "expected": "154.51",
+        "actual": "154.51"
+      }
+    },
+    {
+      "name": "Official rate URL: qwen3-7-plus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: amazon-nova-pro",
+      "pass": true,
+      "detail": {
+        "expected": "77.25",
+        "actual": "77.25"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: amazon-nova-pro",
+      "pass": true,
+      "detail": {
+        "expected": "309.02",
+        "actual": "309.02"
+      }
+    },
+    {
+      "name": "Official rate URL: amazon-nova-pro",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: claude-fable-5",
+      "pass": true,
+      "detail": {
+        "expected": "965.68",
+        "actual": "965.68"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: claude-fable-5",
+      "pass": true,
+      "detail": {
+        "expected": "4828.38",
+        "actual": "4828.38"
+      }
+    },
+    {
+      "name": "Official rate URL: claude-fable-5",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: claude-opus-4-7",
+      "pass": true,
+      "detail": {
+        "expected": "482.84",
+        "actual": "482.84"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: claude-opus-4-7",
+      "pass": true,
+      "detail": {
+        "expected": "2414.19",
+        "actual": "2414.19"
+      }
+    },
+    {
+      "name": "Official rate URL: claude-opus-4-7",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: claude-opus-4-8",
+      "pass": true,
+      "detail": {
+        "expected": "482.84",
+        "actual": "482.84"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: claude-opus-4-8",
+      "pass": true,
+      "detail": {
+        "expected": "2414.19",
+        "actual": "2414.19"
+      }
+    },
+    {
+      "name": "Official rate URL: claude-opus-4-8",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: claude-opus-5",
+      "pass": true,
+      "detail": {
+        "expected": "482.84",
+        "actual": "482.84"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: claude-opus-5",
+      "pass": true,
+      "detail": {
+        "expected": "2414.19",
+        "actual": "2414.19"
+      }
+    },
+    {
+      "name": "Official rate URL: claude-opus-5",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: claude-sonnet-4-6",
+      "pass": true,
+      "detail": {
+        "expected": "289.70",
+        "actual": "289.70"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: claude-sonnet-4-6",
+      "pass": true,
+      "detail": {
+        "expected": "1448.51",
+        "actual": "1448.51"
+      }
+    },
+    {
+      "name": "Official rate URL: claude-sonnet-4-6",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: claude-sonnet-5",
+      "pass": true,
+      "detail": {
+        "expected": "193.14",
+        "actual": "193.14"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: claude-sonnet-5",
+      "pass": true,
+      "detail": {
+        "expected": "965.68",
+        "actual": "965.68"
+      }
+    },
+    {
+      "name": "Official rate URL: claude-sonnet-5",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: cohere-command-a",
+      "pass": true,
+      "detail": {
+        "expected": "48.28",
+        "actual": "48.28"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: cohere-command-a",
+      "pass": true,
+      "detail": {
+        "expected": "144.85",
+        "actual": "144.85"
+      }
+    },
+    {
+      "name": "Official rate URL: cohere-command-a",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: deepseek-v4-pro",
+      "pass": true,
+      "detail": {
+        "expected": "42.01",
+        "actual": "42.01"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: deepseek-v4-pro",
+      "pass": true,
+      "detail": {
+        "expected": "84.01",
+        "actual": "84.01"
+      }
+    },
+    {
+      "name": "Official rate URL: deepseek-v4-pro",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact cache INR conversion: deepseek-v4-pro",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: gemini-3-1-pro-preview",
+      "pass": true,
+      "detail": {
+        "expected": "193.14",
+        "actual": "193.14"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: gemini-3-1-pro-preview",
+      "pass": true,
+      "detail": {
+        "expected": "1158.81",
+        "actual": "1158.81"
+      }
+    },
+    {
+      "name": "Official rate URL: gemini-3-1-pro-preview",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: gemini-3-5-flash",
+      "pass": true,
+      "detail": {
+        "expected": "144.85",
+        "actual": "144.85"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: gemini-3-5-flash",
+      "pass": true,
+      "detail": {
+        "expected": "869.11",
+        "actual": "869.11"
+      }
+    },
+    {
+      "name": "Official rate URL: gemini-3-5-flash",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: gemini-3-5-flash-lite",
+      "pass": true,
+      "detail": {
+        "expected": "28.97",
+        "actual": "28.97"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: gemini-3-5-flash-lite",
+      "pass": true,
+      "detail": {
+        "expected": "241.42",
+        "actual": "241.42"
+      }
+    },
+    {
+      "name": "Official rate URL: gemini-3-5-flash-lite",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: gemini-3-6-flash",
+      "pass": true,
+      "detail": {
+        "expected": "144.85",
+        "actual": "144.85"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: gemini-3-6-flash",
+      "pass": true,
+      "detail": {
+        "expected": "724.26",
+        "actual": "724.26"
+      }
+    },
+    {
+      "name": "Official rate URL: gemini-3-6-flash",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: kimi-k3",
+      "pass": true,
+      "detail": {
+        "expected": "289.70",
+        "actual": "289.70"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: kimi-k3",
+      "pass": true,
+      "detail": {
+        "expected": "1448.51",
+        "actual": "1448.51"
+      }
+    },
+    {
+      "name": "Official rate URL: kimi-k3",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: muse-spark-1-1",
+      "pass": true,
+      "detail": {
+        "expected": "120.71",
+        "actual": "120.71"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: muse-spark-1-1",
+      "pass": true,
+      "detail": {
+        "expected": "410.41",
+        "actual": "410.41"
+      }
+    },
+    {
+      "name": "Official rate URL: muse-spark-1-1",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: kimi-k2-6",
+      "pass": true,
+      "detail": {
+        "expected": "91.74",
+        "actual": "91.74"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: kimi-k2-6",
+      "pass": true,
+      "detail": {
+        "expected": "386.27",
+        "actual": "386.27"
+      }
+    },
+    {
+      "name": "Official rate URL: kimi-k2-6",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact cache INR conversion: kimi-k2-6",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: gpt-5-4",
+      "pass": true,
+      "detail": {
+        "expected": "241.42",
+        "actual": "241.42"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: gpt-5-4",
+      "pass": true,
+      "detail": {
+        "expected": "1448.51",
+        "actual": "1448.51"
+      }
+    },
+    {
+      "name": "Official rate URL: gpt-5-4",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: gpt-5-5",
+      "pass": true,
+      "detail": {
+        "expected": "482.84",
+        "actual": "482.84"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: gpt-5-5",
+      "pass": true,
+      "detail": {
+        "expected": "2897.03",
+        "actual": "2897.03"
+      }
+    },
+    {
+      "name": "Official rate URL: gpt-5-5",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: gpt-5-6-luna",
+      "pass": true,
+      "detail": {
+        "expected": "96.57",
+        "actual": "96.57"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: gpt-5-6-luna",
+      "pass": true,
+      "detail": {
+        "expected": "579.41",
+        "actual": "579.41"
+      }
+    },
+    {
+      "name": "Official rate URL: gpt-5-6-luna",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: gpt-5-6-sol",
+      "pass": true,
+      "detail": {
+        "expected": "482.84",
+        "actual": "482.84"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: gpt-5-6-sol",
+      "pass": true,
+      "detail": {
+        "expected": "2897.03",
+        "actual": "2897.03"
+      }
+    },
+    {
+      "name": "Official rate URL: gpt-5-6-sol",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: gpt-5-6-terra",
+      "pass": true,
+      "detail": {
+        "expected": "241.42",
+        "actual": "241.42"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: gpt-5-6-terra",
+      "pass": true,
+      "detail": {
+        "expected": "1448.51",
+        "actual": "1448.51"
+      }
+    },
+    {
+      "name": "Official rate URL: gpt-5-6-terra",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: grok-4-5",
+      "pass": true,
+      "detail": {
+        "expected": "193.14",
+        "actual": "193.14"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: grok-4-5",
+      "pass": true,
+      "detail": {
+        "expected": "579.41",
+        "actual": "579.41"
+      }
+    },
+    {
+      "name": "Official rate URL: grok-4-5",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Exact input INR conversion: glm-5-2",
+      "pass": true,
+      "detail": {
+        "expected": "135.19",
+        "actual": "135.19"
+      }
+    },
+    {
+      "name": "Exact output INR conversion: glm-5-2",
+      "pass": true,
+      "detail": {
+        "expected": "424.90",
+        "actual": "424.90"
+      }
+    },
+    {
+      "name": "Official rate URL: glm-5-2",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Price chart contains catalog rates",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Price chart values reconcile",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Known Gemini scenario rounds exactly",
+      "pass": true,
+      "detail": "4.104124549529753010459699393725"
+    },
+    {
+      "name": "Known Kimi scenario rounds exactly",
+      "pass": true,
+      "detail": "9.9706084644458117254109167624025"
+    },
+    {
+      "name": "Known monthly difference rounds exactly",
+      "pass": true,
+      "detail": "58664.8391491605871495121736867750000"
+    },
+    {
+      "name": "3 approved wealth-advisory journeys",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "12 unique SARVAX agents",
+      "pass": true,
+      "detail": [
+        "Pre-Meeting Analysis Agent",
+        "Post-Meeting Analysis Agent",
+        "Client Intelligence Strategist",
+        "Portfolio Analyst",
+        "Market Intelligence Agent",
+        "Cadence Ops Lead",
+        "Campaign Audience Architect",
+        "Pipeline & Escalation Tracker",
+        "Team Performance & Workload Insights Agent",
+        "KYC Intelligence Officer",
+        "KYC/CDD QA Auditor",
+        "Document Intelligence & Auto-Population Agent"
+      ]
+    },
+    {
+      "name": "Workflow scenarios match journeys",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Every workflow has mandatory human approval",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Financial and compliance workflows have deterministic controls",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No synthetic telemetry fields",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Frontend snapshot limitation explicit",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Inline JavaScript syntax",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "git diff --check",
+      "pass": true,
+      "detail": ""
+    }
+  ]
+}

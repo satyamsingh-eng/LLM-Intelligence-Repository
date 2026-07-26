@@ -1,0 +1,1793 @@
+{
+  "generated_at": "2026-07-25T22:30:58.725Z",
+  "pass": 239,
+  "total": 239,
+  "errors": [],
+  "results": [
+    [
+      "desktop: runtime loaded",
+      true,
+      null
+    ],
+    [
+      "desktop: wealth-journey KPI is data-driven",
+      true,
+      null
+    ],
+    [
+      "desktop: domain-agent KPI is data-driven",
+      true,
+      null
+    ],
+    [
+      "desktop: no console errors",
+      true,
+      []
+    ],
+    [
+      "desktop: no page errors",
+      true,
+      []
+    ],
+    [
+      "desktop: Section 1 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "desktop: Section 2 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "desktop: Section 3 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "desktop: Section 4 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "desktop: Section 5 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "desktop: Section 6 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "desktop: Section 7 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "desktop: Section 8 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "desktop: Section 9 absent",
+      true,
+      null
+    ],
+    [
+      "desktop: old PDF taxonomy absent",
+      true,
+      null
+    ],
+    [
+      "desktop: 3 wealth journeys",
+      true,
+      null
+    ],
+    [
+      "desktop: 12 unique SARVAX agents mapped",
+      true,
+      {
+        "total": 12,
+        "unique": 12
+      }
+    ],
+    [
+      "desktop: 3 architecture journey controls",
+      true,
+      null
+    ],
+    [
+      "desktop: 4 architecture roles",
+      true,
+      null
+    ],
+    [
+      "desktop: deterministic controls visible",
+      true,
+      null
+    ],
+    [
+      "desktop: advisor approval visible",
+      true,
+      null
+    ],
+    [
+      "desktop: 24 unique model cards",
+      true,
+      null
+    ],
+    [
+      "desktop: 40 benchmark configurations",
+      true,
+      {
+        "configs": 40
+      }
+    ],
+    [
+      "desktop: 4 charts",
+      true,
+      null
+    ],
+    [
+      "desktop: 4 accessible chart tables",
+      true,
+      null
+    ],
+    [
+      "desktop: chart canvases have dimensions",
+      true,
+      [
+        {
+          "w": 954,
+          "h": 520
+        },
+        {
+          "w": 954,
+          "h": 520
+        },
+        {
+          "w": 442,
+          "h": 380
+        },
+        {
+          "w": 442,
+          "h": 380
+        }
+      ]
+    ],
+    [
+      "desktop: chart tables populated",
+      true,
+      [
+        15,
+        15,
+        3,
+        25
+      ]
+    ],
+    [
+      "desktop: chart boundaries disclosed",
+      true,
+      null
+    ],
+    [
+      "desktop: price chart table populated",
+      true,
+      null
+    ],
+    [
+      "desktop: workflow choices 3",
+      true,
+      null
+    ],
+    [
+      "desktop: relationship control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "desktop: portfolio control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "desktop: operations control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "desktop: workflow telemetry labelled not measured",
+      true,
+      null
+    ],
+    [
+      "desktop: workflow playback completes",
+      true,
+      null
+    ],
+    [
+      "desktop: calculator has 25 catalog models",
+      true,
+      null
+    ],
+    [
+      "desktop: calculator formula boundary",
+      true,
+      null
+    ],
+    [
+      "desktop: calculator known Model A per-run display",
+      true,
+      "₹4.10"
+    ],
+    [
+      "desktop: calculator known Model B per-run display",
+      true,
+      "₹9.97"
+    ],
+    [
+      "desktop: FX basis visible",
+      true,
+      null
+    ],
+    [
+      "desktop: no Live telemetry label",
+      true,
+      null
+    ],
+    [
+      "desktop: no unsupported 100% Zero-Defect",
+      true,
+      null
+    ],
+    [
+      "desktop: no fabricated margin recovery",
+      true,
+      null
+    ],
+    [
+      "desktop: no page horizontal overflow",
+      true,
+      {
+        "scroll": 1440,
+        "client": 1440
+      }
+    ],
+    [
+      "desktop: no broken internal anchors",
+      true,
+      []
+    ],
+    [
+      "desktop: external links use noopener",
+      true,
+      []
+    ],
+    [
+      "desktop: controls have accessible names",
+      true,
+      []
+    ],
+    [
+      "desktop: evidence modal opens",
+      true,
+      null
+    ],
+    [
+      "desktop: Escape closes evidence modal",
+      true,
+      null
+    ],
+    [
+      "mobile: runtime loaded",
+      true,
+      null
+    ],
+    [
+      "mobile: wealth-journey KPI is data-driven",
+      true,
+      null
+    ],
+    [
+      "mobile: domain-agent KPI is data-driven",
+      true,
+      null
+    ],
+    [
+      "mobile: no console errors",
+      true,
+      []
+    ],
+    [
+      "mobile: no page errors",
+      true,
+      []
+    ],
+    [
+      "mobile: Section 1 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "mobile: Section 2 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "mobile: Section 3 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "mobile: Section 4 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "mobile: Section 5 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "mobile: Section 6 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "mobile: Section 7 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "mobile: Section 8 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "mobile: Section 9 absent",
+      true,
+      null
+    ],
+    [
+      "mobile: old PDF taxonomy absent",
+      true,
+      null
+    ],
+    [
+      "mobile: 3 wealth journeys",
+      true,
+      null
+    ],
+    [
+      "mobile: 12 unique SARVAX agents mapped",
+      true,
+      {
+        "total": 12,
+        "unique": 12
+      }
+    ],
+    [
+      "mobile: 3 architecture journey controls",
+      true,
+      null
+    ],
+    [
+      "mobile: 4 architecture roles",
+      true,
+      null
+    ],
+    [
+      "mobile: deterministic controls visible",
+      true,
+      null
+    ],
+    [
+      "mobile: advisor approval visible",
+      true,
+      null
+    ],
+    [
+      "mobile: 24 unique model cards",
+      true,
+      null
+    ],
+    [
+      "mobile: 40 benchmark configurations",
+      true,
+      {
+        "configs": 40
+      }
+    ],
+    [
+      "mobile: 4 charts",
+      true,
+      null
+    ],
+    [
+      "mobile: 4 accessible chart tables",
+      true,
+      null
+    ],
+    [
+      "mobile: chart canvases have dimensions",
+      true,
+      [
+        {
+          "w": 300,
+          "h": 340
+        },
+        {
+          "w": 300,
+          "h": 340
+        },
+        {
+          "w": 300,
+          "h": 280
+        },
+        {
+          "w": 300,
+          "h": 280
+        }
+      ]
+    ],
+    [
+      "mobile: chart tables populated",
+      true,
+      [
+        15,
+        15,
+        3,
+        25
+      ]
+    ],
+    [
+      "mobile: chart boundaries disclosed",
+      true,
+      null
+    ],
+    [
+      "mobile: price chart table populated",
+      true,
+      null
+    ],
+    [
+      "mobile: workflow choices 3",
+      true,
+      null
+    ],
+    [
+      "mobile: relationship control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "mobile: portfolio control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "mobile: operations control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "mobile: workflow telemetry labelled not measured",
+      true,
+      null
+    ],
+    [
+      "mobile: workflow playback completes",
+      true,
+      null
+    ],
+    [
+      "mobile: calculator has 25 catalog models",
+      true,
+      null
+    ],
+    [
+      "mobile: calculator formula boundary",
+      true,
+      null
+    ],
+    [
+      "mobile: calculator known Model A per-run display",
+      true,
+      "₹4.10"
+    ],
+    [
+      "mobile: calculator known Model B per-run display",
+      true,
+      "₹9.97"
+    ],
+    [
+      "mobile: FX basis visible",
+      true,
+      null
+    ],
+    [
+      "mobile: no Live telemetry label",
+      true,
+      null
+    ],
+    [
+      "mobile: no unsupported 100% Zero-Defect",
+      true,
+      null
+    ],
+    [
+      "mobile: no fabricated margin recovery",
+      true,
+      null
+    ],
+    [
+      "mobile: no page horizontal overflow",
+      true,
+      {
+        "scroll": 390,
+        "client": 390
+      }
+    ],
+    [
+      "mobile: no broken internal anchors",
+      true,
+      []
+    ],
+    [
+      "mobile: external links use noopener",
+      true,
+      []
+    ],
+    [
+      "mobile: controls have accessible names",
+      true,
+      []
+    ],
+    [
+      "tablet: runtime loaded",
+      true,
+      null
+    ],
+    [
+      "tablet: wealth-journey KPI is data-driven",
+      true,
+      null
+    ],
+    [
+      "tablet: domain-agent KPI is data-driven",
+      true,
+      null
+    ],
+    [
+      "tablet: no console errors",
+      true,
+      []
+    ],
+    [
+      "tablet: no page errors",
+      true,
+      []
+    ],
+    [
+      "tablet: Section 1 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "tablet: Section 2 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "tablet: Section 3 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "tablet: Section 4 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "tablet: Section 5 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "tablet: Section 6 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "tablet: Section 7 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "tablet: Section 8 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "tablet: Section 9 absent",
+      true,
+      null
+    ],
+    [
+      "tablet: old PDF taxonomy absent",
+      true,
+      null
+    ],
+    [
+      "tablet: 3 wealth journeys",
+      true,
+      null
+    ],
+    [
+      "tablet: 12 unique SARVAX agents mapped",
+      true,
+      {
+        "total": 12,
+        "unique": 12
+      }
+    ],
+    [
+      "tablet: 3 architecture journey controls",
+      true,
+      null
+    ],
+    [
+      "tablet: 4 architecture roles",
+      true,
+      null
+    ],
+    [
+      "tablet: deterministic controls visible",
+      true,
+      null
+    ],
+    [
+      "tablet: advisor approval visible",
+      true,
+      null
+    ],
+    [
+      "tablet: 24 unique model cards",
+      true,
+      null
+    ],
+    [
+      "tablet: 40 benchmark configurations",
+      true,
+      {
+        "configs": 40
+      }
+    ],
+    [
+      "tablet: 4 charts",
+      true,
+      null
+    ],
+    [
+      "tablet: 4 accessible chart tables",
+      true,
+      null
+    ],
+    [
+      "tablet: chart canvases have dimensions",
+      true,
+      [
+        {
+          "w": 678,
+          "h": 340
+        },
+        {
+          "w": 678,
+          "h": 340
+        },
+        {
+          "w": 678,
+          "h": 280
+        },
+        {
+          "w": 678,
+          "h": 280
+        }
+      ]
+    ],
+    [
+      "tablet: chart tables populated",
+      true,
+      [
+        15,
+        15,
+        3,
+        25
+      ]
+    ],
+    [
+      "tablet: chart boundaries disclosed",
+      true,
+      null
+    ],
+    [
+      "tablet: price chart table populated",
+      true,
+      null
+    ],
+    [
+      "tablet: workflow choices 3",
+      true,
+      null
+    ],
+    [
+      "tablet: relationship control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "tablet: portfolio control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "tablet: operations control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "tablet: workflow telemetry labelled not measured",
+      true,
+      null
+    ],
+    [
+      "tablet: workflow playback completes",
+      true,
+      null
+    ],
+    [
+      "tablet: calculator has 25 catalog models",
+      true,
+      null
+    ],
+    [
+      "tablet: calculator formula boundary",
+      true,
+      null
+    ],
+    [
+      "tablet: calculator known Model A per-run display",
+      true,
+      "₹4.10"
+    ],
+    [
+      "tablet: calculator known Model B per-run display",
+      true,
+      "₹9.97"
+    ],
+    [
+      "tablet: FX basis visible",
+      true,
+      null
+    ],
+    [
+      "tablet: no Live telemetry label",
+      true,
+      null
+    ],
+    [
+      "tablet: no unsupported 100% Zero-Defect",
+      true,
+      null
+    ],
+    [
+      "tablet: no fabricated margin recovery",
+      true,
+      null
+    ],
+    [
+      "tablet: no page horizontal overflow",
+      true,
+      {
+        "scroll": 768,
+        "client": 768
+      }
+    ],
+    [
+      "tablet: no broken internal anchors",
+      true,
+      []
+    ],
+    [
+      "tablet: external links use noopener",
+      true,
+      []
+    ],
+    [
+      "tablet: controls have accessible names",
+      true,
+      []
+    ],
+    [
+      "file-direct: runtime loaded",
+      true,
+      null
+    ],
+    [
+      "file-direct: wealth-journey KPI is data-driven",
+      true,
+      null
+    ],
+    [
+      "file-direct: domain-agent KPI is data-driven",
+      true,
+      null
+    ],
+    [
+      "file-direct: no console errors",
+      true,
+      []
+    ],
+    [
+      "file-direct: no page errors",
+      true,
+      []
+    ],
+    [
+      "file-direct: Section 1 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "file-direct: Section 2 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "file-direct: Section 3 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "file-direct: Section 4 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "file-direct: Section 5 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "file-direct: Section 6 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "file-direct: Section 7 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "file-direct: Section 8 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "file-direct: Section 9 absent",
+      true,
+      null
+    ],
+    [
+      "file-direct: old PDF taxonomy absent",
+      true,
+      null
+    ],
+    [
+      "file-direct: 3 wealth journeys",
+      true,
+      null
+    ],
+    [
+      "file-direct: 12 unique SARVAX agents mapped",
+      true,
+      {
+        "total": 12,
+        "unique": 12
+      }
+    ],
+    [
+      "file-direct: 3 architecture journey controls",
+      true,
+      null
+    ],
+    [
+      "file-direct: 4 architecture roles",
+      true,
+      null
+    ],
+    [
+      "file-direct: deterministic controls visible",
+      true,
+      null
+    ],
+    [
+      "file-direct: advisor approval visible",
+      true,
+      null
+    ],
+    [
+      "file-direct: 24 unique model cards",
+      true,
+      null
+    ],
+    [
+      "file-direct: 40 benchmark configurations",
+      true,
+      {
+        "configs": 40
+      }
+    ],
+    [
+      "file-direct: 4 charts",
+      true,
+      null
+    ],
+    [
+      "file-direct: 4 accessible chart tables",
+      true,
+      null
+    ],
+    [
+      "file-direct: chart canvases have dimensions",
+      true,
+      [
+        {
+          "w": 954,
+          "h": 520
+        },
+        {
+          "w": 954,
+          "h": 520
+        },
+        {
+          "w": 442,
+          "h": 380
+        },
+        {
+          "w": 442,
+          "h": 380
+        }
+      ]
+    ],
+    [
+      "file-direct: chart tables populated",
+      true,
+      [
+        15,
+        15,
+        3,
+        25
+      ]
+    ],
+    [
+      "file-direct: chart boundaries disclosed",
+      true,
+      null
+    ],
+    [
+      "file-direct: price chart table populated",
+      true,
+      null
+    ],
+    [
+      "file-direct: workflow choices 3",
+      true,
+      null
+    ],
+    [
+      "file-direct: relationship control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "file-direct: portfolio control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "file-direct: operations control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "file-direct: workflow telemetry labelled not measured",
+      true,
+      null
+    ],
+    [
+      "file-direct: workflow playback completes",
+      true,
+      null
+    ],
+    [
+      "file-direct: calculator has 25 catalog models",
+      true,
+      null
+    ],
+    [
+      "file-direct: calculator formula boundary",
+      true,
+      null
+    ],
+    [
+      "file-direct: calculator known Model A per-run display",
+      true,
+      "₹4.10"
+    ],
+    [
+      "file-direct: calculator known Model B per-run display",
+      true,
+      "₹9.97"
+    ],
+    [
+      "file-direct: FX basis visible",
+      true,
+      null
+    ],
+    [
+      "file-direct: no Live telemetry label",
+      true,
+      null
+    ],
+    [
+      "file-direct: no unsupported 100% Zero-Defect",
+      true,
+      null
+    ],
+    [
+      "file-direct: no fabricated margin recovery",
+      true,
+      null
+    ],
+    [
+      "file-direct: no page horizontal overflow",
+      true,
+      {
+        "scroll": 1440,
+        "client": 1440
+      }
+    ],
+    [
+      "file-direct: no broken internal anchors",
+      true,
+      []
+    ],
+    [
+      "file-direct: external links use noopener",
+      true,
+      []
+    ],
+    [
+      "file-direct: controls have accessible names",
+      true,
+      []
+    ],
+    [
+      "offline-file: runtime loaded",
+      true,
+      null
+    ],
+    [
+      "offline-file: wealth-journey KPI is data-driven",
+      true,
+      null
+    ],
+    [
+      "offline-file: domain-agent KPI is data-driven",
+      true,
+      null
+    ],
+    [
+      "offline-file: no console errors",
+      true,
+      []
+    ],
+    [
+      "offline-file: no page errors",
+      true,
+      []
+    ],
+    [
+      "offline-file: Section 1 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "offline-file: Section 2 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "offline-file: Section 3 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "offline-file: Section 4 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "offline-file: Section 5 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "offline-file: Section 6 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "offline-file: Section 7 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "offline-file: Section 8 present",
+      true,
+      [
+        "Section 1",
+        "Section 2",
+        "Section 3",
+        "Calculated price difference",
+        "Section 4",
+        "Decision under test",
+        "Section 5",
+        "Section 6",
+        "Section 7",
+        "Section 8"
+      ]
+    ],
+    [
+      "offline-file: Section 9 absent",
+      true,
+      null
+    ],
+    [
+      "offline-file: old PDF taxonomy absent",
+      true,
+      null
+    ],
+    [
+      "offline-file: 3 wealth journeys",
+      true,
+      null
+    ],
+    [
+      "offline-file: 12 unique SARVAX agents mapped",
+      true,
+      {
+        "total": 12,
+        "unique": 12
+      }
+    ],
+    [
+      "offline-file: 3 architecture journey controls",
+      true,
+      null
+    ],
+    [
+      "offline-file: 4 architecture roles",
+      true,
+      null
+    ],
+    [
+      "offline-file: deterministic controls visible",
+      true,
+      null
+    ],
+    [
+      "offline-file: advisor approval visible",
+      true,
+      null
+    ],
+    [
+      "offline-file: 24 unique model cards",
+      true,
+      null
+    ],
+    [
+      "offline-file: 40 benchmark configurations",
+      true,
+      {
+        "configs": 40
+      }
+    ],
+    [
+      "offline-file: 4 charts",
+      true,
+      null
+    ],
+    [
+      "offline-file: 4 accessible chart tables",
+      true,
+      null
+    ],
+    [
+      "offline-file: chart canvases have dimensions",
+      true,
+      [
+        {
+          "w": 954,
+          "h": 520
+        },
+        {
+          "w": 954,
+          "h": 520
+        },
+        {
+          "w": 442,
+          "h": 380
+        },
+        {
+          "w": 442,
+          "h": 380
+        }
+      ]
+    ],
+    [
+      "offline-file: chart tables populated",
+      true,
+      [
+        15,
+        15,
+        3,
+        25
+      ]
+    ],
+    [
+      "offline-file: chart boundaries disclosed",
+      true,
+      null
+    ],
+    [
+      "offline-file: price chart table populated",
+      true,
+      null
+    ],
+    [
+      "offline-file: workflow choices 3",
+      true,
+      null
+    ],
+    [
+      "offline-file: relationship control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "offline-file: portfolio control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "offline-file: operations control-flow stage count",
+      true,
+      null
+    ],
+    [
+      "offline-file: workflow telemetry labelled not measured",
+      true,
+      null
+    ],
+    [
+      "offline-file: workflow playback completes",
+      true,
+      null
+    ],
+    [
+      "offline-file: calculator has 25 catalog models",
+      true,
+      null
+    ],
+    [
+      "offline-file: calculator formula boundary",
+      true,
+      null
+    ],
+    [
+      "offline-file: calculator known Model A per-run display",
+      true,
+      "₹4.10"
+    ],
+    [
+      "offline-file: calculator known Model B per-run display",
+      true,
+      "₹9.97"
+    ],
+    [
+      "offline-file: FX basis visible",
+      true,
+      null
+    ],
+    [
+      "offline-file: no Live telemetry label",
+      true,
+      null
+    ],
+    [
+      "offline-file: no unsupported 100% Zero-Defect",
+      true,
+      null
+    ],
+    [
+      "offline-file: no fabricated margin recovery",
+      true,
+      null
+    ],
+    [
+      "offline-file: no page horizontal overflow",
+      true,
+      {
+        "scroll": 1440,
+        "client": 1440
+      }
+    ],
+    [
+      "offline-file: no broken internal anchors",
+      true,
+      []
+    ],
+    [
+      "offline-file: external links use noopener",
+      true,
+      []
+    ],
+    [
+      "offline-file: controls have accessible names",
+      true,
+      []
+    ],
+    [
+      "print: nav hidden",
+      true,
+      null
+    ],
+    [
+      "print: charts remain visible",
+      true,
+      null
+    ]
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "generated_at": "2026-07-25T21:58:43+00:00",
+  "claims": [
+    {
+      "claim": "EU AI Act Article 15 addresses accuracy, robustness and cybersecurity",
+      "status": "verified",
+      "source_ids": [
+        "eu_ai_act_article_15"
+      ]
+    },
+    {
+      "claim": "Article 15 explicitly prohibits INT4 or requires FP8/BF16",
+      "status": "contradicted-no-textual-support",
+      "source_ids": [
+        "eu_ai_act_article_15"
+      ]
+    },
+    {
+      "claim": "Annex III lists high-risk use categories",
+      "status": "verified",
+      "source_ids": [
+        "eu_ai_act_annex_3"
+      ]
+    },
+    {
+      "claim": "HHS describes BAAs/business-associate contracts for PHI relationships",
+      "status": "verified",
+      "source_ids": [
+        "hipaa_baa_hhs"
+      ]
+    },
+    {
+      "claim": "AWS Bedrock as a model generically confers FedRAMP High",
+      "status": "unsupported-boundary-specific",
+      "source_ids": [
+        "aws_bedrock_compliance",
+        "fedramp_marketplace"
+      ]
+    },
+    {
+      "claim": "Self-hosting in a VPC guarantees 100% data sovereignty",
+      "status": "unsupported",
+      "source_ids": [
+        "aws_govcloud",
+        "aws_bedrock_compliance"
+      ]
+    }
+  ]
+}

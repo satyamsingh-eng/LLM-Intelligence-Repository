@@ -1,0 +1,323 @@
+{
+  "generated_at": "2026-07-25T19:59:48+00:00",
+  "fx": {
+    "usd_to_inr": "96.56763645952360024611057397",
+    "reference_date": "2026-07-24",
+    "source": "ECB reference cross-rate"
+  },
+  "governance": "Material tax, compliance and portfolio actions require deterministic validation and human approval after the model route.",
+  "roles": [
+    {
+      "id": "brain",
+      "number": 1,
+      "nickname": "The Brain",
+      "kind": "Core stage 2",
+      "model": "Kimi K3",
+      "vendor": "Moonshot AI",
+      "role": "Produces bounded portfolio, tax and compliance analysis drafts inside SARVAX agents. Deterministic calculators and advisor approval own the final decision.",
+      "why": "Its retained TAU Banking result is 0.3340, the highest value in this report’s retained 40-configuration comparison set. This is a shortlist signal, not proof of production accuracy.",
+      "tradeoff": "Use only where a wealth-advisory journey needs deeper financial reasoning. Meeting notes, routing and routine extraction should not pay this cost or inherit this latency.",
+      "metrics": [
+        {
+          "label": "TAU Banking",
+          "value": "0.3340",
+          "scope": "Retained independent snapshot"
+        },
+        {
+          "label": "Speed",
+          "value": "33.1 tps",
+          "scope": "Retained independent snapshot"
+        },
+        {
+          "label": "Input / 1M",
+          "value": "₹289.70",
+          "scope": "Retained benchmark rate; exact SKU price needs claim-level verification"
+        }
+      ],
+      "status": "Task testing required",
+      "sourceUrl": "https://platform.kimi.ai/docs/overview",
+      "benchmarkUrl": "https://artificialanalysis.ai/models"
+    },
+    {
+      "id": "reader",
+      "number": 2,
+      "nickname": "The Reader",
+      "kind": "Core stage 1",
+      "model": "DeepSeek V4 Pro",
+      "vendor": "DeepSeek",
+      "role": "Normalizes high-volume text from meeting transcripts, email, WhatsApp exports, CRM notes, research and text-native statements before SARVAX agents reason over it.",
+      "why": "The official rate card verifies the exact SKU, low cache-hit pricing, JSON output, tool calls and a 1M context window—useful for large client-context assembly.",
+      "tradeoff": "It is a text-context worker, not the product. Image-origin evidence still needs the Vision Gate; extracted facts must retain source references and pass journey-specific validation.",
+      "metrics": [
+        {
+          "label": "TAU Banking range",
+          "value": "0.2371–0.2577",
+          "scope": "Retained independent configurations"
+        },
+        {
+          "label": "General score range",
+          "value": "31.2–44.3",
+          "scope": "Retained independent configurations"
+        },
+        {
+          "label": "Cache-miss input / 1M",
+          "value": "₹42.01",
+          "scope": "Official DeepSeek rate card"
+        }
+      ],
+      "status": "Official SKU and price verified; task quality unproven",
+      "sourceUrl": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "benchmarkUrl": "https://artificialanalysis.ai/models/deepseek-v4-pro"
+    },
+    {
+      "id": "router",
+      "number": 3,
+      "nickname": "The Router",
+      "kind": "Conditional gate",
+      "model": "Gemini 3.5 Flash-Lite",
+      "vendor": "Google",
+      "role": "Identifies the wealth-advisory journey, urgency, household context and required SARVAX agent/workflow before expensive processing begins.",
+      "why": "Google describes it as its fastest, most cost-effective 3.5 model for high-throughput execution. The retained snapshot reports 362.2 tps; its verified input rate is ₹28.97/1M.",
+      "tradeoff": "Use for routing, classification and low-risk extraction checks—not investment, tax or compliance conclusions. Low-confidence routing must fall back to review.",
+      "metrics": [
+        {
+          "label": "Speed",
+          "value": "362.2 tps",
+          "scope": "Retained independent snapshot"
+        },
+        {
+          "label": "Input / 1M",
+          "value": "₹28.97",
+          "scope": "Verified official rate card"
+        },
+        {
+          "label": "TAU Banking",
+          "value": "0.1649",
+          "scope": "Retained independent snapshot"
+        }
+      ],
+      "status": "Conditional gate; task testing required",
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models",
+      "benchmarkUrl": "https://artificialanalysis.ai/models"
+    },
+    {
+      "id": "vision",
+      "number": 4,
+      "nickname": "The Vision Gate",
+      "kind": "Conditional gate",
+      "model": "Gemini 3.6 Flash",
+      "vendor": "Google",
+      "role": "Handles image-origin evidence—scanned KYC records, photographed forms, charts and statement pages—when a broader wealth-advisory journey actually needs it.",
+      "why": "Google’s model page describes Gemini 3.6 Flash as supporting agentic and multimodal tasks. The retained snapshot reports 243.9 tps.",
+      "tradeoff": "Multimodal identity does not prove financial-document OCR accuracy. Validate tables, decimal placement, signatures and low-quality scans; escalate low-confidence evidence.",
+      "metrics": [
+        {
+          "label": "Speed",
+          "value": "243.9 tps",
+          "scope": "Retained independent snapshot"
+        },
+        {
+          "label": "General score",
+          "value": "50.1",
+          "scope": "Retained independent snapshot"
+        },
+        {
+          "label": "Price",
+          "value": "Exact SKU rate not established",
+          "scope": "Retained benchmark rate; exact SKU price needs claim-level verification"
+        }
+      ],
+      "status": "Multimodal identity verified; OCR accuracy unproven",
+      "sourceUrl": "https://ai.google.dev/gemini-api/docs/models",
+      "benchmarkUrl": "https://artificialanalysis.ai/models"
+    }
+  ],
+  "qa_corrections": [
+    "Replaced PDF/file-type routes with three wealth-advisory product journeys.",
+    "Mapped all 12 SARVAX wealth-advisory agents to relationship, portfolio/market and compliance/operations journeys.",
+    "Mapped product surfaces only where frontend code or API contracts exist; specific wealth connector availability is not implied.",
+    "Kept deterministic math, policy, authorization and human approval outside the model chain.",
+    "Retained model evidence boundaries: benchmark performance is a shortlist signal, not production authorization."
+  ],
+  "architecture_name": "SARVAX Wealth-Advisory Routing Architecture",
+  "architecture_type": "3 product journeys + bounded model roles",
+  "scope": "SARVAX wealth-advisory product mapping; models are components, not the product.",
+  "nodes": {
+    "relationship_intake": {
+      "title": "Relationship intake",
+      "subtitle": "Meeting Assistant + CRM/MCP context",
+      "type": "product"
+    },
+    "portfolio_intake": {
+      "title": "Portfolio intake",
+      "subtitle": "Holdings + market + client context",
+      "type": "product"
+    },
+    "operations_intake": {
+      "title": "Operations intake",
+      "subtitle": "KYC + tasks + workflow events",
+      "type": "product"
+    },
+    "relationship_agents": {
+      "title": "Relationship agents",
+      "subtitle": "Pre/Post Meeting + Client Strategist",
+      "type": "agent"
+    },
+    "portfolio_agents": {
+      "title": "Portfolio agents",
+      "subtitle": "Portfolio Analyst + Market Intelligence",
+      "type": "agent"
+    },
+    "operations_agents": {
+      "title": "Compliance & Ops agents",
+      "subtitle": "KYC, QA, Document, Cadence, Pipeline",
+      "type": "agent"
+    },
+    "deterministic": {
+      "title": "Deterministic controls",
+      "subtitle": "Calculators + policy rules + validation",
+      "type": "control"
+    },
+    "approval": {
+      "title": "Advisor approval",
+      "subtitle": "Workflow 2.0 approval gate",
+      "type": "human"
+    },
+    "writeback": {
+      "title": "System writeback",
+      "subtitle": "CRM, tasks, notifications, artifacts",
+      "type": "product"
+    }
+  },
+  "journeys": [
+    {
+      "id": "relationship",
+      "label": "Client Relationship Intelligence",
+      "short_label": "Relationship",
+      "summary": "Turns meetings and ongoing client communication into advisor-ready context, follow-ups and controlled system updates.",
+      "outcome": "Every advisor starts prepared, leaves with structured actions and keeps the client record current.",
+      "inputs": [
+        "Meeting Assistant transcripts",
+        "Email and WhatsApp context",
+        "CRM household history",
+        "Advisor notes and tasks"
+      ],
+      "agents": [
+        "Pre-Meeting Analysis Agent",
+        "Post-Meeting Analysis Agent",
+        "Client Intelligence Strategist"
+      ],
+      "surfaces": [
+        "Meeting Assistant",
+        "Agent Builder",
+        "Agent Memory",
+        "Workflow 2.0",
+        "MCP / integrations layer",
+        "Notifications and writeback"
+      ],
+      "guardrail": "Meeting intelligence drafts context and actions. The advisor approves material client communication and every financial recommendation.",
+      "stages": [
+        "relationship_intake",
+        "router",
+        "reader",
+        "relationship_agents",
+        "approval",
+        "writeback"
+      ]
+    },
+    {
+      "id": "portfolio",
+      "label": "Portfolio & Market Intelligence",
+      "short_label": "Portfolio",
+      "summary": "Combines holdings, market context and client objectives into review-ready portfolio and tax-analysis drafts.",
+      "outcome": "Faster portfolio reviews with traceable evidence, deterministic calculations and advisor-controlled recommendations.",
+      "inputs": [
+        "Holdings and transactions",
+        "Market and research feeds",
+        "Risk profile and goals",
+        "Statements and tax-lot data"
+      ],
+      "agents": [
+        "Portfolio Analyst",
+        "Market Intelligence Agent"
+      ],
+      "surfaces": [
+        "MCP / integrations layer",
+        "OneChat projects and artifacts",
+        "Agent Builder",
+        "Skills",
+        "Workflow 2.0",
+        "Approval and audit trail"
+      ],
+      "guardrail": "Models can draft analysis. Deterministic portfolio/tax engines validate the math; the advisor owns suitability and final action.",
+      "stages": [
+        "portfolio_intake",
+        "router",
+        "reader",
+        "portfolio_agents",
+        "brain",
+        "deterministic",
+        "approval",
+        "writeback"
+      ]
+    },
+    {
+      "id": "operations",
+      "label": "Compliance & Advisor Operations",
+      "short_label": "Compliance & Operations",
+      "summary": "Routes KYC, review cadence, pipeline, workload and document events through bounded agents and approval-controlled workflows.",
+      "outcome": "Fewer missed obligations, cleaner KYC evidence and visible ownership across the advisory team.",
+      "inputs": [
+        "KYC/CDD records",
+        "Client and account changes",
+        "Review cadence and pipeline events",
+        "Forms, messages and team tasks"
+      ],
+      "agents": [
+        "Cadence Ops Lead",
+        "Campaign Audience Architect",
+        "Pipeline & Escalation Tracker",
+        "Team Performance & Workload Insights Agent",
+        "KYC Intelligence Officer",
+        "KYC/CDD QA Auditor",
+        "Document Intelligence & Auto-Population Agent"
+      ],
+      "surfaces": [
+        "Agent Builder",
+        "Agent Memory",
+        "Workflow 2.0 parallel groups",
+        "Approval gates",
+        "Skills",
+        "MCP / integrations layer",
+        "Notifications"
+      ],
+      "guardrail": "Policy rules and deterministic validation remain outside the model chain. Compliance exceptions and material account changes require named human approval.",
+      "stages": [
+        "operations_intake",
+        "router",
+        "vision",
+        "reader",
+        "operations_agents",
+        "deterministic",
+        "approval",
+        "writeback"
+      ]
+    }
+  ],
+  "default_journey": "relationship",
+  "product_mapping": {
+    "agent_count": 12,
+    "platform_capabilities": [
+      "Meeting Assistant",
+      "Agent Builder",
+      "Agent Memory",
+      "Workflow 2.0 DAG and approvals",
+      "MCP Server Management",
+      "Skills Marketplace",
+      "OneChat",
+      "Notifications"
+    ],
+    "evidence_status": "Codebase-backed frontend contracts; backend production behavior and connector coverage require separate verification.",
+    "codebase_snapshot": "Local SARVAX/KaraX frontend snapshot; git branch metadata unavailable."
+  }
+}

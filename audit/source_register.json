@@ -1,0 +1,95 @@
+{
+  "generated_at": "2026-07-25T12:14:51+00:00",
+  "sources": [
+    {
+      "id": "S-OPENAI-MODELS",
+      "tier": 1,
+      "publisher": "OpenAI",
+      "title": "Models documentation",
+      "url": "https://platform.openai.com/docs/models",
+      "status": "retrieval_blocked_this_run",
+      "claim_scope": "Current public model names and capabilities"
+    },
+    {
+      "id": "S-OPENAI-PRICE",
+      "tier": 1,
+      "publisher": "OpenAI",
+      "title": "API pricing",
+      "url": "https://openai.com/api/pricing/",
+      "status": "retrieval_blocked_this_run",
+      "claim_scope": "Public API pricing and batch/cache terms"
+    },
+    {
+      "id": "S-ANTHROPIC-MODELS",
+      "tier": 1,
+      "publisher": "Anthropic",
+      "title": "Claude models overview",
+      "url": "https://docs.anthropic.com/en/docs/about-claude/models/overview",
+      "status": "retrieval_blocked_this_run",
+      "claim_scope": "Current Claude model names and capabilities"
+    },
+    {
+      "id": "S-ANTHROPIC-PRICE",
+      "tier": 1,
+      "publisher": "Anthropic",
+      "title": "Pricing",
+      "url": "https://www.anthropic.com/pricing",
+      "status": "retrieval_blocked_this_run",
+      "claim_scope": "Claude pricing and commercial cache terms"
+    },
+    {
+      "id": "S-GOOGLE-MODELS",
+      "tier": 1,
+      "publisher": "Google",
+      "title": "Gemini models",
+      "url": "https://ai.google.dev/gemini-api/docs/models",
+      "status": "retrieval_blocked_this_run",
+      "claim_scope": "Current Gemini models and capabilities"
+    },
+    {
+      "id": "S-GOOGLE-PRICE",
+      "tier": 1,
+      "publisher": "Google",
+      "title": "Gemini API pricing",
+      "url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "status": "retrieval_blocked_this_run",
+      "claim_scope": "Gemini pricing and caching"
+    },
+    {
+      "id": "S-DEEPSEEK",
+      "tier": 1,
+      "publisher": "DeepSeek",
+      "title": "API documentation and pricing",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "status": "retrieval_blocked_this_run",
+      "claim_scope": "DeepSeek model, pricing, and limits"
+    },
+    {
+      "id": "S-MOONSHOT",
+      "tier": 1,
+      "publisher": "Moonshot AI",
+      "title": "Platform documentation",
+      "url": "https://platform.moonshot.cn/docs",
+      "status": "retrieval_blocked_this_run",
+      "claim_scope": "Kimi model identity, pricing, and API behavior"
+    },
+    {
+      "id": "S-AWS-BEDROCK",
+      "tier": 1,
+      "publisher": "AWS",
+      "title": "Amazon Bedrock security and compliance",
+      "url": "https://aws.amazon.com/bedrock/security-compliance/",
+      "status": "retrieval_blocked_this_run",
+      "claim_scope": "AWS-managed control scope and attestations"
+    },
+    {
+      "id": "S-INTERNAL-CODE",
+      "tier": 1,
+      "publisher": "C3A Labs",
+      "title": "Inspected frontend implementation",
+      "url": null,
+      "status": "locally_verified",
+      "claim_scope": "Frontend contracts and UI behavior only; not backend accounting"
+    }
+  ]
+}

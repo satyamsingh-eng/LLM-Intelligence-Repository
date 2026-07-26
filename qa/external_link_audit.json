@@ -1,0 +1,197 @@
+{
+  "total": 27,
+  "reachable": 27,
+  "access_controlled": 0,
+  "hard_failures": 0,
+  "rows": [
+    {
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
+      "status": 200,
+      "final_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/annex-3",
+      "kind": "reachable",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-15",
+      "status": 200,
+      "final_url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/article-15",
+      "kind": "reachable",
+      "content_type": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://ai.google.dev/gemini-api/docs/models",
+      "status": 200,
+      "final_url": "https://ai.google.dev/gemini-api/docs/models",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "status": 200,
+      "final_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+      "kind": "reachable",
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://artificialanalysis.ai/models",
+      "status": 200,
+      "final_url": "https://artificialanalysis.ai/models",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-pro",
+      "status": 200,
+      "final_url": "https://artificialanalysis.ai/models/deepseek-v4-pro",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://aws.amazon.com/bedrock/pricing/",
+      "status": 200,
+      "final_url": "https://aws.amazon.com/bedrock/pricing/",
+      "kind": "reachable",
+      "content_type": "text/html;charset=utf-8"
+    },
+    {
+      "url": "https://aws.amazon.com/bedrock/security-compliance/",
+      "status": 200,
+      "final_url": "https://aws.amazon.com/bedrock/security-compliance/",
+      "kind": "reachable",
+      "content_type": "text/html;charset=utf-8"
+    },
+    {
+      "url": "https://aws.amazon.com/govcloud-us/",
+      "status": 200,
+      "final_url": "https://aws.amazon.com/govcloud-us/",
+      "kind": "reachable",
+      "content_type": "text/html;charset=utf-8"
+    },
+    {
+      "url": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing",
+      "status": 200,
+      "final_url": "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://developers.openai.com/api/docs/models",
+      "status": 200,
+      "final_url": "https://developers.openai.com/api/docs/models",
+      "kind": "reachable",
+      "content_type": "text/html"
+    },
+    {
+      "url": "https://docs.cohere.com/docs/models",
+      "status": 200,
+      "final_url": "https://docs.cohere.com/docs/models",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://docs.x.ai/developers/models",
+      "status": 200,
+      "final_url": "https://docs.x.ai/developers/models",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://docs.x.ai/developers/models#models-and-pricing",
+      "status": 200,
+      "final_url": "https://docs.x.ai/developers/models#models-and-pricing",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://docs.z.ai/guides/llm/glm-4.5",
+      "status": 200,
+      "final_url": "https://docs.z.ai/guides/llm/glm-4.5",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://docs.z.ai/guides/overview/pricing",
+      "status": 200,
+      "final_url": "https://docs.z.ai/guides/overview/pricing",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://openai.com/business/pricing/",
+      "status": 200,
+      "final_url": "https://openai.com/business/pricing/",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "status": 200,
+      "final_url": "https://platform.claude.com/docs/en/about-claude/models/overview",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "status": 200,
+      "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://platform.kimi.ai/docs/guide/kimi-k2-6-quickstart",
+      "status": 200,
+      "final_url": "https://platform.kimi.ai/docs/guide/kimi-k2-6-quickstart",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://platform.kimi.ai/docs/overview",
+      "status": 200,
+      "final_url": "https://platform.kimi.ai/docs/overview",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://platform.kimi.ai/docs/pricing/chat",
+      "status": 200,
+      "final_url": "https://platform.kimi.ai/docs/pricing/chat",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://platform.kimi.ai/docs/pricing/chat-k26",
+      "status": 200,
+      "final_url": "https://platform.kimi.ai/docs/pricing/chat-k26",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.aicpa-cima.com/resources/landing/system-and-organization-controls-soc-suite-of-services",
+      "status": 200,
+      "final_url": "https://www.aicpa-cima.com/resources/landing/system-and-organization-controls-soc-suite-of-services",
+      "kind": "reachable",
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+      "status": 200,
+      "final_url": "https://www.alibabacloud.com/help/en/model-studio/model-pricing",
+      "kind": "reachable",
+      "content_type": "text/html;charset=UTF-8"
+    },
+    {
+      "url": "https://www.alibabacloud.com/help/en/model-studio/models",
+      "status": 200,
+      "final_url": "https://www.alibabacloud.com/help/en/model-studio/models",
+      "kind": "reachable",
+      "content_type": "text/html;charset=UTF-8"
+    },
+    {
+      "url": "https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/business-associates/index.html",
+      "status": 200,
+      "final_url": "https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/business-associates/index.html",
+      "kind": "reachable",
+      "content_type": "text/html; charset=UTF-8"
+    }
+  ]
+}

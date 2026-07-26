@@ -1,0 +1,137 @@
+{
+  "executed_at": "2026-07-25T12:28:48.593Z",
+  "url": "http://127.0.0.1:8899/Documents/R%26D%20-%20C3ALABS/LLM-Intelligence-Repository/index.html",
+  "html_sha256": "7adcf945144eca0789c988121c74225d734a6415c9a9565328f6269fa78ff176",
+  "dataset_sha256": "f0dc47c2d829bf2dab0e3238a4fe71a3c255e089a455d5c4ea62651062a8850d",
+  "passed": 25,
+  "total": 25,
+  "overall": "PASS",
+  "fatal": null,
+  "tests": [
+    {
+      "name": "HTTP document load",
+      "status": "PASS",
+      "detail": "status=200"
+    },
+    {
+      "name": "Structured dataset rendered",
+      "status": "PASS",
+      "detail": "rows=22"
+    },
+    {
+      "name": "Executive decision visible",
+      "status": "PASS",
+      "detail": "NO-GO for model procurement, pricing commitments, or production routing"
+    },
+    {
+      "name": "No external runtime scripts",
+      "status": "PASS",
+      "detail": "external=0"
+    },
+    {
+      "name": "No load error banner",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Claim filter interaction",
+      "status": "PASS",
+      "detail": "filtered=1"
+    },
+    {
+      "name": "Evidence dialog opens",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Evidence dialog has eight fields",
+      "status": "PASS",
+      "detail": "fields=8"
+    },
+    {
+      "name": "Dialog close receives focus",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Escape closes evidence dialog",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Workflow selection",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Workflow player completes",
+      "status": "PASS",
+      "detail": "width: 100%;"
+    },
+    {
+      "name": "Workflow keeps unmeasured telemetry honest",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Workflow timer stops",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Glossary search interaction",
+      "status": "PASS",
+      "detail": "matched=2"
+    },
+    {
+      "name": "Glossary accordion interaction",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Print mode hides navigation",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Desktop screenshot generated",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Desktop console clean",
+      "status": "PASS",
+      "detail": "[]"
+    },
+    {
+      "name": "Mobile document has no horizontal overflow",
+      "status": "PASS",
+      "detail": "{\"innerWidth\":390,\"rootWidth\":390,\"bodyWidth\":390,\"containers\":[{\"id\":\"decision\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358}],\"allowedOverflow\":[{\"cls\":\"nav\",\"scroll\":751,\"client\":390},{\"cls\":\"nav-inner\",\"scroll\":741,\"client\":370},{\"cls\":\"table-wrap\",\"scroll\":834,\"client\":356}]}"
+    },
+    {
+      "name": "Mobile content containers stay inside viewport",
+      "status": "PASS",
+      "detail": "[{\"id\":\"decision\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358},{\"id\":\"\",\"left\":16,\"right\":374,\"scroll\":358,\"client\":358}]"
+    },
+    {
+      "name": "Mobile decision remains visible",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Mobile decision text remains complete",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Mobile screenshot generated",
+      "status": "PASS",
+      "detail": ""
+    },
+    {
+      "name": "Mobile console clean",
+      "status": "PASS",
+      "detail": "[]"
+    }
+  ]
+}

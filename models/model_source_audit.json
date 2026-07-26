@@ -1,0 +1,2169 @@
+{
+  "generated_at": "2026-07-25T21:58:43+00:00",
+  "method": "Normalized model-family search within freshly retrieved official provider pages plus exact row matching against the retained Artificial Analysis API snapshot. Absence means not validated on retrieved pages, not proof of nonexistence.",
+  "fx": {
+    "usd_to_inr": "96.56763645952360024611057397",
+    "ecb_reference_date": "2026-07-24",
+    "formula": "INR per EUR / USD per EUR",
+    "source_id": "ecb_fx"
+  },
+  "models": [
+    {
+      "id": "claude-opus-5",
+      "name": "Claude Opus 5 (Adaptive Reasoning, Max Effort)",
+      "vendor": "Anthropic",
+      "official_search_term": "claude opus 5",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "official_hits": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 60.7,
+          "benchmark_value": 60.7,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 78,
+          "benchmark_value": 78,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.3031,
+          "benchmark_value": 0.303092783505155,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 25,
+          "benchmark_value": 25,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 43.9,
+          "benchmark_value": 43.944,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 28.7,
+          "benchmark_value": 28.698,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "claude-opus-5-xhigh",
+      "name": "Claude Opus 5 (Adaptive Reasoning, Xhigh Effort)",
+      "vendor": "Anthropic",
+      "official_search_term": "claude opus 5",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "official_hits": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 60.1,
+          "benchmark_value": 60.1,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 77,
+          "benchmark_value": 77,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.3155,
+          "benchmark_value": 0.315463917525773,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 25,
+          "benchmark_value": 25,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 60.4,
+          "benchmark_value": 60.357,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 22.56,
+          "benchmark_value": 22.558,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "claude-fable-5",
+      "name": "Claude Fable 5 (Adaptive Reasoning, Max Effort, Opus 4.8 Fallback)",
+      "vendor": "Anthropic",
+      "official_search_term": "claude fable 5",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "official_hits": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 59.9,
+          "benchmark_value": 59.9,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 76.5,
+          "benchmark_value": 76.5,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.268,
+          "benchmark_value": 0.268041237113402,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 10,
+          "benchmark_value": 10,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 50,
+          "benchmark_value": 50,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 58.3,
+          "benchmark_value": 58.306,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 52.46,
+          "benchmark_value": 52.464,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-6-sol",
+      "name": "GPT-5.6 Sol (max)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.6 sol",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 58.9,
+          "benchmark_value": 58.9,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 77.4,
+          "benchmark_value": 77.4,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.3299,
+          "benchmark_value": 0.329896907216495,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 30,
+          "benchmark_value": 30,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 73.9,
+          "benchmark_value": 73.856,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 86.49,
+          "benchmark_value": 86.493,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "claude-opus-5-high",
+      "name": "Claude Opus 5 (Adaptive Reasoning, High Effort)",
+      "vendor": "Anthropic",
+      "official_search_term": "claude opus 5",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "official_hits": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 58.9,
+          "benchmark_value": 58.9,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 76.5,
+          "benchmark_value": 76.5,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.3278,
+          "benchmark_value": 0.327835051546392,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 25,
+          "benchmark_value": 25,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 63.8,
+          "benchmark_value": 63.84,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 10.2,
+          "benchmark_value": 10.201,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-6-sol-xhigh",
+      "name": "GPT-5.6 Sol (xhigh)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.6 sol",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 57.7,
+          "benchmark_value": 57.7,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 78.3,
+          "benchmark_value": 78.3,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.3265,
+          "benchmark_value": 0.326460481099656,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 30,
+          "benchmark_value": 30,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 64.2,
+          "benchmark_value": 64.161,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 31,
+          "benchmark_value": 31,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "kimi-k3",
+      "name": "Kimi K3",
+      "vendor": "Kimi",
+      "official_search_term": "kimi k3",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "moonshot_models",
+        "moonshot_pricing"
+      ],
+      "official_hits": [
+        "moonshot_models",
+        "moonshot_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 57.1,
+          "benchmark_value": 57.1,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 76.2,
+          "benchmark_value": 76.2,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.334,
+          "benchmark_value": 0.334020618556701,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 3,
+          "benchmark_value": 3,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 15,
+          "benchmark_value": 15,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 33.1,
+          "benchmark_value": 33.073,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 102.96,
+          "benchmark_value": 102.958,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "claude-opus-5-medium",
+      "name": "Claude Opus 5 (Adaptive Reasoning, Medium Effort)",
+      "vendor": "Anthropic",
+      "official_search_term": "claude opus 5",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "official_hits": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 56.3,
+          "benchmark_value": 56.3,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 74.3,
+          "benchmark_value": 74.3,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2866,
+          "benchmark_value": 0.28659793814433,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 25,
+          "benchmark_value": 25,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 55.6,
+          "benchmark_value": 55.629,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 9.66,
+          "benchmark_value": 9.657,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-6-sol-high",
+      "name": "GPT-5.6 Sol (high)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.6 sol",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 55.9,
+          "benchmark_value": 55.9,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 77.2,
+          "benchmark_value": 77.2,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.3058,
+          "benchmark_value": 0.305841924398625,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 30,
+          "benchmark_value": 30,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 65.8,
+          "benchmark_value": 65.767,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 11.26,
+          "benchmark_value": 11.263,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "claude-opus-4-8",
+      "name": "Claude Opus 4.8 (Adaptive Reasoning, Max Effort)",
+      "vendor": "Anthropic",
+      "official_search_term": "claude opus 4.8",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "official_hits": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 55.7,
+          "benchmark_value": 55.7,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 74.3,
+          "benchmark_value": 74.3,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2763,
+          "benchmark_value": 0.276288659793814,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 25,
+          "benchmark_value": 25,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 62.5,
+          "benchmark_value": 62.55,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 46.47,
+          "benchmark_value": 46.471,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-6-terra",
+      "name": "GPT-5.6 Terra (max)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.6 terra",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 55,
+          "benchmark_value": 55,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 76.7,
+          "benchmark_value": 76.7,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.3175,
+          "benchmark_value": 0.317525773195876,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 2.5,
+          "benchmark_value": 2.5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 15,
+          "benchmark_value": 15,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 128.0,
+          "benchmark_value": 128.044,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 110.14,
+          "benchmark_value": 110.138,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-5",
+      "name": "GPT-5.5 (xhigh)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.5",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 54.8,
+          "benchmark_value": 54.8,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 74.9,
+          "benchmark_value": 74.9,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.3134,
+          "benchmark_value": 0.31340206185567,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 30,
+          "benchmark_value": 30,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 0.0,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 0.0,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "grok-4-5",
+      "name": "Grok 4.5 (high)",
+      "vendor": "SpaceXAI",
+      "official_search_term": "grok 4.5",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "xai_models",
+        "xai_pricing"
+      ],
+      "official_hits": [
+        "xai_models",
+        "xai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 53.8,
+          "benchmark_value": 53.8,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 72.4,
+          "benchmark_value": 72.4,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.3258,
+          "benchmark_value": 0.325773195876289,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 2,
+          "benchmark_value": 2,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 6,
+          "benchmark_value": 6,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 55.8,
+          "benchmark_value": 55.839,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 12.63,
+          "benchmark_value": 12.627,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-6-sol-medium",
+      "name": "GPT-5.6 Sol (medium)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.6 sol",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 53.6,
+          "benchmark_value": 53.6,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 76.3,
+          "benchmark_value": 76.3,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2646,
+          "benchmark_value": 0.264604810996564,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 30,
+          "benchmark_value": 30,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 60.0,
+          "benchmark_value": 60.007,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 5.28,
+          "benchmark_value": 5.28,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "claude-opus-4-7",
+      "name": "Claude Opus 4.7 (Adaptive Reasoning, Max Effort)",
+      "vendor": "Anthropic",
+      "official_search_term": "claude opus 4.7",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "official_hits": [
+        "anthropic_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 53.5,
+          "benchmark_value": 53.5,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 73.6,
+          "benchmark_value": 73.6,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2887,
+          "benchmark_value": 0.288659793814433,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 25,
+          "benchmark_value": 25,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 0.0,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 0.0,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "claude-sonnet-5",
+      "name": "Claude Sonnet 5 (Adaptive Reasoning, Max Effort)",
+      "vendor": "Anthropic",
+      "official_search_term": "claude sonnet 5",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "official_hits": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 53.4,
+          "benchmark_value": 53.4,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 71.5,
+          "benchmark_value": 71.5,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2825,
+          "benchmark_value": 0.282474226804124,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 2,
+          "benchmark_value": 2,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 10,
+          "benchmark_value": 10,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 83.4,
+          "benchmark_value": 83.419,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 108.38,
+          "benchmark_value": 108.375,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-5-high",
+      "name": "GPT-5.5 (high)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.5",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 53.1,
+          "benchmark_value": 53.1,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 71.6,
+          "benchmark_value": 71.6,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2948,
+          "benchmark_value": 0.294845360824742,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 30,
+          "benchmark_value": 30,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 0.0,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 0.0,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-6-terra-xhigh",
+      "name": "GPT-5.6 Terra (xhigh)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.6 terra",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 51.6,
+          "benchmark_value": 51.6,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 70.6,
+          "benchmark_value": 70.6,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2433,
+          "benchmark_value": 0.243298969072165,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 2.5,
+          "benchmark_value": 2.5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 15,
+          "benchmark_value": 15,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 120.0,
+          "benchmark_value": 119.972,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 7.7,
+          "benchmark_value": 7.701,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-4",
+      "name": "GPT-5.4 (xhigh)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.4",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 51.4,
+          "benchmark_value": 51.4,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 71.1,
+          "benchmark_value": 71.1,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.3031,
+          "benchmark_value": 0.303092783505155,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 2.5,
+          "benchmark_value": 2.5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 15,
+          "benchmark_value": 15,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 0.0,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 0.0,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-6-luna",
+      "name": "GPT-5.6 Luna (max)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.6 luna",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 51.2,
+          "benchmark_value": 51.2,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 71.4,
+          "benchmark_value": 71.4,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2722,
+          "benchmark_value": 0.272164948453608,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 1,
+          "benchmark_value": 1,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 6,
+          "benchmark_value": 6,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 171.4,
+          "benchmark_value": 171.41,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 86.83,
+          "benchmark_value": 86.827,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "glm-5-2",
+      "name": "GLM-5.2 (max)",
+      "vendor": "Z AI",
+      "official_search_term": "glm-5.2",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "zai_models",
+        "zai_pricing"
+      ],
+      "official_hits": [
+        "zai_models",
+        "zai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 51.1,
+          "benchmark_value": 51.1,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 68.8,
+          "benchmark_value": 68.8,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.268,
+          "benchmark_value": 0.268041237113402,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 1.4,
+          "benchmark_value": 1.4,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 4.4,
+          "benchmark_value": 4.4,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 156.7,
+          "benchmark_value": 156.68,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 0.91,
+          "benchmark_value": 0.906,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "muse-spark-1-1",
+      "name": "Muse Spark 1.1 (xhigh)",
+      "vendor": "Meta",
+      "official_search_term": "muse spark 1.1",
+      "proof_status": "benchmark-snapshot-only",
+      "official_source_ids": [
+        "meta_llama"
+      ],
+      "official_hits": [],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 50.6,
+          "benchmark_value": 50.6,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 71.3,
+          "benchmark_value": 71.3,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2515,
+          "benchmark_value": 0.251546391752577,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 1.25,
+          "benchmark_value": 1.25,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 4.25,
+          "benchmark_value": 4.25,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 123.9,
+          "benchmark_value": 123.879,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 1.02,
+          "benchmark_value": 1.023,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "quarantine",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "claude-opus-5-low",
+      "name": "Claude Opus 5 (Adaptive Reasoning, Low Effort)",
+      "vendor": "Anthropic",
+      "official_search_term": "claude opus 5",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "official_hits": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 50.6,
+          "benchmark_value": 50.6,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 66.9,
+          "benchmark_value": 66.9,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.233,
+          "benchmark_value": 0.232989690721649,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 25,
+          "benchmark_value": 25,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 46.7,
+          "benchmark_value": 46.69,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 2.76,
+          "benchmark_value": 2.763,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-5-medium",
+      "name": "GPT-5.5 (medium)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.5",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 50.4,
+          "benchmark_value": 50.4,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 71.5,
+          "benchmark_value": 71.5,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2577,
+          "benchmark_value": 0.257731958762887,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 30,
+          "benchmark_value": 30,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 0.0,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 0.0,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gemini-3-5-flash",
+      "name": "Gemini 3.5 Flash (high)",
+      "vendor": "Google",
+      "official_search_term": "gemini 3.5 flash",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "google_models",
+        "google_pricing"
+      ],
+      "official_hits": [
+        "google_models",
+        "google_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 50.2,
+          "benchmark_value": 50.2,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 70.1,
+          "benchmark_value": 70.1,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2536,
+          "benchmark_value": 0.25360824742268,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 1.5,
+          "benchmark_value": 1.5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 9,
+          "benchmark_value": 9,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 250.3,
+          "benchmark_value": 250.262,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 17.16,
+          "benchmark_value": 17.16,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gemini-3-6-flash",
+      "name": "Gemini 3.6 Flash (high)",
+      "vendor": "Google",
+      "official_search_term": "gemini 3.6 flash",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "google_models",
+        "google_pricing"
+      ],
+      "official_hits": [
+        "google_models",
+        "google_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 50.1,
+          "benchmark_value": 50.1,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 69.2,
+          "benchmark_value": 69.2,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2454,
+          "benchmark_value": 0.245360824742268,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 1.5,
+          "benchmark_value": 1.5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 7.5,
+          "benchmark_value": 7.5,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 243.9,
+          "benchmark_value": 243.869,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 13.0,
+          "benchmark_value": 12.996,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-6-sol-low",
+      "name": "GPT-5.6 Sol (low)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.6 sol",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 49.4,
+          "benchmark_value": 49.4,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 69.7,
+          "benchmark_value": 69.7,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.244,
+          "benchmark_value": 0.243986254295533,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 5,
+          "benchmark_value": 5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 30,
+          "benchmark_value": 30,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 69.3,
+          "benchmark_value": 69.322,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 2.8,
+          "benchmark_value": 2.798,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-6-luna-xhigh",
+      "name": "GPT-5.6 Luna (xhigh)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.6 luna",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 49.1,
+          "benchmark_value": 49.1,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 68.6,
+          "benchmark_value": 68.6,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2433,
+          "benchmark_value": 0.243298969072165,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 1,
+          "benchmark_value": 1,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 6,
+          "benchmark_value": 6,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 161.2,
+          "benchmark_value": 161.229,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 36.09,
+          "benchmark_value": 36.093,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-6-terra-high",
+      "name": "GPT-5.6 Terra (high)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.6 terra",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 49,
+          "benchmark_value": 49,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 67.1,
+          "benchmark_value": 67.1,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2227,
+          "benchmark_value": 0.222680412371134,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 2.5,
+          "benchmark_value": 2.5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 15,
+          "benchmark_value": 15,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 114.6,
+          "benchmark_value": 114.592,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 2.44,
+          "benchmark_value": 2.437,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "claude-sonnet-4-6-adaptive",
+      "name": "Claude Sonnet 4.6 (Adaptive Reasoning, Max Effort)",
+      "vendor": "Anthropic",
+      "official_search_term": "claude sonnet 4.6",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "official_hits": [
+        "anthropic_models",
+        "anthropic_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 47.2,
+          "benchmark_value": 47.2,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 63,
+          "benchmark_value": 63,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.3052,
+          "benchmark_value": 0.305154639175258,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 3,
+          "benchmark_value": 3,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 15,
+          "benchmark_value": 15,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 0.0,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 0.0,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gemini-3-1-pro-preview",
+      "name": "Gemini 3.1 Pro Preview",
+      "vendor": "Google",
+      "official_search_term": "gemini 3.1 pro preview",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "google_models",
+        "google_pricing"
+      ],
+      "official_hits": [
+        "google_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 46.5,
+          "benchmark_value": 46.5,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 68.8,
+          "benchmark_value": 68.8,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.1649,
+          "benchmark_value": 0.164948453608247,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 2,
+          "benchmark_value": 2,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 12,
+          "benchmark_value": 12,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 132.2,
+          "benchmark_value": 132.247,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 30.98,
+          "benchmark_value": 30.979,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-6-luna-high",
+      "name": "GPT-5.6 Luna (high)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.6 luna",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 46.1,
+          "benchmark_value": 46.1,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 63.3,
+          "benchmark_value": 63.3,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2227,
+          "benchmark_value": 0.222680412371134,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 1,
+          "benchmark_value": 1,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 6,
+          "benchmark_value": 6,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 174.3,
+          "benchmark_value": 174.314,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 6.21,
+          "benchmark_value": 6.215,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "qwen3-7-max",
+      "name": "Qwen3.7 Max",
+      "vendor": "Alibaba",
+      "official_search_term": "qwen3.7 max",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "alibaba_models",
+        "alibaba_pricing"
+      ],
+      "official_hits": [
+        "alibaba_models",
+        "alibaba_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 46,
+          "benchmark_value": 46,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 66,
+          "benchmark_value": 66,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.1093,
+          "benchmark_value": 0.109278350515464,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 2.5,
+          "benchmark_value": 2.5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 7.5,
+          "benchmark_value": 7.5,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 199.6,
+          "benchmark_value": 199.573,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 1.6,
+          "benchmark_value": 1.603,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gpt-5-6-terra-medium",
+      "name": "GPT-5.6 Terra (medium)",
+      "vendor": "OpenAI",
+      "official_search_term": "gpt-5.6 terra",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "official_hits": [
+        "openai_models",
+        "openai_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 45.6,
+          "benchmark_value": 45.6,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 64.7,
+          "benchmark_value": 64.7,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.1938,
+          "benchmark_value": 0.193814432989691,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 2.5,
+          "benchmark_value": 2.5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 15,
+          "benchmark_value": 15,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 116.0,
+          "benchmark_value": 116.007,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 1.78,
+          "benchmark_value": 1.781,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gemini-3-5-flash-medium",
+      "name": "Gemini 3.5 Flash (medium)",
+      "vendor": "Google",
+      "official_search_term": "gemini 3.5 flash",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "google_models",
+        "google_pricing"
+      ],
+      "official_hits": [
+        "google_models",
+        "google_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 45.4,
+          "benchmark_value": 45.4,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": null,
+          "benchmark_value": null,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": null,
+          "benchmark_value": null,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 1.5,
+          "benchmark_value": 1.5,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 9,
+          "benchmark_value": 9,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 265.2,
+          "benchmark_value": 265.206,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 11.9,
+          "benchmark_value": 11.897,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "cohere-command-a",
+      "name": "Cohere Command A",
+      "vendor": "Cohere",
+      "official_search_term": "command a",
+      "proof_status": "provider-family-documented-only",
+      "official_source_ids": [
+        "cohere_models",
+        "cohere_pricing"
+      ],
+      "official_hits": [
+        "cohere_models"
+      ],
+      "benchmark_snapshot_exact_name_match": false,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {},
+      "decision_use": "quarantine",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "amazon-nova-pro",
+      "name": "Amazon Nova Pro",
+      "vendor": "Amazon",
+      "official_search_term": "nova pro",
+      "proof_status": "provider-family-documented-only",
+      "official_source_ids": [
+        "aws_bedrock_models",
+        "aws_bedrock_pricing"
+      ],
+      "official_hits": [
+        "aws_bedrock_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": false,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {},
+      "decision_use": "quarantine",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "kimi-k2-6",
+      "name": "Kimi K2.6",
+      "vendor": "Kimi",
+      "official_search_term": "kimi k2.6",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "moonshot_k26_model",
+        "moonshot_k26_pricing"
+      ],
+      "official_hits": [
+        "moonshot_k26_model",
+        "moonshot_k26_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 44.2,
+          "benchmark_value": 44.2,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 61.8,
+          "benchmark_value": 61.8,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.2062,
+          "benchmark_value": 0.206185567010309,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 0.95,
+          "benchmark_value": 0.95,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 4,
+          "benchmark_value": 4,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": null,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": false
+        },
+        "ttft_latency_seconds": {
+          "database_value": null,
+          "benchmark_value": 0,
+          "match_with_rounding_tolerance": false
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "qwen3-7-plus",
+      "name": "Qwen3.7 Plus",
+      "vendor": "Alibaba",
+      "official_search_term": "qwen3.7 plus",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "alibaba_models",
+        "alibaba_pricing"
+      ],
+      "official_hits": [
+        "alibaba_models",
+        "alibaba_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 39,
+          "benchmark_value": 39,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 55.9,
+          "benchmark_value": 55.9,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.1787,
+          "benchmark_value": 0.178694158075601,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 0.4,
+          "benchmark_value": 0.4,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 1.6,
+          "benchmark_value": 1.6,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 52.8,
+          "benchmark_value": 52.844,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 1.73,
+          "benchmark_value": 1.725,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    },
+    {
+      "id": "gemini-3-5-flash-lite",
+      "name": "Gemini 3.5 Flash-Lite",
+      "vendor": "Google",
+      "official_search_term": "gemini 3.5 flash-lite",
+      "proof_status": "provider-family-documented-plus-benchmark-snapshot",
+      "official_source_ids": [
+        "google_models",
+        "google_pricing"
+      ],
+      "official_hits": [
+        "google_models",
+        "google_pricing"
+      ],
+      "benchmark_snapshot_exact_name_match": true,
+      "benchmark_snapshot_fresh_api_retrieval": false,
+      "metric_checks": {
+        "intelligence_index": {
+          "database_value": 36.5,
+          "benchmark_value": 36.5,
+          "match_with_rounding_tolerance": true
+        },
+        "coding_index": {
+          "database_value": 49.3,
+          "benchmark_value": 49.3,
+          "match_with_rounding_tolerance": true
+        },
+        "tau_banking_score": {
+          "database_value": 0.1649,
+          "benchmark_value": 0.164948453608247,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_input_usd": {
+          "database_value": 0.3,
+          "benchmark_value": 0.3,
+          "match_with_rounding_tolerance": true
+        },
+        "price_1m_output_usd": {
+          "database_value": 2.5,
+          "benchmark_value": 2.5,
+          "match_with_rounding_tolerance": true
+        },
+        "throughput_tps": {
+          "database_value": 362.2,
+          "benchmark_value": 362.185,
+          "match_with_rounding_tolerance": true
+        },
+        "ttft_latency_seconds": {
+          "database_value": 7.41,
+          "benchmark_value": 7.411,
+          "match_with_rounding_tolerance": true
+        }
+      },
+      "decision_use": "eligible-with-metric-scope-shown",
+      "note": "Provider proof establishes the model family. Effort labels are benchmark/test variants unless the provider documents them as separate SKUs. Benchmark evidence is a retained snapshot when fresh API retrieval is unavailable."
+    }
+  ]
+}
