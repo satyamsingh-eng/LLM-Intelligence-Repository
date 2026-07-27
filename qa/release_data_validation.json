@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-26T21:10:02+00:00",
+  "generated_at": "2026-07-27T00:39:05+00:00",
   "pass": 182,
   "total": 182,
   "errors": [],
@@ -7,7 +7,7 @@
     {
       "name": "HTML is canonical and nontrivial",
       "pass": true,
-      "detail": 134895
+      "detail": 134874
     },
     {
       "name": "Section 1 marker exists",
