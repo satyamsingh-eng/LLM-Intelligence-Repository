@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "title": "Arvocap Tier 2 ($950/mo) Mathematical Formulas & ROI Proof Matrix",
+    "generated_at": "2026-07-27T00:00:00Z",
+    "scope": "Programmatic verification of unit economics, per-report pricing, monthly/annual commitment, and cost reduction deltas vs Direct Vendor Uncached Kimi K3 and Hiring 3 Financial Analysts.",
+    "fx_rates": {
+      "usd_to_inr": 96.567636,
+      "usd_to_ksh": 129.0,
+      "usd_to_cny": 6.786115,
+      "reference_date": "2026-07-24",
+      "source": "ECB Reference Rates & Market FX Data"
+    }
+  },
+  "tier_2_package_specification": {
+    "package_name": "Tier 2 Standard Package (Arvocap Report Generation)",
+    "workload_definition": {
+      "pages": "3-5 pages per report",
+      "input_tokens_per_report": 35000,
+      "output_tokens_per_report": 3500,
+      "monthly_report_volume": 10000
+    },
+    "pricing_structure": {
+      "monthly_fee_usd": 950.0,
+      "monthly_fee_ksh": 122550.0,
+      "monthly_fee_inr": 91739.2542,
+      "annual_commitment_usd": 11400.0,
+      "annual_commitment_ksh": 1470600.0,
+      "annual_commitment_inr": 1100871.0504,
+      "per_report_cost_usd": 0.095,
+      "per_report_cost_ksh": 12.255,
+      "per_report_cost_inr": 9.17392542
+    }
+  },
+  "benchmark_1_direct_vendor_uncached_kimi_k3": {
+    "benchmark_name": "Direct Vendor Uncached Moonshot Kimi K3",
+    "vendor_rates": {
+      "input_rate_per_1m_usd": 3.0,
+      "output_rate_per_1m_usd": 15.0
+    },
+    "unit_economics_per_report": {
+      "input_cost_usd": 0.105,
+      "output_cost_usd": 0.0525,
+      "total_cost_usd": 0.1575,
+      "total_cost_ksh": 20.3175,
+      "total_cost_inr": 15.20940267
+    },
+    "volume_economics_10k_reports": {
+      "monthly_cost_usd": 1575.0,
+      "monthly_cost_ksh": 203175.0,
+      "monthly_cost_inr": 152094.0267,
+      "annual_cost_usd": 18900.0,
+      "annual_cost_ksh": 2438100.0,
+      "annual_cost_inr": 1825128.3204
+    },
+    "roi_deltas_vs_tier2_package": {
+      "monthly_savings_usd": 625.0,
+      "monthly_savings_ksh": 80625.0,
+      "monthly_savings_inr": 60354.7725,
+      "annual_savings_usd": 7500.0,
+      "annual_savings_ksh": 967500.0,
+      "annual_savings_inr": 724257.27,
+      "per_report_savings_usd": 0.0625,
+      "cost_reduction_percentage_exact": 39.682539682539684,
+      "cost_reduction_percentage_formatted": "39.68%"
+    }
+  },
+  "benchmark_2_hiring_3_financial_analysts": {
+    "benchmark_name": "Hiring 3 Human Financial Analysts",
+    "headcount_and_salary": {
+      "analysts_count": 3,
+      "salary_per_analyst_annual_usd": 15000.0,
+      "annual_cost_usd": 45000.0,
+      "annual_cost_ksh": 5805000.0,
+      "annual_cost_inr": 4345543.62,
+      "monthly_cost_usd": 3750.0,
+      "monthly_cost_ksh": 483750.0,
+      "monthly_cost_inr": 362128.635,
+      "per_report_cost_usd": 0.375,
+      "per_report_cost_ksh": 48.375,
+      "per_report_cost_inr": 36.2128635
+    },
+    "roi_deltas_vs_tier2_package": {
+      "annual_savings_usd": 33600.0,
+      "annual_savings_ksh": 4334400.0,
+      "annual_savings_inr": 3244672.5696,
+      "monthly_savings_usd": 2800.0,
+      "monthly_savings_ksh": 361200.0,
+      "monthly_savings_inr": 270389.3808,
+      "per_report_savings_usd": 0.28,
+      "cost_reduction_percentage_exact": 74.66666666666667,
+      "cost_reduction_percentage_formatted": "74.7%"
+    }
+  },
+  "verification_formulas": {
+    "per_report_package_cost": "Per_Report_Cost = Monthly_Package_Fee / Monthly_Report_Volume = $950.00 / 10,000 = $0.095000",
+    "annual_package_cost": "Annual_Package_Cost = Monthly_Package_Fee * 12 = $950.00 * 12 = $11,400.00",
+    "kimi_k3_per_report_cost": "Kimi_K3_Per_Report = (Input_Tokens / 1M * Input_Rate) + (Output_Tokens / 1M * Output_Rate) = (35,000 / 1M * $3.00) + (3,500 / 1M * $15.00) = $0.105000 + $0.052500 = $0.157500",
+    "kimi_k3_monthly_cost": "Kimi_K3_Monthly = Kimi_K3_Per_Report * 10,000 = $0.157500 * 10,000 = $1,575.00",
+    "delta_vs_kimi_k3_monthly_savings": "Monthly_Savings_Vs_Kimi = Kimi_K3_Monthly - Monthly_Package_Fee = $1,575.00 - $950.00 = $625.00",
+    "delta_vs_kimi_k3_percentage_reduction": "Cost_Reduction_Vs_Kimi = ($625.00 / $1,575.00) * 100 = 39.6825%",
+    "human_analysts_annual_cost": "Analysts_Annual_Cost = Analysts_Count * Salary_Per_Analyst = 3 * $15,000 = $45,000.00",
+    "human_analysts_monthly_cost": "Analysts_Monthly_Cost = Analysts_Annual_Cost / 12 = $45,000.00 / 12 = $3,750.00",
+    "delta_vs_analysts_annual_savings": "Annual_Savings_Vs_Analysts = Analysts_Annual_Cost - Annual_Package_Cost = $45,000.00 - $11,400.00 = $33,600.00",
+    "delta_vs_analysts_percentage_reduction": "Cost_Reduction_Vs_Analysts = ($33,600.00 / $45,000.00) * 100 = 74.6667% (~74.7%)"
+  }
+}

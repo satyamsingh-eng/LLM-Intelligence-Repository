@@ -1,0 +1,77 @@
+{
+  "audit_metadata": {
+    "model_id": "gemini-3-5-flash-lite",
+    "model_name": "Gemini 3.5 Flash-Lite",
+    "vendor": "Google Cloud / Google AI Studio",
+    "context_window": 1048576,
+    "verification_date": "2026-07-27",
+    "official_sources": [
+      "https://cloud.google.com/gemini-enterprise-agent-platform/generative-ai/pricing",
+      "https://ai.google.dev/gemini-api/docs/models"
+    ],
+    "fx_rates": {
+      "usd_to_inr": "96.567636",
+      "usd_to_ksh": "129.0",
+      "reference_date": "2026-07-24",
+      "source": "ECB Reference Rates"
+    }
+  },
+  "rate_card": {
+    "uncached_input_usd_per_1m": 0.3,
+    "cached_input_usd_per_1m": 0.075,
+    "prompt_caching_discount_percent": 75.0,
+    "output_usd_per_1m": 2.5,
+    "batch_api": {
+      "uncached_input_usd_per_1m": 0.15,
+      "cached_input_usd_per_1m": 0.0375,
+      "output_usd_per_1m": 1.25,
+      "discount_percent": 50.0
+    }
+  },
+  "benchmark_workload": {
+    "tier": "Tier 2 Standard Review",
+    "input_tokens_per_run": 35000,
+    "output_tokens_per_run": 3500,
+    "monthly_volume_reports": 10000
+  },
+  "external_uncached_pricing": {
+    "description": "Standard external pricing with 0% prompt caching",
+    "per_run": {
+      "input_cost_usd": 0.0105,
+      "output_cost_usd": 0.00875,
+      "total_cost_usd": 0.01925,
+      "total_cost_inr": 1.8589
+    },
+    "monthly_10k_reports": {
+      "total_cost_usd": 192.5,
+      "total_cost_inr": 18589.27,
+      "total_cost_ksh": 24832.5,
+      "total_cost_lakhs_inr": 0.1859
+    }
+  },
+  "sarvax_optimized_pricing": {
+    "description": "SARVAX optimized architecture with 80% prompt caching hit rate",
+    "caching_hit_rate_percent": 80.0,
+    "per_run": {
+      "cached_input_cost_usd": 0.0021,
+      "uncached_input_cost_usd": 0.0021,
+      "total_input_cost_usd": 0.0042,
+      "output_cost_usd": 0.00875,
+      "total_cost_usd": 0.01295,
+      "total_cost_inr": 1.2506
+    },
+    "monthly_10k_reports": {
+      "total_cost_usd": 129.5,
+      "total_cost_inr": 12505.51,
+      "total_cost_ksh": 16705.5,
+      "total_cost_lakhs_inr": 0.1251
+    }
+  },
+  "optimization_savings": {
+    "per_run_savings_usd": 0.0063,
+    "monthly_savings_usd": 63.0,
+    "monthly_savings_inr": 6083.76,
+    "overall_cost_reduction_percent": 32.73,
+    "input_cost_reduction_percent": 60.0
+  }
+}

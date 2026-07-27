@@ -1,0 +1,109 @@
+{
+  "metadata": {
+    "title": "Kimi K3 Official Pricing & SARVAX Optimization Audit",
+    "generated_at": "2026-07-27T00:00:00Z",
+    "model_id": "kimi-k3",
+    "model_name": "Kimi K3",
+    "vendor": "Moonshot AI (Kimi)",
+    "context_window_tokens": 1048576,
+    "audit_scope": "Verification of External Uncached Pricing vs SARVAX Optimized Pricing (80% Caching & Hybrid Cascade) for Kimi K3",
+    "primary_sources": [
+      "https://platform.kimi.com/docs/pricing/chat-k3.md",
+      "https://platform.moonshot.cn",
+      "https://openrouter.ai/api/v1/models"
+    ],
+    "fx_rates": {
+      "usd_to_cny": 6.786115,
+      "usd_to_inr": 96.567636,
+      "usd_to_ksh": 129.0
+    }
+  },
+  "official_vendor_pricing": {
+    "cny_platform_direct": {
+      "uncached_input_rate_per_1m": "¥20.00",
+      "cached_input_rate_per_1m": "¥2.00",
+      "output_rate_per_1m": "¥100.00",
+      "prompt_caching_discount_percentage": "90.0%"
+    },
+    "usd_openrouter_benchmark": {
+      "uncached_input_rate_per_1m": "$3.00",
+      "cached_input_rate_per_1m": "$0.30",
+      "output_rate_per_1m": "$15.00",
+      "prompt_caching_discount_percentage": "90.0%"
+    },
+    "inr_converted_rates": {
+      "uncached_input_rate_per_1m": "₹289.70",
+      "cached_input_rate_per_1m": "₹28.97",
+      "output_rate_per_1m": "₹1448.51"
+    }
+  },
+  "workload_benchmark_specification": {
+    "tier": "Tier 2 Standard Review (BENCHMARK)",
+    "input_tokens_per_report": 35000,
+    "output_tokens_per_report": 3500,
+    "monthly_batch_volume": 10000
+  },
+  "external_uncached_pricing": {
+    "per_report": {
+      "input_cost_usd": 0.105,
+      "output_cost_usd": 0.0525,
+      "total_cost_usd": 0.1575,
+      "total_cost_cny": 1.05,
+      "total_cost_inr": 15.2094,
+      "total_cost_ksh": 20.3175
+    },
+    "monthly_10k_reports": {
+      "total_cost_usd": 1575.0,
+      "total_cost_cny": 10500.0,
+      "total_cost_inr": 152094.03,
+      "total_cost_lakhs_inr": 1.5209,
+      "total_cost_ksh": 203175.0
+    }
+  },
+  "sarvax_optimized_pricing": {
+    "standalone_80_percent_prompt_caching_vendor_native": {
+      "description": "80% prompt caching hit ratio using vendor native 90% prompt cache discount ($0.30/1M cached input rate)",
+      "per_report_cost_usd": 0.0819,
+      "monthly_10k_usd": 819.0,
+      "monthly_10k_inr": 79088.89,
+      "monthly_10k_lakhs_inr": 0.7909,
+      "monthly_savings_vs_uncached_usd": 756.0,
+      "cost_reduction_percentage": "48.00%"
+    },
+    "standalone_80_percent_prompt_caching_catalog_benchmark": {
+      "description": "80% prompt caching hit ratio using standard 80% discount benchmark rate ($0.60/1M cached input rate)",
+      "per_report_cost_usd": 0.0903,
+      "monthly_10k_usd": 903.0,
+      "monthly_10k_inr": 87200.58,
+      "monthly_10k_lakhs_inr": 0.872,
+      "monthly_savings_vs_uncached_usd": 672.0,
+      "cost_reduction_percentage": "42.67%"
+    },
+    "sarvax_hybrid_reader_brain_cascade_exact": {
+      "description": "Smart 2-Step AI Engine (Gemini Flash-Lite OCR intake + Kimi K3 Brain reasoning on 2k tokens structured JSON)",
+      "per_report_cost_usd": 0.05583,
+      "monthly_10k_usd": 558.3,
+      "monthly_10k_inr": 53913.71,
+      "monthly_10k_lakhs_inr": 0.5391,
+      "monthly_savings_vs_uncached_usd": 1016.7,
+      "cost_reduction_percentage": "64.55%"
+    },
+    "sarvax_hybrid_reader_brain_cascade_catalog_benchmark": {
+      "description": "Catalog Matrix benchmark standard for Kimi K3 Cascade Stack ($0.06578 / report)",
+      "per_report_cost_usd": 0.06578,
+      "monthly_10k_usd": 657.8,
+      "monthly_10k_inr": 63522.19,
+      "monthly_10k_lakhs_inr": 0.6352,
+      "monthly_savings_vs_uncached_usd": 917.2,
+      "cost_reduction_percentage": "58.23%"
+    }
+  },
+  "comparison_summary": {
+    "external_uncached_10k_usd": 1575.0,
+    "sarvax_80pct_cached_10k_usd": 819.0,
+    "sarvax_cascade_optimized_10k_usd": 558.3,
+    "max_monthly_savings_usd": 1016.7,
+    "max_cost_reduction_percentage": "64.55%",
+    "key_takeaway": "SARVAX Optimization reduces monthly expenditure for 10,000 Tier 2 Standard Reports from $1,575.00 USD (External Uncached) down to $819.00 USD with 80% prompt caching (48.0% savings) and down to $558.30 USD with SARVAX Reader-Brain Cascade (64.55% savings)."
+  }
+}

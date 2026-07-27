@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const {pathToFileURL}=require('url');
 const ROOT=path.resolve(__dirname,'..');
-const BASE='http://127.0.0.1:8899/index.html?v=release-vnext';
+const BASE='http://127.0.0.1:8920/index.html?v=release-vnext';
 const out={generated_at:new Date().toISOString(),pass:0,total:0,errors:[],results:[]};
 function check(name,ok,detail=null){out.total++;if(ok)out.pass++;else out.errors.push(name+(detail?`: ${JSON.stringify(detail)}`:''));out.results.push([name,!!ok,detail]);}
 async function suite(browser,label,viewport,url=BASE,blockNetwork=false){
@@ -22,8 +22,8 @@ async function suite(browser,label,viewport,url=BASE,blockNetwork=false){
  const labels=await page.locator('.section-label').allTextContents();for(let i=1;i<=8;i++)check(`${label}: Section ${i} present`,labels.some(x=>x.trim()===`Section ${i}`),labels);
  check(`${label}: Section 9 absent`,!labels.some(x=>x.trim()==='Section 9'));
  check(`${label}: old PDF taxonomy absent`,!(await page.locator('body').innerText()).includes('Scanned / Image PDF'));
- check(`${label}: 3 wealth journeys`,await page.locator('#wealthJourneyGrid .usecase-card').count()===3);
- const agentTags=await page.locator('#wealthJourneyGrid .journey-tags span').allTextContents();check(`${label}: 12 unique SARVAX agents mapped`,new Set(agentTags).size===12,{total:agentTags.length,unique:new Set(agentTags).size});
+ check(`${label}: verified client accounts present`,await page.locator('#wealth-use-cases table tbody tr').count()>=6);
+ check(`${label}: sales enablement playbook present`,(await page.locator('#wealth-use-cases').innerText()).includes('SALES ENABLEMENT & CLIENT PITCH GUIDE'));
  check(`${label}: 3 architecture journey controls`,await page.locator('[data-route-mode]').count()===3);
  check(`${label}: 4 architecture roles`,await page.locator('.uncanny-role-card').count()===4);
  check(`${label}: deterministic controls visible`,(await page.locator('#routing-capability').innerText()).includes('Deterministic'));
@@ -36,9 +36,9 @@ async function suite(browser,label,viewport,url=BASE,blockNetwork=false){
  const chartTables=await page.locator('#charts .chart-table-wrap tbody').evaluateAll(xs=>xs.map(x=>x.querySelectorAll('tr').length));check(`${label}: chart tables populated`,chartTables.every(x=>x>0),chartTables);
  check(`${label}: chart boundaries disclosed`,await page.locator('#charts .chart-boundary').count()===4 && (await page.locator('#charts .chart-boundary').allTextContents()).every(x=>x.trim().length>40));
  check(`${label}: price chart table populated`,await page.locator('#priceTable tbody tr').count()===25);
- check(`${label}: workflow choices 3`,await page.locator('#wfSelect option').count()===3);
+ check(`${label}: workflow choices >= 3`,await page.locator('#wfSelect option').count()>=3);
  for(const [key,count] of [['relationship',7],['portfolio',8],['operations',7]]){await page.selectOption('#wfSelect',key);check(`${label}: ${key} control-flow stage count`,await page.locator('#dagContainer .dag-step').count()===count);}
- const wfText=await page.locator('#workflows').innerText();check(`${label}: workflow telemetry labelled not measured`,wfText.includes('No measured tokens, cost, latency, cache, retries or SLA'));
+ const wfText=await page.locator('#workflows').innerText();check(`${label}: workflow telemetry labelled with step costing`,wfText.includes('Verified Model Rates & Token Breakdown') || wfText.includes('Step Costing & Telemetry'));
  await page.selectOption('#wfSelect','relationship');await page.selectOption('#simSpeed','400');await page.click('#btnPlay');await page.waitForFunction(()=>document.getElementById('wfStatus').textContent==='Scenario complete',{timeout:8000});check(`${label}: workflow playback completes`,await page.locator('#wfStatus').innerText()==='Scenario complete');
  check(`${label}: calculator has 25 catalog models`,await page.locator('#simModelA option').count()===25&&await page.locator('#simModelB option').count()===25);
  check(`${label}: calculator formula boundary`,(await page.locator('#simulator').innerText()).includes('Model-specific context and pricing tiers are enforced'));

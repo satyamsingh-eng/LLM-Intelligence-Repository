@@ -1,0 +1,135 @@
+{
+  "audit_metadata": {
+    "model_id": "gemini-3-5-flash",
+    "model_name": "Gemini 3.5 Flash",
+    "vendor": "Google Cloud (Vertex AI) / Google AI Studio",
+    "context_window": 1048576,
+    "audit_timestamp": "2026-07-27T00:00:00Z",
+    "verification_date": "2026-07-27",
+    "status": "VERIFIED_PRIMARY_SOURCE",
+    "official_sources": [
+      "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+      "https://ai.google.dev/pricing"
+    ],
+    "fx_rates": {
+      "usd_to_inr": "96.567636",
+      "usd_to_ksh": "129.0",
+      "reference_date": "2026-07-24",
+      "source": "ECB Reference Rates & Central Data Layer"
+    }
+  },
+  "rate_card": {
+    "uncached_input_usd_per_1m": 1.5,
+    "cached_input_usd_per_1m": 0.375,
+    "prompt_caching_discount_percent": 75.0,
+    "output_usd_per_1m": 9.0,
+    "enhanced_cached_input_usd_per_1m": 0.15,
+    "enhanced_prompt_caching_discount_percent": 90.0,
+    "batch_api": {
+      "uncached_input_usd_per_1m": 0.75,
+      "cached_input_usd_per_1m": 0.1875,
+      "output_usd_per_1m": 4.5,
+      "discount_percent": 50.0
+    }
+  },
+  "benchmark_workload": {
+    "tier": "Tier 2 Standard Review",
+    "scope": "3-5 Pages",
+    "input_tokens_per_run": 35000,
+    "output_tokens_per_run": 3500,
+    "monthly_volume_reports": 10000,
+    "total_input_tokens_10k": 350000000,
+    "total_output_tokens_10k": 35000000
+  },
+  "external_uncached_pricing": {
+    "description": "Standard external pricing with 0% prompt caching",
+    "per_run": {
+      "input_cost_usd": 0.0525,
+      "input_cost_formula": "(35,000 / 1,000,000) * $1.50",
+      "output_cost_usd": 0.0315,
+      "output_cost_formula": "(3,500 / 1,000,000) * $9.00",
+      "total_cost_usd": 0.084,
+      "total_cost_inr": 8.1117
+    },
+    "monthly_10k_reports": {
+      "input_cost_usd": 525.0,
+      "output_cost_usd": 315.0,
+      "total_cost_usd": 840.0,
+      "total_cost_inr": 81116.81,
+      "total_cost_ksh": 108360.0,
+      "total_cost_lakhs_inr": 0.8112,
+      "formatted_cost_inr": "\u20b90.81 Lakhs"
+    }
+  },
+  "sarvax_optimized_pricing": {
+    "description": "SARVAX optimized architecture with 80% prompt caching hit rate",
+    "caching_hit_rate_percent": 80.0,
+    "cached_input_tokens_per_report": 28000,
+    "uncached_input_tokens_per_report": 7000,
+    "output_tokens_per_report": 3500,
+    "primary_75pct_cache_discount_scenario": {
+      "description": "75% Prompt Caching Discount ($0.375/1M cached input)",
+      "cached_input_rate_usd_per_1m": 0.375,
+      "per_run": {
+        "cached_input_cost_usd": 0.0105,
+        "uncached_input_cost_usd": 0.0105,
+        "total_input_cost_usd": 0.021,
+        "output_cost_usd": 0.0315,
+        "total_cost_usd": 0.0525,
+        "total_cost_inr": 5.0698
+      },
+      "monthly_10k_reports": {
+        "cached_input_cost_usd": 105.0,
+        "uncached_input_cost_usd": 105.0,
+        "total_input_cost_usd": 210.0,
+        "output_cost_usd": 315.0,
+        "total_cost_usd": 525.0,
+        "total_cost_inr": 50698.01,
+        "total_cost_ksh": 67725.0,
+        "total_cost_lakhs_inr": 0.507,
+        "formatted_cost_inr": "\u20b90.51 Lakhs"
+      }
+    },
+    "secondary_90pct_cache_discount_scenario": {
+      "description": "90% Prompt Caching Discount ($0.150/1M cached input)",
+      "cached_input_rate_usd_per_1m": 0.15,
+      "per_run": {
+        "cached_input_cost_usd": 0.0042,
+        "uncached_input_cost_usd": 0.0105,
+        "total_input_cost_usd": 0.0147,
+        "output_cost_usd": 0.0315,
+        "total_cost_usd": 0.0462,
+        "total_cost_inr": 4.4614
+      },
+      "monthly_10k_reports": {
+        "cached_input_cost_usd": 42.0,
+        "uncached_input_cost_usd": 105.0,
+        "total_input_cost_usd": 147.0,
+        "output_cost_usd": 315.0,
+        "total_cost_usd": 462.0,
+        "total_cost_inr": 44614.25,
+        "total_cost_ksh": 59598.0,
+        "total_cost_lakhs_inr": 0.4461,
+        "formatted_cost_inr": "\u20b90.45 Lakhs"
+      }
+    }
+  },
+  "optimization_savings": {
+    "primary_scenario_75pct_discount": {
+      "per_run_savings_usd": 0.0315,
+      "monthly_savings_usd": 315.0,
+      "monthly_savings_inr": 30418.81,
+      "monthly_savings_ksh": 40635.0,
+      "input_cost_reduction_percent": 60.0,
+      "overall_cost_reduction_percent": 37.5
+    },
+    "secondary_scenario_90pct_discount": {
+      "per_run_savings_usd": 0.0378,
+      "monthly_savings_usd": 378.0,
+      "monthly_savings_inr": 36502.57,
+      "monthly_savings_ksh": 48762.0,
+      "input_cost_reduction_percent": 72.0,
+      "overall_cost_reduction_percent": 45.0
+    }
+  }
+}

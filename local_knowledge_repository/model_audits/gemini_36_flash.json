@@ -1,0 +1,192 @@
+{
+  "metadata": {
+    "model_id": "gemini-3.6-flash",
+    "model_name": "Gemini 3.6 Flash",
+    "vendor": "Google Cloud (Vertex AI) / Google AI Studio",
+    "audit_timestamp": "2026-07-27T00:00:00Z",
+    "verification_sources": [
+      "https://ai.google.dev/pricing",
+      "https://cloud.google.com/vertex-ai/generative-ai/pricing"
+    ],
+    "fx_rates": {
+      "usd_to_inr": "96.567636",
+      "usd_to_ksh": "129.0",
+      "source": "ECB Reference Rates"
+    },
+    "monthly_volume_baseline": 10000
+  },
+  "rate_card_usd": {
+    "standard_paid_tier": {
+      "uncached_input_per_1m": "1.50",
+      "uncached_output_per_1m": "7.50",
+      "cached_input_read_per_1m": "0.15",
+      "cached_input_storage_per_1m_per_hr": "1.00",
+      "prompt_caching_discount_percentage": 90.0,
+      "notes": "Official prompt cache read rate is $0.15/1M, representing a 90% discount off the base $1.50/1M input rate."
+    },
+    "batch_flex_tier": {
+      "uncached_input_per_1m": "0.75",
+      "uncached_output_per_1m": "3.75",
+      "cached_input_read_per_1m": "0.075",
+      "batch_discount_percentage": 50.0
+    },
+    "priority_tier": {
+      "uncached_input_per_1m": "2.70",
+      "uncached_output_per_1m": "13.50",
+      "cached_input_read_per_1m": "0.27"
+    }
+  },
+  "benchmark_summary_tier_2_10k_reports": {
+    "workload": "Tier 2 Standard Review (35,000 Input / 3,500 Output Tokens)",
+    "monthly_report_volume": 10000,
+    "external_uncached": {
+      "per_run_cost_usd": 0.07875,
+      "monthly_cost_usd": 787.5,
+      "monthly_cost_inr": 76047.01,
+      "monthly_cost_lakhs_inr": "\u20b90.7605 Lakhs"
+    },
+    "sarvax_optimized_official_90pct_caching": {
+      "per_run_cost_usd": 0.04095,
+      "monthly_cost_usd": 409.5,
+      "monthly_cost_inr": 39544.45,
+      "monthly_cost_lakhs_inr": "\u20b90.3954 Lakhs",
+      "monthly_net_savings_usd": 378.0,
+      "monthly_net_savings_inr": 36502.57,
+      "opex_savings_percentage": "48.00%"
+    },
+    "sarvax_optimized_generic_75pct_caching_baseline": {
+      "per_run_cost_usd": 0.04725,
+      "monthly_cost_usd": 472.5,
+      "monthly_cost_inr": 45628.21,
+      "monthly_cost_lakhs_inr": "\u20b90.4563 Lakhs",
+      "monthly_net_savings_usd": 315.0,
+      "monthly_net_savings_inr": 30418.81,
+      "opex_savings_percentage": "40.00%"
+    }
+  },
+  "workload_tier_breakdown": {
+    "tier_1": {
+      "name": "Tier 1 Lite Brief",
+      "scope": "1-2 Pages",
+      "input_tokens": 15000,
+      "output_tokens": 1500,
+      "external_uncached": {
+        "input_cost_per_run_usd": 0.0225,
+        "output_cost_per_run_usd": 0.01125,
+        "per_run_usd": 0.03375,
+        "monthly_10k_usd": 337.5,
+        "monthly_10k_inr": 32591.58,
+        "monthly_10k_ksh": 43537.5,
+        "monthly_10k_lakhs_inr": 0.3259
+      },
+      "sarvax_optimized_official_90pct_caching_discount": {
+        "cached_input_part_usd": 0.0018,
+        "uncached_input_part_usd": 0.0045,
+        "total_input_cost_per_run_usd": 0.0063,
+        "per_run_usd": 0.01755,
+        "monthly_10k_usd": 175.5,
+        "monthly_10k_inr": 16947.62,
+        "monthly_10k_ksh": 22639.5,
+        "monthly_10k_lakhs_inr": 0.1695,
+        "monthly_net_savings_usd": 162.0,
+        "monthly_net_savings_inr": 15643.96,
+        "opex_savings_percentage": 48.0
+      },
+      "sarvax_optimized_legacy_75pct_caching_discount": {
+        "cached_input_part_usd": 0.0045,
+        "uncached_input_part_usd": 0.0045,
+        "total_input_cost_per_run_usd": 0.009,
+        "per_run_usd": 0.02025,
+        "monthly_10k_usd": 202.5,
+        "monthly_10k_inr": 19554.95,
+        "monthly_10k_ksh": 26122.5,
+        "monthly_10k_lakhs_inr": 0.1955,
+        "monthly_net_savings_usd": 135.0,
+        "monthly_net_savings_inr": 13036.63,
+        "opex_savings_percentage": 40.0
+      }
+    },
+    "tier_2": {
+      "name": "Tier 2 Standard Review (BENCHMARK STANDARD)",
+      "scope": "3-5 Pages",
+      "input_tokens": 35000,
+      "output_tokens": 3500,
+      "external_uncached": {
+        "input_cost_per_run_usd": 0.0525,
+        "output_cost_per_run_usd": 0.02625,
+        "per_run_usd": 0.07875,
+        "monthly_10k_usd": 787.5,
+        "monthly_10k_inr": 76047.01,
+        "monthly_10k_ksh": 101587.5,
+        "monthly_10k_lakhs_inr": 0.7605
+      },
+      "sarvax_optimized_official_90pct_caching_discount": {
+        "cached_input_part_usd": 0.0042,
+        "uncached_input_part_usd": 0.0105,
+        "total_input_cost_per_run_usd": 0.0147,
+        "per_run_usd": 0.04095,
+        "monthly_10k_usd": 409.5,
+        "monthly_10k_inr": 39544.45,
+        "monthly_10k_ksh": 52825.5,
+        "monthly_10k_lakhs_inr": 0.3954,
+        "monthly_net_savings_usd": 378.0,
+        "monthly_net_savings_inr": 36502.57,
+        "opex_savings_percentage": 48.0
+      },
+      "sarvax_optimized_legacy_75pct_caching_discount": {
+        "cached_input_part_usd": 0.0105,
+        "uncached_input_part_usd": 0.0105,
+        "total_input_cost_per_run_usd": 0.021,
+        "per_run_usd": 0.04725,
+        "monthly_10k_usd": 472.5,
+        "monthly_10k_inr": 45628.21,
+        "monthly_10k_ksh": 60952.5,
+        "monthly_10k_lakhs_inr": 0.4563,
+        "monthly_net_savings_usd": 315.0,
+        "monthly_net_savings_inr": 30418.81,
+        "opex_savings_percentage": 40.0
+      }
+    },
+    "tier_3": {
+      "name": "Tier 3 Deep Institutional Analysis",
+      "scope": "8-12 Pages",
+      "input_tokens": 75000,
+      "output_tokens": 8000,
+      "external_uncached": {
+        "input_cost_per_run_usd": 0.1125,
+        "output_cost_per_run_usd": 0.06,
+        "per_run_usd": 0.1725,
+        "monthly_10k_usd": 1725.0,
+        "monthly_10k_inr": 166579.17,
+        "monthly_10k_ksh": 222525.0,
+        "monthly_10k_lakhs_inr": 1.6658
+      },
+      "sarvax_optimized_official_90pct_caching_discount": {
+        "cached_input_part_usd": 0.009,
+        "uncached_input_part_usd": 0.0225,
+        "total_input_cost_per_run_usd": 0.0315,
+        "per_run_usd": 0.0915,
+        "monthly_10k_usd": 915.0,
+        "monthly_10k_inr": 88359.39,
+        "monthly_10k_ksh": 118035.0,
+        "monthly_10k_lakhs_inr": 0.8836,
+        "monthly_net_savings_usd": 810.0,
+        "monthly_net_savings_inr": 78219.79,
+        "opex_savings_percentage": 46.96
+      },
+      "sarvax_optimized_legacy_75pct_caching_discount": {
+        "cached_input_part_usd": 0.0225,
+        "uncached_input_part_usd": 0.0225,
+        "total_input_cost_per_run_usd": 0.045,
+        "per_run_usd": 0.105,
+        "monthly_10k_usd": 1050.0,
+        "monthly_10k_inr": 101396.02,
+        "monthly_10k_ksh": 135450.0,
+        "monthly_10k_lakhs_inr": 1.014,
+        "monthly_net_savings_usd": 675.0,
+        "monthly_net_savings_inr": 65183.15,
+        "opex_savings_percentage": 39.13
+      }
+    }
+  }
+}

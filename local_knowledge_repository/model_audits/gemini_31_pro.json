@@ -1,0 +1,144 @@
+{
+  "audit_metadata": {
+    "model_id": "gemini-3-1-pro-preview",
+    "model_name": "Gemini 3.1 Pro Preview",
+    "vendor": "Google",
+    "provider_platform": "Google Cloud Vertex AI & Google AI Studio",
+    "audit_timestamp": "2026-07-27T00:00:00Z",
+    "auditor": "Hermes Subagent",
+    "status": "VERIFIED_PRIMARY_SOURCE",
+    "fx_rate_usd_to_inr": 96.61,
+    "fx_source": "ECB Reference / Central Data Layer (1 USD = 96.61 INR)",
+    "official_source_url": "https://cloud.google.com/vertex-ai/generative-ai/pricing",
+    "local_snapshot_path": "local_knowledge_repository/official_sources/google_pricing.html"
+  },
+  "official_vendor_pricing": {
+    "context_window_tokens": 2000000,
+    "pricing_tier": "Standard Context (<= 200k tokens)",
+    "uncached_input_rate_usd_per_1m": 2.00,
+    "uncached_input_rate_inr_per_1m": 193.22,
+    "uncached_output_rate_usd_per_1m": 12.00,
+    "uncached_output_rate_inr_per_1m": 1159.32,
+    "prompt_caching": {
+      "official_cached_input_rate_usd_per_1m": 0.20,
+      "official_cached_input_rate_inr_per_1m": 19.32,
+      "official_cache_discount_percentage": 90.0,
+      "official_cache_hit_rate_multiplier": 0.10,
+      "matrix_benchmark_cached_input_rate_usd_per_1m": 0.50,
+      "matrix_benchmark_cached_input_rate_inr_per_1m": 48.28,
+      "matrix_benchmark_cache_discount_percentage": 75.0,
+      "matrix_benchmark_cache_hit_rate_multiplier": 0.25,
+      "minimum_prefix_length_tokens": 32768,
+      "storage_fee_usd_per_1m_per_hour": 4.50
+    },
+    "extended_context_pricing_gt_200k": {
+      "uncached_input_rate_usd_per_1m": 4.00,
+      "uncached_output_rate_usd_per_1m": 18.00,
+      "cached_input_rate_usd_per_1m": 0.40
+    }
+  },
+  "report_workload_specifications": {
+    "tier_name": "Tier 2 Standard Reports",
+    "report_description": "Standard Review (3-5 pages)",
+    "target_volume_reports": 10000,
+    "per_report_input_tokens": 35000,
+    "per_report_output_tokens": 3500,
+    "total_input_tokens_10k": 350000000,
+    "total_output_tokens_10k": 35000000
+  },
+  "external_uncached_pricing_calculation": {
+    "per_report_cost": {
+      "input_cost_usd": 0.0700,
+      "input_cost_formula": "(35,000 / 1,000,000) * $2.00",
+      "output_cost_usd": 0.0420,
+      "output_cost_formula": "(3,500 / 1,000,000) * $12.00",
+      "total_cost_usd": 0.1120,
+      "total_cost_inr": 10.82
+    },
+    "total_10k_reports_cost": {
+      "input_cost_usd": 700.00,
+      "output_cost_usd": 420.00,
+      "total_cost_usd": 1120.00,
+      "total_cost_inr": 108203.20,
+      "total_cost_lakhs_inr": 1.0820,
+      "formatted_cost_inr": "₹1.08 Lakhs"
+    }
+  },
+  "sarvax_optimized_pricing_calculation": {
+    "caching_assumptions": {
+      "cache_hit_rate_percentage": 80.0,
+      "cached_input_tokens_per_report": 28000,
+      "uncached_input_tokens_per_report": 7000,
+      "output_tokens_per_report": 3500,
+      "note": "80% of prompt context (system instructions, financial schemas, reference documents) served from KV cache; 20% dynamic per-report input uncached."
+    },
+    "primary_official_rate_card_scenario": {
+      "description": "Calculated using Google Official Rate Card Prompt Caching Read Rate ($0.20/1M cached input, 90% cache discount)",
+      "cached_input_rate_usd_per_1m": 0.20,
+      "per_report_cost": {
+        "cached_input_cost_usd": 0.0056,
+        "cached_input_cost_formula": "(28,000 / 1,000,000) * $0.20",
+        "uncached_input_cost_usd": 0.0140,
+        "uncached_input_cost_formula": "(7,000 / 1,000,000) * $2.00",
+        "total_input_cost_usd": 0.0196,
+        "output_cost_usd": 0.0420,
+        "total_cost_usd": 0.0616,
+        "total_cost_inr": 5.95
+      },
+      "total_10k_reports_cost": {
+        "cached_input_cost_usd": 56.00,
+        "uncached_input_cost_usd": 140.00,
+        "total_input_cost_usd": 196.00,
+        "output_cost_usd": 420.00,
+        "total_cost_usd": 616.00,
+        "total_cost_inr": 59511.76,
+        "total_cost_lakhs_inr": 0.5951,
+        "formatted_cost_inr": "₹0.60 Lakhs"
+      },
+      "savings_vs_external_uncached": {
+        "absolute_savings_usd": 504.00,
+        "absolute_savings_inr": 48691.44,
+        "percentage_savings_total_bill": 45.00,
+        "percentage_savings_input_cost": 72.00
+      }
+    },
+    "matrix_benchmark_scenario": {
+      "description": "Calculated using Secondary Matrix Benchmark Caching Rate ($0.50/1M cached input, 75% cache discount)",
+      "cached_input_rate_usd_per_1m": 0.50,
+      "per_report_cost": {
+        "cached_input_cost_usd": 0.0140,
+        "uncached_input_cost_usd": 0.0140,
+        "total_input_cost_usd": 0.0280,
+        "output_cost_usd": 0.0420,
+        "total_cost_usd": 0.0700,
+        "total_cost_inr": 6.76
+      },
+      "total_10k_reports_cost": {
+        "cached_input_cost_usd": 140.00,
+        "uncached_input_cost_usd": 140.00,
+        "total_input_cost_usd": 280.00,
+        "output_cost_usd": 420.00,
+        "total_cost_usd": 700.00,
+        "total_cost_inr": 67627.00,
+        "total_cost_lakhs_inr": 0.6763,
+        "formatted_cost_inr": "₹0.68 Lakhs"
+      },
+      "savings_vs_external_uncached": {
+        "absolute_savings_usd": 420.00,
+        "absolute_savings_inr": 40576.20,
+        "percentage_savings_total_bill": 37.50,
+        "percentage_savings_input_cost": 60.00
+      }
+    }
+  },
+  "comparative_summary": {
+    "metric": "10,000 Tier 2 Reports (35k in / 3.5k out)",
+    "external_uncached_total_usd": 1120.00,
+    "sarvax_optimized_primary_usd": 616.00,
+    "sarvax_optimized_matrix_usd": 700.00,
+    "primary_net_savings_usd": 504.00,
+    "primary_cost_reduction_percent": "45.00%",
+    "input_cost_reduction_percent": "72.00%",
+    "unit_economics_verdict": "SARVAX Prompt Caching optimization reduces input processing expenditure from $700.00 down to $196.00 for 10k reports, lowering total bill from $1,120.00 to $616.00 (a 45% overall OpEx reduction)."
+  }
+}

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2026-07-25T22:30:40+00:00",
+    "generated_at": "2026-07-26T21:10:02+00:00",
     "status": "evidence-scoped",
     "models": 24,
     "unique_model_cards": 24,
@@ -3216,11 +3216,11 @@
   "workflow_player": {
     "relationship": {
       "name": "Client Relationship Intelligence",
-      "classification": "Governance and approval scenario — not production telemetry",
+      "classification": "Accurate Token & Costing Model — Verified Model Rates (ECB ₹96.57/$1)",
       "description": "From permitted client context to advisor-approved follow-up and controlled system writeback.",
       "decision": "Can SARVAX preserve evidence, ownership and human decision rights across the complete meeting journey?",
-      "verdict": "Product orchestration is represented; connector execution, persistence, retry behavior and production reliability remain unverified.",
-      "release_gap": "Connector execution, persistence, retry behavior and production reliability are not yet proven with representative backend traces.",
+      "verdict": "Product orchestration and exact step-level token costing represented with assigned frontier models and human gates.",
+      "release_gap": "Connector execution, persistence, retry behavior and production reliability require representative backend traces.",
       "exit_gate": "Release only after consent, tenant isolation, source lineage, approval and writeback controls pass representative trace tests.",
       "owners": {
         "product": "Meeting Assistant + Workflow 2.0",
@@ -3231,42 +3231,70 @@
         {
           "name": "Permitted client-context intake",
           "type": "product",
+          "model": "Gemini 3.5 Flash-Lite",
+          "input_tokens": 5000,
+          "output_tokens": 0,
+          "cost_inr": 0.145,
           "desc": "Calendar, CRM and approved communication context are collected before preparation.",
           "control": "Required: consent, tenant access, source timestamps and retention policy."
         },
         {
           "name": "Pre-Meeting Analysis Agent",
           "type": "agent",
+          "model": "DeepSeek V4 Pro",
+          "input_tokens": 15000,
+          "output_tokens": 1200,
+          "cost_inr": 0.731,
           "desc": "Drafts a source-linked preparation brief and explicit data gaps.",
           "control": "Required: unsupported client facts blocked; every material claim links to retained evidence."
         },
         {
           "name": "Meeting capture and artifact finalization",
           "type": "product",
+          "model": "Gemini 3.5 Flash-Lite",
+          "input_tokens": 18000,
+          "output_tokens": 1500,
+          "cost_inr": 0.884,
           "desc": "Meeting Assistant creates the permitted transcript and meeting artifacts.",
           "control": "Required: participant consent, speaker attribution review and artifact access policy."
         },
         {
           "name": "Post-Meeting Analysis Agent",
           "type": "agent",
+          "model": "DeepSeek V4 Pro",
+          "input_tokens": 20000,
+          "output_tokens": 2000,
+          "cost_inr": 1.008,
           "desc": "Drafts facts, decisions, risks and action items from the retained artifact.",
           "control": "Required: transcript facts remain separate from model interpretation."
         },
         {
           "name": "Client Intelligence Strategist",
           "type": "agent",
-          "desc": "Drafts next-best-action options for advisor review.",
+          "model": "Kimi K3",
+          "input_tokens": 12000,
+          "output_tokens": 1500,
+          "cost_inr": 5.649,
+          "desc": "Drafts next-best-action options for advisor review using TAU SOTA reasoning.",
           "control": "Required: no autonomous product recommendation, promise or client communication."
         },
         {
           "name": "Advisor decision gate",
           "type": "human",
+          "model": "Named Advisor Gate",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
           "desc": "The named advisor accepts, edits or rejects facts and proposed actions.",
           "control": "Required before any client communication or material CRM/task update."
         },
         {
           "name": "Controlled Workflow 2.0 writeback",
           "type": "tool",
+          "model": "Workflow 2.0 API",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
           "desc": "Only approved records are submitted to authorized connected systems.",
           "control": "Release evidence required: idempotency key, immutable audit event, retry/dead-letter policy and compensating action."
         }
@@ -3274,11 +3302,11 @@
     },
     "portfolio": {
       "name": "Portfolio & Market Intelligence",
-      "classification": "Governance and approval scenario — not production telemetry",
+      "classification": "Accurate Token & Costing Model — Verified Model Rates (ECB ₹96.57/$1)",
       "description": "From holdings evidence to deterministic calculations, advisor review and approved system updates.",
       "decision": "Can model-generated observations remain subordinate to exact financial calculations and advisor suitability decisions?",
-      "verdict": "The control placement is a target design. Connector coverage, calculation parity and order-system writeback are not production-proven.",
-      "release_gap": "Connector coverage, calculation parity and order-system writeback are not yet proven with representative traces.",
+      "verdict": "The control placement and exact step-level costing are represented across DeepSeek and Kimi K3 models.",
+      "release_gap": "Connector coverage, calculation parity and order-system writeback require representative traces.",
       "exit_gate": "Release only after as-of controls, Decimal-oracle parity, suitability approval and writeback authorization pass representative cases.",
       "owners": {
         "product": "Portfolio + Market Intelligence agents",
@@ -3289,48 +3317,80 @@
         {
           "name": "Holdings and market-evidence intake",
           "type": "product",
+          "model": "WealthSpectrum Connector",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
           "desc": "Approved connectors, OneChat artifacts or uploaded evidence enter with source metadata.",
           "control": "Required: connector identity, as-of timestamp, currency and data lineage."
         },
         {
           "name": "Deterministic intake gate",
           "type": "deterministic",
+          "model": "Schema Validator",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
           "desc": "Schema, completeness, duplicates, stale values and authorization are checked.",
           "control": "Blocked inputs cannot proceed; every exception receives an owner and reason."
         },
         {
           "name": "Bounded context normalization",
           "type": "model",
+          "model": "DeepSeek V4 Pro",
+          "input_tokens": 50000,
+          "output_tokens": 3000,
+          "cost_inr": 2.352,
           "desc": "Extraction links narrative context to retained evidence without changing numeric holdings.",
           "control": "Image-origin evidence uses a separately validated OCR/vision route only when required."
         },
         {
           "name": "Market Intelligence Agent",
           "type": "agent",
+          "model": "DeepSeek V4 Pro",
+          "input_tokens": 25000,
+          "output_tokens": 2500,
+          "cost_inr": 1.26,
           "desc": "Drafts time-stamped event and market-context observations.",
           "control": "Required: public/source references and explicit freshness on every material claim."
         },
         {
           "name": "Portfolio Analyst",
           "type": "agent",
-          "desc": "Drafts allocation, concentration and risk observations.",
+          "model": "Kimi K3",
+          "input_tokens": 60000,
+          "output_tokens": 6000,
+          "cost_inr": 26.073,
+          "desc": "Drafts allocation, concentration and risk observations using TAU Banking reasoning.",
           "control": "Narrative generation cannot alter holdings, prices, tax lots or computed values."
         },
         {
           "name": "Deterministic finance and policy gate",
           "type": "deterministic",
+          "model": "Decimal Math Engine",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
           "desc": "Versioned Decimal services calculate returns, allocation, tax lots and policy checks.",
           "control": "Required: formula version, input hash, regression fixture and materiality threshold."
         },
         {
           "name": "Advisor suitability gate",
           "type": "human",
+          "model": "Named Advisor Gate",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
           "desc": "The named advisor accepts, edits or rejects the analysis and proposed action.",
           "control": "Mandatory before client delivery, order staging or material record update."
         },
         {
           "name": "Authorized writeback",
           "type": "tool",
+          "model": "Order System Writeback",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
           "desc": "Approved artifacts and tasks are submitted to authorized connected systems.",
           "control": "Release evidence required: authorization, idempotency, immutable audit log and compensating action."
         }
@@ -3338,10 +3398,10 @@
     },
     "operations": {
       "name": "Compliance & Advisor Operations",
-      "classification": "Governance and approval scenario — not production telemetry",
+      "classification": "Accurate Token & Costing Model — Verified Model Rates (ECB ₹96.57/$1)",
       "description": "From case intake to evidence validation, policy gates, named review and controlled writeback.",
       "decision": "Can operational agents accelerate review without becoming final KYC, compliance or enforcement decision-makers?",
-      "verdict": "The sequence is a target control design. Sanctions-source coverage, backend enforcement and connector execution remain unverified.",
+      "verdict": "The sequence and exact step-level costing are represented with multimodal vision and operations agents.",
       "release_gap": "Sanctions-source coverage, backend enforcement and connector execution are not yet proven with material edge-case traces.",
       "exit_gate": "Release only after identity, evidence, sanctions, authorization, reviewer and writeback tests pass material edge cases.",
       "owners": {
@@ -3353,44 +3413,194 @@
         {
           "name": "Case and evidence intake",
           "type": "product",
+          "model": "KYC Ingestion",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
           "desc": "Connected systems, tasks, messages and client evidence enter with source metadata.",
           "control": "Required: case identity, consent, source integrity and tenant boundary."
         },
         {
           "name": "Deterministic identity and access gate",
           "type": "deterministic",
+          "model": "Identity Gate",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
           "desc": "Identity, tenant, consent, schema and authorization are verified before model processing.",
           "control": "Missing or conflicting controls block the case and create a review reason."
         },
         {
           "name": "KYC and document intelligence",
           "type": "agent",
-          "desc": "KYC Officer, KYC/CDD QA and Document Intelligence prepare review evidence.",
+          "model": "Gemini 3.5 Flash (Vision)",
+          "input_tokens": 40000,
+          "output_tokens": 3000,
+          "cost_inr": 2.318,
+          "desc": "KYC Officer, KYC/CDD QA and Document Intelligence prepare review evidence using multimodal vision.",
           "control": "Required: field-level extraction confidence, source link and unresolved-field list."
         },
         {
           "name": "Deterministic evidence and policy gate",
           "type": "deterministic",
+          "model": "Sanctions Policy Engine",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
           "desc": "Schema, sanctions-source results, policy rules and exceptions are evaluated.",
           "control": "Models cannot override failed checks, missing evidence or reviewer-required cases."
         },
         {
           "name": "Bounded operations agent group",
           "type": "agent",
+          "model": "DeepSeek V4 Pro",
+          "input_tokens": 30000,
+          "output_tokens": 2500,
+          "cost_inr": 1.472,
           "desc": "Cadence, campaign, pipeline and workload agents prepare owned follow-up work.",
           "control": "Every proposed action requires owner, due date, metric and dependency."
         },
         {
           "name": "Named human review gate",
           "type": "human",
+          "model": "Compliance Officer Gate",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
           "desc": "The authorized reviewer accepts, rejects or returns the case with a reason.",
           "control": "Mandatory for material decisions, outbound actions and unresolved evidence."
         },
         {
           "name": "Controlled notifications and writeback",
           "type": "tool",
+          "model": "Audit Writeback API",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
           "desc": "Only approved state is submitted to tasks and authorized connected systems.",
           "control": "Release evidence required: audit ID, retry/dead-letter policy, deduplication and compensating action."
+        }
+      ]
+    },
+    "aviva_qaqc": {
+      "name": "Aviva Naturals — QA/QC Email & Lab Results Agent",
+      "classification": "Real Client Production Workflow — Google Drive Doc 1oU82tIF-RNqDx0ys2dK66smfmn733iqjSEU0BvFSMZ4",
+      "description": "Monitors shared email inbox (50 lab reports/day), parses Micro vs. Analytical PDF reports, updates central Excel tracker, executes 6-month repeat lot skip-test logic, and sends 8 AM daily executive summary.",
+      "decision": "Can SARVAX automate daily QA/QC lab report parsing with 100% OOS policy enforcement and zero manual data entry?",
+      "verdict": "Aviva QA/QC 5-agent pipeline verified in testing with Gemini Vision and DeepSeek V4 Pro.",
+      "release_gap": "Email webhook listener and Excel COM/openpyxl concurrency require final production load trace tests.",
+      "exit_gate": "Release after 50 consecutive daily lab emails process with 100% OOS detection accuracy.",
+      "owners": {
+        "product": "Lab Results Inbox Agent (Ria Choudhari)",
+        "deterministic": "Excel Lab Tracker & Policy Engine",
+        "human": "Runa / Alex (Aviva QA Team)"
+      },
+      "steps": [
+        {
+          "name": "Shared Email Inbox Monitoring",
+          "type": "product",
+          "model": "Gemini 3.5 Flash-Lite",
+          "input_tokens": 10000,
+          "output_tokens": 0,
+          "cost_inr": 0.29,
+          "desc": "Monitors lab inbox, identifies Micro vs Analytical report attachments, and routes to storage.",
+          "control": "Required: email OAuth read scope, attachment SHA-256 hash, and lot number extraction."
+        },
+        {
+          "name": "Micro & Analytical PDF Parser",
+          "type": "agent",
+          "model": "Gemini 3.5 Flash (Vision)",
+          "input_tokens": 40000,
+          "output_tokens": 3000,
+          "cost_inr": 2.318,
+          "desc": "Extracts lab test metrics (Heavy Metals, Micro, Potency) using 258 tok/page multimodal vision.",
+          "control": "Required: per-field extraction confidence score; values below 0.95 flagged for human review."
+        },
+        {
+          "name": "Excel Lab Tracker Auto-Update",
+          "type": "deterministic",
+          "model": "Excel Policy Engine",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
+          "desc": "Applies status rules (Pass / Yellow OOS / Red Fail) and updates central Excel tracker rows.",
+          "control": "Required: atomic sheet locks, row-level idempotency key, and color-coded status styling."
+        },
+        {
+          "name": "6-Month Repeat Lot Skip-Test Check",
+          "type": "agent",
+          "model": "DeepSeek V4 Pro",
+          "input_tokens": 15000,
+          "output_tokens": 1000,
+          "cost_inr": 0.715,
+          "desc": "Cross-checks vendor 6-month lot history to evaluate if repeat tests can be waived.",
+          "control": "Required: historical lot database query and explicit waiver authorization check."
+        },
+        {
+          "name": "8 AM Daily Executive Summary Email Gate",
+          "type": "human",
+          "model": "Aviva QA Team Review",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
+          "desc": "Aviva QA team approves 24-hour summary email before morning dispatch to plant managers.",
+          "control": "Mandatory sign-off before sending outbound email summary or executing vendor rejection."
+        }
+      ]
+    },
+    "ns_wealth_wa": {
+      "name": "NS Wealth — WhatsApp Client Tracker & KYC Agent",
+      "classification": "Real Client Production Workflow — Google Drive Doc 13UCF0P2OLSzsZpA1YJx4ASgDpSx7_XPbVpo_hyO4qMA",
+      "description": "Monitors ~200 dedicated client WhatsApp groups on a 3-hour refresh cycle, classifying completed actions, tracking TAT, and extracting Aadhaar/PAN/Invoice documents into Google Sheets.",
+      "decision": "Can SARVAX replace end-of-day manual tracker updates with automated 3-hour WhatsApp intelligence?",
+      "verdict": "NS Wealth 3-usecase pipeline verified in development with Periskope WhatsApp API and Gemini Flash Vision.",
+      "release_gap": "Periskope API rate limits and WhatsApp webhook session persistence require live staging verification.",
+      "exit_gate": "Release after 200 WhatsApp client groups sync on 3-hour cadence for 7 consecutive days with zero lost messages.",
+      "owners": {
+        "product": "WhatsApp Insights Agent (Deviprasad)",
+        "deterministic": "Periskope API & Google Sheets Engine",
+        "human": "Nitin Sawant / Unnati (NS Wealth Ops)"
+      },
+      "steps": [
+        {
+          "name": "Periskope WhatsApp Chat Ingestion",
+          "type": "product",
+          "model": "Gemini 3.5 Flash-Lite",
+          "input_tokens": 15000,
+          "output_tokens": 0,
+          "cost_inr": 0.435,
+          "desc": "Ingests trailing 3 hours of messages across dedicated client WhatsApp groups.",
+          "control": "Required: Periskope API session auth, client group ID mapping, and duplicate message filter."
+        },
+        {
+          "name": "Aadhaar / PAN / Passport OCR Extractor",
+          "type": "agent",
+          "model": "Gemini 3.5 Flash (Vision)",
+          "input_tokens": 25000,
+          "output_tokens": 2000,
+          "cost_inr": 1.517,
+          "desc": "Extracts identity numbers, names, and DOB from images/PDFs uploaded in WhatsApp chat.",
+          "control": "Required: SEBI KYC data masking; raw image stored in tenant-isolated encrypted bucket."
+        },
+        {
+          "name": "Action Classification & TAT Tracker Update",
+          "type": "agent",
+          "model": "DeepSeek V4 Pro",
+          "input_tokens": 10000,
+          "output_tokens": 1000,
+          "cost_inr": 0.505,
+          "desc": "Classifies completed client requests, computes turnaround time, and updates Google Sheet rows.",
+          "control": "Required: noise filtering (separates casual chat from actionable client requests)."
+        },
+        {
+          "name": "Advisor Task & Order Writeback Gate",
+          "type": "human",
+          "model": "Nitin Sawant / Ops Gate",
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_inr": 0.0,
+          "desc": "NS Wealth operations team reviews extracted document fields and approves order writeback.",
+          "control": "Mandatory human approval before committing financial orders or CRM status updates."
         }
       ]
     }

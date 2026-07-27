@@ -1,0 +1,2670 @@
+{
+  "metadata": {
+    "title": "Verified LLM Model Pricing & Unit Economics Matrix",
+    "generated_at": "2026-07-26T22:25:16.991068Z",
+    "description": "Exact Decimal calculations for 10,000 monthly reports across Tier 1, Tier 2, and Tier 3 workloads with Uncached, 80% Cached, and Hybrid Cascade pricing.",
+    "fx": {
+      "usd_to_inr": "96.567636",
+      "usd_to_ksh": "129.0",
+      "reference_date": "2026-07-24",
+      "source": "ECB Reference Rates"
+    },
+    "workload_definitions": {
+      "tier_1": {
+        "name": "Tier 1 Lite Brief",
+        "pages": "1-2",
+        "input_tokens": 15000,
+        "output_tokens": 1500
+      },
+      "tier_2": {
+        "name": "Tier 2 Standard Review (BENCHMARK)",
+        "pages": "3-5",
+        "input_tokens": 35000,
+        "output_tokens": 3500
+      },
+      "tier_3": {
+        "name": "Tier 3 Institutional Analysis",
+        "pages": "8-12",
+        "input_tokens": 75000,
+        "output_tokens": 8000
+      }
+    },
+    "scenarios": {
+      "uncached": "0% caching (100% base input rate + 100% base output rate)",
+      "cached": "Standard Caching (80% cached input rate + 20% base input rate + 100% base output rate)",
+      "hybrid_cascade": "Reader-Brain Hybrid Cascade (Gemini Flash OCR + DeepSeek V4 Text Heavy Lifting + Target Model Reasoning)"
+    },
+    "model_summary": {
+      "total_catalog_models": 25,
+      "approved_models_count": 22,
+      "quarantined_models_count": 3
+    }
+  },
+  "models": [
+    {
+      "id": "qwen3-7-max",
+      "name": "Qwen3.7 Max",
+      "vendor": "Alibaba Cloud",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "2.50",
+        "cached_input_per_1m": "0.5000",
+        "output_per_1m": "7.50"
+      },
+      "rates_inr": {
+        "input_per_1m": "241.42",
+        "cached_input_per_1m": "48.28",
+        "output_per_1m": "724.26"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.04875,
+            "per_run_inr": 4.71,
+            "per_run_ksh": 6.29,
+            "monthly_10k_usd": 487.5,
+            "monthly_10k_inr": 47076.72,
+            "monthly_10k_ksh": 62887.5,
+            "monthly_10k_lakhs_inr": 0.4708
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.02475,
+            "per_run_inr": 2.39,
+            "per_run_ksh": 3.19,
+            "monthly_10k_usd": 247.5,
+            "monthly_10k_inr": 23900.49,
+            "monthly_10k_ksh": 31927.5,
+            "monthly_10k_lakhs_inr": 0.239
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.01741,
+            "per_run_inr": 1.68,
+            "per_run_ksh": 2.25,
+            "monthly_10k_usd": 174.1,
+            "monthly_10k_inr": 16812.33,
+            "monthly_10k_ksh": 22458.77,
+            "monthly_10k_lakhs_inr": 0.1681
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.11375,
+            "per_run_inr": 10.98,
+            "per_run_ksh": 14.67,
+            "monthly_10k_usd": 1137.5,
+            "monthly_10k_inr": 109845.69,
+            "monthly_10k_ksh": 146737.5,
+            "monthly_10k_lakhs_inr": 1.0985
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.05775,
+            "per_run_inr": 5.58,
+            "per_run_ksh": 7.45,
+            "monthly_10k_usd": 577.5,
+            "monthly_10k_inr": 55767.81,
+            "monthly_10k_ksh": 74497.5,
+            "monthly_10k_lakhs_inr": 0.5577
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.03917,
+            "per_run_inr": 3.78,
+            "per_run_ksh": 5.05,
+            "monthly_10k_usd": 391.7,
+            "monthly_10k_inr": 37825.35,
+            "monthly_10k_ksh": 50529.04,
+            "monthly_10k_lakhs_inr": 0.3783
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.2475,
+            "per_run_inr": 23.9,
+            "per_run_ksh": 31.93,
+            "monthly_10k_usd": 2475.0,
+            "monthly_10k_inr": 239004.9,
+            "monthly_10k_ksh": 319275.0,
+            "monthly_10k_lakhs_inr": 2.39
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.1275,
+            "per_run_inr": 12.31,
+            "per_run_ksh": 16.45,
+            "monthly_10k_usd": 1275.0,
+            "monthly_10k_inr": 123123.74,
+            "monthly_10k_ksh": 164475.0,
+            "monthly_10k_lakhs_inr": 1.2312
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.08644,
+            "per_run_inr": 8.35,
+            "per_run_ksh": 11.15,
+            "monthly_10k_usd": 864.4,
+            "monthly_10k_inr": 83472.68,
+            "monthly_10k_ksh": 111507.08,
+            "monthly_10k_lakhs_inr": 0.8347
+          }
+        }
+      }
+    },
+    {
+      "id": "qwen3-7-plus",
+      "name": "Qwen3.7 Plus",
+      "vendor": "Alibaba Cloud",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "0.40",
+        "cached_input_per_1m": "0.0800",
+        "output_per_1m": "1.60"
+      },
+      "rates_inr": {
+        "input_per_1m": "38.63",
+        "cached_input_per_1m": "7.73",
+        "output_per_1m": "154.51"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.0084,
+            "per_run_inr": 0.81,
+            "per_run_ksh": 1.08,
+            "monthly_10k_usd": 84.0,
+            "monthly_10k_inr": 8111.68,
+            "monthly_10k_ksh": 10836.0,
+            "monthly_10k_lakhs_inr": 0.0811
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.00456,
+            "per_run_inr": 0.44,
+            "per_run_ksh": 0.59,
+            "monthly_10k_usd": 45.6,
+            "monthly_10k_inr": 4403.48,
+            "monthly_10k_ksh": 5882.4,
+            "monthly_10k_lakhs_inr": 0.044
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.007804,
+            "per_run_inr": 0.75,
+            "per_run_ksh": 1.01,
+            "monthly_10k_usd": 78.04,
+            "monthly_10k_inr": 7536.04,
+            "monthly_10k_ksh": 10067.03,
+            "monthly_10k_lakhs_inr": 0.0754
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.0196,
+            "per_run_inr": 1.89,
+            "per_run_ksh": 2.53,
+            "monthly_10k_usd": 196.0,
+            "monthly_10k_inr": 18927.26,
+            "monthly_10k_ksh": 25284.0,
+            "monthly_10k_lakhs_inr": 0.1893
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.01064,
+            "per_run_inr": 1.03,
+            "per_run_ksh": 1.37,
+            "monthly_10k_usd": 106.4,
+            "monthly_10k_inr": 10274.8,
+            "monthly_10k_ksh": 13725.6,
+            "monthly_10k_lakhs_inr": 0.1027
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.017008,
+            "per_run_inr": 1.64,
+            "per_run_ksh": 2.19,
+            "monthly_10k_usd": 170.08,
+            "monthly_10k_inr": 16424.03,
+            "monthly_10k_ksh": 21940.06,
+            "monthly_10k_lakhs_inr": 0.1642
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.0428,
+            "per_run_inr": 4.13,
+            "per_run_ksh": 5.52,
+            "monthly_10k_usd": 428.0,
+            "monthly_10k_inr": 41330.95,
+            "monthly_10k_ksh": 55212.0,
+            "monthly_10k_lakhs_inr": 0.4133
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0236,
+            "per_run_inr": 2.28,
+            "per_run_ksh": 3.04,
+            "monthly_10k_usd": 236.0,
+            "monthly_10k_inr": 22789.96,
+            "monthly_10k_ksh": 30444.0,
+            "monthly_10k_lakhs_inr": 0.2279
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.036216,
+            "per_run_inr": 3.5,
+            "per_run_ksh": 4.67,
+            "monthly_10k_usd": 362.16,
+            "monthly_10k_inr": 34972.55,
+            "monthly_10k_ksh": 46718.12,
+            "monthly_10k_lakhs_inr": 0.3497
+          }
+        }
+      }
+    },
+    {
+      "id": "amazon-nova-pro",
+      "name": "Amazon Nova Pro",
+      "vendor": "Amazon",
+      "status": "quarantined",
+      "rates_usd": {
+        "input_per_1m": "0.8",
+        "cached_input_per_1m": "0.400",
+        "output_per_1m": "3.2"
+      },
+      "rates_inr": {
+        "input_per_1m": "77.25",
+        "cached_input_per_1m": "38.63",
+        "output_per_1m": "309.02"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.0168,
+            "per_run_inr": 1.62,
+            "per_run_ksh": 2.17,
+            "monthly_10k_usd": 168.0,
+            "monthly_10k_inr": 16223.36,
+            "monthly_10k_ksh": 21672.0,
+            "monthly_10k_lakhs_inr": 0.1622
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.012,
+            "per_run_inr": 1.16,
+            "per_run_ksh": 1.55,
+            "monthly_10k_usd": 120.0,
+            "monthly_10k_inr": 11588.12,
+            "monthly_10k_ksh": 15480.0,
+            "monthly_10k_lakhs_inr": 0.1159
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.01054,
+            "per_run_inr": 1.02,
+            "per_run_ksh": 1.36,
+            "monthly_10k_usd": 105.4,
+            "monthly_10k_inr": 10178.13,
+            "monthly_10k_ksh": 13596.47,
+            "monthly_10k_lakhs_inr": 0.1018
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.0392,
+            "per_run_inr": 3.79,
+            "per_run_ksh": 5.06,
+            "monthly_10k_usd": 392.0,
+            "monthly_10k_inr": 37854.51,
+            "monthly_10k_ksh": 50568.0,
+            "monthly_10k_lakhs_inr": 0.3785
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.028,
+            "per_run_inr": 2.7,
+            "per_run_ksh": 3.61,
+            "monthly_10k_usd": 280.0,
+            "monthly_10k_inr": 27038.94,
+            "monthly_10k_ksh": 36120.0,
+            "monthly_10k_lakhs_inr": 0.2704
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.02328,
+            "per_run_inr": 2.25,
+            "per_run_ksh": 3.0,
+            "monthly_10k_usd": 232.8,
+            "monthly_10k_inr": 22480.75,
+            "monthly_10k_ksh": 30030.94,
+            "monthly_10k_lakhs_inr": 0.2248
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.0856,
+            "per_run_inr": 8.27,
+            "per_run_ksh": 11.04,
+            "monthly_10k_usd": 856.0,
+            "monthly_10k_inr": 82661.9,
+            "monthly_10k_ksh": 110424.0,
+            "monthly_10k_lakhs_inr": 0.8266
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0616,
+            "per_run_inr": 5.95,
+            "per_run_ksh": 7.95,
+            "monthly_10k_usd": 616.0,
+            "monthly_10k_inr": 59485.66,
+            "monthly_10k_ksh": 79464.0,
+            "monthly_10k_lakhs_inr": 0.5949
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.05036,
+            "per_run_inr": 4.86,
+            "per_run_ksh": 6.5,
+            "monthly_10k_usd": 503.6,
+            "monthly_10k_inr": 48631.08,
+            "monthly_10k_ksh": 64963.88,
+            "monthly_10k_lakhs_inr": 0.4863
+          }
+        }
+      }
+    },
+    {
+      "id": "claude-fable-5",
+      "name": "Claude Fable 5",
+      "vendor": "Anthropic",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "10",
+        "cached_input_per_1m": "1.00",
+        "output_per_1m": "50"
+      },
+      "rates_inr": {
+        "input_per_1m": "965.68",
+        "cached_input_per_1m": "96.57",
+        "output_per_1m": "4828.38"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.225,
+            "per_run_inr": 21.73,
+            "per_run_ksh": 29.03,
+            "monthly_10k_usd": 2250.0,
+            "monthly_10k_inr": 217277.18,
+            "monthly_10k_ksh": 290250.0,
+            "monthly_10k_lakhs_inr": 2.1728
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.117,
+            "per_run_inr": 11.3,
+            "per_run_ksh": 15.09,
+            "monthly_10k_usd": 1170.0,
+            "monthly_10k_inr": 112984.13,
+            "monthly_10k_ksh": 150930.0,
+            "monthly_10k_lakhs_inr": 1.1298
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.08306,
+            "per_run_inr": 8.02,
+            "per_run_ksh": 10.71,
+            "monthly_10k_usd": 830.6,
+            "monthly_10k_inr": 80208.98,
+            "monthly_10k_ksh": 107147.27,
+            "monthly_10k_lakhs_inr": 0.8021
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.525,
+            "per_run_inr": 50.7,
+            "per_run_ksh": 67.73,
+            "monthly_10k_usd": 5250.0,
+            "monthly_10k_inr": 506980.09,
+            "monthly_10k_ksh": 677250.0,
+            "monthly_10k_lakhs_inr": 5.0698
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.273,
+            "per_run_inr": 26.36,
+            "per_run_ksh": 35.22,
+            "monthly_10k_usd": 2730.0,
+            "monthly_10k_inr": 263629.65,
+            "monthly_10k_ksh": 352170.0,
+            "monthly_10k_lakhs_inr": 2.6363
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.19172,
+            "per_run_inr": 18.51,
+            "per_run_ksh": 24.73,
+            "monthly_10k_usd": 1917.2,
+            "monthly_10k_inr": 185139.28,
+            "monthly_10k_ksh": 247318.54,
+            "monthly_10k_lakhs_inr": 1.8514
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 1.15,
+            "per_run_inr": 111.05,
+            "per_run_ksh": 148.35,
+            "monthly_10k_usd": 11500.0,
+            "monthly_10k_inr": 1110527.81,
+            "monthly_10k_ksh": 1483500.0,
+            "monthly_10k_lakhs_inr": 11.1053
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.61,
+            "per_run_inr": 58.91,
+            "per_run_ksh": 78.69,
+            "monthly_10k_usd": 6100.0,
+            "monthly_10k_inr": 589062.58,
+            "monthly_10k_ksh": 786900.0,
+            "monthly_10k_lakhs_inr": 5.8906
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.43404,
+            "per_run_inr": 41.91,
+            "per_run_ksh": 55.99,
+            "monthly_10k_usd": 4340.4,
+            "monthly_10k_inr": 419141.78,
+            "monthly_10k_ksh": 559911.08,
+            "monthly_10k_lakhs_inr": 4.1914
+          }
+        }
+      }
+    },
+    {
+      "id": "claude-opus-4-7",
+      "name": "Claude Opus 4.7",
+      "vendor": "Anthropic",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "5",
+        "cached_input_per_1m": "0.50",
+        "output_per_1m": "25"
+      },
+      "rates_inr": {
+        "input_per_1m": "482.84",
+        "cached_input_per_1m": "48.28",
+        "output_per_1m": "2414.19"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.1125,
+            "per_run_inr": 10.86,
+            "per_run_ksh": 14.51,
+            "monthly_10k_usd": 1125.0,
+            "monthly_10k_inr": 108638.59,
+            "monthly_10k_ksh": 145125.0,
+            "monthly_10k_lakhs_inr": 1.0864
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0585,
+            "per_run_inr": 5.65,
+            "per_run_ksh": 7.55,
+            "monthly_10k_usd": 585.0,
+            "monthly_10k_inr": 56492.07,
+            "monthly_10k_ksh": 75465.0,
+            "monthly_10k_lakhs_inr": 0.5649
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.04416,
+            "per_run_inr": 4.26,
+            "per_run_ksh": 5.7,
+            "monthly_10k_usd": 441.6,
+            "monthly_10k_inr": 42644.17,
+            "monthly_10k_ksh": 56966.27,
+            "monthly_10k_lakhs_inr": 0.4264
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.2625,
+            "per_run_inr": 25.35,
+            "per_run_ksh": 33.86,
+            "monthly_10k_usd": 2625.0,
+            "monthly_10k_inr": 253490.04,
+            "monthly_10k_ksh": 338625.0,
+            "monthly_10k_lakhs_inr": 2.5349
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.1365,
+            "per_run_inr": 13.18,
+            "per_run_ksh": 17.61,
+            "monthly_10k_usd": 1365.0,
+            "monthly_10k_inr": 131814.82,
+            "monthly_10k_ksh": 176085.0,
+            "monthly_10k_lakhs_inr": 1.3181
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.10142,
+            "per_run_inr": 9.79,
+            "per_run_ksh": 13.08,
+            "monthly_10k_usd": 1014.2,
+            "monthly_10k_inr": 97938.7,
+            "monthly_10k_ksh": 130831.54,
+            "monthly_10k_lakhs_inr": 0.9794
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.575,
+            "per_run_inr": 55.53,
+            "per_run_ksh": 74.18,
+            "monthly_10k_usd": 5750.0,
+            "monthly_10k_inr": 555263.91,
+            "monthly_10k_ksh": 741750.0,
+            "monthly_10k_lakhs_inr": 5.5526
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.305,
+            "per_run_inr": 29.45,
+            "per_run_ksh": 39.35,
+            "monthly_10k_usd": 3050.0,
+            "monthly_10k_inr": 294531.29,
+            "monthly_10k_ksh": 393450.0,
+            "monthly_10k_lakhs_inr": 2.9453
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.22844,
+            "per_run_inr": 22.06,
+            "per_run_ksh": 29.47,
+            "monthly_10k_usd": 2284.4,
+            "monthly_10k_inr": 220598.72,
+            "monthly_10k_ksh": 294687.08,
+            "monthly_10k_lakhs_inr": 2.206
+          }
+        }
+      }
+    },
+    {
+      "id": "claude-opus-4-8",
+      "name": "Claude Opus 4.8",
+      "vendor": "Anthropic",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "5",
+        "cached_input_per_1m": "0.50",
+        "output_per_1m": "25"
+      },
+      "rates_inr": {
+        "input_per_1m": "482.84",
+        "cached_input_per_1m": "48.28",
+        "output_per_1m": "2414.19"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.1125,
+            "per_run_inr": 10.86,
+            "per_run_ksh": 14.51,
+            "monthly_10k_usd": 1125.0,
+            "monthly_10k_inr": 108638.59,
+            "monthly_10k_ksh": 145125.0,
+            "monthly_10k_lakhs_inr": 1.0864
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0585,
+            "per_run_inr": 5.65,
+            "per_run_ksh": 7.55,
+            "monthly_10k_usd": 585.0,
+            "monthly_10k_inr": 56492.07,
+            "monthly_10k_ksh": 75465.0,
+            "monthly_10k_lakhs_inr": 0.5649
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.04416,
+            "per_run_inr": 4.26,
+            "per_run_ksh": 5.7,
+            "monthly_10k_usd": 441.6,
+            "monthly_10k_inr": 42644.17,
+            "monthly_10k_ksh": 56966.27,
+            "monthly_10k_lakhs_inr": 0.4264
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.2625,
+            "per_run_inr": 25.35,
+            "per_run_ksh": 33.86,
+            "monthly_10k_usd": 2625.0,
+            "monthly_10k_inr": 253490.04,
+            "monthly_10k_ksh": 338625.0,
+            "monthly_10k_lakhs_inr": 2.5349
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.1365,
+            "per_run_inr": 13.18,
+            "per_run_ksh": 17.61,
+            "monthly_10k_usd": 1365.0,
+            "monthly_10k_inr": 131814.82,
+            "monthly_10k_ksh": 176085.0,
+            "monthly_10k_lakhs_inr": 1.3181
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.10142,
+            "per_run_inr": 9.79,
+            "per_run_ksh": 13.08,
+            "monthly_10k_usd": 1014.2,
+            "monthly_10k_inr": 97938.7,
+            "monthly_10k_ksh": 130831.54,
+            "monthly_10k_lakhs_inr": 0.9794
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.575,
+            "per_run_inr": 55.53,
+            "per_run_ksh": 74.18,
+            "monthly_10k_usd": 5750.0,
+            "monthly_10k_inr": 555263.91,
+            "monthly_10k_ksh": 741750.0,
+            "monthly_10k_lakhs_inr": 5.5526
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.305,
+            "per_run_inr": 29.45,
+            "per_run_ksh": 39.35,
+            "monthly_10k_usd": 3050.0,
+            "monthly_10k_inr": 294531.29,
+            "monthly_10k_ksh": 393450.0,
+            "monthly_10k_lakhs_inr": 2.9453
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.22844,
+            "per_run_inr": 22.06,
+            "per_run_ksh": 29.47,
+            "monthly_10k_usd": 2284.4,
+            "monthly_10k_inr": 220598.72,
+            "monthly_10k_ksh": 294687.08,
+            "monthly_10k_lakhs_inr": 2.206
+          }
+        }
+      }
+    },
+    {
+      "id": "claude-opus-5",
+      "name": "Claude Opus 5",
+      "vendor": "Anthropic",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "5",
+        "cached_input_per_1m": "0.50",
+        "output_per_1m": "25"
+      },
+      "rates_inr": {
+        "input_per_1m": "482.84",
+        "cached_input_per_1m": "48.28",
+        "output_per_1m": "2414.19"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.1125,
+            "per_run_inr": 10.86,
+            "per_run_ksh": 14.51,
+            "monthly_10k_usd": 1125.0,
+            "monthly_10k_inr": 108638.59,
+            "monthly_10k_ksh": 145125.0,
+            "monthly_10k_lakhs_inr": 1.0864
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0585,
+            "per_run_inr": 5.65,
+            "per_run_ksh": 7.55,
+            "monthly_10k_usd": 585.0,
+            "monthly_10k_inr": 56492.07,
+            "monthly_10k_ksh": 75465.0,
+            "monthly_10k_lakhs_inr": 0.5649
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.04416,
+            "per_run_inr": 4.26,
+            "per_run_ksh": 5.7,
+            "monthly_10k_usd": 441.6,
+            "monthly_10k_inr": 42644.17,
+            "monthly_10k_ksh": 56966.27,
+            "monthly_10k_lakhs_inr": 0.4264
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.2625,
+            "per_run_inr": 25.35,
+            "per_run_ksh": 33.86,
+            "monthly_10k_usd": 2625.0,
+            "monthly_10k_inr": 253490.04,
+            "monthly_10k_ksh": 338625.0,
+            "monthly_10k_lakhs_inr": 2.5349
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.1365,
+            "per_run_inr": 13.18,
+            "per_run_ksh": 17.61,
+            "monthly_10k_usd": 1365.0,
+            "monthly_10k_inr": 131814.82,
+            "monthly_10k_ksh": 176085.0,
+            "monthly_10k_lakhs_inr": 1.3181
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.10142,
+            "per_run_inr": 9.79,
+            "per_run_ksh": 13.08,
+            "monthly_10k_usd": 1014.2,
+            "monthly_10k_inr": 97938.7,
+            "monthly_10k_ksh": 130831.54,
+            "monthly_10k_lakhs_inr": 0.9794
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.575,
+            "per_run_inr": 55.53,
+            "per_run_ksh": 74.18,
+            "monthly_10k_usd": 5750.0,
+            "monthly_10k_inr": 555263.91,
+            "monthly_10k_ksh": 741750.0,
+            "monthly_10k_lakhs_inr": 5.5526
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.305,
+            "per_run_inr": 29.45,
+            "per_run_ksh": 39.35,
+            "monthly_10k_usd": 3050.0,
+            "monthly_10k_inr": 294531.29,
+            "monthly_10k_ksh": 393450.0,
+            "monthly_10k_lakhs_inr": 2.9453
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.22844,
+            "per_run_inr": 22.06,
+            "per_run_ksh": 29.47,
+            "monthly_10k_usd": 2284.4,
+            "monthly_10k_inr": 220598.72,
+            "monthly_10k_ksh": 294687.08,
+            "monthly_10k_lakhs_inr": 2.206
+          }
+        }
+      }
+    },
+    {
+      "id": "claude-sonnet-4-6",
+      "name": "Claude Sonnet 4.6",
+      "vendor": "Anthropic",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "3.00",
+        "cached_input_per_1m": "0.3000",
+        "output_per_1m": "15.00"
+      },
+      "rates_inr": {
+        "input_per_1m": "289.70",
+        "cached_input_per_1m": "28.97",
+        "output_per_1m": "1448.51"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.0675,
+            "per_run_inr": 6.52,
+            "per_run_ksh": 8.71,
+            "monthly_10k_usd": 675.0,
+            "monthly_10k_inr": 65183.15,
+            "monthly_10k_ksh": 87075.0,
+            "monthly_10k_lakhs_inr": 0.6518
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0351,
+            "per_run_inr": 3.39,
+            "per_run_ksh": 4.53,
+            "monthly_10k_usd": 351.0,
+            "monthly_10k_inr": 33895.24,
+            "monthly_10k_ksh": 45279.0,
+            "monthly_10k_lakhs_inr": 0.339
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.0286,
+            "per_run_inr": 2.76,
+            "per_run_ksh": 3.69,
+            "monthly_10k_usd": 286.0,
+            "monthly_10k_inr": 27618.25,
+            "monthly_10k_ksh": 36893.87,
+            "monthly_10k_lakhs_inr": 0.2762
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.1575,
+            "per_run_inr": 15.21,
+            "per_run_ksh": 20.32,
+            "monthly_10k_usd": 1575.0,
+            "monthly_10k_inr": 152094.03,
+            "monthly_10k_ksh": 203175.0,
+            "monthly_10k_lakhs_inr": 1.5209
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0819,
+            "per_run_inr": 7.91,
+            "per_run_ksh": 10.57,
+            "monthly_10k_usd": 819.0,
+            "monthly_10k_inr": 79088.89,
+            "monthly_10k_ksh": 105651.0,
+            "monthly_10k_lakhs_inr": 0.7909
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.0653,
+            "per_run_inr": 6.31,
+            "per_run_ksh": 8.42,
+            "monthly_10k_usd": 653.0,
+            "monthly_10k_inr": 63058.47,
+            "monthly_10k_ksh": 84236.74,
+            "monthly_10k_lakhs_inr": 0.6306
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.345,
+            "per_run_inr": 33.32,
+            "per_run_ksh": 44.51,
+            "monthly_10k_usd": 3450.0,
+            "monthly_10k_inr": 333158.34,
+            "monthly_10k_ksh": 445050.0,
+            "monthly_10k_lakhs_inr": 3.3316
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.183,
+            "per_run_inr": 17.67,
+            "per_run_ksh": 23.61,
+            "monthly_10k_usd": 1830.0,
+            "monthly_10k_inr": 176718.77,
+            "monthly_10k_ksh": 236070.0,
+            "monthly_10k_lakhs_inr": 1.7672
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.1462,
+            "per_run_inr": 14.12,
+            "per_run_ksh": 18.86,
+            "monthly_10k_usd": 1462.0,
+            "monthly_10k_inr": 141181.5,
+            "monthly_10k_ksh": 188597.48,
+            "monthly_10k_lakhs_inr": 1.4118
+          }
+        }
+      }
+    },
+    {
+      "id": "claude-sonnet-5",
+      "name": "Claude Sonnet 5",
+      "vendor": "Anthropic",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "2.00",
+        "cached_input_per_1m": "0.2000",
+        "output_per_1m": "10.00"
+      },
+      "rates_inr": {
+        "input_per_1m": "193.14",
+        "cached_input_per_1m": "19.31",
+        "output_per_1m": "965.68"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.045,
+            "per_run_inr": 4.35,
+            "per_run_ksh": 5.81,
+            "monthly_10k_usd": 450.0,
+            "monthly_10k_inr": 43455.44,
+            "monthly_10k_ksh": 58050.0,
+            "monthly_10k_lakhs_inr": 0.4346
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0234,
+            "per_run_inr": 2.26,
+            "per_run_ksh": 3.02,
+            "monthly_10k_usd": 234.0,
+            "monthly_10k_inr": 22596.83,
+            "monthly_10k_ksh": 30186.0,
+            "monthly_10k_lakhs_inr": 0.226
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.02082,
+            "per_run_inr": 2.01,
+            "per_run_ksh": 2.69,
+            "monthly_10k_usd": 208.2,
+            "monthly_10k_inr": 20105.29,
+            "monthly_10k_ksh": 26857.67,
+            "monthly_10k_lakhs_inr": 0.2011
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.105,
+            "per_run_inr": 10.14,
+            "per_run_ksh": 13.55,
+            "monthly_10k_usd": 1050.0,
+            "monthly_10k_inr": 101396.02,
+            "monthly_10k_ksh": 135450.0,
+            "monthly_10k_lakhs_inr": 1.014
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0546,
+            "per_run_inr": 5.27,
+            "per_run_ksh": 7.04,
+            "monthly_10k_usd": 546.0,
+            "monthly_10k_inr": 52725.93,
+            "monthly_10k_ksh": 70434.0,
+            "monthly_10k_lakhs_inr": 0.5273
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.04724,
+            "per_run_inr": 4.56,
+            "per_run_ksh": 6.09,
+            "monthly_10k_usd": 472.4,
+            "monthly_10k_inr": 45618.36,
+            "monthly_10k_ksh": 60939.34,
+            "monthly_10k_lakhs_inr": 0.4562
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.23,
+            "per_run_inr": 22.21,
+            "per_run_ksh": 29.67,
+            "monthly_10k_usd": 2300.0,
+            "monthly_10k_inr": 222105.56,
+            "monthly_10k_ksh": 296700.0,
+            "monthly_10k_lakhs_inr": 2.2211
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.122,
+            "per_run_inr": 11.78,
+            "per_run_ksh": 15.74,
+            "monthly_10k_usd": 1220.0,
+            "monthly_10k_inr": 117812.52,
+            "monthly_10k_ksh": 157380.0,
+            "monthly_10k_lakhs_inr": 1.1781
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.10508,
+            "per_run_inr": 10.15,
+            "per_run_ksh": 13.56,
+            "monthly_10k_usd": 1050.8,
+            "monthly_10k_inr": 101472.89,
+            "monthly_10k_ksh": 135552.68,
+            "monthly_10k_lakhs_inr": 1.0147
+          }
+        }
+      }
+    },
+    {
+      "id": "cohere-command-a",
+      "name": "Cohere Command A",
+      "vendor": "Cohere",
+      "status": "quarantined",
+      "rates_usd": {
+        "input_per_1m": "0.5",
+        "cached_input_per_1m": "0.250",
+        "output_per_1m": "1.5"
+      },
+      "rates_inr": {
+        "input_per_1m": "48.28",
+        "cached_input_per_1m": "24.14",
+        "output_per_1m": "144.85"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.00975,
+            "per_run_inr": 0.94,
+            "per_run_ksh": 1.26,
+            "monthly_10k_usd": 97.5,
+            "monthly_10k_inr": 9415.34,
+            "monthly_10k_ksh": 12577.5,
+            "monthly_10k_lakhs_inr": 0.0942
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.00675,
+            "per_run_inr": 0.65,
+            "per_run_ksh": 0.87,
+            "monthly_10k_usd": 67.5,
+            "monthly_10k_inr": 6518.32,
+            "monthly_10k_ksh": 8707.5,
+            "monthly_10k_lakhs_inr": 0.0652
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.00781,
+            "per_run_inr": 0.75,
+            "per_run_ksh": 1.01,
+            "monthly_10k_usd": 78.1,
+            "monthly_10k_inr": 7541.84,
+            "monthly_10k_ksh": 10074.77,
+            "monthly_10k_lakhs_inr": 0.0754
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.02275,
+            "per_run_inr": 2.2,
+            "per_run_ksh": 2.93,
+            "monthly_10k_usd": 227.5,
+            "monthly_10k_inr": 21969.14,
+            "monthly_10k_ksh": 29347.5,
+            "monthly_10k_lakhs_inr": 0.2197
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.01575,
+            "per_run_inr": 1.52,
+            "per_run_ksh": 2.03,
+            "monthly_10k_usd": 157.5,
+            "monthly_10k_inr": 15209.4,
+            "monthly_10k_ksh": 20317.5,
+            "monthly_10k_lakhs_inr": 0.1521
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.01697,
+            "per_run_inr": 1.64,
+            "per_run_ksh": 2.19,
+            "monthly_10k_usd": 169.7,
+            "monthly_10k_inr": 16387.33,
+            "monthly_10k_ksh": 21891.04,
+            "monthly_10k_lakhs_inr": 0.1639
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.0495,
+            "per_run_inr": 4.78,
+            "per_run_ksh": 6.39,
+            "monthly_10k_usd": 495.0,
+            "monthly_10k_inr": 47800.98,
+            "monthly_10k_ksh": 63855.0,
+            "monthly_10k_lakhs_inr": 0.478
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0345,
+            "per_run_inr": 3.33,
+            "per_run_ksh": 4.45,
+            "monthly_10k_usd": 345.0,
+            "monthly_10k_inr": 33315.83,
+            "monthly_10k_ksh": 44505.0,
+            "monthly_10k_lakhs_inr": 0.3332
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.03604,
+            "per_run_inr": 3.48,
+            "per_run_ksh": 4.65,
+            "monthly_10k_usd": 360.4,
+            "monthly_10k_inr": 34802.59,
+            "monthly_10k_ksh": 46491.08,
+            "monthly_10k_lakhs_inr": 0.348
+          }
+        }
+      }
+    },
+    {
+      "id": "deepseek-v4-pro",
+      "name": "DeepSeek V4 Pro",
+      "vendor": "DeepSeek",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "0.435",
+        "cached_input_per_1m": "0.003625",
+        "output_per_1m": "0.87"
+      },
+      "rates_inr": {
+        "input_per_1m": "42.01",
+        "cached_input_per_1m": "0.35",
+        "output_per_1m": "84.01"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.00783,
+            "per_run_inr": 0.76,
+            "per_run_ksh": 1.01,
+            "monthly_10k_usd": 78.3,
+            "monthly_10k_inr": 7561.25,
+            "monthly_10k_ksh": 10100.7,
+            "monthly_10k_lakhs_inr": 0.0756
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.002654,
+            "per_run_inr": 0.26,
+            "per_run_ksh": 0.34,
+            "monthly_10k_usd": 26.54,
+            "monthly_10k_inr": 2562.42,
+            "monthly_10k_ksh": 3423.02,
+            "monthly_10k_lakhs_inr": 0.0256
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.006655,
+            "per_run_inr": 0.64,
+            "per_run_ksh": 0.86,
+            "monthly_10k_usd": 66.55,
+            "monthly_10k_inr": 6426.38,
+            "monthly_10k_ksh": 8584.69,
+            "monthly_10k_lakhs_inr": 0.0643
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.01827,
+            "per_run_inr": 1.76,
+            "per_run_ksh": 2.36,
+            "monthly_10k_usd": 182.7,
+            "monthly_10k_inr": 17642.91,
+            "monthly_10k_ksh": 23568.3,
+            "monthly_10k_lakhs_inr": 0.1764
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.006192,
+            "per_run_inr": 0.6,
+            "per_run_ksh": 0.8,
+            "monthly_10k_usd": 61.92,
+            "monthly_10k_inr": 5978.99,
+            "monthly_10k_ksh": 7987.04,
+            "monthly_10k_lakhs_inr": 0.0598
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.014345,
+            "per_run_inr": 1.39,
+            "per_run_ksh": 1.85,
+            "monthly_10k_usd": 143.45,
+            "monthly_10k_inr": 13852.24,
+            "monthly_10k_ksh": 18504.53,
+            "monthly_10k_lakhs_inr": 0.1385
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.039585,
+            "per_run_inr": 3.82,
+            "per_run_ksh": 5.11,
+            "monthly_10k_usd": 395.85,
+            "monthly_10k_inr": 38226.3,
+            "monthly_10k_ksh": 51064.65,
+            "monthly_10k_lakhs_inr": 0.3823
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.013703,
+            "per_run_inr": 1.32,
+            "per_run_ksh": 1.77,
+            "monthly_10k_usd": 137.03,
+            "monthly_10k_inr": 13232.18,
+            "monthly_10k_ksh": 17676.23,
+            "monthly_10k_lakhs_inr": 0.1323
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.030159,
+            "per_run_inr": 2.91,
+            "per_run_ksh": 3.89,
+            "monthly_10k_usd": 301.59,
+            "monthly_10k_inr": 29124.03,
+            "monthly_10k_ksh": 38905.37,
+            "monthly_10k_lakhs_inr": 0.2912
+          }
+        }
+      }
+    },
+    {
+      "id": "gemini-3-1-pro-preview",
+      "name": "Gemini 3.1 Pro Preview",
+      "vendor": "Google",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "2.00",
+        "cached_input_per_1m": "0.5000",
+        "output_per_1m": "12.00"
+      },
+      "rates_inr": {
+        "input_per_1m": "193.14",
+        "cached_input_per_1m": "48.28",
+        "output_per_1m": "1158.81"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.048,
+            "per_run_inr": 4.64,
+            "per_run_ksh": 6.19,
+            "monthly_10k_usd": 480.0,
+            "monthly_10k_inr": 46352.47,
+            "monthly_10k_ksh": 61920.0,
+            "monthly_10k_lakhs_inr": 0.4635
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.03,
+            "per_run_inr": 2.9,
+            "per_run_ksh": 3.87,
+            "monthly_10k_usd": 300.0,
+            "monthly_10k_inr": 28970.29,
+            "monthly_10k_ksh": 38700.0,
+            "monthly_10k_lakhs_inr": 0.2897
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.02406,
+            "per_run_inr": 2.32,
+            "per_run_ksh": 3.1,
+            "monthly_10k_usd": 240.6,
+            "monthly_10k_inr": 23234.08,
+            "monthly_10k_ksh": 31037.27,
+            "monthly_10k_lakhs_inr": 0.2323
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.112,
+            "per_run_inr": 10.82,
+            "per_run_ksh": 14.45,
+            "monthly_10k_usd": 1120.0,
+            "monthly_10k_inr": 108155.75,
+            "monthly_10k_ksh": 144480.0,
+            "monthly_10k_lakhs_inr": 1.0816
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.07,
+            "per_run_inr": 6.76,
+            "per_run_ksh": 9.03,
+            "monthly_10k_usd": 700.0,
+            "monthly_10k_inr": 67597.35,
+            "monthly_10k_ksh": 90300.0,
+            "monthly_10k_lakhs_inr": 0.676
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.05472,
+            "per_run_inr": 5.28,
+            "per_run_ksh": 7.06,
+            "monthly_10k_usd": 547.2,
+            "monthly_10k_inr": 52841.62,
+            "monthly_10k_ksh": 70588.54,
+            "monthly_10k_lakhs_inr": 0.5284
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.246,
+            "per_run_inr": 23.76,
+            "per_run_ksh": 31.73,
+            "monthly_10k_usd": 2460.0,
+            "monthly_10k_inr": 237556.38,
+            "monthly_10k_ksh": 317340.0,
+            "monthly_10k_lakhs_inr": 2.3756
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.156,
+            "per_run_inr": 15.06,
+            "per_run_ksh": 20.12,
+            "monthly_10k_usd": 1560.0,
+            "monthly_10k_inr": 150645.51,
+            "monthly_10k_ksh": 201240.0,
+            "monthly_10k_lakhs_inr": 1.5065
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.12204,
+            "per_run_inr": 11.79,
+            "per_run_ksh": 15.74,
+            "monthly_10k_usd": 1220.4,
+            "monthly_10k_inr": 117850.76,
+            "monthly_10k_ksh": 157431.08,
+            "monthly_10k_lakhs_inr": 1.1785
+          }
+        }
+      }
+    },
+    {
+      "id": "gemini-3-5-flash",
+      "name": "Gemini 3.5 Flash",
+      "vendor": "Google",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "1.50",
+        "cached_input_per_1m": "0.3750",
+        "output_per_1m": "9.00"
+      },
+      "rates_inr": {
+        "input_per_1m": "144.85",
+        "cached_input_per_1m": "36.21",
+        "output_per_1m": "869.11"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.036,
+            "per_run_inr": 3.48,
+            "per_run_ksh": 4.64,
+            "monthly_10k_usd": 360.0,
+            "monthly_10k_inr": 34764.35,
+            "monthly_10k_ksh": 46440.0,
+            "monthly_10k_lakhs_inr": 0.3476
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0225,
+            "per_run_inr": 2.17,
+            "per_run_ksh": 2.9,
+            "monthly_10k_usd": 225.0,
+            "monthly_10k_inr": 21727.72,
+            "monthly_10k_ksh": 29025.0,
+            "monthly_10k_lakhs_inr": 0.2173
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.01936,
+            "per_run_inr": 1.87,
+            "per_run_ksh": 2.5,
+            "monthly_10k_usd": 193.6,
+            "monthly_10k_inr": 18695.4,
+            "monthly_10k_ksh": 24974.27,
+            "monthly_10k_lakhs_inr": 0.187
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.084,
+            "per_run_inr": 8.11,
+            "per_run_ksh": 10.84,
+            "monthly_10k_usd": 840.0,
+            "monthly_10k_inr": 81116.81,
+            "monthly_10k_ksh": 108360.0,
+            "monthly_10k_lakhs_inr": 0.8112
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0525,
+            "per_run_inr": 5.07,
+            "per_run_ksh": 6.77,
+            "monthly_10k_usd": 525.0,
+            "monthly_10k_inr": 50698.01,
+            "monthly_10k_ksh": 67725.0,
+            "monthly_10k_lakhs_inr": 0.507
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.04382,
+            "per_run_inr": 4.23,
+            "per_run_ksh": 5.65,
+            "monthly_10k_usd": 438.2,
+            "monthly_10k_inr": 42315.74,
+            "monthly_10k_ksh": 56527.54,
+            "monthly_10k_lakhs_inr": 0.4232
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.1845,
+            "per_run_inr": 17.82,
+            "per_run_ksh": 23.8,
+            "monthly_10k_usd": 1845.0,
+            "monthly_10k_inr": 178167.29,
+            "monthly_10k_ksh": 238005.0,
+            "monthly_10k_lakhs_inr": 1.7817
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.117,
+            "per_run_inr": 11.3,
+            "per_run_ksh": 15.09,
+            "monthly_10k_usd": 1170.0,
+            "monthly_10k_inr": 112984.13,
+            "monthly_10k_ksh": 150930.0,
+            "monthly_10k_lakhs_inr": 1.1298
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.09724,
+            "per_run_inr": 9.39,
+            "per_run_ksh": 12.54,
+            "monthly_10k_usd": 972.4,
+            "monthly_10k_inr": 93901.98,
+            "monthly_10k_ksh": 125439.08,
+            "monthly_10k_lakhs_inr": 0.939
+          }
+        }
+      }
+    },
+    {
+      "id": "gemini-3-5-flash-lite",
+      "name": "Gemini 3.5 Flash-Lite",
+      "vendor": "Google",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "0.30",
+        "cached_input_per_1m": "0.0750",
+        "output_per_1m": "2.50"
+      },
+      "rates_inr": {
+        "input_per_1m": "28.97",
+        "cached_input_per_1m": "7.24",
+        "output_per_1m": "241.42"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.00825,
+            "per_run_inr": 0.8,
+            "per_run_ksh": 1.06,
+            "monthly_10k_usd": 82.5,
+            "monthly_10k_inr": 7966.83,
+            "monthly_10k_ksh": 10642.5,
+            "monthly_10k_lakhs_inr": 0.0797
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.00555,
+            "per_run_inr": 0.54,
+            "per_run_ksh": 0.72,
+            "monthly_10k_usd": 55.5,
+            "monthly_10k_inr": 5359.5,
+            "monthly_10k_ksh": 7159.5,
+            "monthly_10k_lakhs_inr": 0.0536
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.00913,
+            "per_run_inr": 0.88,
+            "per_run_ksh": 1.18,
+            "monthly_10k_usd": 91.3,
+            "monthly_10k_inr": 8816.53,
+            "monthly_10k_ksh": 11777.57,
+            "monthly_10k_lakhs_inr": 0.0882
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.01925,
+            "per_run_inr": 1.86,
+            "per_run_ksh": 2.48,
+            "monthly_10k_usd": 192.5,
+            "monthly_10k_inr": 18589.27,
+            "monthly_10k_ksh": 24832.5,
+            "monthly_10k_lakhs_inr": 0.1859
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.01295,
+            "per_run_inr": 1.25,
+            "per_run_ksh": 1.67,
+            "monthly_10k_usd": 129.5,
+            "monthly_10k_inr": 12505.51,
+            "monthly_10k_ksh": 16705.5,
+            "monthly_10k_lakhs_inr": 0.1251
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.02011,
+            "per_run_inr": 1.94,
+            "per_run_ksh": 2.59,
+            "monthly_10k_usd": 201.1,
+            "monthly_10k_inr": 19419.56,
+            "monthly_10k_ksh": 25941.64,
+            "monthly_10k_lakhs_inr": 0.1942
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.0425,
+            "per_run_inr": 4.1,
+            "per_run_ksh": 5.48,
+            "monthly_10k_usd": 425.0,
+            "monthly_10k_inr": 41041.25,
+            "monthly_10k_ksh": 54825.0,
+            "monthly_10k_lakhs_inr": 0.4104
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.029,
+            "per_run_inr": 2.8,
+            "per_run_ksh": 3.74,
+            "monthly_10k_usd": 290.0,
+            "monthly_10k_inr": 28004.61,
+            "monthly_10k_ksh": 37410.0,
+            "monthly_10k_lakhs_inr": 0.28
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.04332,
+            "per_run_inr": 4.18,
+            "per_run_ksh": 5.59,
+            "monthly_10k_usd": 433.2,
+            "monthly_10k_inr": 41832.71,
+            "monthly_10k_ksh": 55882.28,
+            "monthly_10k_lakhs_inr": 0.4183
+          }
+        }
+      }
+    },
+    {
+      "id": "gemini-3-6-flash",
+      "name": "Gemini 3.6 Flash",
+      "vendor": "Google",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "1.50",
+        "cached_input_per_1m": "0.3750",
+        "output_per_1m": "7.50"
+      },
+      "rates_inr": {
+        "input_per_1m": "144.85",
+        "cached_input_per_1m": "36.21",
+        "output_per_1m": "724.26"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.03375,
+            "per_run_inr": 3.26,
+            "per_run_ksh": 4.35,
+            "monthly_10k_usd": 337.5,
+            "monthly_10k_inr": 32591.58,
+            "monthly_10k_ksh": 43537.5,
+            "monthly_10k_lakhs_inr": 0.3259
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.02025,
+            "per_run_inr": 1.96,
+            "per_run_ksh": 2.61,
+            "monthly_10k_usd": 202.5,
+            "monthly_10k_inr": 19554.95,
+            "monthly_10k_ksh": 26122.5,
+            "monthly_10k_lakhs_inr": 0.1955
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.01711,
+            "per_run_inr": 1.65,
+            "per_run_ksh": 2.21,
+            "monthly_10k_usd": 171.1,
+            "monthly_10k_inr": 16522.63,
+            "monthly_10k_ksh": 22071.77,
+            "monthly_10k_lakhs_inr": 0.1652
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.07875,
+            "per_run_inr": 7.6,
+            "per_run_ksh": 10.16,
+            "monthly_10k_usd": 787.5,
+            "monthly_10k_inr": 76047.01,
+            "monthly_10k_ksh": 101587.5,
+            "monthly_10k_lakhs_inr": 0.7605
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.04725,
+            "per_run_inr": 4.56,
+            "per_run_ksh": 6.1,
+            "monthly_10k_usd": 472.5,
+            "monthly_10k_inr": 45628.21,
+            "monthly_10k_ksh": 60952.5,
+            "monthly_10k_lakhs_inr": 0.4563
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.03857,
+            "per_run_inr": 3.72,
+            "per_run_ksh": 4.98,
+            "monthly_10k_usd": 385.7,
+            "monthly_10k_inr": 37245.94,
+            "monthly_10k_ksh": 49755.04,
+            "monthly_10k_lakhs_inr": 0.3725
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.1725,
+            "per_run_inr": 16.66,
+            "per_run_ksh": 22.25,
+            "monthly_10k_usd": 1725.0,
+            "monthly_10k_inr": 166579.17,
+            "monthly_10k_ksh": 222525.0,
+            "monthly_10k_lakhs_inr": 1.6658
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.105,
+            "per_run_inr": 10.14,
+            "per_run_ksh": 13.55,
+            "monthly_10k_usd": 1050.0,
+            "monthly_10k_inr": 101396.02,
+            "monthly_10k_ksh": 135450.0,
+            "monthly_10k_lakhs_inr": 1.014
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.08524,
+            "per_run_inr": 8.23,
+            "per_run_ksh": 11.0,
+            "monthly_10k_usd": 852.4,
+            "monthly_10k_inr": 82313.87,
+            "monthly_10k_ksh": 109959.08,
+            "monthly_10k_lakhs_inr": 0.8231
+          }
+        }
+      }
+    },
+    {
+      "id": "kimi-k3",
+      "name": "Kimi K3",
+      "vendor": "Kimi",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "3",
+        "cached_input_per_1m": "0.60",
+        "output_per_1m": "15"
+      },
+      "rates_inr": {
+        "input_per_1m": "289.70",
+        "cached_input_per_1m": "57.94",
+        "output_per_1m": "1448.51"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.0675,
+            "per_run_inr": 6.52,
+            "per_run_ksh": 8.71,
+            "monthly_10k_usd": 675.0,
+            "monthly_10k_inr": 65183.15,
+            "monthly_10k_ksh": 87075.0,
+            "monthly_10k_lakhs_inr": 0.6518
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0387,
+            "per_run_inr": 3.74,
+            "per_run_ksh": 4.99,
+            "monthly_10k_usd": 387.0,
+            "monthly_10k_inr": 37371.68,
+            "monthly_10k_ksh": 49923.0,
+            "monthly_10k_lakhs_inr": 0.3737
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.02884,
+            "per_run_inr": 2.79,
+            "per_run_ksh": 3.72,
+            "monthly_10k_usd": 288.4,
+            "monthly_10k_inr": 27850.01,
+            "monthly_10k_ksh": 37203.47,
+            "monthly_10k_lakhs_inr": 0.2785
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.1575,
+            "per_run_inr": 15.21,
+            "per_run_ksh": 20.32,
+            "monthly_10k_usd": 1575.0,
+            "monthly_10k_inr": 152094.03,
+            "monthly_10k_ksh": 203175.0,
+            "monthly_10k_lakhs_inr": 1.5209
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0903,
+            "per_run_inr": 8.72,
+            "per_run_ksh": 11.65,
+            "monthly_10k_usd": 903.0,
+            "monthly_10k_inr": 87200.58,
+            "monthly_10k_ksh": 116487.0,
+            "monthly_10k_lakhs_inr": 0.872
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.06578,
+            "per_run_inr": 6.35,
+            "per_run_ksh": 8.49,
+            "monthly_10k_usd": 657.8,
+            "monthly_10k_inr": 63522.0,
+            "monthly_10k_ksh": 84855.94,
+            "monthly_10k_lakhs_inr": 0.6352
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.345,
+            "per_run_inr": 33.32,
+            "per_run_ksh": 44.51,
+            "monthly_10k_usd": 3450.0,
+            "monthly_10k_inr": 333158.34,
+            "monthly_10k_ksh": 445050.0,
+            "monthly_10k_lakhs_inr": 3.3316
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.201,
+            "per_run_inr": 19.41,
+            "per_run_ksh": 25.93,
+            "monthly_10k_usd": 2010.0,
+            "monthly_10k_inr": 194100.95,
+            "monthly_10k_ksh": 259290.0,
+            "monthly_10k_lakhs_inr": 1.941
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.14716,
+            "per_run_inr": 14.21,
+            "per_run_ksh": 18.98,
+            "monthly_10k_usd": 1471.6,
+            "monthly_10k_inr": 142108.55,
+            "monthly_10k_ksh": 189835.88,
+            "monthly_10k_lakhs_inr": 1.4211
+          }
+        }
+      }
+    },
+    {
+      "id": "muse-spark-1-1",
+      "name": "Muse Spark 1.1",
+      "vendor": "Meta",
+      "status": "quarantined",
+      "rates_usd": {
+        "input_per_1m": "1.25",
+        "cached_input_per_1m": "0.6250",
+        "output_per_1m": "4.25"
+      },
+      "rates_inr": {
+        "input_per_1m": "120.71",
+        "cached_input_per_1m": "60.35",
+        "output_per_1m": "410.41"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.025125,
+            "per_run_inr": 2.43,
+            "per_run_ksh": 3.24,
+            "monthly_10k_usd": 251.25,
+            "monthly_10k_inr": 24262.62,
+            "monthly_10k_ksh": 32411.25,
+            "monthly_10k_lakhs_inr": 0.2426
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.017625,
+            "per_run_inr": 1.7,
+            "per_run_ksh": 2.27,
+            "monthly_10k_usd": 176.25,
+            "monthly_10k_inr": 17020.05,
+            "monthly_10k_ksh": 22736.25,
+            "monthly_10k_lakhs_inr": 0.1702
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.012385,
+            "per_run_inr": 1.2,
+            "per_run_ksh": 1.6,
+            "monthly_10k_usd": 123.85,
+            "monthly_10k_inr": 11959.81,
+            "monthly_10k_ksh": 15976.52,
+            "monthly_10k_lakhs_inr": 0.1196
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.058625,
+            "per_run_inr": 5.66,
+            "per_run_ksh": 7.56,
+            "monthly_10k_usd": 586.25,
+            "monthly_10k_inr": 56612.78,
+            "monthly_10k_ksh": 75626.25,
+            "monthly_10k_lakhs_inr": 0.5661
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.041125,
+            "per_run_inr": 3.97,
+            "per_run_ksh": 5.31,
+            "monthly_10k_usd": 411.25,
+            "monthly_10k_inr": 39713.44,
+            "monthly_10k_ksh": 53051.25,
+            "monthly_10k_lakhs_inr": 0.3971
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.027495,
+            "per_run_inr": 2.66,
+            "per_run_ksh": 3.55,
+            "monthly_10k_usd": 274.95,
+            "monthly_10k_inr": 26551.08,
+            "monthly_10k_ksh": 35468.29,
+            "monthly_10k_lakhs_inr": 0.2655
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.12775,
+            "per_run_inr": 12.34,
+            "per_run_ksh": 16.48,
+            "monthly_10k_usd": 1277.5,
+            "monthly_10k_inr": 123365.15,
+            "monthly_10k_ksh": 164797.5,
+            "monthly_10k_lakhs_inr": 1.2337
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.09025,
+            "per_run_inr": 8.72,
+            "per_run_ksh": 11.64,
+            "monthly_10k_usd": 902.5,
+            "monthly_10k_inr": 87152.29,
+            "monthly_10k_ksh": 116422.5,
+            "monthly_10k_lakhs_inr": 0.8715
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.05984,
+            "per_run_inr": 5.78,
+            "per_run_ksh": 7.72,
+            "monthly_10k_usd": 598.4,
+            "monthly_10k_inr": 57785.69,
+            "monthly_10k_ksh": 77193.08,
+            "monthly_10k_lakhs_inr": 0.5779
+          }
+        }
+      }
+    },
+    {
+      "id": "kimi-k2-6",
+      "name": "Kimi K2.6",
+      "vendor": "Moonshot AI",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "0.95",
+        "cached_input_per_1m": "0.16",
+        "output_per_1m": "4.00"
+      },
+      "rates_inr": {
+        "input_per_1m": "91.74",
+        "cached_input_per_1m": "15.45",
+        "output_per_1m": "386.27"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.02025,
+            "per_run_inr": 1.96,
+            "per_run_ksh": 2.61,
+            "monthly_10k_usd": 202.5,
+            "monthly_10k_inr": 19554.95,
+            "monthly_10k_ksh": 26122.5,
+            "monthly_10k_lakhs_inr": 0.1955
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.01077,
+            "per_run_inr": 1.04,
+            "per_run_ksh": 1.39,
+            "monthly_10k_usd": 107.7,
+            "monthly_10k_inr": 10400.33,
+            "monthly_10k_ksh": 13893.3,
+            "monthly_10k_lakhs_inr": 0.104
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.011578,
+            "per_run_inr": 1.12,
+            "per_run_ksh": 1.49,
+            "monthly_10k_usd": 115.78,
+            "monthly_10k_inr": 11180.5,
+            "monthly_10k_ksh": 14935.49,
+            "monthly_10k_lakhs_inr": 0.1118
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.04725,
+            "per_run_inr": 4.56,
+            "per_run_ksh": 6.1,
+            "monthly_10k_usd": 472.5,
+            "monthly_10k_inr": 45628.21,
+            "monthly_10k_ksh": 60952.5,
+            "monthly_10k_lakhs_inr": 0.4563
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.02513,
+            "per_run_inr": 2.43,
+            "per_run_ksh": 3.24,
+            "monthly_10k_usd": 251.3,
+            "monthly_10k_inr": 24267.45,
+            "monthly_10k_ksh": 32417.7,
+            "monthly_10k_lakhs_inr": 0.2427
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.025756,
+            "per_run_inr": 2.49,
+            "per_run_ksh": 3.32,
+            "monthly_10k_usd": 257.56,
+            "monthly_10k_inr": 24871.77,
+            "monthly_10k_ksh": 33224.98,
+            "monthly_10k_lakhs_inr": 0.2487
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.10325,
+            "per_run_inr": 9.97,
+            "per_run_ksh": 13.32,
+            "monthly_10k_usd": 1032.5,
+            "monthly_10k_inr": 99706.08,
+            "monthly_10k_ksh": 133192.5,
+            "monthly_10k_lakhs_inr": 0.9971
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.05585,
+            "per_run_inr": 5.39,
+            "per_run_ksh": 7.2,
+            "monthly_10k_usd": 558.5,
+            "monthly_10k_inr": 53933.02,
+            "monthly_10k_ksh": 72046.5,
+            "monthly_10k_lakhs_inr": 0.5393
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.056112,
+            "per_run_inr": 5.42,
+            "per_run_ksh": 7.24,
+            "monthly_10k_usd": 561.12,
+            "monthly_10k_inr": 54185.65,
+            "monthly_10k_ksh": 72383.96,
+            "monthly_10k_lakhs_inr": 0.5419
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt-5-4",
+      "name": "GPT-5.4",
+      "vendor": "OpenAI",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "2.5",
+        "cached_input_per_1m": "1.250",
+        "output_per_1m": "15"
+      },
+      "rates_inr": {
+        "input_per_1m": "241.42",
+        "cached_input_per_1m": "120.71",
+        "output_per_1m": "1448.51"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.06,
+            "per_run_inr": 5.79,
+            "per_run_ksh": 7.74,
+            "monthly_10k_usd": 600.0,
+            "monthly_10k_inr": 57940.58,
+            "monthly_10k_ksh": 77400.0,
+            "monthly_10k_lakhs_inr": 0.5794
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.045,
+            "per_run_inr": 4.35,
+            "per_run_ksh": 5.81,
+            "monthly_10k_usd": 450.0,
+            "monthly_10k_inr": 43455.44,
+            "monthly_10k_ksh": 58050.0,
+            "monthly_10k_lakhs_inr": 0.4346
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.02926,
+            "per_run_inr": 2.83,
+            "per_run_ksh": 3.77,
+            "monthly_10k_usd": 292.6,
+            "monthly_10k_inr": 28255.59,
+            "monthly_10k_ksh": 37745.27,
+            "monthly_10k_lakhs_inr": 0.2826
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.14,
+            "per_run_inr": 13.52,
+            "per_run_ksh": 18.06,
+            "monthly_10k_usd": 1400.0,
+            "monthly_10k_inr": 135194.69,
+            "monthly_10k_ksh": 180600.0,
+            "monthly_10k_lakhs_inr": 1.3519
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.105,
+            "per_run_inr": 10.14,
+            "per_run_ksh": 13.55,
+            "monthly_10k_usd": 1050.0,
+            "monthly_10k_inr": 101396.02,
+            "monthly_10k_ksh": 135450.0,
+            "monthly_10k_lakhs_inr": 1.014
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.06662,
+            "per_run_inr": 6.43,
+            "per_run_ksh": 8.59,
+            "monthly_10k_usd": 666.2,
+            "monthly_10k_inr": 64333.17,
+            "monthly_10k_ksh": 85939.54,
+            "monthly_10k_lakhs_inr": 0.6433
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.3075,
+            "per_run_inr": 29.69,
+            "per_run_ksh": 39.67,
+            "monthly_10k_usd": 3075.0,
+            "monthly_10k_inr": 296945.48,
+            "monthly_10k_ksh": 396675.0,
+            "monthly_10k_lakhs_inr": 2.9695
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.2325,
+            "per_run_inr": 22.45,
+            "per_run_ksh": 29.99,
+            "monthly_10k_usd": 2325.0,
+            "monthly_10k_inr": 224519.75,
+            "monthly_10k_ksh": 299925.0,
+            "monthly_10k_lakhs_inr": 2.2452
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.14884,
+            "per_run_inr": 14.37,
+            "per_run_ksh": 19.2,
+            "monthly_10k_usd": 1488.4,
+            "monthly_10k_inr": 143730.88,
+            "monthly_10k_ksh": 192003.08,
+            "monthly_10k_lakhs_inr": 1.4373
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt-5-5",
+      "name": "GPT-5.5",
+      "vendor": "OpenAI",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "5",
+        "cached_input_per_1m": "2.50",
+        "output_per_1m": "30"
+      },
+      "rates_inr": {
+        "input_per_1m": "482.84",
+        "cached_input_per_1m": "241.42",
+        "output_per_1m": "2897.03"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.12,
+            "per_run_inr": 11.59,
+            "per_run_ksh": 15.48,
+            "monthly_10k_usd": 1200.0,
+            "monthly_10k_inr": 115881.16,
+            "monthly_10k_ksh": 154800.0,
+            "monthly_10k_lakhs_inr": 1.1588
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.09,
+            "per_run_inr": 8.69,
+            "per_run_ksh": 11.61,
+            "monthly_10k_usd": 900.0,
+            "monthly_10k_inr": 86910.87,
+            "monthly_10k_ksh": 116100.0,
+            "monthly_10k_lakhs_inr": 0.8691
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.05326,
+            "per_run_inr": 5.14,
+            "per_run_ksh": 6.87,
+            "monthly_10k_usd": 532.6,
+            "monthly_10k_inr": 51431.83,
+            "monthly_10k_ksh": 68705.27,
+            "monthly_10k_lakhs_inr": 0.5143
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.28,
+            "per_run_inr": 27.04,
+            "per_run_ksh": 36.12,
+            "monthly_10k_usd": 2800.0,
+            "monthly_10k_inr": 270389.38,
+            "monthly_10k_ksh": 361200.0,
+            "monthly_10k_lakhs_inr": 2.7039
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.21,
+            "per_run_inr": 20.28,
+            "per_run_ksh": 27.09,
+            "monthly_10k_usd": 2100.0,
+            "monthly_10k_inr": 202792.04,
+            "monthly_10k_ksh": 270900.0,
+            "monthly_10k_lakhs_inr": 2.0279
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.12212,
+            "per_run_inr": 11.79,
+            "per_run_ksh": 15.75,
+            "monthly_10k_usd": 1221.2,
+            "monthly_10k_inr": 117928.2,
+            "monthly_10k_ksh": 157534.54,
+            "monthly_10k_lakhs_inr": 1.1793
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.615,
+            "per_run_inr": 59.39,
+            "per_run_ksh": 79.34,
+            "monthly_10k_usd": 6150.0,
+            "monthly_10k_inr": 593890.96,
+            "monthly_10k_ksh": 793350.0,
+            "monthly_10k_lakhs_inr": 5.9389
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.465,
+            "per_run_inr": 44.9,
+            "per_run_ksh": 59.99,
+            "monthly_10k_usd": 4650.0,
+            "monthly_10k_inr": 449039.51,
+            "monthly_10k_ksh": 599850.0,
+            "monthly_10k_lakhs_inr": 4.4904
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.27484,
+            "per_run_inr": 26.54,
+            "per_run_ksh": 35.45,
+            "monthly_10k_usd": 2748.4,
+            "monthly_10k_inr": 265406.1,
+            "monthly_10k_ksh": 354543.08,
+            "monthly_10k_lakhs_inr": 2.6541
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt-5-6-luna",
+      "name": "GPT-5.6 Luna",
+      "vendor": "OpenAI",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "1",
+        "cached_input_per_1m": "0.50",
+        "output_per_1m": "6"
+      },
+      "rates_inr": {
+        "input_per_1m": "96.57",
+        "cached_input_per_1m": "48.28",
+        "output_per_1m": "579.41"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.024,
+            "per_run_inr": 2.32,
+            "per_run_ksh": 3.1,
+            "monthly_10k_usd": 240.0,
+            "monthly_10k_inr": 23176.23,
+            "monthly_10k_ksh": 30960.0,
+            "monthly_10k_lakhs_inr": 0.2318
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.018,
+            "per_run_inr": 1.74,
+            "per_run_ksh": 2.32,
+            "monthly_10k_usd": 180.0,
+            "monthly_10k_inr": 17382.17,
+            "monthly_10k_ksh": 23220.0,
+            "monthly_10k_lakhs_inr": 0.1738
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.01486,
+            "per_run_inr": 1.43,
+            "per_run_ksh": 1.92,
+            "monthly_10k_usd": 148.6,
+            "monthly_10k_inr": 14349.85,
+            "monthly_10k_ksh": 19169.27,
+            "monthly_10k_lakhs_inr": 0.1435
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.056,
+            "per_run_inr": 5.41,
+            "per_run_ksh": 7.22,
+            "monthly_10k_usd": 560.0,
+            "monthly_10k_inr": 54077.88,
+            "monthly_10k_ksh": 72240.0,
+            "monthly_10k_lakhs_inr": 0.5408
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.042,
+            "per_run_inr": 4.06,
+            "per_run_ksh": 5.42,
+            "monthly_10k_usd": 420.0,
+            "monthly_10k_inr": 40558.41,
+            "monthly_10k_ksh": 54180.0,
+            "monthly_10k_lakhs_inr": 0.4056
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.03332,
+            "per_run_inr": 3.22,
+            "per_run_ksh": 4.3,
+            "monthly_10k_usd": 333.2,
+            "monthly_10k_inr": 32176.14,
+            "monthly_10k_ksh": 42982.54,
+            "monthly_10k_lakhs_inr": 0.3218
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.123,
+            "per_run_inr": 11.88,
+            "per_run_ksh": 15.87,
+            "monthly_10k_usd": 1230.0,
+            "monthly_10k_inr": 118778.19,
+            "monthly_10k_ksh": 158670.0,
+            "monthly_10k_lakhs_inr": 1.1878
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.093,
+            "per_run_inr": 8.98,
+            "per_run_ksh": 12.0,
+            "monthly_10k_usd": 930.0,
+            "monthly_10k_inr": 89807.9,
+            "monthly_10k_ksh": 119970.0,
+            "monthly_10k_lakhs_inr": 0.8981
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.07324,
+            "per_run_inr": 7.07,
+            "per_run_ksh": 9.45,
+            "monthly_10k_usd": 732.4,
+            "monthly_10k_inr": 70725.75,
+            "monthly_10k_ksh": 94479.08,
+            "monthly_10k_lakhs_inr": 0.7073
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt-5-6-sol",
+      "name": "GPT-5.6 Sol",
+      "vendor": "OpenAI",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "5",
+        "cached_input_per_1m": "2.50",
+        "output_per_1m": "30"
+      },
+      "rates_inr": {
+        "input_per_1m": "482.84",
+        "cached_input_per_1m": "241.42",
+        "output_per_1m": "2897.03"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.12,
+            "per_run_inr": 11.59,
+            "per_run_ksh": 15.48,
+            "monthly_10k_usd": 1200.0,
+            "monthly_10k_inr": 115881.16,
+            "monthly_10k_ksh": 154800.0,
+            "monthly_10k_lakhs_inr": 1.1588
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.09,
+            "per_run_inr": 8.69,
+            "per_run_ksh": 11.61,
+            "monthly_10k_usd": 900.0,
+            "monthly_10k_inr": 86910.87,
+            "monthly_10k_ksh": 116100.0,
+            "monthly_10k_lakhs_inr": 0.8691
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.05326,
+            "per_run_inr": 5.14,
+            "per_run_ksh": 6.87,
+            "monthly_10k_usd": 532.6,
+            "monthly_10k_inr": 51431.83,
+            "monthly_10k_ksh": 68705.27,
+            "monthly_10k_lakhs_inr": 0.5143
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.28,
+            "per_run_inr": 27.04,
+            "per_run_ksh": 36.12,
+            "monthly_10k_usd": 2800.0,
+            "monthly_10k_inr": 270389.38,
+            "monthly_10k_ksh": 361200.0,
+            "monthly_10k_lakhs_inr": 2.7039
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.21,
+            "per_run_inr": 20.28,
+            "per_run_ksh": 27.09,
+            "monthly_10k_usd": 2100.0,
+            "monthly_10k_inr": 202792.04,
+            "monthly_10k_ksh": 270900.0,
+            "monthly_10k_lakhs_inr": 2.0279
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.12212,
+            "per_run_inr": 11.79,
+            "per_run_ksh": 15.75,
+            "monthly_10k_usd": 1221.2,
+            "monthly_10k_inr": 117928.2,
+            "monthly_10k_ksh": 157534.54,
+            "monthly_10k_lakhs_inr": 1.1793
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.615,
+            "per_run_inr": 59.39,
+            "per_run_ksh": 79.34,
+            "monthly_10k_usd": 6150.0,
+            "monthly_10k_inr": 593890.96,
+            "monthly_10k_ksh": 793350.0,
+            "monthly_10k_lakhs_inr": 5.9389
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.465,
+            "per_run_inr": 44.9,
+            "per_run_ksh": 59.99,
+            "monthly_10k_usd": 4650.0,
+            "monthly_10k_inr": 449039.51,
+            "monthly_10k_ksh": 599850.0,
+            "monthly_10k_lakhs_inr": 4.4904
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.27484,
+            "per_run_inr": 26.54,
+            "per_run_ksh": 35.45,
+            "monthly_10k_usd": 2748.4,
+            "monthly_10k_inr": 265406.1,
+            "monthly_10k_ksh": 354543.08,
+            "monthly_10k_lakhs_inr": 2.6541
+          }
+        }
+      }
+    },
+    {
+      "id": "gpt-5-6-terra",
+      "name": "GPT-5.6 Terra",
+      "vendor": "OpenAI",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "2.5",
+        "cached_input_per_1m": "1.250",
+        "output_per_1m": "15"
+      },
+      "rates_inr": {
+        "input_per_1m": "241.42",
+        "cached_input_per_1m": "120.71",
+        "output_per_1m": "1448.51"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.06,
+            "per_run_inr": 5.79,
+            "per_run_ksh": 7.74,
+            "monthly_10k_usd": 600.0,
+            "monthly_10k_inr": 57940.58,
+            "monthly_10k_ksh": 77400.0,
+            "monthly_10k_lakhs_inr": 0.5794
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.045,
+            "per_run_inr": 4.35,
+            "per_run_ksh": 5.81,
+            "monthly_10k_usd": 450.0,
+            "monthly_10k_inr": 43455.44,
+            "monthly_10k_ksh": 58050.0,
+            "monthly_10k_lakhs_inr": 0.4346
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.02926,
+            "per_run_inr": 2.83,
+            "per_run_ksh": 3.77,
+            "monthly_10k_usd": 292.6,
+            "monthly_10k_inr": 28255.59,
+            "monthly_10k_ksh": 37745.27,
+            "monthly_10k_lakhs_inr": 0.2826
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.14,
+            "per_run_inr": 13.52,
+            "per_run_ksh": 18.06,
+            "monthly_10k_usd": 1400.0,
+            "monthly_10k_inr": 135194.69,
+            "monthly_10k_ksh": 180600.0,
+            "monthly_10k_lakhs_inr": 1.3519
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.105,
+            "per_run_inr": 10.14,
+            "per_run_ksh": 13.55,
+            "monthly_10k_usd": 1050.0,
+            "monthly_10k_inr": 101396.02,
+            "monthly_10k_ksh": 135450.0,
+            "monthly_10k_lakhs_inr": 1.014
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.06662,
+            "per_run_inr": 6.43,
+            "per_run_ksh": 8.59,
+            "monthly_10k_usd": 666.2,
+            "monthly_10k_inr": 64333.17,
+            "monthly_10k_ksh": 85939.54,
+            "monthly_10k_lakhs_inr": 0.6433
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.3075,
+            "per_run_inr": 29.69,
+            "per_run_ksh": 39.67,
+            "monthly_10k_usd": 3075.0,
+            "monthly_10k_inr": 296945.48,
+            "monthly_10k_ksh": 396675.0,
+            "monthly_10k_lakhs_inr": 2.9695
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.2325,
+            "per_run_inr": 22.45,
+            "per_run_ksh": 29.99,
+            "monthly_10k_usd": 2325.0,
+            "monthly_10k_inr": 224519.75,
+            "monthly_10k_ksh": 299925.0,
+            "monthly_10k_lakhs_inr": 2.2452
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.14884,
+            "per_run_inr": 14.37,
+            "per_run_ksh": 19.2,
+            "monthly_10k_usd": 1488.4,
+            "monthly_10k_inr": 143730.88,
+            "monthly_10k_ksh": 192003.08,
+            "monthly_10k_lakhs_inr": 1.4373
+          }
+        }
+      }
+    },
+    {
+      "id": "grok-4-5",
+      "name": "Grok 4.5",
+      "vendor": "SpaceXAI",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "2",
+        "cached_input_per_1m": "1.00",
+        "output_per_1m": "6"
+      },
+      "rates_inr": {
+        "input_per_1m": "193.14",
+        "cached_input_per_1m": "96.57",
+        "output_per_1m": "579.41"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.039,
+            "per_run_inr": 3.77,
+            "per_run_ksh": 5.03,
+            "monthly_10k_usd": 390.0,
+            "monthly_10k_inr": 37661.38,
+            "monthly_10k_ksh": 50310.0,
+            "monthly_10k_lakhs_inr": 0.3766
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.027,
+            "per_run_inr": 2.61,
+            "per_run_ksh": 3.48,
+            "monthly_10k_usd": 270.0,
+            "monthly_10k_inr": 26073.26,
+            "monthly_10k_ksh": 34830.0,
+            "monthly_10k_lakhs_inr": 0.2607
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.01546,
+            "per_run_inr": 1.49,
+            "per_run_ksh": 1.99,
+            "monthly_10k_usd": 154.6,
+            "monthly_10k_inr": 14929.26,
+            "monthly_10k_ksh": 19943.27,
+            "monthly_10k_lakhs_inr": 0.1493
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.091,
+            "per_run_inr": 8.79,
+            "per_run_ksh": 11.74,
+            "monthly_10k_usd": 910.0,
+            "monthly_10k_inr": 87876.55,
+            "monthly_10k_ksh": 117390.0,
+            "monthly_10k_lakhs_inr": 0.8788
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.063,
+            "per_run_inr": 6.08,
+            "per_run_ksh": 8.13,
+            "monthly_10k_usd": 630.0,
+            "monthly_10k_inr": 60837.61,
+            "monthly_10k_ksh": 81270.0,
+            "monthly_10k_lakhs_inr": 0.6084
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.03452,
+            "per_run_inr": 3.33,
+            "per_run_ksh": 4.45,
+            "monthly_10k_usd": 345.2,
+            "monthly_10k_inr": 33334.95,
+            "monthly_10k_ksh": 44530.54,
+            "monthly_10k_lakhs_inr": 0.3333
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.198,
+            "per_run_inr": 19.12,
+            "per_run_ksh": 25.54,
+            "monthly_10k_usd": 1980.0,
+            "monthly_10k_inr": 191203.92,
+            "monthly_10k_ksh": 255420.0,
+            "monthly_10k_lakhs_inr": 1.912
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.138,
+            "per_run_inr": 13.33,
+            "per_run_ksh": 17.8,
+            "monthly_10k_usd": 1380.0,
+            "monthly_10k_inr": 133263.34,
+            "monthly_10k_ksh": 178020.0,
+            "monthly_10k_lakhs_inr": 1.3326
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.07564,
+            "per_run_inr": 7.3,
+            "per_run_ksh": 9.76,
+            "monthly_10k_usd": 756.4,
+            "monthly_10k_inr": 73043.37,
+            "monthly_10k_ksh": 97575.08,
+            "monthly_10k_lakhs_inr": 0.7304
+          }
+        }
+      }
+    },
+    {
+      "id": "glm-5-2",
+      "name": "GLM-5.2",
+      "vendor": "Z.AI",
+      "status": "approved",
+      "rates_usd": {
+        "input_per_1m": "1.40",
+        "cached_input_per_1m": "0.7000",
+        "output_per_1m": "4.40"
+      },
+      "rates_inr": {
+        "input_per_1m": "135.19",
+        "cached_input_per_1m": "67.60",
+        "output_per_1m": "424.90"
+      },
+      "tiers": {
+        "tier_1": {
+          "uncached": {
+            "per_run_usd": 0.0276,
+            "per_run_inr": 2.67,
+            "per_run_ksh": 3.56,
+            "monthly_10k_usd": 276.0,
+            "monthly_10k_inr": 26652.67,
+            "monthly_10k_ksh": 35604.0,
+            "monthly_10k_lakhs_inr": 0.2665
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0192,
+            "per_run_inr": 1.85,
+            "per_run_ksh": 2.48,
+            "monthly_10k_usd": 192.0,
+            "monthly_10k_inr": 18540.99,
+            "monthly_10k_ksh": 24768.0,
+            "monthly_10k_lakhs_inr": 0.1854
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.0127,
+            "per_run_inr": 1.23,
+            "per_run_ksh": 1.64,
+            "monthly_10k_usd": 127.0,
+            "monthly_10k_inr": 12263.99,
+            "monthly_10k_ksh": 16382.87,
+            "monthly_10k_lakhs_inr": 0.1226
+          }
+        },
+        "tier_2": {
+          "uncached": {
+            "per_run_usd": 0.0644,
+            "per_run_inr": 6.22,
+            "per_run_ksh": 8.31,
+            "monthly_10k_usd": 644.0,
+            "monthly_10k_inr": 62189.56,
+            "monthly_10k_ksh": 83076.0,
+            "monthly_10k_lakhs_inr": 0.6219
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0448,
+            "per_run_inr": 4.33,
+            "per_run_ksh": 5.78,
+            "monthly_10k_usd": 448.0,
+            "monthly_10k_inr": 43262.3,
+            "monthly_10k_ksh": 57792.0,
+            "monthly_10k_lakhs_inr": 0.4326
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.0282,
+            "per_run_inr": 2.72,
+            "per_run_ksh": 3.64,
+            "monthly_10k_usd": 282.0,
+            "monthly_10k_inr": 27231.88,
+            "monthly_10k_ksh": 36377.74,
+            "monthly_10k_lakhs_inr": 0.2723
+          }
+        },
+        "tier_3": {
+          "uncached": {
+            "per_run_usd": 0.1402,
+            "per_run_inr": 13.54,
+            "per_run_ksh": 18.09,
+            "monthly_10k_usd": 1402.0,
+            "monthly_10k_inr": 135387.83,
+            "monthly_10k_ksh": 180858.0,
+            "monthly_10k_lakhs_inr": 1.3539
+          },
+          "cached_80_percent": {
+            "per_run_usd": 0.0982,
+            "per_run_inr": 9.48,
+            "per_run_ksh": 12.67,
+            "monthly_10k_usd": 982.0,
+            "monthly_10k_inr": 94829.42,
+            "monthly_10k_ksh": 126678.0,
+            "monthly_10k_lakhs_inr": 0.9483
+          },
+          "hybrid_cascade": {
+            "per_run_usd": 0.0614,
+            "per_run_inr": 5.93,
+            "per_run_ksh": 7.92,
+            "monthly_10k_usd": 614.0,
+            "monthly_10k_inr": 59292.14,
+            "monthly_10k_ksh": 79205.48,
+            "monthly_10k_lakhs_inr": 0.5929
+          }
+        }
+      }
+    }
+  ]
+}

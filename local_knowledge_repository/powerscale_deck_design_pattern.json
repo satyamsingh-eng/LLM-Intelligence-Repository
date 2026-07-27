@@ -1,0 +1,58 @@
+{
+  "design_system_name": "Power Scale Ventures Deck Pattern",
+  "aspect_ratio": "16:9",
+  "dimensions_px": {
+    "width": 1920,
+    "height": 1080
+  },
+  "fonts": {
+    "primary_family": "Inter",
+    "weights": ["ExtraBold", "Bold", "SemiBold", "Regular"],
+    "hierarchy": {
+      "cover_title": {"font": "Inter-ExtraBold", "size_pt": 52, "color": "#000000"},
+      "slide_title": {"font": "Inter-Bold", "size_pt": 30, "color": "#000000"},
+      "eyebrow_category": {"font": "Inter-Bold", "size_pt": 10.5, "color": "#0066ff", "uppercase": true, "letter_spacing_px": 1.5},
+      "card_title": {"font": "Inter-Bold", "size_pt": 15, "color": "#000000"},
+      "body_text": {"font": "Inter-Regular", "size_pt": 11, "color": "#1d1d1f", "line_height": 1.4},
+      "kpi_number": {"font": "Inter-ExtraBold", "size_pt": 36, "color": "#0066ff"},
+      "badge_text": {"font": "Inter-SemiBold", "size_pt": 9.5, "color": "#0066ff"},
+      "footer_text": {"font": "Inter-Regular", "size_pt": 8, "color": "#86868b", "uppercase": true}
+    }
+  },
+  "colors": {
+    "accent_blue": "#0066ff",
+    "pure_black": "#000000",
+    "pure_white": "#ffffff",
+    "off_white_canvas": "#fbfbfd",
+    "card_fill_light": "#f5f5f7",
+    "card_fill_secondary": "#f0f0f2",
+    "card_fill_dark": "#1d1d1f",
+    "body_text": "#1d1d1f",
+    "secondary_text": "#515154",
+    "muted_text": "#86868b",
+    "border_line": "#e5e5e7",
+    "badge_bg_blue": "rgba(0, 102, 255, 0.10)"
+  },
+  "components": {
+    "card_container": {
+      "bg_light": "#f5f5f7",
+      "bg_dark": "#1d1d1f",
+      "border_width_px": 1,
+      "border_color": "#e5e5e7",
+      "border_radius_px": 16,
+      "padding_px": 24
+    },
+    "pill_badge": {
+      "bg_color": "rgba(0, 102, 255, 0.10)",
+      "text_color": "#0066ff",
+      "border_radius_px": 999,
+      "padding_px": [4, 12]
+    },
+    "footer": {
+      "border_top_px": 1,
+      "border_color": "#e5e5e7",
+      "left_text": "POWERSCALE VENTURES | CONFIDENTIAL INSTITUTIONAL THESIS",
+      "text_color": "#86868b"
+    }
+  }
+}

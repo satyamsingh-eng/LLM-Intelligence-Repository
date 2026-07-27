@@ -1,0 +1,176 @@
+{
+  "metadata": {
+    "title": "Arvocap HNI Client Portfolio Financial Math Model & Asset Allocation Matrix",
+    "client_name": "Dr. David K. Mutua / The Mutua Family Trust",
+    "account_number": "ARV-TRUST-88412",
+    "wealth_management_firm": "Arvocap Asset Managers Limited (CMA Regulated)",
+    "lead_ifas": [
+      "Arnold Oduma",
+      "John Ngure"
+    ],
+    "valuation_date": "2026-07-27",
+    "portfolio_base_currency": "KSh (Kenyan Shilling)",
+    "total_portfolio_value_ksh": 148500000.0,
+    "total_portfolio_value_usd": 1145571.43,
+    "fx_reference_rate_usd_kes": 129.63,
+    "calculation_engine": "Python Decimal Precision Engine (Zero Hallucination)"
+  },
+  "portfolio_summary": {
+    "total_principal_ksh": 148500000.0,
+    "gross_annual_yield_ksh": 20443500.0,
+    "gross_monthly_yield_ksh": 1703625.0,
+    "monthly_kra_withholding_tax_ksh": 187658.33,
+    "net_monthly_payout_ksh": 1515966.67,
+    "net_annual_yield_ksh": 18191600.0,
+    "portfolio_weighted_gross_yield_pct": 13.7667,
+    "portfolio_weighted_net_yield_pct": 12.2502,
+    "effective_portfolio_tax_rate_pct": 11.0152,
+    "monthly_tax_shield_savings_ifb_offshore_ksh": 63750.0
+  },
+  "asset_allocation_breakdown": [
+    {
+      "id": "arvocap_mmf",
+      "asset_class": "Money Market Fund",
+      "instrument_name": "Arvocap Money Market Fund (MMF)",
+      "principal_ksh": 45000000.0,
+      "allocation_percentage": 30.303,
+      "allocation_percentage_formatted": "30.3%",
+      "gross_annual_rate_pct": 15.4,
+      "tax_status": "Subject to 15% KRA Withholding Tax on Interest",
+      "kra_wht_rate_pct": 15.0,
+      "gross_annual_yield_ksh": 6930000.0,
+      "gross_monthly_yield_ksh": 577500.0,
+      "monthly_wht_deduction_ksh": 86625.0,
+      "net_monthly_yield_ksh": 490875.0,
+      "net_annual_yield_ksh": 5890500.0,
+      "net_effective_annual_yield_pct": 13.09,
+      "liquidity_tier": "T+1 Daily Liquidity",
+      "underlying_collateral": "Commercial paper, 91-day/182-day CBK T-Bills, bank call deposits"
+    },
+    {
+      "id": "almasi_fixed_income",
+      "asset_class": "Fixed Income Fund",
+      "instrument_name": "Arvocap Almasi Fixed Income Fund",
+      "principal_ksh": 52000000.0,
+      "allocation_percentage": 35.0168,
+      "allocation_percentage_formatted": "35.0%",
+      "gross_annual_rate_pct": 14.8,
+      "tax_status": "Subject to 15% KRA Withholding Tax on Interest",
+      "kra_wht_rate_pct": 15.0,
+      "gross_annual_yield_ksh": 7696000.0,
+      "gross_monthly_yield_ksh": 641333.33,
+      "monthly_wht_deduction_ksh": 96200.0,
+      "net_monthly_yield_ksh": 545133.33,
+      "net_annual_yield_ksh": 6541600.0,
+      "net_effective_annual_yield_pct": 12.58,
+      "liquidity_tier": "Monthly Income Payout / T+3 Redemptions",
+      "underlying_collateral": "High-yield Kenyan Treasury Bonds, corporate debt, structured notes"
+    },
+    {
+      "id": "cbk_infrastructure_bond",
+      "asset_class": "Infrastructure Bond (Government Security)",
+      "instrument_name": "CBK Infrastructure Bond (IFB1/2023/17Yr)",
+      "principal_ksh": 30000000.0,
+      "allocation_percentage": 20.202,
+      "allocation_percentage_formatted": "20.2%",
+      "gross_annual_rate_pct": 14.3,
+      "tax_status": "TAX EXEMPT (Section 3(2)(a)(i) Income Tax Act of Kenya)",
+      "kra_wht_rate_pct": 0.0,
+      "gross_annual_yield_ksh": 4290000.0,
+      "gross_monthly_yield_ksh": 357500.0,
+      "monthly_wht_deduction_ksh": 0.0,
+      "net_monthly_yield_ksh": 357500.0,
+      "net_annual_yield_ksh": 4290000.0,
+      "net_effective_annual_yield_pct": 14.3,
+      "liquidity_tier": "Semi-Annual Coupon Distribution / Secondary NSE Trading",
+      "underlying_collateral": "Sovereign Republic of Kenya Direct Debt Guarantee"
+    },
+    {
+      "id": "nse_blue_chips",
+      "asset_class": "NSE Blue-Chip Equities",
+      "instrument_name": "NSE Blue-Chip Equities Portfolio (Safaricom, Equity Bank, KCB)",
+      "principal_ksh": 14500000.0,
+      "allocation_percentage": 9.7643,
+      "allocation_percentage_formatted": "9.8%",
+      "gross_annual_rate_pct": 8.0,
+      "tax_status": "Subject to 5% Final Dividend Withholding Tax",
+      "kra_wht_rate_pct": 5.0,
+      "gross_annual_yield_ksh": 1160000.0,
+      "gross_monthly_yield_ksh": 96666.67,
+      "monthly_wht_deduction_ksh": 4833.33,
+      "net_monthly_yield_ksh": 91833.33,
+      "net_annual_yield_ksh": 1102000.0,
+      "net_effective_annual_yield_pct": 7.6,
+      "liquidity_tier": "Bi-Annual Dividend Distribution / Daily NSE Market Liquidity",
+      "sub_allocations": [
+        {
+          "ticker": "SCOM.NR",
+          "company_name": "Safaricom PLC",
+          "principal_ksh": 6000000.0,
+          "shares_count": 333333,
+          "est_dividend_yield_pct": 7.5,
+          "allocation_within_equities_pct": 41.38,
+          "allocation_portfolio_pct": 4.0404
+        },
+        {
+          "ticker": "EQTY.NR",
+          "company_name": "Equity Group Holdings PLC",
+          "principal_ksh": 4500000.0,
+          "shares_count": 100000,
+          "est_dividend_yield_pct": 8.5,
+          "allocation_within_equities_pct": 31.03,
+          "allocation_portfolio_pct": 3.0303
+        },
+        {
+          "ticker": "KCB.NR",
+          "company_name": "KCB Group PLC",
+          "principal_ksh": 4000000.0,
+          "shares_count": 100000,
+          "est_dividend_yield_pct": 8.25,
+          "allocation_within_equities_pct": 27.59,
+          "allocation_portfolio_pct": 2.6936
+        }
+      ]
+    },
+    {
+      "id": "offshore_usd_cash",
+      "asset_class": "Offshore Cash / USD Yield",
+      "instrument_name": "Offshore USD Cash & Liquidity Reserves",
+      "principal_ksh": 7000000.0,
+      "principal_usd": 54000.0,
+      "fx_rate_usd_kes": 129.63,
+      "allocation_percentage": 4.7138,
+      "allocation_percentage_formatted": "4.7%",
+      "gross_annual_rate_pct": 5.25,
+      "tax_status": "Offshore USD Yield (0% KRA Local Withholding Tax)",
+      "kra_wht_rate_pct": 0.0,
+      "gross_annual_yield_ksh": 367500.0,
+      "gross_monthly_yield_ksh": 30625.0,
+      "monthly_wht_deduction_ksh": 0.0,
+      "net_monthly_yield_ksh": 30625.0,
+      "net_annual_yield_ksh": 367500.0,
+      "net_effective_annual_yield_pct": 5.25,
+      "gross_annual_yield_usd": 2835.0,
+      "gross_monthly_yield_usd": 236.25,
+      "liquidity_tier": "Immediate USD Liquidity / Offshore Treasury Bills"
+    }
+  ],
+  "monthly_cashflow_waterfall": {
+    "step_1_gross_monthly_accrued_income_ksh": 1703625.0,
+    "step_2_kra_wht_deductions": {
+      "arvocap_mmf_wht_15pct_ksh": 86625.0,
+      "almasi_fixed_income_wht_15pct_ksh": 96200.0,
+      "cbk_ifb_wht_0pct_ksh": 0.0,
+      "nse_equities_wht_5pct_ksh": 4833.33,
+      "offshore_usd_wht_0pct_ksh": 0.0,
+      "total_monthly_wht_deducted_ksh": 187658.33
+    },
+    "step_3_net_monthly_distribution_payout_ksh": 1515966.67
+  },
+  "tax_and_compliance_notes": [
+    "Infrastructure Bond IFB1/2023/17Yr is 100% tax-exempt under Section 3(2)(a)(i) of Kenya Income Tax Act.",
+    "Collective Investment Scheme (CIS) interest distributions from Arvocap MMF and Almasi Fixed Income Fund incur a 15% final withholding tax at source.",
+    "NSE Equity dividends are subject to a 5% final withholding tax for Kenya resident trusts/individuals.",
+    "Offshore USD Cash yield is derived from US Dollar money market/treasuries held outside local jurisdiction."
+  ]
+}

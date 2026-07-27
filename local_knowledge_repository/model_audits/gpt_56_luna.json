@@ -1,0 +1,124 @@
+{
+  "metadata": {
+    "title": "GPT-5.6 Luna Official API Pricing Verification & SARVAX Optimization Audit",
+    "model_id": "gpt-5-6-luna",
+    "model_name": "GPT-5.6 Luna",
+    "vendor": "OpenAI",
+    "audit_date": "2026-07-26",
+    "audit_timestamp_utc": "2026-07-26T22:47:52.473545Z",
+    "verified_sources": [
+      "OpenAI Official API Documentation (openai_models.html)",
+      "OpenAI Official Pricing Page (openai_pricing.html)",
+      "AWS Bedrock Bedrock Pricing Matrix (aws_bedrock_pricing.html)",
+      "SARVAX Verified Model Pricing Matrix (verified_model_pricing_matrix.json)"
+    ],
+    "fx_rates": {
+      "usd_to_inr": 96.567636,
+      "usd_to_ksh": 129.0,
+      "reference_date": "2026-07-24",
+      "source": "ECB Reference Rates"
+    }
+  },
+  "rate_card": {
+    "uncached_input_per_1m_usd": 1.0,
+    "cached_input_per_1m_usd": 0.5,
+    "prompt_caching_discount_pct": 50.0,
+    "promotional_cached_input_per_1m_usd": 0.1,
+    "output_per_1m_usd": 6.0,
+    "rates_inr": {
+      "uncached_input_per_1m_inr": 96.57,
+      "cached_input_per_1m_inr": 48.28,
+      "output_per_1m_inr": 579.41
+    }
+  },
+  "workload_benchmark": {
+    "tier_name": "Tier 2 Standard Review (BENCHMARK)",
+    "report_volume": 10000,
+    "input_tokens_per_report": 35000,
+    "output_tokens_per_report": 3500,
+    "total_monthly_input_tokens": 350000000,
+    "total_monthly_output_tokens": 35000000
+  },
+  "cost_analysis": {
+    "external_uncached_pricing": {
+      "caching_percentage": 0,
+      "per_report": {
+        "input_cost_usd": 0.035,
+        "output_cost_usd": 0.021,
+        "total_cost_usd": 0.056,
+        "total_cost_inr": 5.41,
+        "total_cost_ksh": 7.22
+      },
+      "monthly_10k_reports": {
+        "cost_usd": 560.0,
+        "cost_inr": 54077.88,
+        "cost_ksh": 72240.0,
+        "cost_lakhs_inr": 0.5408
+      }
+    },
+    "sarvax_optimized_pricing_standard": {
+      "caching_percentage": 80,
+      "cached_input_rate_usd": 0.5,
+      "uncached_input_rate_usd": 1.0,
+      "per_report": {
+        "cached_input_cost_usd": 0.014,
+        "uncached_input_cost_usd": 0.007,
+        "total_input_cost_usd": 0.021,
+        "output_cost_usd": 0.021,
+        "total_cost_usd": 0.042,
+        "total_cost_inr": 4.06,
+        "total_cost_ksh": 5.42
+      },
+      "monthly_10k_reports": {
+        "cost_usd": 420.0,
+        "cost_inr": 40558.41,
+        "cost_ksh": 54180.0,
+        "cost_lakhs_inr": 0.4056
+      },
+      "savings_vs_uncached": {
+        "monthly_savings_usd": 140.0,
+        "monthly_savings_inr": 13519.47,
+        "total_cost_reduction_pct": 25.0,
+        "input_cost_reduction_pct": 40.0
+      }
+    },
+    "sarvax_optimized_pricing_high_cache_tier": {
+      "caching_percentage": 80,
+      "cached_input_rate_usd": 0.1,
+      "uncached_input_rate_usd": 1.0,
+      "per_report": {
+        "cached_input_cost_usd": 0.0028,
+        "uncached_input_cost_usd": 0.007,
+        "total_input_cost_usd": 0.0098,
+        "output_cost_usd": 0.021,
+        "total_cost_usd": 0.0308,
+        "total_cost_inr": 2.97,
+        "total_cost_ksh": 3.97
+      },
+      "monthly_10k_reports": {
+        "cost_usd": 308.0,
+        "cost_inr": 29742.83,
+        "cost_ksh": 39732.0,
+        "cost_lakhs_inr": 0.2974
+      },
+      "savings_vs_uncached": {
+        "monthly_savings_usd": 252.0,
+        "monthly_savings_inr": 24335.05,
+        "total_cost_reduction_pct": 45.0,
+        "input_cost_reduction_pct": 72.0
+      }
+    }
+  },
+  "verification_summary": {
+    "uncached_input_rate_verified": true,
+    "uncached_input_rate_value": "$1.00 / 1M tokens",
+    "output_rate_verified": true,
+    "output_rate_value": "$6.00 / 1M tokens",
+    "prompt_caching_discount_rate_verified": true,
+    "prompt_caching_discount_value": "$0.50 / 1M tokens (Standard 50% discount) / $0.10 / 1M tokens (Promotional 90% discount)",
+    "external_uncached_10k_tier2_cost_verified": true,
+    "external_uncached_10k_tier2_cost_value": "$560.00 USD",
+    "sarvax_optimized_10k_tier2_cost_verified": true,
+    "sarvax_optimized_10k_tier2_cost_value": "$420.00 USD (Standard 80% cache) / $308.00 USD (High-cache tier)"
+  }
+}

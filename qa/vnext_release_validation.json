@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T22:30:58.725Z",
+  "generated_at": "2026-07-26T20:40:20.671Z",
   "pass": 239,
   "total": 239,
   "errors": [],
@@ -168,17 +168,14 @@
       null
     ],
     [
-      "desktop: 3 wealth journeys",
+      "desktop: verified client accounts present",
       true,
       null
     ],
     [
-      "desktop: 12 unique SARVAX agents mapped",
+      "desktop: sales enablement playbook present",
       true,
-      {
-        "total": 12,
-        "unique": 12
-      }
+      null
     ],
     [
       "desktop: 3 architecture journey controls",
@@ -227,19 +224,19 @@
       true,
       [
         {
-          "w": 954,
+          "w": 1230,
           "h": 520
         },
         {
-          "w": 954,
+          "w": 1230,
           "h": 520
         },
         {
-          "w": 442,
+          "w": 580,
           "h": 380
         },
         {
-          "w": 442,
+          "w": 580,
           "h": 380
         }
       ]
@@ -265,7 +262,7 @@
       null
     ],
     [
-      "desktop: workflow choices 3",
+      "desktop: workflow choices >= 3",
       true,
       null
     ],
@@ -285,7 +282,7 @@
       null
     ],
     [
-      "desktop: workflow telemetry labelled not measured",
+      "desktop: workflow telemetry labelled with step costing",
       true,
       null
     ],
@@ -531,17 +528,14 @@
       null
     ],
     [
-      "mobile: 3 wealth journeys",
+      "mobile: verified client accounts present",
       true,
       null
     ],
     [
-      "mobile: 12 unique SARVAX agents mapped",
+      "mobile: sales enablement playbook present",
       true,
-      {
-        "total": 12,
-        "unique": 12
-      }
+      null
     ],
     [
       "mobile: 3 architecture journey controls",
@@ -628,7 +622,7 @@
       null
     ],
     [
-      "mobile: workflow choices 3",
+      "mobile: workflow choices >= 3",
       true,
       null
     ],
@@ -648,7 +642,7 @@
       null
     ],
     [
-      "mobile: workflow telemetry labelled not measured",
+      "mobile: workflow telemetry labelled with step costing",
       true,
       null
     ],
@@ -884,17 +878,14 @@
       null
     ],
     [
-      "tablet: 3 wealth journeys",
+      "tablet: verified client accounts present",
       true,
       null
     ],
     [
-      "tablet: 12 unique SARVAX agents mapped",
+      "tablet: sales enablement playbook present",
       true,
-      {
-        "total": 12,
-        "unique": 12
-      }
+      null
     ],
     [
       "tablet: 3 architecture journey controls",
@@ -943,19 +934,19 @@
       true,
       [
         {
-          "w": 678,
+          "w": 670,
           "h": 340
         },
         {
-          "w": 678,
+          "w": 670,
           "h": 340
         },
         {
-          "w": 678,
+          "w": 670,
           "h": 280
         },
         {
-          "w": 678,
+          "w": 670,
           "h": 280
         }
       ]
@@ -981,7 +972,7 @@
       null
     ],
     [
-      "tablet: workflow choices 3",
+      "tablet: workflow choices >= 3",
       true,
       null
     ],
@@ -1001,7 +992,7 @@
       null
     ],
     [
-      "tablet: workflow telemetry labelled not measured",
+      "tablet: workflow telemetry labelled with step costing",
       true,
       null
     ],
@@ -1237,17 +1228,14 @@
       null
     ],
     [
-      "file-direct: 3 wealth journeys",
+      "file-direct: verified client accounts present",
       true,
       null
     ],
     [
-      "file-direct: 12 unique SARVAX agents mapped",
+      "file-direct: sales enablement playbook present",
       true,
-      {
-        "total": 12,
-        "unique": 12
-      }
+      null
     ],
     [
       "file-direct: 3 architecture journey controls",
@@ -1296,19 +1284,19 @@
       true,
       [
         {
-          "w": 954,
+          "w": 1230,
           "h": 520
         },
         {
-          "w": 954,
+          "w": 1230,
           "h": 520
         },
         {
-          "w": 442,
+          "w": 580,
           "h": 380
         },
         {
-          "w": 442,
+          "w": 580,
           "h": 380
         }
       ]
@@ -1334,7 +1322,7 @@
       null
     ],
     [
-      "file-direct: workflow choices 3",
+      "file-direct: workflow choices >= 3",
       true,
       null
     ],
@@ -1354,7 +1342,7 @@
       null
     ],
     [
-      "file-direct: workflow telemetry labelled not measured",
+      "file-direct: workflow telemetry labelled with step costing",
       true,
       null
     ],
@@ -1590,17 +1578,14 @@
       null
     ],
     [
-      "offline-file: 3 wealth journeys",
+      "offline-file: verified client accounts present",
       true,
       null
     ],
     [
-      "offline-file: 12 unique SARVAX agents mapped",
+      "offline-file: sales enablement playbook present",
       true,
-      {
-        "total": 12,
-        "unique": 12
-      }
+      null
     ],
     [
       "offline-file: 3 architecture journey controls",
@@ -1649,19 +1634,19 @@
       true,
       [
         {
-          "w": 954,
+          "w": 1230,
           "h": 520
         },
         {
-          "w": 954,
+          "w": 1230,
           "h": 520
         },
         {
-          "w": 442,
+          "w": 580,
           "h": 380
         },
         {
-          "w": 442,
+          "w": 580,
           "h": 380
         }
       ]
@@ -1687,7 +1672,7 @@
       null
     ],
     [
-      "offline-file: workflow choices 3",
+      "offline-file: workflow choices >= 3",
       true,
       null
     ],
@@ -1707,7 +1692,7 @@
       null
     ],
     [
-      "offline-file: workflow telemetry labelled not measured",
+      "offline-file: workflow telemetry labelled with step costing",
       true,
       null
     ],

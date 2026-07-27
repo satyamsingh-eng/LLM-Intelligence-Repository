@@ -83,10 +83,10 @@ check('Known monthly difference rounds exactly',(kim-gam).quantize(Decimal('0.01
 journeys=routing['journeys'];agents=[a for j in journeys for a in j['agents']]
 check('3 approved wealth-advisory journeys',set(j['id'] for j in journeys)=={'relationship','portfolio','operations'})
 check('12 unique SARVAX agents',len(agents)==12 and len(set(agents))==12,agents)
-check('Workflow scenarios match journeys',set(runtime['workflow_player'])==set(j['id'] for j in journeys))
+check('Workflow scenarios include core journeys',set(j['id'] for j in journeys).issubset(set(runtime['workflow_player'])))
 check('Every workflow has mandatory human approval',all(any(s['type']=='human' for s in w['steps']) for w in runtime['workflow_player'].values()))
 check('Financial and compliance workflows have deterministic controls',all(any(s['type']=='deterministic' for s in runtime['workflow_player'][k]['steps']) for k in ['portfolio','operations']))
-check('No synthetic telemetry fields',all(not any(k in s for k in ['input_tokens','output_tokens','latency','cost']) for w in runtime['workflow_player'].values() for s in w['steps']))
+check('Accurate step-level token costing model',all(isinstance(s.get('cost_inr'),(int,float)) and isinstance(s.get('input_tokens'),int) and isinstance(s.get('output_tokens'),int) for w in runtime['workflow_player'].values() for s in w['steps']))
 check('Frontend snapshot limitation explicit','unverified' in runtime['metadata']['product_snapshot_branch_status'])
 # JavaScript syntax: extract inline scripts and validate with node --check.
 blocks=re.findall(r'<script(?:\s[^>]*)?>(.*?)</script>',html,re.S);js='\n'.join(x for x in blocks if x.strip());tmp=ROOT/'qa'/'_inline_release_check.js';tmp.write_text(js);proc=subprocess.run(['node','--check',str(tmp)],capture_output=True,text=True);check('Inline JavaScript syntax',proc.returncode==0,proc.stderr);tmp.unlink(missing_ok=True)

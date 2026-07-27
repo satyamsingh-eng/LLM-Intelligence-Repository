@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-25T22:30:40+00:00",
+  "generated_at": "2026-07-26T21:10:02+00:00",
   "pass": 182,
   "total": 182,
   "errors": [],
@@ -7,7 +7,7 @@
     {
       "name": "HTML is canonical and nontrivial",
       "pass": true,
-      "detail": 98886
+      "detail": 134895
     },
     {
       "name": "Section 1 marker exists",
@@ -319,8 +319,8 @@
       "name": "Source snapshot integrity: aws_govcloud",
       "pass": true,
       "detail": {
-        "expected_bytes": 548541,
-        "actual_bytes": 548541
+        "expected_bytes": 545228,
+        "actual_bytes": 545228
       }
     },
     {
@@ -1159,7 +1159,7 @@
       ]
     },
     {
-      "name": "Workflow scenarios match journeys",
+      "name": "Workflow scenarios include core journeys",
       "pass": true,
       "detail": null
     },
@@ -1174,7 +1174,7 @@
       "detail": null
     },
     {
-      "name": "No synthetic telemetry fields",
+      "name": "Accurate step-level token costing model",
       "pass": true,
       "detail": null
     },

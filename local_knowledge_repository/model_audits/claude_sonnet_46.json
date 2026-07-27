@@ -1,0 +1,61 @@
+{
+  "audit_metadata": {
+    "model_id": "claude-sonnet-4-6",
+    "model_name": "Claude Sonnet 4.6",
+    "vendor": "Anthropic",
+    "audit_date": "2026-07-27",
+    "source_url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+    "source_snapshot": "local_knowledge_repository/official_sources/anthropic_pricing.html",
+    "evidence_tier": "Tier 1 (Official Vendor Documentation)",
+    "fx_reference": {
+      "usd_to_inr": 96.567636,
+      "usd_to_ksh": 129.0,
+      "source": "ECB Reference Rates (2026-07-24)"
+    }
+  },
+  "official_rates_usd_per_1m": {
+    "uncached_input_rate": 3.0,
+    "uncached_output_rate": 15.0,
+    "prompt_cache_read_rate": 0.3,
+    "prompt_cache_write_5m_rate": 3.75,
+    "prompt_cache_write_1h_rate": 6.0,
+    "prompt_caching_discount_percentage": "90.0%"
+  },
+  "workload_benchmark_parameters": {
+    "tier": "Tier 2 Standard Report",
+    "batch_report_volume": 10000,
+    "input_tokens_per_report": 35000,
+    "output_tokens_per_report": 3500,
+    "total_batch_input_tokens": 350000000,
+    "total_batch_output_tokens": 35000000
+  },
+  "external_uncached_pricing": {
+    "per_report_usd": 0.1575,
+    "per_report_inr": 15.21,
+    "input_cost_per_report_usd": 0.105,
+    "output_cost_per_report_usd": 0.0525,
+    "batch_10k_reports_usd": 1575.0,
+    "batch_10k_reports_inr": 152094.03,
+    "batch_10k_reports_lakhs_inr": 1.5209
+  },
+  "sarvax_optimized_pricing": {
+    "caching_assumptions": {
+      "cache_hit_ratio": "80%",
+      "cached_input_tokens": 28000,
+      "uncached_input_tokens": 7000
+    },
+    "per_report_usd": 0.0819,
+    "per_report_inr": 7.91,
+    "input_cost_per_report_usd": 0.0294,
+    "output_cost_per_report_usd": 0.0525,
+    "batch_10k_reports_usd": 819.0,
+    "batch_10k_reports_inr": 79088.89,
+    "batch_10k_reports_lakhs_inr": 0.7909
+  },
+  "savings_summary": {
+    "cost_reduction_usd": 756.0,
+    "cost_reduction_inr": 73005.13,
+    "savings_percentage": "48.0%",
+    "input_cost_reduction_percentage": "72.00%"
+  }
+}

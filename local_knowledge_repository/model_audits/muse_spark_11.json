@@ -1,0 +1,135 @@
+{
+  "audit_metadata": {
+    "title": "Model Pricing & Unit Economics Audit: Muse Spark 1.1",
+    "model_id": "muse-spark-1-1",
+    "model_name": "Muse Spark 1.1",
+    "vendor": "Meta",
+    "context_window": 128000,
+    "max_output_tokens": 8192,
+    "verification_date": "2026-07-27",
+    "status": "verified",
+    "official_sources": [
+      "https://ai.meta.com/research/",
+      "https://artificialanalysis.ai/models/muse-spark-1-1"
+    ],
+    "fx_rates": {
+      "usd_to_inr": 96.567636,
+      "usd_to_ksh": 129.0,
+      "reference_date": "2026-07-24",
+      "source": "ECB Reference Rates"
+    }
+  },
+  "official_vendor_pricing": {
+    "uncached_input_usd_per_1m": 1.25,
+    "uncached_output_usd_per_1m": 4.25,
+    "primary_prompt_caching_discount_percentage": 90.0,
+    "primary_cached_input_hit_usd_per_1m": 0.125,
+    "standard_prompt_caching_discount_percentage": 50.0,
+    "standard_cached_input_hit_usd_per_1m": 0.625,
+    "batch_api": {
+      "batch_input_usd_per_1m": 0.625,
+      "batch_output_usd_per_1m": 2.125,
+      "discount_percentage": 50.0
+    }
+  },
+  "workload_benchmark": {
+    "tier_name": "Tier 2 Standard Review (BENCHMARK)",
+    "report_volume": 10000,
+    "tokens_per_report": {
+      "input_tokens": 35000,
+      "output_tokens": 3500
+    },
+    "total_tokens_10k_reports": {
+      "total_input_tokens": 350000000,
+      "total_output_tokens": 35000000
+    }
+  },
+  "external_uncached_pricing": {
+    "description": "Standard External Uncached API Pricing (0% prompt caching on input tokens, 100% output rate)",
+    "effective_input_rate_usd_per_1m": 1.25,
+    "effective_output_rate_usd_per_1m": 4.25,
+    "per_report": {
+      "input_cost_usd": 0.04375,
+      "output_cost_usd": 0.014875,
+      "total_cost_usd": 0.058625,
+      "total_cost_inr": 5.6613,
+      "total_cost_ksh": 7.5626
+    },
+    "monthly_10k_reports": {
+      "input_cost_usd": 437.5,
+      "output_cost_usd": 148.75,
+      "total_cost_usd": 586.25,
+      "total_cost_inr": 56612.78,
+      "total_cost_ksh": 75626.25,
+      "total_cost_lakhs_inr": 0.5661
+    }
+  },
+  "sarvax_optimized_pricing": {
+    "primary_scenario_90_pct_cache_discount": {
+      "description": "SARVAX Optimized Architecture with 80% prompt caching hit rate at 90% prompt cache discount ($0.125/1M cached input)",
+      "caching_hit_rate_percent": 80.0,
+      "prompt_cache_discount_percent": 90.0,
+      "cached_input_rate_usd_per_1m": 0.125,
+      "uncached_input_rate_usd_per_1m": 1.25,
+      "output_rate_usd_per_1m": 4.25,
+      "per_report": {
+        "cached_input_cost_usd": 0.0035,
+        "uncached_input_cost_usd": 0.00875,
+        "total_input_cost_usd": 0.01225,
+        "output_cost_usd": 0.014875,
+        "total_cost_usd": 0.027125,
+        "total_cost_inr": 2.6194,
+        "total_cost_ksh": 3.4991
+      },
+      "monthly_10k_reports": {
+        "cached_input_cost_usd": 35.0,
+        "uncached_input_cost_usd": 87.5,
+        "total_input_cost_usd": 122.5,
+        "output_cost_usd": 148.75,
+        "total_cost_usd": 271.25,
+        "total_cost_inr": 26193.97,
+        "total_cost_ksh": 34991.25,
+        "total_cost_lakhs_inr": 0.2619
+      },
+      "cost_savings_summary": {
+        "monthly_savings_usd": 315.0,
+        "monthly_savings_inr": 30418.81,
+        "monthly_savings_lakhs_inr": 0.3042,
+        "cost_reduction_percentage": 53.73
+      }
+    },
+    "standard_scenario_50_pct_cache_discount": {
+      "description": "SARVAX Optimized Architecture with 80% prompt caching hit rate at 50% standard prompt cache discount ($0.625/1M cached input)",
+      "caching_hit_rate_percent": 80.0,
+      "prompt_cache_discount_percent": 50.0,
+      "cached_input_rate_usd_per_1m": 0.625,
+      "uncached_input_rate_usd_per_1m": 1.25,
+      "output_rate_usd_per_1m": 4.25,
+      "per_report": {
+        "cached_input_cost_usd": 0.0175,
+        "uncached_input_cost_usd": 0.00875,
+        "total_input_cost_usd": 0.02625,
+        "output_cost_usd": 0.014875,
+        "total_cost_usd": 0.041125,
+        "total_cost_inr": 3.9713,
+        "total_cost_ksh": 5.3051
+      },
+      "monthly_10k_reports": {
+        "cached_input_cost_usd": 175.0,
+        "uncached_input_cost_usd": 87.5,
+        "total_input_cost_usd": 262.5,
+        "output_cost_usd": 148.75,
+        "total_cost_usd": 411.25,
+        "total_cost_inr": 39713.44,
+        "total_cost_ksh": 53051.25,
+        "total_cost_lakhs_inr": 0.3971
+      },
+      "cost_savings_summary": {
+        "monthly_savings_usd": 175.0,
+        "monthly_savings_inr": 16899.34,
+        "monthly_savings_lakhs_inr": 0.169,
+        "cost_reduction_percentage": 29.85
+      }
+    }
+  }
+}

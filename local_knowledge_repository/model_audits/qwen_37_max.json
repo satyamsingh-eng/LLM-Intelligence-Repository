@@ -1,0 +1,118 @@
+{
+  "audit_metadata": {
+    "title": "Model Pricing & Unit Economics Audit: Qwen 3.7 Max",
+    "audit_id": "AUDIT-QWEN-37-MAX-2026",
+    "audit_timestamp": "2026-07-27T00:00:00Z",
+    "model_id": "qwen3-7-max",
+    "model_name": "Qwen 3.7 Max",
+    "vendor": "Alibaba Cloud",
+    "api_surface": "DashScope API",
+    "status": "approved",
+    "official_source": {
+      "vendor_documentation_url": "https://www.alibabacloud.com/help/en/model-studio/developer-reference/pricing-of-qwen-llm",
+      "dashscope_pricing_url": "https://help.aliyun.com/zh/dashscope/developer-reference/tongyi-qianwen-metering-and-billing",
+      "last_verified": "2026-07-27"
+    }
+  },
+  "official_vendor_pricing": {
+    "uncached_input_per_1m_usd": "2.50",
+    "uncached_output_per_1m_usd": "7.50",
+    "prompt_caching_discount_percentage": "80.0%",
+    "cached_input_hit_per_1m_usd": "0.5000",
+    "batch_24h_discount_percentage": "50.0%",
+    "max_context_window": 1000000,
+    "max_output_tokens": 16384
+  },
+  "currency_reference": {
+    "reference_date": "2026-07-24",
+    "usd_to_inr": "96.567636",
+    "usd_to_ksh": "129.0",
+    "source": "ECB Reference Rates"
+  },
+  "workload_benchmark": {
+    "tier_name": "Tier 2 Standard Review (BENCHMARK)",
+    "report_volume": 10000,
+    "tokens_per_report": {
+      "input_tokens": 35000,
+      "output_tokens": 3500
+    },
+    "total_tokens_10k_reports": {
+      "total_input_tokens": 350000000,
+      "total_output_tokens": 35000000
+    }
+  },
+  "pricing_scenarios": {
+    "external_uncached": {
+      "description": "Standard External Uncached API Pricing (0% prompt caching on input tokens, 100% output rate)",
+      "effective_input_rate_usd_per_1m": "2.50",
+      "effective_output_rate_usd_per_1m": "7.50",
+      "per_report_cost": {
+        "input_cost_usd": 0.0875,
+        "output_cost_usd": 0.02625,
+        "total_cost_usd": 0.11375,
+        "total_cost_inr": 10.98,
+        "total_cost_ksh": 14.67
+      },
+      "monthly_10k_reports_cost": {
+        "input_cost_usd": 875.0,
+        "output_cost_usd": 262.5,
+        "total_cost_usd": 1137.5,
+        "total_cost_inr": 109845.69,
+        "total_cost_ksh": 146737.5,
+        "total_lakhs_inr": 1.0985
+      }
+    },
+    "sarvax_optimized": {
+      "description": "SARVAX Optimized Prompt Caching Strategy (80% prompt cache hit rate @ $0.50/1M, 20% uncached input @ $2.50/1M, 100% output rate @ $7.50/1M)",
+      "caching_assumptions": {
+        "cache_hit_ratio": "80.0%",
+        "cache_miss_ratio": "20.0%",
+        "cached_input_token_cost_usd_per_1m": "0.5000",
+        "uncached_input_token_cost_usd_per_1m": "2.5000",
+        "blended_effective_input_rate_usd_per_1m": "0.9000"
+      },
+      "per_report_cost": {
+        "cached_input_cost_usd": 0.014,
+        "uncached_input_cost_usd": 0.0175,
+        "total_input_cost_usd": 0.0315,
+        "output_cost_usd": 0.02625,
+        "total_cost_usd": 0.05775,
+        "total_cost_inr": 5.58,
+        "total_cost_ksh": 7.45
+      },
+      "monthly_10k_reports_cost": {
+        "input_cost_usd": 315.0,
+        "output_cost_usd": 262.5,
+        "total_cost_usd": 577.5,
+        "total_cost_inr": 55767.81,
+        "total_cost_ksh": 74497.5,
+        "total_lakhs_inr": 0.5577
+      }
+    }
+  },
+  "comparative_analysis_and_roi": {
+    "monthly_cost_savings": {
+      "savings_usd": 560.0,
+      "savings_inr": 54077.88,
+      "savings_ksh": 72240.0,
+      "savings_lakhs_inr": 0.5408
+    },
+    "percentage_reductions": {
+      "input_token_cost_reduction_pct": 64.0,
+      "total_report_cost_reduction_pct": 49.2308
+    },
+    "unit_cost_comparison_usd": {
+      "external_uncached_per_report": 0.11375,
+      "sarvax_optimized_per_report": 0.05775,
+      "savings_per_report": 0.056
+    }
+  },
+  "audit_notes_and_verification": [
+    "Verified official rates for Qwen 3.7 Max on Alibaba Cloud DashScope: $2.50 / 1M input, $7.50 / 1M output.",
+    "Prompt Caching on DashScope yields an 80% discount on cached input tokens ($0.50 / 1M cached input hit).",
+    "Workload specification for 10,000 Tier 2 Standard Reports: 35,000 input tokens and 3,500 output tokens per report.",
+    "External Uncached total cost for 10,000 reports is $1,137.50 USD (\u20b9109,845.69 / 1.0985 Lakhs INR).",
+    "SARVAX Optimized total cost with 80% prompt caching is $577.50 USD (\u20b955,767.81 / 0.5577 Lakhs INR).",
+    "SARVAX Optimization reduces monthly expenditure by $560.00 USD (64.0% input cost reduction and 49.23% overall cost reduction)."
+  ]
+}

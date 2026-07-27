@@ -1,0 +1,114 @@
+{
+  "model_metadata": {
+    "model_id": "claude-sonnet-5",
+    "model_name": "Claude Sonnet 5",
+    "vendor": "Anthropic",
+    "status": "approved",
+    "context_window_tokens": 1000000,
+    "primary_source": "Anthropic Official API Platform (claude.com/pricing)"
+  },
+  "official_rate_card": {
+    "introductory_pricing_through_aug_31_2026": {
+      "input_per_1m_usd": 2.0,
+      "output_per_1m_usd": 10.0,
+      "cached_input_read_per_1m_usd": 0.2,
+      "cache_write_5m_per_1m_usd": 2.5,
+      "cache_write_1h_per_1m_usd": 4.0,
+      "batch_input_per_1m_usd": 1.0,
+      "batch_output_per_1m_usd": 5.0,
+      "prompt_cache_discount_pct": 90.0
+    },
+    "standard_pricing_from_sept_1_2026": {
+      "input_per_1m_usd": 3.0,
+      "output_per_1m_usd": 15.0,
+      "cached_input_read_per_1m_usd": 0.3,
+      "cache_write_5m_per_1m_usd": 3.75,
+      "cache_write_1h_per_1m_usd": 6.0,
+      "batch_input_per_1m_usd": 1.5,
+      "batch_output_per_1m_usd": 7.5,
+      "prompt_cache_discount_pct": 90.0
+    }
+  },
+  "fx_rates": {
+    "usd_to_inr": 96.567636,
+    "usd_to_ksh": 129.0,
+    "reference_date": "2026-07-24",
+    "source": "ECB Reference Rates"
+  },
+  "workload_definition": {
+    "tier": "Tier 2 Standard Review (BENCHMARK)",
+    "report_count": 10000,
+    "input_tokens_per_report": 35000,
+    "output_tokens_per_report": 3500,
+    "total_input_tokens": 350000000,
+    "total_output_tokens": 35000000
+  },
+  "unit_economics_audit": {
+    "introductory_period": {
+      "external_uncached_pricing": {
+        "per_report_usd": 0.105,
+        "monthly_10k_usd": 1050.0,
+        "monthly_10k_inr": 101396.02,
+        "monthly_10k_ksh": 135450.0,
+        "breakdown": {
+          "input_cost_usd": 0.07,
+          "output_cost_usd": 0.035
+        }
+      },
+      "sarvax_optimized_pricing_80pct_cached": {
+        "per_report_usd": 0.0546,
+        "monthly_10k_usd": 546.0,
+        "monthly_10k_inr": 52725.93,
+        "monthly_10k_ksh": 70434.0,
+        "breakdown": {
+          "cached_input_cost_usd": 0.0056,
+          "uncached_input_cost_usd": 0.014,
+          "total_input_cost_usd": 0.0196,
+          "output_cost_usd": 0.035
+        }
+      },
+      "savings_analysis": {
+        "monthly_savings_usd": 504.0,
+        "monthly_savings_inr": 48670.09,
+        "monthly_savings_ksh": 65016.0,
+        "cost_reduction_pct": 48.0
+      }
+    },
+    "standard_period": {
+      "external_uncached_pricing": {
+        "per_report_usd": 0.1575,
+        "monthly_10k_usd": 1575.0,
+        "monthly_10k_inr": 152094.03,
+        "monthly_10k_ksh": 203175.0,
+        "breakdown": {
+          "input_cost_usd": 0.105,
+          "output_cost_usd": 0.0525
+        }
+      },
+      "sarvax_optimized_pricing_80pct_cached": {
+        "per_report_usd": 0.0819,
+        "monthly_10k_usd": 819.0,
+        "monthly_10k_inr": 79088.89,
+        "monthly_10k_ksh": 105651.0,
+        "breakdown": {
+          "cached_input_cost_usd": 0.0084,
+          "uncached_input_cost_usd": 0.021,
+          "total_input_cost_usd": 0.0294,
+          "output_cost_usd": 0.0525
+        }
+      },
+      "savings_analysis": {
+        "monthly_savings_usd": 756.0,
+        "monthly_savings_inr": 73005.14,
+        "monthly_savings_ksh": 97524.0,
+        "cost_reduction_pct": 48.0
+      }
+    }
+  },
+  "verification_metadata": {
+    "official_doc_url": "https://claude.com/pricing",
+    "local_source_snapshot": "local_knowledge_repository/official_sources/anthropic_pricing.html",
+    "audit_timestamp": "2026-07-27T00:00:00Z",
+    "auditor": "SARVAX Intelligence Unit"
+  }
+}

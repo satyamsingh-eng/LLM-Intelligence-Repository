@@ -1,0 +1,77 @@
+{
+  "audit_metadata": {
+    "model_id": "gpt-5-5",
+    "model_name": "GPT-5.5",
+    "vendor": "OpenAI",
+    "context_window": 400000,
+    "verification_date": "2026-07-27",
+    "official_sources": [
+      "https://openai.com/api/pricing/",
+      "https://platform.openai.com/docs/models/gpt-5-5"
+    ],
+    "fx_rates": {
+      "usd_to_inr": "96.567636",
+      "usd_to_ksh": "129.0",
+      "reference_date": "2026-07-24",
+      "source": "ECB Reference Rates"
+    }
+  },
+  "rate_card": {
+    "uncached_input_usd_per_1m": 5.0,
+    "cached_input_usd_per_1m": 2.5,
+    "prompt_caching_discount_percent": 50.0,
+    "output_usd_per_1m": 30.0,
+    "batch_api": {
+      "uncached_input_usd_per_1m": 2.5,
+      "cached_input_usd_per_1m": 1.25,
+      "output_usd_per_1m": 15.0,
+      "discount_percent": 50.0
+    }
+  },
+  "benchmark_workload": {
+    "tier": "Tier 2 Standard Review",
+    "input_tokens_per_run": 35000,
+    "output_tokens_per_run": 3500,
+    "monthly_volume_reports": 10000
+  },
+  "external_uncached_pricing": {
+    "description": "Standard external pricing with 0% prompt caching",
+    "per_run": {
+      "input_cost_usd": 0.175,
+      "output_cost_usd": 0.105,
+      "total_cost_usd": 0.28,
+      "total_cost_inr": 27.0389
+    },
+    "monthly_10k_reports": {
+      "total_cost_usd": 2800.0,
+      "total_cost_inr": 270389.38,
+      "total_cost_ksh": 361200.0,
+      "total_cost_lakhs_inr": 2.7039
+    }
+  },
+  "sarvax_optimized_pricing": {
+    "description": "SARVAX optimized architecture with 80% prompt caching hit rate",
+    "caching_hit_rate_percent": 80.0,
+    "per_run": {
+      "cached_input_cost_usd": 0.07,
+      "uncached_input_cost_usd": 0.035,
+      "total_input_cost_usd": 0.105,
+      "output_cost_usd": 0.105,
+      "total_cost_usd": 0.21,
+      "total_cost_inr": 20.2792
+    },
+    "monthly_10k_reports": {
+      "total_cost_usd": 2100.0,
+      "total_cost_inr": 202792.04,
+      "total_cost_ksh": 270900.0,
+      "total_cost_lakhs_inr": 2.0279
+    }
+  },
+  "optimization_savings": {
+    "per_run_savings_usd": 0.07,
+    "monthly_savings_usd": 700.0,
+    "monthly_savings_inr": 67597.35,
+    "overall_cost_reduction_percent": 25.0,
+    "input_cost_reduction_percent": 40.0
+  }
+}

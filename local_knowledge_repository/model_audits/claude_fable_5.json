@@ -1,0 +1,74 @@
+{
+  "model_info": {
+    "id": "claude-fable-5",
+    "name": "Claude Fable 5",
+    "vendor": "Anthropic",
+    "official_documentation_source": "local_knowledge_repository/official_sources/anthropic_pricing.html",
+    "source_url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+    "release_date": "2026-06-09"
+  },
+  "official_vendor_rates_usd": {
+    "uncached_input_per_1m": 10.0,
+    "output_per_1m": 50.0,
+    "prompt_caching_hit_per_1m": 1.0,
+    "prompt_caching_discount_percentage": 90.0,
+    "cache_write_5m_per_1m": 12.5,
+    "cache_write_1h_per_1m": 20.0,
+    "batch_input_per_1m": 5.0,
+    "batch_output_per_1m": 25.0
+  },
+  "benchmark_workload": {
+    "tier": "Tier 2 Standard Reports",
+    "input_tokens_per_report": 35000,
+    "output_tokens_per_report": 3500,
+    "monthly_report_volume": 10000
+  },
+  "external_uncached_pricing": {
+    "per_report_breakdown_usd": {
+      "input_cost": 0.35,
+      "output_cost": 0.175,
+      "total_cost": 0.525
+    },
+    "monthly_10k_reports": {
+      "total_cost_usd": 5250.0,
+      "total_cost_inr": 506980.09,
+      "total_cost_lakhs_inr": 5.0698
+    }
+  },
+  "sarvax_optimized_pricing": {
+    "caching_assumptions": {
+      "prompt_caching_percentage": 80.0,
+      "cached_input_tokens": 28000,
+      "uncached_input_tokens": 7000
+    },
+    "per_report_breakdown_usd": {
+      "cached_input_cost": 0.028,
+      "uncached_input_cost": 0.07,
+      "total_input_cost": 0.098,
+      "output_cost": 0.175,
+      "total_cost": 0.273
+    },
+    "monthly_10k_reports": {
+      "total_cost_usd": 2730.0,
+      "total_cost_inr": 263629.65,
+      "total_cost_lakhs_inr": 2.6363
+    }
+  },
+  "cost_savings_summary": {
+    "monthly_savings_usd": 2520.0,
+    "monthly_savings_inr": 243350.44,
+    "monthly_savings_lakhs_inr": 2.4335,
+    "overall_cost_reduction_percentage": 48.0,
+    "input_cost_reduction_percentage": 72.0
+  },
+  "fx_reference": {
+    "usd_to_inr": 96.567636,
+    "source": "ECB Reference Rates",
+    "reference_date": "2026-07-24"
+  },
+  "verification_metadata": {
+    "audit_timestamp": "2026-07-27T00:00:00Z",
+    "verified_by": "Hermes Agent - Pricing Verification Engine",
+    "status": "VERIFIED_AND_APPROVED"
+  }
+}
