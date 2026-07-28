@@ -541,11 +541,11 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
       <div class="card-grid" style="grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:24px">
         <div class="card" style="background:#1c1c1e;color:#fff;border:1px solid #333336;border-radius:16px;padding:24px">
           <h4 style="color:#0071e3;margin-top:0">Planning inputs</h4>
-          <label class="control-label">Scenario preset<select id="simPreset" onchange="applyPreset()"></select></label>
+          <label class="control-label">Workload preset<select id="simPreset" onchange="applyPreset()"></select></label>
           <div class="sim-model-grid"><label class="control-label">Model A<select id="simModelA" onchange="runSim()"></select></label><label class="control-label">Model B<select id="simModelB" onchange="runSim()"></select></label></div>
-          <label class="range-label"><span>Input tokens per run</span><strong id="inTokLabel">75,000</strong><input type="range" id="simInTok" min="5000" max="300000" step="5000" value="75000" oninput="updateLabels();runSim()"></label>
-          <label class="range-label"><span>Output tokens per run</span><strong id="outTokLabel">8,000</strong><input type="range" id="simOutTok" min="500" max="50000" step="500" value="8000" oninput="updateLabels();runSim()"></label>
-          <label class="range-label"><span>Monthly execution volume</span><strong id="runsLabel">10,000 runs</strong><input type="range" id="simRuns" min="100" max="100000" step="100" value="10000" oninput="updateLabels();runSim()"></label>
+          <label class="range-label"><span>Input tokens per run</span><strong id="inTokLabel">75,000</strong><input type="range" id="simInTok" min="5000" max="300000" step="5000" value="75000" oninput="handleSliderInput()"></label>
+          <label class="range-label"><span>Output tokens per run</span><strong id="outTokLabel">8,000</strong><input type="range" id="simOutTok" min="500" max="50000" step="500" value="8000" oninput="handleSliderInput()"></label>
+          <label class="range-label"><span>Monthly execution volume</span><strong id="runsLabel">10,000 runs</strong><input type="range" id="simRuns" min="100" max="100000" step="100" value="10000" oninput="handleSliderInput()"></label>
           <p id="fxBasis" class="muted" style="margin-top:16px"></p>
           <div id="calcStatus" class="calc-status" role="status" aria-live="polite">Waiting for verified pricing data.</div>
         </div>
@@ -726,11 +726,36 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,su
         return `<option value="${p.id}">${p.name} (${p.vendor}) — $${p.input_usd} in / $${p.output_usd} out per 1M [${badge}]</option>`;
       }).join('');
       const a=document.getElementById('simModelA'),b=document.getElementById('simModelB');a.innerHTML=options;b.innerHTML=options;a.value='gemini-3-5-flash-lite';b.value='deepseek-v4-pro';
-      const presets=reportRuntime.calculator?.presets||[];const presetSelect=document.getElementById('simPreset');presetSelect.innerHTML=presets.map(p=>`<option value="${p.id}">${p.label} (${Number(p.input_tokens).toLocaleString()} in / ${Number(p.output_tokens).toLocaleString()} out)</option>`).join('');presetSelect.value=presets.find(p=>p.id==='portfolio')?'portfolio':presets[0]?.id||'';
+      const presets=reportRuntime.calculator?.presets||[];const presetSelect=document.getElementById('simPreset');
+      let presetOpts=`<option value="default">Default Workload (75,000 in / 8,000 out)</option>`;
+      presetOpts+=presets.map(p=>`<option value="${p.id}">${p.label} (${Number(p.input_tokens).toLocaleString()} in / ${Number(p.output_tokens).toLocaleString()} out)</option>`).join('');
+      presetSelect.innerHTML=presetOpts;presetSelect.value='default';
       const wf=document.getElementById('wfSelect');wf.innerHTML=Object.entries(workflows).map(([k,v])=>`<option value="${k}">${v.name}</option>`).join('');
     }
     function presetById(id){return (reportRuntime.calculator?.presets||[]).find(p=>p.id===id);}
-    function applyPreset(){const p=presetById(document.getElementById('simPreset').value)||reportRuntime.calculator?.presets?.[0];if(!p)return;document.getElementById('simInTok').value=p.input_tokens;document.getElementById('simOutTok').value=p.output_tokens;document.getElementById('simRuns').value=p.default_monthly_runs;updateLabels();runSim();}
+    function applyPreset(){
+      const val=document.getElementById('simPreset').value;
+      if(val==='default'){
+        document.getElementById('simInTok').value=75000;
+        document.getElementById('simOutTok').value=8000;
+        document.getElementById('simRuns').value=10000;
+      }else{
+        const p=presetById(val);if(!p)return;
+        document.getElementById('simInTok').value=p.input_tokens;
+        document.getElementById('simOutTok').value=p.output_tokens;
+        document.getElementById('simRuns').value=p.default_monthly_runs;
+      }
+      updateLabels();runSim();
+    }
+    function handleSliderInput(){
+      const curIn=Number(document.getElementById('simInTok').value);
+      const curOut=Number(document.getElementById('simOutTok').value);
+      const curRuns=Number(document.getElementById('simRuns').value);
+      const matched=(reportRuntime.calculator?.presets||[]).find(p=>p.input_tokens===curIn&&p.output_tokens===curOut&&p.default_monthly_runs===curRuns);
+      const sel=document.getElementById('simPreset');
+      if(matched){sel.value=matched.id;}else{sel.value='default';}
+      updateLabels();runSim();
+    }
     function updateLabels(){document.getElementById('inTokLabel').textContent=Number(document.getElementById('simInTok').value).toLocaleString('en-IN');document.getElementById('outTokLabel').textContent=Number(document.getElementById('simOutTok').value).toLocaleString('en-IN');document.getElementById('runsLabel').textContent=Number(document.getElementById('simRuns').value).toLocaleString('en-IN')+' runs';}
     function simulateUseCase(inTok,outTok,preset){document.getElementById('simInTok').value=inTok;document.getElementById('simOutTok').value=outTok;if(presetById(preset))document.getElementById('simPreset').value=preset;updateLabels();runSim();document.getElementById('simulator').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}
     function clearCalculator(reason){

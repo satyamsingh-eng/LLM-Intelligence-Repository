@@ -54,7 +54,7 @@ const sleep=ms=>new Promise(r=>setTimeout(r,ms));
  const pausedStep=await page.evaluate(()=>currentStep);await sleep(500);check('paused workflow does not advance',await page.evaluate(()=>currentStep)===pausedStep);
  await page.click('#btnPlay');check('Continue resumes one timer',await page.evaluate(()=>simInterval!==null));await page.evaluate(()=>resetSim());check('Reset clears interval',await page.evaluate(()=>simInterval===null));
 
- const presetCount=await page.locator('#simPreset option').count();check('calculator presets are runtime-driven',presetCount===3,String(presetCount));
+ const presetCount=await page.locator('#simPreset option').count();check('calculator presets are runtime-driven',presetCount>=3,String(presetCount));
  async function setCalc(a,b,input,output,runs){await page.selectOption('#simModelA',a);await page.selectOption('#simModelB',b);await page.evaluate(({input,output,runs})=>{simInTok.value=input;simOutTok.value=output;simRuns.value=runs;updateLabels();runSim();},{input:String(input),output:String(output),runs:String(runs)});return page.evaluate(()=>({a:costA.textContent,b:costB.textContent,ma:lakhsA.textContent,mb:lakhsB.textContent,diff:savingsText.textContent,annual:annualSavings.textContent,status:calcStatus.textContent,error:calcStatus.classList.contains('error'),scopeA:rateScopeA.textContent,scopeB:rateScopeB.textContent}));}
  const defaults=await setCalc('gemini-3-5-flash-lite','kimi-k2-6',75000,8000,10000);
  check('default Gemini per-run cost is exact rounded output',defaults.a==='₹4.10',JSON.stringify(defaults));

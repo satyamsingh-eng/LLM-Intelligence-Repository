@@ -2,7 +2,7 @@ const pptxgen = require('pptxgenjs');
 const fs = require('fs');
 const path = require('path');
 
-console.log("Rebuilding Arvocap Deck: Integrating official SarvaX.ai logo PNG & heavy two-tone headline typography...");
+console.log("Rebuilding Arvocap Deck: Updating tier page ranges (1-3, 3-6, 7-12) while preserving all pricing and layout...");
 
 const pres = new pptxgen();
 
@@ -36,7 +36,6 @@ const FONT = {
 
 // Helper: Add Standard Slide Header with Status Pill Badge
 function addSlideHeader(slide, categoryText, titleText) {
-  // Category Pill Badge
   slide.addShape(pres.ShapeType.roundRect, {
     x: 0.8, y: 0.38, w: 4.8, h: 0.30, rectRadius: 0.15,
     fill: { color: COLOR.BADGE_BG }, line: { color: COLOR.BLUE, width: 1 }
@@ -47,7 +46,6 @@ function addSlideHeader(slide, categoryText, titleText) {
     charSpacing: 1.2, margin: 0
   });
 
-  // Title Text
   slide.addText(titleText, {
     x: 0.8, y: 0.75, w: 11.733, h: 0.55,
     fontFace: FONT.TITLE, fontSize: 23, bold: true, color: COLOR.BLACK,
@@ -84,13 +82,12 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
 }
 
 // =========================================================================
-// SLIDE 1: COVER SLIDE WITH LOGO & HEAVY TWO-TONE HEADLINE
+// SLIDE 1: COVER SLIDE
 // =========================================================================
 {
   const slide = pres.addSlide();
   slide.background = { color: COLOR.CANVAS };
 
-  // Top Status Badge
   slide.addShape(pres.ShapeType.roundRect, {
     x: 0.8, y: 0.5, w: 5.2, h: 0.32, rectRadius: 0.16,
     fill: { color: COLOR.BADGE_BG }, line: { color: COLOR.BLUE, width: 1 }
@@ -100,12 +97,10 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fontFace: FONT.TITLE, fontSize: 9.5, bold: true, color: COLOR.BLUE, charSpacing: 1.2, margin: 0
   });
 
-  // Embedded Logo
   if (fs.existsSync(LOGO_PATH)) {
     slide.addImage({ path: LOGO_PATH, x: 9.5, y: 0.45, w: 3.0, h: 0.9 });
   }
 
-  // Giant Heavy Two-Tone Headline (from Image 2 pattern)
   slide.addText([
     { text: "AI THAT ", options: { bold: true, color: COLOR.BLACK } },
     { text: "EXECUTES.", options: { bold: true, color: COLOR.BLUE } }
@@ -124,7 +119,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fontFace: FONT.BODY, fontSize: 13, color: COLOR.TEXT_SECONDARY, margin: 0
   });
 
-  // Brief Container
   slide.addShape(pres.ShapeType.roundRect, {
     x: 0.8, y: 3.1, w: 11.733, h: 3.3, rectRadius: 0.12,
     fill: { color: COLOR.CARD_BG }, line: { color: COLOR.CARD_BORDER, width: 1 }
@@ -144,7 +138,7 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
 }
 
 // =========================================================================
-// SLIDE 2: THE BUSINESS CHALLENGE
+// SLIDE 2: THE BUSINESS CHALLENGE (UPDATED 3-6 PAGE BENCHMARK)
 // =========================================================================
 {
   const slide = pres.addSlide();
@@ -221,7 +215,7 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fontFace: FONT.TITLE, fontSize: 10.5, bold: true, color: COLOR.BLUE, charSpacing: 1.2, margin: 0
   });
 
-  slide.addText("1. Page Count Drives Token Volume: A 2-page summary uses ~15,000 tokens, while a 5-page review uses ~35,000 tokens.\n2. Why We Anchor on Tier 2 (Standard Review): Without exact sample PDFs, we establish Tier 2 (3–5 Pages @ $950/mo) as our baseline benchmark.\n3. Direct Email & WhatsApp Dispatch: Gemini Flash provides native OCR vision for scanned statements, with automatic delivery via Email & WhatsApp.", {
+  slide.addText("1. Page Count Drives Token Volume: A 1–3 page summary uses ~15,000 tokens, while a 3–6 page review uses ~35,000 tokens.\n2. Why We Anchor on Tier 2 (Standard Review): Without exact sample PDFs, we establish Tier 2 (3–6 Pages @ $950/mo) as our baseline benchmark.\n3. Direct Email & WhatsApp Dispatch: Gemini Flash provides native OCR vision for scanned statements, with automatic delivery via Email & WhatsApp.", {
     x: 1.1, y: 4.20, w: 11.133, h: 1.5,
     fontFace: FONT.BODY, fontSize: 11, color: COLOR.TEXT_BODY, lineSpacing: 20, margin: 0
   });
@@ -236,7 +230,7 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
 }
 
 // =========================================================================
-// SLIDE 3: LOCKED COMMERCIAL PRICING TIERS
+// SLIDE 3: LOCKED COMMERCIAL PRICING TIERS (UPDATED PAGE RANGES: 1-3, 3-6, 7-12)
 // =========================================================================
 {
   const slide = pres.addSlide();
@@ -256,7 +250,7 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     x: 1.0, y: 1.68, w: cardW - 0.4, h: 0.25,
     fontFace: FONT.TITLE, fontSize: 10, bold: true, color: COLOR.TEXT_MUTED, charSpacing: 1.2, margin: 0
   });
-  slide.addText("1 – 2 Pages", {
+  slide.addText("1 – 3 Pages", {
     x: 1.0, y: 1.95, w: cardW - 0.4, h: 0.4,
     fontFace: FONT.TITLE, fontSize: 22, bold: true, color: COLOR.BLACK, margin: 0
   });
@@ -278,7 +272,7 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     x: 5.044, y: 1.68, w: cardW - 0.4, h: 0.25,
     fontFace: FONT.TITLE, fontSize: 10, bold: true, color: COLOR.BLUE, charSpacing: 1.2, margin: 0
   });
-  slide.addText("3 – 5 Pages", {
+  slide.addText("3 – 6 Pages", {
     x: 5.044, y: 1.95, w: cardW - 0.4, h: 0.4,
     fontFace: FONT.TITLE, fontSize: 22, bold: true, color: COLOR.BLACK, margin: 0
   });
@@ -300,7 +294,7 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     x: 9.088, y: 1.68, w: cardW - 0.4, h: 0.25,
     fontFace: FONT.TITLE, fontSize: 10, bold: true, color: COLOR.TEXT_MUTED, charSpacing: 1.2, margin: 0
   });
-  slide.addText("8 – 12 Pages", {
+  slide.addText("7 – 12 Pages", {
     x: 9.088, y: 1.95, w: cardW - 0.4, h: 0.4,
     fontFace: FONT.TITLE, fontSize: 22, bold: true, color: COLOR.BLACK, margin: 0
   });
@@ -313,17 +307,17 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fontFace: FONT.BODY, fontSize: 10, color: COLOR.TEXT_BODY, lineSpacing: 19, margin: 0
   });
 
-  addSlideFooter(slide, "03", "Let's inspect the visual structure of a Standard 3-5 Page Client Report.");
+  addSlideFooter(slide, "03", "Let's inspect the visual structure of a Standard 3-6 Page Client Report.");
 }
 
 // =========================================================================
-// SLIDE 4: REPORT WIREFRAME (SNUG & BOLD)
+// SLIDE 4: REPORT WIREFRAME (3-6 PAGES)
 // =========================================================================
 {
   const slide = pres.addSlide();
   slide.background = { color: COLOR.CANVAS };
 
-  addSlideHeader(slide, "REPORT TEMPLATE", "Anatomy of a Standard 3-5 Page Client Portfolio Report");
+  addSlideHeader(slide, "REPORT TEMPLATE", "Anatomy of a Standard 3-6 Page Client Portfolio Report");
 
   const colW = 2.22;
   const colH = 4.9;
@@ -364,12 +358,12 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
   slide.addText("Market Commentary", { x: 8.09, y: 1.95, w: colW - 0.3, h: 0.45, fontFace: FONT.TITLE, fontSize: 15, bold: true, color: COLOR.BLACK });
   slide.addText("• Kimi K3 Financial Logic\n• Kenyan Fixed Income Trends\n• Central Bank Rate Impacts\n• Risk & Outlook Brief", { x: 8.09, y: 2.45, w: colW - 0.3, h: 3.6, fontFace: FONT.BODY, fontSize: 10.5, color: COLOR.TEXT_BODY, lineSpacing: 20 });
 
-  // Page 5
+  // Page 5-6
   slide.addShape(pres.ShapeType.roundRect, {
     x: 10.32, y: 1.45, w: colW, h: colH, rectRadius: 0.12,
     fill: { color: COLOR.CARD_BG }, line: { color: COLOR.BLUE, width: 2 }
   });
-  slide.addText("PAGE 5 (CONTROL)", { x: 10.47, y: 1.68, w: colW - 0.3, h: 0.22, fontFace: FONT.TITLE, fontSize: 10, bold: true, color: COLOR.BLUE, charSpacing: 1.0 });
+  slide.addText("PAGES 5–6 (CONTROL)", { x: 10.47, y: 1.68, w: colW - 0.3, h: 0.22, fontFace: FONT.TITLE, fontSize: 10, bold: true, color: COLOR.BLUE, charSpacing: 1.0 });
   slide.addText("Advisor Actions", { x: 10.47, y: 1.95, w: colW - 0.3, h: 0.45, fontFace: FONT.TITLE, fontSize: 15, bold: true, color: COLOR.BLACK });
   slide.addText("• Rebalancing Suggestions\n• Recommended Next Steps\n• Assigned IFA Contact Details\n• Click-to-Approve Gate", { x: 10.47, y: 2.45, w: colW - 0.3, h: 3.6, fontFace: FONT.BODY, fontSize: 10.5, color: COLOR.TEXT_BODY, lineSpacing: 20 });
 
@@ -497,7 +491,7 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
 }
 
 // =========================================================================
-// SLIDE 8: THE SMART MULTI-MODEL CASCADE ENGINE (SNUG & BOLD)
+// SLIDE 8: THE SMART MULTI-MODEL CASCADE ENGINE
 // =========================================================================
 {
   const slide = pres.addSlide();
@@ -600,7 +594,7 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
 }
 
 // =========================================================================
-// SLIDE 9: ULTRA-PREMIUM BEAUTIFIED CACHING & PLATFORM ECONOMICS ($950/MO MATCH WITH FOOTNOTE)
+// SLIDE 9: ULTRA-PREMIUM BEAUTIFIED CACHING & PLATFORM ECONOMICS ($950/MO MATCH)
 // =========================================================================
 {
   const slide = pres.addSlide();
@@ -617,19 +611,16 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fill: { color: COLOR.CARD_BG }, line: { color: COLOR.CARD_BORDER, width: 1 }
   });
 
-  // Top Category Badge
   slide.addText("DIRECT VENDOR UNCACHED RATE", {
     x: 1.1, y: 1.70, w: cardW - 0.6, h: 0.25,
     fontFace: FONT.TITLE, fontSize: 9.5, bold: true, color: COLOR.TEXT_MUTED, charSpacing: 1.5, margin: 0
   });
 
-  // Main Price Display
   slide.addText("$1,575 / Month", {
     x: 1.1, y: 1.95, w: cardW - 0.6, h: 0.55,
     fontFace: FONT.TITLE, fontSize: 32, bold: true, color: COLOR.BLACK, margin: 0
   });
 
-  // Currency Sub-pill
   slide.addShape(pres.ShapeType.roundRect, {
     x: 1.1, y: 2.58, w: 4.2, h: 0.32, rectRadius: 0.06,
     fill: { color: COLOR.WHITE }, line: { color: COLOR.CARD_BORDER, width: 1 }
@@ -639,11 +630,9 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fontFace: FONT.BODY, fontSize: 10, bold: true, color: COLOR.TEXT_SECONDARY, margin: 0
   });
 
-  // Structured Micro-Cards (3 Rows)
   const rowY = 3.05;
   const itemH = 0.95;
 
-  // Row 1
   slide.addShape(pres.ShapeType.roundRect, {
     x: 1.1, y: rowY, w: cardW - 0.6, h: itemH, rectRadius: 0.08,
     fill: { color: COLOR.WHITE }, line: { color: COLOR.CARD_BORDER, width: 1 }
@@ -651,7 +640,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
   slide.addText("Standalone Direct API Pricing", { x: 1.25, y: rowY + 0.12, w: cardW - 0.9, h: 0.25, fontFace: FONT.TITLE, fontSize: 11, bold: true, color: COLOR.BLACK, margin: 0 });
   slide.addText("$3.00/1M In ($0.105) + $15.00/1M Out ($0.0525) = $0.1575 / report.", { x: 1.25, y: rowY + 0.40, w: cardW - 0.9, h: 0.45, fontFace: FONT.BODY, fontSize: 9.5, color: COLOR.TEXT_SECONDARY, margin: 0 });
 
-  // Row 2
   slide.addShape(pres.ShapeType.roundRect, {
     x: 1.1, y: rowY + 1.1, w: cardW - 0.6, h: itemH, rectRadius: 0.08,
     fill: { color: COLOR.WHITE }, line: { color: COLOR.CARD_BORDER, width: 1 }
@@ -659,7 +647,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
   slide.addText("Zero Ingestion Optimization", { x: 1.25, y: rowY + 1.22, w: cardW - 0.9, h: 0.25, fontFace: FONT.TITLE, fontSize: 11, bold: true, color: COLOR.BLACK, margin: 0 });
   slide.addText("Buying direct from vendor API charges full rate on every run.", { x: 1.25, y: rowY + 1.50, w: cardW - 0.9, h: 0.45, fontFace: FONT.BODY, fontSize: 9.5, color: COLOR.TEXT_SECONDARY, margin: 0 });
 
-  // Row 3
   slide.addShape(pres.ShapeType.roundRect, {
     x: 1.1, y: rowY + 2.2, w: cardW - 0.6, h: itemH, rectRadius: 0.08,
     fill: { color: COLOR.WHITE }, line: { color: COLOR.CARD_BORDER, width: 1 }
@@ -674,7 +661,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fill: { color: COLOR.CARD_BG }, line: { color: COLOR.BLUE, width: 2 }
   });
 
-  // Top Right Highlight Pill Badge
   slide.addShape(pres.ShapeType.roundRect, {
     x: 9.5, y: 1.65, w: 2.7, h: 0.3, rectRadius: 0.15,
     fill: { color: COLOR.BADGE_BG }, line: { color: COLOR.BLUE, width: 1 }
@@ -684,19 +670,16 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fontFace: FONT.TITLE, fontSize: 9, bold: true, color: COLOR.BLUE, align: 'center', charSpacing: 1.0, margin: 0
   });
 
-  // Top Category Badge
   slide.addText("SARVAX MANAGED TIER 2 PACKAGE", {
     x: 7.166, y: 1.70, w: 2.2, h: 0.25,
     fontFace: FONT.TITLE, fontSize: 9.5, bold: true, color: COLOR.BLUE, charSpacing: 1.2, margin: 0
   });
 
-  // Main Price Display
   slide.addText("$950 / Month", {
     x: 7.166, y: 1.95, w: cardW - 0.6, h: 0.55,
     fontFace: FONT.TITLE, fontSize: 32, bold: true, color: COLOR.GREEN, margin: 0
   });
 
-  // Currency Sub-pill
   slide.addShape(pres.ShapeType.roundRect, {
     x: 7.166, y: 2.58, w: 4.2, h: 0.32, rectRadius: 0.06,
     fill: { color: COLOR.BADGE_BG }, line: { color: COLOR.BLUE, width: 1 }
@@ -706,8 +689,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fontFace: FONT.BODY, fontSize: 10, bold: true, color: COLOR.BLUE, margin: 0
   });
 
-  // Structured Micro-Cards (3 Rows - REFINED BUSINESS COPY)
-  // Row 1
   slide.addShape(pres.ShapeType.roundRect, {
     x: 7.166, y: rowY, w: cardW - 0.6, h: itemH, rectRadius: 0.08,
     fill: { color: COLOR.WHITE }, line: { color: COLOR.BLUE, width: 1 }
@@ -715,7 +696,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
   slide.addText("All-Inclusive Managed SaaS", { x: 7.316, y: rowY + 0.12, w: cardW - 0.9, h: 0.25, fontFace: FONT.TITLE, fontSize: 11, bold: true, color: COLOR.BLACK, margin: 0 });
   slide.addText("Fully managed report generation, quality checks, and investor distribution.", { x: 7.316, y: rowY + 0.40, w: cardW - 0.9, h: 0.45, fontFace: FONT.BODY, fontSize: 9.5, color: COLOR.TEXT_BODY, lineSpacing: 14, margin: 0 });
 
-  // Row 2
   slide.addShape(pres.ShapeType.roundRect, {
     x: 7.166, y: rowY + 1.1, w: cardW - 0.6, h: itemH, rectRadius: 0.08,
     fill: { color: COLOR.WHITE }, line: { color: COLOR.BLUE, width: 1 }
@@ -723,7 +703,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
   slide.addText("Kimi K3 SOTA Banking Engine", { x: 7.316, y: rowY + 1.22, w: cardW - 0.9, h: 0.25, fontFace: FONT.TITLE, fontSize: 11, bold: true, color: COLOR.BLACK, margin: 0 });
   slide.addText("Includes #1 SOTA TAU Banking reasoning + Gemini OCR Vision reader.", { x: 7.316, y: rowY + 1.50, w: cardW - 0.9, h: 0.45, fontFace: FONT.BODY, fontSize: 9.5, color: COLOR.TEXT_BODY, lineSpacing: 14, margin: 0 });
 
-  // Row 3
   slide.addShape(pres.ShapeType.roundRect, {
     x: 7.166, y: rowY + 2.2, w: cardW - 0.6, h: itemH, rectRadius: 0.08,
     fill: { color: COLOR.WHITE }, line: { color: COLOR.BLUE, width: 1 }
@@ -745,7 +724,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
 
   const rowH = 1.55;
 
-  // Row 1
   slide.addShape(pres.ShapeType.roundRect, {
     x: 0.8, y: 1.45, w: 11.733, h: rowH, rectRadius: 0.12,
     fill: { color: COLOR.CARD_BG }, line: { color: COLOR.CARD_BORDER, width: 1 }
@@ -759,7 +737,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fontFace: FONT.BODY, fontSize: 11, color: COLOR.TEXT_BODY, lineSpacing: 18, margin: 0
   });
 
-  // Row 2 (EMAIL & WHATSAPP DISPATCH ONLY)
   slide.addShape(pres.ShapeType.roundRect, {
     x: 0.8, y: 3.15, w: 11.733, h: rowH, rectRadius: 0.12,
     fill: { color: COLOR.CARD_BG }, line: { color: COLOR.CARD_BORDER, width: 1 }
@@ -773,7 +750,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fontFace: FONT.BODY, fontSize: 11, color: COLOR.TEXT_BODY, lineSpacing: 18, margin: 0
   });
 
-  // Row 3 (ENCRYPTED PRIVACY INTEGRATED)
   slide.addShape(pres.ShapeType.roundRect, {
     x: 0.8, y: 4.85, w: 11.733, h: rowH, rectRadius: 0.12,
     fill: { color: COLOR.CARD_BG }, line: { color: COLOR.CARD_BORDER, width: 1 }
@@ -802,7 +778,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
   const cardW = 5.666;
   const cardH = 4.9;
 
-  // Left Card: ROI
   slide.addShape(pres.ShapeType.roundRect, {
     x: 0.8, y: 1.45, w: cardW, h: cardH, rectRadius: 0.12,
     fill: { color: COLOR.CARD_BG }, line: { color: COLOR.CARD_BORDER, width: 1 }
@@ -824,7 +799,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fontFace: FONT.BODY, fontSize: 10.5, color: COLOR.TEXT_BODY, lineSpacing: 20, margin: 0
   });
 
-  // Right Card: Recommended Package & Call Action Items
   slide.addShape(pres.ShapeType.roundRect, {
     x: 6.866, y: 1.45, w: cardW, h: cardH, rectRadius: 0.12,
     fill: { color: COLOR.CARD_BG }, line: { color: COLOR.BLUE, width: 2 }
@@ -833,9 +807,9 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     x: 7.166, y: 1.68, w: cardW - 0.6, h: 0.3,
     fontFace: FONT.TITLE, fontSize: 11, bold: true, color: COLOR.BLUE, charSpacing: 1.2, margin: 0
   });
-  slide.addText("Tier 2: Standard Package", {
+  slide.addText("Tier 2: Standard Package (3–6 Pages)", {
     x: 7.166, y: 2.0, w: cardW - 0.6, h: 0.45,
-    fontFace: FONT.TITLE, fontSize: 28, bold: true, color: COLOR.GREEN, margin: 0
+    fontFace: FONT.TITLE, fontSize: 24, bold: true, color: COLOR.GREEN, margin: 0
   });
   slide.addText("~$950 / Mo (~122,500 KSh / ₹91,700/mo) for 10k Reports", {
     x: 7.166, y: 2.5, w: cardW - 0.6, h: 0.3,
@@ -850,18 +824,16 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
 }
 
 // =========================================================================
-// SLIDE 12: TAILORED C3ALABS CLIENT CLOSING SLIDE WITH EMBEDDED LOGO
+// SLIDE 12: TAILORED C3ALABS CLIENT CLOSING SLIDE
 // =========================================================================
 {
   const slide = pres.addSlide();
   slide.background = { color: COLOR.CANVAS };
 
-  // Embedded Logo centered at top
   if (fs.existsSync(LOGO_PATH)) {
     slide.addImage({ path: LOGO_PATH, x: 5.0, y: 0.45, w: 3.333, h: 1.0 });
   }
 
-  // Top Title
   slide.addText("C3aLabs, Inc.  ×  Arvocap Asset Managers", {
     x: 0.8, y: 1.55, w: 11.733, h: 0.5,
     fontFace: FONT.TITLE, fontSize: 28, bold: true, color: COLOR.BLACK, align: 'center', margin: 0
@@ -872,7 +844,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fontFace: FONT.BODY, fontSize: 14, color: COLOR.BLUE, align: 'center', margin: 0
   });
 
-  // Middle Main Card Container
   slide.addShape(pres.ShapeType.roundRect, {
     x: 1.5, y: 2.55, w: 10.333, h: 2.7, rectRadius: 0.12,
     fill: { color: COLOR.CARD_BG }, line: { color: COLOR.CARD_BORDER, width: 1 }
@@ -898,7 +869,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fontFace: FONT.BODY, fontSize: 10, color: COLOR.BLUE, align: 'center', margin: 0
   });
 
-  // Quote Banner Container (Dark Card)
   slide.addShape(pres.ShapeType.roundRect, {
     x: 1.5, y: 5.4, w: 10.333, h: 0.9, rectRadius: 0.08,
     fill: { color: COLOR.CARD_DARK }
@@ -909,7 +879,6 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
     fontFace: FONT.TITLE, fontSize: 13, italic: true, bold: true, color: COLOR.WHITE, align: 'center', margin: 0
   });
 
-  // Bottom Brand Tag
   slide.addText("SarvaX.ai — Powered by C3ALabs", {
     x: 0.8, y: 6.95, w: 11.733, h: 0.3,
     fontFace: FONT.BODY, fontSize: 9, bold: true, color: COLOR.TEXT_MUTED, align: 'center', margin: 0
@@ -920,7 +889,7 @@ function addSlideFooter(slide, slideNumStr, transitionBridge) {
 const outputPath = path.join(__dirname, 'Arvocap_10k_Report_Pilot_Deck.pptx');
 pres.writeFile({ fileName: outputPath })
   .then(fileName => {
-    console.log(`\n✅ Heavy Two-Tone Headline & Logo Embedded Presentation written directly to: ${fileName}`);
+    console.log(`\n✅ Presentation with updated page ranges (1-3, 3-6, 7-12) written directly to: ${fileName}`);
   })
   .catch(err => {
     console.error("❌ Error writing presentation:", err);
