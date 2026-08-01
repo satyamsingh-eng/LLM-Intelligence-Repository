@@ -1,0 +1,1476 @@
+{
+  "meta": {
+    "title": "SARVAX Enterprise Commercial Architecture",
+    "subtitle": "One enterprise contract. Multiple agents. Client-funded execution.",
+    "perspective": "Avantika Sahay commercial and profit-center lens",
+    "version": "v0.2 leadership review",
+    "status": "Internal proposal — no client rate card approved",
+    "asOf": "2026-08-01",
+    "marketReportHref": "../index.html"
+  },
+  "decision": {
+    "headline": "Credits are not the enterprise platform price.",
+    "body": "The enterprise agreement pays SARVAX for the operating layer, named access, approved capability suites and workflow governance. Model inference, OCR, transcription, meeting-bot usage, storage, premium data and paid third-party services are separate variable costs paid economically by the client.",
+    "primaryRoute": "Where technically feasible, the client contracts with or pays the underlying provider directly through client-owned accounts.",
+    "fallbackRoute": "A capped SARVAX-managed pass-through budget may be offered only when direct payment is impractical. It is an alternative, not the default and not represented as an automated wallet feature.",
+    "salesRule": "Never quote credits as if they include the platform, and never sell every catalog agent as a separate bot SKU."
+  },
+  "kpis": [
+    {
+      "value": "12",
+      "label": "catalog agents",
+      "detail": "Listed individually; readiness still requires Product and QA approval."
+    },
+    {
+      "value": "5",
+      "label": "capability suites",
+      "detail": "Agents are grouped around enterprise outcomes."
+    },
+    {
+      "value": "6",
+      "label": "commercial layers",
+      "detail": "Platform, identity, suites, volume, client-funded usage and implementation."
+    },
+    {
+      "value": "1",
+      "label": "Workflow 2.0 system",
+      "detail": "Coordinates many agents, tools, approvals and handoffs."
+    }
+  ],
+  "commercialLayers": [
+    {
+      "id": "platform",
+      "number": "01",
+      "title": "Enterprise platform agreement",
+      "buyerPaysFor": "The SARVAX operating layer, administration, workflow runtime, standard governance and support.",
+      "meter": "Annual organization commitment",
+      "notIncluded": "Variable provider consumption and bespoke implementation."
+    },
+    {
+      "id": "identity",
+      "number": "02",
+      "title": "Named advisor entitlements",
+      "buyerPaysFor": "Identifiable access for every advisor who directly uses SARVAX, with accountable approvals and audit ownership.",
+      "meter": "Named advisors plus bounded operations and collaborator roles",
+      "notIncluded": "This is not the only enterprise pricing meter."
+    },
+    {
+      "id": "suites",
+      "number": "03",
+      "title": "Capability suites",
+      "buyerPaysFor": "A business outcome delivered by multiple catalog agents rather than individual bot SKUs.",
+      "meter": "Activated enterprise suites",
+      "notIncluded": "Catalog presence is not production-readiness proof."
+    },
+    {
+      "id": "volume",
+      "number": "04",
+      "title": "Workflow or business-volume commitment",
+      "buyerPaysFor": "Centralized work that is not fairly priced only by advisor seats.",
+      "meter": "Meetings, documents, KYC cases, reports or completed workflows",
+      "notIncluded": "Raw tokens do not lead the client conversation."
+    },
+    {
+      "id": "usage",
+      "number": "05",
+      "title": "Client-funded variable execution",
+      "buyerPaysFor": "Usage of models, OCR, transcription, meeting capture, storage, premium data and paid APIs.",
+      "meter": "Direct provider invoice or client-owned account; capped pass-through only by exception",
+      "notIncluded": "No included-credit promise and no unproven automated wallet claim."
+    },
+    {
+      "id": "implementation",
+      "number": "06",
+      "title": "Implementation statement of work",
+      "buyerPaysFor": "Discovery, configuration, custom workflows, custom agents, connectors, migrations, UAT, governance and unusual support.",
+      "meter": "Milestone-based SOW",
+      "notIncluded": "No free implementation or open-ended custom work."
+    }
+  ],
+  "suites": [
+    {
+      "id": "relationship",
+      "title": "Relationship Intelligence Suite",
+      "outcome": "Turns meetings and relationship history into advisor preparation, follow-up and next-best actions.",
+      "agents": [
+        "A01",
+        "A02",
+        "A03"
+      ],
+      "enterpriseMeter": "Named advisors plus meeting or completed-workflow commitment"
+    },
+    {
+      "id": "portfolio",
+      "title": "Portfolio & Market Intelligence Suite",
+      "outcome": "Combines portfolio context with market events to prepare advisor-reviewed analysis.",
+      "agents": [
+        "A04",
+        "A05"
+      ],
+      "enterpriseMeter": "Portfolios, reports or review cycles"
+    },
+    {
+      "id": "compliance",
+      "title": "Compliance & Document Execution Suite",
+      "outcome": "Processes documents, validates KYC evidence and routes exceptions for controlled review.",
+      "agents": [
+        "A06",
+        "A07",
+        "A08"
+      ],
+      "enterpriseMeter": "Documents, KYC cases or regulated review volume"
+    },
+    {
+      "id": "growth",
+      "title": "Growth & Operations Suite",
+      "outcome": "Coordinates governed campaigns, pipeline follow-through and team operating visibility.",
+      "agents": [
+        "A09",
+        "A10",
+        "A12"
+      ],
+      "enterpriseMeter": "Business unit, campaign, pipeline or operating volume"
+    },
+    {
+      "id": "execution",
+      "title": "Workflow Execution Suite",
+      "outcome": "Orchestrates the full process across agents, connectors, approvals, branches, retries and system writeback.",
+      "agents": [
+        "A11"
+      ],
+      "enterpriseMeter": "Production workflows and completed workflow runs"
+    }
+  ],
+  "agents": [
+    {
+      "id": "A01",
+      "name": "Pre-Meeting Analysis Agent",
+      "domain": "Relationship intelligence",
+      "purpose": "Compiles available CRM, email, meeting and document context into a preparation brief.",
+      "roleInWorkflow": "Starts a client-service workflow before the meeting.",
+      "readiness": "Catalog scope — Product/QA approval required"
+    },
+    {
+      "id": "A02",
+      "name": "Post-Meeting Analysis Agent",
+      "domain": "Relationship intelligence",
+      "purpose": "Extracts decisions, action items, follow-up drafts and proposed CRM changes from meeting artifacts.",
+      "roleInWorkflow": "Creates the approval package after a meeting.",
+      "readiness": "Catalog scope — Product/QA approval required"
+    },
+    {
+      "id": "A03",
+      "name": "Client Intelligence Strategist",
+      "domain": "Relationship intelligence",
+      "purpose": "Synthesizes longitudinal client context, service risks and opportunity signals for advisor review.",
+      "roleInWorkflow": "Combines relationship evidence into a recommended plan.",
+      "readiness": "Catalog scope — Product/QA approval required"
+    },
+    {
+      "id": "A04",
+      "name": "Portfolio Analysis Agent",
+      "domain": "Portfolio intelligence",
+      "purpose": "Evaluates portfolio performance, risk and asset allocation for advisor validation.",
+      "roleInWorkflow": "Runs in parallel with market and compliance analysis.",
+      "readiness": "Catalog scope — Product/QA approval required"
+    },
+    {
+      "id": "A05",
+      "name": "Market Intelligence Agent",
+      "domain": "Market intelligence",
+      "purpose": "Tracks relevant market events and maps them to client or portfolio context.",
+      "roleInWorkflow": "Supplies current external context to review workflows.",
+      "readiness": "Catalog scope — Product/QA approval required"
+    },
+    {
+      "id": "A06",
+      "name": "Document Intelligence Agent",
+      "domain": "Document processing",
+      "purpose": "Reads documents, extracts key data and prepares controlled system auto-population.",
+      "roleInWorkflow": "Converts unstructured documents into structured workflow inputs.",
+      "readiness": "Catalog scope — Product/QA approval required"
+    },
+    {
+      "id": "A07",
+      "name": "KYC Intelligence Agent",
+      "domain": "Compliance",
+      "purpose": "Verifies client documents and prepares onboarding exceptions for reviewer action.",
+      "roleInWorkflow": "Prepares the KYC case and routes unresolved evidence.",
+      "readiness": "Catalog scope — Product/QA approval required"
+    },
+    {
+      "id": "A08",
+      "name": "Compliance Audit Agent",
+      "domain": "Compliance",
+      "purpose": "Detects compliance gaps and prepares exceptions for regulatory review.",
+      "roleInWorkflow": "Acts as an evaluator before approval or escalation.",
+      "readiness": "Catalog scope — Product/QA approval required"
+    },
+    {
+      "id": "A09",
+      "name": "Campaign Intelligence Agent",
+      "domain": "Growth",
+      "purpose": "Identifies governed audiences and prepares targeted outreach inputs for approval.",
+      "roleInWorkflow": "Uses approved intelligence to create campaign audiences.",
+      "readiness": "Catalog scope — Product/QA approval required"
+    },
+    {
+      "id": "A10",
+      "name": "Pipeline Monitoring Agent",
+      "domain": "Operations",
+      "purpose": "Tracks opportunities, escalations and pending actions across the service pipeline.",
+      "roleInWorkflow": "Owns follow-through after agents create actions.",
+      "readiness": "Catalog scope — Product/QA approval required"
+    },
+    {
+      "id": "A11",
+      "name": "Workflow Automation Agent",
+      "domain": "Execution orchestration",
+      "purpose": "Coordinates recurring multi-step execution across agents, systems and approval gates.",
+      "roleInWorkflow": "Controls sequencing, branches, handoffs and completion tracking.",
+      "readiness": "Catalog scope — Product/QA approval required"
+    },
+    {
+      "id": "A12",
+      "name": "Advisor Performance Agent",
+      "domain": "Operations",
+      "purpose": "Measures advisor productivity, workload and team performance for leadership review.",
+      "roleInWorkflow": "Closes the management loop with team-level operating signals.",
+      "readiness": "Catalog scope — Product/QA approval required"
+    }
+  ],
+  "workflow": {
+    "title": "Workflow 2.0: one outcome, many agents",
+    "definition": "Workflow 2.0 is a directed execution map: it defines which agent or deterministic step runs, what it depends on, which connector it may use, where branches run in parallel, where results merge, when a human must approve and what counts as completed work.",
+    "example": "Quarterly client review to completed follow-up",
+    "steps": [
+      {
+        "id": "W01",
+        "label": "Trigger & context",
+        "agents": [
+          "A01"
+        ],
+        "mode": "Sequential",
+        "detail": "A meeting, email, document or schedule starts the run; client context is retrieved."
+      },
+      {
+        "id": "W02",
+        "label": "Parallel intelligence",
+        "agents": [
+          "A04",
+          "A05",
+          "A07"
+        ],
+        "mode": "Parallel",
+        "detail": "Portfolio, market and KYC checks run independently against approved inputs."
+      },
+      {
+        "id": "W03",
+        "label": "Merge & recommendation",
+        "agents": [
+          "A03"
+        ],
+        "mode": "Fan-in",
+        "detail": "Outputs merge into one advisor-facing recommendation with conflicts and gaps exposed."
+      },
+      {
+        "id": "W04",
+        "label": "Advisor meeting",
+        "agents": [],
+        "mode": "Human",
+        "detail": "The advisor conducts the meeting using the approved preparation package."
+      },
+      {
+        "id": "W05",
+        "label": "Post-meeting package",
+        "agents": [
+          "A02",
+          "A06"
+        ],
+        "mode": "Parallel",
+        "detail": "Actions, follow-up drafts, CRM changes and document updates are prepared."
+      },
+      {
+        "id": "W06",
+        "label": "Approval gate",
+        "agents": [
+          "A08"
+        ],
+        "mode": "Human approval",
+        "detail": "The system pauses. An authorized reviewer approves, rejects or requests correction."
+      },
+      {
+        "id": "W07",
+        "label": "Writeback & follow-through",
+        "agents": [
+          "A11",
+          "A10"
+        ],
+        "mode": "Controlled execution",
+        "detail": "Approved updates are written to connected systems; deadlines and escalations are tracked."
+      },
+      {
+        "id": "W08",
+        "label": "Completion & operating insight",
+        "agents": [
+          "A12"
+        ],
+        "mode": "Evidence close",
+        "detail": "Run history, outputs, approvals, exceptions and completion status are preserved for review."
+      }
+    ],
+    "controls": [
+      "Dependency ordering prevents downstream work from running before required inputs exist.",
+      "Parallel branches reduce cycle time when work is independent.",
+      "Fan-in waits for branches and merges their outputs before the next step.",
+      "MCP or standard connectors are bound to specific steps and permitted actions.",
+      "Human approval pauses consequential actions before writeback or outbound execution.",
+      "Retries and timeouts handle bounded operational failures.",
+      "Run history records step status, approvals, outputs, failures and completion."
+    ]
+  },
+  "variableUsage": {
+    "clientDirect": [
+      "LLM and model inference",
+      "OCR and document extraction providers",
+      "Transcription and meeting-bot services",
+      "Storage beyond contracted platform policy",
+      "Premium market or financial data",
+      "Paid third-party APIs and vendor licenses"
+    ],
+    "sarvaxContract": [
+      "Enterprise operating layer and administration",
+      "Workflow 2.0 orchestration",
+      "Named access and approval ownership",
+      "Approved agent capability suites",
+      "Standard connectors when technically available",
+      "Standard governance, run history and support"
+    ],
+    "internalOnly": "SARVAX may track tokens or internal credits for telemetry, budgeting and cost reconciliation. Customer proposals should lead with meetings, documents, KYC cases, reports and completed workflows.",
+    "engineeringBoundary": "Client-owned accounts, direct vendor payment and any managed pass-through mechanism require Engineering and contractual validation. The report does not claim self-service BYOK or automated wallet accounting already exists."
+  },
+  "enterpriseMeters": [
+    {
+      "buyer": "Advisor-led firm",
+      "primary": "Organization commitment + named advisors + activated suites",
+      "secondary": "Meeting or completed-workflow commitment",
+      "usage": "Client pays providers directly"
+    },
+    {
+      "buyer": "Central compliance or operations team",
+      "primary": "Organization commitment + approver/operator access",
+      "secondary": "Documents, KYC cases or workflow runs",
+      "usage": "Client pays OCR, models and paid APIs directly"
+    },
+    {
+      "buyer": "Large reporting operation",
+      "primary": "Organization commitment + production workflow",
+      "secondary": "Reports or portfolios processed",
+      "usage": "Client funds models, storage and data providers directly"
+    },
+    {
+      "buyer": "Custom enterprise deployment",
+      "primary": "Negotiated platform commitment",
+      "secondary": "Dedicated workflows, environment and service obligations",
+      "usage": "Client-funded providers plus separate implementation SOW"
+    }
+  ],
+  "quoteExamples": [
+    {
+      "name": "25-advisor wealth firm",
+      "contract": [
+        "Enterprise platform agreement",
+        "25 named advisor entitlements",
+        "Relationship Intelligence Suite",
+        "Portfolio & Market Intelligence Suite",
+        "Monthly meeting/workflow commitment",
+        "Implementation SOW"
+      ],
+      "clientDirect": [
+        "Model usage",
+        "Meeting capture and transcription",
+        "Premium data where selected"
+      ]
+    },
+    {
+      "name": "Central KYC operation",
+      "contract": [
+        "Enterprise platform agreement",
+        "Bounded operator and approver roles",
+        "Compliance & Document Execution Suite",
+        "KYC case-volume commitment",
+        "Implementation and migration SOW"
+      ],
+      "clientDirect": [
+        "OCR provider",
+        "Model usage",
+        "Verification or paid data vendors"
+      ]
+    },
+    {
+      "name": "10,000-report operation",
+      "contract": [
+        "Enterprise platform agreement",
+        "Production Workflow 2.0 deployment",
+        "Portfolio and document capabilities",
+        "Report-volume commitment",
+        "Implementation, UAT and support SOW"
+      ],
+      "clientDirect": [
+        "Model execution",
+        "Storage and delivery providers",
+        "Market or fund data"
+      ]
+    }
+  ],
+  "readiness": [
+    {
+      "claim": "1. Sell Suites, Not Individual Bots",
+      "status": "Commercial Rule",
+      "rule": "Do not sell 12 separate bot SKUs. Sell business capability suites (e.g., Compliance Suite or Relationship Intelligence Suite) tied to firm outcomes."
+    },
+    {
+      "claim": "2. Client Pays Variable Usage Directly",
+      "status": "Pricing Rule",
+      "rule": "Platform pricing covers software and governance. Model tokens, OCR, transcription, and paid data feeds are client-funded via direct keys or accounts."
+    },
+    {
+      "claim": "3. Catalog Listing ≠ Turnkey Production",
+      "status": "Product Rule",
+      "rule": "Brochure agents require explicit Product and QA sign-off before committing to live deployment timelines or turnkey performance."
+    },
+    {
+      "claim": "4. Custom Work Requires a Separate SOW",
+      "status": "Scope Rule",
+      "rule": "Custom custodian integrations, legacy migrations, and bespoke agents must be scoped under a separate Statement of Work (SOW)."
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E01",
+      "source": "Avantika Sahay commercial direction, confirmed by Satyam Singh",
+      "sourceType": "Internal leadership direction",
+      "claim": "Credits and variable provider consumption are different from platform pricing and are paid economically by the client.",
+      "verification": "User clarification in the current working session",
+      "retrieved": "2026-08-01",
+      "confidence": "Leadership-confirmed",
+      "boundary": "Direct provider payment still requires Engineering and contract validation.",
+      "recordHash": "5ac536c78b016e53ec9683b65a142a452c9936b0f9296626cfe38710f707d98e"
+    },
+    {
+      "id": "E02",
+      "source": "SarvaX Wealth Advisor Agents v1.0 and SarvaX Agents Brochure",
+      "sourceType": "Internal Product Team catalog",
+      "claim": "The customer-facing catalog contains 12 agents, but catalog presence does not establish production readiness.",
+      "verification": "Google Drive Product Team source set",
+      "retrieved": "2026-08-01",
+      "confidence": "High for catalog scope",
+      "boundary": "Product and QA readiness remains unverified agent by agent.",
+      "recordHash": "b8629558ffe41758b77584885f2f4562c01af8416f087cecb1e633a235e3036d"
+    },
+    {
+      "id": "E03",
+      "source": "KARAX/SARVAX staging implementation audit",
+      "sourceType": "Internal codebase evidence",
+      "claim": "Workflow 2.0 supports dependency graphs, parallel branches, merge steps, approval events, retries/timeouts and run history surfaces.",
+      "verification": "Codebase-first audit completed 2026-08-01",
+      "retrieved": "2026-08-01",
+      "confidence": "High for inspected surfaces",
+      "boundary": "Customer-ready deployment and support commitments require Product and Engineering sign-off.",
+      "recordHash": "e96539738a4e75e8a184e831b71d2d2e1cb4ee6af6abf2bb6514eeabcc51ed44"
+    },
+    {
+      "id": "E04",
+      "source": "38-vendor market-pricing report",
+      "sourceType": "Separate external evidence ledger",
+      "claim": "External vendor evidence remains separate from this internal commercial recommendation.",
+      "verification": "../index.html",
+      "retrieved": "2026-08-01",
+      "confidence": "High",
+      "boundary": "No SARVAX rates are inferred from a single competitor.",
+      "recordHash": "25eba57360c2e9ad87a2b5981261d36dcc83d4141df3e6e737621200c4ceafd1"
+    }
+  ],
+  "version": "0.3.3",
+  "asOf": "2026-08-01",
+  "clientValueSummary": {
+    "headline": "Real client problems mapped to governed execution.",
+    "body": "Eight evidence-rich client engagements show where SARVAX creates operating value today or in scoped pilots. Twenty-three additional active, discovery, passive and historical account records are included without inventing requirements.",
+    "metrics": [
+      {
+        "value": "8",
+        "label": "evidence-rich client journeys",
+        "detail": "Deep workflow evidence available"
+      },
+      {
+        "value": "31",
+        "label": "unique account records covered",
+        "detail": "Active, pilot, discovery, passive and historical records"
+      },
+      {
+        "value": "12",
+        "label": "catalog agents mapped",
+        "detail": "Catalog scope, not automatic production readiness"
+      },
+      {
+        "value": "4",
+        "label": "evidence states",
+        "detail": "Testing, POC, scoped and discovery"
+      }
+    ],
+    "boundary": "Targets and source-stated volumes describe measurable operating value; they are not guaranteed savings or production-readiness claims."
+  },
+  "clientCases": [
+    {
+      "id": "aviva",
+      "client": "Aviva Naturals",
+      "engagement": "In testing",
+      "evidenceState": "Testing evidence",
+      "problem": "A five-person QA/QC team manually reads, prints and re-keys roughly 50 laboratory emails each day, then follows up on out-of-specification results.",
+      "useCases": [
+        {
+          "name": "Lab results inbox processing",
+          "status": "Scoped / testing"
+        },
+        {
+          "name": "Certificate of Analysis extraction and classification",
+          "status": "Scoped / testing"
+        },
+        {
+          "name": "Out-of-specification alerting and escalation",
+          "status": "Scoped / testing"
+        },
+        {
+          "name": "Daily overdue and failure summary",
+          "status": "Scoped / testing"
+        },
+        {
+          "name": "Supplier follow-up, retest and penalty workflow",
+          "status": "Workflow specification"
+        }
+      ],
+      "trigger": "New laboratory result or Certificate of Analysis arrives by email.",
+      "workflow": [
+        {
+          "label": "Ingest",
+          "detail": "Read supported inbox attachments and identify the result type."
+        },
+        {
+          "label": "Extract",
+          "detail": "Document Intelligence extracts batch, test and supplier fields."
+        },
+        {
+          "label": "Evaluate",
+          "detail": "Compliance rules classify pass, fail, overdue and missing evidence."
+        },
+        {
+          "label": "Approve",
+          "detail": "QA owner reviews exceptions before supplier or internal escalation."
+        },
+        {
+          "label": "Complete",
+          "detail": "Update the tracker, prepare the daily exception summary and record follow-up status."
+        }
+      ],
+      "agents": [
+        "A06",
+        "A08",
+        "A10",
+        "A11"
+      ],
+      "connectors": [
+        "Email",
+        "Document/OCR pipeline",
+        "QA tracker"
+      ],
+      "approval": "QA approval before consequential supplier communication or penalty action.",
+      "outcome": "The team works from one exception queue instead of reading and re-keying every result manually.",
+      "meter": "Lab emails processed · results classified · exceptions resolved · overdue cases",
+      "evidence": [
+        "Aviva Use Cases_Workflows",
+        "Aviva QA/QC workflow notes",
+        "Client & Usecase Tracker snapshot"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "ns",
+      "client": "NS Wealth",
+      "engagement": "In development / internal POC sign-off",
+      "evidenceState": "POC evidence",
+      "problem": "Client operations are distributed across roughly 200 WhatsApp groups, tracker sheets and uploaded identity or invoice documents, creating manual updates and delayed stage visibility.",
+      "useCases": [
+        {
+          "name": "Automated client tracker update",
+          "status": "Core POC"
+        },
+        {
+          "name": "Stage and turnaround-time tracker",
+          "status": "Core POC"
+        },
+        {
+          "name": "Weekly investor and client insights",
+          "status": "Core POC"
+        },
+        {
+          "name": "Advisor workflow and task tracking",
+          "status": "Scoped"
+        },
+        {
+          "name": "Client interaction summaries",
+          "status": "Scoped"
+        },
+        {
+          "name": "Document data extraction and form filling",
+          "status": "Scoped"
+        },
+        {
+          "name": "Portfolio monitoring",
+          "status": "Scoped"
+        },
+        {
+          "name": "Investor report generation",
+          "status": "Scoped"
+        },
+        {
+          "name": "Compliance and audit trail",
+          "status": "Scoped"
+        },
+        {
+          "name": "Email and document workflow automation",
+          "status": "Scoped"
+        }
+      ],
+      "trigger": "Read-only WhatsApp updates, uploaded documents or scheduled reporting windows.",
+      "workflow": [
+        {
+          "label": "Read",
+          "detail": "Collect permitted WhatsApp messages, document uploads and tracker context."
+        },
+        {
+          "label": "Structure",
+          "detail": "Extract client identity, stage, task and exception fields."
+        },
+        {
+          "label": "Track",
+          "detail": "Pipeline Monitoring calculates stage, owner and turnaround status."
+        },
+        {
+          "label": "Review",
+          "detail": "Operations owner validates exceptions and any proposed record changes."
+        },
+        {
+          "label": "Report",
+          "detail": "Update the tracker and compile weekly operating insight for leadership."
+        }
+      ],
+      "agents": [
+        "A02",
+        "A03",
+        "A06",
+        "A07",
+        "A10",
+        "A11",
+        "A12"
+      ],
+      "connectors": [
+        "Periskope / WhatsApp read access",
+        "Google Sheets",
+        "Document/OCR pipeline"
+      ],
+      "approval": "Human review for low-confidence extraction, stage ambiguity and any writeback beyond the approved tracker.",
+      "outcome": "Client stages, pending documents and overdue actions become visible without reading every group manually.",
+      "meter": "Client groups monitored · tracker rows updated · overdue stages · weekly reports completed",
+      "evidence": [
+        "NS Wealth use-case specification",
+        "NS Wealth tracker package",
+        "NS Wealth internal POC sign-off"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "arvocap",
+      "client": "Arvocap Asset Managers",
+      "engagement": "Discovery/demo completed; reporting pilot scoped",
+      "evidenceState": "Scoped evidence",
+      "problem": "Relationship managers need client-level preparation, portfolio insight, compliant outreach and high-volume monthly reports across multiple funds and account structures.",
+      "useCases": [
+        {
+          "name": "Individual financial advisor support",
+          "status": "Confirmed use case"
+        },
+        {
+          "name": "Manager hierarchy and aggregated team view",
+          "status": "Confirmed use case"
+        },
+        {
+          "name": "Aggregate assets-under-management analytics",
+          "status": "Confirmed use case"
+        },
+        {
+          "name": "Targeted client outreach",
+          "status": "Confirmed use case"
+        },
+        {
+          "name": "10,000 monthly client reports across ten sub-funds",
+          "status": "Pilot scope"
+        }
+      ],
+      "trigger": "Scheduled review, portfolio change, campaign request or monthly report cycle.",
+      "workflow": [
+        {
+          "label": "Assemble",
+          "detail": "Read portfolio, account, advisor and approved client context."
+        },
+        {
+          "label": "Analyze",
+          "detail": "Portfolio and market agents evaluate holdings, change and impact."
+        },
+        {
+          "label": "Segment",
+          "detail": "Client Intelligence and Campaign agents identify relevant audiences."
+        },
+        {
+          "label": "Approve",
+          "detail": "Advisor or compliance owner reviews advice, outreach and exceptions."
+        },
+        {
+          "label": "Deliver",
+          "detail": "Generate the approved report or communication and record completion."
+        }
+      ],
+      "agents": [
+        "A01",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A07",
+        "A09",
+        "A10",
+        "A11",
+        "A12"
+      ],
+      "connectors": [
+        "Core portfolio export",
+        "CRM/client master",
+        "Email/PDF",
+        "WhatsApp delivery API"
+      ],
+      "approval": "Advisor and compliance approval before recommendations, campaign communications or client delivery.",
+      "outcome": "One governed chain can convert fund data into advisor insight, approved client communication and high-volume report delivery.",
+      "meter": "Reports completed · advisor books covered · portfolio exceptions · approved campaigns",
+      "evidence": [
+        "Arvocap discovery notes",
+        "Arvocap use-case dossier",
+        "Arvocap 10k report pilot deck",
+        "Gmail thread 19f944c56549a537"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "ladder7",
+      "client": "Ladder7 Wealth Planners",
+      "engagement": "Requirements review; three-workflow POC brief",
+      "evidenceState": "POC / roadmap evidence",
+      "problem": "Lead intake, onboarding, meeting preparation and advisory follow-through span websites, chat, email, Zoho CRM, documents and portfolio systems.",
+      "useCases": [
+        {
+          "name": "Digio-integrated onboarding and KYC verification",
+          "status": "POC workflow"
+        },
+        {
+          "name": "Scheduled multi-source lead capture and CRM sync",
+          "status": "POC workflow"
+        },
+        {
+          "name": "Interactive prospect screening",
+          "status": "POC workflow"
+        },
+        {
+          "name": "Pre-meeting client history briefing",
+          "status": "Requirements review"
+        },
+        {
+          "name": "Goal planning and portfolio rebalancing",
+          "status": "Architecture scope"
+        },
+        {
+          "name": "Post-meeting CRM writeback",
+          "status": "Requirements review"
+        },
+        {
+          "name": "Client sentiment and churn-risk alerts",
+          "status": "Requirements review"
+        },
+        {
+          "name": "Segmented engagement and content calendar",
+          "status": "Requirements review"
+        },
+        {
+          "name": "Financial-query research and response drafting",
+          "status": "Requirements review"
+        }
+      ],
+      "trigger": "Inbound lead, onboarding document, meeting event, client message or portfolio review schedule.",
+      "workflow": [
+        {
+          "label": "Capture",
+          "detail": "Ingest approved lead, client, KYC, meeting or portfolio context."
+        },
+        {
+          "label": "Route",
+          "detail": "Workflow branches to onboarding, meeting, portfolio, research or growth agents."
+        },
+        {
+          "label": "Reason",
+          "detail": "Agents prepare structured briefs, exceptions, plans and draft responses."
+        },
+        {
+          "label": "Approve",
+          "detail": "Advisor reviews advice, CRM changes and outbound communication."
+        },
+        {
+          "label": "Write back",
+          "detail": "Approved records and tasks move to Zoho CRM and the connected work queue."
+        }
+      ],
+      "agents": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A07",
+        "A08",
+        "A09",
+        "A10",
+        "A11"
+      ],
+      "connectors": [
+        "Zoho CRM",
+        "Digio",
+        "Email",
+        "Website/Jio Chat",
+        "OneDrive",
+        "Portfolio tools"
+      ],
+      "approval": "Mandatory advisor review for recommendations, client communications and CRM mutations; exception-only review for deterministic onboarding checks.",
+      "outcome": "The operating journey moves from first lead to governed advisory follow-through without copying data between every system by hand.",
+      "meter": "Leads captured · KYC cases completed · meetings prepared · approved CRM updates · rebalancing reviews",
+      "evidence": [
+        "Advisory Automation POC",
+        "Advisory Automation Roadmap",
+        "Ladder7 Gmail thread 19f947029f2eb63b"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "box",
+      "client": "BoxWealth Advisors",
+      "engagement": "Requirements review; documented POC workflows",
+      "evidenceState": "POC evidence",
+      "problem": "Client documents, meetings, CRM records and tasks sit across Microsoft 365, Zoho CRM and Zoho Projects, creating duplicate work and broken handoffs.",
+      "useCases": [
+        {
+          "name": "Scheduled bidirectional Zoho CRM and Microsoft 365 sync",
+          "status": "POC testing"
+        },
+        {
+          "name": "Pre-meeting intelligence and preparation",
+          "status": "Integration testing"
+        },
+        {
+          "name": "Post-meeting execution with senior-advisor approval",
+          "status": "Active development"
+        }
+      ],
+      "trigger": "Four-hour schedule, Outlook meeting event or finalized Teams transcript.",
+      "workflow": [
+        {
+          "label": "Synchronize",
+          "detail": "Create or update the right M365 client folder without duplicates."
+        },
+        {
+          "label": "Understand",
+          "detail": "Extract document fields or assemble grounded meeting context."
+        },
+        {
+          "label": "Stage",
+          "detail": "Prepare client minutes, CRM changes and Zoho Projects tasks."
+        },
+        {
+          "label": "Approve",
+          "detail": "Senior advisor explicitly accepts or edits staged actions."
+        },
+        {
+          "label": "Execute",
+          "detail": "Write approved records, send approved communication and preserve cross-system IDs."
+        }
+      ],
+      "agents": [
+        "A01",
+        "A02",
+        "A03",
+        "A06",
+        "A08",
+        "A10",
+        "A11"
+      ],
+      "connectors": [
+        "Zoho CRM",
+        "Zoho Projects",
+        "Microsoft 365",
+        "Teams",
+        "Outlook",
+        "Loop / OneNote"
+      ],
+      "approval": "Senior-advisor approval before client email, CRM field changes and project-task creation.",
+      "outcome": "A meeting or document produces completed, linked work across CRM and collaboration systems rather than another summary to copy manually.",
+      "meter": "Folders synchronized · documents processed · meetings prepared · approved tasks created · exceptions logged",
+      "evidence": [
+        "BoxWealth Workflow POC Demo Plan",
+        "BoxWealth POC Workflow",
+        "Client & Usecase Tracker snapshot"
+      ],
+      "confidence": "High"
+    },
+    {
+      "id": "fundsindia",
+      "client": "FundsIndia",
+      "engagement": "In planning; vendor access dependent",
+      "evidenceState": "Planning evidence",
+      "problem": "Relationship managers need a single client and portfolio view across WealthSpectrum, Morningstar and internal systems without replacing their core advisory platform.",
+      "useCases": [
+        {
+          "name": "Pre-meeting client and portfolio brief",
+          "status": "Planned"
+        },
+        {
+          "name": "Portfolio X-Ray and suitability comparison",
+          "status": "Planned"
+        },
+        {
+          "name": "Client-specific analyst rationale",
+          "status": "Planned"
+        },
+        {
+          "name": "Post-meeting documentation and follow-up",
+          "status": "Planned"
+        }
+      ],
+      "trigger": "Upcoming client meeting, advisor request or portfolio review event.",
+      "workflow": [
+        {
+          "label": "Authorize",
+          "detail": "Verify that the client, WealthSpectrum and Morningstar connections are available."
+        },
+        {
+          "label": "Retrieve",
+          "detail": "Read holdings, transactions, research and prior interaction context."
+        },
+        {
+          "label": "Compare",
+          "detail": "Portfolio and market agents evaluate drift, overlap and research evidence."
+        },
+        {
+          "label": "Approve",
+          "detail": "Relationship manager validates rationale and proposed follow-up."
+        },
+        {
+          "label": "Record",
+          "detail": "Publish the brief and write approved meeting outcomes back to the system of record."
+        }
+      ],
+      "agents": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A08",
+        "A11"
+      ],
+      "connectors": [
+        "WealthSpectrum",
+        "Morningstar",
+        "Calendar/meeting artifacts",
+        "FundsIndia internal systems"
+      ],
+      "approval": "Relationship-manager approval before suitability recommendations, follow-up messages or system writeback.",
+      "outcome": "The advisor receives one grounded review path while WealthSpectrum remains the core advisory and portfolio platform.",
+      "meter": "Client briefs · portfolios reviewed · exceptions surfaced · approved follow-ups",
+      "evidence": [
+        "FundsIndia Gmail thread 19f64161e1673168",
+        "Morningstar POC scope",
+        "WealthSpectrum integration research"
+      ],
+      "confidence": "Medium-High"
+    },
+    {
+      "id": "hexagon",
+      "client": "Hexagon Wealth",
+      "engagement": "R&D / tools integration",
+      "evidenceState": "Solution-architecture evidence",
+      "problem": "Advisors need one relationship and portfolio view across Zoho, Investwell, Omnimax, Morningstar, ACE data and transaction rails.",
+      "useCases": [
+        {
+          "name": "Unified relationship-manager 360 and advisor briefing",
+          "status": "Target demo architecture"
+        },
+        {
+          "name": "Portfolio and goal-plan comparison",
+          "status": "Vendor-access dependent"
+        },
+        {
+          "name": "Advisor-approved rebalancing and post-meeting writeback",
+          "status": "Vendor-access dependent"
+        }
+      ],
+      "trigger": "Advisor review request or scheduled client meeting.",
+      "workflow": [
+        {
+          "label": "Connect",
+          "detail": "Read only from the systems authorized and technically available."
+        },
+        {
+          "label": "Unify",
+          "detail": "Assemble client, portfolio, goal and market context."
+        },
+        {
+          "label": "Evaluate",
+          "detail": "Identify gaps, drift and questions for the advisor."
+        },
+        {
+          "label": "Approve",
+          "detail": "Advisor validates any recommendation or order intent."
+        },
+        {
+          "label": "Write back",
+          "detail": "Record approved meeting outcomes in connected systems."
+        }
+      ],
+      "agents": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A11"
+      ],
+      "connectors": [
+        "Zoho",
+        "Investwell",
+        "Omnimax",
+        "Morningstar",
+        "ACE MF / ACE Equity",
+        "NSE NMF II"
+      ],
+      "approval": "Advisor approval before recommendations, order intents or system mutations.",
+      "outcome": "SARVAX becomes the operating layer above existing wealth systems rather than another disconnected tool.",
+      "meter": "Systems connected · briefs generated · exceptions found · approved writebacks",
+      "evidence": [
+        "Hexagon Gmail thread 19f7fc3a09574338",
+        "Client & Usecase Tracker snapshot",
+        "Connector research dossier"
+      ],
+      "confidence": "Medium"
+    },
+    {
+      "id": "entrust",
+      "client": "Entrust Family Office",
+      "engagement": "R&D / tools integration",
+      "evidenceState": "Discovery evidence",
+      "problem": "A multi-family office may need consolidated intelligence across custodians, private-market documents and global data feeds, but the final requirements and production integrations are not confirmed.",
+      "useCases": [
+        {
+          "name": "Multi-custodian family wealth consolidation",
+          "status": "Solution hypothesis"
+        },
+        {
+          "name": "UHNW segmentation and market-triggered advisory brief",
+          "status": "Requirements definition"
+        }
+      ],
+      "trigger": "Periodic family review, new custodian statement or approved market event.",
+      "workflow": [
+        {
+          "label": "Ingest",
+          "detail": "Read permitted statements and entity records."
+        },
+        {
+          "label": "Normalize",
+          "detail": "Map assets and ownership structures to a common data model."
+        },
+        {
+          "label": "Enrich",
+          "detail": "Add approved market and research data where vendor access exists."
+        },
+        {
+          "label": "Review",
+          "detail": "Family-office principal validates the consolidated brief and exceptions."
+        },
+        {
+          "label": "Record",
+          "detail": "Publish the approved intelligence package and preserve source references."
+        }
+      ],
+      "agents": [
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A08",
+        "A09",
+        "A11"
+      ],
+      "connectors": [
+        "Custodian statements",
+        "Morningstar",
+        "Reuters/LSEG",
+        "Bloomberg or other approved feeds"
+      ],
+      "approval": "Principal review before any client communication or investment-related action.",
+      "outcome": "The value opportunity is consolidated, source-linked family intelligence; it remains a discovery architecture until requirements and data access are confirmed.",
+      "meter": "Statements normalized · families covered · exceptions reviewed · approved briefs",
+      "evidence": [
+        "Client & Usecase Tracker snapshot",
+        "Entrust discovery notes",
+        "Connector research dossier"
+      ],
+      "confidence": "Medium-Low"
+    }
+  ],
+  "coverageMatrix": [
+    {
+      "account": "Aviva Naturals",
+      "stage": "Testing",
+      "useCase": "Laboratory inbox, certificate extraction, exception workflow",
+      "evidence": "Detailed workflow evidence",
+      "classification": "Client engagement"
+    },
+    {
+      "account": "NS Wealth",
+      "stage": "In development",
+      "useCase": "WhatsApp-to-tracker, stage/TAT, weekly insights, documents",
+      "evidence": "Detailed use-case and sign-off evidence",
+      "classification": "Client engagement"
+    },
+    {
+      "account": "Arvocap Asset Managers",
+      "stage": "Completed / pilot scoped",
+      "useCase": "Advisor support, AUM analytics, campaigns, 10k reports",
+      "evidence": "Discovery, use-case and pilot evidence",
+      "classification": "Client engagement"
+    },
+    {
+      "account": "Ladder7 Wealth Planners",
+      "stage": "Requirements review",
+      "useCase": "Onboarding, lead capture, meetings, rebalancing, engagement",
+      "evidence": "POC and roadmap evidence",
+      "classification": "Client engagement"
+    },
+    {
+      "account": "BoxWealth Advisors",
+      "stage": "Requirements review",
+      "useCase": "M365/Zoho sync, pre/post-meeting execution",
+      "evidence": "Detailed POC evidence",
+      "classification": "Client engagement"
+    },
+    {
+      "account": "FundsIndia",
+      "stage": "Planning",
+      "useCase": "RM Client 360, portfolio analysis, rationale, follow-up",
+      "evidence": "Email and POC planning evidence",
+      "classification": "Client engagement"
+    },
+    {
+      "account": "Hexagon Wealth",
+      "stage": "R&D / tools integration",
+      "useCase": "Unified RM 360 across wealth systems",
+      "evidence": "Discovery and connector evidence",
+      "classification": "Client engagement"
+    },
+    {
+      "account": "Entrust Family Office",
+      "stage": "R&D / tools integration",
+      "useCase": "Consolidated family-office intelligence",
+      "evidence": "Discovery; requirements incomplete",
+      "classification": "Client engagement"
+    },
+    {
+      "account": "Dilzer Consultants",
+      "stage": "Transitioned to founder",
+      "useCase": "Financial Planning Agent",
+      "evidence": "Discovery-level evidence",
+      "classification": "Discovery"
+    },
+    {
+      "account": "OnEasy",
+      "stage": "Discovery",
+      "useCase": "Tax, accounting reconciliation and document workflow",
+      "evidence": "Concept only; no formal BRD",
+      "classification": "Discovery"
+    },
+    {
+      "account": "Equirus Group",
+      "stage": "Discovery completed",
+      "useCase": "Meeting intelligence and advisor operating layer",
+      "evidence": "Discovery-level evidence",
+      "classification": "Discovery"
+    },
+    {
+      "account": "Motilal Oswal",
+      "stage": "Pipeline",
+      "useCase": "Meeting notes, compliance trail and advisor research",
+      "evidence": "Proposed; no formal BRD",
+      "classification": "Prospect"
+    },
+    {
+      "account": "Client Associates",
+      "stage": "Demo scheduling",
+      "useCase": "Pre-meeting preparation and client communication summary",
+      "evidence": "Discovery-level evidence",
+      "classification": "Discovery"
+    },
+    {
+      "account": "Nuvama Private",
+      "stage": "Active pipeline",
+      "useCase": "Private-banking portfolio and client intelligence",
+      "evidence": "Positioning hypothesis; scope pending",
+      "classification": "Prospect"
+    },
+    {
+      "account": "Ionic Wealth",
+      "stage": "Prospecting",
+      "useCase": "Advisor capacity and pitch-material workflow",
+      "evidence": "Research hypothesis; discovery pending",
+      "classification": "Prospect"
+    },
+    {
+      "account": "Nine Star Broking",
+      "stage": "Follow-up",
+      "useCase": "Not confirmed",
+      "evidence": "No formal requirements",
+      "classification": "Prospect"
+    },
+    {
+      "account": "Mintwit Financial",
+      "stage": "Discovery scheduled",
+      "useCase": "Not confirmed",
+      "evidence": "No formal requirements",
+      "classification": "Prospect"
+    },
+    {
+      "account": "Venn Wealth",
+      "stage": "Discovery pending",
+      "useCase": "Not confirmed",
+      "evidence": "No formal requirements",
+      "classification": "Prospect"
+    },
+    {
+      "account": "Prudeno Wealth",
+      "stage": "Demo progressing",
+      "useCase": "Advisor capacity and compliance documentation",
+      "evidence": "Discovery-level evidence",
+      "classification": "Discovery"
+    },
+    {
+      "account": "Spring Money",
+      "stage": "Partnership discussion",
+      "useCase": "Structured document-to-portal data sync",
+      "evidence": "Partner discussion evidence",
+      "classification": "Partner / discovery"
+    },
+    {
+      "account": "UpperCrust Wealth",
+      "stage": "Active follow-up",
+      "useCase": "Pre-meeting intelligence for boutique wealth advisory",
+      "evidence": "Research/discovery evidence",
+      "classification": "Discovery"
+    },
+    {
+      "account": "Stellar HR Solutions",
+      "stage": "Client review",
+      "useCase": "Not confirmed",
+      "evidence": "Tracker explicitly states no formal POC",
+      "classification": "Passive / outside wealth scope"
+    },
+    {
+      "account": "AMMA Labs",
+      "stage": "Client review",
+      "useCase": "Not confirmed",
+      "evidence": "Internal review pending; no formal use case",
+      "classification": "Passive / partner"
+    },
+    {
+      "account": "Opsel Consultancy Services (NANA)",
+      "stage": "Closed / not moving forward",
+      "useCase": "Agent specifications were prepared",
+      "evidence": "Tracker marks completed and closed",
+      "classification": "Historical client record"
+    },
+    {
+      "account": "Radio Africa Group",
+      "stage": "No response",
+      "useCase": "Not confirmed",
+      "evidence": "No formal use case",
+      "classification": "Passive / outside wealth scope"
+    },
+    {
+      "account": "Pesabase",
+      "stage": "No active record",
+      "useCase": "Not confirmed",
+      "evidence": "Tracker contains no requirements",
+      "classification": "Passive / outside wealth scope"
+    },
+    {
+      "account": "Green Tech Solutions",
+      "stage": "No active record",
+      "useCase": "Not confirmed",
+      "evidence": "Tracker contains no requirements",
+      "classification": "Passive / outside wealth scope"
+    },
+    {
+      "account": "Elvaridah",
+      "stage": "Completed / historical",
+      "useCase": "Not recoverable from accessible evidence",
+      "evidence": "Tracker says done; detailed scope unavailable",
+      "classification": "Historical client record"
+    },
+    {
+      "account": "Safaricom PLC",
+      "stage": "Requirements review",
+      "useCase": "HR platform / pricing review; detailed scope not attached",
+      "evidence": "Weekly sales evidence; outside current wealth proposal",
+      "classification": "Passive / outside wealth scope"
+    },
+    {
+      "account": "Santosh PrimePitchDesigns",
+      "stage": "Awaiting response",
+      "useCase": "Not confirmed",
+      "evidence": "No formal use case",
+      "classification": "Passive / outside wealth scope"
+    },
+    {
+      "account": "WealthDox",
+      "stage": "No response",
+      "useCase": "Not confirmed",
+      "evidence": "No formal use case",
+      "classification": "Passive wealth prospect"
+    }
+  ],
+  "agentClientMatrix": {
+    "A01": [
+      "Arvocap",
+      "Ladder7",
+      "BoxWealth",
+      "FundsIndia",
+      "Hexagon",
+      "Client Associates",
+      "UpperCrust"
+    ],
+    "A02": [
+      "NS Wealth",
+      "Ladder7",
+      "BoxWealth",
+      "FundsIndia",
+      "Equirus"
+    ],
+    "A03": [
+      "NS Wealth",
+      "Arvocap",
+      "Ladder7",
+      "FundsIndia",
+      "Hexagon",
+      "Entrust",
+      "Nuvama"
+    ],
+    "A04": [
+      "Arvocap",
+      "Ladder7",
+      "FundsIndia",
+      "Hexagon",
+      "Entrust",
+      "Nuvama",
+      "Ionic"
+    ],
+    "A05": [
+      "Arvocap",
+      "FundsIndia",
+      "Hexagon",
+      "Entrust"
+    ],
+    "A06": [
+      "Aviva",
+      "NS Wealth",
+      "Arvocap",
+      "BoxWealth",
+      "Entrust",
+      "OnEasy",
+      "Spring Money"
+    ],
+    "A07": [
+      "NS Wealth",
+      "Arvocap",
+      "Ladder7"
+    ],
+    "A08": [
+      "Aviva",
+      "Arvocap",
+      "Ladder7",
+      "BoxWealth",
+      "FundsIndia",
+      "Entrust",
+      "Motilal",
+      "Prudeno"
+    ],
+    "A09": [
+      "Arvocap",
+      "Ladder7",
+      "Entrust"
+    ],
+    "A10": [
+      "Aviva",
+      "NS Wealth",
+      "Arvocap",
+      "Ladder7",
+      "BoxWealth",
+      "OnEasy"
+    ],
+    "A11": [
+      "Aviva",
+      "NS Wealth",
+      "Arvocap",
+      "Ladder7",
+      "BoxWealth",
+      "FundsIndia",
+      "Hexagon",
+      "Entrust"
+    ],
+    "A12": [
+      "NS Wealth",
+      "Arvocap",
+      "BoxWealth",
+      "Equirus",
+      "Prudeno"
+    ]
+  },
+  "researchCoverage": {
+    "reviewed": [
+      "Live Usecase Tracker Google Sheet (1ApSkZwwTdeUfaYvmsOWM5nVd6fBnXkz4EYm92orlGq4) extracted live via Google Sheets API v4 across all 4 tabs (Active Clients, Passive Clients, Tools Integration, Client Context)",
+      "32 tracker rows reconciled into 31 unique account records (Aviva appears twice by workflow)",
+      "94 accessible Google Drive text exports deep-read and reconciled",
+      "105 Gmail threads / 119 messages re-indexed and cross-validated",
+      "Product Team catalog and four-page agent brochure verified",
+      "KYC brochure and client-specific workflow documents verified"
+    ],
+    "limitations": [
+      "The live Client & Usecase Tracker Google Sheet (1ApSkZwwTdeUfaYvmsOWM5nVd6fBnXkz4EYm92orlGq4) was extracted live via Google Sheets API v4 and fully verified.",
+      "No use case is invented for Nine Star Broking, Mintwit Financial or Venn Wealth because requirements were not available in source evidence.",
+      "Passive and other-industry records are shown for completeness in the 31-account ledger but are not presented as validated SARVAX wealth use cases.",
+      "Product and QA readiness for each of the 12 catalog agents still requires explicit sign-off.",
+      "Target operating values and source-stated volumes are not guaranteed commercial outcomes."
+    ]
+  }
+}
